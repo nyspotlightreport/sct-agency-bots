@@ -1,0 +1,30 @@
+# State and logs (generated at runtime)
+state/
+logs/
+*.log
+*.pickle
+token.pickle
+
+# Results files
+leads_*.json
+content_calendars/
+repurposed_content/
+invoices/
+meeting_notes/
+*_state.json
+uptime_state.json
+seo_state.json
+competitor_state.json
+invoice_state.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db

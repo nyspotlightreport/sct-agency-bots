@@ -1,0 +1,56 @@
+name: Daily Operations
+on:
+  schedule:
+    - cron: '0 12 * * *'   # Daily 7am ET
+  workflow_dispatch:
+jobs:
+  inbox:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install requests google-auth google-auth-oauthlib google-api-python-client
+      - name: Restore Gmail token
+        uses: actions/cache@v3
+        with:
+          path: token.pickle
+          key: gmail-token-stable
+      - run: python bots/inbox_triage_bot.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER:        ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
+          CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
+
+  invoices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install requests
+      - name: Restore invoice state
+        uses: actions/cache@v3
+        with:
+          path: invoice_state.json
+          key: invoice-state-${{ github.run_number }}
+          restore-keys: invoice-state-
+      - run: python bots/invoice_bot.py --remind
+        env:
+          GMAIL_USER:    ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+          PAYPAL_ME_LINK: ${{ secrets.PAYPAL_ME_LINK }}
+  social_poster:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install requests
+      - run: python bots/social_poster_bot.py
+        env:
+          PUBLER_API_KEY:       ${{ secrets.PUBLER_API_KEY }}
+          PUBLER_WORKSPACE_ID:  ${{ secrets.PUBLER_WORKSPACE_ID }}
+          ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}

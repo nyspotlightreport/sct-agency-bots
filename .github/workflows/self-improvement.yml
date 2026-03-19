@@ -1,0 +1,26 @@
+name: Self-Improvement Engine
+on:
+  schedule:
+    - cron: '0 11 * * 0'   # Sunday 6am ET
+  workflow_dispatch:
+jobs:
+  improve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install requests
+      - name: Restore all state
+        uses: actions/cache@v3
+        with:
+          path: state/
+          key: agency-state-${{ github.run_number }}
+          restore-keys: agency-state-
+      - run: python bots/self_improvement_bot.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER:        ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
+          CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
