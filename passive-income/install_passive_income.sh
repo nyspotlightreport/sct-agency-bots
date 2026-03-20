@@ -120,6 +120,6 @@ curl -s \
   -H "Tags: money_with_wings,white_check_mark" \
   -H "Priority: high" \
   -d "All bandwidth apps are running on your home machine! Expected: \$40-110/month. Check in 24-48 hours for first earnings." \
-  "https://ntfy.sh/nysr-chairman-sct" &>/dev/null
+  "https://ntfy.sh/nysr-chairman1sct" &>/dev/null
 
 echo -e "${GREEN}📱 Phone notification sent!${NC}"
