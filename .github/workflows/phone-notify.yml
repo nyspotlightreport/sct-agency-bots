@@ -39,5 +39,5 @@ jobs:
             -H "Tags: ${{ inputs.tags }}" \
             -H "Priority: ${{ inputs.priority }}" \
             -d "${{ inputs.message }}" \
-            "https://ntfy.sh/nysr-chairman-sct"
+            "https://ntfy.sh/nysr-chairman1sct"
           echo "✅ Phone notification sent"
