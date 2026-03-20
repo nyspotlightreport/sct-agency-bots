@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Gumroad Product Creator — Browser automation
+Gumroad Product Creator — Browser automation (API deprecated)
 Creates 10 new products on Gumroad via Playwright
-Run: python gumroad_creator_fixed.py
+Run: python gumroad_product_creator.py
 """
 import time, os
 from pathlib import Path
@@ -27,80 +27,75 @@ NEW_PRODUCTS = [
 ]
 
 def create_product(page, prod, idx, total):
-    name = prod['name']
-    price = prod['price']
-    desc = prod['desc']
+    name  = prod["name"]
+    price = prod["price"]
+    desc  = prod["desc"]
     print(f"[{idx}/{total}] Creating: {name}  ${price}")
-
-    page.goto("https://app.gumroad.com/products/new/digital", timeout=25000)
-    page.wait_for_load_state("networkidle", timeout=20000)
+    
+    page.goto("https://app.gumroad.com/products/new/digital", timeout=20000)
+    page.wait_for_load_state("networkidle", timeout=15000)
     time.sleep(2)
-
-    # Fill name
+    
+    # Try filling name field
     try:
         page.fill("input[name='name']", name, timeout=8000)
         print("  Name set")
     except Exception as e:
         try:
             page.fill("#product_name", name, timeout=5000)
-        except:
-            print(f"  Name field not found: {e}")
+        except Exception:
+            print("  Name field not found — may need manual entry")
             return False
-
-    # Fill description
+    
+    # Description
     try:
-        page.fill("textarea[name='description']", desc, timeout=5000)
-    except:
-        try:
-            page.fill("#product_description", desc, timeout=5000)
-        except:
-            pass
-
-    # Fill price
+        page.fill("textarea[name='description'], #product_description", desc, timeout=5000)
+    except Exception:
+        pass
+    
+    # Price
     try:
-        price_sel = "input[name='price'], input[id*='price']"
-        price_input = page.query_selector(price_sel)
+        price_input = page.query_selector("input[name='price'], input[id*='price']")
         if price_input:
             price_input.triple_click()
             price_input.fill(price)
-            print(f"  Price set: ${price}")
     except Exception as e:
-        print(f"  Price field issue: {e}")
-
+        print("  Price field issue: " + str(e)[:40])
+    
     # Submit
     try:
-        page.click("button[type='submit'], input[type='submit']", timeout=8000)
+        page.click("button[type='submit'], input[type='submit']", timeout=5000)
         page.wait_for_timeout(3000)
         print("  Created!")
         return True
     except Exception as e:
-        print(f"  Submit err: {e}")
-        input("  Fix manually then press ENTER to continue...")
+        print("  Submit err: " + str(e)[:40])
         return False
 
 def run():
-    print("=" * 50)
+    print("=" * 46)
     print("  GUMROAD PRODUCT CREATOR (10 new products)")
-    print("=" * 50)
+    print("=" * 46)
     print()
-    input("Press ENTER to open browser...")
-
+    print("Starting browser — log in to Gumroad when it opens.")
+    input("Press ENTER to continue...")
+    
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False, slow_mo=400)
         page = browser.new_page()
         page.goto("https://gumroad.com/login")
         print("Log in: nyspotlightreport@gmail.com")
         input("Logged in? Press ENTER...")
-
+        
         created = 0
         for i, prod in enumerate(NEW_PRODUCTS, 1):
             if create_product(page, prod, i, len(NEW_PRODUCTS)):
                 created += 1
             time.sleep(2)
-
+        
         print()
-        print(f"Done! {created}/{len(NEW_PRODUCTS)} products created.")
-        print("Each earns passive income 24/7.")
+        print(str(created) + "/" + str(len(NEW_PRODUCTS)) + " products created!")
+        print("Each product now earns passive income 24/7.")
         input("Press ENTER to close...")
         browser.close()
 
