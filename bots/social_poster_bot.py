@@ -1,24 +1,23 @@
 #!/usr/bin/env python3
 """
-SOCIAL POSTER BOT v2.0 — S.C. Thomas Internal Agency
-Posts to ALL platforms via Publer API: Twitter/X, LinkedIn, Instagram,
-Facebook, TikTok, Pinterest, YouTube, Threads, Bluesky + more.
-Runs on schedule OR triggered with content. Fully autonomous.
+SOCIAL POSTER BOT v3.0 — S.C. Thomas Internal Agency
+Posts to ALL platforms via Publer API.
+FIXED: uses urllib only (no requests), proper workspace injection, gzip handling
 """
-import sys, os, json
+import os, sys, json, urllib.request, urllib.error, urllib.parse, gzip
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from agency_core import BaseBot, Config, with_retry, get_logger
+from agency_core import BaseBot, ClaudeClient, AlertSystem, with_retry
 
 class SocialPosterBot(BaseBot):
-    VERSION = "2.0.0"
-    BASE_URL = "https://app.publer.com/api/v1"
+    VERSION = "3.0.0"
+    BASE    = "https://app.publer.com/api/v1"
 
     def __init__(self):
-        super().__init__("social-poster", required_config=["PUBLER_API_KEY"])
-        self.api_key    = os.getenv("PUBLER_API_KEY", "")
-        self.workspace  = os.getenv("PUBLER_WORKSPACE_ID", "")
+        super().__init__("social-poster")
+        self.api_key   = os.getenv("PUBLER_API_KEY", "")
+        self.workspace = os.getenv("PUBLER_WORKSPACE_ID", "69bc5c22ef1de019931daeae")
 
     @property
     def headers(self):
@@ -26,171 +25,100 @@ class SocialPosterBot(BaseBot):
             "Authorization": f"Bearer-API {self.api_key}",
             "Publer-Workspace-Id": self.workspace,
             "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "SCT-Agency/3.0",
         }
 
-    @with_retry(max_retries=3, delay=2.0)
-    def get_workspaces(self) -> list:
-        r = self.http.get(f"{self.BASE_URL}/workspaces", headers=self.headers)
-        return r.json().get("workspaces", [])
+    def _get(self, path):
+        req = urllib.request.Request(f"{self.BASE}{path}", headers=self.headers)
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                raw = r.read()
+                try: return json.loads(gzip.decompress(raw))
+                except: return json.loads(raw)
+        except urllib.error.HTTPError as e:
+            raw = e.read()
+            try: body = gzip.decompress(raw).decode()
+            except: body = raw.decode('utf-8','replace')
+            self.logger.error(f"Publer {path}: HTTP {e.code} — {body[:100]}")
+            return {}
 
-    @with_retry(max_retries=3, delay=2.0)
-    def get_accounts(self) -> list:
-        r = self.http.get(f"{self.BASE_URL}/accounts", headers=self.headers)
-        return r.json().get("accounts", [])
+    def _post(self, path, payload):
+        data = json.dumps(payload).encode()
+        req  = urllib.request.Request(f"{self.BASE}{path}", data=data, headers=self.headers, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                raw = r.read()
+                try: return json.loads(gzip.decompress(raw))
+                except: return json.loads(raw)
+        except urllib.error.HTTPError as e:
+            raw = e.read()
+            try: body = gzip.decompress(raw).decode()
+            except: body = raw.decode('utf-8','replace')
+            self.logger.error(f"Publer POST {path}: HTTP {e.code} — {body[:200]}")
+            return {}
 
-    @with_retry(max_retries=3, delay=2.0)
-    def schedule_post(self, text: str, account_ids: list,
-                      scheduled_at: str = None, media_ids: list = None,
-                      network_overrides: dict = None) -> dict:
-        """Schedule a post to one or more accounts"""
+    def get_accounts(self):
+        data = self._get("/accounts")
+        return data.get("accounts", data if isinstance(data, list) else [])
+
+    def schedule_post(self, text, account_ids, scheduled_at=None):
         if not scheduled_at:
-            # Default to 30 min from now
             dt = datetime.now(timezone.utc) + timedelta(minutes=30)
             scheduled_at = dt.strftime("%Y-%m-%dT%H:%M+00:00")
+        payload = {"bulk": {"state": "scheduled", "posts": [{
+            "networks": {"default": {"type": "status", "text": text}},
+            "accounts": [{"id": aid, "scheduled_at": scheduled_at} for aid in account_ids]
+        }]}}
+        return self._post("/posts/schedule", payload)
 
-        accounts = []
-        for aid in account_ids:
-            acct = {"id": aid, "scheduled_at": scheduled_at}
-            if media_ids:
-                acct["media"] = [{"id": mid} for mid in media_ids]
-            accounts.append(acct)
+    def generate_daily_content(self):
+        system = "You are S.C. Thomas, Editor in Chief of NY Spotlight Report. Write punchy, direct social media content."
+        prompt = f"""Write 1 engaging social post for today ({datetime.now().strftime('%B %d, %Y')}).
+Topic: NY media/business news, entrepreneurship, or AI/automation for media companies.
+Style: Short. Direct. No hashtag spam. Max 3 relevant hashtags. Under 280 chars.
+Return ONLY the post text."""
+        return ClaudeClient.complete_safe(system=system, user=prompt, max_tokens=150,
+                                          fallback="Building the future of NY media. One story at a time. #NYSpotlight")
 
-        payload = {
-            "bulk": {
-                "state": "scheduled",
-                "posts": [{
-                    "networks": network_overrides or {"default": {"type": "status", "text": text}},
-                    "accounts": accounts
-                }]
-            }
-        }
-
-        r = self.http.post(f"{self.BASE_URL}/posts/schedule", headers=self.headers, json_data=payload)
-        return r.json()
-
-    @with_retry(max_retries=3, delay=2.0)
-    def publish_now(self, text: str, account_ids: list, media_ids: list = None) -> dict:
-        """Publish immediately to accounts"""
-        accounts = [{"id": aid} for aid in account_ids]
-        if media_ids:
-            for a in accounts:
-                a["media"] = [{"id": mid} for mid in media_ids]
-
-        payload = {
-            "bulk": {
-                "state": "publish",
-                "posts": [{
-                    "networks": {"default": {"type": "status", "text": text}},
-                    "accounts": accounts
-                }]
-            }
-        }
-        r = self.http.post(f"{self.BASE_URL}/posts/schedule/publish",
-                           headers=self.headers, json_data=payload)
-        return r.json()
-
-    @with_retry(max_retries=3, delay=2.0)
-    def upload_media_from_url(self, url: str) -> str:
-        """Upload media from URL, return media ID"""
-        payload = {"media": [{"url": url, "source": "upload"}],
-                   "type": "single", "direct_upload": False}
-        r = self.http.post(f"{self.BASE_URL}/media/from-url",
-                           headers=self.headers, json_data=payload)
-        data = r.json()
-        # Poll for job completion
-        job_id = data.get("job_id")
-        if job_id:
-            for _ in range(10):
-                import time; time.sleep(2)
-                jr = self.http.get(f"{self.BASE_URL}/job_status/{job_id}",
-                                   headers=self.headers)
-                jdata = jr.json()
-                if jdata.get("data", {}).get("status") == "complete":
-                    return jdata.get("data", {}).get("result", {}).get("media_id", "")
-        return data.get("media_id", "")
-
-    def get_all_account_ids_by_platform(self, platform: str = None) -> list:
-        """Get account IDs, optionally filtered by platform"""
+    def execute(self):
         accounts = self.get_accounts()
-        if platform:
-            return [a["id"] for a in accounts
-                    if a.get("network", "").lower() == platform.lower()]
-        return [a["id"] for a in accounts]
+        if not accounts:
+            self.logger.warning("No Publer accounts found. Check PUBLER_API_KEY and PUBLER_WORKSPACE_ID.")
+            return {"error": "no_accounts"}
 
-    def post_to_all_platforms(self, text: str, scheduled_at: str = None,
-                               platforms: list = None) -> dict:
-        """Post content to all or specified platforms"""
-        accounts = self.get_accounts()
-        if platforms:
-            target = [a["id"] for a in accounts
-                      if a.get("network", "").lower() in [p.lower() for p in platforms]]
-        else:
-            target = [a["id"] for a in accounts]
+        self.logger.info(f"Found {len(accounts)} accounts")
+        active = [a for a in accounts if a.get("status") == "active" or "id" in a]
 
-        if not target:
-            return {"success": False, "error": "No accounts found"}
+        # Generate and post content
+        content = self.generate_daily_content()
+        if not content:
+            return {"error": "no_content"}
 
-        return self.schedule_post(text, target, scheduled_at)
+        account_ids = [a["id"] for a in active[:6]]  # Max 6 platforms per post
+        result = self.schedule_post(content, account_ids)
 
-    def execute(self) -> dict:
-        """
-        Default execute: pull pending content from state and post it.
-        Or override externally for custom flows.
-        """
-        pending = self.state.get("pending_posts", [])
-        if not pending:
-            self.logger.info("No pending posts in queue")
-            return {"items_processed": 0}
-
-        posted = 0
-        failed = 0
-        for post in pending[:5]:  # Max 5 per run
-            try:
-                result = self.post_to_all_platforms(
-                    text        = post["text"],
-                    scheduled_at= post.get("scheduled_at"),
-                    platforms   = post.get("platforms")
-                )
-                if result.get("success") is not False:
-                    posted += 1
-                    self.logger.info(f"Posted: {post['text'][:50]}...")
-                else:
-                    failed += 1
-                    self.logger.error(f"Failed: {result}")
-            except Exception as e:
-                failed += 1
-                self.logger.error(f"Post error: {e}")
-
-        # Remove processed posts
-        self.state.set("pending_posts", pending[5:])
-        self.log_summary(posted=posted, failed=failed)
-        return {"items_processed": posted, "failed": failed}
-
-
-def post_content(text: str, platforms: list = None, scheduled_at: str = None):
-    """Convenience function: post content right now"""
-    bot = SocialPosterBot()
-    return bot.post_to_all_platforms(text, scheduled_at, platforms)
-
+        job_id = result.get("job_id", "")
+        self.logger.info(f"Posted to {len(account_ids)} platforms. Job: {job_id}")
+        self.state.set("last_post", {"text": content[:100], "job_id": job_id,
+                                      "timestamp": datetime.now().isoformat()})
+        return {"posted": len(account_ids), "job_id": job_id, "content": content[:80]}
 
 if __name__ == "__main__":
     import argparse
     p = argparse.ArgumentParser()
-    p.add_argument("--text",      type=str, help="Content to post")
-    p.add_argument("--platforms", nargs="+", help="Target platforms")
-    p.add_argument("--schedule",  type=str, help="ISO datetime to schedule")
-    p.add_argument("--accounts",  action="store_true", help="List connected accounts")
+    p.add_argument("--accounts", action="store_true")
+    p.add_argument("--post", type=str, help="Post specific text")
     args = p.parse_args()
-
     bot = SocialPosterBot()
-
     if args.accounts:
-        accounts = bot.get_accounts()
-        print(f"\nConnected accounts ({len(accounts)}):")
-        for a in accounts:
-            print(f"  [{a.get('network','?')}] {a.get('name','?')} — ID: {a.get('id','?')}")
-    elif args.text:
-        result = bot.post_to_all_platforms(args.text, args.schedule, args.platforms)
-        print(f"Result: {json.dumps(result, indent=2)}")
+        accts = bot.get_accounts()
+        print(f"Found {len(accts)} accounts:")
+        for a in accts: print(f"  {a.get('id')} | {a.get('name','?')} | {a.get('provider','?')} | {a.get('status','?')}")
+    elif args.post:
+        accts = bot.get_accounts()
+        ids = [a["id"] for a in accts[:3]]
+        r = bot.schedule_post(args.post, ids)
+        print(f"Result: {r}")
     else:
         bot.run()
