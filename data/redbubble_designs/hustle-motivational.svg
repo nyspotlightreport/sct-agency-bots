@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
+  <rect width="3000" height="3000" fill="#111111"/>
+  <rect x="0" y="0" width="3000" height="8" fill="#FFD700"/>
+  <rect x="0" y="2992" width="3000" height="8" fill="#FFD700"/>
+  <text x="1500" y="1200" font-family="Arial Black" font-size="300" fill="#FFD700" text-anchor="middle" font-weight="900">HUSTLE</text>
+  <text x="1500" y="1550" font-family="Arial Black" font-size="200" fill="white" text-anchor="middle" font-weight="900">DAILY</text>
+  <line x1="400" y1="1650" x2="2600" y2="1650" stroke="#FFD700" stroke-width="6"/>
+  <text x="1500" y="1780" font-family="Arial" font-size="80" fill="#888888" text-anchor="middle" letter-spacing="15">NO SHORTCUTS</text>
+</svg>
