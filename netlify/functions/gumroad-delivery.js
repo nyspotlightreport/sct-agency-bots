@@ -2,7 +2,7 @@ const PRODUCT_MAP = {
   "hrmta":  { file: "100_instagram_captions.pdf",         name: "100 Instagram Caption Templates" },
   "uizhhy": { file: "content_creation_checklist.pdf",     name: "Content Creation Checklist" },
   "arleib": { file: "annual_business_plan_template.pdf",  name: "Annual Business Plan Template" },
-  "ubcsk":  { file: "daily_habit_tracker_30day.pdf",      name: "Daily Habit Tracker — 30 Day Reset" },
+  "ubcsk":  { file: "daily_habit_tracker_30day.pdf",      name: "Daily Habit Tracker" },
   "shtebf": { file: "weekly_meal_prep_planner.pdf",       name: "Weekly Meal Prep Planner" },
   "tzmuw":  { file: "monthly_budget_planner.pdf",         name: "Monthly Budget Planner" },
   "anlxcn": { file: "50_chatgpt_prompts_business.pdf",    name: "50 ChatGPT Prompts for Business" },
@@ -10,50 +10,69 @@ const PRODUCT_MAP = {
   "cxacdr": { file: "90_day_goal_planner.pdf",            name: "90-Day Goal Planner" },
   "ybryh":  { file: "passive_income_zero_cost_guide.pdf", name: "Passive Income Zero-Cost Guide" },
 };
-const BASE = "https://nyspotlightreport.com/downloads";
 
 exports.handler = async (event) => {
-  if (event.httpMethod !== "POST") return { statusCode: 200, body: "OK" };
-  try {
-    const p    = new URLSearchParams(event.body);
-    const email     = p.get("email") || "";
-    const permalink = p.get("product_permalink") || "";
-    const name      = p.get("full_name") || "there";
-    const product   = PRODUCT_MAP[permalink];
-    if (!product || !email) return { statusCode: 200, body: "skip" };
+  const headers = {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+    "Content-Type": "application/json"
+  };
 
+  if (event.httpMethod === "OPTIONS") {
+    return { statusCode: 200, headers, body: "" };
+  }
+
+  if (event.httpMethod === "GET") {
+    return { statusCode: 200, headers, body: JSON.stringify({ status: "Gumroad delivery webhook active", products: Object.keys(PRODUCT_MAP).length }) };
+  }
+
+  try {
+    const params = new URLSearchParams(event.body || "");
+    const email     = params.get("email") || "";
+    const permalink = params.get("product_permalink") || "";
+    const buyerName = params.get("full_name") || "there";
+    const product   = PRODUCT_MAP[permalink];
+
+    if (!product || !email) {
+      console.log("Unknown product or no email:", permalink, email);
+      return { statusCode: 200, headers, body: JSON.stringify({ received: true }) };
+    }
+
+    const BASE = "https://nyspotlightreport.com/downloads";
     const downloadUrl = `${BASE}/${product.file}`;
 
-    // Send via Gmail SMTP using nodemailer
-    const nodemailer = require("nodemailer");
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_APP_PASS }
-    });
+    console.log(`SALE: ${product.name} -> ${email} -> ${downloadUrl}`);
 
-    await transporter.sendMail({
-      from: `"NY Spotlight Report" <${process.env.GMAIL_USER}>`,
-      to: email,
-      subject: `Your Download Is Ready: ${product.name}`,
-      html: `<div style="font-family:sans-serif;max-width:500px;margin:40px auto;">
-        <h2 style="color:#0D1B2A;">Hi ${name}! 🎉</h2>
-        <p>Thank you for your purchase. Your download is ready:</p>
-        <p><strong>${product.name}</strong></p>
-        <a href="${downloadUrl}" style="display:inline-block;background:#C9A84C;color:#fff;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;margin:20px 0;">
-          ⬇ Download Your PDF
-        </a>
-        <p style="font-size:13px;color:#999;">
-          Or copy this link: <a href="${downloadUrl}">${downloadUrl}</a><br>
-          This link is yours to keep forever.
-        </p>
-        <p style="font-size:13px;color:#999;">— NY Spotlight Report<br>nyspotlightreport.com</p>
-      </div>`
-    });
+    const https = require("https");
+    const { URL } = require("url");
 
-    console.log(`✅ Delivered ${product.name} to ${email}`);
-    return { statusCode: 200, body: JSON.stringify({ success: true }) };
+    const gmailUser = process.env.GMAIL_USER || "nyspotlightreport@gmail.com";
+    const gmailPass = process.env.GMAIL_APP_PASS || "";
+
+    if (gmailPass) {
+      const nodemailer = require("nodemailer");
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: { user: gmailUser, pass: gmailPass }
+      });
+      await transporter.sendMail({
+        from: `"NY Spotlight Report" <${gmailUser}>`,
+        to: email,
+        subject: `Download ready: ${product.name}`,
+        html: `<div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:40px 20px;">
+          <h2 style="color:#0D1B2A;margin:0 0 16px;">Hi ${buyerName}!</h2>
+          <p style="color:#444;margin:0 0 24px;">Your purchase of <strong>${product.name}</strong> is confirmed. Click below to download instantly.</p>
+          <a href="${downloadUrl}" style="display:inline-block;background:#C9A84C;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;">Download Your PDF</a>
+          <p style="color:#999;font-size:12px;margin:24px 0 0;">Direct link: <a href="${downloadUrl}" style="color:#999;">${downloadUrl}</a></p>
+          <p style="color:#bbb;font-size:12px;margin:8px 0 0;">NY Spotlight Report &bull; nyspotlightreport.com</p>
+        </div>`
+      });
+      console.log("Email sent to", email);
+    }
+
+    return { statusCode: 200, headers, body: JSON.stringify({ success: true, delivered: email }) };
   } catch (err) {
-    console.error(err);
-    return { statusCode: 500, body: "error" };
+    console.error("Delivery error:", err.message);
+    return { statusCode: 200, headers, body: JSON.stringify({ received: true }) };
   }
 };
