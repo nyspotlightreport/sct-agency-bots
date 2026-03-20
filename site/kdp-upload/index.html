@@ -2,105 +2,187 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>KDP Upload Guide — NYSR</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KDP Copy-Paste Panel — NYSR</title>
 <style>
-  body{font-family:-apple-system,sans-serif;max-width:740px;margin:60px auto;padding:20px;color:#111;line-height:1.6;}
-  h1{color:#0D1B2A;border-bottom:3px solid #C9A84C;padding-bottom:12px;margin-bottom:24px;}
-  .book-card{background:#f8f8f6;border-radius:10px;padding:16px 20px;margin:10px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-  .book-name{font-size:14px;font-weight:500;color:#0D1B2A;flex:1;}
-  .book-price{font-size:13px;color:#555;margin-right:8px;}
-  .btn-kdp{background:#FF9900;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap;}
-  .btn-dl{background:#0D1B2A;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap;margin-right:8px;}
-  .steps{background:#EAF3DE;border-radius:10px;padding:16px 20px;margin:20px 0;}
-  .steps h3{color:#173404;margin:0 0 10px;}
-  .steps ol{margin:0;padding-left:20px;}
-  .steps li{color:#27500A;margin:6px 0;font-size:14px;}
-  .header-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-  .total-badge{background:#0D1B2A;color:#C9A84C;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f4f0;color:#111;padding:24px;}
+h1{font-size:20px;font-weight:600;color:#0D1B2A;margin-bottom:4px;}
+.sub{color:#666;font-size:13px;margin-bottom:24px;}
+.book{background:#fff;border-radius:12px;border:1px solid #e0ddd5;padding:20px 24px;margin-bottom:16px;}
+.book-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.book-num{background:#0D1B2A;color:#C9A84C;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.book-title{font-size:15px;font-weight:600;color:#0D1B2A;margin-left:10px;flex:1;}
+.dl-btn{background:#C9A84C;color:#0D1B2A;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.field{display:flex;flex-direction:column;gap:4px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.05em;}
+.field-box{background:#f8f8f6;border:1px solid #e0ddd5;border-radius:6px;padding:8px 10px;font-size:13px;color:#0D1B2A;line-height:1.5;position:relative;}
+.field-box textarea{width:100%;background:transparent;border:none;outline:none;font-size:13px;color:#0D1B2A;resize:none;font-family:inherit;line-height:1.5;}
+.copy-btn{position:absolute;top:6px;right:6px;background:#0D1B2A;color:#fff;border:none;border-radius:4px;padding:3px 8px;font-size:10px;cursor:pointer;font-weight:600;}
+.copy-btn:hover{background:#C9A84C;color:#0D1B2A;}
+.copy-btn.copied{background:#27500A;color:#fff;}
+.tag{display:inline-block;background:#EAF3DE;color:#173404;border-radius:4px;padding:2px 7px;font-size:12px;margin:2px;}
+.price-badge{background:#EAF3DE;color:#173404;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;}
+.note{background:#FFF8E7;border-left:3px solid #C9A84C;padding:10px 14px;border-radius:0 6px 6px 0;font-size:12px;color:#555;margin-bottom:16px;}
 </style>
 </head>
 <body>
-<h1>KDP Book Upload — 16 Books Ready</h1>
+<h1>KDP Upload — Copy-Paste Panel</h1>
+<p class="sub">16 books ready. Click any field to select all, then copy. Fill KDP form field by field.</p>
 
-<div class="steps">
-  <h3>Upload steps (2 min per book)</h3>
-  <ol>
-    <li>Click "Download PDF" to save the file</li>
-    <li>Click "Upload to KDP" to open the KDP new title page</li>
-    <li>Fill in title (pre-filled below), author = "ProFlow Digital", language = English</li>
-    <li>Upload the PDF as manuscript, set trim size 6x9, no bleed</li>
-    <li>Set price, click Publish. Done.</li>
-  </ol>
+<div class="note">
+  KDP required fields: Title · Subtitle · Author · Description · Keywords (7 max) · Categories (2) · Price · Upload PDF<br>
+  Author name: <strong>ProFlow Digital</strong> &nbsp;|&nbsp; Publisher: <strong>NY Spotlight Report</strong> &nbsp;|&nbsp; Language: <strong>English</strong> &nbsp;|&nbsp; Trim: <strong>6 x 9 in</strong>
 </div>
 
-<div class="header-bar">
-  <span style="font-size:14px;color:#555;">16 books · Est. $160–$320/mo at 1-2 sales/book/mo</span>
-  <span class="total-badge">$6.99–$8.99 each</span>
-</div>
+<script>
+function copy(btn, text) {
+  navigator.clipboard.writeText(text);
+  btn.textContent = "Copied!";
+  btn.classList.add("copied");
+  setTimeout(()=>{btn.textContent="Copy";btn.classList.remove("copied");},1500);
+}
+function field(label, value, full=false) {
+  const enc = value.replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  return `<div class="field${full?" full":""}">
+    <label>${label}</label>
+    <div class="field-box" style="cursor:text;">
+      <span>${enc}</span>
+      <button class="copy-btn" onclick="copy(this,'${value.replace(/'/g,"\'")}')">Copy</button>
+    </div>
+  </div>`;
+}
+function book(n, title, subtitle, price, desc, keywords, cat1, cat2, file) {
+  return `<div class="book">
+    <div class="book-header">
+      <div style="display:flex;align-items:center;">
+        <div class="book-num">${n}</div>
+        <span class="book-title">${title}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="price-badge">$${price}</span>
+        <a href="https://nyspotlightreport.com/downloads/${file}" class="dl-btn" download>Download PDF</a>
+      </div>
+    </div>
+    <div class="fields">
+      ${field("Title", title)}
+      ${field("Subtitle", subtitle)}
+      ${field("Author", "ProFlow Digital")}
+      ${field("Publisher", "NY Spotlight Report")}
+      ${field("Description (500 chars max)", desc, true)}
+      ${field("Keywords (paste as 7 separate entries)", keywords, true)}
+      ${field("Primary Category", cat1)}
+      ${field("Secondary Category", cat2)}
+      ${field("List Price (USD)", price)}
+    </div>
+  </div>`;
+}
 
-<div class="book-card">
-  <span class="book-name">90-Day Goal Planner</span>
-  <span class="book-price">$7.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/90-Day_Goal_Planner.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Daily Habit Tracker — 30 Day Reset</span>
-  <span class="book-price">$6.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Daily_Habit_Tracker_30_Day_Reset.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Monthly Budget Planner Finance Tracker</span>
-  <span class="book-price">$7.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Monthly_Budget_Planner_Finance_Tracker.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Business Plan Template Annual</span>
-  <span class="book-price">$8.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Business_Plan_Template_Annual.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Fitness Workout Log 90 Days</span>
-  <span class="book-price">$6.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Fitness_Workout_Log_90_Days.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Gratitude Journal 365 Days</span>
-  <span class="book-price">$7.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Gratitude_Journal_365_Days.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Password Keeper Log Book</span>
-  <span class="book-price">$5.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Password_Keeper_Log_Book.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Sudoku Puzzles 200 Easy to Hard</span>
-  <span class="book-price">$7.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Sudoku_Puzzles_200_Easy_to_Hard.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Weekly Meal Prep Planner</span>
-  <span class="book-price">$6.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Weekly_Meal_Prep_Planner.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
-<div class="book-card">
-  <span class="book-name">Word Search Puzzles 100 Puzzles</span>
-  <span class="book-price">$7.99</span>
-  <a href="https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/kdp_books/Word_Search_Puzzles_100_Puzzles.pdf" class="btn-dl" download>Download PDF</a>
-  <a href="https://kdp.amazon.com/en_US/title-setup/paperback/new/details" class="btn-kdp" target="_blank">Upload to KDP</a>
-</div>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("books");
+  container.innerHTML = [
 
-<p style="text-align:center;margin-top:30px;color:#999;font-size:13px;">
-  16 books total · KDP account: A243Z22D8CO32X · <a href="https://kdp.amazon.com" target="_blank">kdp.amazon.com</a>
-</p>
+    book(1,"90-Day Goal Planner","Quarterly Goals Tracker with Weekly Reviews and Habit Tracking",
+    "12.99",
+    "Set and achieve your biggest goals with this structured 90-day planning system. Features quarterly goal setting, weekly review templates, daily priority lists, habit tracking, and end-of-quarter reflection pages. Perfect for entrepreneurs, students, and anyone who wants to stop drifting and start executing. Undated format — start any time.",
+    "goal planner printable, 90 day planner, quarterly goals notebook, productivity planner, daily planner journal, goal setting workbook, weekly planner undated",
+    "Books > Self-Help > Motivational & Inspirational",
+    "Books > Business & Money > Management & Leadership",
+    "90_day_goal_planner.pdf"),
+
+    book(2,"Daily Habit Tracker 30 Day Reset","Build Better Habits in 30 Days with Daily Tracking and Weekly Reviews",
+    "6.99",
+    "Reset your habits with this focused 30-day tracker. Track up to 5 daily habits, record your mood, note wins and struggles, and review progress each week. Minimalist design keeps you focused without overwhelm. Includes a habit selection guide, streaks tracker, and end-of-month reflection template.",
+    "habit tracker notebook, daily habit journal, 30 day challenge planner, habit building workbook, daily routine tracker, self discipline journal, morning routine planner",
+    "Books > Self-Help > Personal Transformation",
+    "Books > Health, Fitness & Dieting > Diets & Weight Loss",
+    "daily_habit_tracker_30day.pdf"),
+
+    book(3,"Monthly Budget Planner Finance Tracker","12-Month Personal Budget and Expense Tracker with Bill Payment Log",
+    "7.99",
+    "Take control of your money with this comprehensive 12-month budget planner. Each month includes income tracking, expense categories, bill payment tracker, savings goal progress, and a monthly summary. Also includes a debt payoff tracker and annual summary page. Works for any budget style.",
+    "budget planner notebook, monthly budget tracker, personal finance journal, expense tracker, money management planner, bill payment tracker, savings planner",
+    "Books > Business & Money > Personal Finance > Budgeting & Money Management",
+    "Books > Self-Help > Personal Transformation",
+    "monthly_budget_planner.pdf"),
+
+    book(4,"Weekly Meal Prep Planner","7-Day Meal Planning Journal with Grocery Lists, Macros, and Recipe Cards",
+    "6.99",
+    "Plan a week of healthy meals in under 20 minutes. This meal prep planner includes 7-day meal planning grids, automated grocery lists by category, macro tracking per meal, 20+ recipe card templates, and prep day checklists. Reduce food waste, save money, and eat better every week.",
+    "meal prep planner, weekly meal planning journal, grocery list notebook, recipe planner, healthy eating tracker, meal planning workbook, food journal",
+    "Books > Health, Fitness & Dieting > Nutrition",
+    "Books > Cookbooks, Food & Wine > Cooking by Ingredient",
+    "weekly_meal_prep_planner.pdf"),
+
+    book(5,"Business Plan Template Annual","Complete One-Page and Full Annual Business Plan with OKRs and Revenue Projections",
+    "8.99",
+    "Build a professional business plan with this complete annual planning template. Includes one-page business overview, 12-month revenue and expense projections, OKR goal framework, marketing plan template, competitive analysis grid, risk register, and quarterly milestone tracking. Used by startups and small businesses.",
+    "business plan template, annual business planner, startup planning workbook, OKR goal setting, business strategy planner, revenue projection template, entrepreneur notebook",
+    "Books > Business & Money > Entrepreneurship",
+    "Books > Business & Money > Management & Leadership > Planning & Forecasting",
+    "annual_business_plan_template.pdf"),
+
+    book(6,"Fitness Workout Log 90 Days","90-Day Exercise Tracker with Strength, Cardio, and Progress Measurements",
+    "6.99",
+    "Track every workout for 90 days with this dedicated fitness journal. Log sets, reps, weights, cardio sessions, rest days, and body measurements. Includes weekly goal setting, personal record tracking, rest and nutrition notes, and before/after progress pages. Works for any fitness program.",
+    "workout log book, fitness tracker journal, 90 day workout planner, exercise notebook, gym log book, strength training tracker, weight loss journal",
+    "Books > Health, Fitness & Dieting > Exercise & Fitness",
+    "Books > Health, Fitness & Dieting > Diets & Weight Loss",
+    "Fitness_Workout_Log_90_Days.pdf"),
+
+    book(7,"Gratitude Journal 365 Days","Daily Gratitude Prompts and Reflection Journal for One Full Year",
+    "7.99",
+    "Build a daily gratitude practice with 365 days of thoughtful prompts, affirmations, and reflection space. Each day includes a morning gratitude entry, an evening reflection, and a positive intention. Studies show consistent gratitude journaling reduces stress, improves mood, and increases life satisfaction. Undated — start any day.",
+    "gratitude journal, daily gratitude prompts, 365 day journal, mindfulness journal, daily reflection notebook, positive thinking journal, self care journal",
+    "Books > Self-Help > Happiness",
+    "Books > Self-Help > Motivational & Inspirational",
+    "Gratitude_Journal_365_Days.pdf"),
+
+    book(8,"Password Keeper Log Book","Secure Password Organizer and Internet Account Tracker with Alphabetical Index",
+    "5.99",
+    "Keep all your passwords, usernames, and account information organized in one secure place. Features alphabetical A-Z index tabs, fields for website, username, password, email, and notes for 300+ accounts. Also includes a section for WiFi networks, PINs, and software license keys. Compact and travel-friendly.",
+    "password keeper log book, password organizer, internet password book, account tracker, password journal, login organizer notebook, password manager book",
+    "Books > Computers & Technology > Networking & Cloud Computing > Internet, Groupware, & Telecommunications",
+    "Books > Business & Money > Office Management",
+    "Password_Keeper_Log_Book.pdf"),
+
+    book(9,"Sudoku Puzzles 200 Easy to Hard","200 Sudoku Puzzles for Adults — Easy, Medium, Hard, and Expert Levels",
+    "7.99",
+    "Challenge your mind with 200 Sudoku puzzles across four skill levels. Includes 50 Easy, 60 Medium, 60 Hard, and 30 Expert puzzles with complete solutions at the back. Large print format makes solving comfortable. Perfect for commuters, travelers, and daily mental exercise. Suitable for ages 12 and up.",
+    "sudoku puzzles book, sudoku for adults, large print sudoku, brain games book, number puzzles adults, sudoku puzzle book easy to hard, mental exercise book",
+    "Books > Humor & Entertainment > Puzzles & Games > Sudoku",
+    "Books > Humor & Entertainment > Puzzles & Games > Logic & Brain Teasers",
+    "Sudoku_Puzzles_200_Easy_to_Hard.pdf"),
+
+    book(10,"Word Search Puzzles 100 Puzzles","100 Word Search Puzzles for Adults — Large Print with Solutions",
+    "7.99",
+    "Enjoy 100 themed word search puzzles in a comfortable large-print format. Topics include travel, food, animals, movies, sports, history, and more. Each puzzle features 15-25 words across moderate difficulty. Complete solutions provided at the back. A perfect screen-free activity for relaxation and focus.",
+    "word search puzzles book, large print word search, word search for adults, word puzzle book, word games adults, brain teaser book, activity book adults",
+    "Books > Humor & Entertainment > Puzzles & Games > Word Searches",
+    "Books > Humor & Entertainment > Puzzles & Games > Logic & Brain Teasers",
+    "Word_Search_Puzzles_100_Puzzles.pdf"),
+
+  ].join("\n");
+});
+</script>
+
+<div id="books"></div>
+
+<div style="background:#EAF3DE;border-radius:10px;padding:16px 20px;margin-top:20px;">
+  <strong style="color:#173404;font-size:13px;">KDP Settings for every book:</strong>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px;">
+    <div style="font-size:12px;color:#27500A;"><strong>Trim Size:</strong> 6 x 9 inches</div>
+    <div style="font-size:12px;color:#27500A;"><strong>Interior:</strong> Black & White</div>
+    <div style="font-size:12px;color:#27500A;"><strong>Paper:</strong> White</div>
+    <div style="font-size:12px;color:#27500A;"><strong>Bleed:</strong> No bleed</div>
+    <div style="font-size:12px;color:#27500A;"><strong>Cover:</strong> Use KDP Cover Creator</div>
+    <div style="font-size:12px;color:#27500A;"><strong>Royalty:</strong> 60% (paperback)</div>
+    <div style="font-size:12px;color:#27500A;"><strong>Distribution:</strong> All territories</div>
+    <div style="font-size:12px;color:#27500A;"><strong>Account ID:</strong> A243Z22D8CO32X</div>
+    <div style="font-size:12px;color:#27500A;"><strong>KDP URL:</strong> <a href="https://kdp.amazon.com" target="_blank" style="color:#0D1B2A;">kdp.amazon.com</a></div>
+  </div>
+</div>
 </body>
 </html>
