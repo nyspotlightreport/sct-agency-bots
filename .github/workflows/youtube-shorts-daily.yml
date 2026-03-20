@@ -1,31 +1,30 @@
 name: 🎬 YouTube Shorts Generator (Daily)
-
 on:
   schedule:
-    - cron: '0 7 * * *'
+    - cron: '0 14 * * *'
   workflow_dispatch:
 
 jobs:
-  generate:
+  generate-short:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests anthropic
-      - name: Generate Short script
+      - name: Install deps
+        run: pip install requests -q
+      - name: Generate TubeIQ-Optimized Short
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-        run: python bots/youtube_shorts_generator.py
-      - name: Commit script
-        run: |
-          git config user.name "NYSR Bot"
-          git config user.email "nyspotlightreport@gmail.com"
-          git add data/youtube_shorts/ || true
-          git diff --staged --quiet || git commit -m "Add Short script $(date +%Y-%m-%d)" && git push || true
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          TUBEIQ_API_KEY: ${{ secrets.TUBEIQ_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 bots/youtube_tubeiq_enhanced_bot.py
+      - name: Save script artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shorts-script-${{ github.run_number }}
+          path: data/shorts_script_*.json
+          retention-days: 30
