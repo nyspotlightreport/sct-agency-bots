@@ -24,15 +24,22 @@ jobs:
           netlify env:set ANTHROPIC_API_KEY     "$ANTHROPIC_KEY_VAL"
           netlify env:set ALPHA_VANTAGE_API_KEY "$AV_KEY_VAL"
           netlify env:set OPENAI_API_KEY        "$OPENAI_KEY_VAL"
-          echo "✅ Env vars set"
+          netlify env:set HUBSPOT_API_KEY       "$HUBSPOT_KEY_VAL"
+          echo "✅ Env vars set (including HubSpot)"
         env:
-          NEWSAPI_KEY_VAL:   ${{ secrets.NEWSAPI_KEY }}
-          ANTHROPIC_KEY_VAL: ${{ secrets.ANTHROPIC_API_KEY }}
-          AV_KEY_VAL:        ${{ secrets.ALPHA_VANTAGE_API_KEY }}
-          OPENAI_KEY_VAL:    ${{ secrets.OPENAI_API_KEY }}
+          NEWSAPI_KEY_VAL:    ${{ secrets.NEWSAPI_KEY }}
+          ANTHROPIC_KEY_VAL:  ${{ secrets.ANTHROPIC_API_KEY }}
+          AV_KEY_VAL:         ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          OPENAI_KEY_VAL:     ${{ secrets.OPENAI_API_KEY }}
+          HUBSPOT_KEY_VAL:    ${{ secrets.HUBSPOT_API_KEY }}
       - name: Install dependencies
         working-directory: site
         run: npm install
-      - name: Deploy to Netlify
+      - name: Deploy to Netlify (with functions)
         working-directory: site
-        run: netlify deploy --prod --dir .
+        run: |
+          netlify deploy --prod \
+            --dir . \
+            --functions netlify/functions \
+            --message "Deploy from GitHub Actions"
+          echo "✅ Deploy complete with functions"
