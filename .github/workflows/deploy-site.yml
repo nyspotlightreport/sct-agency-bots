@@ -18,28 +18,18 @@ jobs:
         with: {node-version: '20'}
       - name: Install netlify CLI
         run: npm install -g netlify-cli
-      - name: Install function dependencies
-        working-directory: site/netlify/functions
-        run: npm install
       - name: Set Netlify env vars
         working-directory: site
         run: |
-          netlify env:set NEWSAPI_KEY           "$NEWSAPI_KEY_VAL"
-          netlify env:set ANTHROPIC_API_KEY     "$ANTHROPIC_KEY_VAL"
-          netlify env:set ALPHA_VANTAGE_API_KEY "$AV_KEY_VAL"
-          netlify env:set OPENAI_API_KEY        "$OPENAI_KEY_VAL"
-          netlify env:set HUBSPOT_API_KEY       "$HUBSPOT_KEY_VAL"
-          netlify env:set GMAIL_USER            "$GMAIL_USER_VAL"
-          netlify env:set GMAIL_APP_PASS        "$GMAIL_PASS_VAL"
-          echo "✅ Env vars set"
+          netlify env:set GMAIL_USER      "$GMAIL_USER_VAL"   || true
+          netlify env:set GMAIL_APP_PASS  "$GMAIL_PASS_VAL"   || true
+          netlify env:set ANTHROPIC_API_KEY "$ANTHROPIC_KEY_VAL" || true
+          netlify env:set HUBSPOT_API_KEY "$HUBSPOT_KEY_VAL"  || true
         env:
-          NEWSAPI_KEY_VAL:    ${{ secrets.NEWSAPI_KEY }}
-          ANTHROPIC_KEY_VAL:  ${{ secrets.ANTHROPIC_API_KEY }}
-          AV_KEY_VAL:         ${{ secrets.ALPHA_VANTAGE_API_KEY }}
-          OPENAI_KEY_VAL:     ${{ secrets.OPENAI_API_KEY }}
-          HUBSPOT_KEY_VAL:    ${{ secrets.HUBSPOT_API_KEY }}
           GMAIL_USER_VAL:     ${{ secrets.GMAIL_USER }}
           GMAIL_PASS_VAL:     ${{ secrets.GMAIL_APP_PASS }}
+          ANTHROPIC_KEY_VAL:  ${{ secrets.ANTHROPIC_API_KEY }}
+          HUBSPOT_KEY_VAL:    ${{ secrets.HUBSPOT_API_KEY }}
       - name: Install site dependencies
         working-directory: site
         run: npm install
@@ -50,4 +40,4 @@ jobs:
             --dir . \
             --functions netlify/functions \
             --message "Deploy from GitHub Actions"
-          echo "✅ Deploy complete"
+          echo "Deploy complete"
