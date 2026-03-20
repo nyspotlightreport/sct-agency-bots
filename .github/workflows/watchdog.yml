@@ -44,7 +44,7 @@ jobs:
             -H "Tags: chart_increasing,robot" \
             -H "Priority: default" \
             -d "Workflows OK: $(echo "$SUCCESSES" | wc -c) chars | Issues: ${FAILURES:-None}" \
-            "https://ntfy.sh/nysr-chairman-sct"
+            "https://ntfy.sh/nysr-chairman1sct"
 
       - name: Alert on failures
         if: steps.check.outputs.failures != ''
@@ -55,4 +55,4 @@ jobs:
             -H "Priority: high" \
             -H "Actions: view, Open GitHub, https://github.com/${{ github.repository }}/actions" \
             -d "Failed workflows: ${{ steps.check.outputs.failures }}\n\nOpen GitHub Actions to see details." \
-            "https://ntfy.sh/nysr-chairman-sct"
+            "https://ntfy.sh/nysr-chairman1sct"
