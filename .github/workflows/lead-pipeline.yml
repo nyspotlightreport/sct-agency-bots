@@ -25,7 +25,7 @@ jobs:
           APOLLO_API_KEY:    ${{ secrets.APOLLO_API_KEY }}
           HUBSPOT_API_KEY:   ${{ secrets.HUBSPOT_API_KEY }}
           CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: leads-${{ github.run_number }}
           path: leads_*.json
