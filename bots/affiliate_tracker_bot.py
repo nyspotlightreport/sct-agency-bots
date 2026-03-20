@@ -35,6 +35,9 @@ SITE_URL = "https://nyspotlightreport.com"
 class AffiliateTrackerBot(BaseBot):
     VERSION = "2.0.0"
 
+    def __init__(self):
+        super().__init__("AffiliateTrackerBot")
+
     def generate_affiliate_post(self, program):
         """Generate a content piece promoting an affiliate product"""
         system = "You are S.C. Thomas writing about tools for media professionals."
