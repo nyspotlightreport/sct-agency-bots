@@ -8,34 +8,31 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID:    ${{ secrets.NETLIFY_SITE_ID }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: {node-version: '20'}
       - name: Install netlify CLI
         run: npm install -g netlify-cli
-      - name: Set Netlify env vars (ensures they're injected into functions)
+      - name: Set Netlify env vars
         working-directory: site
         run: |
-          netlify env:set NEWSAPI_KEY           "$NEWSAPI_KEY"           --site "$NETLIFY_SITE_ID"
-          netlify env:set ANTHROPIC_API_KEY     "$ANTHROPIC_API_KEY"     --site "$NETLIFY_SITE_ID"
-          netlify env:set ALPHA_VANTAGE_API_KEY "$ALPHA_VANTAGE_API_KEY" --site "$NETLIFY_SITE_ID"
-          netlify env:set OPENAI_API_KEY        "$OPENAI_API_KEY"        --site "$NETLIFY_SITE_ID"
-          netlify env:set PUBLER_API_KEY        "$PUBLER_API_KEY"        --site "$NETLIFY_SITE_ID"
+          netlify env:set NEWSAPI_KEY           "$NEWSAPI_KEY_VAL"
+          netlify env:set ANTHROPIC_API_KEY     "$ANTHROPIC_KEY_VAL"
+          netlify env:set ALPHA_VANTAGE_API_KEY "$AV_KEY_VAL"
+          netlify env:set OPENAI_API_KEY        "$OPENAI_KEY_VAL"
+          echo "✅ Env vars set"
         env:
-          NETLIFY_AUTH_TOKEN:    ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID:       ${{ secrets.NETLIFY_SITE_ID }}
-          NEWSAPI_KEY:           ${{ secrets.NEWSAPI_KEY }}
-          ANTHROPIC_API_KEY:     ${{ secrets.ANTHROPIC_API_KEY }}
-          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
-          OPENAI_API_KEY:        ${{ secrets.OPENAI_API_KEY }}
-          PUBLER_API_KEY:        ${{ secrets.PUBLER_API_KEY }}
+          NEWSAPI_KEY_VAL:   ${{ secrets.NEWSAPI_KEY }}
+          ANTHROPIC_KEY_VAL: ${{ secrets.ANTHROPIC_API_KEY }}
+          AV_KEY_VAL:        ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          OPENAI_KEY_VAL:    ${{ secrets.OPENAI_API_KEY }}
       - name: Install dependencies
         working-directory: site
         run: npm install
-      - name: Deploy to Netlify (with env vars now live)
+      - name: Deploy to Netlify
         working-directory: site
-        run: netlify deploy --prod --dir . --site "$NETLIFY_SITE_ID" --auth "$NETLIFY_AUTH_TOKEN"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID:    ${{ secrets.NETLIFY_SITE_ID }}
+        run: netlify deploy --prod --dir .
