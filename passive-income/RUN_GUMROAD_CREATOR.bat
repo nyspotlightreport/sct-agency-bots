@@ -1,7 +1,8 @@
 @echo off
 chcp 65001 > nul
 echo ==========================================
-echo   GUMROAD PRODUCT CREATOR - 10 new items
+echo   GUMROAD PRODUCT CREATOR v2
+echo   Creates products WITH PDF files attached
 echo ==========================================
 echo.
 pip install playwright -q
