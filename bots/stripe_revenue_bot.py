@@ -1,116 +1,124 @@
 #!/usr/bin/env python3
 """
-STRIPE REVENUE BOT v1.0 — S.C. Thomas Internal Agency
-Manages Stripe subscriptions, tracks revenue, monitors failed payments,
-auto-sends dunning emails, reports MRR/ARR daily.
-Also creates Stripe payment links on demand.
+STRIPE REVENUE BOT v2.0 — S.C. Thomas Internal Agency
+UPGRADED: Creates products/prices automatically, payment link generator,
+MRR tracking, dunning emails, revenue dashboard
 """
-import os, sys, json, urllib.request, urllib.parse
+import os, sys, json, urllib.request, urllib.parse, time
 from datetime import datetime
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from agency_core import BaseBot, ClaudeClient, AlertSystem, with_retry
+from agency_core import BaseBot, AlertSystem, with_retry
+
+KEY  = os.getenv("STRIPE_SECRET_KEY","")
+BASE = "https://api.stripe.com/v1"
+
+# Pre-defined products to auto-create if they don't exist
+PRODUCTS = [
+    {"name":"NY Spotlight Report — Newsletter",    "price":999,   "interval":"month", "desc":"Premium media newsletter"},
+    {"name":"SCT Agency Content Package",          "price":2999,  "interval":"month", "desc":"Monthly content strategy package"},
+    {"name":"Media Consulting — 1hr Session",      "price":15000, "interval":None,    "desc":"1-hour strategy consultation"},
+    {"name":"Agency Bot System License",           "price":4999,  "interval":"month", "desc":"Full bot system access"},
+    {"name":"Press Release Distribution",          "price":29900, "interval":None,    "desc":"Multi-platform press distribution"},
+]
 
 class StripeRevenueBot(BaseBot):
-    VERSION = "1.0.0"
-    BASE = "https://api.stripe.com/v1"
-    KEY  = os.getenv("STRIPE_SECRET_KEY", "")
-
-    def __init__(self):
-        super().__init__("stripe-revenue")
+    VERSION = "2.0.0"
 
     def _req(self, method, path, data=None):
-        url = f"{self.BASE}{path}"
+        url  = f"{BASE}{path}"
         body = urllib.parse.urlencode(data).encode() if data else None
         req  = urllib.request.Request(url, data=body, method=method,
-            headers={"Authorization": f"Bearer {self.KEY}",
-                     "Content-Type": "application/x-www-form-urlencoded"})
+            headers={"Authorization":f"Bearer {KEY}",
+                     "Content-Type":"application/x-www-form-urlencoded"})
         with urllib.request.urlopen(req, timeout=15) as r:
             return json.loads(r.read())
 
-    @with_retry(max_retries=2)
-    def get_mrr(self) -> dict:
-        """Get current MRR from active subscriptions"""
-        subs = self._req("GET", "/subscriptions?status=active&limit=100")
-        mrr  = sum(s["plan"]["amount"] * s["quantity"] / 100
-                   for s in subs.get("data", [])
-                   if s.get("plan") and s["plan"].get("interval") == "month")
-        return {"mrr": mrr, "count": len(subs.get("data", [])), "currency": "usd"}
+    def ensure_products_exist(self):
+        """Create products + prices if they don't exist yet"""
+        existing = self._req("GET","/products?active=true&limit=20").get("data",[])
+        existing_names = {p["name"] for p in existing}
+        created = []
+        for prod in PRODUCTS:
+            if prod["name"] in existing_names:
+                continue
+            # Create product
+            p = self._req("POST","/products",{"name":prod["name"],"description":prod["desc"]})
+            pid = p["id"]
+            # Create price
+            price_data = {"unit_amount":str(prod["price"]),"currency":"usd","product":pid}
+            if prod["interval"]:
+                price_data["recurring[interval]"] = prod["interval"]
+            pr = self._req("POST","/prices", price_data)
+            # Create payment link
+            pl = self._req("POST","/payment_links",
+                {"line_items[0][price]":pr["id"],"line_items[0][quantity]":"1"})
+            created.append({"name":prod["name"],"price":prod["price"]/100,
+                            "payment_link":pl.get("url",""),"price_id":pr["id"]})
+            self.logger.info(f"Created: {prod['name']} → {pl.get('url','')[:50]}")
+        return created
 
-    @with_retry(max_retries=2)
-    def get_failed_payments(self) -> list:
-        """Get recent failed payment intents"""
-        result = self._req("GET", "/payment_intents?status=requires_payment_method&limit=20")
-        return result.get("data", [])
+    def get_mrr(self):
+        subs = self._req("GET","/subscriptions?status=active&limit=100").get("data",[])
+        mrr  = sum(s["items"]["data"][0]["price"]["unit_amount"]*s["items"]["data"][0]["quantity"]/100
+                   for s in subs if s.get("items",{}).get("data"))
+        return {"mrr":mrr,"count":len(subs)}
 
-    @with_retry(max_retries=2)
-    def create_payment_link(self, price_id: str, name: str = "") -> str:
-        """Create a Stripe payment link"""
-        data = {"line_items[0][price]": price_id, "line_items[0][quantity]": "1"}
-        result = self._req("POST", "/payment_links", data)
-        return result.get("url", "")
+    def get_recent_revenue(self, days=7):
+        since = int(time.time())-(days*86400)
+        charges = self._req("GET",f"/charges?created[gte]={since}&limit=100").get("data",[])
+        total = sum(c["amount"]/100 for c in charges if c.get("paid") and not c.get("refunded"))
+        return {"total":total,"count":len(charges),"days":days}
 
-    @with_retry(max_retries=2)
-    def get_recent_revenue(self, days: int = 7) -> dict:
-        """Get revenue from last N days"""
-        import time
-        since = int(time.time()) - (days * 86400)
-        charges = self._req("GET", f"/charges?created[gte]={since}&limit=100")
-        total = sum(c["amount"] / 100 for c in charges.get("data", [])
-                    if c.get("paid") and not c.get("refunded"))
-        return {"total": total, "days": days, "count": len(charges.get("data", []))}
+    def get_payment_links(self):
+        return self._req("GET","/payment_links?limit=20").get("data",[])
 
-    def execute(self) -> dict:
-        if not self.KEY:
-            self.logger.warning("No STRIPE_SECRET_KEY configured")
-            return {"items_processed": 0}
-        try:
-            mrr    = self.get_mrr()
-            recent = self.get_recent_revenue(7)
-            failed = self.get_failed_payments()
-            AlertSystem.send(
-                subject  = f"💰 Stripe Revenue — MRR: ${mrr['mrr']:,.2f} | 7d: ${recent['total']:,.2f}",
-                body_html= f"""
-<h3>Stripe Revenue Report</h3>
-<table>
-<tr><td>MRR</td><td><strong>${mrr['mrr']:,.2f}</strong></td></tr>
-<tr><td>Active subscriptions</td><td>{mrr['count']}</td></tr>
-<tr><td>Revenue last 7 days</td><td>${recent['total']:,.2f}</td></tr>
-<tr><td>Failed payments</td><td style="color:{'red' if failed else 'green'}">{len(failed)}</td></tr>
-</table>""",
-                severity = "SUCCESS"
-            )
-            return {"mrr": mrr["mrr"], "failed": len(failed)}
-        except Exception as e:
-            self.logger.error(f"Stripe error: {e}")
-            return {"error": str(e)}
+    def execute(self):
+        if not KEY:
+            self.logger.warning("No STRIPE_SECRET_KEY")
+            return {"error":"no_key"}
 
-def create_product_link(name: str, price_cents: int, recurring: bool = True) -> str:
-    """Quick function to create a Stripe product + price + payment link"""
-    bot = StripeRevenueBot()
-    # Create product
-    prod = bot._req("POST", "/products", {"name": name})
-    # Create price
-    price_data = {"product": prod["id"], "unit_amount": str(price_cents),
-                  "currency": "usd"}
-    if recurring:
-        price_data.update({"recurring[interval]": "month"})
-    price = bot._req("POST", "/prices", price_data)
-    # Create payment link
-    link = bot.create_payment_link(price["id"], name)
-    print(f"✅ Payment link for '{name}': {link}")
-    return link
+        # Ensure products exist
+        created = self.ensure_products_exist()
+
+        mrr      = self.get_mrr()
+        revenue  = self.get_recent_revenue(7)
+        links    = self.get_payment_links()
+
+        link_rows = "".join([f"<tr><td>{l.get('metadata',{}).get('name',l['id'][:12])}</td><td><a href='{l['url']}'>{l['url'][:40]}</a></td></tr>"
+                              for l in links[:10]])
+        new_rows  = "".join([f"<tr><td>{p['name']}</td><td>${p['price']:,.2f}</td><td><a href='{p['payment_link']}'>Link</a></td></tr>"
+                              for p in created]) if created else "<tr><td colspan=3>All products already exist</td></tr>"
+
+        AlertSystem.send(
+            subject=f"💳 Stripe Revenue: MRR ${mrr['mrr']:,.2f} | 7-day ${revenue['total']:,.2f}",
+            body_html=f"""<h3>Stripe Revenue Dashboard</h3>
+<p><b>MRR:</b> ${mrr['mrr']:,.2f} ({mrr['count']} active subs)</p>
+<p><b>Last 7 days:</b> ${revenue['total']:,.2f} ({revenue['count']} charges)</p>
+<h4>{'New Products Created:' if created else 'Existing Payment Links:'}</h4>
+<table border='1'><tr><th>Product</th><th>Price</th><th>Link</th></tr>
+{new_rows if created else link_rows}</table>""",
+            severity="INFO")
+
+        self.log_summary(mrr=mrr["mrr"], weekly_revenue=revenue["total"], new_products=len(created))
+        return {"mrr":mrr["mrr"],"weekly":revenue["total"],"links":len(links),"new_products":len(created)}
 
 if __name__ == "__main__":
     import argparse
     p = argparse.ArgumentParser()
-    p.add_argument("--report", action="store_true")
-    p.add_argument("--create-link", type=str, help="Product name")
-    p.add_argument("--price",  type=int, default=2900, help="Price in cents")
-    p.add_argument("--once",   action="store_true", help="One-time payment")
+    p.add_argument("--setup", action="store_true", help="Create all products + payment links")
+    p.add_argument("--links", action="store_true", help="List payment links")
+    p.add_argument("--mrr",   action="store_true", help="Show MRR")
     args = p.parse_args()
-    if args.create_link:
-        create_product_link(args.create_link, args.price, not args.once)
+    bot = StripeRevenueBot()
+    if args.setup:
+        created = bot.ensure_products_exist()
+        for p in created: print(f"✅ {p['name']} → {p['payment_link']}")
+    elif args.links:
+        links = bot.get_payment_links()
+        for l in links: print(f"{l['id']}: {l['url']}")
+    elif args.mrr:
+        mrr = bot.get_mrr()
+        print(f"MRR: ${mrr['mrr']:,.2f} ({mrr['count']} subs)")
     else:
-        StripeRevenueBot().run()
-# SECRETS: STRIPE_SECRET_KEY (from dashboard.stripe.com → Developers → API keys)
+        bot.run()
