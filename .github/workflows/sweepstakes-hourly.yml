@@ -2,50 +2,44 @@ name: 🎰 Sweepstakes Hunter (Hourly)
 
 on:
   schedule:
-    - cron: '0 * * * *'   # Every hour, on the hour
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
-  hunt-and-enter:
+  hunt-and-digest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install requests feedparser beautifulsoup4 lxml
+      - run: pip install requests feedparser beautifulsoup4 lxml
 
-      - name: Restore sweepstakes database
+      - name: Restore DB cache
         uses: actions/cache@v3
         with:
           path: data/sweepstakes.db
-          key: sweepstakes-db-${{ github.run_number }}
-          restore-keys: sweepstakes-db-
+          key: sweeps-db-${{ github.run_number }}
+          restore-keys: sweeps-db-
 
-      - name: 🎰 Run Sweepstakes Bot
+      - name: 🎰 Hunt sweepstakes + send digest
         env:
-          GMAIL_USER:     ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
-          CHAIRMAN_EMAIL: ${{ secrets.CHAIRMAN_EMAIL }}
-          ENTRY_NAME:     "S.C. Thomas"
-          ENTRY_ZIP:      "11727"
-          SWEEPS_EMAIL:   ${{ secrets.GMAIL_USER }}
-        run: python bots/sweepstakes_bot.py
+          GMAIL_USER:      ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS:  ${{ secrets.GMAIL_APP_PASS }}
+          CHAIRMAN_EMAIL:  ${{ secrets.CHAIRMAN_EMAIL }}
+        run: python bots/sweepstakes_digest_bot.py
 
-      - name: Save sweepstakes database
+      - name: Save DB
         uses: actions/cache@v3
         with:
           path: data/sweepstakes.db
-          key: sweepstakes-db-${{ github.run_number }}
+          key: sweeps-db-${{ github.run_number }}
 
-      - name: Commit updated data
+      - name: Commit digest HTML
         run: |
           git config user.name "NYSR Bot"
           git config user.email "nyspotlightreport@gmail.com"
           git add data/ || true
-          git diff --staged --quiet || git commit -m "🎰 Sweepstakes update $(date +%Y-%m-%d-%H%M)"
-          git push || true
+          git diff --staged --quiet || git commit -m "🎰 Sweeps digest $(date +%Y-%m-%d-%H%M)" && git push || true
