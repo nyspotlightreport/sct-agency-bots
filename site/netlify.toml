@@ -1,16 +1,31 @@
-[build]
-  publish = "."
-
-[functions]
-  directory = "netlify/functions"
-  included_files = ["netlify/functions/**"]
-
 [[redirects]]
   from = "/api/news"
   to   = "/.netlify/functions/api-news"
   status = 200
 
+[[redirects]]
+  from = "/api/stocks"
+  to   = "/.netlify/functions/stocks"
+  status = 200
+
+[[redirects]]
+  from = "/api/subscribe"
+  to   = "/.netlify/functions/subscribe"
+  status = 200
+
+[functions]
+  directory = "netlify/functions"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
 [[headers]]
   for = "/.netlify/functions/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type"
