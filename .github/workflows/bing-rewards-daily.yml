@@ -1,0 +1,26 @@
+name: 💰 Bing Rewards (Daily)
+
+on:
+  schedule:
+    - cron: '30 8 * * *'   # 8:30 AM UTC daily
+  workflow_dispatch:
+
+jobs:
+  earn-rewards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install chromium
+          playwright install-deps chromium
+      - name: 💰 Run Bing Rewards Bot
+        env:
+          MS_REWARDS_EMAIL: ${{ secrets.MS_REWARDS_EMAIL }}
+          MS_REWARDS_PASS:  ${{ secrets.MS_REWARDS_PASS }}
+          GMAIL_USER:       ${{ secrets.GMAIL_USER }}
+        run: python bots/bing_rewards_bot.py
