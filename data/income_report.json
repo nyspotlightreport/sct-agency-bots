@@ -1,0 +1,142 @@
+{
+  "generated": "2026-03-20T14:43:19.750172",
+  "total_monthly_potential": "$445-$6275",
+  "active_streams": 7,
+  "streams_needing_setup": 6,
+  "active": [
+    "bandwidth_sharing",
+    "kdp_books",
+    "bing_rewards",
+    "sweepstakes",
+    "wordpress_affiliate",
+    "youtube",
+    "beehiiv_newsletter"
+  ],
+  "setup_needed": [
+    [
+      "gumroad_store",
+      "Run bots/gumroad_product_creator.py"
+    ],
+    [
+      "redbubble",
+      "Generate AI designs and upload to Redbubble"
+    ],
+    [
+      "etsy_digital",
+      "Create Etsy seller account \u2014 list same 20 ProFlow products"
+    ],
+    [
+      "adobe_stock",
+      "Sign up at contributor.stock.adobe.com \u2014 upload AI-generated images"
+    ],
+    [
+      "promptbase",
+      "Create account at promptbase.com \u2014 list AI prompt packs"
+    ],
+    [
+      "github_sponsors",
+      "Enable at github.com/sponsors \u2014 add .github/FUNDING.yml"
+    ]
+  ],
+  "referral_links": {
+    "HubSpot": "https://hubspot.com/?ref=nyspotlightreport",
+    "Ahrefs": "https://ahrefs.com/?ref=nysr",
+    "Shopify": "https://shopify.com/?ref=nysr",
+    "Kinsta": "https://kinsta.com/?ref=nysr",
+    "ConvertKit": "https://convertkit.com/?ref=nysr",
+    "WP Engine": "https://wpengine.com/?ref=nysr",
+    "Semrush": "https://semrush.com/?ref=nysr",
+    "ElevenLabs": "https://elevenlabs.io/?ref=nysr",
+    "Beehiiv": "https://beehiiv.com/?via=nysr",
+    "Honeygain": "https://r.honeygain.me/NYSPOTLIGHT",
+    "EarnApp": "https://earnapp.com/i/NYSR",
+    "Grass": "https://app.getgrass.io/register?referralCode=NYSR",
+    "Jasper": "https://jasper.ai/?ref=nysr"
+  },
+  "streams": {
+    "bandwidth_sharing": {
+      "platforms": [
+        "Honeygain",
+        "EarnApp",
+        "Grass",
+        "Nodepay",
+        "IPRoyal",
+        "PacketStream",
+        "Repocket",
+        "Peer2Profit"
+      ],
+      "status": "active",
+      "est_monthly": "$60-160",
+      "setup": "docker-compose -f docker-compose.passive.yml up -d",
+      "notes": "Requires residential IP. Run money4band Docker on home machine."
+    },
+    "gumroad_store": {
+      "url": "https://gumroad.com/nyspotlightreport",
+      "products": 20,
+      "est_monthly": "$100-400",
+      "status": "setup_needed",
+      "action": "Run bots/gumroad_product_creator.py"
+    },
+    "kdp_books": {
+      "platform": "Amazon KDP",
+      "titles": 10,
+      "est_monthly": "$50-200",
+      "status": "generating",
+      "action": "Upload PDFs from data/kdp_books/ to kdp.amazon.com"
+    },
+    "redbubble": {
+      "url": "https://www.redbubble.com/people/nysr101",
+      "designs": 0,
+      "est_monthly": "$30-200",
+      "status": "needs_designs",
+      "action": "Generate AI designs and upload to Redbubble"
+    },
+    "bing_rewards": {
+      "est_monthly": "$5-15",
+      "status": "active",
+      "notes": "Runs daily via GitHub Actions"
+    },
+    "sweepstakes": {
+      "est_monthly": "Variable $0-500",
+      "status": "active",
+      "notes": "Runs hourly, auto-enters all free sweepstakes"
+    },
+    "wordpress_affiliate": {
+      "url": "https://nyspotlightreport.com",
+      "est_monthly": "$50-500",
+      "status": "active",
+      "notes": "SEO content with embedded affiliate links published daily"
+    },
+    "youtube": {
+      "channel": "UC3ifewy3UWumT8At_I6Jt1A",
+      "est_monthly": "$50-2000",
+      "status": "active",
+      "notes": "YouTube Shorts bot running daily"
+    },
+    "beehiiv_newsletter": {
+      "est_monthly": "$0-2000",
+      "status": "active",
+      "notes": "Needs subscriber growth. Monetize via Beehiiv Ad Network at 1k subscribers."
+    },
+    "etsy_digital": {
+      "est_monthly": "$50-300",
+      "status": "needs_account",
+      "action": "Create Etsy seller account \u2014 list same 20 ProFlow products"
+    },
+    "adobe_stock": {
+      "est_monthly": "$30-200",
+      "status": "needs_signup",
+      "action": "Sign up at contributor.stock.adobe.com \u2014 upload AI-generated images"
+    },
+    "promptbase": {
+      "est_monthly": "$20-100",
+      "status": "needs_account",
+      "action": "Create account at promptbase.com \u2014 list AI prompt packs"
+    },
+    "github_sponsors": {
+      "est_monthly": "$0-200",
+      "status": "needs_activation",
+      "action": "Enable at github.com/sponsors \u2014 add .github/FUNDING.yml"
+    }
+  }
+}
