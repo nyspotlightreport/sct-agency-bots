@@ -118,7 +118,7 @@ Write-Host ""
 
 # Send phone notification
 try {
-    Invoke-RestMethod -Uri "https://ntfy.sh/nysr-chairman-sct" -Method POST `
+    Invoke-RestMethod -Uri "https://ntfy.sh/nysr-chairman1sct" -Method POST `
         -Headers @{"Title"="💰 Passive Income Stack LIVE on Windows"; "Tags"="money_with_wings,white_check_mark"; "Priority"="high"} `
         -Body "All bandwidth apps running on your Windows PC! Expected: `$40-110/month. Earnings start in 24-48 hours." | Out-Null
     Write-Host "📱 Phone notification sent!" -ForegroundColor Green
