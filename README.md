@@ -1,213 +1,189 @@
-# S.C. Thomas Internal Agency — System v2.0
-## Complete Setup & Operations Guide
+# 🎭 SCT Agency Bot System — NY Spotlight Report
+
+**The fully autonomous AI agency operating at nyspotlightreport.com**
 
 ---
 
-## WHAT THIS IS
+## 🚀 LIVE SYSTEM STATUS
 
-A fully autonomous AI-powered agency infrastructure that:
-- Runs 11 bots on automated schedules
-- Self-monitors and self-heals failures
-- Self-improves weekly using Claude
-- Alerts Chairman only when action is needed
-- Requires zero ongoing maintenance once deployed
-
----
-
-## ARCHITECTURE
-
-```
-AGENCY COMMAND CENTER (always-on orchestrator)
-     │
-     ├── CRITICAL (every 15 min)
-     │   └── uptime_monitor_bot.py        — Site uptime + SSL + speed
-     │
-     ├── DAILY (7am ET)
-     │   ├── inbox_triage_bot.py          — Gmail categorize + draft replies
-     │   └── invoice_bot.py (--remind)    — Payment reminders
-     │
-     ├── WEEKLY
-     │   ├── weekly_report_bot_v2.py      — KPI dashboard email (Mon 8am)
-     │   ├── seo_rank_tracker_bot.py      — Rankings + backlinks (Mon + Thu)
-     │   ├── lead_pipeline_bot.py         — Apollo → score → HubSpot (Tue noon)
-     │   └── competitor_monitor_bot.py    — Site change detection (Sun 11pm)
-     │
-     ├── MONTHLY
-     │   └── content_calendar_bot.py      — Build next month's content calendar
-     │
-     └── SELF-IMPROVEMENT (Sun 6am)
-         └── self_improvement_bot.py      — Review performance, suggest upgrades
-
-ON-DEMAND (Claude triggers these when you ask):
-  content_repurpose_bot.py      — 1 input → 5 platform variants
-  meeting_notes_bot.py          — Notes → action items → tasks
-  invoice_bot.py (--create)     — Generate + send new invoice
-```
+| Component | Status | Details |
+|-----------|--------|---------|
+| Website | ✅ LIVE | nyspotlightreport.com — auto-updating news |
+| Active Workflows | ✅ 20 active | All running on schedule |
+| Total Bots | ✅ 37 bots | 8 new income bots added |
+| GitHub Secrets | ✅ 24 configured | + 13 new ones to configure |
+| Stripe Products | ✅ 5 live | Payment links active |
+| HubSpot CRM | ✅ Connected | 7 prospects loaded |
 
 ---
 
-## QUICK START (20 minutes)
+## 📊 INCOME STREAMS (Active + Pending)
 
-### Step 1: GitHub Setup (5 min)
-```bash
-# Create a new PRIVATE repo on github.com
-git init agency-bots
-cd agency-bots
-cp /path/to/bots/* .
-git add .
-git commit -m "Agency system v2.0"
-git remote add origin https://github.com/YOUR_USERNAME/agency-bots.git
-git push -u origin main
-```
+### ✅ Currently Running
+| Stream | Bot | Est. Monthly |
+|--------|-----|-------------|
+| Newsletter subscriptions | social_poster_bot + stripe | $9.99/mo per sub |
+| Content packages | stripe_revenue_bot | $29.99/mo |
+| Consulting sessions | stripe_revenue_bot | $150/session |
+| Bot system licenses | stripe_revenue_bot | $49.99/mo |
+| Press releases | stripe_revenue_bot | $299/release |
 
-### Step 2: Deploy GitHub Actions (2 min)
-```bash
-python deploy_full_system.py
-git add .github/
-git commit -m "Add automated workflows"
-git push
-```
-
-### Step 3: Add Secrets (5 min)
-Go to: GitHub Repo → Settings → Secrets and variables → Actions
-
-Required:
-| Secret | Value |
-|--------|-------|
-| ANTHROPIC_API_KEY | From console.anthropic.com |
-| GMAIL_USER | seanb041992@gmail.com |
-| GMAIL_APP_PASS | From myaccount.google.com/apppasswords |
-| CHAIRMAN_EMAIL | seanb041992@gmail.com |
-| AHREFS_API_KEY | From ahrefs.com/api |
-| HUBSPOT_API_KEY | From HubSpot → Settings → Private Apps |
-| APOLLO_API_KEY | From Apollo.io → Settings → API |
-| TARGET_DOMAIN | yourdomain.com |
-| MONITORED_SITES | https://site1.com,https://site2.com |
-| PAYPAL_ME_LINK | https://paypal.me/yourhandle |
-
-### Step 4: Configure Your Sites (3 min)
-Edit `uptime_monitor_bot.py` — add your sites to `MONITORED_SITES`
-Edit `competitor_monitor_bot.py` — add competitors to `COMPETITORS`
-
-### Step 5: Gmail Auth for Inbox Bot (5 min)
-```bash
-# Run once locally to generate token.pickle
-pip install google-auth google-auth-oauthlib google-api-python-client
-python inbox_triage_bot.py
-# Follow browser auth flow
-# token.pickle is saved — add as GitHub secret or commit encrypted
-```
+### 🆕 New Bots (Need API Keys)
+| Stream | Bot | Est. Monthly | Keys Needed |
+|--------|-----|-------------|-------------|
+| Newsletter + sponsorships | beehiiv_newsletter_bot | $500-5k | BEEHIIV_API_KEY |
+| Lead generation | google_maps_scraper_bot | $500-5k | GOOGLE_MAPS_API_KEY |
+| YouTube AdSense | youtube_shorts_bot | $100-5k | (uses existing keys) |
+| 10x social reach | multiplatform_poster_bot | brand deals | REDDIT_CLIENT_* |
+| Passive bandwidth | bandwidth_income_bot | $20-100 | HONEYGAIN_EMAIL/PASS |
+| Email outreach | email_sequence_bot | $500-20k | (uses Gmail) |
+| Events content | events_scraper_bot | SEO traffic | TICKETMASTER_API_KEY |
+| Book royalties | kdp_full_pipeline_bot | $500-10k | (uses Anthropic) |
 
 ---
 
-## WHAT CHAIRMAN RECEIVES AUTOMATICALLY
+## 🤖 COMPLETE BOT INVENTORY (37 bots)
 
-| Email | When | From |
-|-------|------|------|
-| Weekly KPI Report | Monday 8am | Drew Sinclair |
-| Inbox Triage Digest | Daily 7am | Inbox Triage Bot |
-| SEO Report | Mon + Thu | SEO Bot |
-| Lead Pipeline Results | Tuesday noon | Lead Bot |
-| Competitor Alert | When changes detected | Monitor Bot |
-| Site Down Alert | Immediately | Uptime Bot |
-| Invoice Reminders sent | Daily (if overdue) | Invoice Bot |
-| Self-Improvement Report | Sunday 6am | Improvement Engine |
-| System Health Status | Daily 8am | Command Center |
+### Infrastructure
+- `agency_core.py` — Base framework, alerts, state management
+- `agency_command_center.py` — Master orchestrator
 
----
+### Operations
+- `weekly_report_bot.py` / `v2` — Monday 8am KPI digest
+- `inbox_triage_bot.py` — Daily Gmail triage
+- `invoice_bot.py` — Payment reminders
+- `meeting_notes_bot.py` — Notes → HubSpot
 
-## ON-DEMAND BOT USAGE
+### Marketing & Content
+- `social_poster_bot.py` — Publer social posting
+- `youtube_shorts_bot.py` 🆕 — Daily Shorts scripts + Publer
+- `multiplatform_poster_bot.py` 🆕 — LinkedIn/Twitter/Reddit simultaneous
+- `campaign_orchestrator_bot.py` — Full campaign management
+- `content_repurpose_bot.py` — 1 input → 5 platform variants
+- `content_calendar_bot.py` — Monthly calendar builder
+- `news_digest_bot.py` — Daily news content
+- `beehiiv_newsletter_bot.py` 🆕 — Daily newsletter pipeline
 
-```bash
-# Repurpose content
-python content_repurpose_bot.py --file article.txt
+### Intelligence & Monitoring
+- `uptime_monitor_bot.py` — Site uptime every 15min
+- `seo_rank_tracker_bot.py` — Ahrefs Mon+Thu
+- `competitor_monitor_bot.py` — Weekly competitor tracking
+- `mention_monitor_bot.py` — Brand mentions every 4h
+- `reddit_monitor_bot.py` — Reddit every 6h
+- `web_monitor_agent.py` — Page change detection
+- `github_mcp_bot.py` — Workflow health every 30min
+- `self_improvement_bot.py` — Weekly system review
+- `events_scraper_bot.py` 🆕 — Daily NYC events
 
-# Process meeting notes
-python meeting_notes_bot.py --file notes.txt --title "Client Call"
+### Revenue
+- `stripe_revenue_bot.py` — Daily revenue tracking
+- `affiliate_tracker_bot.py` — 25+ affiliate programs (v3)
+- `lead_pipeline_bot.py` — Apollo → HubSpot weekly
+- `google_maps_scraper_bot.py` 🆕 — NYC lead scraping weekly
+- `email_sequence_bot.py` 🆕 — Daily outbound sequences
+- `alpha_vantage_bot.py` — Daily market data
+- `bandwidth_income_bot.py` 🆕 — Passive income monitor
 
-# Create invoice
-python invoice_bot.py --create --client "Client Name" --email "client@co.com" --amount 2500 --description "SEO Services"
+### Passive Income
+- `kdp_book_generator.py` — Book outlines
+- `kdp_full_pipeline_bot.py` 🆕 — Full book → publish pipeline
+- `promptbase_seller_bot.py` — AI prompt packs
+- `github_sponsors_setup.py` — Sponsor buttons
 
-# Check all invoice status
-python invoice_bot.py --status
-
-# Build content calendar
-python content_calendar_bot.py --month 2026-05
-
-# Find leads
-python lead_pipeline_bot.py --search "founder CEO media NYC" --limit 30
-
-# Check system status
-python agency_command_center.py --status
-```
-
----
-
-## SELF-HEALING BEHAVIOR
-
-The system auto-heals in these ways:
-
-1. **Retry logic**: All API calls retry 3x with exponential backoff
-2. **Failure alerts**: Chairman is emailed when any bot fails 2+ times
-3. **Recovery alerts**: Chairman is emailed when a bot recovers
-4. **Health checks**: Command Center checks all bots every hour
-5. **Daily status email**: Morning digest shows all bot statuses
-6. **Self-improvement**: Weekly Claude review suggests and flags fixes
+### Utilities
+- `rag_memory_bot.py` — ChromaDB long-term memory
+- `image_generator_bot.py` — GPT image generation
 
 ---
 
-## ADDING A NEW BOT
+## ⚙️ WORKFLOW SCHEDULE (20 active)
 
-1. Create `new_bot.py` inheriting from `BaseBot`
-2. Implement `execute()` method
-3. Add to `BOT_REGISTRY` in `agency_command_center.py`
-4. Add GitHub Actions workflow
-5. Push — it runs automatically
-
-Template:
-```python
-from agency_core import BaseBot
-
-class MyNewBot(BaseBot):
-    def __init__(self):
-        super().__init__("my-bot", required_config=["SOME_API_KEY"])
-
-    def execute(self) -> dict:
-        # Your logic here
-        result = self.http.get("https://api.example.com/data")
-        data   = self.claude.complete("system prompt", "user prompt")
-        return {"items_processed": 1}
-
-if __name__ == "__main__":
-    MyNewBot().run()
-```
-
----
-
-## FILE STRUCTURE
-
-```
-bots/
-├── agency_core.py              Core utilities (import by all bots)
-├── agency_command_center.py    Master orchestrator
-├── self_improvement_bot.py     Weekly self-improvement engine
-├── weekly_report_bot_v2.py     KPI reports
-├── inbox_triage_bot.py         Gmail management
-├── seo_rank_tracker_bot.py     SEO monitoring
-├── lead_pipeline_bot.py        Lead generation
-├── competitor_monitor_bot.py   Competitor tracking
-├── uptime_monitor_bot.py       Site monitoring
-├── invoice_bot.py              Invoice management
-├── content_calendar_bot.py     Content planning
-├── content_repurpose_bot.py    Content repurposing
-├── meeting_notes_bot.py        Meeting processing
-├── deploy_full_system.py       GitHub Actions generator
-└── README.md                   This file
-
-state/                          Persistent bot state (auto-created)
-logs/                           Bot logs (auto-created)
-```
+| Time | Workflow |
+|------|----------|
+| Every 15 min | Uptime Monitor |
+| Every 30 min | GitHub Monitor |
+| Every 2 hours | Bandwidth Income Monitor |
+| Every 4 hours | Mention Monitor |
+| Every 6 hours | Reddit Monitor |
+| Daily 5am ET | Events Scraper |
+| Daily 6am ET | YouTube Shorts Bot |
+| Daily 7am ET | Daily Operations (Gmail triage) |
+| Daily 7am ET | News Digest |
+| Daily 8am ET | Stripe Revenue |
+| Daily 8am ET | Email Sequences |
+| Daily 8am ET | Alpha Vantage Market Data |
+| Daily 9am ET | Beehiiv Newsletter |
+| Daily 10am ET | Multi-Platform Poster |
+| Daily 4pm ET | Multi-Platform (afternoon) |
+| Mon+Thu | SEO Monitor |
+| Monday 9am | Affiliate Tracker (25+ programs) |
+| Tuesday noon | Lead Pipeline |
+| Wednesday 9am | KDP Book Generator |
+| Sunday 10am | Google Maps Lead Scraper |
+| Sunday 11pm | Competitor Monitor |
+| Sunday | Self-Improvement Engine |
+| Monday 8am | Weekly KPI Report |
+| On push | Deploy Site to Netlify |
 
 ---
 
-*Agency System v2.0 | S.C. Thomas Internal Agency | Built by Reese Morgan*
+## 🔑 SECRETS TO CONFIGURE (13 new)
+
+These are needed to activate new bots. All bots run gracefully without them.
+
+| Secret Name | Where to Get | Priority |
+|-------------|--------------|----------|
+| BEEHIIV_API_KEY | beehiiv.com → Settings → API | HIGH |
+| BEEHIIV_PUB_ID | beehiiv.com → Publication ID | HIGH |
+| GOOGLE_MAPS_API_KEY | console.cloud.google.com → Places API | HIGH |
+| TICKETMASTER_API_KEY | developer.ticketmaster.com (free) | MEDIUM |
+| EVENTBRITE_API_KEY | eventbrite.com/platform (free) | MEDIUM |
+| GUARDIAN_API_KEY | open-platform.theguardian.com (free) | MEDIUM |
+| REDDIT_CLIENT_ID | reddit.com/prefs/apps (free) | MEDIUM |
+| REDDIT_CLIENT_SECRET | reddit.com/prefs/apps | MEDIUM |
+| REDDIT_USERNAME | Your Reddit username | MEDIUM |
+| REDDIT_PASSWORD | Your Reddit password | MEDIUM |
+| HONEYGAIN_EMAIL | honeygain.com account email | LOW |
+| HONEYGAIN_PASS | honeygain.com account password | LOW |
+| EARNAPP_API_KEY | earnapp.com → settings | LOW |
+
+---
+
+## 💡 AFFILIATE PORTFOLIO (25+ programs in v3)
+
+Categories: Newsletter, AI Tools, Social, Bandwidth Sharing, Hosting, SEO, Design, Publishing, Education, DePIN
+
+**Highest Priority:**
+- Beehiiv (25-50% recurring)
+- ElevenLabs (22% recurring)  
+- Publer (25% recurring — our own tool)
+- Honeygain referrals ($5/signup + 10% of earnings)
+- Grass/Nodepay DePIN (token upside)
+
+---
+
+## 🌐 SITE FEATURES (nyspotlightreport.com)
+
+- ✅ Auto-updating news (32+ real articles, Guardian + NewsAPI)
+- ✅ Entertainment stocks ticker (DIS, NFLX, PARA, AMC, WBD, SPOT, LYV)
+- ✅ Market open/closed status indicator
+- ✅ Newsletter signup → HubSpot CRM
+- ✅ Full SEO package (OG, Twitter cards, JSON-LD schema)
+- ✅ Personalization engine (tracks reader preferences)
+- ✅ Social proof ticker
+- ✅ 8-minute auto-refresh
+- ⏳ Claude editorial copy (activates once Anthropic spend limit raised)
+
+---
+
+## 🔥 NEXT ACTIONS (Priority Order)
+
+1. **TODAY**: Raise Anthropic spend limit → console.anthropic.com/settings/limits → $5
+2. **TODAY**: Add GUARDIAN_API_KEY to GitHub secrets (get free key at open-platform.theguardian.com)
+3. **THIS WEEK**: Sign up for Beehiiv → add API keys → newsletter starts auto-publishing
+4. **THIS WEEK**: Get Google Maps API key (free $200/mo credit) → leads start flowing
+5. **OPTIONAL**: Set up money4band Docker → $30-80/mo passive immediately
+
+---
+
+*Generated by SCT Agency Bot System — Updated automatically*
