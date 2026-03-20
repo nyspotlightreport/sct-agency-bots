@@ -4,6 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NY Spotlight Report — New York's Entertainment Authority</title>
+<meta name="description" content="NY Spotlight Report — New York's premier entertainment authority covering Broadway, film premieres, fashion, music, and celebrity news.">
+<meta name="keywords" content="Broadway, New York entertainment, NYC theater, film premieres, fashion week, celebrity news">
+<meta name="author" content="NY Spotlight Report">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nyspotlightreport.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NY Spotlight Report">
+<meta property="og:title" content="NY Spotlight Report — New York's Entertainment Authority">
+<meta property="og:description" content="The definitive source for Broadway, film, music, fashion and celebrity coverage from New York City.">
+<meta property="og:url" content="https://nyspotlightreport.com/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@NYSpotlightRpt">
+<meta name="twitter:title" content="NY Spotlight Report — New York's Entertainment Authority">
+<meta name="twitter:description" content="Broadway, film, music and celebrity coverage from the heart of NYC.">
+<!-- SEO & Open Graph -->
+<meta name="description" content="NY Spotlight Report — New York's premier entertainment authority covering Broadway, film premieres, fashion, music, and celebrity news from the city that never sleeps.">
+<meta name="keywords" content="Broadway, New York entertainment, NYC theater, film premieres, fashion week, celebrity news, Long Island entertainment">
+<meta name="author" content="NY Spotlight Report">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nyspotlightreport.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NY Spotlight Report">
+<meta property="og:title" content="NY Spotlight Report — New York's Entertainment Authority">
+<meta property="og:description" content="The definitive source for Broadway, film, music, fashion & celebrity coverage from New York City.">
+<meta property="og:url" content="https://nyspotlightreport.com/">
+<meta property="og:image" content="https://nyspotlightreport.com/og-image.jpg">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@NYSpotlightRpt">
+<meta name="twitter:title" content="NY Spotlight Report — New York's Entertainment Authority">
+<meta name="twitter:description" content="Broadway, film, music & celebrity coverage from the heart of NYC.">
+<meta name="twitter:image" content="https://nyspotlightreport.com/og-image.jpg">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "NY Spotlight Report",
+  "url": "https://nyspotlightreport.com",
+  "logo": "https://nyspotlightreport.com/logo.png",
+  "description": "New York's Entertainment Authority — Broadway, Film, Music & Fashion",
+  "address": {"@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US"},
+  "sameAs": ["https://twitter.com/NYSpotlightRpt","https://instagram.com/nyspotlightreport"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -574,6 +625,20 @@ footer{background:var(--black);margin-top:0;}
 .legal-body h3{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:var(--black);margin:32px 0 10px;}
 
 @media(max-width:680px){.team-grid{grid-template-columns:1fr;}}
+
+/* ── STOCKS TICKER ── */
+.stocks-bar{background:#0a0f1a;border-bottom:1px solid rgba(255,255,255,.06);padding:0;height:30px;display:flex;align-items:center;overflow:hidden;}
+.stocks-tag{background:#1a3a6a;color:#7ab3f5;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;padding:0 14px;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;border-right:1px solid rgba(255,255,255,.08);}
+.stocks-wrap{flex:1;overflow:hidden;}
+.stocks-track{display:inline-flex;white-space:nowrap;animation:ticker 45s linear infinite;}
+.stocks-track:hover{animation-play-state:paused;}
+.stock-item{display:inline-flex;align-items:center;gap:6px;padding-right:40px;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;cursor:default;}
+.stock-sym{color:rgba(255,255,255,.85);letter-spacing:.04em;}
+.stock-price{color:rgba(255,255,255,.7);}
+.stock-chg{font-size:11px;font-weight:700;}
+.stock-chg.up{color:#4ade80;}
+.stock-chg.dn{color:#f87171;}
+.stock-sep{color:rgba(255,255,255,.15);padding-left:10px;}
 </style>
 </head>
 <body>
@@ -619,6 +684,28 @@ footer{background:var(--black);margin-top:0;}
 </div>
 
 <!-- SOCIAL PROOF TICKER -->
+
+<!-- Entertainment Stocks Ticker -->
+<div class="stocks-bar" id="stocksBar">
+  <div class="stocks-tag">📈 MARKETS</div>
+  <div class="stocks-wrap">
+    <div class="stocks-track" id="stocksTrack">
+      <span class="stock-item"><span class="stock-sym">DIS</span><span class="stock-price">$--.--</span><span class="stock-chg up">+0.00%</span></span>
+      <span class="stock-sep">|</span>
+      <span class="stock-item"><span class="stock-sym">NFLX</span><span class="stock-price">$--.--</span><span class="stock-chg up">+0.00%</span></span>
+      <span class="stock-sep">|</span>
+      <span class="stock-item"><span class="stock-sym">PARA</span><span class="stock-price">$--.--</span><span class="stock-chg up">+0.00%</span></span>
+      <span class="stock-sep">|</span>
+      <span class="stock-item"><span class="stock-sym">AMC</span><span class="stock-price">$--.--</span><span class="stock-chg up">+0.00%</span></span>
+      <span class="stock-sep">|</span>
+      <span class="stock-item"><span class="stock-sym">WBD</span><span class="stock-price">$--.--</span><span class="stock-chg up">+0.00%</span></span>
+      <span class="stock-sep">|</span>
+      <span class="stock-item"><span class="stock-sym">SPOT</span><span class="stock-price">$--.--</span><span class="stock-chg up">+0.00%</span></span>
+      <span class="stock-sep">|</span>
+      <span class="stock-item"><span class="stock-sym">LYV</span><span class="stock-price">$--.--</span><span class="stock-chg up">+0.00%</span></span>
+    </div>
+  </div>
+</div>
 <div class="proof-bar">
   <div class="proof-track">
     <span class="proof-item"><span class="stars">★★★★★</span> <span class="name">@MidtownMargaret:</span> "The only entertainment outlet I trust for NYC" &nbsp;&nbsp;&nbsp;</span>
@@ -2491,5 +2578,103 @@ function closeWelcome(){
 }
 </script>
 
+<script>
+
+// ═══════════════════════════════════════════════════════════
+// ENTERTAINMENT STOCKS TICKER
+// ═══════════════════════════════════════════════════════════
+async function fetchStocks() {
+  const track = document.getElementById('stocksTrack');
+  if (!track) return;
+  try {
+    const r = await fetch('/api/stocks', { signal: AbortSignal.timeout(12000) });
+    if (!r.ok) return;
+    const data = await r.json();
+    const stocks = data.stocks || [];
+    if (!stocks.length) return;
+
+    const items = stocks.map(s => {
+      const up   = parseFloat(s.change) >= 0;
+      const sign = up ? '+' : '';
+      return `<span class="stock-item">
+        <span class="stock-sym">${s.symbol}</span>
+        <span class="stock-price">$${s.price}</span>
+        <span class="stock-chg ${up?'up':'dn'}">${sign}${s.pct}%</span>
+      </span><span class="stock-sep"> | </span>`;
+    }).join('');
+    // Duplicate for seamless scroll
+    track.innerHTML = items + items;
+  } catch(e) { console.warn('Stocks fetch failed:', e.message); }
+}
+
+// ═══════════════════════════════════════════════════════════
+// ENHANCED NEWSLETTER SUBSCRIBE (hits /api/subscribe)
+// ═══════════════════════════════════════════════════════════
+async function submitSubscribe() {
+  const emailEl = document.getElementById('subEmail');
+  const nameEl  = document.getElementById('subName');
+  const btnEl   = document.querySelector('.subscribe-modal .btn-subscribe, #subBtn');
+  const msgEl   = document.querySelector('.subscribe-success');
+
+  const email = emailEl ? emailEl.value.trim() : '';
+  const name  = nameEl  ? nameEl.value.trim()  : '';
+
+  if (!email || !email.includes('@')) {
+    if (emailEl) emailEl.style.borderColor = 'var(--red)';
+    return;
+  }
+
+  if (btnEl) { btnEl.textContent = 'Subscribing...'; btnEl.disabled = true; }
+
+  try {
+    const r = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, name }),
+      signal: AbortSignal.timeout(8000)
+    });
+    const d = await r.json();
+    if (d.success) {
+      if (btnEl) { btnEl.textContent = '✓ Subscribed!'; btnEl.style.background = '#1a6a2a'; }
+      if (msgEl) {
+        msgEl.innerHTML = `<span style="color:#4ade80;font-size:20px;">✓</span><div><strong>You're in!</strong><br><small style="opacity:.7">${email} added to NY Spotlight Report</small></div>`;
+        msgEl.style.display = 'flex';
+      }
+      setTimeout(closeSubscribe, 3000);
+    }
+  } catch(e) {
+    if (btnEl) { btnEl.textContent = 'Try Again'; btnEl.disabled = false; }
+    console.warn('Subscribe error:', e.message);
+  }
+}
+
+// Hook into existing subscribe button if present
+document.addEventListener('DOMContentLoaded', function() {
+  const subBtn = document.getElementById('subBtn');
+  if (subBtn) subBtn.addEventListener('click', submitSubscribe);
+  // Also fetch stocks on load
+  fetchStocks();
+  // Refresh stocks every 15 min
+  setInterval(fetchStocks, 900000);
+
+// Market open/closed status (NYSE hours: 9:30am - 4pm ET weekdays)
+(function() {
+  const el = document.getElementById('marketStatus');
+  if (!el) return;
+  const now = new Date();
+  const et = new Date(now.toLocaleString('en-US',{timeZone:'America/New_York'}));
+  const day = et.getDay(); // 0=Sun,6=Sat
+  const h = et.getHours();
+  const m = et.getMinutes();
+  const mins = h * 60 + m;
+  const isWeekday = day >= 1 && day <= 5;
+  const isOpen = isWeekday && mins >= 570 && mins < 960; // 9:30am to 4pm
+  el.textContent = isOpen ? '● OPEN' : '○ CLOSED';
+  el.style.color = isOpen ? '#4ade80' : '#6b7280';
+})();
+
+});
+
+</script>
 </body>
 </html>
