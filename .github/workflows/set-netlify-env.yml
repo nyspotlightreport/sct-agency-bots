@@ -1,0 +1,37 @@
+name: Set Netlify Env Vars
+on:
+  workflow_dispatch:
+jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Netlify environment variables
+        run: |
+          SITE_ID="8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
+          
+          set_env() {
+            local KEY=$1
+            local VALUE=$2
+            curl -s -X POST \
+              "https://api.netlify.com/api/v1/sites/${SITE_ID}/env" \
+              -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
+              -H "Content-Type: application/json" \
+              -d "{\"key\":\"${KEY}\",\"values\":[{\"value\":\"${VALUE}\",\"context\":\"all\"}]}" \
+              | python3 -c "import sys,json; d=json.load(sys.stdin); print('✅ ' + d.get('key','?') if 'key' in d else '❌ ' + str(d)[:60])"
+          }
+          
+          echo "Setting Netlify env vars from GitHub secrets..."
+          set_env "NEWSAPI_KEY"           "${{ secrets.NEWSAPI_KEY }}"
+          set_env "ANTHROPIC_API_KEY"     "${{ secrets.ANTHROPIC_API_KEY }}"
+          set_env "ALPHA_VANTAGE_API_KEY" "${{ secrets.ALPHA_VANTAGE_API_KEY }}"
+          set_env "PUBLER_API_KEY"        "${{ secrets.PUBLER_API_KEY }}"
+          set_env "OPENAI_API_KEY"        "${{ secrets.OPENAI_API_KEY }}"
+          echo "Done. All 5 env vars set in Netlify."
+          
+          # Trigger a redeploy so new env vars take effect
+          curl -s -X POST \
+            "https://api.netlify.com/api/v1/sites/${SITE_ID}/builds" \
+            -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print('Redeploy:', d.get('id','error')[:20])"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
