@@ -1,17 +1,13 @@
 #!/bin/bash
-# NYSR Passive Income Stack — Auto-Setup
-# Run this in DigitalOcean console OR via SSH
+# NYSR Passive Income Stack — Fixed Setup v2
+# Removes peer2profit (dead image), adds Traffmonetizer
 set -e
-echo "=== NYSR Passive Income VPS Setup ==="
+echo "=== NYSR Passive Income VPS Setup v2 ==="
 
-# Install Docker
 apt-get update -qq && apt-get install -y docker.io docker-compose curl -qq
 systemctl enable docker && systemctl start docker
-
-# Create config directory
 mkdir -p /opt/nysr-passive
 
-# Create docker-compose with all bandwidth apps
 cat > /opt/nysr-passive/docker-compose.yml << 'COMPOSE'
 version: "3.8"
 services:
@@ -19,7 +15,7 @@ services:
     image: honeygain/honeygain:latest
     container_name: honeygain
     restart: unless-stopped
-    command: -tou-accept -email nyspotlightreport@gmail.com -pass GMAIL_PASS -device NYSR-VPS-01
+    command: -tou-accept -email nyspotlightreport@gmail.com -password REPLACE_GMAIL_PASS -device NYSR-VPS-01
     network_mode: host
 
   earnapp:
@@ -39,34 +35,33 @@ services:
       - RP_API_KEY=get-from-repocket.co
     network_mode: host
 
-  peer2profit:
-    image: peer2profit/peer2profit_linux:latest
-    container_name: peer2profit
-    restart: unless-stopped
-    environment:
-      - email=nyspotlightreport@gmail.com
-    network_mode: host
-
   pawns:
     image: iproyal/pawns-cli:latest
     container_name: pawns
     restart: unless-stopped
-    command: -accept-tos -email=nyspotlightreport@gmail.com -password=GMAIL_PASS -device-name=NYSR-VPS
+    command: -accept-tos -email=nyspotlightreport@gmail.com -password=REPLACE_GMAIL_PASS -device-name=NYSR-VPS -device-id=nysr-vps-001
+    network_mode: host
+
+  traffmonetizer:
+    image: traffmonetizer/cli_v2:latest
+    container_name: traffmonetizer
+    restart: unless-stopped
+    command: start accept --token REPLACE_WITH_TOKEN
     network_mode: host
 
 volumes:
   earnapp-data:
 COMPOSE
 
-# Start all containers
-cd /opt/nysr-passive && docker-compose up -d
+cd /opt/nysr-passive
+docker-compose pull --ignore-pull-failures
+docker-compose up -d --remove-orphans 2>/dev/null || docker-compose up -d
 
 echo ""
-echo "=== SETUP COMPLETE ==="
-docker-compose ps
+echo "=== CONTAINERS RUNNING ==="
+docker ps --format "table {{.Names}}\t{{.Status}}"
 echo ""
-echo "EarnApp device link:"
-sleep 5 && docker exec earnapp earnapp link_device 2>/dev/null || echo "(Run manually after startup)"
+echo "EarnApp link command:"
+sleep 3 && docker exec earnapp earnapp link_device 2>/dev/null || echo "Run: docker exec earnapp earnapp link_device"
 echo ""
-echo "Monthly estimate: $15-45 passive income"
-echo "All containers set to auto-restart on reboot"
+echo "Monthly passive income: ~\$15-40 (once linked)"
