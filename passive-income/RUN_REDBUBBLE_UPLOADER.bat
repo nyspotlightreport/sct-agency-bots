@@ -1,15 +1,9 @@
 @echo off
-echo ╔══════════════════════════════════════════════════╗
-echo ║      NYSR REDBUBBLE DESIGN UPLOADER             ║
-echo ╚══════════════════════════════════════════════════╝
-echo.
-echo Installing requirements...
+chcp 65001 > nul
+echo Redbubble Design Uploader - NY Spotlight Report
+echo =================================================
 pip install playwright -q
 playwright install chromium
-echo.
-echo Downloading uploader...
-curl -sSL "https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/passive-income/redbubble_uploader.py" -o redbubble_uploader.py
-echo.
-echo Starting uploader...
+curl -L -o redbubble_uploader.py "https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/passive-income/redbubble_uploader.py"
 python redbubble_uploader.py
 pause
