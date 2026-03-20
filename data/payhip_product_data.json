@@ -1,0 +1,55 @@
+{
+  "store_url": "https://payhip.com/nyspotlightreport",
+  "products": [
+    {
+      "title": "90-Day Goal Planner",
+      "price": 12.99,
+      "url": "https://nyspotlightreport.com/downloads/90_day_goal_planner.pdf"
+    },
+    {
+      "title": "50 ChatGPT Prompts for Business",
+      "price": 7.99,
+      "url": "https://nyspotlightreport.com/downloads/50_chatgpt_prompts_business.pdf"
+    },
+    {
+      "title": "Passive Income Zero-Cost Guide",
+      "price": 14.99,
+      "url": "https://nyspotlightreport.com/downloads/passive_income_zero_cost_guide.pdf"
+    },
+    {
+      "title": "Monthly Budget Planner",
+      "price": 8.99,
+      "url": "https://nyspotlightreport.com/downloads/monthly_budget_planner.pdf"
+    },
+    {
+      "title": "100 Instagram Caption Templates",
+      "price": 7.99,
+      "url": "https://nyspotlightreport.com/downloads/100_instagram_captions.pdf"
+    },
+    {
+      "title": "30-Day Social Media Content Calendar",
+      "price": 9.99,
+      "url": "https://nyspotlightreport.com/downloads/30_day_social_content_calendar.pdf"
+    },
+    {
+      "title": "Daily Habit Tracker 30 Day Reset",
+      "price": 6.99,
+      "url": "https://nyspotlightreport.com/downloads/daily_habit_tracker_30day.pdf"
+    },
+    {
+      "title": "Weekly Meal Prep Planner",
+      "price": 6.99,
+      "url": "https://nyspotlightreport.com/downloads/weekly_meal_prep_planner.pdf"
+    },
+    {
+      "title": "Annual Business Plan Template",
+      "price": 14.99,
+      "url": "https://nyspotlightreport.com/downloads/annual_business_plan_template.pdf"
+    },
+    {
+      "title": "Content Creation Checklist",
+      "price": 5.99,
+      "url": "https://nyspotlightreport.com/downloads/content_creation_checklist.pdf"
+    }
+  ]
+}
