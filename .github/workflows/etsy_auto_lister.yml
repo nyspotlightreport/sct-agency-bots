@@ -1,0 +1,16 @@
+name: 🛍️ Etsy Auto-Lister (One-Time)
+on:
+  workflow_dispatch:
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: 🛍️ Create Etsy Listings
+        env:
+          ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
+          ETSY_SHOP_ID: ${{ secrets.ETSY_SHOP_ID }}
+        run: python bots/etsy_auto_lister_bot.py
