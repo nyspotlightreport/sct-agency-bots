@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'site/**'
+      - 'netlify/**'
   workflow_dispatch:
 jobs:
   deploy:
@@ -17,6 +18,9 @@ jobs:
         with: {node-version: '20'}
       - name: Install netlify CLI
         run: npm install -g netlify-cli
+      - name: Install function dependencies
+        working-directory: site/netlify/functions
+        run: npm install
       - name: Set Netlify env vars
         working-directory: site
         run: |
@@ -25,21 +29,25 @@ jobs:
           netlify env:set ALPHA_VANTAGE_API_KEY "$AV_KEY_VAL"
           netlify env:set OPENAI_API_KEY        "$OPENAI_KEY_VAL"
           netlify env:set HUBSPOT_API_KEY       "$HUBSPOT_KEY_VAL"
-          echo "✅ Env vars set (including HubSpot)"
+          netlify env:set GMAIL_USER            "$GMAIL_USER_VAL"
+          netlify env:set GMAIL_APP_PASS        "$GMAIL_PASS_VAL"
+          echo "✅ Env vars set"
         env:
           NEWSAPI_KEY_VAL:    ${{ secrets.NEWSAPI_KEY }}
           ANTHROPIC_KEY_VAL:  ${{ secrets.ANTHROPIC_API_KEY }}
           AV_KEY_VAL:         ${{ secrets.ALPHA_VANTAGE_API_KEY }}
           OPENAI_KEY_VAL:     ${{ secrets.OPENAI_API_KEY }}
           HUBSPOT_KEY_VAL:    ${{ secrets.HUBSPOT_API_KEY }}
-      - name: Install dependencies
+          GMAIL_USER_VAL:     ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS_VAL:     ${{ secrets.GMAIL_APP_PASS }}
+      - name: Install site dependencies
         working-directory: site
         run: npm install
-      - name: Deploy to Netlify (with functions)
+      - name: Deploy to Netlify
         working-directory: site
         run: |
           netlify deploy --prod \
             --dir . \
             --functions netlify/functions \
             --message "Deploy from GitHub Actions"
-          echo "✅ Deploy complete with functions"
+          echo "✅ Deploy complete"
