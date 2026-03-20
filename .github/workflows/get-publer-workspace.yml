@@ -1,0 +1,15 @@
+name: Get Publer Workspace ID
+on:
+  workflow_dispatch:
+jobs:
+  get-workspace-id:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Publer Workspace ID
+        run: |
+          RESPONSE=$(curl -s -H "Authorization: Bearer-API ${{ secrets.PUBLER_API_KEY }}" \
+            https://app.publer.com/api/v1/workspaces)
+          echo "=== PUBLER WORKSPACES RESPONSE ==="
+          echo "$RESPONSE"
+          WS_ID=$(echo "$RESPONSE" | python3 -c "import sys,json; data=json.load(sys.stdin); print(data[0]['id'] if isinstance(data, list) and data else 'check_response')" 2>/dev/null || echo "see_above")
+          echo "=== WORKSPACE ID: $WS_ID ==="
