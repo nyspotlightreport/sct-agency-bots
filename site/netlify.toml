@@ -1,12 +1,16 @@
 [build]
   publish = "."
-  
+
 [functions]
   directory = "netlify/functions"
-  node_bundler = "esbuild"
+  included_files = ["netlify/functions/**"]
+
+[[redirects]]
+  from = "/api/news"
+  to   = "/.netlify/functions/api-news"
+  status = 200
 
 [[headers]]
-  for = "/api/*"
+  for = "/.netlify/functions/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-    Cache-Control = "public, max-age=300"
