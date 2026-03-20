@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Gumroad Product Creator — Browser automation since API is deprecated
+Gumroad Product Creator — Browser automation
 Creates 10 new products on Gumroad via Playwright
-Run: python gumroad_product_creator.py
+Run: python gumroad_creator_fixed.py
 """
 import time, os
 from pathlib import Path
@@ -27,66 +27,80 @@ NEW_PRODUCTS = [
 ]
 
 def create_product(page, prod, idx, total):
-    print(f"[{idx}/{total}] Creating: {prod[\'name\']}  ${prod[\'price\']}")
-    
-    page.goto("https://app.gumroad.com/products/new/digital", timeout=20000)
-    page.wait_for_load_state("networkidle", timeout=15000)
+    name = prod['name']
+    price = prod['price']
+    desc = prod['desc']
+    print(f"[{idx}/{total}] Creating: {name}  ${price}")
+
+    page.goto("https://app.gumroad.com/products/new/digital", timeout=25000)
+    page.wait_for_load_state("networkidle", timeout=20000)
     time.sleep(2)
-    
+
+    # Fill name
     try:
-        page.fill("input[name=\'name\']", prod["name"], timeout=8000)
-        print(f"  Name set")
+        page.fill("input[name='name']", name, timeout=8000)
+        print("  Name set")
     except Exception as e:
         try:
-            page.fill("#product_name", prod["name"], timeout=5000)
+            page.fill("#product_name", name, timeout=5000)
         except:
             print(f"  Name field not found: {e}")
             return False
-    
+
+    # Fill description
     try:
-        page.fill("textarea[name=\'description\'], #product_description", prod["desc"], timeout=5000)
-    except: pass
-    
+        page.fill("textarea[name='description']", desc, timeout=5000)
+    except:
+        try:
+            page.fill("#product_description", desc, timeout=5000)
+        except:
+            pass
+
+    # Fill price
     try:
-        price_input = page.query_selector("input[name=\'price\'], input[id*=\'price\']")
+        price_sel = "input[name='price'], input[id*='price']"
+        price_input = page.query_selector(price_sel)
         if price_input:
             price_input.triple_click()
-            price_input.fill(prod["price"])
+            price_input.fill(price)
+            print(f"  Price set: ${price}")
     except Exception as e:
         print(f"  Price field issue: {e}")
-    
+
+    # Submit
     try:
-        page.click("button[type=\'submit\'], input[type=\'submit\']", timeout=5000)
+        page.click("button[type='submit'], input[type='submit']", timeout=8000)
         page.wait_for_timeout(3000)
-        print(f"  ✅ Created!")
+        print("  Created!")
         return True
     except Exception as e:
         print(f"  Submit err: {e}")
+        input("  Fix manually then press ENTER to continue...")
         return False
 
 def run():
-    print("╔═══════════════════════════════════════╗")
-    print("║  GUMROAD PRODUCT CREATOR (10 new)     ║")
-    print("╚═══════════════════════════════════════╝")
-    
-    print("\nStarting browser — log in to Gumroad...")
-    input("Press ENTER to continue...")
-    
+    print("=" * 50)
+    print("  GUMROAD PRODUCT CREATOR (10 new products)")
+    print("=" * 50)
+    print()
+    input("Press ENTER to open browser...")
+
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False, slow_mo=400)
         page = browser.new_page()
         page.goto("https://gumroad.com/login")
-        print("Log in to Gumroad: nyspotlightreport@gmail.com")
+        print("Log in: nyspotlightreport@gmail.com")
         input("Logged in? Press ENTER...")
-        
+
         created = 0
         for i, prod in enumerate(NEW_PRODUCTS, 1):
             if create_product(page, prod, i, len(NEW_PRODUCTS)):
                 created += 1
             time.sleep(2)
-        
-        print(f"\n✅ {created}/{len(NEW_PRODUCTS)} products created!")
-        print("Each product now earns passive income 24/7.")
+
+        print()
+        print(f"Done! {created}/{len(NEW_PRODUCTS)} products created.")
+        print("Each earns passive income 24/7.")
         input("Press ENTER to close...")
         browser.close()
 
