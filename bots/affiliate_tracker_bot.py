@@ -1,80 +1,88 @@
 #!/usr/bin/env python3
 """
-AFFILIATE TRACKER BOT v1.0 — S.C. Thomas Internal Agency
-Tracks affiliate links, clicks, conversions, and commissions.
-Monitors top programs: Ahrefs, HubSpot, Shopify, Kinsta, etc.
-Adds UTM parameters to all outbound links automatically.
-Weekly revenue report from all affiliate programs.
+AFFILIATE TRACKER BOT v2.0 — S.C. Thomas Internal Agency
+Tracks all affiliate programs, generates UTM links, monitors earnings.
+UPGRADED: Added Beehiiv, ElevenLabs, Jasper, Semrush, ConvertKit, Publer affiliates
 """
-import os, sys, json, urllib.request
-from datetime import datetime, timezone, timedelta
+import os, sys, json, urllib.request, urllib.parse
+from datetime import datetime
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
-from agency_core import BaseBot, AlertSystem
+from agency_core import BaseBot, ClaudeClient, AlertSystem
 
-# High-value affiliate programs to monitor
 PROGRAMS = [
-    {"name": "Ahrefs",    "commission": "$200/sale",   "url": "ahrefs.com/affiliates"},
-    {"name": "HubSpot",   "commission": "up to $1000", "url": "hubspot.com/partners"},
-    {"name": "Shopify",   "commission": "$150/referral","url": "shopify.com/affiliates"},
-    {"name": "Kinsta",    "commission": "10% recurring","url": "kinsta.com/affiliates"},
-    {"name": "WP Engine", "commission": "$200+/sale",  "url": "wpengine.com/affiliates"},
-    {"name": "SEMrush",   "commission": "$200/sale",   "url": "semrush.com/affiliates"},
-    {"name": "Anthropic", "commission": "check site",  "url": "anthropic.com"},
+    # HIGH VALUE ($100-$1000+ per sale)
+    {"name":"HubSpot",       "commission":"up to $1000/sale", "recurring":False, "url":"https://www.hubspot.com/partners/affiliates", "tier":"TIER1", "category":"CRM"},
+    {"name":"Ahrefs",        "commission":"$200/sale",        "recurring":False, "url":"https://ahrefs.com/affiliates", "tier":"TIER1", "category":"SEO"},
+    {"name":"Shopify",       "commission":"$150/referral",    "recurring":False, "url":"https://www.shopify.com/affiliates", "tier":"TIER1", "category":"Ecommerce"},
+    {"name":"WP Engine",     "commission":"$200+/sale",       "recurring":False, "url":"https://wpengine.com/affiliates", "tier":"TIER1", "category":"Hosting"},
+    {"name":"Kinsta",        "commission":"10% recurring",    "recurring":True,  "url":"https://kinsta.com/affiliates", "tier":"TIER1", "category":"Hosting"},
+    # MID VALUE ($50-$200 per sale)
+    {"name":"Semrush",       "commission":"$200/sale",        "recurring":False, "url":"https://www.semrush.com/affiliates", "tier":"TIER2", "category":"SEO"},
+    {"name":"ElevenLabs",    "commission":"22% recurring",    "recurring":True,  "url":"https://elevenlabs.io/affiliates", "tier":"TIER2", "category":"AI"},
+    {"name":"Jasper AI",     "commission":"25% recurring",    "recurring":True,  "url":"https://www.jasper.ai/affiliates", "tier":"TIER2", "category":"AI"},
+    {"name":"ConvertKit",    "commission":"30% recurring",    "recurring":True,  "url":"https://convertkit.com/referral", "tier":"TIER2", "category":"Email"},
+    {"name":"Beehiiv",       "commission":"25% recurring",    "recurring":True,  "url":"https://www.beehiiv.com/affiliates", "tier":"TIER2", "category":"Newsletter"},
+    {"name":"Publer",        "commission":"20% recurring",    "recurring":True,  "url":"https://publer.com/affiliates", "tier":"TIER2", "category":"Social"},
+    # LOWER VALUE but easy wins
+    {"name":"Canva",         "commission":"$36/subscriber",   "recurring":False, "url":"https://www.canva.com/affiliates", "tier":"TIER3", "category":"Design"},
+    {"name":"Grammarly",     "commission":"$20/premium",      "recurring":False, "url":"https://www.grammarly.com/affiliates", "tier":"TIER3", "category":"Writing"},
+    {"name":"Namecheap",     "commission":"35% first year",   "recurring":False, "url":"https://www.namecheap.com/affiliates", "tier":"TIER3", "category":"Domain"},
 ]
 
+SITE_URL = "https://nyspotlightreport.com"
+
 class AffiliateTrackerBot(BaseBot):
-    VERSION = "1.0.0"
+    VERSION = "2.0.0"
 
-    def __init__(self):
-        super().__init__("affiliate-tracker")
+    def generate_affiliate_post(self, program):
+        """Generate a content piece promoting an affiliate product"""
+        system = "You are S.C. Thomas writing about tools for media professionals."
+        prompt = f"""Write a 2-sentence recommendation for {program['name']} that a media executive would find valuable.
+Commission: {program['commission']}. Category: {program['category']}.
+Include a subtle CTA. No hashtags. Under 200 chars total."""
+        return ClaudeClient.complete_safe(system=system, user=prompt, max_tokens=80,
+                                          fallback=f"We use {program['name']} — check it out.")
 
-    def generate_utm_link(self, url: str, campaign: str, medium: str = "content") -> str:
-        """Generate UTM-tracked affiliate link"""
-        sep = "&" if "?" in url else "?"
-        return f"{url}{sep}utm_source=nyspotlightreport&utm_medium={medium}&utm_campaign={campaign}"
+    def get_utm_link(self, program):
+        """Get tracking link with UTM params"""
+        base = program["url"]
+        params = urllib.parse.urlencode({
+            "utm_source": "nyspotlightreport",
+            "utm_medium": "affiliate",
+            "utm_campaign": program["name"].lower().replace(" ","_")
+        })
+        return f"{base}?{params}" if "?" not in base else f"{base}&{params}"
 
-    def report_program_status(self) -> list:
-        """Check status of all affiliate programs"""
-        results = []
-        for prog in PROGRAMS:
-            results.append({
-                "name":       prog["name"],
-                "commission": prog["commission"],
-                "signup_url": prog["url"],
-                "status":     self.state.get(f"affiliate_{prog['name']}_status", "not_joined"),
-                "earnings":   self.state.get(f"affiliate_{prog['name']}_earnings", 0.0),
-            })
-        return results
+    def execute(self):
+        joined   = [p for p in PROGRAMS if self.state.get(f"affiliate_{p['name']}_status","not_joined") == "active"]
+        pending  = [p for p in PROGRAMS if p not in joined]
+        earnings = sum(self.state.get(f"affiliate_{p['name']}_earnings", 0.0) for p in PROGRAMS)
 
-    def execute(self) -> dict:
-        programs = self.report_program_status()
-        joined   = [p for p in programs if p["status"] == "active"]
-        pending  = [p for p in programs if p["status"] == "not_joined"]
+        # Build signup priority list
+        tier1_pending = [p for p in pending if p["tier"]=="TIER1"]
+        recurring_pending = [p for p in pending if p["recurring"] and p["tier"]!="TIER1"]
 
-        rows = "".join([f"""
-<tr>
-  <td>{p['name']}</td>
-  <td>{p['commission']}</td>
-  <td style="color:{'green' if p['status']=='active' else 'orange'}">{p['status'].upper()}</td>
-  <td>${p['earnings']:,.2f}</td>
-  <td><a href="https://{p['signup_url']}">{p['signup_url']}</a></td>
-</tr>""" for p in programs])
+        rows = "".join([f"""<tr>
+          <td><b>{p['name']}</b></td>
+          <td>{p['commission']}</td>
+          <td>{'♻️ Recurring' if p['recurring'] else 'One-time'}</td>
+          <td>{p['tier']}</td>
+          <td><a href='{p['url']}'>Sign Up</a></td>
+        </tr>""" for p in (tier1_pending + recurring_pending)[:10]])
 
         AlertSystem.send(
-            subject  = f"🔗 Affiliate Status — {len(joined)} active | ${sum(p['earnings'] for p in programs):,.2f} earned",
-            body_html= f"""
-<h3>Affiliate Program Dashboard</h3>
-<table border="1" cellpadding="6">
-<tr><th>Program</th><th>Commission</th><th>Status</th><th>Earned</th><th>Link</th></tr>
-{rows}
-</table>
-<h4>Programs to join (high value):</h4>
-<ul>{''.join(f'<li><a href="https://{p["signup_url"]}">{p["name"]}</a> — {p["commission"]}</li>' for p in pending[:5])}</ul>""",
-            severity = "INFO"
-        )
-        return {"active": len(joined), "pending": len(pending)}
+            subject=f"💰 Affiliate Status: {len(joined)} active, {len(pending)} pending signup",
+            body_html=f"""<h3>Affiliate Program Status</h3>
+<p><b>Active:</b> {len(joined)} | <b>Total Earnings:</b> ${earnings:,.2f}</p>
+<h4>Priority Signups (DO THESE FIRST):</h4>
+<table border='1'><tr><th>Program</th><th>Commission</th><th>Type</th><th>Tier</th><th>Link</th></tr>
+{rows}</table>
+<p><i>Sign up for Tier 1 programs first — highest ROI per referral.</i></p>""",
+            severity="INFO")
+
+        self.log_summary(active=len(joined), pending=len(pending), earnings=earnings)
+        return {"active": len(joined), "pending": len(pending), "programs": len(PROGRAMS)}
 
 if __name__ == "__main__":
     AffiliateTrackerBot().run()
-# No secrets needed. Add earnings manually or via affiliate dashboard webhooks.
