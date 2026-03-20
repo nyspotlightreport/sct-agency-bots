@@ -1,38 +1,23 @@
 name: Fetch Service IDs
 on:
-  push:
-    paths:
-      - '.github/workflows/fetch-ids.yml'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'bots/get_publer_workspace.py'
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
+        with:
+          python-version: '3.11'
       - name: Get Publer Workspace ID
         run: python bots/get_publer_workspace.py
         env:
           PUBLER_API_KEY: ${{ secrets.PUBLER_API_KEY }}
       - name: Test Alpha Vantage Key
-        run: |
-          python3 -c "
-import os, json, urllib.request, urllib.parse
-AV_KEY = os.getenv('ALPHA_VANTAGE_API_KEY','')
-if not AV_KEY:
-    print('ERROR: ALPHA_VANTAGE_API_KEY not set in GitHub secrets yet')
-    exit(0)
-params = {'function':'GLOBAL_QUOTE','symbol':'AAPL','apikey':AV_KEY}
-url = 'https://www.alphavantage.co/query?' + urllib.parse.urlencode(params)
-with urllib.request.urlopen(url, timeout=15) as r:
-    d = json.loads(r.read())
-q = d.get('Global Quote', {})
-if q:
-    print(f'ALPHA VANTAGE LIVE: AAPL price={q.get(chr(48)+chr(53)+chr(46)+chr(32)+chr(112)+chr(114)+chr(105)+chr(99)+chr(101),\"?\")!r}')
-    print('AV_KEY_STATUS=WORKING')
-else:
-    print(f'AV Response: {json.dumps(d)[:200]}')
-"
+        run: python bots/test_alpha_vantage.py
         env:
           ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
