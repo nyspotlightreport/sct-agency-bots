@@ -1,18 +1,12 @@
-// Newsletter Subscribe Handler - stores in Netlify + HubSpot
 exports.handler = async (event) => {
-  if (event.httpMethod !== "POST") {
-    return { statusCode: 405, body: "Method not allowed" };
-  }
-
-  const HEADERS = {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type"
-  };
-
   if (event.httpMethod === "OPTIONS") {
-    return { statusCode: 200, headers: HEADERS, body: "" };
+    return { statusCode: 200, headers: {"Access-Control-Allow-Origin":"*","Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"POST,OPTIONS"}, body: "" };
   }
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, headers:{"Content-Type":"application/json","Access-Control-Allow-Origin":"*"}, body: JSON.stringify({error:"Method not allowed"}) };
+  }
+
+  const HEADERS = {"Content-Type":"application/json","Access-Control-Allow-Origin":"*","Access-Control-Allow-Headers":"Content-Type"};
 
   let body = {};
   try { body = JSON.parse(event.body || "{}"); } catch(e) {}
@@ -20,47 +14,63 @@ exports.handler = async (event) => {
   const name  = (body.name  || "").trim();
 
   if (!email || !email.includes("@")) {
-    return { statusCode: 400, headers: HEADERS, body: JSON.stringify({ error: "Invalid email" }) };
+    return { statusCode: 400, headers: HEADERS, body: JSON.stringify({error:"Invalid email"}) };
   }
 
   const results = {};
 
-  // 1. HubSpot CRM — add as contact
+  // HubSpot CRM — add as contact
   const HS_KEY = process.env.HUBSPOT_API_KEY || "";
   if (HS_KEY) {
     try {
       const nameParts = name.split(" ");
-      const r = await fetch("https://api.hubapi.com/crm/v3/objects/contacts", {
+      const hsRes = await fetch("https://api.hubapi.com/crm/v3/objects/contacts", {
         method: "POST",
-        headers: { "Authorization": `Bearer ${HS_KEY}`, "Content-Type": "application/json" },
+        headers: { 
+          "Authorization": `Bearer ${HS_KEY}`, 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify({
           properties: {
             email,
             firstname: nameParts[0] || "",
             lastname:  nameParts.slice(1).join(" ") || "",
-            lead_status: "NEW",
-            hs_lead_status: "NEW",
-            lifecyclestage: "subscriber",
-            source: "NY Spotlight Report Website"
+            lifecyclestage: "subscriber"
           }
         }),
         signal: AbortSignal.timeout(8000)
       });
-      results.hubspot = r.status === 201 ? "added" : `http_${r.status}`;
-    } catch(e) { results.hubspot = "error: " + e.message; }
+      
+      const hsBody = await hsRes.text();
+      console.log(`HubSpot status: ${hsRes.status}`);
+      console.log(`HubSpot body: ${hsBody.substring(0,200)}`);
+      
+      if (hsRes.status === 201 || hsRes.status === 200) {
+        results.hubspot = "added";
+      } else if (hsRes.status === 409) {
+        results.hubspot = "already_exists";  // Contact already exists
+      } else {
+        results.hubspot = `http_${hsRes.status}`;
+        // Try to extract error
+        try {
+          const err = JSON.parse(hsBody);
+          results.hubspot_msg = err.message || err.error || hsBody.substring(0,80);
+        } catch(e) { results.hubspot_msg = hsBody.substring(0,80); }
+      }
+    } catch(e) { 
+      results.hubspot = "error";
+      results.hubspot_msg = e.message;
+    }
+  } else {
+    results.hubspot = "no_key";
   }
 
-  // 2. Log to console (Netlify function logs)
-  console.log(`📧 NEW SUBSCRIBER: ${email} | name: ${name || "unknown"} | hs: ${results.hubspot}`);
+  console.log(`📧 SUBSCRIBE: ${email} | name: "${name}" | hs: ${results.hubspot}`);
 
   return {
     statusCode: 200,
     headers: HEADERS,
-    body: JSON.stringify({
-      success: true,
-      message: "Subscribed!",
-      email,
-      results
-    })
+    body: JSON.stringify({ success: true, email, results })
   };
 };
