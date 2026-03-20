@@ -1,0 +1,27 @@
+name: 💰 $500 Floor Tracker (Daily)
+
+on:
+  schedule:
+    - cron: '30 7 * * *'   # 7:30 AM UTC daily
+  workflow_dispatch:
+
+jobs:
+  track-floor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: 💰 Run floor tracker + notify phone
+        env:
+          GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python bots/floor_multiplier_bot.py
+      - name: Commit report
+        run: |
+          git config user.name "NYSR Bot"
+          git config user.email "nyspotlightreport@gmail.com"
+          git add data/floor_report.json || true
+          git diff --staged --quiet || git commit -m "💰 Floor report $(date +%Y-%m-%d)" && git push || true
