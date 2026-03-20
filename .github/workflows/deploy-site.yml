@@ -12,13 +12,18 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: {node-version: '20'}
-      - name: Install netlify CLI
+      - name: Install Netlify CLI
         run: npm install -g netlify-cli
-      - name: Deploy to Netlify
+      - name: Install site dependencies
+        run: cd site && npm install
+      - name: Deploy to Netlify (no function cache)
         working-directory: site
         run: |
-          npm install
-          netlify deploy --prod --dir . --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN
+          netlify deploy --prod --dir . \
+            --site $NETLIFY_SITE_ID \
+            --auth $NETLIFY_AUTH_TOKEN \
+            --skip-functions-cache \
+            --message "Fresh deploy with functions"
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
