@@ -8,30 +8,51 @@ jobs:
       - name: Set Netlify environment variables
         run: |
           SITE_ID="8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
+          BASE="https://api.netlify.com/api/v1/sites/${SITE_ID}/env"
           
           set_env() {
             local KEY=$1
             local VALUE=$2
-            curl -s -X POST \
-              "https://api.netlify.com/api/v1/sites/${SITE_ID}/env" \
+            if [ -z "$VALUE" ]; then
+              echo "⚠️  $KEY is empty — skipping"
+              return
+            fi
+            HTTP=$(curl -s -o /tmp/netlify_resp.json -w "%{http_code}" -X PUT \
+              "${BASE}/${KEY}" \
               -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
               -H "Content-Type: application/json" \
-              -d "{\"key\":\"${KEY}\",\"values\":[{\"value\":\"${VALUE}\",\"context\":\"all\"}]}" \
-              | python3 -c "import sys,json; d=json.load(sys.stdin); print('✅ ' + d.get('key','?') if 'key' in d else '❌ ' + str(d)[:60])"
+              -d "{\"key\":\"${KEY}\",\"values\":[{\"value\":\"${VALUE}\",\"context\":\"all\"}]}")
+            if [ "$HTTP" = "200" ] || [ "$HTTP" = "201" ]; then
+              echo "✅ $KEY set (HTTP $HTTP)"
+            else
+              # Try POST instead
+              HTTP2=$(curl -s -o /tmp/netlify_resp2.json -w "%{http_code}" -X POST \
+                "${BASE}" \
+                -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
+                -H "Content-Type: application/json" \
+                -d "[{\"key\":\"${KEY}\",\"values\":[{\"value\":\"${VALUE}\",\"context\":\"all\"}]}]")
+              echo "Tried POST for $KEY: HTTP $HTTP2 | $(cat /tmp/netlify_resp2.json | head -c 80)"
+            fi
           }
           
-          echo "Setting Netlify env vars from GitHub secrets..."
-          set_env "NEWSAPI_KEY"           "${{ secrets.NEWSAPI_KEY }}"
-          set_env "ANTHROPIC_API_KEY"     "${{ secrets.ANTHROPIC_API_KEY }}"
-          set_env "ALPHA_VANTAGE_API_KEY" "${{ secrets.ALPHA_VANTAGE_API_KEY }}"
-          set_env "PUBLER_API_KEY"        "${{ secrets.PUBLER_API_KEY }}"
-          set_env "OPENAI_API_KEY"        "${{ secrets.OPENAI_API_KEY }}"
-          echo "Done. All 5 env vars set in Netlify."
+          echo "Setting Netlify env vars..."
+          set_env "NEWSAPI_KEY"           "$NEWSAPI_KEY_VAL"
+          set_env "ANTHROPIC_API_KEY"     "$ANTHROPIC_KEY_VAL"
+          set_env "ALPHA_VANTAGE_API_KEY" "$AV_KEY_VAL"
+          set_env "PUBLER_API_KEY"        "$PUBLER_KEY_VAL"
+          set_env "OPENAI_API_KEY"        "$OPENAI_KEY_VAL"
           
-          # Trigger a redeploy so new env vars take effect
+          echo "Triggering redeploy..."
           curl -s -X POST \
             "https://api.netlify.com/api/v1/sites/${SITE_ID}/builds" \
             -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
-            | python3 -c "import sys,json; d=json.load(sys.stdin); print('Redeploy:', d.get('id','error')[:20])"
+            -H "Content-Type: application/json" \
+            -d "{}" -o /tmp/build.json -w "Redeploy: HTTP %{http_code}\n"
+          cat /tmp/build.json | python3 -c "import sys,json; d=json.load(sys.stdin); print('Build ID:', d.get('id','?')[:20])" 2>/dev/null || true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NEWSAPI_KEY_VAL:    ${{ secrets.NEWSAPI_KEY }}
+          ANTHROPIC_KEY_VAL:  ${{ secrets.ANTHROPIC_API_KEY }}
+          AV_KEY_VAL:         ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          PUBLER_KEY_VAL:     ${{ secrets.PUBLER_API_KEY }}
+          OPENAI_KEY_VAL:     ${{ secrets.OPENAI_API_KEY }}
