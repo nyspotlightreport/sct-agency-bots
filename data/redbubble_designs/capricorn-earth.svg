@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
+  <rect width="3000" height="3000" fill="#0d0d08"/>
+  <text x="1500" y="650" font-family="Georgia" font-size="85" fill="#8B7355" text-anchor="middle" letter-spacing="20">CAPRICORN</text>
+  <text x="1500" y="820" font-family="Georgia" font-size="55" fill="#5a4a30" text-anchor="middle" letter-spacing="8">♑ DEC 22 - JAN 19 ♑</text>
+  <circle cx="1500" cy="1400" r="420" fill="none" stroke="#8B7355" stroke-width="3" opacity="0.6"/>
+  <text x="1500" y="1500" font-family="serif" font-size="350" fill="#A08050" text-anchor="middle">♑</text>
+  <text x="1500" y="2080" font-family="Georgia" font-size="68" fill="#6B5535" text-anchor="middle" font-style="italic">Disciplined. Ambitious. Loyal.</text>
+</svg>
