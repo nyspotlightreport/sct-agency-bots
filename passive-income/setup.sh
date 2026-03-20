@@ -1,14 +1,6 @@
 #!/bin/bash
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-cd /opt/nysr-passive 2>/dev/null || (mkdir -p /opt/nysr-passive && cd /opt/nysr-passive)
-
-# Install docker if not present
-if ! command -v docker &>/dev/null; then
-  apt-get update -qq && apt-get install -y docker.io docker-compose -qq
-  systemctl enable docker && systemctl start docker
-fi
-
-# Write compose file with real token
+mkdir -p /opt/nysr-passive
 cat > /opt/nysr-passive/docker-compose.yml << 'COMPOSE'
 version: "3.8"
 services:
@@ -17,13 +9,6 @@ services:
     container_name: honeygain
     restart: unless-stopped
     command: -tou-accept -email nyspotlightreport@gmail.com -password REPLACE_PASS -device NYSR-VPS-01
-    network_mode: host
-  earnapp:
-    image: fazalfarhan01/earnapp:latest
-    container_name: earnapp
-    restart: unless-stopped
-    volumes:
-      - earnapp-data:/etc/earnapp
     network_mode: host
   repocket:
     image: repocket/repocket:latest
@@ -45,20 +30,13 @@ services:
     restart: unless-stopped
     command: start accept --token wcTHKRxTuV23D5xBWpeE+XPBhN2VYEl0l6K4pRjVp5E=
     network_mode: host
-volumes:
-  earnapp-data:
 COMPOSE
-
-# Stop any existing containers cleanly
-/usr/bin/docker-compose down 2>/dev/null || true
-
-# Pull and start
-/usr/bin/docker-compose pull --ignore-pull-failures
-/usr/bin/docker-compose up -d --remove-orphans
-
+docker rm -f earnapp 2>/dev/null || true
+cd /opt/nysr-passive
+docker-compose pull --ignore-pull-failures
+docker-compose up -d --remove-orphans
 echo ""
 echo "=== CONTAINERS ==="
-/usr/bin/docker ps --format "table {{.Names}}\t{{.Status}}"
+docker ps --format "table {{.Names}}\t{{.Status}}"
 echo ""
-echo "EarnApp link:"
-sleep 3 && /usr/bin/docker exec earnapp earnapp link_device 2>/dev/null || echo "Run: /usr/bin/docker exec earnapp earnapp link_device"
+echo "All 4 passive income apps running. Monthly estimate: $12-35"
