@@ -3,217 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KDP Auto-Fill — NYSR</title>
+<title>KDP Launch Pad — NYSR</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:-apple-system,sans-serif;background:#0D1B2A;color:#fff;min-height:100vh;padding:32px 20px;}
-h1{font-size:22px;color:#C9A84C;margin-bottom:6px;}
-.sub{color:#aaa;font-size:13px;margin-bottom:32px;line-height:1.6;}
-.step-bar{display:flex;gap:0;margin-bottom:32px;border-radius:10px;overflow:hidden;border:1px solid #1e3050;}
-.step{flex:1;padding:14px 10px;text-align:center;background:#111d2e;font-size:12px;color:#aaa;line-height:1.4;}
-.step strong{display:block;font-size:18px;color:#C9A84C;margin-bottom:2px;}
-.step.active{background:#1a2d42;color:#fff;}
-.books-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:32px;}
-.bk{background:#111d2e;border:1px solid #1e3050;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;transition:border .2s;}
-.bk.done{border-color:#27500A;}
-.bk-top{display:flex;align-items:center;gap:10px;}
-.bk-num{background:#C9A84C;color:#0D1B2A;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;}
-.bk-name{font-size:13px;font-weight:600;color:#fff;flex:1;line-height:1.3;}
-.bk-price{color:#C9A84C;font-size:12px;font-weight:700;}
-.bk-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.btn-dl{background:#1e3050;color:#C9A84C;padding:9px 0;border-radius:7px;text-decoration:none;font-size:12px;font-weight:700;text-align:center;border:1px solid #2a4060;display:block;}
-.btn-dl:hover{background:#2a4060;}
-.btn-fill{background:#C9A84C;color:#0D1B2A;padding:9px 0;border-radius:7px;font-size:12px;font-weight:800;text-align:center;border:none;cursor:pointer;width:100%;}
-.btn-fill:hover{background:#e8c060;}
-.btn-done{background:#27500A;color:#9de04a;padding:9px 0;border-radius:7px;font-size:12px;font-weight:700;text-align:center;border:none;cursor:pointer;width:100%;display:none;}
-.bmark-box{background:#111d2e;border:1px solid #C9A84C;border-radius:12px;padding:20px 24px;margin-bottom:28px;}
-.bmark-box h3{color:#C9A84C;font-size:14px;margin-bottom:8px;}
-.bmark-box p{color:#aaa;font-size:12px;margin-bottom:14px;line-height:1.6;}
-.bmark-link{display:inline-block;background:#C9A84C;color:#0D1B2A;padding:10px 20px;border-radius:8px;font-weight:800;font-size:14px;text-decoration:none;cursor:grab;}
-.drag-hint{color:#aaa;font-size:11px;margin-left:12px;}
-.progress{height:6px;background:#1e3050;border-radius:3px;margin-bottom:8px;overflow:hidden;}
-.progress-fill{height:100%;background:#C9A84C;border-radius:3px;transition:width .4s;}
-.prog-text{color:#aaa;font-size:12px;margin-bottom:24px;}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999;display:none;}
-.modal-box{background:#0D1B2A;border:1px solid #C9A84C;border-radius:14px;padding:28px;max-width:440px;width:90%;}
-.modal-box h2{color:#C9A84C;font-size:17px;margin-bottom:12px;}
-.modal-box p{color:#ccc;font-size:13px;line-height:1.6;margin-bottom:6px;}
-.modal-box code{background:#111d2e;color:#C9A84C;padding:3px 8px;border-radius:4px;font-size:12px;display:block;margin:8px 0;word-break:break-all;}
-.modal-close{margin-top:16px;background:#C9A84C;color:#0D1B2A;border:none;padding:10px 24px;border-radius:8px;font-weight:800;cursor:pointer;width:100%;font-size:14px;}
-.all-done{display:none;text-align:center;padding:40px 20px;}
-.all-done h2{color:#C9A84C;font-size:24px;margin-bottom:10px;}
-.all-done p{color:#aaa;font-size:14px;}
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0a1628;color:#fff;padding:0 0 60px;}
+.topbar{background:#0D1B2A;padding:16px 24px;border-bottom:2px solid #C9A84C;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.topbar h1{font-size:16px;color:#C9A84C;font-weight:700;}
+.prog{font-size:12px;color:#aaa;}
+.prog-bar{height:3px;background:#1e3050;}
+.prog-fill{height:100%;background:#C9A84C;transition:width .4s;}
+.main{max-width:900px;margin:0 auto;padding:24px 20px;}
+.tip{background:#111d2e;border:1px solid #C9A84C;border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:#ccc;line-height:1.6;}
+.tip strong{color:#C9A84C;}
+.books{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:14px;}
+.bk{background:#111d2e;border:1px solid #1e3050;border-radius:12px;overflow:hidden;display:flex;transition:border .2s;}
+.bk.done{border-color:#27500A;opacity:.7;}
+.bk-cover{width:80px;flex-shrink:0;position:relative;}
+.bk-cover img{width:80px;height:120px;object-fit:cover;display:block;}
+.bk-body{flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:8px;}
+.bk-title{font-size:13px;font-weight:700;color:#fff;line-height:1.3;}
+.bk-price{font-size:11px;color:#C9A84C;font-weight:700;}
+.bk-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+.btn{padding:7px 4px;border-radius:6px;font-size:11px;font-weight:700;text-align:center;text-decoration:none;border:none;cursor:pointer;display:block;}
+.btn-cover{background:#1e3050;color:#C9A84C;border:1px solid #2a4060;}
+.btn-pdf{background:#1e3050;color:#aaa;border:1px solid #2a4060;}
+.btn-go{background:#C9A84C;color:#0D1B2A;}
+.btn-done{background:#27500A;color:#9de04a;grid-column:1/-1;display:none;}
+.bk.done .btn-go{display:none;}
+.bk.done .btn-done{display:block!important;}
+.bk.done .bk-btns{grid-template-columns:1fr;}
+.status{font-size:10px;color:#555;margin-top:2px;}
 </style>
 </head>
 <body>
 
-<h1>KDP Auto-Fill</h1>
-<p class="sub">3 steps per book. Click "Fill KDP Form" → entire form auto-fills in your KDP tab. Upload PDF → Publish.</p>
+<div class="topbar">
+  <h1>KDP Launch Pad — 10 Books</h1>
+  <span class="prog" id="pt">0/10 published</span>
+</div>
+<div class="prog-bar"><div class="prog-fill" id="pf" style="width:0%"></div></div>
 
-<div class="step-bar">
-  <div class="step active"><strong>1</strong>Download PDF</div>
-  <div class="step"><strong>2</strong>Open KDP tab</div>
-  <div class="step"><strong>3</strong>Click Fill → Upload → Publish</div>
+<div class="main">
+<div class="tip">
+  <strong>Covers are done. Interior PDFs are done. Your only job:</strong><br>
+  For each book — click ⬇ Cover, ⬇ PDF, then 📦 Open KDP. On KDP: upload both files, hit Publish. Everything else is pre-filled below via auto-fill.
 </div>
 
-<div class="progress"><div class="progress-fill" id="pfill" style="width:0%"></div></div>
-<p class="prog-text" id="ptext">0 of 10 books submitted</p>
-
-<div class="books-grid" id="grid"></div>
-
-<div class="all-done" id="all-done">
-  <div style="font-size:52px;margin-bottom:12px;">🎉</div>
-  <h2>All 10 books submitted!</h2>
-  <p>Amazon reviews in 24–72 hours.<br>You'll get an email when each goes live.<br><br>Expected: $60–$200/month passive from Amazon.</p>
-</div>
-
-<div class="modal" id="modal">
-  <div class="modal-box">
-    <h2 id="m-title">How to auto-fill</h2>
-    <p id="m-body"></p>
-    <button class="modal-close" onclick="closeModal()">Got it</button>
-  </div>
+<div class="books" id="books"></div>
 </div>
 
 <script>
-const KDP_NEW = "https://kdp.amazon.com/en_US/title-setup/paperback/new/details";
+const SITE = "https://nyspotlightreport.com";
+const BASE = SITE+"/downloads";
+const CVR  = BASE+"/covers";
 
 const BOOKS = [
-  {n:"90-Day Goal Planner",p:"12.99",f:"90_day_goal_planner.pdf",
+  {n:"90-Day Goal Planner",p:"12.99",f:"90_day_goal_planner",
    t:"90-Day Goal Planner",s:"Quarterly Goals Tracker with Weekly Reviews and Habit Tracking",
    d:"Set and achieve your biggest goals with this structured 90-day planning system. Features quarterly goal setting, weekly review templates, daily priority lists, habit tracking, and end-of-quarter reflection. Perfect for entrepreneurs and students. Undated format, start any time.",
-   k:"goal planner|quarterly goals notebook|productivity planner journal|daily planner undated|goal setting workbook|90 day planner|weekly planner tracker"},
-  {n:"Daily Habit Tracker 30 Day Reset",p:"6.99",f:"daily_habit_tracker_30day.pdf",
+   k:["goal planner printable","quarterly goals notebook","productivity planner journal","daily planner undated","goal setting workbook","90 day planner","weekly planner tracker"]},
+  {n:"Daily Habit Tracker 30 Day Reset",p:"6.99",f:"daily_habit_tracker_30day",
    t:"Daily Habit Tracker 30 Day Reset",s:"Build Better Habits in 30 Days with Daily Tracking and Weekly Reviews",
    d:"Reset your habits with this focused 30-day tracker. Track up to 5 daily habits, record mood, note wins and struggles, and review weekly. Includes habit selection guide, streaks tracker, and month-end reflection template.",
-   k:"habit tracker notebook|daily habit journal|30 day challenge planner|habit building workbook|daily routine tracker|self discipline journal|morning routine planner"},
-  {n:"Monthly Budget Planner Finance Tracker",p:"7.99",f:"monthly_budget_planner.pdf",
+   k:["habit tracker notebook","daily habit journal","30 day challenge planner","habit building workbook","daily routine tracker","self discipline journal","morning routine planner"]},
+  {n:"Monthly Budget Planner",p:"7.99",f:"monthly_budget_planner",
    t:"Monthly Budget Planner Finance Tracker",s:"12-Month Personal Budget and Expense Tracker with Bill Payment Log",
-   d:"Take control of your money with this 12-month budget planner. Each month includes income tracking, expense categories, bill payment tracker, savings goal progress, and monthly summary. Also includes debt payoff tracker and annual summary.",
-   k:"budget planner notebook|monthly budget tracker|personal finance journal|expense tracker|money management planner|bill payment tracker|savings planner journal"},
-  {n:"Weekly Meal Prep Planner",p:"6.99",f:"weekly_meal_prep_planner.pdf",
+   d:"Take control of your money with this 12-month budget planner. Each month includes income tracking, expense categories, bill payment tracker, savings goal progress, and monthly summary. Includes debt payoff tracker and annual summary.",
+   k:["budget planner notebook","monthly budget tracker","personal finance journal","expense tracker","money management planner","bill payment tracker","savings planner journal"]},
+  {n:"Weekly Meal Prep Planner",p:"6.99",f:"weekly_meal_prep_planner",
    t:"Weekly Meal Prep Planner",s:"7-Day Meal Planning Journal with Grocery Lists, Macros, and Recipe Cards",
-   d:"Plan a week of healthy meals in under 20 minutes. Includes 7-day meal planning grids, grocery lists by category, macro tracking per meal, recipe card templates, and prep day checklists. Reduce food waste and eat better every week.",
-   k:"meal prep planner|weekly meal planning journal|grocery list notebook|recipe planner|healthy eating tracker|meal planning workbook|food journal"},
-  {n:"Annual Business Plan Template",p:"8.99",f:"annual_business_plan_template.pdf",
+   d:"Plan a week of healthy meals in under 20 minutes. Includes 7-day meal planning grids, grocery lists by category, macro tracking, recipe card templates, and prep day checklists. Reduce food waste and eat better every week.",
+   k:["meal prep planner","weekly meal planning journal","grocery list notebook","recipe planner","healthy eating tracker","meal planning workbook","food journal"]},
+  {n:"Annual Business Plan Template",p:"8.99",f:"annual_business_plan_template",
    t:"Annual Business Plan Template",s:"Complete One-Page and Full Annual Business Plan with OKRs and Revenue Projections",
    d:"Build a professional business plan with this annual planning template. Includes one-page overview, 12-month revenue projections, OKR goal framework, marketing plan, competitive analysis grid, risk register, and quarterly milestones. Built for startups and small businesses.",
-   k:"business plan template|annual business planner|startup planning workbook|OKR goal setting notebook|business strategy planner|revenue projection template|entrepreneur notebook"},
-  {n:"Fitness Workout Log 90 Days",p:"6.99",f:"Fitness_Workout_Log_90_Days.pdf",
+   k:["business plan template","annual business planner","startup planning workbook","OKR goal setting notebook","business strategy planner","revenue projection template","entrepreneur notebook"]},
+  {n:"Fitness Workout Log 90 Days",p:"6.99",f:"Fitness_Workout_Log_90_Days",
    t:"Fitness Workout Log 90 Days",s:"90-Day Exercise Tracker with Strength, Cardio, and Progress Measurements",
    d:"Track every workout for 90 days. Log sets, reps, weights, cardio, rest days, and body measurements. Includes weekly goal setting, personal records, and before/after progress pages. Works for any fitness program.",
-   k:"workout log book|fitness tracker journal|90 day workout planner|exercise notebook|gym log book|strength training tracker|weight loss journal"},
-  {n:"Gratitude Journal 365 Days",p:"7.99",f:"Gratitude_Journal_365_Days.pdf",
+   k:["workout log book","fitness tracker journal","90 day workout planner","exercise notebook","gym log book","strength training tracker","weight loss journal"]},
+  {n:"Gratitude Journal 365 Days",p:"7.99",f:"Gratitude_Journal_365_Days",
    t:"Gratitude Journal 365 Days",s:"Daily Gratitude Prompts and Reflection Journal for One Full Year",
    d:"Build a daily gratitude practice with 365 days of thoughtful prompts, affirmations, and reflection space. Each day includes morning gratitude, evening reflection, and a positive intention. Undated, start any day.",
-   k:"gratitude journal|daily gratitude prompts|365 day journal|mindfulness journal|daily reflection notebook|positive thinking journal|self care journal"},
-  {n:"Password Keeper Log Book",p:"5.99",f:"Password_Keeper_Log_Book.pdf",
+   k:["gratitude journal","daily gratitude prompts","365 day journal","mindfulness journal","daily reflection notebook","positive thinking journal","self care journal"]},
+  {n:"Password Keeper Log Book",p:"5.99",f:"Password_Keeper_Log_Book",
    t:"Password Keeper Log Book",s:"Secure Password Organizer and Internet Account Tracker with Alphabetical Index",
    d:"Keep all passwords, usernames, and account info organized. Features A-Z index, fields for website, username, password, email, and notes for 300+ accounts. Includes WiFi networks, PINs, and software license key sections.",
-   k:"password keeper log book|password organizer|internet password book|account tracker notebook|password journal|login organizer|password manager book"},
-  {n:"Sudoku Puzzles 200 Easy to Hard",p:"7.99",f:"Sudoku_Puzzles_200_Easy_to_Hard.pdf",
+   k:["password keeper log book","password organizer","internet password book","account tracker notebook","password journal","login organizer","password manager book"]},
+  {n:"Sudoku Puzzles 200",p:"7.99",f:"Sudoku_Puzzles_200_Easy_to_Hard",
    t:"Sudoku Puzzles 200 Easy to Hard",s:"200 Sudoku Puzzles for Adults — Easy, Medium, Hard, and Expert Levels",
-   d:"Challenge your mind with 200 Sudoku puzzles: 50 Easy, 60 Medium, 60 Hard, 30 Expert. Complete solutions included. Large print format. Perfect for daily mental exercise. Suitable for ages 12 and up.",
-   k:"sudoku puzzles book|sudoku for adults|large print sudoku|brain games book|number puzzles adults|sudoku puzzle book easy to hard|mental exercise book"},
-  {n:"Word Search Puzzles 100 Puzzles",p:"7.99",f:"Word_Search_Puzzles_100_Puzzles.pdf",
+   d:"Challenge your mind with 200 Sudoku puzzles: 50 Easy, 60 Medium, 60 Hard, 30 Expert. Complete solutions included. Large print format. Perfect for daily mental exercise.",
+   k:["sudoku puzzles book","sudoku for adults","large print sudoku","brain games book","number puzzles adults","sudoku puzzle book easy to hard","mental exercise book"]},
+  {n:"Word Search Puzzles 100",p:"7.99",f:"Word_Search_Puzzles_100_Puzzles",
    t:"Word Search Puzzles 100 Puzzles",s:"100 Word Search Puzzles for Adults — Large Print with Solutions",
-   d:"Enjoy 100 themed word search puzzles in large-print format. Topics include travel, food, animals, movies, sports, and more. 15-25 words per puzzle, solutions included. Perfect screen-free relaxation activity.",
-   k:"word search puzzles book|large print word search|word search for adults|word puzzle book|word games adults|brain teaser book|activity book adults"},
+   d:"Enjoy 100 themed word search puzzles in large-print format. Topics include travel, food, animals, movies, sports, and more. 15-25 words per puzzle, solutions included. Perfect screen-free relaxation.",
+   k:["word search puzzles book","large print word search","word search for adults","word puzzle book","word games adults","brain teaser book","activity book adults"]},
 ];
 
-const done = new Set(JSON.parse(localStorage.getItem('kdp_done')||'[]'));
+const done = new Set(JSON.parse(localStorage.getItem('kdp_v2_done')||'[]'));
 
-function save(){localStorage.setItem('kdp_done',JSON.stringify([...done]));}
-function updateProgress(){
-  const n=done.size,t=BOOKS.length;
-  document.getElementById('pfill').style.width=(n/t*100)+'%';
-  document.getElementById('ptext').textContent=n+' of '+t+' books submitted';
-  if(n===t){document.getElementById('grid').style.display='none';document.getElementById('all-done').style.display='block';}
+function updateBar(){
+  const n=done.size;
+  document.getElementById('pf').style.width=(n/BOOKS.length*100)+'%';
+  document.getElementById('pt').textContent=n+'/'+BOOKS.length+' published';
 }
 
-function fillKDP(i){
+function fillAndOpen(i){
   const b=BOOKS[i];
-  // Open KDP and inject via postMessage + localStorage trick
-  // Store book data in localStorage so bookmarklet can read it
-  const data={
-    title:b.t, subtitle:b.s, author:"ProFlow Digital",
-    publisher:"NY Spotlight Report", desc:b.d,
-    keywords:b.k.split('|'), price:b.p
-  };
-  localStorage.setItem('kdp_autofill',JSON.stringify(data));
-  
+  localStorage.setItem('kdp_fill',JSON.stringify({t:b.t,s:b.s,d:b.d,k:b.k,p:b.p}));
   // Open KDP
-  const w=window.open(KDP_NEW,'_blank');
-  
-  // Show instructions modal
-  showModal(b.n, i);
-}
-
-function showModal(name, i){
-  const script=`javascript:(function(){
-    var d=JSON.parse(localStorage.getItem('kdp_autofill')||'{}');
-    if(!d.title){alert('No data found. Go back to the NYSR KDP page first.');return;}
-    function fill(sel,val){var e=document.querySelector(sel);if(e){e.value=val;e.dispatchEvent(new Event('input',{bubbles:true}));e.dispatchEvent(new Event('change',{bubbles:true}));}}
-    function fillTA(sel,val){var e=document.querySelector(sel);if(e){e.value=val;e.dispatchEvent(new Event('input',{bubbles:true}));}}
-    setTimeout(function(){
-      fill('#data-print-book-title',d.title);
-      fill('#data-print-book-subtitle',d.subtitle);
-      fill('#data-author-first-name-0','ProFlow');
-      fill('#data-author-last-name-0','Digital');
-      fillTA('#data-print-book-description',d.desc);
-      fill('#data-print-book-publisher','NY Spotlight Report');
-      if(d.keywords&&d.keywords.length){
-        for(var k=0;k<7;k++){fill('#data-keyword-'+k,d.keywords[k]||'');}
-      }
-      alert('Form filled! Now:\\n1. Upload your PDF manuscript\\n2. Use Cover Creator for cover\\n3. Set price to $'+d.price+'\\n4. Hit Publish!');
-    },2000);
-  })();`;
-  
-  document.getElementById('m-title').textContent='Auto-fill: '+name;
-  document.getElementById('m-body').innerHTML=`
-    <p style="color:#ccc;font-size:13px;line-height:1.7;margin-bottom:10px;">
-      KDP tab is opening. Once the KDP page loads:<br><br>
-      <strong style="color:#C9A84C;">Paste this in your browser address bar and press Enter:</strong>
-    </p>
-    <code style="font-size:10px;line-height:1.5;cursor:pointer;background:#111;padding:10px;display:block;border-radius:6px;word-break:break-all;" onclick="navigator.clipboard.writeText(this.textContent);this.style.background='#1a3320';this.textContent='✓ Copied to clipboard!';">${script.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</code>
-    <p style="color:#aaa;font-size:11px;margin-top:8px;">Click the code above to copy it, then paste in KDP browser bar → Enter. Form fills automatically.</p>`;
-  
-  document.getElementById('modal').style.display='flex';
+  window.open('https://kdp.amazon.com/en_US/title-setup/paperback/new/details','kdp_'+i);
+  // Show snackbar with auto-fill instructions
+  const bar=document.getElementById('snack');
+  bar.innerHTML=`<b>KDP tab opened!</b> In the KDP tab address bar, paste this and press Enter: <code id="sc" onclick="navigator.clipboard.writeText(document.getElementById('jsc').textContent);this.style.color='#9DE04A';">click to copy script</code><span id="jsc" style="display:none">javascript:(function(){var b=JSON.parse(localStorage.getItem('kdp_fill')||'{}');if(!b.t)return;function f(s,v){var e=document.querySelector(s);if(e){e.value=v;e.dispatchEvent(new Event('input',{bubbles:1}));e.dispatchEvent(new Event('change',{bubbles:1}));}}setTimeout(function(){f('#data-print-book-title',b.t);f('#data-print-book-subtitle',b.s);f('#data-author-first-name-0','ProFlow');f('#data-author-last-name-0','Digital');var ta=document.querySelector('#data-print-book-description');if(ta){ta.value=b.d;ta.dispatchEvent(new Event('input',{bubbles:1}));}f('#data-print-book-publisher','NY Spotlight Report');if(b.k)b.k.forEach(function(kw,j){f('#data-keyword-'+j,kw);});},1500);})();</span>`;
+  bar.style.display='flex';
 }
 
 function markDone(i){
-  done.add(i);save();
-  document.querySelector('#bk'+i+' .btn-fill').style.display='none';
-  document.querySelector('#bk'+i+' .btn-done').style.display='block';
-  document.querySelector('#bk'+i).classList.add('done');
-  updateProgress();
-  closeModal();
+  done.add(i);
+  localStorage.setItem('kdp_v2_done',JSON.stringify([...done]));
+  document.getElementById('bk'+i).classList.add('done');
+  updateBar();
 }
 
-function closeModal(){document.getElementById('modal').style.display='none';}
-
-const grid=document.getElementById('grid');
+const grid=document.getElementById('books');
 grid.innerHTML=BOOKS.map((b,i)=>`
 <div class="bk${done.has(i)?' done':''}" id="bk${i}">
-  <div class="bk-top">
-    <div class="bk-num">${done.has(i)?'✓':i+1}</div>
-    <div class="bk-name">${b.n}</div>
-    <div class="bk-price">$${b.p}</div>
+  <div class="bk-cover"><img src="${CVR}/${b.f}_cover.jpg" alt="${b.n}"></div>
+  <div class="bk-body">
+    <div class="bk-title">${b.n}</div>
+    <div class="bk-price">$${b.p} · ProFlow Digital</div>
+    <div class="bk-btns">
+      <a href="${CVR}/${b.f}_cover.jpg" class="btn btn-cover" download>⬇ Cover</a>
+      <a href="${BASE}/${b.f}.pdf" class="btn btn-pdf" download>⬇ PDF</a>
+      <button class="btn btn-go" onclick="fillAndOpen(${i})">📦 Open KDP</button>
+      <button class="btn btn-done" onclick="markDone(${i})">✅ Published — Next</button>
+    </div>
   </div>
-  <div class="bk-btns">
-    <a href="https://nyspotlightreport.com/downloads/${b.f}" class="btn-dl" download>⬇ Download PDF</a>
-    <button class="btn-fill" onclick="fillKDP(${i})" style="${done.has(i)?'display:none':''}">⚡ Fill KDP Form</button>
-    <button class="btn-done" onclick="markDone(${i})" style="${done.has(i)?'':'display:none'};grid-column:1/-1;">✅ Mark Complete → Next</button>
-  </div>
-  ${done.has(i)?'':``}
 </div>`).join('');
 
-// Already done ones show mark complete
-BOOKS.forEach((_,i)=>{if(!done.has(i)){
-  // add mark done btn below fill btn  
-}});
-
-updateProgress();
+updateBar();
 </script>
+
+<!-- Snackbar -->
+<div id="snack" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0D1B2A;border-top:2px solid #C9A84C;padding:14px 20px;font-size:12px;color:#ccc;align-items:center;gap:12px;z-index:999;">
+  <button onclick="document.getElementById('snack').style.display='none'" style="background:none;border:none;color:#C9A84C;font-size:18px;cursor:pointer;flex-shrink:0;">✕</button>
+  <span id="snack-msg"></span>
+</div>
 </body>
 </html>
