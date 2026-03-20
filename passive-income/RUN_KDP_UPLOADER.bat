@@ -1,15 +1,9 @@
 @echo off
-echo ╔══════════════════════════════════════════════════╗
-echo ║        NYSR KDP BOOK UPLOADER                   ║
-echo ╚══════════════════════════════════════════════════╝
-echo.
-echo Installing requirements...
+chcp 65001 > nul
+echo KDP Book Uploader - NY Spotlight Report
+echo ========================================
 pip install playwright -q
 playwright install chromium
-echo.
-echo Downloading KDP uploader...
-curl -sSL "https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/passive-income/kdp_uploader.py" -o kdp_uploader.py
-echo.
-echo Starting uploader...
+curl -L -o kdp_uploader.py "https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/passive-income/kdp_uploader.py"
 python kdp_uploader.py
 pause
