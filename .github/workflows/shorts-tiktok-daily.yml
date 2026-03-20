@@ -1,0 +1,31 @@
+name: 🎬 Shorts + Reels Script Generator (Daily)
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests anthropic
+      - name: Generate video scripts for all platforms
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python bots/youtube_shorts_tiktok_bot.py
+      - name: Commit scripts
+        run: |
+          git config user.name "NYSR Bot"
+          git config user.email "nyspotlightreport@gmail.com"
+          git add data/video_scripts/ || true
+          git diff --staged --quiet || git commit -m "Add video scripts $(date +%Y-%m-%d)" && git push || true
