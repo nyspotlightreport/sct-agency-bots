@@ -12,17 +12,20 @@ jobs:
         with: {python-version: "3.11"}
       - run: pip install requests -q
       - name: 🔗 Affiliate Deep Linker
+        continue-on-error: true
         env:
           WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
           WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
         run: python bots/affiliate_deep_linker_bot.py
       - name: 📦 Multi-Platform Product Sync
+        continue-on-error: true
         env:
           GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
           ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
           ETSY_SHOP_ID: ${{ secrets.ETSY_SHOP_ID }}
         run: python bots/multi_platform_syncer_bot.py
       - name: 📧 Beehiiv Sequence Check
+        continue-on-error: true
         env:
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           BEEHIIV_PUB_ID: ${{ secrets.BEEHIIV_PUB_ID }}
