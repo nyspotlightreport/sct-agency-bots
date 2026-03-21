@@ -52,7 +52,7 @@ H = {
 ERROR_PATTERNS = [
     # Dependency errors
     {
-        "pattern": r"Cannot find module '([^']+)'|is using "([^"]+)" but that dependency has not been installed",
+        "pattern": r"""Cannot find module '([^']+)'|is using "([^"]+)" but that dependency has not been installed""",
         "type": "missing_npm_dependency",
         "confidence": 0.95,
         "fix": "add_dependency_to_package_json",
@@ -75,7 +75,7 @@ ERROR_PATTERNS = [
     },
     # Netlify-specific
     {
-        "pattern": r"A Netlify Function is using "([^"]+)" but that dependency has not been installed",
+        "pattern": r"""A Netlify Function is using "([^"]+)" but that dependency has not been installed""",
         "type": "netlify_missing_dep",
         "confidence": 0.99,
         "fix": "fix_netlify_dependency",
@@ -247,7 +247,7 @@ def fix_netlify_dependency(finding: Dict, run_logs: str) -> bool:
     """
     # Extract the missing package name
     pkg_match = re.search(
-        r'A Netlify Function is using "([^"]+)"|Cannot find module '([^']+)'',
+        r"""A Netlify Function is using "([^"]+)"|Cannot find module '([^']+)'""",
         finding.get("context","")
     )
     if not pkg_match:
