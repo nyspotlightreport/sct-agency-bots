@@ -1,0 +1,24 @@
+name: 📊 Ahrefs-Powered Content (Daily)
+on:
+  schedule:
+    - cron: "30 7 * * *"
+  workflow_dispatch:
+jobs:
+  smart-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests feedparser -q
+      - name: 📊 Keyword Research + Write Optimized Post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUB_ID: ${{ secrets.BEEHIIV_PUB_ID }}
+        run: |
+          python agents/ahrefs_module.py
+          python agents/content_intelligence_agent.py
