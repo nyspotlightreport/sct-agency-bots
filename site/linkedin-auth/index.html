@@ -2,44 +2,58 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LinkedIn Auth — NYSR</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:-apple-system,sans-serif;background:#0D1B2A;color:#fff;padding:32px 20px;max-width:560px;margin:0 auto;}
-h1{color:#C9A84C;font-size:18px;margin-bottom:6px;}
-p{color:#8fa8c0;font-size:13px;margin-bottom:20px;line-height:1.6;}
-.step{background:#111d2e;border:1px solid #1e3050;border-radius:10px;padding:14px 18px;margin-bottom:10px;}
-.sn{background:#C9A84C;color:#0D1B2A;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-right:8px;flex-shrink:0;}
-.step-row{display:flex;align-items:flex-start;gap:0;}
-.step-text{font-size:13px;color:#ccc;line-height:1.6;flex:1;}
-.btn{display:block;background:#C9A84C;color:#0D1B2A;padding:10px;border-radius:7px;text-decoration:none;font-weight:800;font-size:13px;text-align:center;margin-top:8px;}
-code{background:#060f1a;color:#C9A84C;padding:2px 6px;border-radius:3px;font-size:11px;}
-.warn{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:12px 14px;font-size:12px;color:#C9A84C;margin-top:16px;}
+body{font-family:system-ui;background:#0A0F1A;color:#E2E8F0;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.card{background:#0D1B2A;border:1px solid rgba(201,168,76,.3);border-radius:16px;
+  padding:36px;max-width:480px;width:100%;text-align:center;}
+.logo{font-size:48px;margin-bottom:16px;}
+h1{font-size:24px;font-weight:800;margin-bottom:8px;}
+p{font-size:14px;color:#64748B;line-height:1.6;margin-bottom:24px;}
+.btn{display:block;background:#0077B5;color:white;padding:14px 32px;
+  border-radius:10px;text-decoration:none;font-size:15px;font-weight:700;
+  transition:all .2s;}
+.btn:hover{background:#005885;transform:translateY(-1px);}
+.scopes{background:#111827;border:1px solid #1a2d42;border-radius:8px;
+  padding:14px;text-align:left;margin-bottom:20px;font-size:12px;color:#64748B;}
+.scope{padding:4px 0;}
+.scope::before{content:"✓ ";color:#22D3A0;}
 </style>
 </head>
 <body>
-<h1>LinkedIn Access Token — 5 Minutes</h1>
-<p>You have the LinkedIn app (Client ID + Secret). The missing piece is an access token from the OAuth flow. Here's the fastest path.</p>
-
-<div class="step">
-  <div class="step-row"><span class="sn">1</span><div class="step-text">Go to LinkedIn Developer Portal → your app → Auth tab</div></div>
-  <a href="https://www.linkedin.com/developers/apps" class="btn" target="_blank">Open LinkedIn Apps →</a>
+<div class="card">
+  <div class="logo">💼</div>
+  <h1>Connect LinkedIn</h1>
+  <p>Grant NYSR Agency access to post content and read your profile on LinkedIn.</p>
+  
+  <div class="scopes">
+    <div class="scope">Post content (w_member_social)</div>
+    <div class="scope">Read profile (r_liteprofile)</div>
+    <div class="scope">Read email (r_emailaddress)</div>
+    <div class="scope">OpenID Connect (openid, profile, email)</div>
+  </div>
+  
+  <a id="authBtn" href="#" class="btn">Authorize with LinkedIn</a>
+  
+  <p style="margin-top:16px;font-size:11px;">
+    After clicking, log in with LinkedIn and click Allow.<br>
+    You'll be redirected back automatically.
+  </p>
 </div>
 
-<div class="step">
-  <div class="step-row"><span class="sn">2</span><div class="step-text">Under "OAuth 2.0 tools" → click <strong>Request access token</strong><br>Scopes needed: <code>w_member_social</code> + <code>r_liteprofile</code></div></div>
-</div>
-
-<div class="step">
-  <div class="step-row"><span class="sn">3</span><div class="step-text">Copy the generated token → add as GitHub secret <code>LINKEDIN_ACCESS_TOKEN</code></div></div>
-  <a href="https://github.com/nyspotlightreport/sct-agency-bots/settings/secrets/actions/new" class="btn" target="_blank">Add Secret →</a>
-</div>
-
-<div class="step">
-  <div class="step-row"><span class="sn">4</span><div class="step-text">LinkedIn tokens last <strong>60 days</strong>. Add a calendar reminder to refresh it every 50 days.</div></div>
-</div>
-
-<div class="warn">⚡ After adding the token — LinkedIn bot posts once daily: insights post (~180 words) with link to blog. Target: 3,000+ impressions per post at 500 connections.</div>
+<script>
+// Build the LinkedIn OAuth URL
+const params = new URLSearchParams({
+  response_type: "code",
+  client_id:     "78b8ect8u8qgbe",
+  redirect_uri:  "https://nyspotlightreport.com/api/linkedin-callback",
+  state:         "nysr_" + Math.random().toString(36).slice(2),
+  scope:         "openid profile email w_member_social r_liteprofile r_emailaddress"
+});
+document.getElementById("authBtn").href =
+  "https://www.linkedin.com/oauth/v2/authorization?" + params.toString();
+</script>
 </body>
 </html>
