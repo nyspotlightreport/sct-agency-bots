@@ -1,72 +1,30 @@
-name: 🎩 James Butler (Daily Brief)
+name: 🎩 James Butler — Morning Brief (Daily)
 on:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "0 10 * * *"
   workflow_dispatch:
 env:
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
-  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
   GH_PAT: ${{ secrets.GH_PAT }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  GMAIL_USER: ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
   STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
   GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
   NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+  CHAIRMAN_EMAIL: ${{ secrets.CHAIRMAN_EMAIL }}
 
 jobs:
   morning-brief:
-    name: "🎩 Morning Brief + Action Queue"
+    name: "🎩 James Butler Morning Brief"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - name: Run James Butler daily brief
-        run: python agents/james_butler.py
-      - name: Update action queue
+      - run: pip install requests PyNaCl -q
+      - name: Run James Butler
+        run: python agents/james_butler_concierge.py
         continue-on-error: true
-        run: |
-          python -c "
-import requests, base64, json, os
-from datetime import date
-GH = os.environ.get('GITHUB_TOKEN','')
-H = {'Authorization':f'token {GH}','Accept':'application/vnd.github+json'}
-REPO = 'nyspotlightreport/sct-agency-bots'
-# Check which secrets are now filled
-r = requests.get(f'https://api.github.com/repos/{REPO}/actions/secrets', headers=H)
-secrets = [s['name'] for s in r.json().get('secrets',[])]
-status = {
-  'updated': str(date.today()),
-  'linkedin_done': 'LINKEDIN_ACCESS_TOKEN' in secrets,
-  'reddit_done': 'REDDIT_CLIENT_ID' in secrets,
-  'pushover_done': 'PUSHOVER_API_KEY' in secrets,
-  'twitter_done': 'TWITTER_API_KEY' in secrets,
-  'instagram_done': 'INSTAGRAM_ACCESS_TOKEN' in secrets,
-  'secrets_total': len(secrets)
-}
-path = 'data/james_butler/completion_status.json'
-payload = json.dumps(status, indent=2)
-body = {'message': f'butler: completion status update — {len(secrets)} secrets', 'content': base64.b64encode(payload.encode()).decode()}
-r2 = requests.get(f'https://api.github.com/repos/{REPO}/contents/{path}', headers=H)
-if r2.status_code == 200: body['sha'] = r2.json()['sha']
-requests.put(f'https://api.github.com/repos/{REPO}/contents/{path}', json=body, headers=H)
-print(f'Completion status saved. {len([k for k,v in status.items() if v is True])} items done.')
-"
-
-  opportunity-brief:
-    name: "💼 Daily Opportunity + ROI Brief"
-    runs-on: ubuntu-latest
-    needs: morning-brief
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - name: Market intelligence scan
-        continue-on-error: true
-        run: python agents/market_intelligence_scout.py
-      - name: ROI optimizer (weekly, Mondays)
-        if: github.event_name == 'workflow_dispatch'
-        continue-on-error: true
-        run: python agents/strategic_roi_optimizer.py
