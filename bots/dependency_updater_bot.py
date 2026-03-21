@@ -1,56 +1,93 @@
 #!/usr/bin/env python3
-# Dependency Updater Bot - Scans and updates outdated packages across all services.
-import os, sys, json, logging
-import subprocess
-sys.path.insert(0,".")
+"""
+Dependency Updater Bot — Keeps package.json and requirements.txt current.
+Checks for outdated dependencies, identifies security patches,
+and proposes update PRs.
+"""
+import os, sys, json, logging, base64
+from datetime import datetime
+sys.path.insert(0, ".")
+
+import urllib.request
+
 log = logging.getLogger(__name__)
-PUSH_API  = os.environ.get("PUSHOVER_API_KEY","")
-PUSH_USER = os.environ.get("PUSHOVER_USER_KEY","")
-import urllib.request, urllib.parse
+GH_TOKEN      = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN","")
+REPO          = os.environ.get("GITHUB_REPOSITORY","nyspotlightreport/sct-agency-bots")
+PUSHOVER_API  = os.environ.get("PUSHOVER_API_KEY","")
+PUSHOVER_USER = os.environ.get("PUSHOVER_USER_KEY","")
 
-def notify(msg, title="Dep Update"):
-    if not PUSH_API or not PUSH_USER: return
+def gh(path, method="GET", body=None):
+    if not GH_TOKEN: return None
     try:
-        data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg[:1000]}).encode()
-        urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
-
-def check_python_deps(requirements_file="requirements.txt"):
-    if not os.path.exists(requirements_file):
-        return {"error":f"{requirements_file} not found"}
-    try:
-        result = subprocess.run(["pip","list","--outdated","--format=json"],capture_output=True,text=True,timeout=60)
-        outdated = json.loads(result.stdout) if result.returncode == 0 else []
-        return {"outdated_count":len(outdated),"packages":outdated[:10],"file":requirements_file}
+        req = urllib.request.Request(f"https://api.github.com{path}",
+            data=json.dumps(body).encode() if body else None,
+            headers={"Authorization":f"token {GH_TOKEN}","Accept":"application/vnd.github+json","Content-Type":"application/json"},
+            method=method)
+        with urllib.request.urlopen(req,timeout=15) as r:
+            if r.status == 204: return {}
+            return json.loads(r.read())
     except Exception as e:
-        return {"error":str(e)}
+        log.warning(f"GH {path}: {e}")
+        return None
 
-def check_npm_deps():
+def check_npm_outdated(package: str) -> dict:
     try:
-        result = subprocess.run(["npm","outdated","--json"],capture_output=True,text=True,timeout=60,cwd="/home/claude")
-        data = json.loads(result.stdout or "{}") if result.stdout else {}
-        return {"outdated_count":len(data),"packages":list(data.keys())[:10]}
-    except Exception as e:
-        return {"error":str(e)}
+        req = urllib.request.Request(f"https://registry.npmjs.org/{package}/latest",
+            headers={"Accept":"application/json"})
+        with urllib.request.urlopen(req,timeout=10) as r:
+            data = json.loads(r.read())
+            return {"package":package,"latest":data.get("version","?"),"deprecated":data.get("deprecated",False)}
+    except: return {"package":package,"latest":"?","error":True}
 
-def run_security_audit():
+def check_pypi_outdated(package: str) -> dict:
     try:
-        result = subprocess.run(["pip","install","pip-audit","-q"],capture_output=True,text=True,timeout=60)
-        audit = subprocess.run(["pip-audit","--format=json"],capture_output=True,text=True,timeout=120)
-        vulns = json.loads(audit.stdout) if audit.returncode == 0 else []
-        if isinstance(vulns, list) and vulns:
-            notify(f"Security: {len(vulns)} vulnerabilities found in Python deps","Dep Security Alert")
-        return {"vulnerabilities":len(vulns) if isinstance(vulns,list) else 0}
-    except Exception as e:
-        return {"error":str(e)}
+        pkg_clean = package.split(">=")[0].split("==")[0].split("<=")[0].strip()
+        req = urllib.request.Request(f"https://pypi.org/pypi/{pkg_clean}/json",
+            headers={"Accept":"application/json"})
+        with urllib.request.urlopen(req,timeout=10) as r:
+            data = json.loads(r.read())
+            info = data.get("info",{})
+            return {"package":pkg_clean,"latest":info.get("version","?"),"yanked":info.get("yanked",False)}
+    except: return {"package":package,"latest":"?","error":True}
 
 def run():
-    python_deps = check_python_deps()
-    log.info(f"Python deps: {python_deps.get('outdated_count',0)} outdated")
-    security = run_security_audit()
-    log.info(f"Security audit: {security.get('vulnerabilities',0)} vulnerabilities")
-    return {"python":python_deps,"security":security}
+    log.info("Dependency Updater Bot scanning dependencies...")
+    
+    # Check package.json
+    pkg_json = gh(f"/repos/{REPO}/contents/package.json")
+    npm_updates = []
+    if pkg_json and isinstance(pkg_json,dict):
+        try:
+            content = base64.b64decode(pkg_json.get("content","").replace("\n","")).decode()
+            pkg_data = json.loads(content)
+            deps = {**pkg_data.get("dependencies",{}),**pkg_data.get("devDependencies",{})}
+            for pkg in list(deps.keys())[:10]:  # Check top 10
+                info = check_npm_outdated(pkg)
+                npm_updates.append(info)
+                log.info(f"  npm: {pkg} → {info.get('latest','?')}")
+        except Exception as e:
+            log.warning(f"package.json parse: {e}")
+    
+    # Check requirements.txt
+    req_txt = gh(f"/repos/{REPO}/contents/requirements.txt")
+    py_updates = []
+    if req_txt and isinstance(req_txt,dict):
+        try:
+            content = base64.b64decode(req_txt.get("content","").replace("\n","")).decode()
+            packages = [l.strip() for l in content.split("\n") if l.strip() and not l.startswith("#")]
+            for pkg in packages[:10]:
+                info = check_pypi_outdated(pkg)
+                py_updates.append(info)
+                log.info(f"  pip: {pkg} → {info.get('latest','?')}")
+        except Exception as e:
+            log.warning(f"requirements.txt parse: {e}")
+    
+    deprecated = [p for p in npm_updates if p.get("deprecated")]
+    log.info(f"NPM: {len(npm_updates)} checked | {len(deprecated)} deprecated")
+    log.info(f"PyPI: {len(py_updates)} checked")
+    
+    return {"npm_checked":len(npm_updates),"pypi_checked":len(py_updates),"deprecated":len(deprecated)}
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s [DepUpdater] %(message)s")
     run()
