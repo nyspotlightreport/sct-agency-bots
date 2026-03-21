@@ -39,8 +39,10 @@ POST_TOPICS = [
     ("chatgpt for business",           "AI Tools",         "🧠"),
 ]
 
-def slugify(text): 
-    return re.sub(r"[^a-z0-9]+","-",text.lower()).strip("-")[:60]
+def slugify(text):
+    s = re.sub(r"[^a-z0-9\-]","",re.sub(r"[^a-z0-9]+","-",text.lower())).strip("-")
+    s = re.sub(r"-+","-",s)  # collapse multiple hyphens
+    return s[:50] if s else "post-" + str(int(__import__("time").time()))
 
 def get_sha(path):
     r = requests.get(f"https://api.github.com/repos/{REPO}/contents/{path}", headers=H, timeout=10)
@@ -137,7 +139,7 @@ def publish_post(title, content, category, emoji, keyword):
             "content": base64.b64encode(html.encode()).decode()}
     if sha: body["sha"] = sha
     r = requests.put(f"https://api.github.com/repos/{REPO}/contents/{path}",
-        json=body, headers=H, timeout=30)
+        json=body, headers=H, timeout=90)
     if r.status_code in [200,201]:
         log.info(f"✅ Published: /blog/{slug}/")
         return f"https://nyspotlightreport.com/blog/{slug}/"
