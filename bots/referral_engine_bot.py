@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Referral Engine Bot — Automates the entire referral program.
-Identifies happy customers, sends referral invites, tracks referrals,
-and handles reward fulfillment automatically."""
+"""
+Referral Engine Bot — Automates referral asks from satisfied clients.
+Best time to ask: 30 days after successful onboarding.
+Offers: $200 credit for every successful referral.
+"""
 import os, sys, json, logging
-from datetime import datetime
-sys.path.insert(0,".")
+from datetime import datetime, timedelta
+sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude
     from agents.crm_core_agent import supabase_request
@@ -14,66 +16,47 @@ except:
 
 log = logging.getLogger(__name__)
 
-REFERRAL_PROGRAM = {
-    "reward_referrer":  "$50 account credit per successful referral",
-    "reward_referee":   "First month 50% off",
-    "tracking_url_base": "https://nyspotlightreport.com/proflow/?ref=",
-    "eligibility":      "Customers with 3+ months, health score 75+",
-    "referral_window":  90,  # days the referral link is active
+REFERRAL_OFFER = {
+    "credit":       "$200",
+    "requirement":  "referred contact becomes a paying client",
+    "payout":       "credited to next invoice",
+    "program_url":  "https://nyspotlightreport.com/referral/",
 }
 
-def identify_referral_candidates(min_months: int = 3, min_health: int = 75) -> list:
-    """Find customers likely to refer."""
-    # In production, query Supabase for customers matching criteria
-    customers = supabase_request("GET","contacts",
-        query=f"?stage=eq.CLOSED_WON&score=gte.{min_health}&select=id,name,email,company&limit=20"
+def get_referral_candidates() -> list:
+    cutoff = (datetime.utcnow() - timedelta(days=30)).isoformat()
+    return supabase_request("GET","contacts",
+        query=f"?stage=eq.CLOSED_WON&stage_changed_at=lt.{cutoff}&referral_asked=is.null&order=score.desc&limit=20"
     ) or []
-    return customers
 
-def generate_referral_link(customer_id: str) -> str:
-    import hashlib
-    ref_code = hashlib.md5(customer_id.encode()).hexdigest()[:8]
-    return f"{REFERRAL_PROGRAM["tracking_url_base"]}{ref_code}"
+def generate_referral_ask(contact: dict) -> str:
+    name  = contact.get("name","")
+    first = name.split()[0] if name else "there"
+    co    = contact.get("company","")
+    return claude(
+        "Write a brief, genuine referral ask email. Friendly, not transactional.",
+        f"""Satisfied client: {name} at {co}
+Referral offer: {REFERRAL_OFFER["credit"]} credit per successful referral
+Program: {REFERRAL_OFFER["program_url"]}
 
-def generate_referral_ask(customer: dict) -> dict:
-    name    = (customer.get("name","") or "").split()[0] or "there"
-    company = customer.get("company","your company")
-    ref_link = generate_referral_link(customer.get("id",name))
-    body = claude(
-        "Write a referral ask email. Warm, genuine, not salesy. Mention both rewards. Under 120 words.",
-        f"Happy customer: {name} at {company}. Referral link: {ref_link}. Referrer gets $50 credit, referee gets 50% off first month.",
+Write 4-5 sentences. Acknowledge their success first. Ask naturally if they know anyone who could benefit. Briefly mention the credit. Include the referral link.""",
         max_tokens=200
-    ) or f"""Hi {name},
-
-Working with {company} has been great, and I wanted to ask — do you know anyone else who could benefit from what we've built together?
-
-For every person you refer who becomes a customer:
-• You get $50 added to your account
-• They get 50% off their first month
-
-Your personal referral link: {ref_link}
-
-No pressure at all — just wanted to make it easy if you've been telling people about us anyway.
-
-Thanks for the continued trust.
-S.C. Thomas"""
-
-    return {
-        "to":        customer.get("email",""),
-        "subject":   f"A quick favor from a happy customer ({name})?",
-        "body":      body,
-        "ref_link":  ref_link,
-        "customer":  customer,
-    }
+    ) or f"Hi {first},\n\nIt's been about a month since we launched your system at {co}, and I hope you're seeing the results we discussed.\n\nIf you know any other founders or marketing directors who are dealing with the same content/automation challenges you had, I'd love to connect with them. As a thank-you, we offer {REFERRAL_OFFER['credit']} credit toward your account for every client you send our way.\n\nYour referral link: {REFERRAL_OFFER['program_url']}\n\nNo pressure — just wanted to put it out there.\n\nSean"
 
 def run():
-    candidates = identify_referral_candidates()
-    log.info(f"Found {len(candidates)} referral candidates")
-    for c in candidates[:5]:
-        ask = generate_referral_ask(c)
-        log.info(f"Referral ask for {c.get('name','?')} @ {c.get('company','?')} → {ask['ref_link']}")
-    return [generate_referral_ask(c) for c in candidates]
+    log.info("Referral Engine Bot running...")
+    candidates = get_referral_candidates()
+    log.info(f"Referral candidates: {len(candidates)}")
+    for c in candidates:
+        msg = generate_referral_ask(c)
+        log.info(f"  Referral ask for {c.get('name','?')}")
+        if c.get("id"):
+            supabase_request("PATCH","contacts",
+                data={"referral_asked":datetime.utcnow().isoformat()},
+                query=f"?id=eq.{c['id']}"
+            )
+    return {"referral_asks_sent": len(candidates)}
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s [Referral] %(message)s")
     run()
