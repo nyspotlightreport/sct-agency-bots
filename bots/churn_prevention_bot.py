@@ -108,3 +108,25 @@ def run():
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     run()
+
+
+import os as _os, json as _json, urllib.request as _ureq
+
+def _supa(method, table, data=None, query=""):
+    """Standalone Supabase helper - no import dependency."""
+    url  = _os.environ.get("SUPABASE_URL","")
+    key  = _os.environ.get("SUPABASE_KEY") or _os.environ.get("SUPABASE_ANON_KEY","")
+    if not url or not key: return None
+    req  = _ureq.Request(f"{url}/rest/v1/{table}{query}",
+        data=_json.dumps(data).encode() if data else None, method=method,
+        headers={"apikey":key,"Authorization":f"Bearer {key}",
+                 "Content-Type":"application/json","Prefer":"return=representation"})
+    try:
+        with _ureq.urlopen(req, timeout=15) as r:
+            body=r.read(); return _json.loads(body) if body else {}
+    except Exception as e:
+        import logging; logging.getLogger(__name__).warning(f"Supa {method} {table}: {e}")
+        return None
+
+def supabase_request(method, table, data=None, query="", **kwargs):
+    return _supa(method, table, data, query)
