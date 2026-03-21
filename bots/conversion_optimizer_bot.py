@@ -110,7 +110,7 @@ Return JSON: {{"variant_id": "v{i+1}", "headline": "...", "subheadline": "...", 
     return variants
 
 def save_ab_test(page: dict, variants: list) -> str:
-    result = supabase_request("POST","ab_tests",{
+    result = supabase_request("POST","ab_tests",data={
         "page_name":   page["name"],
         "page_path":   page["path"],
         "goal":        page["goal"],
