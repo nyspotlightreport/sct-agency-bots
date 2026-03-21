@@ -13,7 +13,7 @@ try:
 except:
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
-    def supabase_request(m,t,**k): return None
+    def supabase_request(m, t, data=None, query="", **k): return None
 
 import urllib.request, urllib.parse
 log = logging.getLogger(__name__)
@@ -188,7 +188,7 @@ def run():
             scheduled.append({"platform":"wordpress","content":blog.get("title","")})
 
     for s in scheduled:
-        supabase_request("POST","scheduled_posts",{
+        supabase_request("POST","scheduled_posts", data={
             "platform":   s["platform"],
             "content":    s["content"][:2000],
             "status":     "draft",
