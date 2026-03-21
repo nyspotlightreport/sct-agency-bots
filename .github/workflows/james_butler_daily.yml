@@ -1,45 +1,27 @@
-name: 🎩 James Butler (10am Daily)
+name: 🎩 James Butler
 on:
   schedule:
-    - cron: "0 14 * * *"
+    - cron: "0 10 * * *"
   workflow_dispatch:
 env:
-  ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
-  GH_PAT:              ${{ secrets.GH_PAT }}
-  GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
-  PUSHOVER_API_KEY:    ${{ secrets.PUSHOVER_API_KEY }}
-  PUSHOVER_USER_KEY:   ${{ secrets.PUSHOVER_USER_KEY }}
-  GMAIL_USER:          ${{ secrets.GMAIL_USER }}
-  GMAIL_APP_PASS:      ${{ secrets.GMAIL_APP_PASS }}
-  STRIPE_SECRET_KEY:   ${{ secrets.STRIPE_SECRET_KEY }}
-  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
-  NEWSAPI_KEY:         ${{ secrets.NEWSAPI_KEY }}
-  NETLIFY_AUTH_TOKEN:  ${{ secrets.NETLIFY_AUTH_TOKEN }}
-  NETLIFY_SITE_ID:     ${{ secrets.NETLIFY_SITE_ID }}
-  CHAIRMAN_EMAIL:      ${{ secrets.CHAIRMAN_EMAIL }}
-
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  GMAIL_USER: ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 jobs:
-  james-butler:
-    name: "🎩 James Butler Morning Brief"
+  butler:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
-      - name: Install dependencies
-        run: pip install requests PyNaCl imaplib2 2>/dev/null || pip install requests PyNaCl -q
-      - name: Run James Butler
+      - run: pip install requests PyNaCl -q
+      - name: James Butler Morning Brief
+        continue-on-error: true
         run: python agents/james_butler_concierge.py
-        continue-on-error: false
-      - name: Self-heal on failure
-        if: failure()
-        run: |
-          echo "James Butler run failed — attempting self-repair"
-          pip install requests -q
-          python -c "
-import requests, os
-h = {'Authorization': f'token {os.environ["GH_PAT"]}', 'Accept': 'application/vnd.github+json'}
-r = requests.post('https://api.github.com/repos/nyspotlightreport/sct-agency-bots/actions/workflows/james_butler_daily.yml/dispatches',
-    json={'ref':'main'}, headers=h)
-print('Re-triggered:', r.status_code)
-"
