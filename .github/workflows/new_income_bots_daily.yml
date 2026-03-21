@@ -1,0 +1,36 @@
+name: 💰 New Income Bots (Daily)
+on:
+  schedule:
+    - cron: "30 9 * * *"
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: 🔗 Amazon Associates Link Injector
+        env:
+          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
+          AMAZON_ASSOCIATE_TAG: nysr-20
+        run: python bots/amazon_associates_bot.py
+      - name: 📢 Content Blaster (Medium + LinkedIn)
+        env:
+          MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
+        run: python bots/content_blaster_bot.py
+      - name: 📰 NewsBreak Publisher
+        env:
+          NEWSBREAK_TOKEN: ${{ secrets.NEWSBREAK_TOKEN }}
+          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
+        run: python bots/newsbreak_publisher_bot.py
+      - name: 🛍️ Merch Platforms Report
+        run: python bots/merch_platform_bot.py
+      - name: 💡 PromptBase Store Update
+        run: python bots/promptbase_store_bot.py
