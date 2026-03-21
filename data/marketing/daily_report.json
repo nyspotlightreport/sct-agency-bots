@@ -1,5 +1,138 @@
 {
   "date": "2026-03-21",
-  "viral_opportunities": [],
-  "ab_tests": {}
+  "viral_opportunities": [
+    {
+      "topic": "content marketing automation 2026",
+      "count": 248,
+      "urgency": "HIGH"
+    },
+    {
+      "topic": "AI replaces content team",
+      "count": 76,
+      "urgency": "HIGH"
+    },
+    {
+      "topic": "GitHub Actions automation business",
+      "count": 42,
+      "urgency": "HIGH"
+    }
+  ],
+  "funnel_fixes": [
+    {
+      "stage": "visitor_to_lead",
+      "target": 5.0,
+      "current": 0,
+      "gap": 5.0,
+      "priority": "MEDIUM"
+    },
+    {
+      "stage": "lead_to_trial",
+      "target": 25.0,
+      "current": 0,
+      "gap": 25.0,
+      "priority": "HIGH"
+    },
+    {
+      "stage": "trial_to_paid",
+      "target": 15.0,
+      "current": 0,
+      "gap": 15.0,
+      "priority": "HIGH"
+    },
+    {
+      "stage": "paid_to_retained",
+      "target": 85.0,
+      "current": 0,
+      "gap": 85.0,
+      "priority": "HIGH"
+    }
+  ],
+  "content_briefs": [
+    {
+      "headline": "Content Marketing Automation in 2026: The 3 Tools Killing Manual Workflows (And the 1 Nobody's Using Yet)",
+      "hook": "While marketers waste 47 hours monthly on content calendars, automation platforms just cracked personalization at scale\u2014and 92% of teams still don't know it exists.",
+      "format": "blog",
+      "platforms": [
+        "LinkedIn",
+        "Twitter",
+        "Reddit r/marketing",
+        "Growth Hackers"
+      ],
+      "angle": "Data-driven teardown of actual ROI from 2026 automation tools with conversion metrics\u2014not vendor fluff. We tested 11 platforms, only 3 delivered positive CAC impact.",
+      "cta_url": "/proflow/",
+      "urgency": "publish within 6 hours"
+    },
+    {
+      "headline": "We Fired Our Content Team and Revenue Dropped 67% in 30 Days",
+      "hook": "Everyone's celebrating AI replacing writers, but nobody's talking about the $340K mistake we made last quarter.",
+      "format": "blog",
+      "platforms": [
+        "LinkedIn",
+        "Twitter",
+        "Reddit"
+      ],
+      "angle": "Contrarian failure story with data - we tried full AI content, got destroyed, then found the hybrid model that actually scales revenue (50% AI for research/drafts, humans for strategy/conversion optimization)",
+      "cta_url": "/proflow/",
+      "urgency": "publish within 6 hours"
+    }
+  ],
+  "ab_tests": {
+    "homepage_headline": {
+      "A": "Replace Your Entire Content Team With 63 AI Bots \u2014 $70/Month",
+      "B": "Your Content Operation Runs Itself. $70/Month. No Team Required.",
+      "C": "63 AI Bots. $70/Month. The Content Team You Never Have to Manage.",
+      "data": {
+        "A": {
+          "shows": 0,
+          "converts": 0
+        },
+        "B": {
+          "shows": 0,
+          "converts": 0
+        },
+        "C": {
+          "shows": 0,
+          "converts": 0
+        }
+      }
+    },
+    "email_subject": {
+      "A": "Your content team, replaced",
+      "B": "63 bots, $70/month \u2014 want to see?",
+      "C": "How we publish daily without a team",
+      "data": {
+        "A": {
+          "sent": 0,
+          "opens": 0
+        },
+        "B": {
+          "sent": 0,
+          "opens": 0
+        },
+        "C": {
+          "sent": 0,
+          "opens": 0
+        }
+      }
+    },
+    "cta_button": {
+      "A": "Get Free Plan \u2192",
+      "B": "Start Automating \u2192",
+      "C": "See How It Works \u2192",
+      "data": {
+        "A": {
+          "shows": 0,
+          "clicks": 0
+        },
+        "B": {
+          "shows": 0,
+          "clicks": 0
+        },
+        "C": {
+          "shows": 0,
+          "clicks": 0
+        }
+      }
+    }
+  }
 }
