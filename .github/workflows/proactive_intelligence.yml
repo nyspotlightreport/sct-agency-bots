@@ -1,0 +1,49 @@
+name: 🔍 Proactive Intelligence (4h)
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+  AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  intelligence-scan:
+    name: "🧠 Reputation Intelligence"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Run reputation intelligence engine
+        run: python agents/reputation_intelligence_engine.py
+
+  threat-feed:
+    name: "🛡️ Threat Intelligence"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Scan threat landscape
+        continue-on-error: true
+        run: python bots/threat_intelligence_feed.py
+
+  journalist-tracker:
+    name: "📰 Journalist Tracker"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Track journalists + pitch windows
+        continue-on-error: true
+        run: python bots/journalist_tracker_bot.py
