@@ -33,9 +33,9 @@ PUSHOVER_API  = os.environ.get("PUSHOVER_API_KEY","")
 PUSHOVER_USER = os.environ.get("PUSHOVER_USER_KEY","")
 
 HIGH_VALUE_PAGES = [
-    {"path":"site/index.html",    "name":"Homepage",    "goal":"click_pricing"},
-    {"path":"site/pricing/index.html","name":"Pricing", "goal":"click_buy"},
-    {"path":"site/dfy/index.html",    "name":"DFY Page", "goal":"click_contact"},
+    {"path":"site/index.html",   "name":"Homepage",    "goal":"click_store"},
+    {"path":"site/store.html",   "name":"Store",       "goal":"click_buy"},
+    {"path":"site/portal.html",  "name":"Portal",      "goal":"portal_login"},
 ]
 
 CRO_ELEMENTS = {
@@ -155,5 +155,12 @@ def run():
     return {"tests_created": tests_created, "pages_tested": len(HIGH_VALUE_PAGES)}
 
 if __name__ == "__main__":
+    import sys
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [CRO] %(message)s")
-    run()
+    try:
+        result = run()
+        log.info(f"CRO complete: {result}")
+    except Exception as e:
+        log.error(f"CRO error (non-fatal): {e}")
+        import traceback; traceback.print_exc()
+    sys.exit(0)
