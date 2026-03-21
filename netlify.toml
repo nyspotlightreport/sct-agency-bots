@@ -17,3 +17,28 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=60"
+
+[[redirects]]
+  from = "/api/linkedin-callback"
+  to   = "/.netlify/functions/linkedin-callback"
+  status = 200
+
+[[redirects]]
+  from = "/api/facebook-callback"
+  to   = "/.netlify/functions/facebook-callback"
+  status = 200
+
+[[redirects]]
+  from = "/api/save-secret"
+  to   = "/.netlify/functions/save-secret"
+  status = 200
+
+[[redirects]]
+  from = "/api/news"
+  to   = "/.netlify/functions/api-news"
+  status = 200
+
+[[redirects]]
+  from = "/api/stocks"
+  to   = "/.netlify/functions/stocks"
+  status = 200
