@@ -220,6 +220,12 @@ def download_run_logs(run_id: int) -> str:
                 all_text.append(f"=== {name} ===\n{text}")
             except: pass
         return "\n".join(all_text)
+    except urllib.error.HTTPError as e:
+        if e.code == 403:
+            log.warning(f"Log download blocked (HTTP 403) for run {run_id} — insufficient token permissions. Guardian will skip log analysis and use job metadata only.")
+        else:
+            log.warning(f"Failed to download logs for run {run_id}: HTTP {e.code}")
+        return ""
     except Exception as e:
         log.warning(f"Failed to download logs for run {run_id}: {e}")
         return ""
@@ -537,7 +543,10 @@ def run():
         # Download logs
         log_text = download_run_logs(run_id)
         if not log_text:
-            log.warning(f"Could not download logs for {wf_name}")
+            log.info(f"No log text for {wf_name} — using job metadata for triage")
+            # Basic triage without logs: notify and continue
+            notifications.append(f"⚠️ Workflow failing: {wf_name} (log access restricted — check GitHub Actions manually)")
+            total_issues += 1
             continue
 
         # Diagnose
@@ -599,4 +608,14 @@ def run():
     return {"fixes": total_fixes, "issues": total_issues, "down_pages": down_pages}
 
 if __name__ == "__main__":
-    run()
+    import sys
+    try:
+        result = run()
+        issues = result.get("issues", 0) if isinstance(result, dict) else 0
+        fixes  = result.get("fixes", 0) if isinstance(result, dict) else 0
+        log.info(f"Guardian sweep complete. Issues: {issues}, Auto-fixed: {fixes}")
+    except Exception as e:
+        log.error(f"Guardian error (non-fatal): {e}")
+        import traceback; traceback.print_exc()
+    # Always exit 0 — Guardian failing should never block other workflows
+    sys.exit(0)
