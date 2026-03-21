@@ -1,0 +1,60 @@
+name: 📈 SEO + PR Intelligence (Weekly)
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+  GMAIL_USER: ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  TRACKED_KEYWORDS: ${{ secrets.TRACKED_KEYWORDS }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+
+jobs:
+  seo-audit:
+    name: "📊 Ahrefs Weekly SEO Audit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Full SEO audit
+        continue-on-error: true
+        run: python bots/ahrefs_seo_intelligence.py
+      - name: Keyword rank tracking
+        continue-on-error: true
+        run: python bots/seo_rank_tracker_bot.py
+      - name: Schema markup
+        continue-on-error: true
+        run: python bots/schema_seo_bot.py
+      - name: Internal link network
+        continue-on-error: true
+        run: python bots/internal_link_network_bot.py
+      - name: Regenerate sitemap
+        continue-on-error: true
+        run: python bots/sitemap_generator_bot.py
+
+  pr-outreach:
+    name: "📰 PR & Media Outreach"
+    needs: seo-audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: PR pitches (3 per week)
+        continue-on-error: true
+        run: python bots/pr_outreach_bot.py
+      - name: Quora authority answers
+        continue-on-error: true
+        run: python bots/quora_authority_bot.py
+      - name: Viral launch assets
+        continue-on-error: true
+        run: python bots/viral_launch_bot.py
