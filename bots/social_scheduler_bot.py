@@ -15,7 +15,8 @@ except:
     def claude_json(s,u,**k): return {}
     def supabase_request(m, t, data=None, query="", **k): return None
 
-import urllib.request, urllib.parse
+import urllib.request
+import urllib.parse, urllib.parse
 log = logging.getLogger(__name__)
 
 TWITTER_KEY    = os.environ.get("TWITTER_API_KEY","")
@@ -101,7 +102,7 @@ def post_to_twitter(text):
     try:
         import hmac, hashlib, time
         timestamp   = str(int(time.time()))
-        nonce       = base64.b64encode(os.urandom(16)).decode().rstrip("=")
+        nonce       = base64.b64encode(os.urandom(16)).decode().replace("+","").replace("/","").replace("=","")[:32]
         base_url    = "https://api.twitter.com/2/tweets"
         params      = {
             "oauth_consumer_key":     TWITTER_KEY,
@@ -206,5 +207,14 @@ def run():
     return {"posted": posted, "scheduled": len(scheduled), "pillar": pillar["pillar"]}
 
 if __name__ == "__main__":
+    import sys
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [Social] %(message)s")
-    run()
+    try:
+        result = run()
+        log.info(f"Social Scheduler complete: {result}")
+    except Exception as e:
+        # Log error but exit 0 — social posting failure should not block workflow chain
+        log.error(f"Social Scheduler error (non-fatal): {e}")
+        import traceback
+        traceback.print_exc()
+    sys.exit(0)
