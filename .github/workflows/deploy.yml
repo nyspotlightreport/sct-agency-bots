@@ -1,0 +1,26 @@
+name: Deploy Site to Netlify
+on:
+  push:
+    branches: [main]
+    paths: ["site/**"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli@latest --silent
+      - name: Deploy to Netlify
+        run: |
+          netlify deploy --prod --dir=site --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN 2>&1 || {
+            echo "::warning::Deploy failed — token may be expired. Attempting direct API..."
+            curl -s -X POST "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys" \
+              -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+              -H "Content-Type: application/zip" \
+              --data-binary @<(cd site && zip -r - . 2>/dev/null) || echo "::error::Both deploy methods failed — refresh NETLIFY_AUTH_TOKEN"
+          }
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
