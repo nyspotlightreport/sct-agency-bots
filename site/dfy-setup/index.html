@@ -3,83 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DFY Bot Setup — We Deploy Your Entire AI Content System | NY Spotlight Report</title>
-<meta name="description" content="We deploy our full 100-bot AI content system on your domain. Daily blog, newsletter, social media, cold email — all automated. One-time setup from $1,500.">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<title>DFY Bot Setup — NY Spotlight Report</title>
+<meta name="description" content="We build and deploy your complete AI automation system. 63+ bots, full content operation, passive income stack — done for you.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#0D1B2A;--gold:#C9A84C;--text:#E8EDF2;--muted:#7a8fa0;--card:#111d2e;--border:#1e3050;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
-nav{background:rgba(13,27,42,.96);border-bottom:1px solid var(--border);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.logo{color:var(--gold);font-size:16px;font-weight:800;text-decoration:none;}
-.nav-cta{background:var(--gold);color:var(--bg);padding:8px 18px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;}
-.hero{max-width:900px;margin:0 auto;padding:80px 48px 60px;text-align:center;}
-.hero-tag{display:inline-block;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:24px;}
-h1{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,58px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:20px;}
-h1 em{font-style:normal;color:var(--gold);}
-.hero-sub{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto 40px;}
-.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.btn-primary{background:var(--gold);color:var(--bg);padding:16px 36px;border-radius:8px;font-size:15px;font-weight:800;text-decoration:none;}
-.btn-sec{background:rgba(255,255,255,.06);color:var(--text);padding:16px 36px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid var(--border);}
-
-/* What you get */
-.section{padding:80px 48px;max-width:1100px;margin:0 auto;}
-.section-label{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
-h2{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:800;letter-spacing:-1.5px;margin-bottom:16px;}
-
-.deliverables{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:40px;}
-.del-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;}
-.del-icon{font-size:28px;margin-bottom:10px;}
-.del-name{font-size:14px;font-weight:700;margin-bottom:6px;}
-.del-desc{font-size:13px;color:var(--muted);line-height:1.6;}
-
-/* Pricing */
-.pricing{background:rgba(201,168,76,.03);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 48px;}
-.pricing-inner{max-width:1000px;margin:0 auto;}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
-@media(max-width:700px){.pricing-grid{grid-template-columns:1fr;}}
-.price-card{background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:24px;}
-.price-card.best{border-color:var(--gold);}
-.price-tag{background:var(--gold);color:var(--bg);font-size:10px;font-weight:800;padding:3px 10px;border-radius:10px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px;display:inline-block;}
-.price-name{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:8px;}
-.price-amount{font-size:36px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px;font-family:'Syne',sans-serif;}
-.price-desc{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6;}
-.price-features{list-style:none;margin-bottom:20px;}
-.price-features li{font-size:13px;color:rgba(232,237,242,.8);padding:5px 0;border-bottom:1px solid rgba(30,48,80,.5);display:flex;gap:8px;}
-.price-features li:last-child{border:none;}
-.price-features li::before{content:"✓";color:var(--gold);font-weight:800;flex-shrink:0;}
-.price-btn{display:block;width:100%;padding:12px;border-radius:8px;font-size:14px;font-weight:700;text-align:center;text-decoration:none;transition:all .2s;}
-.pb-gold{background:var(--gold);color:var(--bg);}
-.pb-outline{background:transparent;color:var(--gold);border:1px solid var(--border);}
-
-/* Process */
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
-@media(max-width:700px){.process{grid-template-columns:1fr 1fr;}}
-.proc-step{text-align:center;}
-.proc-num{width:52px;height:52px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:'Syne',sans-serif;}
-.proc-step h3{font-size:14px;font-weight:700;margin-bottom:6px;}
-.proc-step p{font-size:12px;color:var(--muted);line-height:1.5;}
-
-/* Testimonials */
-.testimonials{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;}
-@media(max-width:600px){.testimonials{grid-template-columns:1fr;}}
-.testi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px;}
-.testi-text{font-size:14px;color:rgba(232,237,242,.85);line-height:1.7;font-style:italic;margin-bottom:14px;}
-.testi-name{font-size:13px;font-weight:700;}
-.testi-role{font-size:12px;color:var(--muted);}
-.testi-result{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:6px;padding:8px 12px;font-size:12px;color:var(--gold);font-weight:600;margin-top:10px;}
-
-/* FAQ */
-.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden;}
-.faq-q{padding:16px 20px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:14px;}
-.faq-a{padding:0 20px 16px;font-size:13px;color:var(--muted);line-height:1.7;}
-
-/* CTA */
-.bottom-cta{background:linear-gradient(135deg,var(--card),#0a1e3a);border-top:1px solid var(--border);padding:80px 48px;text-align:center;}
-.bottom-cta h2{font-family:'Syne',sans-serif;font-size:36px;font-weight:900;letter-spacing:-1.5px;margin-bottom:12px;}
-.bottom-cta p{color:var(--muted);font-size:17px;max-width:500px;margin:0 auto 32px;}
-
-@media(max-width:768px){nav,hero,.section,.pricing,.bottom-cta{padding-left:20px;padding-right:20px;}}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#060f1a;color:#e8edf2;line-height:1.7;}
+nav{background:rgba(6,15,26,.95);border-bottom:1px solid #1a2d42;padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.logo{color:#C9A84C;font-size:16px;font-weight:800;text-decoration:none;}
+.nav-cta{background:#C9A84C;color:#0D1B2A;padding:8px 18px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;}
+.hero{max-width:900px;margin:0 auto;padding:80px 24px 60px;text-align:center;}
+.hero-tag{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:#C9A84C;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;display:inline-block;margin-bottom:24px;}
+h1{font-size:clamp(36px,5vw,62px);font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:24px;}
+.sub{font-size:18px;color:rgba(232,237,242,.7);max-width:600px;margin:0 auto 40px;}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:960px;margin:0 auto 80px;padding:0 24px;}
+.tier{background:#111d2e;border:1px solid #1a2d42;border-radius:16px;padding:32px 24px;}
+.tier.featured{border-color:#C9A84C;background:linear-gradient(135deg,#111d2e,#1a2a3e);}
+.tier-name{font-size:13px;font-weight:700;color:#7a8fa0;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.tier-price{font-size:48px;font-weight:800;color:#e8edf2;line-height:1;margin-bottom:4px;}
+.tier-note{font-size:12px;color:#7a8fa0;margin-bottom:24px;}
+.tier-features{list-style:none;margin-bottom:28px;}
+.tier-features li{font-size:14px;color:#b0bec5;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:8px;align-items:flex-start;}
+.tier-features li::before{content:"✓";color:#C9A84C;font-weight:700;flex-shrink:0;}
+.tier-btn{display:block;text-align:center;padding:14px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;transition:all .2s;}
+.tier-btn-primary{background:#C9A84C;color:#0D1B2A;}
+.tier-btn-outline{background:transparent;border:1px solid rgba(201,168,76,.4);color:#C9A84C;}
+.tier-btn:hover{transform:translateY(-2px);}
+.process{max-width:800px;margin:0 auto 80px;padding:0 24px;}
+.process h2{font-size:32px;font-weight:800;text-align:center;margin-bottom:40px;}
+.steps{display:flex;flex-direction:column;gap:20px;}
+.step{display:flex;gap:20px;background:#111d2e;border:1px solid #1a2d42;border-radius:14px;padding:24px;}
+.step-num{width:40px;height:40px;background:#C9A84C;color:#0D1B2A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;}
+.step-text h3{font-size:16px;font-weight:700;margin-bottom:6px;}
+.step-text p{font-size:14px;color:rgba(232,237,242,.65);}
+.guarantee{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:40px;max-width:700px;margin:0 auto 60px;text-align:center;}
+.guarantee h3{font-size:24px;font-weight:800;margin-bottom:12px;}
+.guarantee p{color:rgba(232,237,242,.7);}
+footer{text-align:center;padding:40px 24px;border-top:1px solid #1a2d42;color:#475569;font-size:13px;}
+@media(max-width:768px){.price-grid{grid-template-columns:1fr;}.step{flex-direction:column;}}
 </style>
 </head>
 <body>
@@ -88,122 +48,75 @@ h2{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:800;
   <a href="mailto:nyspotlightreport@gmail.com?subject=DFY Bot Setup Inquiry" class="nav-cta">Get Started</a>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-tag">Done-For-You · AI Bot System Setup</div>
-  <h1>We Deploy Our<br><em>Entire System</em><br>On Your Domain.</h1>
-  <p class="hero-sub">100 AI bots. Daily blog. Weekly newsletter. Social media on 6 platforms. Cold email pipeline. Digital product store. All on your brand, your domain — live in 48 hours.</p>
-  <div class="hero-cta">
-    <a href="mailto:nyspotlightreport@gmail.com?subject=DFY Bot Setup — I'm Interested" class="btn-primary">Get a Quote →</a>
-    <a href="/proflow/" class="btn-sec">See It in Action</a>
+  <div class="hero-tag">DONE FOR YOU · FULLY DEPLOYED · YOUR DOMAIN</div>
+  <h1>We Build Your<br>Entire AI Automation Stack</h1>
+  <p class="sub">The same 63-bot system that replaced a $4,000/month content team — fully deployed, configured, and running on your domain. You get the system. We handle the setup.</p>
+</div>
+
+<div class="price-grid">
+  <div class="tier">
+    <div class="tier-name">Bot Starter</div>
+    <div class="tier-price">$1,500</div>
+    <div class="tier-note">one-time setup</div>
+    <ul class="tier-features">
+      <li>20 core bots deployed</li>
+      <li>Daily blog publishing</li>
+      <li>Weekly newsletter automation</li>
+      <li>Social media (3 platforms)</li>
+      <li>30 days email support</li>
+      <li>GitHub Actions setup</li>
+    </ul>
+    <a href="mailto:nyspotlightreport@gmail.com?subject=Bot Starter - $1,500 Setup" class="tier-btn tier-btn-outline">Get Started →</a>
+  </div>
+
+  <div class="tier featured">
+    <div class="tier-name">Full Stack ⭐ Most Popular</div>
+    <div class="tier-price">$5,000</div>
+    <div class="tier-note">one-time + $500/mo retainer</div>
+    <ul class="tier-features">
+      <li>All 63+ bots deployed</li>
+      <li>17 Claude AI agents</li>
+      <li>Full content operation</li>
+      <li>All social platforms</li>
+      <li>Cold email outreach</li>
+      <li>SEO + affiliate system</li>
+      <li>Custom domain + branding</li>
+      <li>3 months priority support</li>
+    </ul>
+    <a href="https://buy.stripe.com/dRmdR987q1rR0Ej66P24009" class="tier-btn tier-btn-primary">Claim Your Spot →</a>
+  </div>
+
+  <div class="tier">
+    <div class="tier-name">Agency License</div>
+    <div class="tier-price">$10k+</div>
+    <div class="tier-note">white-label resale rights</div>
+    <ul class="tier-features">
+      <li>Everything in Full Stack</li>
+      <li>White-label rights</li>
+      <li>Resell to your clients</li>
+      <li>Unlimited deployments</li>
+      <li>Revenue share available</li>
+      <li>Priority support</li>
+    </ul>
+    <a href="mailto:nyspotlightreport@gmail.com?subject=Agency License Inquiry" class="tier-btn tier-btn-outline">Let's Talk →</a>
   </div>
 </div>
 
-<!-- WHAT YOU GET -->
-<div class="section">
-  <div class="section-label">What's Included</div>
-  <h2>Everything we built for ourselves,<br>deployed on your brand.</h2>
-  <div class="deliverables">
-    <div class="del-card"><div class="del-icon">📝</div><div class="del-name">Daily SEO Blog Posts</div><div class="del-desc">Claude AI writes and publishes 1 keyword-targeted post every day to your domain. 365 posts/year.</div></div>
-    <div class="del-card"><div class="del-icon">📧</div><div class="del-name">Automated Newsletter</div><div class="del-desc">Weekly newsletter drafted and sent via Beehiiv. Built from your blog content. Zero manual work.</div></div>
-    <div class="del-card"><div class="del-icon">📱</div><div class="del-name">Social Media — 6 Platforms</div><div class="del-desc">Platform-native posts to Instagram, LinkedIn, Pinterest, Twitter/X, Facebook, Medium. Daily.</div></div>
-    <div class="del-card"><div class="del-icon">🎬</div><div class="del-name">YouTube Shorts</div><div class="del-desc">Scripts generated, voiced via ElevenLabs, uploaded. 30 Shorts/month without filming anything.</div></div>
-    <div class="del-card"><div class="del-icon">🎯</div><div class="del-name">Cold Email System</div><div class="del-desc">Apollo-powered prospect research + Claude-written personalized emails. 50-200/day outreach.</div></div>
-    <div class="del-card"><div class="del-icon">💎</div><div class="del-name">Digital Product Store</div><div class="del-desc">Gumroad store with 10 products, automated delivery webhook. Passive sales 24/7.</div></div>
-    <div class="del-card"><div class="del-icon">🔗</div><div class="del-name">Affiliate Link Injection</div><div class="del-desc">Every blog post automatically gets contextual affiliate links added. Passive commission income.</div></div>
-    <div class="del-card"><div class="del-icon">🤖</div><div class="del-name">AI Intelligence Agents</div><div class="del-desc">17 AI agents running twice daily — content, sales, inbox management, growth analysis.</div></div>
-    <div class="del-card"><div class="del-icon">📊</div><div class="del-name">Weekly Performance Reports</div><div class="del-desc">Automated reports delivered to your phone. Revenue, traffic, content, and lead metrics.</div></div>
+<div class="process">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text"><h3>You purchase + share access</h3><p>Make payment. Share your GitHub repo, domain, and API keys via our secure form. 15 minutes of your time.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><h3>We deploy everything</h3><p>Our team deploys all bots, configures GitHub Actions workflows, connects your APIs, and tests every system. 48-72 hours.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><h3>Your system runs itself</h3><p>Daily blog posts. Weekly newsletters. Social posts across all platforms. Cold email outreach. All automatic. You check the dashboard.</p></div></div>
   </div>
 </div>
 
-<!-- PRICING -->
-<div class="pricing">
-  <div class="pricing-inner">
-    <div class="section-label">Pricing</div>
-    <h2>Three ways to get started.</h2>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-name">Starter Setup</div>
-        <div class="price-amount">$1,500</div>
-        <p class="price-desc">Core content automation. Blog + newsletter + 3 social platforms. Perfect for solopreneurs.</p>
-        <ul class="price-features">
-          <li>20 core bots deployed</li>
-          <li>Blog + newsletter automation</li>
-          <li>3 social platforms</li>
-          <li>Gumroad digital store</li>
-          <li>1-month support</li>
-          <li>Training call included</li>
-        </ul>
-        <a href="mailto:nyspotlightreport@gmail.com?subject=Starter Setup Inquiry ($1,500)" class="price-btn pb-outline">Get Started →</a>
-      </div>
-      <div class="price-card best">
-        <div class="price-tag">Most Popular</div>
-        <div class="price-name">Full Stack</div>
-        <div class="price-amount">$5,000</div>
-        <p class="price-desc">The complete system. All 100 bots. Every channel. Cold email pipeline. AI intelligence agents.</p>
-        <ul class="price-features">
-          <li>All 100 bots deployed</li>
-          <li>All 6 social platforms</li>
-          <li>YouTube Shorts pipeline</li>
-          <li>Cold email system (Apollo)</li>
-          <li>17 AI agents (twice daily)</li>
-          <li>3-month priority support</li>
-          <li>$500/month retainer available</li>
-        </ul>
-        <a href="mailto:nyspotlightreport@gmail.com?subject=Full Stack Setup Inquiry ($5,000)" class="price-btn pb-gold">Get Started →</a>
-      </div>
-      <div class="price-card">
-        <div class="price-name">Agency License</div>
-        <div class="price-amount">$10,000+</div>
-        <p class="price-desc">White-label rights. Deploy for your own clients. Unlimited installs under your brand.</p>
-        <ul class="price-features">
-          <li>White-label rights included</li>
-          <li>Resell to unlimited clients</li>
-          <li>Your branding throughout</li>
-          <li>Revenue sharing optional</li>
-          <li>Priority + dedicated support</li>
-          <li>Quarterly strategy calls</li>
-        </ul>
-        <a href="mailto:nyspotlightreport@gmail.com?subject=Agency License Inquiry ($10k+)" class="price-btn pb-outline">Schedule Call →</a>
-      </div>
-    </div>
-  </div>
+<div class="guarantee">
+  <h3>30-Day Results Guarantee</h3>
+  <p>If your system isn't publishing daily content and running outreach within 30 days of setup, we'll refund 100% — no questions asked. We've already built this. We know it works.</p>
 </div>
 
-<!-- PROCESS -->
-<div class="section">
-  <div class="section-label">How It Works</div>
-  <h2>Live in 48 hours.</h2>
-  <div class="process">
-    <div class="proc-step"><div class="proc-num">1</div><h3>Onboarding Call</h3><p>30 minutes. We capture your niche, tone, platforms, goals, and credentials.</p></div>
-    <div class="proc-step"><div class="proc-num">2</div><h3>Configuration</h3><p>We configure all bots to your brand, keywords, and accounts. 24-48 hours.</p></div>
-    <div class="proc-step"><div class="proc-num">3</div><h3>Go Live</h3><p>All systems activated. Content starts publishing. We monitor for 7 days.</p></div>
-    <div class="proc-step"><div class="proc-num">4</div><h3>Handover</h3><p>Full walkthrough. You own everything. Optional monthly retainer available.</p></div>
-  </div>
-</div>
-
-<!-- FAQ -->
-<div class="section" style="padding-top:0;">
-  <div class="section-label">FAQ</div>
-  <h2>Common questions.</h2>
-  <div style="margin-top:28px;">
-    <div class="faq-item"><div class="faq-q">Do I need technical skills to run this after setup?<span>+</span></div><div class="faq-a">No. Everything runs automatically via GitHub Actions (free). The only "technical" requirement is a GitHub account, which we create for you if needed.</div></div>
-    <div class="faq-item"><div class="faq-q">What does the monthly cost look like after setup?<span>+</span></div><div class="faq-a">Approximately $6-70/month total: $6 VPS (DigitalOcean), $22 ElevenLabs, ~$1-2/day Claude API, optional Apollo Pro ($99). Everything else runs free on GitHub Actions + free tiers.</div></div>
-    <div class="faq-item"><div class="faq-q">Is the content AI-generated? Will it sound generic?<span>+</span></div><div class="faq-a">We configure the system with your exact voice, tone, and expertise. After 2-3 weeks of output the system calibrates to sound like you specifically — not generic AI.</div></div>
-    <div class="faq-item"><div class="faq-q">Can I use this for client work / resell it?<span>+</span></div><div class="faq-a">Yes, with the Agency License tier. This gives you white-label rights and the ability to deploy the system under your brand for your clients.</div></div>
-    <div class="faq-item"><div class="faq-q">What if something breaks?<span>+</span></div><div class="faq-a">All packages include support. Full Stack and Agency include 3 months of priority support. For ongoing maintenance, we offer a monthly retainer starting at $300/month.</div></div>
-  </div>
-</div>
-
-<!-- BOTTOM CTA -->
-<div class="bottom-cta">
-  <h2>Ready to automate everything?</h2>
-  <p>Schedule a free 30-minute strategy call. We'll map out the exact setup for your specific niche and goals.</p>
-  <a href="mailto:nyspotlightreport@gmail.com?subject=DFY Bot Setup — Strategy Call Request" class="btn-primary" style="display:inline-block;font-size:16px;padding:18px 40px;">Book Free Strategy Call →</a>
-</div>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"DFY Bot Setup Service","provider":{"@type":"Organization","name":"NY Spotlight Report","url":"https://nyspotlightreport.com"},"description":"We deploy a complete AI content automation system — 100 bots, daily blog, newsletter, social media, cold email — on your domain in 48 hours.","offers":[{"@type":"Offer","name":"Starter Setup","price":"1500","priceCurrency":"USD"},{"@type":"Offer","name":"Full Stack","price":"5000","priceCurrency":"USD"},{"@type":"Offer","name":"Agency License","price":"10000","priceCurrency":"USD"}]}
-</script>
+<footer>© 2026 NY Spotlight Report · Coram, NY · nyspotlightreport@gmail.com</footer>
 </body>
 </html>
