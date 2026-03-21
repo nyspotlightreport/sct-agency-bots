@@ -29,3 +29,18 @@
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Headers = "Content-Type"
+
+[[redirects]]
+  from = "/api/linkedin-callback"
+  to   = "/.netlify/functions/linkedin-callback"
+  status = 200
+
+[[redirects]]
+  from = "/api/facebook-callback"
+  to   = "/.netlify/functions/facebook-callback"
+  status = 200
+
+[[redirects]]
+  from = "/api/save-secret"
+  to   = "/.netlify/functions/save-secret"
+  status = 200
