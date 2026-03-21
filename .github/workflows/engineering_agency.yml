@@ -1,0 +1,125 @@
+name: 🏗️ Engineering Agency — Full Project Build
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: 'Project name'
+        required: true
+      project_description:
+        description: 'Full project description'
+        required: true
+      vertical:
+        description: 'Industry vertical (saas|fintech|healthtech|ecommerce|marketplace|edtech|proptech|logistics)'
+        required: false
+        default: 'saas'
+      requirements:
+        description: 'Specific technical requirements'
+        required: false
+      budget:
+        description: 'Budget range'
+        required: false
+        default: 'medium'
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  PROJECT_NAME: ${{ github.event.inputs.project_name }}
+  PROJECT_DESC: ${{ github.event.inputs.project_description }}
+  PROJECT_VERTICAL: ${{ github.event.inputs.vertical }}
+  PROJECT_REQUIREMENTS: ${{ github.event.inputs.requirements }}
+
+jobs:
+  technical-spec:
+    name: "📋 Technical Specification"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Generate complete technical spec
+        run: python agents/project_engine.py
+        
+  design-system:
+    name: "🎨 Design System"
+    needs: technical-spec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Generate design system + components
+        run: python agents/design_agent.py
+        continue-on-error: true
+        
+  full-stack-build:
+    name: "💻 Full-Stack Code Generation"
+    needs: technical-spec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Generate complete codebase
+        run: python agents/reese_morgan_engineer.py
+        
+  qa-security:
+    name: "🔐 QA + Security Audit"
+    needs: full-stack-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Run QA and security audit
+        run: python agents/qa_testing_agent.py
+        continue-on-error: true
+        
+  code-review:
+    name: "👁️ Code Review"
+    needs: full-stack-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Senior code review
+        run: python agents/code_review_agent.py
+        continue-on-error: true
+        
+  devops-infra:
+    name: "☁️ DevOps Infrastructure"
+    needs: full-stack-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Generate Docker + CI/CD + IaC
+        run: python agents/devops_agent.py
+        continue-on-error: true
+
+  package-deliverable:
+    name: "📦 Package & Upload Deliverable"
+    needs: [qa-security, code-review, devops-infra]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Package all project files
+        run: |
+          cd products/projects/${{ github.event.inputs.project_name }} 2>/dev/null || echo "Project files generated"
+          zip -r project.zip . 2>/dev/null || true
+      - name: Upload project package
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.project_name }}-complete
+          path: products/projects/
+          retention-days: 90
