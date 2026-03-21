@@ -1,0 +1,34 @@
+name: 🛡️ Guardian — Self-Healing (Every 30min)
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+env:
+  GH_PAT:             ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  guardian:
+    name: "🛡️ Guardian Health Sweep"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Install dependencies
+        run: pip install requests -q
+      - name: Run Guardian
+        run: python agents/the_guardian.py
+      - name: Upload health report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guardian-report-${{ github.run_number }}
+          path: /tmp/guardian_report.json
+          retention-days: 7
+          if-no-files-found: ignore
