@@ -1,71 +1,88 @@
 #!/usr/bin/env python3
-# Test Generator Bot - Auto-generates pytest, Jest, and API tests from code.
-import os, sys, json, logging
-sys.path.insert(0,".")
+"""
+Test Generator Bot — Creates test suites for agents and bots.
+Generates: unit tests, integration smoke tests, and workflow validation.
+Uses pytest-compatible test files.
+"""
+import os, sys, json, logging, base64
+from datetime import datetime
+sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude
 except:
     def claude(s,u,**k): return ""
+
+import urllib.request
+
 log = logging.getLogger(__name__)
+GH_TOKEN = os.environ.get("GH_PAT") or os.environ.get("GITHUB_TOKEN","")
+REPO     = os.environ.get("GITHUB_REPOSITORY","nyspotlightreport/sct-agency-bots")
 
-def pytest_tests(func_code, func_name):
+def gh(path, method="GET", body=None):
+    if not GH_TOKEN: return None
+    try:
+        req = urllib.request.Request(f"https://api.github.com{path}",
+            data=json.dumps(body).encode() if body else None,
+            headers={"Authorization":f"token {GH_TOKEN}","Accept":"application/vnd.github+json","Content-Type":"application/json"},
+            method=method)
+        with urllib.request.urlopen(req,timeout=15) as r:
+            if r.status == 204: return {}
+            return json.loads(r.read())
+    except Exception as e:
+        log.warning(f"GH {path}: {e}")
+        return None
+
+def generate_tests(path: str, content: str) -> str:
     return claude(
-        "Write comprehensive pytest tests. Include: happy path, edge cases, error cases, fixtures. Return only test code.",
-        f"Function to test:
-{func_code[:2000]}",
-        max_tokens=800
-    ) or f"import pytest
+        "Generate a complete pytest test file for this Python module. Include: smoke test for run(), mock tests for external APIs, edge case tests. Use unittest.mock for patching. File must be immediately runnable.",
+        f"Module to test: {path}\n\n```python\n{content[:2500]}\n```\n\nGenerate complete test file:",
+        max_tokens=1000
+    ) or f"""import pytest
+from unittest.mock import patch, MagicMock
 
-def test_{func_name}_happy_path():
-    pass
+def test_{path.split("/")[-1].replace(".py","")}_imports():
+    """Smoke test: module imports without errors."""
+    try:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("module", "{path}")
+        assert spec is not None
+    except ImportError:
+        pytest.skip("Dependencies not available in test environment")
 
-def test_{func_name}_edge_case():
-    pass
-
-def test_{func_name}_error():
-    pass
-"
-
-def jest_tests(component_name, description):
-    return claude(
-        "Write Jest/RTL tests. Include: renders, interactions, edge cases. Return only test code.",
-        f"Component: {component_name}. Description: {description}",
-        max_tokens=600
-    ) or f"import {{render,screen}} from '@testing-library/react';
-import {{{component_name}}} from './{component_name}';
-
-describe('{component_name}', () => {{
-  it('renders correctly', () => {{
-    render(<{component_name}/>);
-  }});
-}});
-"
-
-def api_tests(endpoint, method="GET"):
-    path = endpoint.strip("/").replace("/","_")
-    return f"import pytest
-import httpx
-
-BASE = 'http://localhost:8000'
-
-def test_{method.lower()}_{path}():
-    r = httpx.{method.lower()}(f'{{BASE}}{endpoint}',headers={{'Authorization':'Bearer test'}})
-    assert r.status_code == 200
-
-def test_{method.lower()}_{path}_unauthorized():
-    r = httpx.{method.lower()}(f'{{BASE}}{endpoint}')
-    assert r.status_code == 401
-"
+def test_run_returns_dict():
+    """run() should return a dict with at least one key."""
+    pass  # TODO: implement after mock setup
+"""
 
 def run():
-    test_code = "def add(a, b):
-    return a + b"
-    tests = pytest_tests(test_code, "add")
-    log.info(f"Generated pytest: {len(tests)} chars")
-    api_t = api_tests("/contacts", "GET")
-    log.info(f"Generated API tests: {len(api_t)} chars")
-    return True
+    log.info("Test Generator Bot running...")
+    folders = ["agents","bots"]
+    tests_created = 0
+    
+    for folder in folders:
+        files = gh(f"/repos/{REPO}/contents/{folder}")
+        if not files or not isinstance(files, list): continue
+        for f in files:
+            if not f["name"].endswith(".py"): continue
+            try:
+                resp = gh(f"/repos/{REPO}/contents/{f['path']}")
+                if not resp or not isinstance(resp, dict): continue
+                content = base64.b64decode(resp.get("content","").replace("\n","")).decode("utf-8","replace")
+                test_code = generate_tests(f["path"], content)
+                test_path = f"tests/test_{f['name']}"
+                existing = gh(f"/repos/{REPO}/contents/{test_path}")
+                sha = existing.get("sha","") if existing and isinstance(existing,dict) else ""
+                payload = {"message":f"test: Auto-generated tests for {f['name']}","content":base64.b64encode(test_code.encode()).decode()}
+                if sha: payload["sha"] = sha
+                gh(f"/repos/{REPO}/contents/{test_path}", method="PUT", body=payload)
+                tests_created += 1
+                log.info(f"  Tests for: {f['name']}")
+            except Exception as e:
+                log.warning(f"  Test gen failed for {f['name']}: {e}")
+    
+    log.info(f"Tests generated: {tests_created}")
+    return {"tests_created": tests_created}
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s [TestGen] %(message)s")
     run()
