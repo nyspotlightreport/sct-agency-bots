@@ -81,17 +81,24 @@ code{background:#111827;padding:2px 7px;border-radius:5px;font-size:12px;color:#
     <span class="p-name">Reddit API Credentials</span>
     <span class="p-status pending" id="rd-status">Pending</span>
   </div>
-  <div class="step">
-    1. Open Reddit Apps → click <strong>create another app</strong><br>
-    2. Name: <code>NYSRBot</code> · Type: <strong>script</strong> · Redirect: <code>http://localhost:8080</code><br>
-    3. Copy Client ID (below app name) + Secret → paste below:
+  <div class="step" style="background:rgba(255,69,0,.08);border:1px solid rgba(255,69,0,.3);border-radius:8px;padding:12px;margin-bottom:12px;">
+    <strong style="color:#FF4500;">⚡ Quick setup (2 min):</strong><br><br>
+    <ol style="margin:0;padding-left:16px;line-height:2.2;font-size:12px;">
+      <li>Go to <a href="https://www.reddit.com/prefs/apps" target="_blank" style="color:#FF4500;">reddit.com/prefs/apps</a> → scroll to bottom → click <strong>"create another app"</strong></li>
+      <li>Fill in: Name = <code>nysr</code> · Select <strong>script</strong> · Redirect = <code>http://localhost:8080</code></li>
+      <li>Complete the <strong>CAPTCHA</strong> (check the box) → click <strong>"create app"</strong></li>
+      <li>Your <strong>Client ID</strong> is the short string directly <em>under</em> "personal use script"</li>
+      <li>Your <strong>Secret</strong> is labeled "secret" on the same page</li>
+      <li>Paste both below + your Reddit <strong>username</strong> + <strong>password</strong></li>
+    </ol>
   </div>
-  <a href="https://www.reddit.com/prefs/apps" class="btn btn-red" target="_blank" style="margin-bottom:12px;display:inline-block;">Open Reddit Apps →</a><br>
-  <input type="text" id="rd-id" placeholder="Client ID (short string under app name)" 
-    style="background:#111827;border:1px solid #1a2d42;border-radius:8px;padding:9px 14px;color:#E2E8F0;font-size:13px;width:100%;outline:none;margin-bottom:8px;">
-  <input type="text" id="rd-secret" placeholder="Client Secret"
-    style="background:#111827;border:1px solid #1a2d42;border-radius:8px;padding:9px 14px;color:#E2E8F0;font-size:13px;width:100%;outline:none;margin-bottom:10px;">
-  <button class="btn btn-gold" onclick="saveReddit()">Save Reddit Credentials</button>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+    <input id="rd-id"   type="text"     placeholder="Client ID (under app name)" style="background:#0D1117;border:1px solid rgba(255,69,0,.3);border-radius:6px;padding:8px;color:#e2e8f0;font-size:12px;" />
+    <input id="rd-sec"  type="password" placeholder="Client Secret" style="background:#0D1117;border:1px solid rgba(255,69,0,.3);border-radius:6px;padding:8px;color:#e2e8f0;font-size:12px;" />
+    <input id="rd-user" type="text"     placeholder="Reddit username (no r/)" style="background:#0D1117;border:1px solid rgba(255,69,0,.3);border-radius:6px;padding:8px;color:#e2e8f0;font-size:12px;" />
+    <input id="rd-pass" type="password" placeholder="Reddit password" style="background:#0D1117;border:1px solid rgba(255,69,0,.3);border-radius:6px;padding:8px;color:#e2e8f0;font-size:12px;" />
+  </div>
+  <button onclick="saveReddit()" class="btn btn-red" style="width:100%;margin-bottom:8px;">Save Reddit Credentials →</button>
   <div class="token-box" id="rd-token-box" style="display:none;color:#22D3A0;">✅ Saved to GitHub Secrets!</div>
 </div>
 
@@ -171,18 +178,29 @@ function getSecretMap(platform, token) {
 }
 
 async function saveReddit() {
-  const id     = document.getElementById("rd-id").value.trim();
-  const secret = document.getElementById("rd-secret").value.trim();
-  if (!id || !secret) { alert("Enter both Client ID and Secret"); return; }
+  const id   = document.getElementById("rd-id").value.trim();
+  const sec  = document.getElementById("rd-sec").value.trim();
+  const user = document.getElementById("rd-user").value.trim();
+  const pass = document.getElementById("rd-pass").value.trim();
+  if (!id || !sec || !user || !pass) { alert("Fill in all 4 fields: Client ID, Secret, Username, Password"); return; }
   
-  // Show as saved (GitHub save requires server-side nacl encryption)
+  document.getElementById("rd-status").textContent = "Saving...";
+  
+  const res = await fetch("/api/save-secret", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({secrets: {
+      REDDIT_CLIENT_ID:     id,
+      REDDIT_CLIENT_SECRET: sec,
+      REDDIT_USERNAME:      user,
+      REDDIT_PASSWORD:      pass
+    }})
+  });
+  
+  const data = await res.json();
   document.getElementById("rd-token-box").style.display = "block";
-  document.getElementById("rd-status").textContent = "✅ Copy to GitHub";
+  document.getElementById("rd-status").textContent = "✅ Saved";
   document.getElementById("rd-status").className = "p-status done";
-  
-  // Open GitHub secrets page with instructions
-  alert("Copy these to GitHub Secrets:\n\nREDDIT_CLIENT_ID: " + id + "\nREDDIT_CLIENT_SECRET: " + secret);
-  window.open("https://github.com/nyspotlightreport/sct-agency-bots/settings/secrets/actions/new");
 }
 </script>
 </body>
