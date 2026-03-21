@@ -1,0 +1,103 @@
+name: 📦 Deliverables Engine (Daily)
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
+  AHREFS_API_KEY:      ${{ secrets.AHREFS_API_KEY }}
+  BEEHIIV_API_KEY:     ${{ secrets.BEEHIIV_API_KEY }}
+  BEEHIIV_PUB_ID:      ${{ secrets.BEEHIIV_PUB_ID }}
+  MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
+  ELEVENLABS_API_KEY:  ${{ secrets.ELEVENLABS_API_KEY }}
+  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  GH_PAT:              ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+  PUSHOVER_API_KEY:    ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:   ${{ secrets.PUSHOVER_USER_KEY }}
+  NTFY_CHANNEL:        ${{ secrets.NTFY_CHANNEL }}
+  NEWSAPI_KEY:         ${{ secrets.NEWSAPI_KEY }}
+
+jobs:
+  orchestrate:
+    name: "📋 Deliverable Orchestration"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests PyNaCl -q
+      - name: Run deliverable orchestrator (calendar + registry)
+        run: python agents/deliverable_orchestrator.py
+        continue-on-error: true
+
+  elite-content:
+    name: "✍️ Elite Content Production"
+    needs: orchestrate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Write + publish quality-gated blog post
+        run: python agents/elite_content_engine.py
+        continue-on-error: true
+      - name: Commit new content
+        run: |
+          git config user.name "James Butler"
+          git config user.email "nyspotlightreport@gmail.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "content: elite engine delivery $(date +%Y-%m-%d)"
+          git push || echo "Push handled by workflow"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  social-expansion:
+    name: "📱 Multi-Format Social Expansion"
+    needs: elite-content
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Expand content to all social formats
+        run: python agents/content_production_engine.py
+        continue-on-error: true
+      - name: Post to all platforms
+        run: python agents/social_media_master_agent.py
+        continue-on-error: true
+
+  video-pipeline:
+    name: "🎬 Video Script + Voice Pipeline"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Generate YouTube Shorts scripts
+        run: python bots/youtube_shorts_bot.py
+        continue-on-error: true
+      - name: Voice pipeline (ElevenLabs)
+        run: python agents/elevenlabs_voice_pipeline.py
+        continue-on-error: true
+
+  product-pipeline:
+    name: "💎 Digital Product Pipeline"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Affiliate content
+        run: python bots/affiliate_content_bot.py
+        continue-on-error: true
+      - name: Deep link injection
+        run: python bots/affiliate_deep_linker_bot.py
+        continue-on-error: true
+      - name: Schema SEO
+        run: python bots/schema_seo_bot.py
+        continue-on-error: true
