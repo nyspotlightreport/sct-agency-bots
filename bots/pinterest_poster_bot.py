@@ -1,112 +1,137 @@
 #!/usr/bin/env python3
 """
-Pinterest Auto-Poster Bot
-Posts affiliate content pins + POD design pins daily
-Pinterest drives massive free traffic to affiliate pages and Redbubble
-Uses Pinterest API v5
+Pinterest Auto-Setup + Poster Bot — FIXED v3
+Issue found: Token exists, but no Pinterest boards in account.
+Fix: Auto-creates boards via API, then posts to them.
+
+Boards created:
+1. "Passive Income Ideas" — highest traffic niche
+2. "AI Tools for Entrepreneurs"  
+3. "Content Marketing Tips"
+4. "Side Hustle Strategies"
+5. "Digital Products"
 """
-import os, requests, json, datetime, random
+import os, logging, requests, json
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [Pinterest] %(message)s")
+log = logging.getLogger()
 
-PINTEREST_TOKEN = os.environ.get("PINTEREST_ACCESS_TOKEN","")
-SITE = "https://nyspotlightreport.com"
-RB_BASE = "https://www.redbubble.com/people/nysr101"
+TOKEN = os.environ.get("PINTEREST_ACCESS_TOKEN", "")
+BASE  = "https://api.pinterest.com/v5"
+HDRS  = {"Authorization": f"Bearer {TOKEN}", "Content-Type": "application/json"}
 
-# Pin templates for affiliate content
-AFFILIATE_PINS = [
-    {
-        "title": "Best Passive Income Apps 2026 — $60-100/Month Doing Nothing",
-        "description": "The apps that literally pay you while you sleep. EarnApp and Honeygain pay you to share unused bandwidth. $40-100/month, zero work. Full guide 👉 nyspotlightreport.com/best-passive-income-apps-2026 #passiveincome #sidehustle #makemoneyonline",
-        "link": f"{SITE}/best-passive-income-apps-2026",
-    },
-    {
-        "title": "Build a $500/Month Passive Income in 90 Days",
-        "description": "Step by step: bandwidth sharing ($60) + digital products ($150) + affiliate commissions ($200) + print on demand ($90) = $500/month. All automated. Full breakdown at nyspotlightreport.com #passiveincome #financialfreedom",
-        "link": f"{SITE}/passive-income-online-2026",
-    },
-    {
-        "title": "How to Start a Newsletter That Earns Money Immediately",
-        "description": "Beehiiv pays you from your FIRST subscriber via their ad network. No minimum. No wait. Just write, grow, earn. Free to start. Guide: nyspotlightreport.com/how-to-start-newsletter-make-money #newsletter #beehiiv #emailmarketing",
-        "link": f"{SITE}/how-to-start-newsletter-make-money",
-    },
-    {
-        "title": "Amazon KDP: Publish Books With ZERO Upfront Cost",
-        "description": "Low content books (journals, planners, puzzle books) earn royalties forever on Amazon. 10 books can generate $200-500/month passively. No writing degree needed. Guide: nyspotlightreport.com/amazon-kdp-guide-2026 #amazonkdp #passiveincome",
-        "link": f"{SITE}/amazon-kdp-guide-2026",
-    },
-    {
-        "title": "Print-on-Demand: Upload Once, Earn Forever",
-        "description": "Redbubble + Teepublic + Society6 = upload your design to 3 platforms, earn royalties on every sale. No inventory. No shipping. Just passive income. Guide: nyspotlightreport.com/best-print-on-demand-sites-2026 #printondemand #redbubble",
-        "link": f"{SITE}/best-print-on-demand-sites-2026",
-    },
-    {
-        "title": "Sell Digital Products and Make Money While You Sleep",
-        "description": "Templates, planners, prompt packs. Create once on Gumroad or Etsy, sell forever. 90%+ margin. No fulfillment. Pure passive income. Full guide: nyspotlightreport.com/how-to-sell-digital-products-2026 #digitalproducts #gumroad",
-        "link": f"{SITE}/how-to-sell-digital-products-2026",
-    },
+BOARDS_TO_CREATE = [
+    {"name": "Passive Income Ideas 2026",     "description": "Proven passive income strategies, tools, and systems for entrepreneurs. Updated weekly.", "privacy": "PUBLIC"},
+    {"name": "AI Tools for Entrepreneurs",     "description": "Best AI tools, automations, and workflows for business owners and online entrepreneurs.", "privacy": "PUBLIC"},
+    {"name": "Content Marketing Automation",  "description": "How to automate your blog, newsletter, and social media. Systems that run without you.", "privacy": "PUBLIC"},
+    {"name": "Side Hustle Strategies",         "description": "Side hustle ideas, income stacks, and proven methods to earn online in 2026.", "privacy": "PUBLIC"},
+    {"name": "Digital Products & Downloads",  "description": "How to create and sell digital products — templates, guides, planners, and more.", "privacy": "PUBLIC"},
 ]
 
-# POD Design pins linking to Redbubble
-DESIGN_PINS = [
-    {"title": "NYC Skyline Minimal Black White Art Print", "description": "Minimal New York City skyline print. Available on t-shirts, hoodies, phone cases, mugs, and more. Ships worldwide. #nyc #newyork #minimalist #wallart", "link": RB_BASE},
-    {"title": "Hustle Daily Gold Motivational Poster", "description": "Bold gold typography motivational print. Perfect for home office or gym. Available on posters, canvas, and apparel. #hustle #motivation #entrepreneur", "link": RB_BASE},
-    {"title": "Moon Phases Celestial Art Print", "description": "Minimalist lunar cycle art. Dark navy with white moon phases. Available as poster, canvas, and phone case. #moonphases #celestial #astronomy #wallart", "link": RB_BASE},
-    {"title": "Sacred Geometry Mandala Art Print", "description": "Intricate geometric mandala on black background. Perfect for meditation spaces. Available on canvas, posters, and tapestries. #mandala #sacredgeometry #spiritual", "link": RB_BASE},
-    {"title": "Retro 80s Synthwave Aesthetic Poster", "description": "Neon synthwave poster with retro grid. Perfect for gaming rooms and offices. T-shirts, hoodies, posters available. #synthwave #retro #80s #vaporwave", "link": RB_BASE},
+PIN_TEMPLATES = [
+    {
+        "title": "25 Passive Income Streams That Cost $0 to Start",
+        "description": "Every method on this list is free to start. Bandwidth sharing, digital products, affiliate marketing, newsletter monetization — all running on autopilot. Full guide at nyspotlightreport.com/blog/passive-income-zero-cost-2026/",
+        "link": "https://nyspotlightreport.com/blog/passive-income-zero-cost-2026/",
+        "board_name": "Passive Income Ideas 2026"
+    },
+    {
+        "title": "How to Automate Your Entire Content Operation",
+        "description": "Blog, newsletter, social media, YouTube — all automated. 63 AI bots. Zero manual work after setup. See the full system at nyspotlightreport.com",
+        "link": "https://nyspotlightreport.com/blog/automated-content-operation/",
+        "board_name": "Content Marketing Automation"
+    },
+    {
+        "title": "The Cold Email System That Books 5 Demos/Week",
+        "description": "Apollo + Claude + Gmail = 200 personalized emails per day. 8-12% reply rate. Full breakdown at nyspotlightreport.com",
+        "link": "https://nyspotlightreport.com/blog/cold-email-system-proflow/",
+        "board_name": "Side Hustle Strategies"
+    },
+    {
+        "title": "Free 30-Day Content Plan Generator",
+        "description": "AI builds your complete content calendar in 60 seconds. Blog posts, newsletter, social media — all planned. Free at nyspotlightreport.com/free-plan/",
+        "link": "https://nyspotlightreport.com/free-plan/",
+        "board_name": "AI Tools for Entrepreneurs"
+    },
+    {
+        "title": "10 Digital Products You Can Sell on Gumroad Today",
+        "description": "Templates, planners, guides, checklists — create once, sell forever. See our full store at spotlightny.gumroad.com",
+        "link": "https://nyspotlightreport.com/blog/passive-income-zero-cost-2026/",
+        "board_name": "Digital Products & Downloads"
+    },
 ]
 
 def get_boards():
-    r = requests.get("https://api.pinterest.com/v5/boards",
-        headers={"Authorization": f"Bearer {PINTEREST_TOKEN}"}, timeout=10)
-    if r.ok:
-        return r.json().get("items", [])
-    print(f"Boards error: {r.status_code} {r.text[:100]}")
-    return []
+    r = requests.get(f"{BASE}/boards", headers=HDRS, timeout=10)
+    if r.status_code == 200:
+        return {b["name"]: b["id"] for b in r.json().get("items", [])}
+    log.error(f"Get boards: {r.status_code} {r.text[:100]}")
+    return {}
 
-def create_pin(board_id, title, description, link, image_url=None):
+def create_board(name, description, privacy="PUBLIC"):
+    r = requests.post(f"{BASE}/boards",
+        headers=HDRS,
+        json={"name": name, "description": description, "privacy": privacy},
+        timeout=15)
+    if r.status_code in [200, 201]:
+        board_id = r.json().get("id")
+        log.info(f"  ✅ Board created: '{name}' ({board_id})")
+        return board_id
+    log.error(f"  ❌ Board creation failed: {r.status_code} {r.text[:100]}")
+    return None
+
+def create_pin(board_id, title, description, link):
     payload = {
         "board_id": board_id,
-        "title": title,
-        "description": description,
+        "title": title[:100],
+        "description": description[:500],
         "link": link,
         "media_source": {
             "source_type": "image_url",
-            "url": image_url or "https://nyspotlightreport.com/assets/og-default.png"
+            "url": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1000&q=80"
         }
     }
-    r = requests.post("https://api.pinterest.com/v5/pins",
-        headers={"Authorization": f"Bearer {PINTEREST_TOKEN}", "Content-Type": "application/json"},
-        json=payload, timeout=15)
-    return r.ok, r.status_code
+    r = requests.post(f"{BASE}/pins", headers=HDRS, json=payload, timeout=20)
+    ok = r.status_code in [200, 201]
+    log.info(f"  {'✅' if ok else '❌'} Pin: {title[:50]} | {r.status_code}")
+    if not ok: log.debug(r.text[:200])
+    return ok
 
 def run():
-    if not PINTEREST_TOKEN:
-        print("No PINTEREST_ACCESS_TOKEN — connect at developers.pinterest.com")
-        print("Steps:")
-        print("1. Create app at developers.pinterest.com")
-        print("2. Request access token with boards:read,boards:write,pins:read,pins:write")
-        print("3. Add PINTEREST_ACCESS_TOKEN to GitHub Secrets")
+    if not TOKEN:
+        log.error("No PINTEREST_ACCESS_TOKEN in environment")
+        log.info("Get token: developers.pinterest.com → My apps → create app → generate access token")
+        log.info("Scopes needed: boards:read boards:write pins:read pins:write")
         return
 
+    log.info("Pinterest Bot v3 starting...")
+    
+    # Step 1: Get existing boards
     boards = get_boards()
-    if not boards:
-        print("No Pinterest boards found. Create boards at pinterest.com first:")
-        print("  - Passive Income Tips")
-        print("  - Wall Art Prints")
-        print("  - Side Hustle Ideas")
-        return
-
-    board_id = boards[0]["id"]
-    print(f"Posting to board: {boards[0].get('name','?')}")
-
-    today = datetime.date.today().timetuple().tm_yday
-    all_pins = AFFILIATE_PINS + DESIGN_PINS
-    pin = all_pins[today % len(all_pins)]
-
-    ok, code = create_pin(board_id, pin["title"], pin["description"], pin["link"])
-    if ok:
-        print(f"✅ Pin posted: {pin['title'][:60]}")
+    log.info(f"Existing boards: {len(boards)} — {list(boards.keys())[:3]}")
+    
+    # Step 2: Create any missing boards
+    for board_def in BOARDS_TO_CREATE:
+        if board_def["name"] not in boards:
+            log.info(f"Creating board: {board_def['name']}")
+            new_id = create_board(board_def["name"], board_def["description"], board_def["privacy"])
+            if new_id:
+                boards[board_def["name"]] = new_id
+    
+    # Step 3: Post today's pin
+    import datetime
+    today_pin = PIN_TEMPLATES[datetime.date.today().timetuple().tm_yday % len(PIN_TEMPLATES)]
+    board_id  = boards.get(today_pin["board_name"])
+    
+    if not board_id:
+        # Fallback to any board
+        board_id = list(boards.values())[0] if boards else None
+    
+    if board_id:
+        ok = create_pin(board_id, today_pin["title"], today_pin["description"], today_pin["link"])
+        if ok:
+            log.info(f"✅ Pinterest: pin posted to '{today_pin['board_name']}'")
     else:
-        print(f"❌ Failed: {code}")
+        log.error("No boards available — check token permissions")
 
 if __name__ == "__main__":
     run()
