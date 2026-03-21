@@ -7,7 +7,7 @@ Runs daily via GitHub Actions
 import os, requests, json, random, datetime
 
 WP_TOKEN = os.environ.get("WORDPRESS_ACCESS_TOKEN","")
-WP_SITE  = "nyspotlightreport.wordpress.com"
+WP_SITE  = os.environ.get("WORDPRESS_SITE_ID","204693564")
 CLAUDE   = os.environ.get("ANTHROPIC_API_KEY","")
 AFFILIATE_TAG = "nysr"
 
