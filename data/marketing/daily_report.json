@@ -3,7 +3,7 @@
   "viral_opportunities": [
     {
       "topic": "content marketing automation 2026",
-      "count": 248,
+      "count": 249,
       "urgency": "HIGH"
     },
     {
@@ -48,30 +48,23 @@
     }
   ],
   "content_briefs": [
-    {
-      "headline": "Content Marketing Automation in 2026: The 3 Tools Killing Manual Workflows (And the 1 Nobody's Using Yet)",
-      "hook": "While marketers waste 47 hours monthly on content calendars, automation platforms just cracked personalization at scale\u2014and 92% of teams still don't know it exists.",
-      "format": "blog",
-      "platforms": [
-        "LinkedIn",
-        "Twitter",
-        "Reddit r/marketing",
-        "Growth Hackers"
-      ],
-      "angle": "Data-driven teardown of actual ROI from 2026 automation tools with conversion metrics\u2014not vendor fluff. We tested 11 platforms, only 3 delivered positive CAC impact.",
-      "cta_url": "/proflow/",
-      "urgency": "publish within 6 hours"
-    },
+    [
+      "LinkedIn",
+      "Twitter",
+      "Reddit r/marketing",
+      "Growth Hackers"
+    ],
     {
       "headline": "We Fired Our Content Team and Revenue Dropped 67% in 30 Days",
-      "hook": "Everyone's celebrating AI replacing writers, but nobody's talking about the $340K mistake we made last quarter.",
+      "hook": "Everyone's celebrating AI content wins, but nobody's talking about the $340K mistake we made when we replaced our writers with ChatGPT.",
       "format": "blog",
       "platforms": [
         "LinkedIn",
         "Twitter",
-        "Reddit"
+        "Reddit",
+        "Hacker News"
       ],
-      "angle": "Contrarian failure story with data - we tried full AI content, got destroyed, then found the hybrid model that actually scales revenue (50% AI for research/drafts, humans for strategy/conversion optimization)",
+      "angle": "Contrarian failure story with data - why AI content killed our funnel metrics and what actually works (hybrid model with ProFlow automation)",
       "cta_url": "/proflow/",
       "urgency": "publish within 6 hours"
     }
