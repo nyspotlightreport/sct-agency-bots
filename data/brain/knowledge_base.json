@@ -1,0 +1,49 @@
+{
+  "rules": [
+    {
+      "rule": "Pre-handle top 5 objections before they are raised in every outreach sequence",
+      "reason": "Objections raised = momentum lost",
+      "department": "sales"
+    },
+    {
+      "rule": "Every email under 100 words converts better than long-form for cold outreach",
+      "reason": "Attention is scarce, respect it",
+      "department": "sales"
+    },
+    {
+      "rule": "Every piece of content must expand to 7 formats minimum",
+      "reason": "One input, maximum distribution",
+      "department": "marketing"
+    },
+    {
+      "rule": "Kill any workflow that fails 3+ consecutive times without intervention",
+      "reason": "Persistent failures corrupt data and waste credits",
+      "department": "operations"
+    },
+    {
+      "rule": "A/B test is always running on every outreach touchpoint",
+      "reason": "Never stop optimizing",
+      "department": "sales+marketing"
+    }
+  ],
+  "patterns": [],
+  "wins": [],
+  "kills": [
+    {
+      "item": "Uncoordinated single-channel content posting",
+      "reason": "Fragmented impact, no amplification",
+      "replaced_by": "Coordinated weekly campaign themes"
+    },
+    {
+      "item": "Generic one-size-fits-all email pitches",
+      "reason": "0% response rate",
+      "replaced_by": "ICP-specific zero-resistance sequences"
+    }
+  ],
+  "open_questions": [
+    "Which ICP converts fastest: founder vs marketing director vs agency owner?",
+    "Does HN or Reddit drive higher-quality leads for our products?",
+    "What is the actual time from first contact to close for ProFlow Starter?"
+  ],
+  "last_updated": "2026-03-21"
+}
