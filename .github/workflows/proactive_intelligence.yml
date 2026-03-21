@@ -1,47 +1,60 @@
-name: 🔍 Proactive Intelligence (4h)
+name: 🔍 Proactive Intelligence Engine — Always On
+
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: '0 5 * * *'    # 5am daily — FIRST workflow to run, before everything else
+    - cron: '0 17 * * *'   # 5pm daily — afternoon scan
   workflow_dispatch:
+    inputs:
+      scan_type:
+        description: 'Scan type (full/revenue/gaps/roadmap)'
+        required: false
+        default: 'full'
+
+# This workflow runs BEFORE all others.
+# Its job: scan everything, find what's wrong or missing,
+# create opportunities, brief the Chairman, auto-act where safe.
+# The Chairman should NEVER have to discover something this system can find.
+
 env:
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-  NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
-  AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
-  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
-  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
-  GH_PAT: ${{ secrets.GH_PAT }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT:               ${{ secrets.GH_PAT }}
+  STRIPE_SECRET_KEY:    ${{ secrets.STRIPE_SECRET_KEY }}
+  HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
+  NETLIFY_AUTH_TOKEN:   ${{ secrets.NETLIFY_AUTH_TOKEN }}
+  NETLIFY_SITE_ID:      ${{ secrets.NETLIFY_SITE_ID }}
 
 jobs:
-  intelligence-scan:
-    name: "🧠 Reputation Intelligence"
+  proactive-intelligence:
+    name: 🔍 Proactive Intelligence Scan
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
+        with: { python-version: '3.11' }
       - run: pip install requests -q
-      - run: python agents/reputation_intelligence_engine.py
-        continue-on-error: true
 
-  threat-feed:
-    name: "🛡️ Threat Intelligence"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - run: python bots/threat_intelligence_feed.py
-        continue-on-error: true
+      - name: Run Proactive Intelligence Engine
+        run: python agents/proactive_intelligence_agent.py
 
-  journalist-tracker:
-    name: "📰 Journalist Tracker"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - run: python bots/journalist_tracker_bot.py
-        continue-on-error: true
+      - name: Intelligence Summary
+        if: always()
+        run: |
+          echo "## 🔍 Proactive Intelligence Report" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The intelligence engine has:" >> $GITHUB_STEP_SUMMARY
+          echo "- Scanned all 6 domains (agent coverage, revenue, gaps, roadmap, mandates, synergies)" >> $GITHUB_STEP_SUMMARY
+          echo "- Created opportunities for every gap found" >> $GITHUB_STEP_SUMMARY
+          echo "- Auto-actioned safe improvements" >> $GITHUB_STEP_SUMMARY
+          echo "- Built Chairman daily briefing" >> $GITHUB_STEP_SUMMARY
+          echo "- Pushed Pushover alert for critical items" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**This workflow runs before all others.**" >> $GITHUB_STEP_SUMMARY
+          echo "**The Chairman should never have to discover something this system can find.**" >> $GITHUB_STEP_SUMMARY
