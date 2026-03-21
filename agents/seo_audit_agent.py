@@ -12,11 +12,29 @@ from datetime import datetime
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-    from agents.crm_core_agent import supabase_request
 except:
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
-    def supabase_request(m,t,**k): return None
+
+import urllib.request as _urllib_req
+_SUPA_URL = os.environ.get("SUPABASE_URL","")
+_SUPA_KEY = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
+
+def supabase_request(method, table, data=None, query="", **kwargs):
+    """Standalone supabase helper — no import dependency."""
+    if not _SUPA_URL or not _SUPA_KEY: return None
+    url = f"{_SUPA_URL}/rest/v1/{table}{query}"
+    payload = json.dumps(data).encode() if data else None
+    headers = {"apikey": _SUPA_KEY, "Authorization": f"Bearer {_SUPA_KEY}",
+               "Content-Type": "application/json", "Prefer": "return=representation"}
+    req = _urllib_req.Request(url, data=payload, method=method, headers=headers)
+    try:
+        with _urllib_req.urlopen(req, timeout=15) as r:
+            body = r.read()
+            return json.loads(body) if body else {}
+    except Exception as e:
+        log.warning(f"Supabase {method} {table}: {e}")
+        return None
 
 import urllib.request, urllib.parse
 log = logging.getLogger(__name__)
