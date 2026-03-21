@@ -1,136 +1,112 @@
-name: 💰 Sales & Marketing Engine (Daily)
+name: 🔥 Sales & Marketing Engine (Daily)
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "30 12 * * *"
   workflow_dispatch:
-
 env:
   ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
   APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
-  AHREFS_API_KEY:       ${{ secrets.AHREFS_API_KEY }}
   GMAIL_USER:           ${{ secrets.GMAIL_USER }}
   GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
-  LINKEDIN_CLIENT_ID:   ${{ secrets.LINKEDIN_CLIENT_ID }}
-  LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
-  LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
-  TWITTER_API_KEY:      ${{ secrets.TWITTER_API_KEY }}
-  TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-  REDDIT_CLIENT_ID:     ${{ secrets.REDDIT_CLIENT_ID }}
-  REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
-  REDDIT_USERNAME:      ${{ secrets.REDDIT_USERNAME }}
-  REDDIT_PASSWORD:      ${{ secrets.REDDIT_PASSWORD }}
-  BEEHIIV_API_KEY:      ${{ secrets.BEEHIIV_API_KEY }}
-  BEEHIIV_PUB_ID:       ${{ secrets.BEEHIIV_PUB_ID }}
   STRIPE_SECRET_KEY:    ${{ secrets.STRIPE_SECRET_KEY }}
-  NTFY_CHANNEL:         ${{ secrets.NTFY_CHANNEL }}
+  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  NEWSAPI_KEY:          ${{ secrets.NEWSAPI_KEY }}
+  AHREFS_API_KEY:       ${{ secrets.AHREFS_API_KEY }}
   GH_PAT:               ${{ secrets.GH_PAT }}
   GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
+  NTFY_CHANNEL:         ${{ secrets.NTFY_CHANNEL }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  LINKEDIN_CLIENT_ID:   ${{ secrets.LINKEDIN_CLIENT_ID }}
+  LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
 
 jobs:
 
-  # ─────────────────────────────────────────
-  # JOB 1: LEAD IDENTIFICATION & SCORING
-  # Apollo search → score → prioritize
-  # ─────────────────────────────────────────
-  lead-engine:
-    name: "🎯 Lead ID & Scoring"
+  sales-intelligence:
+    name: "🧠 Sales Intelligence + Lead Scoring"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - name: Pull leads from Apollo + score them
-        run: python agents/apollo_scale_agent.py
-        continue-on-error: true
-      - name: Score and prioritize leads
+      - run: pip install requests PyNaCl -q
+      - name: Run adaptive sales engine (learning cycle on Mondays)
         run: python agents/adaptive_sales_engine.py
         continue-on-error: true
-
-  # ─────────────────────────────────────────
-  # JOB 2: OUTREACH EXECUTION
-  # Personalized sequences for HOT leads
-  # ─────────────────────────────────────────
-  outreach-engine:
-    name: "📧 Multi-Channel Outreach"
-    needs: lead-engine
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - name: Send personalized email sequences
-        run: python bots/email_sequence_bot.py
-        continue-on-error: true
-      - name: LinkedIn outreach
-        run: python bots/linkedin_outreach_bot.py
-        continue-on-error: true
-      - name: Re-engage stalled leads
-        run: python agents/adaptive_sales_engine.py
-        continue-on-error: true
-
-  # ─────────────────────────────────────────
-  # JOB 3: MARKETING CAMPAIGNS
-  # Multi-channel coordinated campaigns
-  # ─────────────────────────────────────────
-  marketing-campaigns:
-    name: "📣 Marketing Campaigns"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - name: Generate + distribute campaign assets
-        run: python agents/marketing_command_center.py
-        continue-on-error: true
-      - name: SEO intelligence
-        run: python agents/ahrefs_seo_intelligence.py
-        continue-on-error: true
-
-  # ─────────────────────────────────────────
-  # JOB 4: FUNNEL TRACKING + CONVERSION
-  # Monitor pipeline, close open opportunities
-  # ─────────────────────────────────────────
-  funnel-conversion:
-    name: "💎 Funnel & Conversion"
-    needs: outreach-engine
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - name: Check Stripe for new payments
-        run: python bots/stripe_revenue_bot.py
-        continue-on-error: true
-      - name: Update funnel stages from email responses
-        run: python bots/inbox_triage_bot.py
-        continue-on-error: true
-
-  # ─────────────────────────────────────────
-  # JOB 5: SYSTEM LEARNING (runs last, reads all results)
-  # ─────────────────────────────────────────
-  system-learning:
-    name: "🧠 System Learning & Self-Correction"
-    needs: [lead-engine, outreach-engine, marketing-campaigns, funnel-conversion]
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - name: Run system learning cycle
-        run: python agents/system_learning_engine.py
-        continue-on-error: true
-      - name: Save any learning updates
+      - name: Commit sales data
         run: |
           git config user.name "James Butler"
           git config user.email "nyspotlightreport@gmail.com"
-          git add data/sales/ data/marketing/ data/learning/ -A 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "learning: system update $(date +%Y-%m-%d)"
-          git push || echo "Nothing to push"
+          git add -A
+          git diff --cached --quiet || git commit -m "sales: intelligence run $(date +%Y-%m-%d)"
+          git push || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  outreach-coordinator:
+    name: "📡 Multi-Channel Outreach Coordinator"
+    needs: sales-intelligence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Fetch prospects + stage sequences + execute due touches
+        run: python agents/multi_channel_coordinator.py
+        continue-on-error: true
+      - name: Commit sequence data
+        run: |
+          git config user.name "Sloane Pierce"
+          git config user.email "nyspotlightreport@gmail.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "sales: sequences updated $(date +%Y-%m-%d)"
+          git push || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  conversion-closer:
+    name: "💰 Conversion Closer (Reply Handler)"
+    needs: outreach-coordinator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests imaplib2 -q || pip install requests -q
+      - name: Check inbox + classify replies + send responses
+        run: python agents/conversion_closer.py
+        continue-on-error: true
+
+  marketing-intelligence:
+    name: "📊 Marketing Intelligence + A/B Engine"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Marketing analysis + viral opportunities + funnel
+        run: python agents/marketing_intelligence_engine.py
+        continue-on-error: true
+
+  system-brain:
+    name: "🧬 System Learning Brain (Weekly on Monday)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: All-department health scan + fixes + agent evolution
+        run: python agents/system_learning_brain.py
+        continue-on-error: true
+      - name: Commit brain outputs
+        run: |
+          git config user.name "System Brain"
+          git config user.email "nyspotlightreport@gmail.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "brain: learning cycle $(date +%Y-%m-%d)"
+          git push || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
