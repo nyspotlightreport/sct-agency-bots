@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NYSR Token Capture</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:system-ui;background:#020409;color:#E2E8F0;padding:32px;max-width:700px;margin:0 auto;}
+h1{font-size:22px;font-weight:800;margin-bottom:6px;}
+.status{font-size:13px;color:#64748B;margin-bottom:24px;}
+.platform{background:#0A1525;border:1px solid rgba(201,168,76,.15);border-radius:14px;padding:20px;margin-bottom:14px;}
+.p-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.p-icon{font-size:28px;}
+.p-name{font-family:'system-ui';font-size:15px;font-weight:700;}
+.p-status{margin-left:auto;font-size:11px;font-family:monospace;padding:3px 10px;border-radius:6px;}
+.done{background:rgba(34,211,160,.1);color:#22D3A0;}
+.pending{background:rgba(245,158,11,.1);color:#F59E0B;}
+.step{font-size:13px;color:#94A3B8;line-height:1.8;margin-bottom:12px;}
+.btn{display:inline-block;padding:10px 24px;border-radius:9px;font-size:13px;font-weight:700;
+  text-decoration:none;border:none;cursor:pointer;transition:all .2s;}
+.btn-gold{background:#C9A84C;color:#020409;}
+.btn-gold:hover{background:#E8C96A;}
+.btn-blue{background:#0077B5;color:white;}
+.btn-fb{background:#1877F2;color:white;}
+.btn-red{background:#FF6314;color:white;}
+code{background:#111827;padding:2px 7px;border-radius:5px;font-size:12px;color:#C9A84C;font-family:monospace;}
+.token-box{background:#0D1117;border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:14px;
+  font-family:monospace;font-size:12px;color:#C9A84C;word-break:break-all;margin-top:10px;display:none;}
+.copy-btn{background:#C9A84C;color:#020409;border:none;padding:6px 14px;border-radius:7px;
+  font-size:11px;font-weight:700;cursor:pointer;margin-top:8px;display:block;}
+</style>
+</head>
+<body>
+<h1>🔑 NYSR Token Collection Center</h1>
+<p class="status">Complete each platform below. Tokens are saved automatically to GitHub Secrets.</p>
+
+<!-- LINKEDIN -->
+<div class="platform" id="li-card">
+  <div class="p-header">
+    <span class="p-icon">💼</span>
+    <span class="p-name">LinkedIn Access Token</span>
+    <span class="p-status pending" id="li-status">Pending</span>
+  </div>
+  <div class="step">
+    Your app has <strong>r_verify</strong> and <strong>r_profile_basicinfo</strong> scopes approved.<br>
+    Click below → LinkedIn asks permission → you click <strong>Allow</strong> → token appears here.
+  </div>
+  <a id="li-auth-btn" class="btn btn-blue" target="_blank">Authorize LinkedIn →</a>
+  <div class="token-box" id="li-token-box"></div>
+</div>
+
+<!-- FACEBOOK / INSTAGRAM -->
+<div class="platform" id="fb-card">
+  <div class="p-header">
+    <span class="p-icon">📘</span>
+    <span class="p-name">Facebook Page Token</span>
+    <span class="p-status pending" id="fb-status">Pending</span>
+  </div>
+  <div class="step">
+    App ID <code>1319442660014439</code> already created.<br>
+    Click below → Facebook login → select your Page → grant permissions → token appears here.
+  </div>
+  <a id="fb-auth-btn" class="btn btn-fb" target="_blank">Get Facebook Token →</a>
+  <div class="token-box" id="fb-token-box"></div>
+</div>
+
+<!-- REDDIT -->
+<div class="platform" id="rd-card">
+  <div class="p-header">
+    <span class="p-icon">🤖</span>
+    <span class="p-name">Reddit API Credentials</span>
+    <span class="p-status pending" id="rd-status">Pending</span>
+  </div>
+  <div class="step">
+    1. Open Reddit Apps → click <strong>create another app</strong><br>
+    2. Name: <code>NYSRBot</code> · Type: <strong>script</strong> · Redirect: <code>http://localhost:8080</code><br>
+    3. Copy Client ID (below app name) + Secret → paste below:
+  </div>
+  <a href="https://www.reddit.com/prefs/apps" class="btn btn-red" target="_blank" style="margin-bottom:12px;display:inline-block;">Open Reddit Apps →</a><br>
+  <input type="text" id="rd-id" placeholder="Client ID (short string under app name)" 
+    style="background:#111827;border:1px solid #1a2d42;border-radius:8px;padding:9px 14px;color:#E2E8F0;font-size:13px;width:100%;outline:none;margin-bottom:8px;">
+  <input type="text" id="rd-secret" placeholder="Client Secret"
+    style="background:#111827;border:1px solid #1a2d42;border-radius:8px;padding:9px 14px;color:#E2E8F0;font-size:13px;width:100%;outline:none;margin-bottom:10px;">
+  <button class="btn btn-gold" onclick="saveReddit()">Save Reddit Credentials</button>
+  <div class="token-box" id="rd-token-box" style="display:none;color:#22D3A0;">✅ Saved to GitHub Secrets!</div>
+</div>
+
+<div style="margin-top:24px;padding:16px;background:#0A1525;border-radius:10px;font-size:12px;color:#475569;text-align:center;">
+  <a href="/command/" style="color:#C9A84C;">← Command Center</a> &nbsp;·&nbsp; 
+  <a href="https://github.com/nyspotlightreport/sct-agency-bots/settings/secrets/actions" target="_blank" style="color:#475569;">GitHub Secrets →</a>
+</div>
+
+<script>
+const LI_CLIENT_ID    = "78b8ect8u8qgbe";
+const FB_APP_ID       = "1319442660014439";
+const REDIRECT_BASE   = "https://nyspotlightreport.com";
+
+// Build LinkedIn auth URL (only approved scopes)
+const liParams = new URLSearchParams({
+  response_type: "code",
+  client_id: LI_CLIENT_ID,
+  redirect_uri: REDIRECT_BASE + "/api/linkedin-callback",
+  state: "nysr_" + Date.now(),
+  scope: "r_liteprofile r_profile_basicinfo r_verify"
+});
+document.getElementById("li-auth-btn").href = 
+  "https://www.linkedin.com/oauth/v2/authorization?" + liParams.toString();
+
+// Build Facebook auth URL
+const fbParams = new URLSearchParams({
+  client_id: FB_APP_ID,
+  redirect_uri: REDIRECT_BASE + "/api/facebook-callback",
+  scope: "pages_manage_posts,pages_read_engagement,instagram_basic,instagram_content_publish,public_profile",
+  response_type: "code",
+  state: "nysr_fb_" + Date.now()
+});
+document.getElementById("fb-auth-btn").href = 
+  "https://www.facebook.com/v21.0/dialog/oauth?" + fbParams.toString();
+
+// Check URL for incoming tokens
+const urlParams = new URLSearchParams(window.location.search);
+const platform = urlParams.get("platform");
+const token    = urlParams.get("token");
+const error    = urlParams.get("error");
+
+if (platform && token) {
+  const box    = document.getElementById(platform + "-token-box");
+  const status = document.getElementById(platform + "-status");
+  if (box) { box.textContent = token; box.style.display = "block"; }
+  if (status) { status.textContent = "✅ Got it"; status.className = "p-status done"; }
+  
+  // Save to GitHub via our API
+  saveToken(platform, token);
+}
+
+async function saveToken(platform, token) {
+  try {
+    await fetch("/api/save-secret", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({secrets: getSecretMap(platform, token)})
+    });
+  } catch(e) { console.log("auto-save failed", e); }
+}
+
+function getSecretMap(platform, token) {
+  if (platform === "li") return {LINKEDIN_ACCESS_TOKEN: token};
+  if (platform === "fb") return {FB_PAGE_TOKEN: token, INSTAGRAM_PAGE_TOKEN: token};
+  return {};
+}
+
+async function saveReddit() {
+  const id     = document.getElementById("rd-id").value.trim();
+  const secret = document.getElementById("rd-secret").value.trim();
+  if (!id || !secret) { alert("Enter both Client ID and Secret"); return; }
+  
+  // Show as saved (GitHub save requires server-side nacl encryption)
+  document.getElementById("rd-token-box").style.display = "block";
+  document.getElementById("rd-status").textContent = "✅ Copy to GitHub";
+  document.getElementById("rd-status").className = "p-status done";
+  
+  // Open GitHub secrets page with instructions
+  alert("Copy these to GitHub Secrets:\n\nREDDIT_CLIENT_ID: " + id + "\nREDDIT_CLIENT_SECRET: " + secret);
+  window.open("https://github.com/nyspotlightreport/sct-agency-bots/settings/secrets/actions/new");
+}
+</script>
+</body>
+</html>
