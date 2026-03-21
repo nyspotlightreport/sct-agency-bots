@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NYSR Sales & Marketing Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#030B14;--layer1:#061220;--layer2:#091828;--layer3:#0D1F32;
+  --accent:#00E5A0;--accent2:#0066FF;--accent3:#FF6B35;--gold:#FFB800;
+  --red:#FF4444;--purple:#9B59B6;
+  --text:#E8F4FF;--muted:#3D6080;--soft:#7AA3C0;
+  --border:rgba(0,229,160,.08);--border2:rgba(255,255,255,.06);
+  --font:'Space Grotesk',sans-serif;--mono:'Syne Mono',monospace;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+
+/* Animated grid background */
+body::before{content:'';position:fixed;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(0,229,160,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,229,160,.03) 1px,transparent 1px);
+  background-size:60px 60px;pointer-events:none;}
+
+/* Pulse dot */
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(.85);}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes slide-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes count-up{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);
+  display:inline-block;animation:pulse 1.5s ease-in-out infinite;}
+
+/* Layout */
+.shell{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:24px 20px;}
+
+/* Top bar */
+.topbar{display:flex;align-items:center;justify-content:space-between;
+  padding:0 0 24px;border-bottom:1px solid var(--border);margin-bottom:28px;
+  flex-wrap:wrap;gap:12px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{width:36px;height:36px;border:1.5px solid var(--accent);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700;}
+.brand-name{font-size:15px;font-weight:700;letter-spacing:-.3px;}
+.brand-sub{font-size:10px;color:var(--muted);font-family:var(--mono);letter-spacing:.1em;
+  text-transform:uppercase;margin-top:2px;}
+.topbar-right{display:flex;align-items:center;gap:16px;}
+.status-pill{display:flex;align-items:center;gap:7px;background:rgba(0,229,160,.06);
+  border:1px solid rgba(0,229,160,.15);border-radius:20px;padding:6px 14px;
+  font-size:11px;font-weight:600;font-family:var(--mono);color:var(--accent);}
+.time-display{font-family:var(--mono);font-size:12px;color:var(--muted);}
+
+/* Revenue hero */
+.revenue-hero{background:linear-gradient(135deg,rgba(0,102,255,.12) 0%,rgba(0,229,160,.08) 100%);
+  border:1px solid rgba(0,229,160,.15);border-radius:20px;padding:32px;
+  margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;
+  position:relative;overflow:hidden;}
+.revenue-hero::before{content:'';position:absolute;top:-50%;right:-10%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,229,160,.06) 0%,transparent 70%);
+  pointer-events:none;}
+.rev-stat{text-align:center;}
+.rev-val{font-size:52px;font-weight:700;letter-spacing:-2px;line-height:1;
+  font-family:var(--mono);margin-bottom:6px;}
+.rev-label{font-size:11px;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.1em;font-family:var(--mono);}
+.rev-delta{font-size:12px;margin-top:6px;font-family:var(--mono);}
+.delta-up{color:var(--accent);}
+.delta-zero{color:var(--gold);}
+
+/* Funnel */
+.funnel-row{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-bottom:24px;}
+.funnel-stage{background:var(--layer2);border:1px solid var(--border2);
+  border-radius:10px;padding:14px 10px;text-align:center;position:relative;}
+.funnel-stage::after{content:'→';position:absolute;right:-8px;top:50%;
+  transform:translateY(-50%);font-size:11px;color:var(--muted);z-index:2;}
+.funnel-stage:last-child::after{display:none;}
+.funnel-count{font-size:28px;font-weight:700;font-family:var(--mono);line-height:1;margin-bottom:4px;}
+.funnel-label{font-size:9px;text-transform:uppercase;letter-spacing:.08em;
+  font-family:var(--mono);color:var(--muted);}
+
+/* Two column grid */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;}
+
+/* Panel */
+.panel{background:var(--layer2);border:1px solid var(--border2);
+  border-radius:16px;padding:20px;animation:slide-in .3s ease;}
+.panel-header{display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:16px;}
+.panel-title{font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;font-family:var(--mono);color:var(--soft);}
+.panel-badge{font-size:10px;padding:3px 8px;border-radius:12px;font-family:var(--mono);}
+.badge-live{background:rgba(0,229,160,.1);color:var(--accent);border:1px solid rgba(0,229,160,.2);}
+.badge-warning{background:rgba(255,184,0,.1);color:var(--gold);border:1px solid rgba(255,184,0,.2);}
+.badge-error{background:rgba(255,68,68,.1);color:var(--red);border:1px solid rgba(255,68,68,.2);}
+
+/* Channel bars */
+.channel-bar{display:flex;align-items:center;gap:10px;padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,.03);}
+.channel-bar:last-child{border:none;}
+.ch-name{font-size:12px;width:140px;flex-shrink:0;font-family:var(--mono);}
+.ch-bar-track{flex:1;height:5px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden;}
+.ch-bar-fill{height:100%;border-radius:3px;transition:width 1s ease;}
+.ch-val{font-size:11px;font-family:var(--mono);color:var(--soft);width:50px;text-align:right;}
+
+/* Lead table */
+.lead-row{display:flex;align-items:center;gap:12px;padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.03);}
+.lead-row:last-child{border:none;}
+.lead-avatar{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;
+  justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;}
+.lead-info{flex:1;min-width:0;}
+.lead-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.lead-meta{font-size:10px;color:var(--muted);font-family:var(--mono);}
+.lead-score{text-align:right;}
+.score-num{font-size:16px;font-weight:700;font-family:var(--mono);}
+.score-tier{font-size:9px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;}
+
+/* A/B test cards */
+.ab-card{background:var(--layer3);border-radius:10px;padding:12px;margin-bottom:8px;}
+.ab-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.ab-name{font-size:11px;font-weight:700;font-family:var(--mono);}
+.ab-winner{font-size:10px;color:var(--accent);font-family:var(--mono);}
+.ab-variants{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.ab-v{padding:8px;border-radius:6px;border:1px solid var(--border2);}
+.ab-v.winning{border-color:rgba(0,229,160,.3);background:rgba(0,229,160,.04);}
+.ab-v-label{font-size:10px;font-family:var(--mono);color:var(--muted);margin-bottom:4px;}
+.ab-v-stat{font-size:20px;font-weight:700;font-family:var(--mono);}
+
+/* Learning feed */
+.learning-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.03);}
+.learning-item:last-child{border:none;}
+.l-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;
+  justify-content:center;font-size:12px;flex-shrink:0;}
+.l-text{font-size:11px;color:var(--soft);line-height:1.5;}
+.l-time{font-size:9px;color:var(--muted);font-family:var(--mono);margin-top:2px;}
+
+/* KPI strip */
+.kpi-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:20px;}
+.kpi-block{background:var(--layer2);border:1px solid var(--border2);border-radius:10px;
+  padding:14px;text-align:center;}
+.kpi-val{font-size:22px;font-weight:700;font-family:var(--mono);line-height:1;margin-bottom:4px;}
+.kpi-label{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:var(--mono);}
+
+@media(max-width:900px){
+  .revenue-hero,.funnel-row,.kpi-strip{grid-template-columns:repeat(2,1fr);}
+  .grid-2,.grid-3{grid-template-columns:1fr;}
+  .funnel-stage::after{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark">NY</div>
+      <div>
+        <div class="brand-name">Sales & Marketing Command Center</div>
+        <div class="brand-sub">NY Spotlight Report · Adaptive Revenue Engine</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="status-pill"><span class="live-dot"></span>SYSTEM LIVE</div>
+      <div class="time-display" id="clock">--:--:--</div>
+    </div>
+  </div>
+
+  <!-- REVENUE HERO -->
+  <div class="revenue-hero">
+    <div class="rev-stat">
+      <div class="rev-val" style="color:var(--accent)" id="mrr">$0</div>
+      <div class="rev-label">Monthly Recurring Revenue</div>
+      <div class="rev-delta delta-zero" id="mrr-target">Target: $10K by Day 90</div>
+    </div>
+    <div class="rev-stat">
+      <div class="rev-val" style="color:var(--accent2)" id="pipeline">$0</div>
+      <div class="rev-label">Pipeline Value</div>
+      <div class="rev-delta delta-zero" id="pipeline-deals">0 active deals</div>
+    </div>
+    <div class="rev-stat">
+      <div class="rev-val" style="color:var(--gold)" id="cac">$0</div>
+      <div class="rev-label">Customer Acq. Cost</div>
+      <div class="rev-delta delta-zero">Target: &lt;$50</div>
+    </div>
+  </div>
+
+  <!-- FUNNEL -->
+  <div class="funnel-row">
+    <div class="funnel-stage">
+      <div class="funnel-count" style="color:var(--soft)" id="f-identified">0</div>
+      <div class="funnel-label">Identified</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="funnel-count" style="color:var(--soft)" id="f-contacted">0</div>
+      <div class="funnel-label">Contacted</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="funnel-count" style="color:var(--accent2);" id="f-opened">0</div>
+      <div class="funnel-label">Opened</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="funnel-count" style="color:var(--accent2)" id="f-replied">0</div>
+      <div class="funnel-label">Replied</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="funnel-count" style="color:var(--gold)" id="f-call">0</div>
+      <div class="funnel-label">Call Booked</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="funnel-count" style="color:var(--gold)" id="f-proposal">0</div>
+      <div class="funnel-label">Proposal</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="funnel-count" style="color:var(--accent)" id="f-won">0</div>
+      <div class="funnel-label">Closed Won</div>
+    </div>
+    <div class="funnel-stage">
+      <div class="funnel-count" style="color:var(--red)" id="f-lost">0</div>
+      <div class="funnel-label">Lost</div>
+    </div>
+  </div>
+
+  <!-- KPI STRIP -->
+  <div class="kpi-strip">
+    <div class="kpi-block">
+      <div class="kpi-val" style="color:var(--accent)" id="open-rate">—</div>
+      <div class="kpi-label">Email Open Rate</div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-val" style="color:var(--accent2)" id="reply-rate">—</div>
+      <div class="kpi-label">Reply Rate</div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-val" style="color:var(--gold)" id="daily-emails">200</div>
+      <div class="kpi-label">Emails/Day</div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-val" style="color:var(--accent3)" id="traffic">—</div>
+      <div class="kpi-label">Wk Traffic</div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-val" style="color:var(--purple)" id="subs">—</div>
+      <div class="kpi-label">Email Subs</div>
+    </div>
+    <div class="kpi-block">
+      <div class="kpi-val" style="color:var(--accent)" id="health-score">—</div>
+      <div class="kpi-label">System Health</div>
+    </div>
+  </div>
+
+  <!-- MIDDLE GRID -->
+  <div class="grid-2">
+
+    <!-- CHANNEL PERFORMANCE -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Channel Performance</span>
+        <span class="panel-badge badge-live">LIVE</span>
+      </div>
+      <div class="channel-bar">
+        <div class="ch-name">SEO / Blog</div>
+        <div class="ch-bar-track"><div class="ch-bar-fill" style="width:65%;background:var(--accent);"></div></div>
+        <div class="ch-val">Ramping</div>
+      </div>
+      <div class="channel-bar">
+        <div class="ch-name">LinkedIn</div>
+        <div class="ch-bar-track"><div class="ch-bar-fill" style="width:45%;background:var(--accent2);"></div></div>
+        <div class="ch-val">Active</div>
+      </div>
+      <div class="channel-bar">
+        <div class="ch-name">Cold Email</div>
+        <div class="ch-bar-track"><div class="ch-bar-fill" style="width:80%;background:var(--gold);"></div></div>
+        <div class="ch-val">200/day</div>
+      </div>
+      <div class="channel-bar">
+        <div class="ch-name">Reddit</div>
+        <div class="ch-bar-track"><div class="ch-bar-fill" style="width:30%;background:var(--accent3);"></div></div>
+        <div class="ch-val">Pending</div>
+      </div>
+      <div class="channel-bar">
+        <div class="ch-name">YouTube Shorts</div>
+        <div class="ch-bar-track"><div class="ch-bar-fill" style="width:20%;background:var(--purple);"></div></div>
+        <div class="ch-val">Launching</div>
+      </div>
+      <div class="channel-bar">
+        <div class="ch-name">Email (Beehiiv)</div>
+        <div class="ch-bar-track"><div class="ch-bar-fill" style="width:40%;background:var(--accent);"></div></div>
+        <div class="ch-val">Building</div>
+      </div>
+    </div>
+
+    <!-- A/B TESTS -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Active A/B Tests</span>
+        <span class="panel-badge badge-live">AUTO</span>
+      </div>
+      <div class="ab-card">
+        <div class="ab-header">
+          <span class="ab-name">Email — Subject Line Test</span>
+          <span class="ab-winner">Running</span>
+        </div>
+        <div class="ab-variants">
+          <div class="ab-v">
+            <div class="ab-v-label">A: Direct</div>
+            <div class="ab-v-stat" style="color:var(--accent)">—</div>
+            <div style="font-size:9px;color:var(--muted);font-family:var(--mono);">open rate</div>
+          </div>
+          <div class="ab-v">
+            <div class="ab-v-label">B: Curiosity</div>
+            <div class="ab-v-stat" style="color:var(--accent2)">—</div>
+            <div style="font-size:9px;color:var(--muted);font-family:var(--mono);">open rate</div>
+          </div>
+        </div>
+      </div>
+      <div class="ab-card">
+        <div class="ab-header">
+          <span class="ab-name">Landing Page — CTA Test</span>
+          <span class="ab-winner">Running</span>
+        </div>
+        <div class="ab-variants">
+          <div class="ab-v">
+            <div class="ab-v-label">A: "Get Free Plan"</div>
+            <div class="ab-v-stat" style="color:var(--accent)">—</div>
+            <div style="font-size:9px;color:var(--muted);font-family:var(--mono);">conv. rate</div>
+          </div>
+          <div class="ab-v">
+            <div class="ab-v-label">B: "Start Free"</div>
+            <div class="ab-v-stat" style="color:var(--accent2)">—</div>
+            <div style="font-size:9px;color:var(--muted);font-family:var(--mono);">conv. rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM GRID -->
+  <div class="grid-3">
+
+    <!-- HOT LEADS -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Hot Leads</span>
+        <span class="panel-badge badge-live" id="hot-count">Loading...</span>
+      </div>
+      <div id="lead-list">
+        <div class="lead-row">
+          <div class="lead-avatar" style="background:rgba(0,229,160,.1);color:var(--accent)">JS</div>
+          <div class="lead-info">
+            <div class="lead-name">Awaiting Pipeline</div>
+            <div class="lead-meta">Apollo sync pending</div>
+          </div>
+          <div class="lead-score">
+            <div class="score-num" style="color:var(--muted)">—</div>
+            <div class="score-tier" style="color:var(--muted)">score</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEARNING FEED -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">🧠 System Learning</span>
+        <span class="panel-badge badge-live">LIVE</span>
+      </div>
+      <div id="learning-feed">
+        <div class="learning-item">
+          <div class="l-icon" style="background:rgba(0,229,160,.1)">🧠</div>
+          <div>
+            <div class="l-text">System initialized — baseline established across all departments</div>
+            <div class="l-time">Today</div>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="l-icon" style="background:rgba(0,102,255,.1)">📊</div>
+          <div>
+            <div class="l-text">Learning engine deployed — 3x daily health monitoring active</div>
+            <div class="l-time">Today</div>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="l-icon" style="background:rgba(255,184,0,.1)">⚡</div>
+          <div>
+            <div class="l-text">Sales sequences ready — HOT lead outreach begins next cycle</div>
+            <div class="l-time">Today</div>
+          </div>
+        </div>
+        <div class="learning-item">
+          <div class="l-icon" style="background:rgba(155,89,182,.1)">🎯</div>
+          <div>
+            <div class="l-text">ICP profiles configured — 3 segments: ProFlow Starter, DFY Agency, White Label</div>
+            <div class="l-time">Today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OBJECTION HANDLING -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Objection Library</span>
+        <span class="panel-badge badge-live">AUTO-HANDLE</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="background:var(--layer3);border-radius:8px;padding:10px;">
+          <div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:4px;">Too expensive</div>
+          <div style="font-size:12px;color:var(--soft);">Compare to current time cost → 80% savings framing</div>
+        </div>
+        <div style="background:var(--layer3);border-radius:8px;padding:10px;">
+          <div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:4px;">Not sure it works</div>
+          <div style="font-size:12px;color:var(--soft);">Send data + case study → 3-month proof</div>
+        </div>
+        <div style="background:var(--layer3);border-radius:8px;padding:10px;">
+          <div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:4px;">Already have tools</div>
+          <div style="font-size:12px;color:var(--soft);">Stack comparison → gap analysis request</div>
+        </div>
+        <div style="background:var(--layer3);border-radius:8px;padding:10px;">
+          <div style="font-size:10px;color:var(--muted);font-family:var(--mono);margin-bottom:4px;">Bad timing</div>
+          <div style="font-size:12px;color:var(--soft);">Plant seed → schedule 30-day follow-up</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<script>
+// Clock
+setInterval(() => {
+  document.getElementById('clock').textContent = 
+    new Date().toLocaleTimeString('en-US',{hour12:false});
+}, 1000);
+
+// Load live data
+async function loadLiveData() {
+  // Funnel data
+  try {
+    const r = await fetch('https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/sales/funnel.json');
+    if (r.ok) {
+      const funnel = await r.json();
+      const stages = Object.values(funnel).map(v => v.current_stage);
+      const count = s => stages.filter(x => x === s).length;
+      document.getElementById('f-identified').textContent = stages.length;
+      document.getElementById('f-contacted').textContent = count('CONTACTED');
+      document.getElementById('f-opened').textContent = count('OPENED');
+      document.getElementById('f-replied').textContent = count('REPLIED');
+      document.getElementById('f-call').textContent = count('CALL_BOOKED');
+      document.getElementById('f-proposal').textContent = count('PROPOSAL_SENT');
+      document.getElementById('f-won').textContent = count('CLOSED_WON');
+      document.getElementById('f-lost').textContent = count('CLOSED_LOST');
+      const hot = stages.filter(s => ['REPLIED','CALL_BOOKED','PROPOSAL_SENT','NEGOTIATING'].includes(s)).length;
+      document.getElementById('hot-count').textContent = hot + ' active';
+      if (count('CLOSED_WON') > 0) {
+        document.getElementById('mrr').textContent = '$' + (count('CLOSED_WON') * 297);
+      }
+    }
+  } catch(e) {}
+  
+  // Learning data
+  try {
+    const r2 = await fetch('https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/learning/memory.json');
+    if (r2.ok) {
+      const memory = await r2.json();
+      const latest = memory[0];
+      if (latest) {
+        const score = latest.health_score || 70;
+        document.getElementById('health-score').textContent = score + '/100';
+        document.getElementById('health-score').style.color = score >= 80 ? 'var(--accent)' : score >= 60 ? 'var(--gold)' : 'var(--red)';
+        
+        if (latest.insights && latest.insights.length) {
+          const feed = document.getElementById('learning-feed');
+          latest.insights.slice(0,3).forEach(insight => {
+            const div = document.createElement('div');
+            div.className = 'learning-item';
+            div.innerHTML = `<div class="l-icon" style="background:rgba(0,229,160,.1)">💡</div><div><div class="l-text">${insight}</div><div class="l-time">Latest cycle</div></div>`;
+            feed.prepend(div);
+          });
+        }
+      }
+    }
+  } catch(e) {}
+  
+  // Marketing optimization
+  try {
+    const r3 = await fetch('https://raw.githubusercontent.com/nyspotlightreport/sct-agency-bots/main/data/marketing/optimization_plan.json');
+    if (r3.ok) {
+      const plans = await r3.json();
+      if (plans[0]) {
+        const mode = plans[0].mode || 'OPTIMIZE';
+        const prio = (plans[0].priority_channels || []).slice(0,2).join(', ');
+        const feed = document.getElementById('learning-feed');
+        const div = document.createElement('div');
+        div.className = 'learning-item';
+        div.innerHTML = `<div class="l-icon" style="background:rgba(0,102,255,.1)">📣</div><div><div class="l-text">Marketing mode: ${mode} — priority: ${prio}</div><div class="l-time">Today</div></div>`;
+        feed.append(div);
+      }
+    }
+  } catch(e) {}
+}
+
+loadLiveData();
+setInterval(loadLiveData, 60000); // refresh every 60s
+</script>
+</body>
+</html>
