@@ -41,11 +41,21 @@ code{background:#111827;padding:2px 7px;border-radius:5px;font-size:12px;color:#
     <span class="p-name">LinkedIn Access Token</span>
     <span class="p-status pending" id="li-status">Pending</span>
   </div>
-  <div class="step">
-    Your app has <strong>r_verify</strong> and <strong>r_profile_basicinfo</strong> scopes approved.<br>
-    Click below → LinkedIn asks permission → you click <strong>Allow</strong> → token appears here.
+  <div class="step" style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.25);border-radius:8px;padding:12px;margin-bottom:12px;">
+    <strong style="color:#C9A84C;">⚡ 3-minute setup required:</strong><br><br>
+    <ol style="margin:0;padding-left:16px;line-height:2;">
+      <li>Open <a href="https://www.linkedin.com/developers/apps/new" target="_blank" style="color:#C9A84C;">linkedin.com/developers/apps/new</a></li>
+      <li>App name: <code>NYSR Agency</code> → click <strong>Create app</strong></li>
+      <li>Go to <strong>Auth tab</strong> → Authorized redirect URLs → Add:<br>
+        <code style="color:#22D3A0;font-size:11px;">https://nyspotlightreport.com/api/linkedin-callback</code></li>
+      <li>Copy <strong>Client ID</strong> + <strong>Client Secret</strong> → paste below</li>
+    </ol>
   </div>
-  <a id="li-auth-btn" class="btn btn-blue" target="_blank">Authorize LinkedIn →</a>
+  <div style="display:flex;gap:8px;margin-bottom:8px;">
+    <input id="li-cid" type="text" placeholder="Client ID" style="flex:1;background:#0D1117;border:1px solid rgba(201,168,76,.3);border-radius:6px;padding:8px;color:#e2e8f0;font-size:12px;" />
+    <input id="li-csec" type="password" placeholder="Client Secret" style="flex:1;background:#0D1117;border:1px solid rgba(201,168,76,.3);border-radius:6px;padding:8px;color:#e2e8f0;font-size:12px;" />
+  </div>
+  <button onclick="launchLinkedIn()" class="btn btn-blue" style="width:100%;margin-bottom:8px;">Save &amp; Authorize LinkedIn →</button>
   <div class="token-box" id="li-token-box"></div>
 </div>
 
@@ -95,16 +105,7 @@ const LI_CLIENT_ID    = "78b8ect8u8qgbe";
 const FB_APP_ID       = "1319442660014439";
 const REDIRECT_BASE   = "https://nyspotlightreport.com";
 
-// Build LinkedIn auth URL (only approved scopes)
-const liParams = new URLSearchParams({
-  response_type: "code",
-  client_id: LI_CLIENT_ID,
-  redirect_uri: REDIRECT_BASE + "/api/linkedin-callback",
-  state: "nysr_" + Date.now(),
-  scope: "r_liteprofile r_profile_basicinfo r_verify"
-});
-document.getElementById("li-auth-btn").href = 
-  "https://www.linkedin.com/oauth/v2/authorization?" + liParams.toString();
+// LinkedIn auth launched via launchLinkedIn() after user enters credentials
 
 // Build Facebook auth URL
 const fbParams = new URLSearchParams({
@@ -131,6 +132,26 @@ if (platform && token) {
   
   // Save to GitHub via our API
   saveToken(platform, token);
+}
+
+
+async function launchLinkedIn() {
+  const cid  = document.getElementById("li-cid").value.trim();
+  const csec = document.getElementById("li-csec").value.trim();
+  if (!cid || !csec) { alert("Paste your LinkedIn Client ID and Client Secret first."); return; }
+  // Save to GitHub secrets
+  const saveRes = await fetch("/api/save-secret", {
+    method:"POST", headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({secrets:{LINKEDIN_CLIENT_ID:cid, LINKEDIN_CLIENT_SECRET:csec}})
+  });
+  // Launch OAuth
+  const p = new URLSearchParams({
+    response_type:"code", client_id:cid,
+    redirect_uri: REDIRECT_BASE + "/api/linkedin-callback",
+    state:"nysr_"+Date.now(), scope:"openid profile email w_member_social"
+  });
+  window.open("https://www.linkedin.com/oauth/v2/authorization?"+p.toString(),"_blank");
+  document.getElementById("li-status").textContent = "Authorizing...";
 }
 
 async function saveToken(platform, token) {
