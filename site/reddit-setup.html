@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>Reddit App Setup</title>
+<style>
+  body { background:#0D1117; color:#e2e8f0; font-family:monospace; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; }
+  .box { background:#161B22; border:2px solid #FF4500; border-radius:12px; padding:40px; max-width:500px; text-align:center; }
+  h2 { color:#FF4500; margin:0 0 8px; font-size:22px; }
+  p  { color:#8B96A3; margin:0 0 24px; font-size:14px; }
+  .step { background:#0D1117; border-radius:8px; padding:16px; margin:12px 0; text-align:left; font-size:13px; line-height:2; }
+  .step strong { color:#FF4500; }
+  .btn { display:block; background:#FF4500; color:#fff; padding:16px; border-radius:8px; font-size:16px; font-weight:bold; text-decoration:none; margin:20px 0 8px; letter-spacing:1px; }
+  .btn:hover { background:#ff6534; }
+  .warn { color:#C9A84C; font-size:12px; background:rgba(201,168,76,.1); padding:10px; border-radius:6px; }
+  #timer { font-size:32px; color:#22D3A0; font-weight:bold; }
+</style>
+</head><body>
+<div class="box">
+  <h2>Reddit App — One Click</h2>
+  <p>The form is already filled. One action needed.</p>
+  
+  <div class="step">
+    1. Click the button below → Reddit opens<br>
+    2. Scroll down → check the <strong>CAPTCHA box</strong><br>
+    3. <strong>Immediately</strong> click <strong>"create app"</strong><br>
+    4. Copy the two short strings that appear → paste at <a href="/tokens/" style="color:#FF4500;">/tokens/</a>
+  </div>
+
+  <div class="warn">⚡ CAPTCHA expires fast — check it and click create app within 10 seconds</div>
+
+  <a class="btn" href="https://www.reddit.com/prefs/apps" target="_blank" 
+     onclick="startTimer()">Open Reddit App Creation →</a>
+
+  <div id="timer-wrap" style="display:none">
+    Check CAPTCHA → click "create app" within: <div id="timer">10</div>
+  </div>
+</div>
+<script>
+function startTimer() {
+  document.getElementById('timer-wrap').style.display = 'block';
+  let t = 10;
+  const iv = setInterval(() => {
+    document.getElementById('timer').textContent = --t;
+    if (t <= 0) { clearInterval(iv); document.getElementById('timer').textContent = '⚡ NOW'; }
+  }, 1000);
+}
+</script>
+</body></html>
