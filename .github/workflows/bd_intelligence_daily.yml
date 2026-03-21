@@ -1,0 +1,52 @@
+name: 💼 BD Intelligence (Daily)
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+  AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  market-intelligence:
+    name: "🔭 Market Intelligence Scout"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Scan for opportunities
+        run: python agents/market_intelligence_scout.py
+
+  roi-optimizer:
+    name: "📊 ROI Optimizer (Weekly)"
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && format('{0}', 1) == '1')
+    runs-on: ubuntu-latest
+    needs: market-intelligence
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Run ROI audit
+        run: python agents/strategic_roi_optimizer.py
+
+  income-report:
+    name: "💰 Daily Income Report"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Generate income report
+        continue-on-error: true
+        run: python bots/stripe_revenue_bot.py
