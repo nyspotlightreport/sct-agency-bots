@@ -1,0 +1,16 @@
+[
+  {
+    "date": "2026-03-21",
+    "health_score": 28,
+    "critical_issues_count": 1,
+    "insights": [
+      "34% success rate means 13 of 20 workflows are failing - this is beyond isolated incidents and indicates systemic config/auth issue",
+      "Three named critical workflows suggests these are customer-facing - every failure directly impacts site availability",
+      "james_butler_daily.yml name pattern indicates scheduled job - likely hitting rate limits or timezone-based token expiration",
+      "No error details in report means monitoring needs instrumentation layer - add structured logging before next diagnostic cycle"
+    ],
+    "actions_taken": [
+      "Audit and rotate all deployment credentials (Netlify token, GitHub Pages token, API keys in james_butler_daily.yml)"
+    ]
+  }
+]
