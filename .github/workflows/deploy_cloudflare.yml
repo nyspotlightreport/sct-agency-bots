@@ -1,21 +1,11 @@
-name: Deploy to Cloudflare Pages
+# DISABLED — Using Netlify instead
+# Original: deploy_cloudflare.yml
+# To re-enable: remove this file and use netlify deploy workflow
+name: (disabled) Cloudflare Deploy
 on:
-  push:
-    branches: [main]
-    paths: ["site/**", "docs/**"]
   workflow_dispatch:
-
 jobs:
-  deploy:
+  skip:
     runs-on: ubuntu-latest
-    name: Deploy to Cloudflare Pages
     steps:
-      - uses: actions/checkout@v4
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: nyspotlightreport
-          directory: site
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo "Using Netlify instead"
