@@ -1,0 +1,196 @@
+name: 🧠 OMEGA — Full System Orchestration (Daily)
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+  NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GMAIL_USER: ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+  MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
+  APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+  ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+  BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+  BEEHIIV_PUB_ID: ${{ secrets.BEEHIIV_PUB_ID }}
+
+jobs:
+  # PHASE 1: INTELLIGENCE GATHERING (parallel)
+  guardian-check:
+    name: "🛡️ Guardian Health Check"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests PyNaCl -q
+      - run: python agents/the_guardian.py
+        continue-on-error: true
+
+  market-intel:
+    name: "🔭 Market Intelligence"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/market_intelligence_scout.py
+        continue-on-error: true
+
+  reputation-intel:
+    name: "🔍 Reputation Intelligence"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/reputation_intelligence_engine.py
+        continue-on-error: true
+
+  # PHASE 2: OMEGA BRAIN (needs intel)
+  omega-brain:
+    name: "🧠 Omega Brain Synthesis"
+    runs-on: ubuntu-latest
+    needs: [guardian-check, market-intel]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/omega_brain.py
+        continue-on-error: true
+
+  # PHASE 3: CONTENT PRODUCTION (parallel)
+  blog-post:
+    name: "📝 Daily Blog Post"
+    runs-on: ubuntu-latest
+    needs: omega-brain
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/netlify_blog_publisher.py
+        continue-on-error: true
+
+  social-media:
+    name: "📱 Social Media Master"
+    runs-on: ubuntu-latest
+    needs: omega-brain
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/social_media_master_agent.py
+        continue-on-error: true
+
+  newsletter:
+    name: "📧 Newsletter + Outreach"
+    runs-on: ubuntu-latest
+    needs: omega-brain
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/beehiiv_newsletter_bot.py
+        continue-on-error: true
+      - run: python agents/apollo_scale_agent.py
+        continue-on-error: true
+
+  # PHASE 4: REVENUE OPS (parallel)
+  roi-optimizer:
+    name: "💰 ROI Optimizer"
+    runs-on: ubuntu-latest
+    needs: omega-brain
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/strategic_roi_optimizer.py
+        continue-on-error: true
+
+  seo-intel:
+    name: "📊 SEO Intelligence"
+    runs-on: ubuntu-latest
+    needs: omega-brain
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/ahrefs_seo_intelligence.py
+        continue-on-error: true
+      - run: python bots/schema_seo_bot.py
+        continue-on-error: true
+      - run: python bots/internal_link_network_bot.py
+        continue-on-error: true
+      - run: python bots/sitemap_generator_bot.py
+        continue-on-error: true
+
+  affiliate-income:
+    name: "🔗 Affiliate Engine"
+    runs-on: ubuntu-latest
+    needs: omega-brain
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/affiliate_content_bot.py
+        continue-on-error: true
+      - run: python bots/affiliate_deep_linker_bot.py
+        continue-on-error: true
+
+  # PHASE 5: PR & GROWTH (parallel)
+  pr-outreach:
+    name: "📰 PR + Journalist Outreach"
+    runs-on: ubuntu-latest
+    needs: omega-brain
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/pr_outreach_bot.py
+        continue-on-error: true
+      - run: python bots/journalist_tracker_bot.py
+        continue-on-error: true
+
+  james-butler:
+    name: "🎩 James Butler Morning Brief"
+    runs-on: ubuntu-latest
+    needs: omega-brain
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests PyNaCl -q
+      - run: python agents/james_butler.py
+        continue-on-error: true
+
+  # PHASE 6: DEPLOY (final)
+  deploy:
+    name: "🚀 Deploy All Updates"
+    runs-on: ubuntu-latest
+    needs: [blog-post, social-media, seo-intel, affiliate-income]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Netlify
+        run: |
+          curl -X POST -d '{}' https://api.netlify.com/build_hooks/$(echo $NETLIFY_BUILD_HOOK)
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        continue-on-error: true
