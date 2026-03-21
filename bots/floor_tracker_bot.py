@@ -7,7 +7,7 @@ import os, requests, json
 from datetime import datetime
 
 NTFY_TOPIC = "nysr-chairman1sct"
-GUMROAD_TOKEN = os.environ.get("GUMROAD_ACCESS_TOKEN","iWDmua3jwn2oZDPa0nOUnvACE5lyeELc-uA3GwTxjmM")
+GUMROAD_TOKEN = os.environ.get("GUMROAD_ACCESS_TOKEN","")  # Never hardcode tokens
 STRIPE_KEY = os.environ.get("STRIPE_SECRET_KEY","")
 
 INCOME_TARGETS = {
