@@ -38,7 +38,7 @@ CONTENT_PILLARS = [
 CTA_ROTATION = [
     "Comment with your biggest automation challenge",
     "Link in bio to grab the free AI agency starter kit",
-    "DM me BOTS and I will send you the system map",
+    "DM me 'BOTS' and I will send you the system map",
     "Save this for later, you will need it",
     "Share with someone still doing this manually",
 ]
