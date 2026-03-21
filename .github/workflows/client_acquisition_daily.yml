@@ -1,0 +1,20 @@
+name: 🎯 Client Acquisition (Daily)
+on:
+  schedule:
+    - cron: "0 14 * * 1-5"
+  workflow_dispatch:
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: 🎯 Send 50 Prospect Emails
+        env:
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+          HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
+        run: python bots/client_acquisition_bot.py
