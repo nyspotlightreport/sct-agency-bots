@@ -1,0 +1,26 @@
+name: 🛡️ Guardian — Self-Healing (Every 30min)
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+jobs:
+  guardian:
+    name: "🛡️ Health Check + Auto-Heal"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests PyNaCl -q
+      - name: Guardian health check
+        run: python agents/the_guardian.py
+      - name: Omega Brain (if 6am run)
+        if: github.event_name == 'workflow_dispatch'
+        run: python agents/omega_brain.py
+        continue-on-error: true
