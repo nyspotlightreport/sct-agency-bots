@@ -1,0 +1,57 @@
+name: 🎬 NYSR Faceless Webinar — Full Video Generation
+
+on:
+  workflow_dispatch:    # Run NOW on demand
+  schedule:
+    - cron: '0 2 * * *'  # 2am daily — regenerate if needed
+
+env:
+  ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+  GH_PAT:             ${{ secrets.GH_PAT }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  generate-webinar-video:
+    name: Generate Faceless Webinar Video
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y ffmpeg imagemagick fonts-dejavu-core -q
+          echo "FFmpeg version:"
+          ffmpeg -version | head -1
+          echo "ImageMagick version:"
+          convert --version | head -1
+
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+
+      - name: Install Python dependencies
+        run: pip install requests -q
+
+      - name: Generate webinar video
+        run: python bots/webinar_video_generator.py
+
+      - name: Upload video artifact (backup)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: webinar-video-${{ github.run_id }}
+          path: "*.mp4"
+          retention-days: 90
+          if-no-files-found: ignore
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Webinar Video Generation" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Pipeline: ElevenLabs Voice → ImageMagick Slides → FFmpeg Video → GitHub Release" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Webinar page: https://nyspotlightreport.com/webinar/" >> $GITHUB_STEP_SUMMARY
