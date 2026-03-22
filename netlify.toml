@@ -59,3 +59,18 @@
   from = "/api/chat-lead"
   to   = "/.netlify/functions/chat-lead-capture"
   status = 200
+
+[[redirects]]
+  from = "/tokens/linkedin-auth"
+  to   = "/.netlify/functions/linkedin-auth-start"
+  status = 200
+
+[[redirects]]
+  from = "/.netlify/functions/linkedin-auth-start"
+  to   = "/.netlify/functions/linkedin-auth-start"
+  status = 200
+
+[[redirects]]
+  from = "/tokens/meta-auth"
+  to   = "/.netlify/functions/meta-auth-start"
+  status = 200
