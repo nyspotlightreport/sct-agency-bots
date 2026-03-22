@@ -105,9 +105,9 @@ function Add-Secret {
 }
 
 Add-Secret "ANTHROPIC_API_KEY"  "console.anthropic.com -> API Keys" "" $true
-Add-Secret "GMAIL_USER"         "Your Gmail address" "seanb041992@gmail.com" $true
+Add-Secret "GMAIL_USER"         "Your Gmail address" "nyspotlightreport@gmail.com" $true
 Add-Secret "GMAIL_APP_PASS"     "myaccount.google.com/apppasswords -> Create (Mail app password)" "" $true
-Add-Secret "CHAIRMAN_EMAIL"     "Email to receive all reports" "seanb041992@gmail.com" $true
+Add-Secret "CHAIRMAN_EMAIL"     "Email to receive all reports" "nyspotlightreport@gmail.com" $true
 Add-Secret "AHREFS_API_KEY"     "ahrefs.com/api -> API Key" ""
 Add-Secret "HUBSPOT_API_KEY"    "HubSpot -> Settings -> Private Apps -> Create" ""
 Add-Secret "APOLLO_API_KEY"     "Apollo.io -> Settings -> Integrations -> API" ""

@@ -21,9 +21,9 @@ from email.mime.text import MIMEText
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-GMAIL_USER        = os.getenv("GMAIL_USER", "seanb041992@gmail.com")
+GMAIL_USER        = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
 GMAIL_APP_PASS    = os.getenv("GMAIL_APP_PASS", "")
-CHAIRMAN_EMAIL    = os.getenv("CHAIRMAN_EMAIL", "seanb041992@gmail.com")
+CHAIRMAN_EMAIL    = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 HUBSPOT_API_KEY   = os.getenv("HUBSPOT_API_KEY", "")
 OUTPUT_DIR        = Path("meeting_notes")
 OUTPUT_DIR.mkdir(exist_ok=True)

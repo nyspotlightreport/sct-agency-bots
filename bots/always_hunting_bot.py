@@ -4,7 +4,7 @@ bots/always_hunting_bot.py — PRODUCTION FINAL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SMTP architecture (zero new credentials needed):
   SMTP server:  smtp.gmail.com:465 
-  Auth:         seanb041992@gmail.com + GMAIL_APP_PASS (already live)
+  Auth:         nyspotlightreport@gmail.com + GMAIL_APP_PASS (already live)
   From header:  "Sean Thomas | NY Spotlight Report <nyspotlightreportny@gmail.com>"
   Reply-To:     nyspotlightreportny@gmail.com
   
@@ -25,7 +25,7 @@ log = logging.getLogger("hunting")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
 # ── SMTP CONFIG — uses existing working credentials ───────
-SMTP_USER    = os.environ.get("SMTP_USER",     "seanb041992@gmail.com")
+SMTP_USER    = os.environ.get("SMTP_USER",     "nyspotlightreport@gmail.com")
 SMTP_PASS    = os.environ.get("GMAIL_APP_PASS", os.environ.get("BUSINESS_EMAIL_PASS",""))
 FROM_NAME    = os.environ.get("SMTP_FROM_NAME", "Sean Thomas | NY Spotlight Report")
 FROM_EMAIL   = os.environ.get("BUSINESS_EMAIL","nyspotlightreportny@gmail.com")  # display name
@@ -138,7 +138,7 @@ NY Spotlight Report"""
 
 def send(to_email, subject, body):
     """
-    Send via seanb041992@gmail.com SMTP (working credentials).
+    Send via nyspotlightreport@gmail.com SMTP (working credentials).
     From header displays as nyspotlightreportny@gmail.com.
     Reply-To set to nyspotlightreportny@gmail.com.
     Recipient sees business email. Replies go to business inbox.

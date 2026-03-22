@@ -17,9 +17,9 @@ from email.mime.text import MIMEText
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 AHREFS_API_KEY  = os.getenv("AHREFS_API_KEY", "")
-GMAIL_USER      = os.getenv("GMAIL_USER", "seanb041992@gmail.com")
+GMAIL_USER      = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
 GMAIL_APP_PASS  = os.getenv("GMAIL_APP_PASS", "")
-CHAIRMAN_EMAIL  = os.getenv("CHAIRMAN_EMAIL", "seanb041992@gmail.com")
+CHAIRMAN_EMAIL  = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 TARGET_DOMAIN   = os.getenv("TARGET_DOMAIN", "")   # e.g. "yourdomain.com"
 STATE_FILE      = Path("seo_state.json")
 

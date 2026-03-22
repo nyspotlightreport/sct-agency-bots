@@ -94,9 +94,9 @@ def run():
 
     SECRETS = [
         ("ANTHROPIC_API_KEY",  "console.anthropic.com -> API Keys",                              "",                          True),
-        ("GMAIL_USER",         "Your Gmail address",                                             "seanb041992@gmail.com",     True),
+        ("GMAIL_USER",         "Your Gmail address",                                             "nyspotlightreport@gmail.com",     True),
         ("GMAIL_APP_PASS",     "myaccount.google.com/apppasswords -> Mail app password",         "",                          True),
-        ("CHAIRMAN_EMAIL",     "Email for reports (Enter = seanb041992@gmail.com)",              "seanb041992@gmail.com",     True),
+        ("CHAIRMAN_EMAIL",     "Email for reports (Enter = nyspotlightreport@gmail.com)",              "nyspotlightreport@gmail.com",     True),
         ("AHREFS_API_KEY",     "ahrefs.com/api (Enter to skip)",                                 "",                          False),
         ("HUBSPOT_API_KEY",    "HubSpot -> Settings -> Private Apps (Enter to skip)",            "",                          False),
         ("APOLLO_API_KEY",     "Apollo.io -> Settings -> API (Enter to skip)",                   "",                          False),

@@ -209,7 +209,7 @@ def generate_application_email(program):
     """
     import smtplib
     from email.mime.text import MIMEText
-    GMAIL_USER = os.environ.get("SMTP_USER", "seanb041992@gmail.com")
+    GMAIL_USER = os.environ.get("SMTP_USER", "nyspotlightreport@gmail.com")
     GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
     if not GMAIL_PASS: return False
     

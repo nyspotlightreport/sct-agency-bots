@@ -16,7 +16,7 @@ Sean's info used for all applications:
   Name: Sean Thomas / S.C. Thomas
   Company: NY Spotlight Report
   Website: nyspotlightreport.com
-  Email: seanb041992@gmail.com
+  Email: nyspotlightreport@gmail.com
   Niche: AI automation, content marketing, entrepreneurship
 """
 import os, json, logging, time, re, urllib.request
@@ -30,7 +30,7 @@ APPLICANT = {
     "first_name":    os.environ.get("APPLICANT_FIRST",   "Sean"),
     "last_name":     os.environ.get("APPLICANT_LAST",    "Thomas"),
     "full_name":     os.environ.get("APPLICANT_NAME",    "Sean Thomas"),
-    "email":         os.environ.get("APPLICANT_EMAIL",   "seanb041992@gmail.com"),
+    "email":         os.environ.get("APPLICANT_EMAIL",   "nyspotlightreport@gmail.com"),
     "company":       os.environ.get("APPLICANT_COMPANY", "NY Spotlight Report"),
     "website":       os.environ.get("APPLICANT_SITE",    "https://nyspotlightreport.com"),
     "twitter":       os.environ.get("APPLICANT_TWITTER", "https://twitter.com/nyspotlightreport"),

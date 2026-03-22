@@ -1,0 +1,27 @@
+name: Nina Caldwell Strategy Daily
+on:
+  schedule:
+    - cron: '30 7 * * *'
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+  APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+jobs:
+  run-director:
+    name: Run Nina Caldwell Strategy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests -q
+      - run: python agents/nina_caldwell_strategist.py

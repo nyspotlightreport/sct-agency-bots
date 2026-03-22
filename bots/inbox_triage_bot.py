@@ -20,7 +20,7 @@ import pickle
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-CHAIRMAN_EMAIL    = os.getenv("CHAIRMAN_EMAIL", "seanb041992@gmail.com")
+CHAIRMAN_EMAIL    = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 SCOPES            = ['https://www.googleapis.com/auth/gmail.modify']
 MAX_EMAILS        = int(os.getenv("MAX_EMAILS", "30"))  # Process this many unread
 

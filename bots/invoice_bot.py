@@ -19,9 +19,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
-GMAIL_USER      = os.getenv("GMAIL_USER", "seanb041992@gmail.com")
+GMAIL_USER      = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
 GMAIL_APP_PASS  = os.getenv("GMAIL_APP_PASS", "")
-CHAIRMAN_EMAIL  = os.getenv("CHAIRMAN_EMAIL", "seanb041992@gmail.com")
+CHAIRMAN_EMAIL  = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 PAYPAL_ME_LINK  = os.getenv("PAYPAL_ME_LINK", "https://paypal.me/yourhandle")  # Update this
 INVOICE_DIR     = Path("invoices")
 INVOICE_DIR.mkdir(exist_ok=True)
@@ -29,7 +29,7 @@ STATE_FILE      = Path("invoice_state.json")
 
 # Your business info
 BUSINESS_NAME    = os.getenv("BUSINESS_NAME", "S.C. Thomas")
-BUSINESS_EMAIL   = os.getenv("BUSINESS_EMAIL", "seanb041992@gmail.com")
+BUSINESS_EMAIL   = os.getenv("BUSINESS_EMAIL", "nyspotlightreport@gmail.com")
 BUSINESS_ADDRESS = os.getenv("BUSINESS_ADDRESS", "New York, NY")
 PAYMENT_TERMS    = int(os.getenv("PAYMENT_TERMS", "15"))  # Net 15 default
 

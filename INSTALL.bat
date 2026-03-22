@@ -126,9 +126,9 @@ echo.
 :: Usage: call :set_secret SECRET_NAME "Prompt text" "default"
 
 call :set_secret ANTHROPIC_API_KEY "Anthropic API Key (console.anthropic.com -> API Keys)" ""
-call :set_secret GMAIL_USER "Your Gmail address" "seanb041992@gmail.com"
+call :set_secret GMAIL_USER "Your Gmail address" "nyspotlightreport@gmail.com"
 call :set_secret GMAIL_APP_PASS "Gmail App Password (myaccount.google.com/apppasswords)" ""
-call :set_secret CHAIRMAN_EMAIL "Email for all reports" "seanb041992@gmail.com"
+call :set_secret CHAIRMAN_EMAIL "Email for all reports" "nyspotlightreport@gmail.com"
 call :set_secret AHREFS_API_KEY "Ahrefs API Key (ahrefs.com/api) - press Enter to skip" ""
 call :set_secret HUBSPOT_API_KEY "HubSpot API Key (HubSpot > Settings > Private Apps) - press Enter to skip" ""
 call :set_secret APOLLO_API_KEY "Apollo.io API Key (Apollo > Settings > API) - press Enter to skip" ""

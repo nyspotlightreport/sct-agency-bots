@@ -9,7 +9,7 @@ import os, json, urllib.request, datetime, subprocess
 
 class BandwidthIncomeBot:
     def __init__(self):
-        self.chairman_email = os.environ.get("CHAIRMAN_EMAIL","seanb041992@gmail.com")
+        self.chairman_email = os.environ.get("CHAIRMAN_EMAIL","nyspotlightreport@gmail.com")
         self.gmail_user     = os.environ.get("GMAIL_USER","")
         self.gmail_pass     = os.environ.get("GMAIL_APP_PASS","")
         self.honeygain_email= os.environ.get("HONEYGAIN_EMAIL","")

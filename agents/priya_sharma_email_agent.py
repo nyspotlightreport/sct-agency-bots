@@ -22,7 +22,7 @@ from datetime import datetime
 log = logging.getLogger("priya")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
-GMAIL_USER  = os.environ.get("GMAIL_USER",  "seanb041992@gmail.com")
+GMAIL_USER  = os.environ.get("GMAIL_USER",  "nyspotlightreport@gmail.com")
 GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS", "")
 SUPA_URL    = os.environ.get("SUPABASE_URL", "")
 SUPA_KEY    = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")

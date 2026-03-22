@@ -217,7 +217,7 @@ p{margin-bottom:16px;font-size:15px;line-height:1.7;color:#3D4557}
 </div>
 <div class="footer">
   <p>NY Spotlight Report - AI Automation Agency - <a href="https://nyspotlightreport.com">nyspotlightreport.com</a></p>
-  <p style="margin-top:8px">Prepared by Sean Thomas, Founder - seanb041992@gmail.com</p>
+  <p style="margin-top:8px">Prepared by Sean Thomas, Founder - nyspotlightreport@gmail.com</p>
 </div>
 </div>
 </body>

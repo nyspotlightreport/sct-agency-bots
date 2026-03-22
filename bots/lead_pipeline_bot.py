@@ -13,7 +13,7 @@ from agency_core import BaseBot, ClaudeClient, AlertSystem, with_retry
 ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY","")
 APOLLO_KEY    = os.getenv("APOLLO_API_KEY","")
 HUBSPOT_KEY   = os.getenv("HUBSPOT_API_KEY","")
-CHAIRMAN_EMAIL= os.getenv("CHAIRMAN_EMAIL","seanb041992@gmail.com")
+CHAIRMAN_EMAIL= os.getenv("CHAIRMAN_EMAIL","nyspotlightreport@gmail.com")
 
 ICP = {
     "ideal_titles":     ["founder","ceo","owner","director","vp","head","editor","publisher"],

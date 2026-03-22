@@ -10,7 +10,7 @@ import os, json, urllib.request, datetime, time
 class KDPFullPipelineBot:
     def __init__(self):
         self.anthropic_key = os.environ.get("ANTHROPIC_API_KEY","")
-        self.chairman_email= os.environ.get("CHAIRMAN_EMAIL","seanb041992@gmail.com")
+        self.chairman_email= os.environ.get("CHAIRMAN_EMAIL","nyspotlightreport@gmail.com")
 
         # Book concepts that sell well on KDP for our niche
         self.book_concepts = [

@@ -12,7 +12,7 @@ class BeehiivBot:
         self.anthropic_key = os.environ.get("ANTHROPIC_API_KEY","")
         self.newsapi_key   = os.environ.get("NEWSAPI_KEY","")
         self.guardian_key  = os.environ.get("GUARDIAN_API_KEY","test")
-        self.chairman_email= os.environ.get("CHAIRMAN_EMAIL","seanb041992@gmail.com")
+        self.chairman_email= os.environ.get("CHAIRMAN_EMAIL","nyspotlightreport@gmail.com")
 
     def fetch_top_stories(self):
         """Pull today's top NYC entertainment stories"""

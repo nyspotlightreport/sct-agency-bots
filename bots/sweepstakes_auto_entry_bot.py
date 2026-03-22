@@ -22,7 +22,7 @@ ENTRY_INFO = {
     "last_name":  os.environ.get("ENTRY_LAST_NAME",  "Thomas"),
     "full_name":  os.environ.get("ENTRY_FULL_NAME",  "Sean Thomas"),
     "email":      os.environ.get("ENTRY_EMAIL_ALT",  "seanb041992+sweep@gmail.com"),
-    "email_main": os.environ.get("ENTRY_EMAIL",      "seanb041992@gmail.com"),
+    "email_main": os.environ.get("ENTRY_EMAIL",      "nyspotlightreport@gmail.com"),
     "phone":      os.environ.get("ENTRY_PHONE",      ""),
     "address1":   os.environ.get("ENTRY_ADDRESS1",   ""),
     "city":       os.environ.get("ENTRY_CITY",       "Coram"),

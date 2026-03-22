@@ -44,7 +44,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [JEFF] %(message)s")
 ANTHROPIC   = os.environ.get("ANTHROPIC_API_KEY","")
 SUPA_URL    = os.environ.get("SUPABASE_URL","")
 SUPA_KEY    = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
-SMTP_USER   = os.environ.get("SMTP_USER","seanb041992@gmail.com")
+SMTP_USER   = os.environ.get("SMTP_USER","nyspotlightreport@gmail.com")
 SMTP_PASS   = os.environ.get("GMAIL_APP_PASS","")
 PUSH_API    = os.environ.get("PUSHOVER_API_KEY","")
 PUSH_USER   = os.environ.get("PUSHOVER_USER_KEY","")
@@ -52,7 +52,7 @@ AHREFS_KEY  = os.environ.get("AHREFS_API_KEY","")
 APOLLO_KEY  = os.environ.get("APOLLO_API_KEY","")
 GH_PAT      = os.environ.get("GH_PAT","")
 
-CHAIRMAN_EMAIL = "seanb041992@gmail.com"
+CHAIRMAN_EMAIL = "nyspotlightreport@gmail.com"
 BUSINESS_EMAIL = os.environ.get("BUSINESS_EMAIL","nyspotlightreportny@gmail.com")
 STORE_URL      = "https://nyspotlightreport.com/store/"
 

@@ -251,7 +251,7 @@ def run():
             "Could not auto-retrieve API key.\n\n"
             "1-min fix:\n"
             "1. Go to 2captcha.com\n"
-            "2. Login: seanb041992@gmail.com / OuuZKAcFKhXJ\n"
+            "2. Login: nyspotlightreport@gmail.com / OuuZKAcFKhXJ\n"
             "3. Settings → copy your 32-char API key\n"
             "4. Go to github.com/nyspotlightreport/sct-agency-bots\n"
             "5. Settings → Secrets → TWOCAPTCHA_API_KEY → paste key\n\n"

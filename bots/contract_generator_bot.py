@@ -73,7 +73,7 @@ ul{{font-size:14px;line-height:2;}}
 
 <div class="parties">
 <p><strong>Agreement Date:</strong> {today}</p>
-<p><strong>Service Provider:</strong> NY Spotlight Report (Sean Thomas), Coram, NY 11727 | seanb041992@gmail.com</p>
+<p><strong>Service Provider:</strong> NY Spotlight Report (Sean Thomas), Coram, NY 11727 | nyspotlightreport@gmail.com</p>
 <p><strong>Client:</strong> {client_name}, {client_company} | {client_email}</p>
 </div>
 

@@ -164,7 +164,7 @@ def run():
     print("  TARGET_DOMAIN      -> yourdomain.com")
     print("  MONITORED_SITES    -> https://yoursite.com")
     print()
-    print("  (GMAIL_USER and CHAIRMAN_EMAIL already default to seanb041992@gmail.com)")
+    print("  (GMAIL_USER and CHAIRMAN_EMAIL already default to nyspotlightreport@gmail.com)")
     print()
 
     # Save the repo URL for reference

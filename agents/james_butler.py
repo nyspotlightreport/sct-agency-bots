@@ -4,7 +4,7 @@ James Butler v2.0 ΓÇö Supreme Personal Concierge
 NYSR Agency ┬╖ Concierge Division ┬╖ 24/7
 
 Enhanced capabilities:
-- Gmail email sending via new account (Seanb041992@gmail.com)
+- Gmail email sending via new account (nyspotlightreport@gmail.com)
 - App Password setup detection and guidance
 - Full task triage with automation-first protocol
 - Morning brief with overnight summary
@@ -24,7 +24,7 @@ log = logging.getLogger()
 
 ANTHROPIC    = os.environ.get("ANTHROPIC_API_KEY","")
 GH_TOKEN     = os.environ.get("GH_PAT","") or os.environ.get("GITHUB_TOKEN","")
-GMAIL_USER   = os.environ.get("GMAIL_USER","Seanb041992@gmail.com")
+GMAIL_USER   = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
 GMAIL_PASS   = os.environ.get("GMAIL_APP_PASS","")
 PUSHOVER_KEY = os.environ.get("PUSHOVER_API_KEY","")
 PUSHOVER_USR = os.environ.get("PUSHOVER_USER_KEY","")
@@ -122,7 +122,7 @@ def morning_brief() -> str:
             "",
             "ΓÜí One action needed ΓÇö 60 seconds:",
             "1. Go to: myaccount.google.com/apppasswords",
-            "2. Sign in with Seanb041992@gmail.com",
+            "2. Sign in with nyspotlightreport@gmail.com",
             "3. Generate App Password ΓåÆ name it 'NYSR'",
             "4. Copy the 16-char password",
             "5. Go to: github.com/nyspotlightreport/sct-agency-bots/settings/secrets/actions",

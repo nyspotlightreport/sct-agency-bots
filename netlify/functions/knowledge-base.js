@@ -18,19 +18,19 @@ exports.handler = async (event, context) => {
   }
 
   async function askClaude(question, context) {
-    if (!process.env.ANTHROPIC_API_KEY) return "Please contact us at seanb041992@gmail.com for help.";
+    if (!process.env.ANTHROPIC_API_KEY) return "Please contact us at nyspotlightreport@gmail.com for help.";
     const resp = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" },
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 300,
-        system: `You are the AI assistant for NY Spotlight Report (nyspotlightreport.com), an AI agency automation company. Answer questions helpfully and concisely. If you cannot answer, direct them to seanb041992@gmail.com. Context about our services: ${context}`,
+        system: `You are the AI assistant for NY Spotlight Report (nyspotlightreport.com), an AI agency automation company. Answer questions helpfully and concisely. If you cannot answer, direct them to nyspotlightreport@gmail.com. Context about our services: ${context}`,
         messages: [{ role: "user", content: question }]
       })
     });
     const data = await resp.json();
-    return data.content?.[0]?.text || "For more help, please contact seanb041992@gmail.com";
+    return data.content?.[0]?.text || "For more help, please contact nyspotlightreport@gmail.com";
   }
 
   const FAQS = [
@@ -38,7 +38,7 @@ exports.handler = async (event, context) => {
     { q: "How fast can I get started?", a: "DFY setup takes 48-72 hours. Subscription plans activate immediately." },
     { q: "Do I need to know how to code?", a: "Zero coding required. We handle everything — you just describe what you need." },
     { q: "What is your refund policy?", a: "30-day money-back guarantee on all plans. No questions asked." },
-    { q: "Can I see a demo?", a: "Yes! Book a free 15-minute demo at nyspotlightreport.com/tokens/ or email seanb041992@gmail.com" },
+    { q: "Can I see a demo?", a: "Yes! Book a free 15-minute demo at nyspotlightreport.com/tokens/ or email nyspotlightreport@gmail.com" },
     { q: "What platforms do you integrate with?", a: "HubSpot, Apollo, Supabase, Stripe, Gumroad, LinkedIn, Twitter/X, WordPress, TikTok, and 20+ others." },
     { q: "What results can I expect?", a: "Most clients see their content output increase 10x, lead generation automate fully, and ROI within the first month." },
   ];

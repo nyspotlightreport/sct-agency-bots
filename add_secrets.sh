@@ -43,9 +43,9 @@ add_secret() {
 }
 
 add_secret "ANTHROPIC_API_KEY"   "Get from: console.anthropic.com → API Keys" ""
-add_secret "GMAIL_USER"          "Your Gmail address" "seanb041992@gmail.com"
+add_secret "GMAIL_USER"          "Your Gmail address" "nyspotlightreport@gmail.com"
 add_secret "GMAIL_APP_PASS"      "Get from: myaccount.google.com/apppasswords (create 'Mail' app password)" ""
-add_secret "CHAIRMAN_EMAIL"      "Email to receive all reports" "seanb041992@gmail.com"
+add_secret "CHAIRMAN_EMAIL"      "Email to receive all reports" "nyspotlightreport@gmail.com"
 add_secret "AHREFS_API_KEY"      "Get from: ahrefs.com/api" ""
 add_secret "HUBSPOT_API_KEY"     "Get from: HubSpot → Settings → Integrations → Private Apps → Create App" ""
 add_secret "APOLLO_API_KEY"      "Get from: Apollo.io → Settings → Integrations → API" ""

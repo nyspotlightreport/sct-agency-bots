@@ -19,9 +19,9 @@ from email.mime.multipart import MIMEMultipart
 from urllib.parse import urljoin, urlparse
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
-GMAIL_USER     = os.getenv("GMAIL_USER", "seanb041992@gmail.com")
+GMAIL_USER     = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
 GMAIL_APP_PASS = os.getenv("GMAIL_APP_PASS", "")
-CHAIRMAN_EMAIL = os.getenv("CHAIRMAN_EMAIL", "seanb041992@gmail.com")
+CHAIRMAN_EMAIL = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 STATE_FILE     = Path("uptime_state.json")
 TIMEOUT        = 10  # seconds
 SSL_WARN_DAYS  = 30  # warn if SSL expires within this many days

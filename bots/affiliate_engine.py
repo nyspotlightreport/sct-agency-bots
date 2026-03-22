@@ -24,7 +24,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
 SUPA_URL    = os.environ.get("SUPABASE_URL","")
 SUPA_KEY    = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
-SMTP_USER   = os.environ.get("SMTP_USER",    "seanb041992@gmail.com")
+SMTP_USER   = os.environ.get("SMTP_USER",    "nyspotlightreport@gmail.com")
 SMTP_PASS   = os.environ.get("GMAIL_APP_PASS","")
 AFF_EMAIL   = os.environ.get("AFFILIATE_EMAIL","seanb041992+affiliates@gmail.com")
 PUSH_API    = os.environ.get("PUSHOVER_API_KEY","")

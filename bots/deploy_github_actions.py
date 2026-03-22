@@ -176,10 +176,10 @@ Go to: GitHub Repo → Settings → Secrets and variables → Actions → New re
 
 Add these secrets:
   ANTHROPIC_API_KEY    = your Anthropic API key
-  GMAIL_USER           = seanb041992@gmail.com
+  GMAIL_USER           = nyspotlightreport@gmail.com
   GMAIL_APP_PASS       = Gmail App Password (not regular password)
                          Get at: myaccount.google.com/apppasswords
-  CHAIRMAN_EMAIL       = seanb041992@gmail.com
+  CHAIRMAN_EMAIL       = nyspotlightreport@gmail.com
   AHREFS_API_KEY       = Ahrefs API key (from ahrefs.com/api)
   HUBSPOT_API_KEY      = HubSpot private app token
   APOLLO_API_KEY       = Apollo.io API key

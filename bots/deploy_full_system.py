@@ -283,9 +283,9 @@ REQUIRED SECRETS (GitHub → Settings → Secrets → Actions):
 
   Core:
   ANTHROPIC_API_KEY     Your Anthropic API key
-  GMAIL_USER            seanb041992@gmail.com
+  GMAIL_USER            nyspotlightreport@gmail.com
   GMAIL_APP_PASS        Gmail App Password (myaccount.google.com/apppasswords)
-  CHAIRMAN_EMAIL        seanb041992@gmail.com
+  CHAIRMAN_EMAIL        nyspotlightreport@gmail.com
 
   APIs:
   AHREFS_API_KEY        Ahrefs API (ahrefs.com/api)

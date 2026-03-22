@@ -4,6 +4,5 @@
   "description": "NY Spotlight Report Netlify Site",
   "dependencies": {
     "nodemailer": "^6.9.7",
-    "([^": "latest"
   }
 }

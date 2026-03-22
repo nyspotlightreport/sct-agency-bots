@@ -35,7 +35,7 @@ class RedditMonitorBot(BaseBot):
         else:
             url = f"https://www.reddit.com/search.json?q={encoded}&sort=new&limit={limit}"
         req = urllib.request.Request(url, headers={
-            "User-Agent": "RedditMonitorBot/1.0 (agency automation; contact seanb041992@gmail.com)"
+            "User-Agent": "RedditMonitorBot/1.0 (agency automation; contact nyspotlightreport@gmail.com)"
         })
         try:
             with urllib.request.urlopen(req, timeout=10) as r:

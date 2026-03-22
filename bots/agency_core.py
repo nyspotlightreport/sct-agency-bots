@@ -26,9 +26,9 @@ AGENCY_CORE_VERSION = "2.0.0"
 # ─── GLOBAL CONFIG ────────────────────────────────────────────────────────────
 class Config:
     ANTHROPIC_API_KEY  = os.getenv("ANTHROPIC_API_KEY", "")
-    GMAIL_USER         = os.getenv("GMAIL_USER", "seanb041992@gmail.com")
+    GMAIL_USER         = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
     GMAIL_APP_PASS     = os.getenv("GMAIL_APP_PASS", "")
-    CHAIRMAN_EMAIL     = os.getenv("CHAIRMAN_EMAIL", "seanb041992@gmail.com")
+    CHAIRMAN_EMAIL     = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
     AHREFS_API_KEY     = os.getenv("AHREFS_API_KEY", "")
     HUBSPOT_API_KEY    = os.getenv("HUBSPOT_API_KEY", "")
     APOLLO_API_KEY     = os.getenv("APOLLO_API_KEY", "")

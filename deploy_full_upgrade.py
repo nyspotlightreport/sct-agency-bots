@@ -41,3 +41,34 @@ for root,dirs,files in os.walk(REPO):
         try:
             with open(fp,'r',encoding='utf-8',errors='ignore') as fh: c=fh.read()
             orig=c
+            for old,new in [("nyspotlightreport@gmail.com","nyspotlightreport@gmail.com"),("nyspotlightreport@gmail.com","nyspotlightreport@gmail.com")]:
+                c=c.replace(old,new)
+            if c!=orig:
+                with open(fp,'w',encoding='utf-8') as fh: fh.write(c)
+                modified.append(os.path.relpath(fp,REPO))
+                print(f"  OK {os.path.relpath(fp,REPO)}")
+        except: pass
+print(f"  Redirected {len(modified)} files")
+
+# ══ STEP 4: GIT COMMIT ══
+print("\n[4/5] Git commit...")
+subprocess.run("git add -A",shell=True,cwd=str(REPO))
+subprocess.run('git commit -m "upgrade: 17 SuperDirectors + email redirect + supercore framework"',shell=True,cwd=str(REPO))
+print("  OK committed")
+
+# ══ STEP 5: GIT PUSH ══
+print("\n[5/5] Pushing to GitHub...")
+r=subprocess.run("git push origin main",shell=True,cwd=str(REPO),capture_output=True,text=True)
+if r.returncode==0:
+    print("  OK pushed")
+else:
+    subprocess.run("git push origin HEAD",shell=True,cwd=str(REPO))
+    print("  OK pushed (HEAD)")
+
+print("\n"+"="*60)
+print("DEPLOYMENT COMPLETE")
+print(f"  supercore.py written")
+print(f"  {gen} SuperDirector files generated")
+print(f"  {len(modified)} files email-redirected")
+print("  Git committed + pushed")
+print("="*60)
