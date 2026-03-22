@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NYSR Store — AI Automation Packages</title>
+<meta name="description" content="AI content and marketing automation packages for businesses. ProFlow AI from $97/month.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#060a0f;color:#e2e8f0;min-height:100vh}
+.hero{text-align:center;padding:60px 20px 40px;background:linear-gradient(180deg,rgba(201,168,76,.06) 0%,transparent 100%)}
+.logo{font-size:12px;font-weight:700;letter-spacing:.15em;color:#64748b;text-transform:uppercase;margin-bottom:12px}
+h1{font-size:36px;font-weight:800;color:#f8fafc;line-height:1.15;margin-bottom:12px}
+h1 span{color:#C9A84C}
+.hero-sub{font-size:17px;color:#94a3b8;max-width:520px;margin:0 auto;line-height:1.6}
+.section{padding:40px 20px;max-width:1100px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.3)}
+.card.featured{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:14px;letter-spacing:.06em}
+.badge-popular{background:rgba(201,168,76,.15);color:#C9A84C;border:1px solid rgba(201,168,76,.3)}
+.badge-free{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2)}
+.badge-enterprise{background:rgba(99,102,241,.1);color:#818cf8;border:1px solid rgba(99,102,241,.2)}
+.card-name{font-size:20px;font-weight:700;color:#f8fafc;margin-bottom:6px}
+.card-price{font-size:32px;font-weight:800;color:#C9A84C;margin-bottom:4px}
+.card-price span{font-size:14px;font-weight:500;color:#64748b}
+.card-desc{font-size:13px;color:#64748b;line-height:1.65;margin-bottom:20px}
+.features{list-style:none;margin-bottom:24px}
+.features li{font-size:13px;color:#94a3b8;padding:4px 0;padding-left:20px;position:relative}
+.features li::before{content:"✓";position:absolute;left:0;color:#22c55e;font-weight:700}
+.buy-btn{width:100%;background:#C9A84C;color:#060a0f;border:none;padding:13px;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .2s}
+.buy-btn:hover{opacity:.88}
+.buy-btn:disabled{opacity:.5;cursor:not-allowed}
+.buy-btn.free-btn{background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.3)}
+.secure{text-align:center;padding:30px 20px;font-size:12px;color:#475569}
+.secure img{height:20px;vertical-align:middle;margin:0 4px;opacity:.6}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center}
+.overlay.active{display:flex}
+.modal{background:#0d1117;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center}
+.spinner{width:48px;height:48px;border:3px solid rgba(201,168,76,.2);border-top-color:#C9A84C;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.modal h3{font-size:18px;font-weight:600;color:#f8fafc;margin-bottom:8px}
+.modal p{font-size:14px;color:#64748b}
+.error-box{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;padding:14px;margin-top:16px;font-size:13px;color:#ef4444;display:none}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo">NY Spotlight Report</div>
+  <h1>AI Automation That <span>Actually Works</span></h1>
+  <p class="hero-sub">Content, SEO, social, email — all running on autopilot. Built for NY businesses, agencies, and entrepreneurs.</p>
+</div>
+
+<div class="section">
+  <div class="grid">
+
+    <!-- Free Audit -->
+    <div class="card">
+      <span class="badge badge-free">FREE</span>
+      <div class="card-name">AI Automation Audit</div>
+      <div class="card-price">$0 <span>/ one time</span></div>
+      <div class="card-desc">Get a full analysis of your current content and marketing operations — and exactly what to automate first.</div>
+      <ul class="features">
+        <li>Current workflow analysis</li>
+        <li>AI automation roadmap</li>
+        <li>ROI estimate (avg $1,900/mo saved)</li>
+        <li>Delivered in 24 hours</li>
+      </ul>
+      <button class="buy-btn free-btn" onclick="checkout('audit')">Get Free Audit →</button>
+    </div>
+
+    <!-- ProFlow AI -->
+    <div class="card">
+      <div class="card-name">ProFlow AI</div>
+      <div class="card-price">$97 <span>/ month</span></div>
+      <div class="card-desc">Full AI content + marketing automation. Social posts, blog articles, email sequences, and SEO — running daily without you.</div>
+      <ul class="features">
+        <li>Twitter/X daily posting</li>
+        <li>Blog articles 2x/week</li>
+        <li>Email sequences automated</li>
+        <li>SEO keyword tracking</li>
+        <li>Monthly performance report</li>
+        <li>30-day money-back guarantee</li>
+      </ul>
+      <button class="buy-btn" onclick="checkout('proflow-ai')">Start ProFlow AI →</button>
+    </div>
+
+    <!-- ProFlow Growth -->
+    <div class="card featured">
+      <span class="badge badge-popular">MOST POPULAR</span>
+      <div class="card-name">ProFlow Growth</div>
+      <div class="card-price">$297 <span>/ month</span></div>
+      <div class="card-desc">Full AI agency stack. Everything in ProFlow AI plus LinkedIn, advanced outreach automation, and weekly performance calls.</div>
+      <ul class="features">
+        <li>Everything in ProFlow AI</li>
+        <li>LinkedIn MWF posting</li>
+        <li>Cold email sequences (200/day)</li>
+        <li>Lead scoring + CRM</li>
+        <li>Weekly strategy call</li>
+        <li>Priority support</li>
+      </ul>
+      <button class="buy-btn" onclick="checkout('proflow-growth')">Start ProFlow Growth →</button>
+    </div>
+
+    <!-- ProFlow Elite -->
+    <div class="card">
+      <div class="card-name">ProFlow Elite</div>
+      <div class="card-price">$797 <span>/ month</span></div>
+      <div class="card-desc">Hands-on AI agency system. Full automation plus 4 live strategy sessions monthly with our team.</div>
+      <ul class="features">
+        <li>Everything in ProFlow Growth</li>
+        <li>4 live strategy sessions/month</li>
+        <li>Custom content direction</li>
+        <li>Competitor intelligence weekly</li>
+        <li>Dedicated Slack channel</li>
+        <li>4 meetings guarantee or refund</li>
+      </ul>
+      <button class="buy-btn" onclick="checkout('proflow-elite')">Start ProFlow Elite →</button>
+    </div>
+
+    <!-- DFY Setup -->
+    <div class="card">
+      <div class="card-name">DFY Setup</div>
+      <div class="card-price">$1,497 <span>/ one time</span></div>
+      <div class="card-desc">Done-for-you AI system setup. We configure everything in 14 days. Includes 30-day pilot of ProFlow Growth.</div>
+      <ul class="features">
+        <li>Full system configuration</li>
+        <li>Platform integrations (6+)</li>
+        <li>Custom content templates</li>
+        <li>30-day Growth pilot included</li>
+        <li>Live in 14 days guaranteed</li>
+        <li>Handoff training session</li>
+      </ul>
+      <button class="buy-btn" onclick="checkout('dfy-setup')">Start DFY Setup →</button>
+    </div>
+
+    <!-- Enterprise -->
+    <div class="card">
+      <span class="badge badge-enterprise">ENTERPRISE</span>
+      <div class="card-name">Enterprise Retainer</div>
+      <div class="card-price">$4,997 <span>/ month</span></div>
+      <div class="card-desc">Full-service AI agency retainer. Content, SEO, outreach, automation, and strategy — completely done for you.</div>
+      <ul class="features">
+        <li>Full agency team dedicated to you</li>
+        <li>Unlimited content production</li>
+        <li>Complete outbound automation</li>
+        <li>Monthly CEO-level reporting</li>
+        <li>Custom integrations</li>
+        <li>Cancellable anytime</li>
+      </ul>
+      <button class="buy-btn" onclick="checkout('enterprise')">Start Enterprise →</button>
+    </div>
+
+  </div>
+</div>
+
+<div class="secure">
+  🔒 Payments secured by Stripe &nbsp;·&nbsp; 256-bit SSL &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; 30-day money-back on monthly plans
+</div>
+
+<!-- Loading overlay -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="spinner"></div>
+    <h3 id="modal-title">Preparing your checkout...</h3>
+    <p id="modal-desc">Securing your connection with Stripe</p>
+    <div class="error-box" id="modal-error"></div>
+    <button id="modal-close" onclick="closeModal()" style="display:none;margin-top:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#94a3b8;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:14px">Close</button>
+  </div>
+</div>
+
+<script>
+async function checkout(productKey) {
+  const overlay = document.getElementById('overlay');
+  const title   = document.getElementById('modal-title');
+  const desc    = document.getElementById('modal-desc');
+  const errBox  = document.getElementById('modal-error');
+  const closeBtn= document.getElementById('modal-close');
+
+  overlay.classList.add('active');
+  title.textContent = 'Preparing your checkout...';
+  desc.textContent  = 'Securing your connection with Stripe';
+  errBox.style.display = 'none';
+  closeBtn.style.display = 'none';
+
+  if (productKey === 'audit') {
+    window.location.href = '/audit/';
+    return;
+  }
+
+  try {
+    const r = await fetch('/.netlify/functions/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ product_key: productKey })
+    });
+    const data = await r.json();
+
+    if (data.checkout_url) {
+      title.textContent = 'Redirecting to Stripe...';
+      desc.textContent  = 'You will be redirected in a moment.';
+      window.location.href = data.checkout_url;
+    } else if (data.free) {
+      window.location.href = data.redirect;
+    } else {
+      throw new Error(data.error || 'Checkout failed');
+    }
+  } catch(e) {
+    title.textContent = 'Something went wrong';
+    errBox.textContent = e.message || 'Unable to start checkout. Please try again.';
+    errBox.style.display = 'block';
+    closeBtn.style.display = 'inline-block';
+    document.querySelector('.spinner').style.display = 'none';
+  }
+}
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('active');
+  document.querySelector('.spinner').style.display = 'block';
+}
+</script>
+</body>
+</html>
