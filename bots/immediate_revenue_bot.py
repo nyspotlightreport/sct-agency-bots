@@ -18,6 +18,29 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
+# Known bounced/invalid emails — never retry
+BOUNCED_EMAILS = set([
+    "jbankoff@voxmedia.com",  # 550 5.1.1 confirmed bounce 2026-03-22
+])
+
+def is_valid_email_domain(email):
+    """Quick MX record check before sending — avoids bounces."""
+    import socket
+    try:
+        domain = email.split("@")[1]
+        # Check if domain has MX records
+        socket.getaddrinfo(domain, None)
+        return True
+    except:
+        return False
+
+def safe_to_send(email):
+    if email in BOUNCED_EMAILS:
+        return False, "known_bounce"
+    if not is_valid_email_domain(email):
+        return False, "no_mx"
+    return True, "ok"
+
 log = logging.getLogger("revenue_now")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [REVENUE] %(message)s")
 
@@ -38,7 +61,7 @@ ANTHROPIC     = os.environ.get("ANTHROPIC_API_KEY", "")
 PROSPECTS = [
     {"name": "Mike",  "last": "Steib",   "email": "msteib@artsy.net",          "company": "Artsy",      "role": "CEO", "offer": "proflow_ai",     "amount": "$97/mo",    "angle": "content operations for a marketplace"},
     {"name": "Bob",   "last": "Pittman", "email": "bpittman@iheartmedia.com",   "company": "iHeartMedia","role": "CEO", "offer": "proflow_growth",  "amount": "$297/mo",   "angle": "content at iHeartMedia's scale"},
-    {"name": "Jim",   "last": "Bankoff", "email": "jbankoff@voxmedia.com",      "company": "Vox Media",  "role": "CEO", "offer": "proflow_elite",   "amount": "$797/mo",   "angle": "editorial content automation"},
+    {"name": "Jim",   "last": "Bankoff", "email": "jbankoff@vox.com",      "company": "Vox Media",  "role": "CEO", "offer": "proflow_elite",   "amount": "$797/mo",   "angle": "editorial content automation"},
     {"name": "Asaf",  "last": "Peled",   "email": "asaf@minutemedia.com",       "company": "Minute Media","role": "CEO", "offer": "dfy_agency",     "amount": "$2,997",    "angle": "sports content at global scale"},
     {"name": "Vince", "last": "Caruso",  "email": "vince@newtothestreet.com",   "company": "New to the Street","role": "CEO", "offer": "proflow_ai", "amount": "$97/mo",   "angle": "financial media content"},
 ]
