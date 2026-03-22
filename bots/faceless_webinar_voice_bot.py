@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 faceless_webinar_voice_bot.py
 Generates AI voiceover for the NYSR webinar using ElevenLabs.
@@ -254,3 +254,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+

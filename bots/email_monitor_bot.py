@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 import os, json, logging, imaplib, email as emaillib, urllib.request
 log = logging.getLogger("monitor")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
@@ -65,3 +65,4 @@ def run():
     log.info(f"Done: {len(wins)} wins, {len(approvals)} approvals")
 
 if __name__ == "__main__": run()
+

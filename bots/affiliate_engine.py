@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 bots/affiliate_engine.py
 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -297,3 +297,4 @@ def run():
     return {"applied":applied,"failed":failed}
 
 if __name__ == "__main__": run()
+

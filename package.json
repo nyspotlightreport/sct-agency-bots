@@ -1,8 +1,8 @@
-{
+﻿{
   "name": "nysr-site",
   "version": "1.0.0",
   "description": "NY Spotlight Report Netlify Site",
   "dependencies": {
-    "nodemailer": "^6.9.7",
+    "nodemailer": "^6.9.7"
   }
 }

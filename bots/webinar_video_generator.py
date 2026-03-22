@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 webinar_video_generator.py
 Complete faceless webinar video pipeline:
@@ -564,3 +564,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+

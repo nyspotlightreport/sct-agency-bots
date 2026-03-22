@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 bots/sweepstakes_auto_entry_bot.py
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -607,3 +607,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+
