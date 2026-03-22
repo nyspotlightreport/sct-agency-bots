@@ -5,36 +5,28 @@ on:
     - cron: '*/30 * * * *'
   workflow_dispatch:
 
-# ══════════════════════════════════════════════════════════
-# EVERY 30 MINUTES THIS DOES TWO THINGS:
-# 1. System health check (guardian original function)
-# 2. Revenue activity: Apollo → personalized email → send
-#
-# Previously: 100% of 30-min ticks = health checks only = $0
-# Now: 100% of 30-min ticks = health check + customer acquisition
-# ══════════════════════════════════════════════════════════
-
 env:
+  SMTP_USER:            ${{ secrets.SMTP_USER }}
+  GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
+  BUSINESS_EMAIL:       ${{ secrets.BUSINESS_EMAIL }}
+  REPLY_TO_EMAIL:       ${{ secrets.REPLY_TO_EMAIL }}
   ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
   APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
-  GMAIL_USER:           ${{ secrets.GMAIL_USER }}
-  GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
   SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
   SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
   SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
   PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
-  GH_PAT:               ${{ secrets.GH_PAT }}
-  HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
-  TICKET_TAILOR_API_KEY: ${{ secrets.TICKET_TAILOR_API_KEY }}
-  STRIPE_ACCOUNT_ID:    ${{ secrets.STRIPE_ACCOUNT_ID }}
-  NETLIFY_SITE_ID:      ${{ secrets.NETLIFY_SITE_ID }}
+  TWITTER_API_KEY:      ${{ secrets.TWITTER_API_KEY }}
+  TWITTER_API_SECRET:   ${{ secrets.TWITTER_API_SECRET }}
+  TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  TWITTER_ACCESS_SECRET:${{ secrets.TWITTER_ACCESS_SECRET }}
+  HUBSPOT_PORTAL_ID:    "245581177"
+  STORE_URL:            "https://nyspotlightreport.com/store/"
 
 jobs:
-
-  # JOB 1: Health check (original guardian function)
   health-check:
-    name: "🛡️ System Health Check"
+    name: "🛡️ System Health"
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
@@ -42,10 +34,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install requests -q
-      - name: Guardian health check
-        run: python bots/guardian_health_check_bot.py || echo "Health check completed"
+      - run: python bots/guardian_health_check_bot.py || echo "completed"
 
-  # JOB 2: Revenue activity — runs IN PARALLEL with health check
   always-hunting:
     name: "🎯 Hunting New Customers"
     runs-on: ubuntu-latest
@@ -55,5 +45,4 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install requests -q
-      - name: Find prospects + send personalized emails
-        run: python bots/always_hunting_bot.py || echo "Hunting completed"
+      - run: python bots/always_hunting_bot.py || echo "completed"
