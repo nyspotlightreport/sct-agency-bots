@@ -2,171 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Webinar: How I Built a Full AI Agency in One Day | NY Spotlight Report</title>
-<meta name="description" content="Watch how NY Spotlight Report deployed 170 AI bots, 100 workflows, and a complete agency automation stack in a single session — and how you can too.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Live Demo — AI Automation for NY Businesses | NYSR</title>
+<meta name="description" content="See exactly how NY businesses are saving 20+ hours/week with AI automation. Free live demo + $997 pilot offer for attendees only.">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#080c10;color:#e2e8f0;line-height:1.6}
-  .hero{padding:60px 20px 40px;text-align:center;max-width:780px;margin:0 auto}
-  .badge{display:inline-block;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:#C9A84C;padding:6px 16px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.08em;margin-bottom:20px}
-  h1{font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.15;margin-bottom:16px;color:#f8fafc}
-  .sub{font-size:18px;color:#94a3b8;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto}
-  .cta-btn{display:inline-block;background:#C9A84C;color:#080c10;padding:16px 40px;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;letter-spacing:.03em;cursor:pointer;border:none;transition:background .2s}
-  .cta-btn:hover{background:#e0bc5a}
-  .video-wrap{max-width:780px;margin:0 auto 60px;padding:0 20px}
-  .video-container{position:relative;padding-bottom:56.25%;background:#0d1520;border-radius:12px;border:1px solid rgba(255,255,255,.1);overflow:hidden}
-  .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-  .video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
-  .play-btn{width:72px;height:72px;background:rgba(201,168,76,.9);border-radius:50%;display:flex;align-items:center;justify-content:center}
-  .play-btn svg{margin-left:6px}
-  .video-label{font-size:14px;color:#94a3b8}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:600px;margin:0 auto 60px;padding:0 20px}
-  .stat{text-align:center;padding:20px;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.08)}
-  .stat-num{font-size:32px;font-weight:700;color:#C9A84C}
-  .stat-label{font-size:13px;color:#64748b;margin-top:4px}
-  .benefits{max-width:780px;margin:0 auto 60px;padding:0 20px}
-  .benefits h2{font-size:24px;font-weight:600;color:#f8fafc;margin-bottom:24px;text-align:center}
-  .benefit-item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start}
-  .check{width:22px;height:22px;border-radius:50%;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-  .check-inner{width:8px;height:8px;background:#22c55e;border-radius:50%}
-  .benefit-text{font-size:15px;color:#94a3b8}
-  .benefit-text strong{color:#e2e8f0}
-  .register{max-width:520px;margin:0 auto 80px;padding:0 20px}
-  .register-box{background:#0d1520;border:1px solid rgba(201,168,76,.3);border-radius:16px;padding:36px}
-  .register-box h2{font-size:22px;font-weight:600;text-align:center;margin-bottom:8px;color:#f8fafc}
-  .register-box p{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
-  .form-group{margin-bottom:14px}
-  .form-group label{display:block;font-size:12px;color:#64748b;margin-bottom:6px;font-weight:500}
-  .form-group input{width:100%;background:#080c10;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px 14px;color:#e2e8f0;font-size:14px;outline:none}
-  .form-group input:focus{border-color:rgba(201,168,76,.5)}
-  .register-btn{width:100%;background:#C9A84C;color:#080c10;border:none;padding:14px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;margin-top:8px}
-  .register-btn:hover{background:#e0bc5a}
-  .bonus-list{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
-  .bonus-item{font-size:13px;color:#64748b;padding:4px 0;display:flex;gap:8px}
-  .bonus-item::before{content:"✓";color:#C9A84C;font-weight:700}
-  .success-msg{display:none;text-align:center;padding:20px;background:rgba(34,197,94,.1);border-radius:8px;border:1px solid rgba(34,197,94,.3);margin-top:16px}
-  .success-msg h3{color:#22c55e;margin-bottom:8px}
-  .success-msg p{font-size:13px;color:#94a3b8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#060a0f;color:#e2e8f0;line-height:1.6}
+.container{max-width:640px;margin:0 auto;padding:60px 20px}
+.badge{display:inline-block;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.35);color:#f87171;padding:5px 14px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.08em;margin-bottom:20px}
+h1{font-size:clamp(26px,5vw,40px);font-weight:700;color:#f8fafc;line-height:1.15;margin-bottom:12px}
+.sub{font-size:16px;color:#94a3b8;margin-bottom:32px}
+.offer-box{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:12px;padding:20px;margin-bottom:32px;font-size:14px;color:#fca5a5}
+.what-youll-learn{margin-bottom:32px}
+.what-youll-learn h3{font-size:16px;font-weight:600;color:#f1f5f9;margin-bottom:12px}
+.learn-item{display:flex;gap:10px;margin-bottom:10px;font-size:14px;color:#94a3b8}
+.check{color:#22c55e;font-weight:700;flex-shrink:0}
+.form-section{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px;margin-bottom:24px}
+.form-section h3{font-size:18px;font-weight:600;color:#f1f5f9;margin-bottom:20px}
+input{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px 14px;color:#e2e8f0;font-size:15px;outline:none;margin-bottom:12px}
+input:focus{border-color:rgba(201,168,76,.5)}
+.register-btn{width:100%;background:#C9A84C;color:#060a0f;border:none;padding:14px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer}
+.guarantee{font-size:12px;color:#64748b;text-align:center;padding-top:12px}
+.host{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+.host-avatar{width:56px;height:56px;border-radius:50%;background:rgba(201,168,76,.15);border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#C9A84C;flex-shrink:0}
+.host-name{font-size:15px;font-weight:600;color:#f1f5f9}
+.host-title{font-size:13px;color:#64748b}
 </style>
 </head>
 <body>
+<div class="container">
+  <div class="badge">🔴 LIVE DEMO — LIMITED SPOTS</div>
+  <h1>How NY Businesses Are Saving 20+ Hours/Week with AI — Live Demo</h1>
+  <p class="sub">Free 45-minute session. We show you the exact system live. No fluff. Just the real automation stack NYSR uses for clients.</p>
 
-<div class="hero">
-  <div class="badge">FREE WEBINAR — AVAILABLE NOW</div>
-  <h1>How I Built a Full AI Agency in One Day</h1>
-  <p class="sub">Watch the complete walkthrough — 170 bots, 100 workflows, zero daily management. Then get yours running in 24 hours.</p>
-  <button class="cta-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Watch Free + Get Bonuses</button>
-</div>
+  <div class="offer-box">
+    ⚡ Attendees only: $997 pilot offer (normally $1,497) — exclusively for live registrants. Available during the session only.
+  </div>
 
-<div class="video-wrap">
-  <div class="video-container" id="videoContainer"><video controls style="width:100%;height:100%;object-fit:cover;" preload="metadata"><source src="https://github.com/nyspotlightreport/sct-agency-bots/releases/download/webinar-v1774139201/nysr_webinar.mp4" type="video/mp4"></video>
-    <div class="video-placeholder" id="videoPlaceholder" style="display:none;">
-      <div class="play-btn" onclick="loadVideo()">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="#080c10"><polygon points="5,3 19,12 5,21"/></svg>
-      </div>
-      <div class="video-label">Click to watch the free webinar (45 min)</div>
+  <div class="host">
+    <div class="host-avatar">SC</div>
+    <div>
+      <div class="host-name">S.C. Thomas</div>
+      <div class="host-title">Chairman, NY Spotlight Report | AI Agency Automation Expert</div>
     </div>
   </div>
-</div>
 
-<div class="stats">
-  <div class="stat"><div class="stat-num">170</div><div class="stat-label">AI bots deployed</div></div>
-  <div class="stat"><div class="stat-num">100</div><div class="stat-label">Live workflows</div></div>
-  <div class="stat"><div class="stat-num">24hr</div><div class="stat-label">To go live</div></div>
-</div>
+  <div class="what-youll-learn">
+    <h3>What you'll see in 45 minutes:</h3>
+    <div class="learn-item"><span class="check">✓</span><span>Live demo of an AI lead follow-up system capturing leads in 60 seconds</span></div>
+    <div class="learn-item"><span class="check">✓</span><span>The exact email sequence that books 8-15% of cold contacts on autopilot</span></div>
+    <div class="learn-item"><span class="check">✓</span><span>How to calculate exactly how much manual work is costing your business</span></div>
+    <div class="learn-item"><span class="check">✓</span><span>The 3 automations every NY business should have running by next week</span></div>
+    <div class="learn-item"><span class="check">✓</span><span>Live Q&A — ask anything about AI automation for your specific situation</span></div>
+  </div>
 
-<div class="benefits">
-  <h2>What you'll learn</h2>
-  <div class="benefit-item"><div class="check"><div class="check-inner"></div></div><div class="benefit-text"><strong>The exact stack</strong> — 170 bots, 100 workflows, what each one does and how they connect</div></div>
-  <div class="benefit-item"><div class="check"><div class="check-inner"></div></div><div class="benefit-text"><strong>Email automation that works</strong> — journeys that nurture leads from cold to closed without you touching anything</div></div>
-  <div class="benefit-item"><div class="check"><div class="check-inner"></div></div><div class="benefit-text"><strong>Passive income stack</strong> — Gumroad, KDP, Redbubble, affiliates, newsletter — all running simultaneously</div></div>
-  <div class="benefit-item"><div class="check"><div class="check-inner"></div></div><div class="benefit-text"><strong>Real revenue projections</strong> — conservative, realistic, and aggressive numbers based on actual conversion data</div></div>
-  <div class="benefit-item"><div class="check"><div class="check-inner"></div></div><div class="benefit-text"><strong>How to get yours in 24 hours</strong> — the exact steps from zero to fully deployed</div></div>
-</div>
-
-<div class="register" id="register">
-  <div class="register-box">
-    <h2>Watch Free + Claim Your Bonuses</h2>
-    <p>Register to unlock the full webinar and your exclusive bonuses</p>
-    <div class="form-group">
-      <label>First name</label>
-      <input type="text" id="fname" placeholder="Your first name" />
-    </div>
-    <div class="form-group">
-      <label>Email address</label>
-      <input type="email" id="femail" placeholder="your@email.com" />
-    </div>
-    <div class="form-group">
-      <label>Business type (optional)</label>
-      <input type="text" id="fbiz" placeholder="e.g. Agency, Consultant, E-commerce" />
-    </div>
-    <button class="register-btn" onclick="registerWebinar()">Watch Now + Claim Bonuses →</button>
-    <div class="bonus-list">
-      <div class="bonus-item">Free 30-minute AI strategy call</div>
-      <div class="bonus-item">Custom automation audit for your business</div>
-      <div class="bonus-item">First month 50% off any plan</div>
-    </div>
-    <div class="success-msg" id="successMsg">
-      <h3>You're registered!</h3>
-      <p>Check your email for access details. Your bonuses will be sent within 24 hours.<br>Questions? Email seanb041992@gmail.com</p>
-    </div>
+  <div class="form-section">
+    <h3>Reserve Your Spot (Free)</h3>
+    <input type="text" id="wname" placeholder="Your name" />
+    <input type="email" id="wemail" placeholder="Work email" />
+    <input type="text" id="wbiz" placeholder="Your business type (e.g., law firm, medical practice, agency)" />
+    <button class="register-btn" onclick="registerWebinar()">Claim My Free Spot →</button>
+    <div class="guarantee">Free to attend. Recording available to registrants who can't make it live.</div>
   </div>
 </div>
-
 <script>
-const SUPA_URL = 'https://sazuogglxukumnvhvkms.supabase.co';
-const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNhenVvZ2dseHVrdW1udmh2a21zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMTcxNTMsImV4cCI6MjA4OTY5MzE1M30.FQubC3llmkDgRjx28X1LrcEg1h5kCtFHbDxvmpYPYvI';
-
-function loadVideo() {
-  // Will be replaced with actual YouTube embed when video is uploaded
-  const p = document.getElementById('videoPlaceholder');
-  p.innerHTML = '<div style="padding:40px;text-align:center;color:#94a3b8;font-size:14px">Video loading... If it does not appear, scroll down to register and we will email you the direct link.</div>';
-  document.getElementById('register').scrollIntoView({behavior:'smooth'});
-}
-
 async function registerWebinar() {
-  const name = document.getElementById('fname').value.trim();
-  const email = document.getElementById('femail').value.trim();
-  const biz = document.getElementById('fbiz').value.trim();
+  const name  = document.getElementById('wname').value.trim();
+  const email = document.getElementById('wemail').value.trim();
+  const biz   = document.getElementById('wbiz').value.trim();
   if (!name || !email) { alert('Please enter your name and email'); return; }
-  
-  document.querySelector('.register-btn').textContent = 'Registering...';
-  
-  try {
-    await fetch(SUPA_URL + '/rest/v1/contacts', {
-      method: 'POST',
-      headers: {
-        'apikey': SUPA_KEY,
-        'Authorization': 'Bearer ' + SUPA_KEY,
-        'Content-Type': 'application/json',
-        'Prefer': 'return=minimal'
-      },
-      body: JSON.stringify({
-        name, email,
-        company: biz || 'Unknown',
-        stage: 'WARM',
-        source: 'webinar_registration',
-        journey_key: 'webinar_to_customer',
-        score: 75,
-        tags: ['webinar-registrant','warm-lead','bonus-eligible'],
-        notes: 'Registered via faceless webinar. Entitled to: strategy call + audit + 50% off first month.'
-      })
-    });
-  } catch(e) { console.log('DB save attempted'); }
-  
-  await fetch('/.netlify/functions/chat-lead-capture', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({name, email, source:'webinar', business:biz})
+
+  const SUPA = 'https://sazuogglxukumnvhvkms.supabase.co';
+  const KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNhenVvZ2dseHVrdW1udmh2a21zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMTcxNTMsImV4cCI6MjA4OTY5MzE1M30.FQubC3llmkDgRjx28X1LrcEg1h5kCtFHbDxvmpYPYvI';
+
+  await fetch(SUPA+'/rest/v1/contacts', { method:'POST',
+    headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+    body: JSON.stringify({ name, email, stage:'WARM', score:75, source:'webinar_registration',
+      journey_key:'webinar_to_dfy', tags:['webinar-registrant','live-webinar'],
+      notes:`Webinar registrant — business type: ${biz}` })
   }).catch(()=>{});
-  
-  document.querySelector('.register-btn').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  
-  document.getElementById('videoContainer').innerHTML = '<div style="padding:60px 20px;text-align:center;color:#94a3b8;font-size:15px">Thank you for registering, ' + name + '!<br><br>The full webinar link will be emailed to ' + email + ' within 5 minutes.<br><br><a href="/store/" style="color:#C9A84C;font-weight:600;">View Our Offers →</a></div>';
+
+  document.querySelector('.form-section').innerHTML = `
+    <div style="text-align:center;padding:20px">
+      <div style="font-size:40px;margin-bottom:16px">✅</div>
+      <h3 style="color:#22c55e;margin-bottom:8px">You're registered!</h3>
+      <p style="font-size:14px;color:#94a3b8">Check your email for the join link. See you live.</p>
+      <p style="font-size:13px;color:#C9A84C;margin-top:16px">Remember: $997 pilot offer available during the live session only.</p>
+    </div>`;
 }
 </script>
-
 </body>
 </html>
