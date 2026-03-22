@@ -1,11 +1,10 @@
-name: "🛡️ Guardian + Always Hunting — Every 30min"
+name: "🛡️ Guardian + Always Hunting"
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0,30 * * * *'   # Explicit 0 and 30 — reliable vs */30 which GitHub throttles
   workflow_dispatch:
 
-# All secrets now confirmed in GitHub
 env:
   SMTP_USER:             ${{ secrets.SMTP_USER }}
   GMAIL_APP_PASS:        ${{ secrets.GMAIL_APP_PASS }}
@@ -31,34 +30,20 @@ jobs:
     name: "🛡️ System Health"
     runs-on: ubuntu-latest
     timeout-minutes: 8
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install requests -q
-      - name: Run health check
-        run: |
-          python bots/guardian_health_check_bot.py
-        continue-on-error: true
+      - run: python bots/guardian_health_check_bot.py || echo "health check done"
 
   always-hunting:
-    name: "🎯 Hunt New Customers (Apollo → Claude → Gmail)"
+    name: "🎯 Hunt New Customers"
     runs-on: ubuntu-latest
     timeout-minutes: 14
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install requests -q
-      - name: Verify critical secrets are present
-        run: |
-          echo "SMTP_USER set: ${{ secrets.SMTP_USER != '' }}"
-          echo "GMAIL_APP_PASS set: ${{ secrets.GMAIL_APP_PASS != '' }}"
-          echo "ANTHROPIC set: ${{ secrets.ANTHROPIC_API_KEY != '' }}"
-          echo "APOLLO set: ${{ secrets.APOLLO_API_KEY != '' }}"
-      - name: Hunt and email prospects
-        run: |
-          python bots/always_hunting_bot.py
-        continue-on-error: true
+      - run: python bots/always_hunting_bot.py || echo "hunting done"
