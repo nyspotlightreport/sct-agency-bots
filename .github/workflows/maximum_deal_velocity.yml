@@ -1,42 +1,38 @@
-name: 💰 Maximum Deal Velocity — Every 4 Hours
+name: "\U0001F4B0 Maximum Deal Velocity \u2014 Every 4 Hours"
 
 on:
   schedule:
-    - cron: '0 */4 * * *'   # Every 4 hours, 24/7
+    - cron: '0 */4 * * *'
   workflow_dispatch:
 
-# Goal: maximum deals across ALL tiers simultaneously
-# Every 4 hours the machine re-hits every lever
-
 env:
-  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
-  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
-  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
-  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
-  APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
-  HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
-  AHREFS_API_KEY:       ${{ secrets.AHREFS_API_KEY }}
-  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
-  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
-  GH_PAT:               ${{ secrets.GH_PAT }}
-  GMAIL_USER:           ${{ secrets.GMAIL_USER }}
-  GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
-  TWITTER_API_KEY:      ${{ secrets.TWITTER_API_KEY }}
-  TWITTER_API_SECRET:   ${{ secrets.TWITTER_API_SECRET }}
-  TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-  TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+  SUPABASE_URL:           ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:           ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:      ${{ secrets.SUPABASE_ANON_KEY }}
+  ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
+  APOLLO_API_KEY:         ${{ secrets.APOLLO_API_KEY }}
+  HUBSPOT_API_KEY:        ${{ secrets.HUBSPOT_API_KEY }}
+  AHREFS_API_KEY:         ${{ secrets.AHREFS_API_KEY }}
+  PUSHOVER_API_KEY:       ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:      ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT:                 ${{ secrets.GH_PAT }}
+  GMAIL_USER:             ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS:         ${{ secrets.GMAIL_APP_PASS }}
+  TWITTER_API_KEY:        ${{ secrets.TWITTER_API_KEY }}
+  TWITTER_API_SECRET:     ${{ secrets.TWITTER_API_SECRET }}
+  TWITTER_ACCESS_TOKEN:   ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  TWITTER_ACCESS_SECRET:  ${{ secrets.TWITTER_ACCESS_SECRET }}
   WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
-  WORDPRESS_SITE_ID:    ${{ secrets.WORDPRESS_SITE_ID }}
-  BEEHIIV_API_KEY:      ${{ secrets.BEEHIIV_API_KEY }}
-  BEEHIIV_PUB_ID:       ${{ secrets.BEEHIIV_PUB_ID }}
-  STRIPE_SECRET_KEY:    ${{ secrets.STRIPE_SECRET_KEY }}
-  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
-  TICKET_TAILOR_API_KEY: ${{ secrets.TICKET_TAILOR_API_KEY }}
+  WORDPRESS_SITE_ID:      ${{ secrets.WORDPRESS_SITE_ID }}
+  BEEHIIV_API_KEY:        ${{ secrets.BEEHIIV_API_KEY }}
+  BEEHIIV_PUB_ID:         ${{ secrets.BEEHIIV_PUB_ID }}
+  STRIPE_SECRET_KEY:      ${{ secrets.STRIPE_SECRET_KEY }}
+  GUMROAD_ACCESS_TOKEN:   ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  TICKET_TAILOR_API_KEY:  ${{ secrets.TICKET_TAILOR_API_KEY }}
 
 jobs:
-  # TIER 1: $97 - Volume play. High quantity, low friction.
   proflow-ai-volume:
-    name: $97 Volume — Pull + Score + Email 50 Prospects
+    name: "$97 Volume \u2014 Pull + Score + Email 50 Prospects"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -49,9 +45,8 @@ jobs:
       - run: python bots/email_journey_builder_bot.py || echo "journeys completed"
       - run: python bots/cold_email_personalization_bot.py || echo "cold email completed"
 
-  # TIER 2: $297 - Growth offer push to existing warm leads
   proflow-growth-push:
-    name: $297 Growth — Upsell Warm + Push Growth Offer
+    name: "$297 Growth \u2014 Upsell Warm + Push Growth Offer"
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -63,9 +58,8 @@ jobs:
       - run: python bots/deal_pipeline_bot.py || echo "pipeline completed"
       - run: python bots/intent_signal_bot.py || echo "intent completed"
 
-  # TIER 3: $1497 DFY — Target agency owners specifically
   dfy-setup-targeting:
-    name: $1497 DFY — Target Agency Owners
+    name: "$1497 DFY \u2014 Target Agency Owners"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -77,9 +71,8 @@ jobs:
       - run: python agents/enterprise_sales_agent.py || echo "enterprise sales completed"
       - run: python bots/sales_call_script_bot.py || echo "scripts completed"
 
-  # TIER 4: $4997 Enterprise — Funded startups, scale-ups
   enterprise-outreach:
-    name: $4997 Enterprise — Funded Co + Agencies
+    name: "$4997 Enterprise \u2014 Funded Co + Agencies"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -91,9 +84,8 @@ jobs:
       - run: python bots/job_change_tracker_bot.py || echo "job change completed"
       - run: python agents/adaptive_sales_engine.py || echo "adaptive sales completed"
 
-  # CONTENT: Authority building drives inbound
   authority-content:
-    name: Content Authority — Post + Syndicate + SEO
+    name: "Content Authority \u2014 Post + Syndicate + SEO"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -107,9 +99,8 @@ jobs:
       - run: python agents/wiki_agent.py || echo "wiki completed"
       - run: python agents/seo_audit_agent.py || echo "seo completed"
 
-  # SOCIAL PROOF: Every testimonial lifts all conversion rates
   social-proof:
-    name: Social Proof — Collect + Amplify
+    name: "Social Proof \u2014 Collect + Amplify"
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -121,9 +112,8 @@ jobs:
       - run: python bots/social_proof_amplifier_bot.py || echo "amplifier completed"
       - run: python bots/referral_engine_bot.py || echo "referral completed"
 
-  # PASSIVE: Background money while active sales run
   passive-stack:
-    name: Passive Income — All Streams Running
+    name: "Passive Income \u2014 All Streams Running"
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -137,9 +127,8 @@ jobs:
       - run: python bots/floor_tracker_bot.py || echo "floor tracker completed"
       - run: python bots/revenue_unifier_bot.py || echo "revenue unified"
 
-  # VELOCITY REPORT: Chairman gets a push every 4 hours
   velocity-report:
-    name: Deal Velocity Report — Push to Chairman
+    name: "Deal Velocity Report \u2014 Push to Chairman"
     runs-on: ubuntu-latest
     needs: [proflow-ai-volume, proflow-growth-push, dfy-setup-targeting, enterprise-outreach]
     if: always()
@@ -154,41 +143,46 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install requests -q
-      - name: Push velocity report
+      - name: Validate YAML self-test
+        run: python3 -c "import yaml; yaml.safe_load(open('.github/workflows/maximum_deal_velocity.yml'))" && echo "YAML valid"
+      - name: Push velocity report to Chairman
         run: |
-          python3 << 'PYEOF2'
+          cat > /tmp/velocity_report.py << 'SCRIPT'
           import os, urllib.request, json
           from datetime import datetime
 
-          SUPA = os.environ.get("SUPABASE_URL","")
-          KEY  = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
-          PUSH_API  = os.environ.get("PUSHOVER_API_KEY","")
-          PUSH_USER = os.environ.get("PUSHOVER_USER_KEY","")
+          SUPA      = os.environ.get("SUPABASE_URL", "")
+          KEY       = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
+          PUSH_API  = os.environ.get("PUSHOVER_API_KEY", "")
+          PUSH_USER = os.environ.get("PUSHOVER_USER_KEY", "")
 
+          hot = 0; warm = 0; total = 0
           if SUPA and KEY:
               req = urllib.request.Request(
-                  f"{SUPA}/rest/v1/contacts?select=stage,count",
-                  headers={"apikey":KEY,"Authorization":f"Bearer {KEY}"})
+                  f"{SUPA}/rest/v1/contacts?select=stage",
+                  headers={"apikey": KEY, "Authorization": f"Bearer {KEY}"})
               try:
                   with urllib.request.urlopen(req, timeout=10) as r:
                       contacts = json.loads(r.read())
-                  hot = len([c for c in contacts if c.get("stage") in ["HOT","DEMO","PROPOSAL"]])
-                  warm = len([c for c in contacts if c.get("stage") in ["WARM","QUALIFIED"]])
+                  hot   = len([c for c in contacts if c.get("stage") in ["HOT","DEMO","PROPOSAL"]])
+                  warm  = len([c for c in contacts if c.get("stage") in ["WARM","QUALIFIED"]])
                   total = len(contacts)
-                  msg = f"Deal Velocity Update
-Pipeline: {total} contacts
-Hot: {hot} | Warm: {warm}
-All 4 offer tiers running. Check /bi/ for full report."
-              except:
-                  msg = "Deal velocity workflows completed. Check /bi/ for pipeline status."
-          else:
-              msg = "Deal velocity cycle complete. All offer tiers running."
+              except Exception as e:
+                  print(f"Supabase query failed: {e}")
+
+          msg = f"Deal Velocity Update\nPipeline: {total} contacts\nHot: {hot} | Warm: {warm}\nAll 4 offer tiers running. Check /bi/ for full report."
 
           if PUSH_API and PUSH_USER:
-              data = json.dumps({"token":PUSH_API,"user":PUSH_USER,
-                                  "title":"NYSR Deal Engine","message":msg}).encode()
+              data = json.dumps({"token": PUSH_API, "user": PUSH_USER,
+                                 "title": "NYSR Deal Engine", "message": msg}).encode()
               req2 = urllib.request.Request("https://api.pushover.net/1/messages.json",
-                  data=data, headers={"Content-Type":"application/json"})
-              try: urllib.request.urlopen(req2, timeout=10)
-              except: pass
-          PYEOF2
+                  data=data, headers={"Content-Type": "application/json"})
+              try:
+                  urllib.request.urlopen(req2, timeout=10)
+                  print("Pushover sent successfully")
+              except Exception as e:
+                  print(f"Pushover failed: {e}")
+
+          print(msg)
+          SCRIPT
+          python3 /tmp/velocity_report.py
