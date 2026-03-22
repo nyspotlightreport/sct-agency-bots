@@ -89,3 +89,28 @@
   from = "/api/stripe-webhook"
   to   = "/.netlify/functions/stripe-webhook"
   status = 200
+
+[[redirects]]
+  from = "/api/create-checkout"
+  to   = "/.netlify/functions/create-checkout"
+  status = 200
+
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to   = "/.netlify/functions/stripe-webhook"
+  status = 200
+
+[[redirects]]
+  from = "/api/rep-portal-auth"
+  to   = "/.netlify/functions/rep-portal-auth"
+  status = 200
+
+[[redirects]]
+  from = "/api/rep-apply"
+  to   = "/.netlify/functions/rep-apply"
+  status = 200
+
+[[redirects]]
+  from = "/api/save-google-sa"
+  to   = "/.netlify/functions/save-google-sa"
+  status = 200
