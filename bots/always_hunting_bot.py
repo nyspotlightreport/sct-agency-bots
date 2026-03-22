@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 """
-bots/always_hunting_bot.py - UPGRADED
-Uses nyspotlightreportny@gmail.com (business email - just restored)
-Better deliverability: company domain looks professional vs personal gmail
+bots/always_hunting_bot.py — PRODUCTION FINAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SMTP architecture (zero new credentials needed):
+  SMTP server:  smtp.gmail.com:465 
+  Auth:         seanb041992@gmail.com + GMAIL_APP_PASS (already live)
+  From header:  "Sean Thomas | NY Spotlight Report <nyspotlightreportny@gmail.com>"
+  Reply-To:     nyspotlightreportny@gmail.com
+  
+Recipient sees: From → NY Spotlight Report
+Replies go to:  nyspotlightreportny@gmail.com (business inbox)
+
+Runs every 30 min. Finds 5 fresh ICP prospects via Apollo.
+Claude personalizes each email. Sends immediately. Logs to Supabase.
 """
 import os, json, logging, smtplib, urllib.request, urllib.parse, time, random
 from email.mime.text import MIMEText
@@ -12,39 +22,45 @@ from datetime import datetime
 log = logging.getLogger("hunting")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [HUNT] %(message)s")
 
-APOLLO_KEY  = os.environ.get("APOLLO_API_KEY","")
-# UPGRADED: use business email for sender (better deliverability)
-GMAIL_USER  = os.environ.get("GMAIL_USER", os.environ.get("BUSINESS_EMAIL","nyspotlightreportny@gmail.com"))
-GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS", os.environ.get("BUSINESS_EMAIL_PASS",""))
-SENDER_NAME = os.environ.get("SENDER_NAME","Sean Thomas | NY Spotlight Report")
-ANTHROPIC   = os.environ.get("ANTHROPIC_API_KEY","")
-SUPA_URL    = os.environ.get("SUPABASE_URL","")
-SUPA_KEY    = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
-PUSH_API    = os.environ.get("PUSHOVER_API_KEY","")
-PUSH_USER   = os.environ.get("PUSHOVER_USER_KEY","")
+# ── SMTP CONFIG — uses existing working credentials ───────
+SMTP_USER    = os.environ.get("SMTP_USER",     "seanb041992@gmail.com")
+SMTP_PASS    = os.environ.get("GMAIL_APP_PASS", os.environ.get("BUSINESS_EMAIL_PASS",""))
+FROM_NAME    = os.environ.get("SMTP_FROM_NAME", "Sean Thomas | NY Spotlight Report")
+FROM_EMAIL   = os.environ.get("BUSINESS_EMAIL","nyspotlightreportny@gmail.com")  # display name
+REPLY_TO     = os.environ.get("REPLY_TO_EMAIL", "nyspotlightreportny@gmail.com")
 
-STORE_URL   = "https://nyspotlightreport.com/store/"
-PAYMENT_LINKS = {
-    "starter":  "https://buy.stripe.com/8x228r2N67QffzdfHp2400c",
-    "growth":   "https://buy.stripe.com/00w00jgDW0nNaeT66P2400d",
-    "elite":    "https://buy.stripe.com/aFacN5fzSdazfzd3YH2400e",
-    "dfy":      "https://buy.stripe.com/9B6dR9fzSeeDev9eDl2400f",
-    "agency":   "https://buy.stripe.com/8x214n9bu3zZ86L9j12400g",
+# ── OTHER CREDENTIALS ─────────────────────────────────────
+APOLLO_KEY   = os.environ.get("APOLLO_API_KEY","")
+ANTHROPIC    = os.environ.get("ANTHROPIC_API_KEY","")
+SUPA_URL     = os.environ.get("SUPABASE_URL","")
+SUPA_KEY     = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
+PUSH_API     = os.environ.get("PUSHOVER_API_KEY","")
+PUSH_USER    = os.environ.get("PUSHOVER_USER_KEY","")
+
+STORE_URL    = "https://nyspotlightreport.com/store/"
+LINKS = {
+    "starter":   "https://buy.stripe.com/8x228r2N67QffzdfHp2400c",
+    "growth":    "https://buy.stripe.com/00w00jgDW0nNaeT66P2400d",
+    "elite":     "https://buy.stripe.com/aFacN5fzSdazfzd3YH2400e",
+    "dfy":       "https://buy.stripe.com/9B6dR9fzSeeDev9eDl2400f",
+    "agency":    "https://buy.stripe.com/8x214n9bu3zZ86L9j12400g",
     "enterprise":"https://buy.stripe.com/00weVd5ZigmL86Ldzh2400h",
 }
 
-ICP_SEARCHES = [
-    {"titles":["CMO","Chief Marketing Officer"],"industries":["Marketing","Advertising"],"offer":"growth"},
-    {"titles":["Marketing Director","VP Marketing"],"industries":["SaaS","Software"],"offer":"starter"},
-    {"titles":["Agency Owner","Founder"],"industries":["Marketing","Digital Agency"],"offer":"dfy"},
-    {"titles":["Content Director","Content Manager"],"industries":["Media","Publishing"],"offer":"growth"},
-    {"titles":["Head of Marketing","Director of Marketing"],"industries":["E-commerce","Retail"],"offer":"starter"},
-    {"titles":["Marketing Manager","Growth Manager"],"industries":["Startup","Technology"],"offer":"starter"},
-    {"titles":["CEO","Founder"],"industries":["Consulting","Professional Services"],"offer":"elite"},
-    {"titles":["VP Sales","Head of Growth"],"industries":["SaaS","B2B"],"offer":"growth"},
+ICP = [
+    {"titles":["CMO","Chief Marketing Officer"],      "industries":["Marketing","Advertising"],       "offer":"growth"},
+    {"titles":["Marketing Director","VP Marketing"],   "industries":["SaaS","Software"],               "offer":"starter"},
+    {"titles":["Agency Owner","Founder"],              "industries":["Marketing","Digital Agency"],    "offer":"dfy"},
+    {"titles":["Content Director","Content Manager"],  "industries":["Media","Publishing"],            "offer":"growth"},
+    {"titles":["Head of Marketing"],                   "industries":["E-commerce","Retail"],           "offer":"starter"},
+    {"titles":["Marketing Manager","Growth Manager"],  "industries":["Startup","Technology"],          "offer":"starter"},
+    {"titles":["CEO","Founder"],                       "industries":["Consulting","Services"],         "offer":"elite"},
+    {"titles":["VP Sales","Head of Growth"],           "industries":["SaaS","B2B"],                   "offer":"growth"},
+    {"titles":["Creative Director","Brand Manager"],   "industries":["Fashion","Consumer Goods"],      "offer":"starter"},
+    {"titles":["Digital Marketing Manager"],           "industries":["Healthcare","Finance"],          "offer":"starter"},
 ]
 
-def supa_req(method, table, data=None, query=""):
+def supa(method, table, data=None, query=""):
     if not SUPA_URL: return None
     req = urllib.request.Request(f"{SUPA_URL}/rest/v1/{table}{query}",
         data=json.dumps(data).encode() if data else None, method=method,
@@ -56,26 +72,23 @@ def supa_req(method, table, data=None, query=""):
     except: return None
 
 def already_contacted(email):
-    result = supa_req("GET","contacts",query=f"?email=eq.{urllib.parse.quote(email)}&select=id")
-    return bool(result and isinstance(result,list) and len(result)>0)
+    r = supa("GET","contacts",query=f"?email=eq.{urllib.parse.quote(email)}&select=id")
+    return bool(r and isinstance(r,list) and len(r)>0)
 
-def find_prospects(icp, per_page=10):
+def find_prospects(icp):
     if not APOLLO_KEY: return []
     try:
-        payload = {
+        data = json.dumps({
             "api_key": APOLLO_KEY,
-            "per_page": per_page,
+            "per_page": 10,
             "person_titles": icp["titles"],
+            "q_organization_keyword_tags": icp.get("industries",[]),
             "contact_email_status": ["verified","likely to engage"],
-            "page": random.randint(1,30),
-        }
-        if icp.get("industries"):
-            payload["q_organization_keyword_tags"] = icp["industries"]
-        data = json.dumps(payload).encode()
+            "page": random.randint(1,40),
+        }).encode()
         req = urllib.request.Request("https://api.apollo.io/v1/mixed_people/search",
             data=data, headers={"Content-Type":"application/json","Cache-Control":"no-cache"})
         with urllib.request.urlopen(req, timeout=20) as r:
-            people = json.loads(r.read()).get("people",[])
             return [{"first_name":p.get("first_name",""),
                      "last_name": p.get("last_name",""),
                      "email":     p.get("email",""),
@@ -83,121 +96,136 @@ def find_prospects(icp, per_page=10):
                      "company":   (p.get("organization") or {}).get("name",""),
                      "employees": (p.get("organization") or {}).get("estimated_num_employees",0),
                      "offer":     icp.get("offer","starter")}
-                    for p in people if p.get("email") and "email_not_unlocked" not in p.get("email","")]
+                    for p in json.loads(r.read()).get("people",[])
+                    if p.get("email") and "email_not_unlocked" not in p.get("email","")]
     except Exception as e:
         log.error(f"Apollo: {e}"); return []
 
-def generate_email(p):
+def personalize(p):
     if not ANTHROPIC: return None
-    offer_key = p.get("offer","starter")
-    link = PAYMENT_LINKS.get(offer_key, PAYMENT_LINKS["starter"])
-    
-    prompt = f"""You are writing a cold email FROM Sean Thomas, founder of NY Spotlight Report (nyspotlightreportny@gmail.com).
+    link = LINKS.get(p.get("offer","starter"), LINKS["starter"])
+    prompt = f"""Cold email from Sean Thomas, founder of NY Spotlight Report (nyspotlightreportny@gmail.com).
 
-TO: {p.get('first_name','')} {p.get('last_name','')}, {p.get('title','')} at {p.get('company','')}
+TO: {p.get('first_name','')} {p.get('last_name','')}, {p.get('title','')} at {p.get('company','')} ({p.get('employees',50)} employees)
 
-NY Spotlight Report automates entire content operations: social posts, blog, email, SEO, outreach - all running 24/7 without manual work. Proven on our own business.
+We built AI that runs entire content operations automatically: social posts, blog, email, SEO, outreach. All 24/7. No staff. Running it on our own business.
 
-Craft a cold email that:
-- Is under 75 words body
-- Subject line: hyper-specific to their role/company (never generic)
+Write email that is:
+- Under 70 words body (strict)
+- Subject: 100% specific to {p.get('title','')} at {p.get('company','')} — NOT generic  
 - One CTA: {link}
-- Sounds like a peer texting, not marketing
-- No "I hope this finds you well", no buzzwords
-- Specific pain point for a {p.get('title','')} at a {p.get('employees',50)}-person company
+- Peer-to-peer tone, zero corporate speak
+- No greetings like "I hope this finds you well"
 
-Return ONLY:
+Format:
 Subject: [line]
 
 [body]
 
 Sean Thomas
-NY Spotlight Report
-nyspotlightreportny@gmail.com"""
+NY Spotlight Report"""
 
     data = json.dumps({"model":"claude-haiku-4-5-20251001","max_tokens":250,
         "messages":[{"role":"user","content":prompt}]}).encode()
     req = urllib.request.Request("https://api.anthropic.com/v1/messages",data=data,
-        headers={"Content-Type":"application/json","x-api-key":ANTHROPIC,"anthropic-version":"2023-06-01"})
+        headers={"Content-Type":"application/json","x-api-key":ANTHROPIC,
+                 "anthropic-version":"2023-06-01"})
     try:
-        with urllib.request.urlopen(req,timeout=30) as r:
+        with urllib.request.urlopen(req, timeout=30) as r:
             return json.loads(r.read())["content"][0]["text"]
     except Exception as e:
         log.warning(f"Claude: {e}"); return None
 
-def send_email(to_email, subject, body):
-    if not GMAIL_PASS:
-        log.warning(f"No Gmail app pass for {GMAIL_USER} — need to add BUSINESS_EMAIL_PASS secret")
+def send(to_email, subject, body):
+    """
+    Send via seanb041992@gmail.com SMTP (working credentials).
+    From header displays as nyspotlightreportny@gmail.com.
+    Reply-To set to nyspotlightreportny@gmail.com.
+    Recipient sees business email. Replies go to business inbox.
+    """
+    if not SMTP_PASS:
+        log.error("GMAIL_APP_PASS not configured")
         return False
     try:
         msg = MIMEMultipart('alternative')
-        msg['From']    = f"{SENDER_NAME} <{GMAIL_USER}>"
-        msg['To']      = to_email
-        msg['Subject'] = subject
-        msg['Reply-To']= GMAIL_USER
-        msg.attach(MIMEText(body,'plain'))
-        with smtplib.SMTP_SSL('smtp.gmail.com',465,timeout=15) as s:
-            s.login(GMAIL_USER, GMAIL_PASS)
-            s.sendmail(GMAIL_USER, to_email, msg.as_string())
+        # This is what recipient sees — the business email
+        msg['From']     = f"{FROM_NAME} <{FROM_EMAIL}>"
+        msg['To']       = to_email
+        msg['Subject']  = subject
+        msg['Reply-To'] = REPLY_TO
+        msg.attach(MIMEText(body, 'plain'))
+        
+        # Auth uses the working smtp account
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=15) as s:
+            s.login(SMTP_USER, SMTP_PASS)
+            s.sendmail(SMTP_USER, to_email, msg.as_string())
         return True
     except Exception as e:
-        log.error(f"SMTP {to_email}: {e}"); return False
+        log.error(f"SMTP: {e}"); return False
 
 def run():
-    log.info(f"ALWAYS-HUNTING BOT — sender: {GMAIL_USER}")
-    icp = random.choice(ICP_SEARCHES)
-    prospects = find_prospects(icp, per_page=10)
-    log.info(f"Apollo returned {len(prospects)} prospects for {icp['titles'][0]}")
-    
-    sent=0; skipped=0
-    
+    log.info(f"{'='*55}")
+    log.info(f"HUNTING BOT | SMTP: {SMTP_USER} | FROM: {FROM_EMAIL}")
+    log.info(f"{'='*55}")
+
+    if not SMTP_PASS:
+        log.error("NO GMAIL_APP_PASS — emails cannot send. Check GitHub Secrets.")
+        return {"error": "no_smtp_pass"}
+
+    icp = random.choice(ICP)
+    prospects = find_prospects(icp)
+    log.info(f"Apollo: {len(prospects)} prospects | ICP: {icp['titles'][0]}")
+
+    sent=0; skipped=0; failed=0
+    details=[]
+
     for p in prospects[:5]:
         email = p.get("email","")
         fname = p.get("first_name","") or email.split("@")[0]
         if not email: continue
         if already_contacted(email): skipped+=1; continue
-        
-        content = generate_email(p)
+
+        content = personalize(p)
         if content and "Subject:" in content:
-            lines   = content.strip().split("\n",2)
-            subject = lines[0].replace("Subject:","").strip()
-            body    = lines[2].strip() if len(lines)>2 else lines[-1].strip()
+            parts   = content.strip().split("\n", 2)
+            subject = parts[0].replace("Subject:","").strip()
+            body    = parts[2].strip() if len(parts)>2 else parts[-1]
         else:
-            offer_link = PAYMENT_LINKS.get(p.get("offer","starter"), PAYMENT_LINKS["starter"])
-            subject = f"AI content system for {p.get('company','your business')}"
-            body    = f"""{fname},
+            link    = LINKS.get(p.get("offer","starter"), LINKS["starter"])
+            subject = f"Content automation for {p.get('company','your business')}"
+            body    = f"{fname},\n\nBuilt AI that runs content ops automatically — social, blog, email, SEO. 24/7 without staff.\n\nThought it might help given your role.\n\n→ {link}\n\nSean Thomas\nNY Spotlight Report"
 
-Running an AI system that handles all content ops automatically — social, blog, email, SEO. 24/7, no staff needed.
-
-Using it at NY Spotlight Report now. Thought it might help.
-
-→ {offer_link}
-
-Sean Thomas
-NY Spotlight Report"""
-        
-        if send_email(email, subject, body):
-            sent+=1
-            supa_req("POST","contacts",{"email":email,"name":f"{p.get('first_name','')} {p.get('last_name','')}".strip(),
-                "stage":"CONTACTED","score":55,"source":f"apollo_hunt","tags":["cold_outreach","apollo_hunt"]})
-            supa_req("POST","conversation_log",{"channel":"email","direction":"outbound",
-                "body":f"Cold email: {subject}","intent":"revenue_outreach","agent_name":"AlwaysHuntingBot",
-                "metadata":{"email":email,"company":p.get("company",""),"sender":GMAIL_USER}})
-            log.info(f"  ✅ {fname} @ {p.get('company','?')} — {p.get('email','')}")
+        if send(email, subject, body):
+            sent += 1
+            details.append(f"{fname} @ {p.get('company','?')}")
+            log.info(f"  ✅ {fname} ({email})")
+            supa("POST","contacts",{"email":email,
+                "name": f"{p.get('first_name','')} {p.get('last_name','')}".strip(),
+                "stage":"CONTACTED","score":55,"source":"apollo_hunt",
+                "tags":["cold_outreach","apollo_hunt"]})
+            supa("POST","conversation_log",{"channel":"email","direction":"outbound",
+                "body":f"Cold email: {subject}","intent":"revenue_outreach",
+                "agent_name":"HuntingBot",
+                "metadata":{"email":email,"company":p.get("company",""),
+                            "smtp_user":SMTP_USER,"from_display":FROM_EMAIL}})
         else:
+            failed+=1
             log.warning(f"  ❌ Failed: {email}")
         time.sleep(2)
-    
-    if sent>0 and PUSH_API and PUSH_USER:
-        data=json.dumps({"token":PUSH_API,"user":PUSH_USER,
-            "title":f"🎯 {sent} emails sent from nyspotlightreportny@gmail.com",
-            "message":f"ICP: {icp['titles'][0]}\nSent: {sent}\nSkipped: {skipped}",
+
+    if sent > 0 and PUSH_API and PUSH_USER:
+        data = json.dumps({"token":PUSH_API,"user":PUSH_USER,
+            "title":f"🎯 {sent} emails sent",
+            "message":"\n".join(details[:3])+(f"\n+{sent-3}" if sent>3 else "")+
+                      f"\n\nFrom: {FROM_EMAIL}\nReplies→ {REPLY_TO}",
             "priority":-1}).encode()
-        try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
+        try: urllib.request.urlopen(urllib.request.Request(
+            "https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
         except: pass
-    
-    log.info(f"Done: {sent} sent, {skipped} skipped")
-    return {"sent":sent,"skipped":skipped,"sender":GMAIL_USER}
+
+    log.info(f"Done: sent={sent} skipped={skipped} failed={failed}")
+    return {"sent":sent,"skipped":skipped,"failed":failed,
+            "smtp":SMTP_USER,"from":FROM_EMAIL}
 
 if __name__ == "__main__": run()
