@@ -1,0 +1,83 @@
+name: "📬 Email Action Bots — Priya + Sweepstakes + Affiliates"
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'   # Every 4 hours
+    - cron: '0 9 * * *'     # 9am daily — affiliate signup run
+  workflow_dispatch:
+
+# Department: Email Intelligence + Automation
+# Priya Sharma: triage, classify, queue
+# Sweepstakes Bot: auto-enter queued contests
+# Affiliate Bot: auto-apply to affiliate programs
+
+env:
+  GMAIL_USER:           ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
+  PRIORITY_EMAIL:       seanb041992+priority@gmail.com
+  ENTRY_FIRST_NAME:     Sean
+  ENTRY_LAST_NAME:      Thomas
+  ENTRY_FULL_NAME:      Sean Thomas
+  ENTRY_EMAIL:          ${{ secrets.GMAIL_USER }}
+  ENTRY_EMAIL_ALT:      seanb041992+sweep@gmail.com
+  ENTRY_CITY:           Coram
+  ENTRY_STATE:          NY
+  ENTRY_ZIP:            "11727"
+  ENTRY_DOB:            04/19/1992
+  APPLICANT_FIRST:      Sean
+  APPLICANT_LAST:       Thomas
+  APPLICANT_NAME:       Sean Thomas
+  APPLICANT_EMAIL:      ${{ secrets.GMAIL_USER }}
+  APPLICANT_COMPANY:    NY Spotlight Report
+  APPLICANT_SITE:       https://nyspotlightreport.com
+  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+
+jobs:
+
+  priya-email-triage:
+    name: "Priya — Email Triage (classify + queue)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests anthropic -q
+      - run: python agents/priya_sharma_email_agent.py || echo "Priya triage completed"
+
+  sweepstakes-auto-entry:
+    name: "Sweepstakes — Auto Enter (Playwright)"
+    runs-on: ubuntu-latest
+    needs: priya-email-triage
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Install Playwright + Chrome
+        run: |
+          pip install playwright requests anthropic -q
+          playwright install chromium --with-deps
+      - name: Enter all queued sweepstakes
+        run: python bots/sweepstakes_auto_entry_bot.py || echo "Sweepstakes entry completed"
+
+  affiliate-auto-signup:
+    name: "Affiliates — Auto Apply (Playwright)"
+    runs-on: ubuntu-latest
+    needs: priya-email-triage
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Install Playwright + Chrome
+        run: |
+          pip install playwright requests anthropic -q
+          playwright install chromium --with-deps
+      - name: Apply to all pending affiliate programs
+        run: python bots/affiliate_auto_signup_bot.py || echo "Affiliate signup completed"
