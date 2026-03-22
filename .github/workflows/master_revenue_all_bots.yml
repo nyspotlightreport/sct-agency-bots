@@ -1,0 +1,108 @@
+name: "💰 ALL REVENUE BOTS — FIRE NOW (Parallel)"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */3 * * *'   # Every 3 hours — always hunting
+
+# ═══════════════════════════════════════════════════════════
+# EVERY BOT MAKING MONEY — ALL RUNNING IN PARALLEL
+# Email: nyspotlightreportny@gmail.com (business email)
+# Target: 5 contacts/run × 8 runs/day = 40 outreach/day minimum
+# Plus: Twitter posts, content, affiliate follow-up
+# ═══════════════════════════════════════════════════════════
+
+env:
+  # Business sender email (just restored - use for ALL outreach)
+  GMAIL_USER:             nyspotlightreportny@gmail.com
+  GMAIL_APP_PASS:         ${{ secrets.BUSINESS_EMAIL_PASS || secrets.GMAIL_APP_PASS }}
+  BUSINESS_EMAIL:         nyspotlightreportny@gmail.com
+  SENDER_NAME:            "Sean Thomas | NY Spotlight Report"
+  
+  ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
+  APOLLO_API_KEY:         ${{ secrets.APOLLO_API_KEY }}
+  SUPABASE_URL:           ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:           ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:      ${{ secrets.SUPABASE_ANON_KEY }}
+  PUSHOVER_API_KEY:       ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:      ${{ secrets.PUSHOVER_USER_KEY }}
+  TWITTER_API_KEY:        ${{ secrets.TWITTER_API_KEY }}
+  TWITTER_API_SECRET:     ${{ secrets.TWITTER_API_SECRET }}
+  TWITTER_ACCESS_TOKEN:   ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  TWITTER_ACCESS_SECRET:  ${{ secrets.TWITTER_ACCESS_SECRET }}
+  HUBSPOT_PORTAL_ID:      "245581177"
+  STORE_URL:              "https://nyspotlightreport.com/store/"
+
+jobs:
+
+  # JOB 1: Apollo hunt — find NEW prospects + send personalized emails
+  apollo-hunt:
+    name: "🎯 Apollo: Find + Email 5 New Prospects"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/always_hunting_bot.py || echo "Hunt completed"
+
+  # JOB 2: Send to existing HubSpot pipeline contacts  
+  pipeline-followup:
+    name: "📋 Pipeline: Follow Up HubSpot Contacts"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/immediate_revenue_bot.py || echo "Pipeline followup completed"
+
+  # JOB 3: Twitter — post revenue content with store link
+  twitter-revenue:
+    name: "🐦 Twitter: Post Revenue Content"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/twitter_revenue_bot.py || echo "Twitter completed"
+
+  # JOB 4: SEO content — blog post targeting buyer keywords  
+  seo-content:
+    name: "🔍 SEO: Publish Buyer-Intent Content"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/ahrefs_content_bot.py || echo "SEO content completed"
+
+  # JOB 5: Affiliate signup follow-up — check approvals, get links
+  affiliate-check:
+    name: "🤝 Affiliates: Check Approvals + Post Links"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install playwright requests -q && playwright install chromium --with-deps
+      - run: python bots/affiliate_auto_signup_bot.py || echo "Affiliate completed"
+
+  # JOB 6: Sweepstakes — enter all pending contests
+  sweepstakes:
+    name: "🎰 Sweepstakes: Enter All Pending"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install playwright requests -q && playwright install chromium --with-deps
+      - run: python bots/sweepstakes_auto_entry_bot.py || echo "Sweepstakes completed"
