@@ -18,6 +18,13 @@
   [headers.values]
     Cache-Control = "public, max-age=60"
 
+# --- API redirects (all Netlify functions) ---
+
+[[redirects]]
+  from = "/api/lead-capture"
+  to   = "/.netlify/functions/lead-capture"
+  status = 200
+
 [[redirects]]
   from = "/api/linkedin-callback"
   to   = "/.netlify/functions/linkedin-callback"
@@ -35,10 +42,20 @@
 
 [[redirects]]
   from = "/api/news"
-  to   = "/.netlify/functions/api-news"
+  to   = "/.netlify/functions/knowledge-base"
   status = 200
 
 [[redirects]]
-  from = "/api/stocks"
-  to   = "/.netlify/functions/stocks"
+  from = "/api/knowledge-base"
+  to   = "/.netlify/functions/knowledge-base"
+  status = 200
+
+[[redirects]]
+  from = "/api/gumroad-delivery"
+  to   = "/.netlify/functions/gumroad-delivery"
+  status = 200
+
+[[redirects]]
+  from = "/api/chat-lead"
+  to   = "/.netlify/functions/chat-lead-capture"
   status = 200
