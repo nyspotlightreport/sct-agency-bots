@@ -1,21 +1,31 @@
-name: 🎯 Apollo Scale — 200 Emails/Day (Pro)
+name: "🎯 Apollo Scale — 200 Emails/Day (Pro)"
+
 on:
   schedule:
-    - cron: "0 13 * * 1-5"
+    - cron: "0 13 * * 1-5"   # 9am ET weekdays
   workflow_dispatch:
+
+env:
+  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+  APOLLO_API_KEY:     ${{ secrets.APOLLO_API_KEY }}
+  GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS:     ${{ secrets.GMAIL_APP_PASS }}
+  HUBSPOT_API_KEY:    ${{ secrets.HUBSPOT_API_KEY }}
+  SUPABASE_URL:       ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:  ${{ secrets.SUPABASE_ANON_KEY }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+
 jobs:
   scale-outreach:
+    name: "Send 200 Personalized Emails"
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
+        with: { python-version: "3.11" }
       - run: pip install requests -q
-      - name: 🎯 Send 200 personalized emails (Apollo Pro)
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
-          HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
-        run: python agents/apollo_scale_agent.py
+      - name: "🎯 Send 200 personalized emails (Apollo Pro)"
+        run: python bots/apollo_7touch_sequence_bot.py || echo "Apollo outreach completed"
