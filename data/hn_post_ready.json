@@ -1,8 +1,0 @@
-{
-  "title": "Show HN: I built 63 AI bots to run my entire content business (blog, newsletter, social, cold email)",
-  "url": "https://nyspotlightreport.com",
-  "text": "Six months ago I was spending 20+ hours a week on content marketing. Now I spend zero.\n\nI built 63 Python bots and 17 Claude AI agents that run autonomously via GitHub Actions. Together they:\n\n- Publish daily blog posts (SEO-optimized)\n- Send weekly newsletters (Beehiiv)\n- Post to 6 social platforms daily\n- Run cold email outreach (200 personalized emails/day)\n- Monitor brand mentions and reputation every 4 hours\n- Track competitor moves weekly\n- Generate YouTube Shorts scripts\n- Auto-deliver digital products\n- Run SERP analysis and backlink tracking via Ahrefs\n\nTotal cost: ~$70/month (Claude API + VPS + tools)\nEquivalent human cost: $4,000-8,000/month\n\nThe whole thing runs on GitHub Actions on a schedule. When I need a new bot, I describe what it should do and it gets built. When something breaks, the watchdog bot notifies me.\n\nHappy to answer questions about the architecture, which Claude models work best for which tasks, cost optimization, etc.\n\nSource: nyspotlightreport.com/blog/automated-content-operation/",
-  "submit_url": "https://news.ycombinator.com/submit",
-  "best_time": "Tuesday-Thursday 8-11 AM EST",
-  "status": "ready_to_post"
-}

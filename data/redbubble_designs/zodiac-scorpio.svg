@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
-  <rect width="3000" height="3000" fill="#0a0005"/>
-  <text x="1500" y="700" font-family="Georgia" font-size="90" fill="#880000" text-anchor="middle" letter-spacing="20">SCORPIO</text>
-  <text x="1500" y="900" font-family="Georgia" font-size="60" fill="#440000" text-anchor="middle" letter-spacing="8">♏ OCT 23 - NOV 21 ♏</text>
-  <circle cx="1500" cy="1350" r="400" fill="none" stroke="#880000" stroke-width="3"/>
-  <circle cx="1500" cy="1350" r="380" fill="none" stroke="#440000" stroke-width="1"/>
-  <text x="1500" y="1400" font-family="serif" font-size="280" fill="#cc0000" text-anchor="middle">♏</text>
-  <text x="1500" y="2050" font-family="Georgia" font-size="70" fill="#660000" text-anchor="middle" font-style="italic">Passionate. Powerful. Loyal.</text>
-</svg>

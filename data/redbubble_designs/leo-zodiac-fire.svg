@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
-  <rect width="3000" height="3000" fill="#0a0000"/>
-  <text x="1500" y="650" font-family="Georgia" font-size="85" fill="#FF6600" text-anchor="middle" letter-spacing="20">LEO</text>
-  <text x="1500" y="820" font-family="Georgia" font-size="55" fill="#884400" text-anchor="middle" letter-spacing="8">♌ JUL 23 - AUG 22 ♌</text>
-  <circle cx="1500" cy="1400" r="420" fill="none" stroke="#FF6600" stroke-width="3" opacity="0.6"/>
-  <text x="1500" y="1500" font-family="serif" font-size="350" fill="#FF8800" text-anchor="middle">♌</text>
-  <text x="1500" y="2080" font-family="Georgia" font-size="68" fill="#AA5500" text-anchor="middle" font-style="italic">Bold. Creative. Confident.</text>
-</svg>
