@@ -28,7 +28,7 @@ for d in DIRS:
 print(f"  Generated {gen}/17")
 
 # ══ STEP 3: EMAIL REDIRECT ══
-print("\n[3/5] Email redirect: seanb041992 -> nyspotlightreport@gmail.com...")
+print("\n[3/5] Email redirect: nyspotlightreport -> nyspotlightreport@gmail.com...")
 EXTS={'.py','.js','.yml','.yaml','.json','.md','.html','.ts','.sh','.bat','.ps1'}
 SKIP={'.git','node_modules','__pycache__'}
 modified=[]

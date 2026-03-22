@@ -15,7 +15,7 @@ env:
   ENTRY_LAST_NAME:     Thomas
   ENTRY_FULL_NAME:     Sean Thomas
   ENTRY_EMAIL:         ${{ secrets.GMAIL_USER }}
-  ENTRY_EMAIL_ALT:     seanb041992+sweep@gmail.com
+  ENTRY_EMAIL_ALT:     nyspotlightreport+sweep@gmail.com
   ENTRY_CITY:          Coram
   ENTRY_STATE:         NY
   ENTRY_ZIP:           "11727"

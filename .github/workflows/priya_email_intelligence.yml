@@ -8,12 +8,12 @@ on:
 # Department: Email Intelligence
 # Head: Priya Sharma — Chief Email Intelligence Officer
 # Mission: Sean never sees a low-priority email again.
-# Priority inbox: seanb041992+priority@gmail.com
+# Priority inbox: nyspotlightreport+priority@gmail.com
 
 env:
   GMAIL_USER:         ${{ secrets.GMAIL_USER }}
   GMAIL_APP_PASS:     ${{ secrets.GMAIL_APP_PASS }}
-  PRIORITY_EMAIL:     seanb041992+priority@gmail.com
+  PRIORITY_EMAIL:     nyspotlightreport+priority@gmail.com
   ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
   SUPABASE_URL:       ${{ secrets.SUPABASE_URL }}
   SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}

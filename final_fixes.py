@@ -2,12 +2,12 @@ import os, subprocess
 REPO = r'C:\Users\S\sct-agency-bots'
 os.chdir(REPO)
 files_fixes = [
-    ('bots/affiliate_engine.py', [('seanb041992+affiliates@gmail.com','nyspotlightreport+affiliates@gmail.com'),('seanb041992@gmail.com','nyspotlightreport@gmail.com')]),
-    ('bots/email_monitor_bot.py', [('seanb041992+affiliates@gmail.com','nyspotlightreport+affiliates@gmail.com'),('seanb041992+sweep@gmail.com','nyspotlightreport+sweep@gmail.com'),('seanb041992@gmail.com','nyspotlightreport@gmail.com')]),
-    ('bots/faceless_webinar_voice_bot.py', [('seanb041992','nyspotlightreport')]),
-    ('bots/sweepstakes_auto_entry_bot.py', [('seanb041992+sweep@gmail.com','nyspotlightreport+sweep@gmail.com'),('seanb041992@gmail.com','nyspotlightreport@gmail.com')]),
-    ('bots/webinar_video_generator.py', [('seanb041992','nyspotlightreport')]),
-    ('bots/affiliate_direct_apply_bot.py', [('seanb041992@gmail.com','nyspotlightreport@gmail.com')]),
+    ('bots/affiliate_engine.py', [('nyspotlightreport+affiliates@gmail.com','nyspotlightreport+affiliates@gmail.com'),('nyspotlightreport@gmail.com','nyspotlightreport@gmail.com')]),
+    ('bots/email_monitor_bot.py', [('nyspotlightreport+affiliates@gmail.com','nyspotlightreport+affiliates@gmail.com'),('nyspotlightreport+sweep@gmail.com','nyspotlightreport+sweep@gmail.com'),('nyspotlightreport@gmail.com','nyspotlightreport@gmail.com')]),
+    ('bots/faceless_webinar_voice_bot.py', [('nyspotlightreport','nyspotlightreport')]),
+    ('bots/sweepstakes_auto_entry_bot.py', [('nyspotlightreport+sweep@gmail.com','nyspotlightreport+sweep@gmail.com'),('nyspotlightreport@gmail.com','nyspotlightreport@gmail.com')]),
+    ('bots/webinar_video_generator.py', [('nyspotlightreport','nyspotlightreport')]),
+    ('bots/affiliate_direct_apply_bot.py', [('nyspotlightreport@gmail.com','nyspotlightreport@gmail.com')]),
 ]
 fixed = 0
 for fpath, replacements in files_fixes:

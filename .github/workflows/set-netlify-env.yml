@@ -1,34 +1,60 @@
-name: Set Netlify Env Vars
+name: Sync ALL Secrets to Netlify
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/set-netlify-env.yml']
 jobs:
-  set-env:
+  sync-env:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
-      - name: Set env vars via CLI
+      - name: Sync all critical env vars
         run: |
           SITE_ID="8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
-          
-          set_var() {
-            netlify env:set "$1" "$2" --site "$SITE_ID" 2>&1 | tail -1
-          }
-          
-          echo "Setting environment variables on Netlify..."
-          set_var "NEWSAPI_KEY"           "$NEWSAPI_KEY_VAL"     && echo "✅ NEWSAPI_KEY"
-          set_var "ANTHROPIC_API_KEY"     "$ANTHROPIC_KEY_VAL"   && echo "✅ ANTHROPIC_API_KEY"
-          set_var "ALPHA_VANTAGE_API_KEY" "$AV_KEY_VAL"          && echo "✅ ALPHA_VANTAGE_API_KEY"
-          set_var "PUBLER_API_KEY"        "$PUBLER_KEY_VAL"      && echo "✅ PUBLER_API_KEY"
-          set_var "OPENAI_API_KEY"        "$OPENAI_KEY_VAL"      && echo "✅ OPENAI_API_KEY"
-          
-          echo "Triggering redeploy..."
-          netlify deploy --prod --dir site --site "$SITE_ID" --message "Env vars updated" 2>&1 | tail -5
+          sv() { netlify env:set "$1" "$2" --site "$SITE_ID" 2>&1 | tail -1; echo "  set $1"; }
+          echo "=== SYNCING ALL CRITICAL SECRETS TO NETLIFY ==="
+          sv "STRIPE_SECRET_KEY"    "$V_STRIPE"
+          sv "SUPABASE_URL"         "$V_SUPA_URL"
+          sv "SUPABASE_KEY"         "$V_SUPA_KEY"
+          sv "SUPABASE_ANON_KEY"    "$V_SUPA_ANON"
+          sv "PUSHOVER_API_KEY"     "$V_PUSH_API"
+          sv "PUSHOVER_USER_KEY"    "$V_PUSH_USER"
+          sv "GH_PAT"              "$V_GH_PAT"
+          sv "GMAIL_APP_PASS"      "$V_GMAIL_PASS"
+          sv "GMAIL_USER"          "$V_GMAIL_USER"
+          sv "SMTP_USER"           "$V_SMTP_USER"
+          sv "HUBSPOT_API_KEY"     "$V_HS_KEY"
+          sv "ANTHROPIC_API_KEY"   "$V_ANTHROPIC"
+          sv "APOLLO_API_KEY"      "$V_APOLLO"
+          sv "NEWSAPI_KEY"         "$V_NEWS"
+          sv "OPENAI_API_KEY"      "$V_OPENAI"
+          sv "AHREFS_API_KEY"      "$V_AHREFS"
+          sv "TICKET_TAILOR_API_KEY" "$V_TT"
+          sv "BEEHIIV_API_KEY"     "$V_BEEHIIV"
+          echo "=== TRIGGERING REDEPLOY ==="
+          netlify deploy --prod --dir site --site "$SITE_ID" --message "All env vars synced" 2>&1 | tail -5
+          echo "=== DONE ==="
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NEWSAPI_KEY_VAL:    ${{ secrets.NEWSAPI_KEY }}
-          ANTHROPIC_KEY_VAL:  ${{ secrets.ANTHROPIC_API_KEY }}
-          AV_KEY_VAL:         ${{ secrets.ALPHA_VANTAGE_API_KEY }}
-          PUBLER_KEY_VAL:     ${{ secrets.PUBLER_API_KEY }}
-          OPENAI_KEY_VAL:     ${{ secrets.OPENAI_API_KEY }}
+          V_STRIPE:      ${{ secrets.STRIPE_SECRET_KEY }}
+          V_SUPA_URL:    ${{ secrets.SUPABASE_URL }}
+          V_SUPA_KEY:    ${{ secrets.SUPABASE_KEY }}
+          V_SUPA_ANON:   ${{ secrets.SUPABASE_ANON_KEY }}
+          V_PUSH_API:    ${{ secrets.PUSHOVER_API_KEY }}
+          V_PUSH_USER:   ${{ secrets.PUSHOVER_USER_KEY }}
+          V_GH_PAT:      ${{ secrets.GH_PAT }}
+          V_GMAIL_PASS:  ${{ secrets.GMAIL_APP_PASS }}
+          V_GMAIL_USER:  ${{ secrets.GMAIL_USER }}
+          V_SMTP_USER:   ${{ secrets.SMTP_USER }}
+          V_HS_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
+          V_ANTHROPIC:   ${{ secrets.ANTHROPIC_API_KEY }}
+          V_APOLLO:      ${{ secrets.APOLLO_API_KEY }}
+          V_NEWS:        ${{ secrets.NEWSAPI_KEY }}
+          V_OPENAI:      ${{ secrets.OPENAI_API_KEY }}
+          V_AHREFS:      ${{ secrets.AHREFS_API_KEY }}
+          V_TT:          ${{ secrets.TICKET_TAILOR_API_KEY }}
+          V_BEEHIIV:     ${{ secrets.BEEHIIV_API_KEY }}

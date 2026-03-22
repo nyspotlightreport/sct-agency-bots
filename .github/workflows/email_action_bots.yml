@@ -14,12 +14,12 @@ on:
 env:
   GMAIL_USER:           ${{ secrets.GMAIL_USER }}
   GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
-  PRIORITY_EMAIL:       seanb041992+priority@gmail.com
+  PRIORITY_EMAIL:       nyspotlightreport+priority@gmail.com
   ENTRY_FIRST_NAME:     Sean
   ENTRY_LAST_NAME:      Thomas
   ENTRY_FULL_NAME:      Sean Thomas
   ENTRY_EMAIL:          ${{ secrets.GMAIL_USER }}
-  ENTRY_EMAIL_ALT:      seanb041992+sweep@gmail.com
+  ENTRY_EMAIL_ALT:      nyspotlightreport+sweep@gmail.com
   ENTRY_CITY:           Coram
   ENTRY_STATE:          NY
   ENTRY_ZIP:            "11727"
