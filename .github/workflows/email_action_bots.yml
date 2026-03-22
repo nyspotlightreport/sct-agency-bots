@@ -2,7 +2,7 @@ name: "📬 Email Action Bots — Priya + Sweepstakes + Affiliates"
 
 on:
   schedule:
-    - cron: '0 */4 * * *'   # Every 4 hours
+    - cron: '0 7 * * *'  # Reduced: was 6x/day, now daily digest   # Every 4 hours
     - cron: '0 9 * * *'     # 9am daily — affiliate signup run
   workflow_dispatch:
 
