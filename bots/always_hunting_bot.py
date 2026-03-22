@@ -20,7 +20,7 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
 log = logging.getLogger("hunting")
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [HUNT] %(message)s")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
 # ── SMTP CONFIG — uses existing working credentials ───────
 SMTP_USER    = os.environ.get("SMTP_USER",     "seanb041992@gmail.com")
