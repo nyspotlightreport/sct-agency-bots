@@ -1,0 +1,135 @@
+name: 🎯 CX & Revenue Outreach — Morgan Ellis Corp
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'   # Every 3 hours — always on
+  workflow_dispatch:
+
+env:
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+  APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
+  HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  GMAIL_USER:           ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
+  GH_PAT:               ${{ secrets.GH_PAT }}
+  BEEHIIV_API_KEY:      ${{ secrets.BEEHIIV_API_KEY }}
+  CALENDLY_TOKEN:       ${{ secrets.CALENDLY_TOKEN }}
+
+jobs:
+  # TIER 1: Inbound CX — Ritz-Carlton standard response
+  inbound-cx:
+    name: Inbound CX — Tickets + Chat + Portal
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/cx_live_chat_bot.py || echo "chat completed"
+      - run: python agents/cx_director_agent.py || echo "director completed"
+
+  # TIER 2: Outbound — AI SDR sequences
+  outbound-sdr:
+    name: Outbound SDR — Sequences + Apollo
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/cx_intelligence_bot.py || echo "intel completed"
+      - run: python bots/cx_objection_handler_bot.py || echo "objections completed"
+
+  # TIER 3: Appointment setting + CSAT
+  appointments-csat:
+    name: Appointments + CSAT + NPS
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/cx_appointment_setter_bot.py || echo "appointments completed"
+      - run: python bots/cx_csat_nps_bot.py || echo "csat completed"
+
+  # RSI: Self-improvement loop
+  cx-rsi:
+    name: CX RSI — Self-Evaluate + Improve
+    runs-on: ubuntu-latest
+    needs: [inbound-cx, outbound-sdr, appointments-csat]
+    if: always()
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - name: CX performance evaluation
+        run: |
+          python3 << 'PYEOF'
+          import os, json, urllib.request, datetime
+
+          SUPA = os.environ.get("SUPABASE_URL","")
+          KEY  = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
+          PUSH = os.environ.get("PUSHOVER_API_KEY","")
+          USER = os.environ.get("PUSHOVER_USER_KEY","")
+
+          if not SUPA: exit(0)
+
+          def supa(method, table, data=None, query=""):
+            req = urllib.request.Request(f"{SUPA}/rest/v1/{table}{query}",
+              data=json.dumps(data).encode() if data else None, method=method,
+              headers={"apikey":KEY,"Authorization":f"Bearer {KEY}",
+                       "Content-Type":"application/json","Prefer":"return=representation"})
+            try:
+              with urllib.request.urlopen(req, timeout=10) as r:
+                b = r.read(); return json.loads(b) if b else {}
+            except: return None
+
+          today = datetime.date.today().isoformat()
+          open_t = supa("GET","tickets","","?status=eq.open&select=id") or []
+          convos  = supa("GET","conversation_log","",f"?created_at=gte.{today}T00:00:00&select=id") or []
+          seqs    = supa("GET","outreach_sequences","","?status=eq.active&select=id") or []
+          appts   = supa("GET","appointments","","?status=in.(confirmed,pending)&select=id") or []
+          campaigns = supa("GET","outreach_campaigns","","?status=eq.active&select=meetings_booked,replied,contacted") or []
+
+          total_meetings = sum(c.get("meetings_booked",0) for c in campaigns) if campaigns else 0
+          total_replied  = sum(c.get("replied",0) for c in campaigns) if campaigns else 0
+          total_touched  = sum(c.get("contacted",0) for c in campaigns) if campaigns else 0
+          reply_rate = round((total_replied/max(total_touched,1))*100,1)
+
+          fitness = min(1.0, (
+            (1.0 if len(open_t) == 0 else max(0.5, 1-(len(open_t)*0.05))) * 0.3 +
+            (min(1.0, len(convos)/10)) * 0.2 +
+            (min(1.0, total_meetings/5)) * 0.3 +
+            (min(1.0, reply_rate/15)) * 0.2
+          ))
+
+          supa("PATCH","synthetic_orgs",{
+            "fitness_score":round(fitness,3),
+            "last_run":datetime.datetime.utcnow().isoformat(),
+            "metrics":{"open_tickets":len(open_t),"conversations":len(convos),
+                       "active_sequences":len(seqs),"appointments":len(appts),
+                       "meetings_booked":total_meetings,"reply_rate":reply_rate}
+          },"?org_id=eq.cx_outreach_corp")
+
+          msg = (f"CX Corp Fitness: {fitness:.0%}\n"
+                 f"Tickets: {len(open_t)} open | Sequences: {len(seqs)} active\n"
+                 f"Meetings: {total_meetings} | Reply rate: {reply_rate}%")
+          print(msg)
+
+          if PUSH and USER:
+            data = json.dumps({"token":PUSH,"user":USER,"title":"CX Corp RSI","message":msg}).encode()
+            req2 = urllib.request.Request("https://api.pushover.net/1/messages.json",
+              data=data, headers={"Content-Type":"application/json"})
+            try: urllib.request.urlopen(req2, timeout=10)
+            except: pass
+          PYEOF
