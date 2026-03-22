@@ -15,6 +15,8 @@ Runs every 30 min. Finds 5 fresh ICP prospects via Apollo.
 Claude personalizes each email. Sends immediately. Logs to Supabase.
 """
 import os, json, logging, smtplib, urllib.request, urllib.parse, time, random
+
+from genius_thinking_engine import genius_email, get_genius_engine
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
@@ -183,7 +185,15 @@ def run():
         if not email: continue
         if already_contacted(email): skipped+=1; continue
 
-        content = personalize(p)
+        # GENIUS ENGINE: Uses Munger-Musk-Da Vinci thinking for email
+        employees = p.get("employees", 50)
+        offer_map = {"starter":"proflow_ai","growth":"proflow_growth","elite":"proflow_elite",
+                     "dfy":"dfy","agency":"agency"}
+        offer_key = offer_map.get(p.get("offer","starter"), "proflow_ai")
+        genius_result = genius_email(
+            fname, p.get("title",""), p.get("company",""), employees, offer_key
+        )
+        content = genius_result.get("text","") if genius_result else None
         if content and "Subject:" in content:
             parts   = content.strip().split("\n", 2)
             subject = parts[0].replace("Subject:","").strip()
