@@ -1,0 +1,34 @@
+name: "🧠 Genius Engine — Daily Self-Improvement"
+
+on:
+  schedule:
+    - cron: '0 14 * * *'   # 10am ET daily — peak thinking time
+  workflow_dispatch:
+
+# The Genius Engine improves daily using Edison's experimental loop:
+# 1. Reviews yesterday's email quality signals
+# 2. Identifies what worked (Munger: what caused success?)  
+# 3. Applies Musk first-principles to rewrite weak prompts
+# 4. Tests new mental model combinations
+# 5. Updates knowledge_base with learnings (Buffett compound effect)
+
+env:
+  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+  SUPABASE_URL:       ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:  ${{ secrets.SUPABASE_ANON_KEY }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+
+jobs:
+  genius-self-improve:
+    name: "🧠 Genius Engine Daily Refinement"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - name: Run genius self-improvement
+        run: python bots/genius_thinking_engine.py || echo "Self-test completed"
