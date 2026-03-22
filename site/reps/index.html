@@ -39,7 +39,6 @@ input:focus{border-color:rgba(201,168,76,.5)}
 </head>
 <body>
 
-<!-- Login -->
 <div class="login-wrap" id="loginWrap">
   <div class="login-card">
     <div class="logo">NY Spotlight Report</div>
@@ -51,7 +50,6 @@ input:focus{border-color:rgba(201,168,76,.5)}
   </div>
 </div>
 
-<!-- Portal (shown after login) -->
 <div class="portal" id="portal">
   <div class="header">
     <div>
@@ -71,7 +69,7 @@ input:focus{border-color:rgba(201,168,76,.5)}
   <div class="section">
     <div class="section-title">Your Unique Checkout Link</div>
     <div class="checkout-box">
-      <div style="font-size:14px;color:#94a3b8">Share this link with every prospect. Every sale is tracked to you automatically.</div>
+      <div style="font-size:14px;color:#94a3b8">Share this link. Every sale attributed to you automatically.</div>
       <div class="checkout-url" id="checkoutUrl">Loading...</div>
       <button onclick="copyLink()" style="margin-top:10px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:#22c55e;padding:6px 16px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600">Copy Link</button>
     </div>
@@ -100,48 +98,48 @@ input:focus{border-color:rgba(201,168,76,.5)}
 </div>
 
 <script>
-const SUPA = 'https://sazuogglxukumnvhvkms.supabase.co';
-const KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNhenVvZ2dseHVrdW1udmh2a21zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMTcxNTMsImV4cCI6MjA4OTY5MzE1M30.FQubC3llmkDgRjx28X1LrcEg1h5kCtFHbDxvmpYPYvI';
-
+// All DB calls go through our server-side Netlify function — no credentials in frontend
 async function login() {
   const code = document.getElementById('code').value.trim().toUpperCase();
   if (!code) return;
 
-  const r = await fetch(SUPA+'/rest/v1/rep_portal_access?access_code=eq.'+code+'&select=rep_id',{
-    headers:{'apikey':KEY,'Authorization':'Bearer '+KEY}
-  });
-  const data = await r.json();
-  if (!data || !data[0]) {
-    document.getElementById('loginErr').style.display='block'; return;
+  try {
+    const r = await fetch('/.netlify/functions/rep-portal-auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ access_code: code })
+    });
+    const data = await r.json();
+
+    if (!data.success || !data.rep) {
+      document.getElementById('loginErr').style.display = 'block';
+      return;
+    }
+
+    const rep = data.rep;
+    document.getElementById('loginWrap').style.display = 'none';
+    document.getElementById('portal').style.display = 'block';
+    document.getElementById('repName').textContent    = 'Welcome, ' + rep.first_name;
+    document.getElementById('repEmail').textContent   = rep.email;
+    document.getElementById('repCodeBadge').textContent = rep.rep_code || 'Pending';
+    document.getElementById('checkoutUrl').textContent  = rep.unique_checkout_url || ('https://nyspotlightreport.com/store/?rep=' + rep.rep_code);
+    document.getElementById('totalCloses').textContent  = rep.total_closes || 0;
+    document.getElementById('activeClients').textContent= rep.active_clients || 0;
+    document.getElementById('monthlyComm').textContent  = '$' + ((rep.monthly_recurring||0).toLocaleString());
+    document.getElementById('totalEarned').textContent  = '$' + ((rep.total_commission||0).toLocaleString());
+    window._checkoutUrl = rep.unique_checkout_url;
+  } catch(e) {
+    document.getElementById('loginErr').textContent = 'Connection error. Try again.';
+    document.getElementById('loginErr').style.display = 'block';
   }
-
-  const repId = data[0].rep_id;
-  const repR  = await fetch(SUPA+'/rest/v1/sales_reps?id=eq.'+repId+'&select=*',{
-    headers:{'apikey':KEY,'Authorization':'Bearer '+KEY}
-  });
-  const reps = await repR.json();
-  if (!reps || !reps[0]) return;
-  const rep = reps[0];
-
-  document.getElementById('loginWrap').style.display='none';
-  document.getElementById('portal').style.display='block';
-  document.getElementById('repName').textContent    = 'Welcome, ' + rep.first_name;
-  document.getElementById('repEmail').textContent   = rep.email;
-  document.getElementById('repCodeBadge').textContent = rep.rep_code || 'Pending';
-  document.getElementById('checkoutUrl').textContent  = rep.unique_checkout_url || 'https://nyspotlightreport.com/store/?rep='+rep.rep_code;
-  document.getElementById('totalCloses').textContent  = rep.total_closes || 0;
-  document.getElementById('activeClients').textContent= rep.active_clients || 0;
-  document.getElementById('monthlyComm').textContent  = '$'+(rep.monthly_recurring||0).toLocaleString();
-  document.getElementById('totalEarned').textContent  = '$'+(rep.total_commission||0).toLocaleString();
-  window._checkoutUrl = rep.unique_checkout_url;
 }
 
 function copyLink() {
   const url = window._checkoutUrl || document.getElementById('checkoutUrl').textContent;
-  navigator.clipboard.writeText(url).then(()=>{
+  navigator.clipboard.writeText(url).then(() => {
     const btn = event.target;
     btn.textContent = '✅ Copied!';
-    setTimeout(()=>btn.textContent='Copy Link',2000);
+    setTimeout(() => btn.textContent = 'Copy Link', 2000);
   });
 }
 
