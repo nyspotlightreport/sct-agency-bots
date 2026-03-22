@@ -42,7 +42,7 @@ def safe_to_send(email):
     return True, "ok"
 
 log = logging.getLogger("revenue_now")
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [REVENUE] %(message)s")
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
 GMAIL_USER    = os.environ.get("GMAIL_USER", "seanb041992@gmail.com")
 GMAIL_PASS    = os.environ.get("GMAIL_APP_PASS", "")
