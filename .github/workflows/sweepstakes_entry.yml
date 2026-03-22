@@ -1,0 +1,42 @@
+name: "🎰 Sweepstakes Auto-Entry — Direct HTTP"
+
+on:
+  schedule:
+    - cron: '0 9,13,17,21 * * *'   # 4x daily: 5am, 9am, 1pm, 5pm ET
+  workflow_dispatch:
+
+env:
+  SUPABASE_URL:       ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:  ${{ secrets.SUPABASE_ANON_KEY }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+  ENTRY_EMAIL_ALT:    ${{ secrets.ENTRY_EMAIL_SWEEP }}
+  ENTRY_FIRST_NAME:   "Sean"
+  ENTRY_LAST_NAME:    "Thomas"
+  ENTRY_FULL_NAME:    "Sean Thomas"
+  ENTRY_CITY:         "Coram"
+  ENTRY_STATE:        "NY"
+  ENTRY_ZIP:          "11727"
+  ENTRY_PHONE:        ${{ secrets.ENTRY_PHONE }}
+  ENTRY_ADDRESS1:     ${{ secrets.ENTRY_ADDRESS1 }}
+  ENTRY_DOB:          "04/19/1992"
+  TWOCAPTCHA_LOGIN:   ${{ secrets.TWOCAPTCHA_LOGIN }}
+  TWOCAPTCHA_PASSWORD: ${{ secrets.TWOCAPTCHA_PASSWORD }}
+
+jobs:
+  parse-and-enter:
+    name: "Parse digest + enter sweepstakes"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests playwright -q
+      - run: playwright install chromium --with-deps
+      - name: Parse digest emails into queue
+        run: python bots/sweepstakes_email_parser_bot.py || echo "parser done"
+      - name: Enter all pending sweepstakes
+        run: python bots/sweepstakes_auto_entry_bot.py || echo "entry done"
