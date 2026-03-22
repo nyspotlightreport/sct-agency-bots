@@ -175,7 +175,7 @@ Go to nyspotlightreport dot com slash store.
 Choose your plan.
 Your AI agency goes live within 24 hours.
 
-If you have questions, email seanb041992 at gmail dot com.
+If you have questions, email nyspotlightreport at gmail dot com.
 We respond within 24 hours — usually faster.
 
 This is not the future. This is running right now.

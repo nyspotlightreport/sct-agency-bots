@@ -9,8 +9,8 @@ SUPA_URL    = os.environ.get("SUPABASE_URL","")
 SUPA_KEY    = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
 PUSH_API    = os.environ.get("PUSHOVER_API_KEY","")
 PUSH_USER   = os.environ.get("PUSHOVER_USER_KEY","")
-AFF_EMAIL   = "seanb041992+affiliates@gmail.com"
-SWEEP_EMAIL = "seanb041992+sweep@gmail.com"
+AFF_EMAIL   = "nyspotlightreport+affiliates@gmail.com"
+SWEEP_EMAIL = "nyspotlightreport+sweep@gmail.com"
 
 WIN_KWORDS      = ['congratulations','you won','winner','prize claim','you have been selected','award']
 APPROVAL_KWORDS = ['approved','welcome to our affiliate','accepted','affiliate account','commission link','your affiliate']
