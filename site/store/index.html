@@ -3,222 +3,286 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NYSR Store — AI Automation Packages</title>
-<meta name="description" content="AI content and marketing automation packages for businesses. ProFlow AI from $97/month.">
+<title>NYSR Store — AI Agency Automation</title>
+<meta name="description" content="AI content and marketing automation for small businesses. From $97/month to full enterprise packages.">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#060a0f;color:#e2e8f0;min-height:100vh}
-.hero{text-align:center;padding:60px 20px 40px;background:linear-gradient(180deg,rgba(201,168,76,.06) 0%,transparent 100%)}
-.logo{font-size:12px;font-weight:700;letter-spacing:.15em;color:#64748b;text-transform:uppercase;margin-bottom:12px}
-h1{font-size:36px;font-weight:800;color:#f8fafc;line-height:1.15;margin-bottom:12px}
-h1 span{color:#C9A84C}
-.hero-sub{font-size:17px;color:#94a3b8;max-width:520px;margin:0 auto;line-height:1.6}
-.section{padding:40px 20px;max-width:1100px;margin:0 auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.3)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#060a0f;color:#e2e8f0;line-height:1.6}
+
+/* Header */
+.header{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06);max-width:1100px;margin:0 auto}
+.logo{font-size:16px;font-weight:700;color:#C9A84C;letter-spacing:.02em}
+.header-nav a{font-size:13px;color:#64748b;text-decoration:none;margin-left:20px}
+.header-nav a:hover{color:#e2e8f0}
+
+/* Hero */
+.hero{text-align:center;padding:60px 24px 40px;max-width:680px;margin:0 auto}
+.hero-badge{display:inline-block;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);color:#22c55e;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:.06em}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.15;color:#f8fafc;margin-bottom:16px}
+.hero h1 span{color:#C9A84C}
+.hero p{font-size:17px;color:#94a3b8;max-width:520px;margin:0 auto 32px}
+
+/* Toggle */
+.toggle-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:48px}
+.toggle-label{font-size:14px;color:#64748b;font-weight:500}
+.toggle-label.active{color:#f8fafc}
+.toggle{width:48px;height:26px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:13px;cursor:pointer;position:relative;transition:background .2s}
+.toggle.on{background:rgba(201,168,76,.25);border-color:rgba(201,168,76,.4)}
+.toggle-dot{width:20px;height:20px;background:#C9A84C;border-radius:50%;position:absolute;top:2px;left:3px;transition:left .2s}
+.toggle.on .toggle-dot{left:25px}
+.save-badge{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);color:#C9A84C;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;max-width:1100px;margin:0 auto;padding:0 24px 80px}
+
+/* Cards */
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:28px;position:relative;transition:border-color .2s,transform .2s}
+.card:hover{border-color:rgba(201,168,76,.3);transform:translateY(-2px)}
 .card.featured{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04)}
-.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:14px;letter-spacing:.06em}
-.badge-popular{background:rgba(201,168,76,.15);color:#C9A84C;border:1px solid rgba(201,168,76,.3)}
-.badge-free{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2)}
-.badge-enterprise{background:rgba(99,102,241,.1);color:#818cf8;border:1px solid rgba(99,102,241,.2)}
-.card-name{font-size:20px;font-weight:700;color:#f8fafc;margin-bottom:6px}
-.card-price{font-size:32px;font-weight:800;color:#C9A84C;margin-bottom:4px}
-.card-price span{font-size:14px;font-weight:500;color:#64748b}
-.card-desc{font-size:13px;color:#64748b;line-height:1.65;margin-bottom:20px}
-.features{list-style:none;margin-bottom:24px}
-.features li{font-size:13px;color:#94a3b8;padding:4px 0;padding-left:20px;position:relative}
-.features li::before{content:"✓";position:absolute;left:0;color:#22c55e;font-weight:700}
-.buy-btn{width:100%;background:#C9A84C;color:#060a0f;border:none;padding:13px;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;transition:opacity .2s}
-.buy-btn:hover{opacity:.88}
-.buy-btn:disabled{opacity:.5;cursor:not-allowed}
-.buy-btn.free-btn{background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.3)}
-.secure{text-align:center;padding:30px 20px;font-size:12px;color:#475569}
-.secure img{height:20px;vertical-align:middle;margin:0 4px;opacity:.6}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center}
-.overlay.active{display:flex}
-.modal{background:#0d1117;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center}
-.spinner{width:48px;height:48px;border:3px solid rgba(201,168,76,.2);border-top-color:#C9A84C;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px}
+.featured-ribbon{position:absolute;top:0;right:20px;background:#C9A84C;color:#060a0f;font-size:11px;font-weight:700;padding:4px 14px;border-radius:0 0 10px 10px;letter-spacing:.06em}
+
+.card-tier{font-size:11px;font-weight:600;letter-spacing:.1em;color:#64748b;text-transform:uppercase;margin-bottom:8px}
+.card-name{font-size:20px;font-weight:700;color:#f8fafc;margin-bottom:4px}
+.card-price{font-size:36px;font-weight:800;color:#C9A84C;margin-bottom:4px}
+.card-price .period{font-size:16px;font-weight:400;color:#64748b}
+.card-price .annual-note{font-size:13px;color:#64748b;font-weight:400}
+.card-desc{font-size:14px;color:#94a3b8;margin-bottom:20px;min-height:42px}
+.card-divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin:16px 0}
+.feature{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;font-size:13px;color:#94a3b8}
+.feature-icon{color:#22c55e;font-size:14px;flex-shrink:0;margin-top:1px}
+.feature strong{color:#e2e8f0}
+
+/* CTA */
+.cta-btn{width:100%;padding:14px;border:none;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;margin-top:20px;transition:opacity .2s,transform .1s}
+.cta-btn:hover{opacity:.9;transform:scale(.99)}
+.cta-btn:active{transform:scale(.97)}
+.cta-primary{background:#C9A84C;color:#060a0f}
+.cta-secondary{background:rgba(255,255,255,.06);color:#e2e8f0;border:1px solid rgba(255,255,255,.12)}
+
+/* Processing overlay */
+.overlay{display:none;position:fixed;inset:0;background:rgba(6,10,15,.85);z-index:100;align-items:center;justify-content:center}
+.overlay.show{display:flex}
+.spinner{width:48px;height:48px;border:3px solid rgba(201,168,76,.2);border-top-color:#C9A84C;border-radius:50%;animation:spin 0.8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.modal h3{font-size:18px;font-weight:600;color:#f8fafc;margin-bottom:8px}
-.modal p{font-size:14px;color:#64748b}
-.error-box{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;padding:14px;margin-top:16px;font-size:13px;color:#ef4444;display:none}
+.overlay-text{font-size:15px;color:#94a3b8;margin-top:16px}
+.overlay-wrap{text-align:center}
+
+/* Trust bar */
+.trust{display:flex;align-items:center;justify-content:center;gap:24px;padding:20px 24px;border-top:1px solid rgba(255,255,255,.05);flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:#64748b}
+.trust-icon{font-size:16px}
+
+/* Footer */
+.footer{text-align:center;padding:32px 24px;font-size:12px;color:#475569}
 </style>
 </head>
 <body>
 
-<div class="hero">
+<header class="header">
   <div class="logo">NY Spotlight Report</div>
-  <h1>AI Automation That <span>Actually Works</span></h1>
-  <p class="hero-sub">Content, SEO, social, email — all running on autopilot. Built for NY businesses, agencies, and entrepreneurs.</p>
+  <nav class="header-nav">
+    <a href="/">Home</a>
+    <a href="/proflow/">Learn More</a>
+    <a href="/agency/">Agency</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">LIVE — AI AUTOMATION STORE</div>
+  <h1>Your entire marketing operation<br><span>automated by AI</span></h1>
+  <p>Content. Social. Email. SEO. Outreach. All running 24/7 without you touching it. Starting at $97/month.</p>
 </div>
 
-<div class="section">
-  <div class="grid">
+<!-- Annual toggle -->
+<div class="toggle-wrap">
+  <span class="toggle-label active" id="monthly-label">Monthly</span>
+  <div class="toggle" id="billing-toggle" onclick="toggleBilling()"><div class="toggle-dot"></div></div>
+  <span class="toggle-label" id="annual-label">Annual</span>
+  <span class="save-badge" id="save-badge" style="display:none">Save up to 15%</span>
+</div>
 
-    <!-- Free Audit -->
-    <div class="card">
-      <span class="badge badge-free">FREE</span>
-      <div class="card-name">AI Automation Audit</div>
-      <div class="card-price">$0 <span>/ one time</span></div>
-      <div class="card-desc">Get a full analysis of your current content and marketing operations — and exactly what to automate first.</div>
-      <ul class="features">
-        <li>Current workflow analysis</li>
-        <li>AI automation roadmap</li>
-        <li>ROI estimate (avg $1,900/mo saved)</li>
-        <li>Delivered in 24 hours</li>
-      </ul>
-      <button class="buy-btn free-btn" onclick="checkout('audit')">Get Free Audit →</button>
-    </div>
+<div class="grid" id="offers-grid">
 
-    <!-- ProFlow AI -->
-    <div class="card">
-      <div class="card-name">ProFlow AI</div>
-      <div class="card-price">$97 <span>/ month</span></div>
-      <div class="card-desc">Full AI content + marketing automation. Social posts, blog articles, email sequences, and SEO — running daily without you.</div>
-      <ul class="features">
-        <li>Twitter/X daily posting</li>
-        <li>Blog articles 2x/week</li>
-        <li>Email sequences automated</li>
-        <li>SEO keyword tracking</li>
-        <li>Monthly performance report</li>
-        <li>30-day money-back guarantee</li>
-      </ul>
-      <button class="buy-btn" onclick="checkout('proflow-ai')">Start ProFlow AI →</button>
-    </div>
-
-    <!-- ProFlow Growth -->
-    <div class="card featured">
-      <span class="badge badge-popular">MOST POPULAR</span>
-      <div class="card-name">ProFlow Growth</div>
-      <div class="card-price">$297 <span>/ month</span></div>
-      <div class="card-desc">Full AI agency stack. Everything in ProFlow AI plus LinkedIn, advanced outreach automation, and weekly performance calls.</div>
-      <ul class="features">
-        <li>Everything in ProFlow AI</li>
-        <li>LinkedIn MWF posting</li>
-        <li>Cold email sequences (200/day)</li>
-        <li>Lead scoring + CRM</li>
-        <li>Weekly strategy call</li>
-        <li>Priority support</li>
-      </ul>
-      <button class="buy-btn" onclick="checkout('proflow-growth')">Start ProFlow Growth →</button>
-    </div>
-
-    <!-- ProFlow Elite -->
-    <div class="card">
-      <div class="card-name">ProFlow Elite</div>
-      <div class="card-price">$797 <span>/ month</span></div>
-      <div class="card-desc">Hands-on AI agency system. Full automation plus 4 live strategy sessions monthly with our team.</div>
-      <ul class="features">
-        <li>Everything in ProFlow Growth</li>
-        <li>4 live strategy sessions/month</li>
-        <li>Custom content direction</li>
-        <li>Competitor intelligence weekly</li>
-        <li>Dedicated Slack channel</li>
-        <li>4 meetings guarantee or refund</li>
-      </ul>
-      <button class="buy-btn" onclick="checkout('proflow-elite')">Start ProFlow Elite →</button>
-    </div>
-
-    <!-- DFY Setup -->
-    <div class="card">
-      <div class="card-name">DFY Setup</div>
-      <div class="card-price">$1,497 <span>/ one time</span></div>
-      <div class="card-desc">Done-for-you AI system setup. We configure everything in 14 days. Includes 30-day pilot of ProFlow Growth.</div>
-      <ul class="features">
-        <li>Full system configuration</li>
-        <li>Platform integrations (6+)</li>
-        <li>Custom content templates</li>
-        <li>30-day Growth pilot included</li>
-        <li>Live in 14 days guaranteed</li>
-        <li>Handoff training session</li>
-      </ul>
-      <button class="buy-btn" onclick="checkout('dfy-setup')">Start DFY Setup →</button>
-    </div>
-
-    <!-- Enterprise -->
-    <div class="card">
-      <span class="badge badge-enterprise">ENTERPRISE</span>
-      <div class="card-name">Enterprise Retainer</div>
-      <div class="card-price">$4,997 <span>/ month</span></div>
-      <div class="card-desc">Full-service AI agency retainer. Content, SEO, outreach, automation, and strategy — completely done for you.</div>
-      <ul class="features">
-        <li>Full agency team dedicated to you</li>
-        <li>Unlimited content production</li>
-        <li>Complete outbound automation</li>
-        <li>Monthly CEO-level reporting</li>
-        <li>Custom integrations</li>
-        <li>Cancellable anytime</li>
-      </ul>
-      <button class="buy-btn" onclick="checkout('enterprise')">Start Enterprise →</button>
-    </div>
-
+  <!-- ProFlow AI -->
+  <div class="card">
+    <div class="card-tier">Starter</div>
+    <div class="card-name">ProFlow AI</div>
+    <div class="card-price" id="price-proflow_ai">$97<span class="period">/mo</span></div>
+    <div class="card-desc">Full AI content + marketing automation. Everything running without you.</div>
+    <hr class="card-divider">
+    <div class="feature"><span class="feature-icon">✓</span><span>Daily social posts (6 platforms)</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>2× SEO blog posts/week</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Weekly newsletter</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Lead capture + email sequences</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>30-day money-back guarantee</span></div>
+    <button class="cta-btn cta-primary" onclick="checkout('proflow_ai')">Get ProFlow AI →</button>
   </div>
+
+  <!-- ProFlow Growth — FEATURED -->
+  <div class="card featured">
+    <div class="featured-ribbon">MOST POPULAR</div>
+    <div class="card-tier">Growth</div>
+    <div class="card-name">ProFlow Growth</div>
+    <div class="card-price" id="price-proflow_growth">$297<span class="period">/mo</span></div>
+    <div class="card-desc">Everything in AI + advanced outreach, lead scoring, CRM automation.</div>
+    <hr class="card-divider">
+    <div class="feature"><span class="feature-icon">✓</span><span><strong>Everything in ProFlow AI</strong></span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Apollo 200 outreach emails/day</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>AI lead scoring + CRM pipeline</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Weekly performance analytics</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Priority support</span></div>
+    <button class="cta-btn cta-primary" onclick="checkout('proflow_growth')">Get ProFlow Growth →</button>
+  </div>
+
+  <!-- ProFlow Elite -->
+  <div class="card">
+    <div class="card-tier">Elite</div>
+    <div class="card-name">ProFlow Elite</div>
+    <div class="card-price" id="price-proflow_elite">$797<span class="period">/mo</span></div>
+    <div class="card-desc">Hands-on AI agency. 4 strategy calls per month. Full customization.</div>
+    <hr class="card-divider">
+    <div class="feature"><span class="feature-icon">✓</span><span><strong>Everything in Growth</strong></span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>4 strategy meetings/month</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Custom AI voice + brand setup</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Dedicated account manager</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Meeting or money back guarantee</span></div>
+    <button class="cta-btn cta-primary" onclick="checkout('proflow_elite')">Get ProFlow Elite →</button>
+  </div>
+
+  <!-- DFY Setup -->
+  <div class="card">
+    <div class="card-tier">Done For You</div>
+    <div class="card-name">DFY Setup</div>
+    <div class="card-price">$1,497<span class="period"> one-time</span></div>
+    <div class="card-desc">We build your complete AI content system. Live in 14 days, guaranteed.</div>
+    <hr class="card-divider">
+    <div class="feature"><span class="feature-icon">✓</span><span>Complete system built for you</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Custom brand voice + tone</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>All platforms connected</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Live in 14 days or full refund</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>30-day onboarding support</span></div>
+    <button class="cta-btn cta-secondary" onclick="checkout('dfy_setup')">Get DFY Setup →</button>
+  </div>
+
+  <!-- DFY Agency -->
+  <div class="card">
+    <div class="card-tier">Agency</div>
+    <div class="card-name">DFY Agency</div>
+    <div class="card-price">$2,997<span class="period"> + $997/mo</span></div>
+    <div class="card-desc">Full agency-grade AI system. Custom build + ongoing management.</div>
+    <hr class="card-divider">
+    <div class="feature"><span class="feature-icon">✓</span><span>Full custom build</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>10 guaranteed meetings in 90 days</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Dedicated AI content team</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>White-label option available</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>ROI guarantee or cancellation</span></div>
+    <button class="cta-btn cta-secondary" onclick="checkout('dfy_agency')">Get DFY Agency →</button>
+  </div>
+
+  <!-- Enterprise -->
+  <div class="card">
+    <div class="card-tier">Enterprise</div>
+    <div class="card-name">Enterprise</div>
+    <div class="card-price">$4,997</div>
+    <div class="card-desc">Full enterprise AI automation. Closes the Salesforce gap at 1/10th the cost.</div>
+    <hr class="card-divider">
+    <div class="feature"><span class="feature-icon">✓</span><span>Complete AI operations overhaul</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Custom integrations + APIs</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Dedicated engineering support</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>SLA + uptime guarantees</span></div>
+    <div class="feature"><span class="feature-icon">✓</span><span>Priority escalation path</span></div>
+    <button class="cta-btn cta-secondary" onclick="checkout('enterprise')">Get Enterprise →</button>
+  </div>
+
 </div>
 
-<div class="secure">
-  🔒 Payments secured by Stripe &nbsp;·&nbsp; 256-bit SSL &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; 30-day money-back on monthly plans
+<!-- Trust bar -->
+<div class="trust">
+  <div class="trust-item"><span class="trust-icon">🔒</span> Secured by Stripe</div>
+  <div class="trust-item"><span class="trust-icon">↩️</span> 30-day money-back guarantee</div>
+  <div class="trust-item"><span class="trust-icon">⚡</span> Instant activation</div>
+  <div class="trust-item"><span class="trust-icon">🤖</span> No contracts on monthly plans</div>
 </div>
 
-<!-- Loading overlay -->
+<!-- Processing overlay -->
 <div class="overlay" id="overlay">
-  <div class="modal">
+  <div class="overlay-wrap">
     <div class="spinner"></div>
-    <h3 id="modal-title">Preparing your checkout...</h3>
-    <p id="modal-desc">Securing your connection with Stripe</p>
-    <div class="error-box" id="modal-error"></div>
-    <button id="modal-close" onclick="closeModal()" style="display:none;margin-top:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#94a3b8;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:14px">Close</button>
+    <div class="overlay-text" id="overlay-text">Creating your checkout...</div>
   </div>
 </div>
+
+<footer class="footer">
+  <p>© 2026 NY Spotlight Report · <a href="/privacy/" style="color:#475569">Privacy</a> · <a href="/terms/" style="color:#475569">Terms</a> · Questions? <a href="mailto:seanb041992@gmail.com" style="color:#C9A84C">Email us</a></p>
+</footer>
 
 <script>
-async function checkout(productKey) {
-  const overlay = document.getElementById('overlay');
-  const title   = document.getElementById('modal-title');
-  const desc    = document.getElementById('modal-desc');
-  const errBox  = document.getElementById('modal-error');
-  const closeBtn= document.getElementById('modal-close');
+// Read rep code from URL for affiliate tracking
+const urlParams = new URLSearchParams(window.location.search);
+const repCode   = urlParams.get('rep') || '';
+let isAnnual    = false;
 
-  overlay.classList.add('active');
-  title.textContent = 'Preparing your checkout...';
-  desc.textContent  = 'Securing your connection with Stripe';
-  errBox.style.display = 'none';
-  closeBtn.style.display = 'none';
+const ANNUAL_PRICES = {
+  proflow_ai:     { display: '$982', note: '/year (save $182)', offer: 'annual_proflow_ai' },
+  proflow_growth: { display: '$2,997', note: '/year (save $567)', offer: 'proflow_growth' },
+  proflow_elite:  { display: '$7,970', note: '/year (save $1,594)', offer: 'proflow_elite' },
+};
 
-  if (productKey === 'audit') {
-    window.location.href = '/audit/';
-    return;
-  }
+function toggleBilling() {
+  isAnnual = !isAnnual;
+  const toggle = document.getElementById('billing-toggle');
+  const mLabel = document.getElementById('monthly-label');
+  const aLabel = document.getElementById('annual-label');
+  const badge  = document.getElementById('save-badge');
 
-  try {
-    const r = await fetch('/.netlify/functions/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ product_key: productKey })
-    });
-    const data = await r.json();
+  toggle.classList.toggle('on', isAnnual);
+  mLabel.classList.toggle('active', !isAnnual);
+  aLabel.classList.toggle('active', isAnnual);
+  badge.style.display = isAnnual ? 'inline-block' : 'none';
 
-    if (data.checkout_url) {
-      title.textContent = 'Redirecting to Stripe...';
-      desc.textContent  = 'You will be redirected in a moment.';
-      window.location.href = data.checkout_url;
-    } else if (data.free) {
-      window.location.href = data.redirect;
-    } else {
-      throw new Error(data.error || 'Checkout failed');
+  // Update subscription prices
+  ['proflow_ai','proflow_growth','proflow_elite'].forEach(key => {
+    const el = document.getElementById('price-' + key);
+    if (el) {
+      if (isAnnual) {
+        const ann = ANNUAL_PRICES[key];
+        el.innerHTML = ann.display + '<span class="annual-note">' + ann.note + '</span>';
+      } else {
+        const monthly = { proflow_ai: '$97', proflow_growth: '$297', proflow_elite: '$797' };
+        el.innerHTML = monthly[key] + '<span class="period">/mo</span>';
+      }
     }
-  } catch(e) {
-    title.textContent = 'Something went wrong';
-    errBox.textContent = e.message || 'Unable to start checkout. Please try again.';
-    errBox.style.display = 'block';
-    closeBtn.style.display = 'inline-block';
-    document.querySelector('.spinner').style.display = 'none';
-  }
+  });
 }
 
-function closeModal() {
-  document.getElementById('overlay').classList.remove('active');
-  document.querySelector('.spinner').style.display = 'block';
+async function checkout(offerKey) {
+  // Show processing overlay
+  document.getElementById('overlay').classList.add('show');
+  document.getElementById('overlay-text').textContent = 'Creating your secure checkout...';
+
+  try {
+    const resp = await fetch('/.netlify/functions/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        offer_key: isAnnual && ANNUAL_PRICES[offerKey]?.offer ? ANNUAL_PRICES[offerKey].offer : offerKey,
+        rep_code:  repCode,
+        source:    'store_page'
+      })
+    });
+
+    const data = await resp.json();
+
+    if (data.url) {
+      document.getElementById('overlay-text').textContent = 'Redirecting to secure payment...';
+      window.location.href = data.url;
+    } else {
+      throw new Error(data.error || 'Checkout creation failed');
+    }
+  } catch(e) {
+    document.getElementById('overlay').classList.remove('show');
+    alert('Checkout error: ' + e.message + '\n\nPlease try again or contact seanb041992@gmail.com');
+  }
 }
 </script>
 </body>
