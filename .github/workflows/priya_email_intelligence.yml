@@ -2,7 +2,7 @@ name: "📬 Email Intelligence — Priya Sharma (Every 15min)"
 
 on:
   schedule:
-    - cron: '*/15 * * * *'   # Every 15 minutes, 24/7
+    - cron: '0 */6 * * *'   # Reduced from 15min to 6hrs — inbox flood fix   # Every 15 minutes, 24/7
   workflow_dispatch:
 
 # Department: Email Intelligence
