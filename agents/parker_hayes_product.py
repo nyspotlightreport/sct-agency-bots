@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Parker Hayes — Product Director\nAgentic Super-intelligence for product-market fit.\nAutonomous: Audit offers → Check conversion by tier → A/B test recommendations → Pricing optimization
+Parker Hayes ΓÇö Product Director\nAgentic Super-intelligence for product-market fit.\nAutonomous: Audit offers ΓåÆ Check conversion by tier ΓåÆ A/B test recommendations ΓåÆ Pricing optimization
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -91,7 +91,7 @@ def audit_product_status():
     }
 
 def run():
-    log.info("PARKER HAYES — Product Director — Activating")
+    log.info("PARKER HAYES ΓÇö Product Director ΓÇö Activating")
     status = audit_product_status()
     log.info(f"Product audit: {json.dumps(status, indent=2)}")
     
@@ -111,7 +111,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

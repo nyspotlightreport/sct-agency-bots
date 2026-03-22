@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-System Learning Brain — NYSR Agency
+System Learning Brain ΓÇö NYSR Agency
 Every department learns. Nothing fails twice without adapting.
 
 THIS IS THE NERVOUS SYSTEM OF THE ENTIRE AGENCY.
@@ -23,11 +23,11 @@ LEARNING CATEGORIES:
   FINANCE:    revenue per channel, CAC, LTV, refund patterns
 
 SELF-CORRECTION RULES:
-  If something fails 2x → investigate
-  If something fails 3x → auto-fix or escalate
-  If performance drops 20% → alert + suggest fix
-  If performance improves 20% → double down + document why
-  If new pattern emerges → create new rule and share agency-wide
+  If something fails 2x ΓåÆ investigate
+  If something fails 3x ΓåÆ auto-fix or escalate
+  If performance drops 20% ΓåÆ alert + suggest fix
+  If performance improves 20% ΓåÆ double down + document why
+  If new pattern emerges ΓåÆ create new rule and share agency-wide
 """
 import os, sys, json, logging, requests, base64
 from datetime import datetime, date, timedelta
@@ -50,7 +50,7 @@ REPO       = "nyspotlightreport/sct-agency-bots"
 ANALYST_VOICE = """You are Drew Sinclair, Chief Data Analyst at NY Spotlight Report.
 You find patterns in performance data that others miss.
 You speak in specifics: numbers, percentages, root causes, actions.
-You never say "it depends" — you give a recommendation with confidence."""
+You never say "it depends" ΓÇö you give a recommendation with confidence."""
 
 DEPARTMENTS = {
     "sales":      {"data_path":"data/sales/","workflows":["Sales Supercharge","Client Acquisition"]},
@@ -60,7 +60,7 @@ DEPARTMENTS = {
     "product":    {"data_path":"data/products/","workflows":["New Income Bots"]},
 }
 
-# ── SHARED KNOWLEDGE BASE ─────────────────────────────────────────
+# ΓöÇΓöÇ SHARED KNOWLEDGE BASE ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def load_knowledge_base() -> dict:
     """The shared memory all agents can read."""
@@ -78,7 +78,7 @@ def load_knowledge_base() -> dict:
     }
 
 def update_knowledge_base(kb: dict):
-    """Write updated knowledge base — all agents will use this."""
+    """Write updated knowledge base ΓÇö all agents will use this."""
     kb["last_updated"] = str(date.today())
     path = "data/brain/knowledge_base.json"
     r = requests.get(f"https://api.github.com/repos/{REPO}/contents/{path}", headers=GH_H)
@@ -87,7 +87,7 @@ def update_knowledge_base(kb: dict):
     if r.status_code == 200: body["sha"] = r.json()["sha"]
     requests.put(f"https://api.github.com/repos/{REPO}/contents/{path}", json=body, headers=GH_H)
 
-# ── WORKFLOW PERFORMANCE AUDITOR ───────────────────────────────────
+# ΓöÇΓöÇ WORKFLOW PERFORMANCE AUDITOR ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def audit_all_workflows() -> dict:
     """Pull all workflow runs. Score each. Identify systemic issues."""
@@ -135,7 +135,7 @@ def audit_all_workflows() -> dict:
         "all_stats": wf_stats
     }
 
-# ── ROOT CAUSE ANALYSIS ────────────────────────────────────────────
+# ΓöÇΓöÇ ROOT CAUSE ANALYSIS ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def diagnose_with_ai(workflow_name: str, errors: list, context: dict = {}) -> dict:
     """Use Claude to diagnose failure root cause and generate fix."""
@@ -151,7 +151,7 @@ Error logs: {json.dumps(errors)}
 Context: {json.dumps(context)}
 
 Provide:
-1. Root cause (be specific — dependency, auth, timeout, code bug, config?)
+1. Root cause (be specific ΓÇö dependency, auth, timeout, code bug, config?)
 2. Exact fix (code change, secret to add, config to update)
 3. Prevention measure (so it never fails this way again)
 4. Confidence level 0-100
@@ -170,7 +170,7 @@ Return JSON:
         max_tokens=400
     ) or {"diagnosis":"Analysis failed","auto_fixable":False,"escalate_to_chairman":True}
 
-# ── PERFORMANCE PATTERN RECOGNITION ────────────────────────────────
+# ΓöÇΓöÇ PERFORMANCE PATTERN RECOGNITION ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def detect_performance_patterns() -> list:
     """Find cross-departmental patterns in performance data."""
@@ -219,7 +219,7 @@ Return JSON array of patterns:
     )
     return result if isinstance(result, list) else []
 
-# ── AGENCY-WIDE LEARNING UPDATE ────────────────────────────────────
+# ΓöÇΓöÇ AGENCY-WIDE LEARNING UPDATE ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def generate_learning_update(audit: dict, patterns: list) -> dict:
     """Generate rules + insights for the knowledge base."""
@@ -258,7 +258,7 @@ Return JSON:
         max_tokens=600
     ) or {}
 
-# ── SELF-HEALING LOOP ──────────────────────────────────────────────
+# ΓöÇΓöÇ SELF-HEALING LOOP ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def attempt_auto_fixes(unhealthy_workflows: list) -> list:
     """Try to fix workflows that can be auto-fixed."""
@@ -284,16 +284,16 @@ def attempt_auto_fixes(unhealthy_workflows: list) -> list:
     
     return fixed
 
-# ── CHAIRMAN ESCALATION ────────────────────────────────────────────
+# ΓöÇΓöÇ CHAIRMAN ESCALATION ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def escalate_to_chairman(issues: list):
     """Send critical issues to Chairman via ntfy."""
     if not issues: return
     
-    msg = f"🧠 LEARNING BRAIN ALERT\n"
+    msg = f"≡ƒºá LEARNING BRAIN ALERT\n"
     msg += f"Date: {date.today()}\n\n"
     for issue in issues[:3]:
-        msg += f"⚠️ {issue.get('name','')}\n"
+        msg += f"ΓÜá∩╕Å {issue.get('name','')}\n"
         msg += f"   {issue.get('escalation_reason','Needs review')}\n\n"
     msg += "Review: github.com/nyspotlightreport/sct-agency-bots/actions"
     
@@ -303,7 +303,7 @@ def escalate_to_chairman(issues: list):
             headers={"Content-Type":"application/json"}, timeout=5)
     except: pass
 
-# ── WEEKLY LEARNING REPORT ─────────────────────────────────────────
+# ΓöÇΓöÇ WEEKLY LEARNING REPORT ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def generate_weekly_report(audit, patterns, learning) -> str:
     """Generate the Chairman's weekly performance + learning report."""
@@ -328,7 +328,7 @@ Write the weekly briefing.""",
         max_tokens=300
     ) or f"Weekly briefing: {audit.get('healthy',0)} workflows healthy, {len(audit.get('unhealthy',[]))} need attention."
 
-# ── MAIN ───────────────────────────────────────────────────────────
+# ΓöÇΓöÇ MAIN ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def run():
     log.info("System Learning Brain starting...")
@@ -344,7 +344,7 @@ def run():
         log.info("Attempting auto-fixes...")
         fixed = attempt_auto_fixes(audit["unhealthy"])
         for f in fixed:
-            log.info(f"  ✅ Fixed: {f['workflow']}")
+            log.info(f"  Γ£à Fixed: {f['workflow']}")
     
     # 3. Detect patterns
     log.info("Detecting performance patterns...")
@@ -374,7 +374,7 @@ def run():
     escalations = [u for u in audit["unhealthy"] if u["success_rate"] < 20]
     if escalations:
         log.info(f"Escalating {len(escalations)} critical issues to Chairman...")
-        escalate_to_chairman([{"name":e["name"],"escalation_reason":f"{e['success_rate']}% success rate — needs manual review"} for e in escalations])
+        escalate_to_chairman([{"name":e["name"],"escalation_reason":f"{e['success_rate']}% success rate ΓÇö needs manual review"} for e in escalations])
     
     # 7. Weekly report (Mondays)
     if date.today().weekday() == 0:
@@ -389,7 +389,7 @@ def run():
         if r.status_code == 200: body["sha"] = r.json()["sha"]
         requests.put(f"https://api.github.com/repos/{REPO}/contents/{path}", json=body, headers=GH_H)
     
-    log.info("✅ Learning Brain complete")
+    log.info("Γ£à Learning Brain complete")
 
 if __name__ == "__main__":
     run()

@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Drew Sinclair — Analytics Director\nAgentic Super-intelligence for data intelligence.\nAutonomous: Pull all metrics → Compare forecasts vs actuals → Identify winning patterns → Generate insights
+Drew Sinclair ΓÇö Analytics Director\nAgentic Super-intelligence for data intelligence.\nAutonomous: Pull all metrics ΓåÆ Compare forecasts vs actuals ΓåÆ Identify winning patterns ΓåÆ Generate insights
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -100,7 +100,7 @@ def gather_all_metrics():
     return metrics
 
 def run():
-    log.info("DREW SINCLAIR — Analytics Director — Activating")
+    log.info("DREW SINCLAIR ΓÇö Analytics Director ΓÇö Activating")
     metrics = gather_all_metrics()
     log.info(f"Metrics gathered from {len(metrics.get('sources',[]))} sources")
     
@@ -123,7 +123,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Casey Lin — IT & Security Director\nAgentic Super-intelligence for infrastructure.\nAutonomous: Check credential health → Verify all integrations → Monitor uptime → Security audit
+Casey Lin ΓÇö IT & Security Director\nAgentic Super-intelligence for infrastructure.\nAutonomous: Check credential health ΓåÆ Verify all integrations ΓåÆ Monitor uptime ΓåÆ Security audit
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -103,7 +103,7 @@ def check_credential_health():
     return creds
 
 def run():
-    log.info("CASEY LIN — IT Director — Activating")
+    log.info("CASEY LIN ΓÇö IT Director ΓÇö Activating")
     health = check_credential_health()
     log.info(f"Credentials: {health['configured']} configured, {health['missing_count']} missing")
     log.info(f"Site: {health.get('site_status')} ({health.get('site_response_ms',0)}ms)")
@@ -124,7 +124,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

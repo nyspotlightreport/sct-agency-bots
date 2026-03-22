@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Elliot Shaw — Marketing Director\nFully Developed Agentic Super-intelligence for demand generation.\nAutonomous: Audit all content → Check social links for store CTAs → SEO keyword gaps → Campaign recommendations → Store to Supabase
+Elliot Shaw ΓÇö Marketing Director\nFully Developed Agentic Super-intelligence for demand generation.\nAutonomous: Audit all content ΓåÆ Check social links for store CTAs ΓåÆ SEO keyword gaps ΓåÆ Campaign recommendations ΓåÆ Store to Supabase
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -107,7 +107,7 @@ def generate_campaign_plan():
         max_tokens=800) or "API key needed"
 
 def run():
-    log.info("ELLIOT SHAW — Marketing Director — Activating")
+    log.info("ELLIOT SHAW ΓÇö Marketing Director ΓÇö Activating")
     issues = audit_content_ctas()
     for i in issues: log.info(f"  AUDIT: {i}")
     
@@ -122,7 +122,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

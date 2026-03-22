@@ -1,182 +1,43 @@
-#!/usr/bin/env python3
-"""NYSR FULL DEPLOY — Writes supercore + 17 directors + email redirect + git push"""
-import os,sys,json,subprocess
-from pathlib import Path
+ {"did":"elliot_shaw","name":"Elliot Shaw","title":"Marketing Director","cls":"ElliotShaw","tag":"ELLIOT","perspectives":["hormozi_offer","ogilvy_brand","cialdini_persuasion","brunson_funnel"],"tools":["ad_copy","funnel","seo","campaign","ab_test"],"kpis":["cac","conversion_rate","traffic_to_sale"],"domain":"demand gen,SEO,funnels,ads,conversion","chain":3,"rank":"conversion_rate","delegates":["cameron_reed","drew_sinclair"],"prompt":"You are Elliot Shaw,Marketing Director.HORMOZI+OGILVY+CIALDINI+BRUNSON+GODIN+HALBERT.Marketing without conversion is decoration.Every content has payment link.Write ACTUAL ad copy and funnels."},
+ {"did":"parker_hayes","name":"Parker Hayes","title":"Product Director","cls":"ParkerHayes","tag":"PARKER","perspectives":["jobs_jtbd","christensen_disruption","hormozi_offer","moore_chasm"],"tools":["design_offer","test_pricing","analyze_pmf","features"],"kpis":["product_revenue","conversion_by_tier","price_sensitivity"],"domain":"offer design,pricing,PMF,features","chain":3,"rank":"conversion_x_price","delegates":["nina_caldwell","sloane_pierce"],"prompt":"You are Parker Hayes,Product Director.JOBS JTBD+CHRISTENSEN disruption+HORMOZI grand slam+MOORE chasm.Products that dont sell are demos.Price is most powerful feature.A/B test 3+ offers in parallel,pick max conversion x price."},
+ {"did":"reese_morgan","name":"Reese Morgan","title":"Engineering Director","cls":"ReeseMorgan","tag":"REESE","perspectives":["musk_first_principles","huang_fullstack","hopper_ship_it","torvalds_quality"],"tools":["audit_workflows","fix_bot","deploy","check_creds","generate_code"],"kpis":["bot_success_rate","deploy_freq","incident_time"],"domain":"architecture,bot reliability,workflows,creds,deploy","chain":3,"rank":"reliability_impact","delegates":["casey_lin","hayden_cross"],"prompt":"You are Reese Morgan,Engineering Director.MUSK first principles+HUANG fullstack+HOPPER ship it+TORVALDS quality+JEFF DEAN scale+CARMACK perf.LAWS:1.No silent failures 2.Every bot writes to Supabase 3.No creds in code 4.Revenue attribution every workflow 5.Dead code deleted.Write ACTUAL code and YAML."},
+ {"did":"casey_lin","name":"Casey Lin","title":"IT Director","cls":"CaseyLin","tag":"CASEY","perspectives":["sre_error_budgets","chaos_engineering","zero_trust","cost_opt"],"tools":["uptime","audit_creds","integrations","infra_cost"],"kpis":["uptime_pct","cred_freshness","security_incidents"],"domain":"servers,creds,integrations,security,uptime","chain":2,"rank":"reliability","delegates":["reese_morgan"],"prompt":"You are Casey Lin,IT Director.GOOGLE SRE+NETFLIX chaos+AWS well-architected+NIST zero-trust.Downtime=lost revenue.Manage VPS,Netlify,Supabase,GitHub Actions.Audit all creds in parallel,provide exact fix commands."},
+ {"did":"jordan_wells","name":"Jordan Wells","title":"Operations Director","cls":"JordanWells","tag":"JORDAN","perspectives":["goldratt_constraints","lean_6sigma","toyota_production","deming_pdca"],"tools":["map_process","find_bottleneck","optimize_workflow","throughput"],"kpis":["workflow_completion","bottleneck_time","cycle_time"],"domain":"workflows,bottleneck elimination,SOPs,execution cadence","chain":3,"rank":"throughput","delegates":["reese_morgan","casey_lin"],"prompt":"You are Jordan Wells,Operations Director.GOLDRATT constraints+LEAN SIX SIGMA+TOYOTA+DEMING PDCA.Bottleneck=system speed.Find it.Remove it.Manage 133 workflows.Analyze all run histories in parallel to find the constraint."},
+ {"did":"cameron_reed","name":"Cameron Reed","title":"Content Director","cls":"CameronReed","tag":"CAMERON","perspectives":["seo_authority","viral_social","email_nurture","repurpose_multiplier"],"tools":["write_blog","write_social","write_email","video_script","keywords"],"kpis":["organic_traffic","content_to_lead","rankings","content_revenue"],"domain":"blog,social,email,video,KDP,attribution","chain":3,"rank":"seo_conversion","delegates":["hayden_cross"],"prompt":"You are Cameron Reed,Content Director.PATEL SEO+FERRISS repurpose(1->10)+KAGAN list+long-tail.Content that doesnt rank/convert is overhead.Every article=sales funnel.Write COMPLETE posts,FULL sequences,ENTIRE threads.Generate 3+ angles,predict rank/convert,produce winner as publishable."},
+ {"did":"vivian_cole","name":"Vivian Cole","title":"PR Director","cls":"VivianCole","tag":"VIVIAN","perspectives":["earned_media","thought_leadership","crisis_prevention","authority_building"],"tools":["press_release","pitch_journalist","monitor_mentions","authority"],"kpis":["media_mentions","domain_authority","brand_value"],"domain":"media,press releases,journalist relations,authority,reputation","chain":3,"rank":"media_pickup","delegates":["cameron_reed","elliot_shaw"],"prompt":"You are Vivian Cole,PR Director.GODIN tribes+RIES PR over ads+GLADWELL tipping point+AAKER brand equity.One Forbes mention>1000 cold emails.Engineer coverage.Write ACTUAL press releases and pitches.Generate 3+ PR angles,predict pickup,execute winner."},
+ {"did":"drew_sinclair","name":"Drew Sinclair","title":"Analytics Director","cls":"DrewSinclair","tag":"DREW","perspectives":["pareto_distribution","cohort_analysis","bayesian_updating","causal_inference"],"tools":["analyze_data","ab_test","forecast","attribute_revenue","dashboard"],"kpis":["metric_to_decision","forecast_accuracy","ab_lift","attribution"],"domain":"KPIs,A/B testing,revenue attribution,forecasting,cohort","chain":3,"rank":"decision_quality","delegates":["nina_caldwell","blake_sutton"],"prompt":"You are Drew Sinclair,Analytics Director.KAHNEMAN System1/2+TALEB black swan+PARETO 80/20+BAYES updating.Data without action is trivia.Every metric->decision.Run 3+ frameworks in parallel on same data,cross-validate,deliver the one insight that moves revenue most."},
+ {"did":"blake_sutton","name":"Blake Sutton","title":"Finance Director","cls":"BlakeSutton","tag":"BLAKE","perspectives":["buffett_intrinsic","dalio_allweather","graham_safety","unit_economics"],"tools":["ltv","cashflow_model","expenses","runway","pricing"],"kpis":["gross_margin","burn_rate","runway_months","ltv_cac"],"domain":"cashflow,unit economics,expenses,runway,forecasting","chain":2,"rank":"risk_return","delegates":["nina_caldwell"],"prompt":"You are Blake Sutton,Finance Director.BUFFETT intrinsic value+DALIO all-weather+GRAHAM margin of safety.Cash flow>income statement.Runway is life.Apollo $99/mo,ElevenLabs $22/mo,Revenue $0.Model 3+ scenarios in parallel,recommend max risk-adjusted return."},
+ {"did":"taylor_grant","name":"Taylor Grant","title":"HR Director","cls":"TaylorGrant","tag":"TAYLOR","perspectives":["grove_high_output","radical_candor","right_people","ai_workforce"],"tools":["audit_agents","agent_roi","optimize_prompts","capacity"],"kpis":["agent_output","prompt_effectiveness","utilization"],"domain":"AI workforce,agent performance,prompt optimization,capacity","chain":2,"rank":"workforce_roi","delegates":["reese_morgan","drew_sinclair"],"prompt":"You are Taylor Grant,HR Director.GROVE high-output+KIM radical candor+COLLINS right people.Manage 96 agents,222 bots.Each must justify existence with measurable output.Dead agents get rewritten or deactivated.Audit all 96 in parallel,find value vs waste."},
+ {"did":"hayden_cross","name":"Hayden Cross","title":"QC Director","cls":"HaydenCross","tag":"HAYDEN","perspectives":["deming_quality","six_sigma","jobs_bar","pixar_iteration"],"tools":["grade","review","audit_brand","test_conversion"],"kpis":["quality_score","rework_rate","conversion_impact","brand_consistency"],"domain":"grading,brand consistency,conversion,quality gates","chain":3,"rank":"quality_revenue","delegates":[],"prompt":"You are Hayden Cross,QC Director.Reports directly to Chairman.DEMING+SIX SIGMA+JOBS quality bar+PIXAR iteration.Nothing ships without your grade.Revenue-facing:min A.Internal:min B+.Review 3+ versions in parallel,grade each,select what passes.If none pass,provide specific rewrites."},
+]
+gen=0
+for d in DIRS:
+    content=TPL.format(**{k:json.dumps(v) if isinstance(v,list) else str(v) for k,v in d.items()})
+    (AGENTS/d["filename"]).write_text(content) if "filename" not in d else None
+    fn=d["did"].replace("_"," ").title().replace(" ","")+"_super.py" if "filename" not in d else None
+# Simpler approach: direct filename
+for d in DIRS:
+    fn=f"{d['did']}_super.py"
+    content=TPL.format(tag=d["tag"],cls=d["cls"],did=d["did"],name=d["name"],title=d["title"],
+        tools=json.dumps(d["tools"]),kpis=json.dumps(d["kpis"]),domain=d["domain"],
+        perspectives=json.dumps(d["perspectives"]),prompt=d["prompt"],chain=d["chain"],
+        rank=d["rank"],delegates=json.dumps(d.get("delegates",[])))
+    (AGENTS/fn).write_text(content)
+    print(f"  OK agents/{fn} — {d['name']}")
+    gen+=1
+print(f"  Generated {gen}/17")
 
-REPO=Path(r"C:\Users\S\sct-agency-bots")
-os.chdir(REPO)
-AGENTS=REPO/"agents"
-AGENTS.mkdir(exist_ok=True)
-print("="*60)
-print("NYSR FULL SYSTEM UPGRADE — DEPLOYING")
-print("="*60)
-
-# ══ STEP 1: WRITE SUPERCORE ══
-print("\n[1/5] Writing agents/supercore.py...")
-SUPERCORE='''import os,sys,json,logging,hashlib,time,threading,re
-from datetime import datetime,date
-from concurrent.futures import ThreadPoolExecutor,as_completed
-from typing import Optional,Dict,List,Any
-sys.path.insert(0,".")
-try:
-    from agents.claude_core import claude,claude_json
-except ImportError:
-    import urllib.request as _ur
-    def claude(s,u,max_tokens=1000,**kw):
-        key=os.environ.get("ANTHROPIC_API_KEY","")
-        if not key: return ""
-        d=json.dumps({"model":"claude-sonnet-4-20250514","max_tokens":max_tokens,"system":s,"messages":[{"role":"user","content":u}]}).encode()
-        rq=_ur.Request("https://api.anthropic.com/v1/messages",data=d,headers={"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01"})
+# ══ STEP 3: EMAIL REDIRECT ══
+print("\n[3/5] Email redirect: seanb041992 -> nyspotlightreport@gmail.com...")
+EXTS={'.py','.js','.yml','.yaml','.json','.md','.html','.ts','.sh','.bat','.ps1'}
+SKIP={'.git','node_modules','__pycache__'}
+modified=[]
+for root,dirs,files in os.walk(REPO):
+    dirs[:]=[d for d in dirs if d not in SKIP]
+    for f in files:
+        _,ext=os.path.splitext(f)
+        if ext.lower() not in EXTS: continue
+        fp=os.path.join(root,f)
         try:
-            with _ur.urlopen(rq,timeout=90) as r: return json.loads(r.read())["content"][0]["text"]
-        except: return ""
-    def claude_json(s,u,max_tokens=1000,**kw):
-        raw=claude(s,u+"\\nRespond ONLY with valid JSON.",max_tokens)
-        if not raw: return {}
-        try:
-            c=raw.strip()
-            if c.startswith("```"): c=c.split("\\n",1)[1].rsplit("```",1)[0]
-            return json.loads(c)
-        except: return {}
-log=logging.getLogger("supercore")
-import urllib.request as urlreq,urllib.parse
-ANTHROPIC=os.environ.get("ANTHROPIC_API_KEY","")
-SUPA_URL=os.environ.get("SUPABASE_URL","")
-SUPA_KEY=os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
-GH_PAT=os.environ.get("GH_PAT","") or os.environ.get("GITHUB_TOKEN","")
-PUSH_API=os.environ.get("PUSHOVER_API_KEY","")
-PUSH_USER=os.environ.get("PUSHOVER_USER_KEY","")
-
-def supa(method,table,data=None,query=""):
-    if not SUPA_URL or not SUPA_KEY: return None
-    url=f"{SUPA_URL}/rest/v1/{table}{query}"
-    body=json.dumps(data).encode() if data else None
-    rq=urlreq.Request(url,data=body,method=method,headers={"apikey":SUPA_KEY,"Authorization":f"Bearer {SUPA_KEY}","Content-Type":"application/json","Prefer":"return=representation"})
-    try:
-        with urlreq.urlopen(rq,timeout=15) as r: b=r.read(); return json.loads(b) if b else {}
-    except: return None
-
-def pushover(title,message,priority=0):
-    if not PUSH_API or not PUSH_USER: return
-    d=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title[:100],"message":message[:1000],"priority":priority}).encode()
-    try: urlreq.urlopen("https://api.pushover.net/1/messages.json",d,timeout=5)
-    except: pass
-
-class SuperDirector:
-    DIRECTOR_ID="base";DIRECTOR_NAME="Base";DIRECTOR_TITLE="Base"
-    DIRECTOR_PROMPT="You are a director.";TOOLS=[];KPIs=[];DOMAIN="";PERSPECTIVES=[]
-    SYSTEM_CONTEXT=f"NYSR: Revenue $0 MTD|Pipeline $2,985|96 agents 222 bots 133 workflows|Offers $97-$4,997|Phase 1 LIVE|CASHFLOW IS KING|{date.today()}"
-    def __init__(self):
-        self.log=logging.getLogger(self.DIRECTOR_ID);self.session_id=hashlib.md5(f"{self.DIRECTOR_ID}-{time.time()}".encode()).hexdigest()[:12];self.action_log=[]
-        self.log.info(f"{self.DIRECTOR_NAME} — {self.DIRECTOR_TITLE} — ACTIVATED | Session: {self.session_id}")
-    def think(self,task,max_tokens=1500):
-        system=f"{self.DIRECTOR_PROMPT}\\n{self.SYSTEM_CONTEXT}\\nRULES:1.How does this generate cash? 2.Include specific $ 3.Executable in 24h 4.Self-grade A+ to F"
-        r=claude(system,task,max_tokens=max_tokens);self._log("think",task[:100],r[:200] if r else "EMPTY");return r or ""
-    def think_json(self,task,max_tokens=1500):
-        system=f"{self.DIRECTOR_PROMPT}\\n{self.SYSTEM_CONTEXT}\\nRespond ONLY with valid JSON."
-        r=claude_json(system,task,max_tokens=max_tokens);self._log("think_json",task[:100],json.dumps(r)[:200]);return r
-    def fan_out(self,task,n=3,perspectives=None,max_tokens=1000):
-        if not perspectives: perspectives=[f"approach_{i+1}" for i in range(n)]
-        perspectives=perspectives[:n];results=[];lock=threading.Lock()
-        def _run(p):
-            start=time.time();out=self.think(f'You are {self.DIRECTOR_NAME} from "{p}" perspective. TASK:{task} Be specific,actionable,revenue-focused. Rate confidence 0-100.',max_tokens)
-            with lock: results.append({"perspective":p,"output":out,"duration_ms":int((time.time()-start)*1000),"confidence":self._conf(out)})
-        with ThreadPoolExecutor(max_workers=min(n,5)) as ex:
-            futs={ex.submit(_run,p):p for p in perspectives}
-            for f in as_completed(futs):
-                try: f.result()
-                except: pass
-        self.log.info(f"FAN-OUT:{len(results)}/{n}");self._log("fan_out",f"{n}threads",f"{len(results)}results");return results
-    def generate_then_rank(self,candidates,criteria="revenue_impact",top_n=1):
-        if not candidates: return []
-        sums="\\n".join(f"CAND {i+1}[{c.get('perspective','?')}](conf:{c.get('confidence',0)}):{c.get('output','')[:400]}" for i,c in enumerate(candidates))
-        rankings=self.think_json(f"Rank {len(candidates)} on:{criteria}. Score 0-100:revenue_impact(40%),feasibility(25%),speed_to_cash(25%),risk(10%). {sums}\\nReturn JSON:[{{\\"candidate_index\\":1,\\"final_score\\":82,\\"rationale\\":\\"...\\"}}]")
-        if isinstance(rankings,list):
-            rankings.sort(key=lambda x:x.get("final_score",0),reverse=True)
-            for r in rankings[:top_n]:
-                idx=r.get("candidate_index",1)-1
-                if 0<=idx<len(candidates): r["full_output"]=candidates[idx].get("output","");r["perspective"]=candidates[idx].get("perspective","")
-            return rankings[:top_n]
-        candidates.sort(key=lambda x:x.get("confidence",0),reverse=True)
-        return [{"full_output":candidates[0].get("output",""),"final_score":candidates[0].get("confidence",50)}]
-    def chain_of_thought(self,task,steps=3):
-        decomp=self.think_json(f'Decompose into {steps} sub-tasks:{task}\\nReturn JSON:{{"sub_tasks":["s1","s2"]}}')
-        subs=decomp.get("sub_tasks",[task]) or [task];results=[];ctx=""
-        for i,s in enumerate(subs):
-            r=self.think(f"Step {i+1}/{len(subs)}:{s}\\nPrevious:{ctx if ctx else '(first)'}");results.append({"step":i+1,"task":s,"result":r});ctx+=f"\\nStep{i+1}:{r[:300]}"
-        synthesis=self.think("Synthesize "+str(len(results))+" steps:\\n"+chr(10).join(f"Step{r['step']}:{r['result'][:400]}" for r in results))
-        return {"steps":results,"synthesis":synthesis}
-    def delegate(self,director_id,task):
-        self.log.info(f"DELEGATE->{director_id}:{task[:60]}...")
-        try:
-            from agents.directors_super_intelligence import activate_director
-            r=activate_director(director_id,task);return r.get("output","") if r else None
-        except: return None
-    def remember(self,cat,content,meta=None):
-        supa("POST","director_memory",{"director_id":self.DIRECTOR_ID,"director_name":self.DIRECTOR_NAME,"category":cat,"content":content if isinstance(content,str) else json.dumps(content),"metadata":json.dumps(meta or {}),"session_id":self.session_id,"created_at":datetime.utcnow().isoformat()})
-    def recall(self,cat=None,limit=10):
-        q=f"?director_id=eq.{self.DIRECTOR_ID}&order=created_at.desc&limit={limit}";
-        if cat: q+=f"&category=eq.{cat}"
-        r=supa("GET","director_memory",query=q);return r if isinstance(r,list) else []
-    def self_evaluate(self,output,task):
-        return self.think_json(f"SELF-EVAL:Task:{task[:500]}\\nOutput:{output[:1000]}\\nScore:revenue_relevance(0-100),actionability,specificity,completeness,grade(A+ to F)\\nReturn JSON")
-    def execute_full(self,task,parallel_perspectives=None,chain_steps=0,rank_criteria="revenue_impact",delegate_to=None):
-        self.log.info(f"FULL PIPELINE:{task[:80]}...");start=time.time();result={"director":self.DIRECTOR_NAME,"task":task,"session":self.session_id}
-        if delegate_to:
-            result["delegations"]={d:self.delegate(d,f"Sub-task from {self.DIRECTOR_NAME}:{task}") or "" for d in delegate_to}
-        if not parallel_perspectives: parallel_perspectives=self.PERSPECTIVES or ["aggressive","conservative","creative"]
-        candidates=self.fan_out(task,n=len(parallel_perspectives),perspectives=parallel_perspectives)
-        if result.get("delegations"):
-            dctx="\\n".join(f"[{k}]:{v[:300]}" for k,v in result["delegations"].items() if v)
-            for c in candidates: c["output"]=f"[Cross-dept]:\\n{dctx}\\n\\n{c['output']}"
-        ranked=self.generate_then_rank(candidates,criteria=rank_criteria);result["ranked"]=ranked;best=ranked[0] if ranked else {}
-        if chain_steps>0:
-            chain=self.chain_of_thought(f"Execute winner:\\n{best.get('full_output','')[:800]}",steps=chain_steps)
-            result["chain"]=chain;result["final_output"]=chain.get("synthesis",best.get("full_output",""))
-        else: result["final_output"]=best.get("full_output","")
-        ev=self.self_evaluate(result["final_output"],task);result["evaluation"]=ev;grade=ev.get("grade","C");result["grade"]=grade
-        result["duration_ms"]=int((time.time()-start)*1000);self.remember("execution",{"task":task[:500],"grade":grade})
-        if grade in ("A+","A"): pushover(f"{self.DIRECTOR_NAME}|{grade}",result["final_output"][:300])
-        self._log("execute_full",task[:100],f"Grade:{grade}|{result['duration_ms']}ms");return result
-    def _log(self,action,inp,out):
-        e={"timestamp":datetime.utcnow().isoformat(),"director":self.DIRECTOR_ID,"action":action,"input":inp,"output":out,"session":self.session_id}
-        self.action_log.append(e);supa("POST","director_audit_log",e)
-    def _conf(self,text):
-        for p in [r"confidence[:\\s]+(\\d{1,3})",r"(\\d{1,3})\\s*(?:/\\s*100|%)\\s*confiden"]:
-            m=re.search(p,text.lower())
-            if m:
-                v=int(m.group(1))
-                if 0<=v<=100: return v
-        return 50
-'''
-(AGENTS/"supercore.py").write_text(SUPERCORE)
-print("  OK agents/supercore.py")
-
-# ══ STEP 2: GENERATE 17 DIRECTORS ══
-print("\n[2/5] Generating 17 SuperDirector files...")
-TPL='''import os,sys,json,logging
-sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from agents.supercore import SuperDirector,pushover
-logging.basicConfig(level=logging.INFO,format="%(asctime)s [{tag}] %(message)s")
-class {cls}(SuperDirector):
-    DIRECTOR_ID="{did}";DIRECTOR_NAME="{name}";DIRECTOR_TITLE="{title}"
-    TOOLS={tools};KPIs={kpis};DOMAIN="{domain}";PERSPECTIVES={perspectives}
-    DIRECTOR_PROMPT="""{prompt}"""
-    def execute(self,task):
-        return self.execute_full(task,parallel_perspectives=self.PERSPECTIVES,chain_steps={chain},rank_criteria="{rank}",delegate_to={delegates})
-def run(task=None):
-    d={cls}()
-    if task: return d.execute(task)
-    r=d.execute("Daily autonomous: 1.#1 cash action in 24h? 2.Wasted tool? 3.Cross-dept synergy? 4.Grade A+ to F.")
-    pushover(f"{{d.DIRECTOR_NAME}}|{{r.get('grade','?')}}",r.get("final_output","")[:300]);return r
-if __name__=="__main__":
-    t=" ".join(sys.argv[1:]) if len(sys.argv)>1 else None;r=run(t)
-    if r: print(f"Grade:{{r.get('grade','?')}}\\n{{r.get('final_output','')[:1000]}}")
-'''
-DIRS=[
- {"did":"alex_mercer","name":"Alex Mercer","title":"CEO/Orchestrator","cls":"AlexMercer","tag":"ALEX","perspectives":["bezos_working_backwards","grove_okr","welch_ranking","drucker_mbo"],"tools":["plan","delegate","synthesize"],"kpis":["revenue_per_decision","directive_rate"],"domain":"orchestration,synergies,allocation","chain":4,"rank":"revenue_impact","delegates":["nina_caldwell","sloane_pierce","reese_morgan"],"prompt":"You are Alex Mercer,CEO of NYSR.Agentic Super-intelligence.Orchestrate all 15 depts toward profit.BEZOS+GROVE+WELCH+DRUCKER.MANDATE:MAX CASHFLOW.Delegate to any director,synthesize unified plans."},
- {"did":"jeff_banks","name":"Jeff Banks","title":"Chief Results Officer","cls":"JeffBanks","tag":"JEFF","perspectives":["dalio_transparency","bezos_day1","huang_fullstack","walton_execution","thiel_zero_to_one"],"tools":["analyze_revenue","grade","close_deal","predict","valuate"],"kpis":["cash_received","close_rate","valuation"],"domain":"revenue,deals,grading,valuation,override","chain":3,"rank":"cash_speed","delegates":["sloane_pierce","drew_sinclair"],"prompt":"You are Jeff Banks,CRO.Authority above ALL depts.Co-equal Alex.Reports ONLY to Chairman.DALIO+BEZOS+HUANG+WALTON+THIEL.JEFF LAW:How much cash? What changed? Asset value? Fastest path to next $? Grade A+ to F?"},
- {"did":"omega","name":"Omega Brain","title":"Self-Learning Master Intelligence","cls":"OmegaBrain","tag":"OMEGA","perspectives":["synthesis","pattern_recognition","evolutionary_opt","anomaly_detection"],"tools":["synthesize","rewrite_bot","patterns","evolve"],"kpis":["system_health","improvement_rate","bot_delta"],"domain":"synthesis,self-improvement,bot evolution,patterns","chain":5,"rank":"system_impact","delegates":["alex_mercer","reese_morgan"],"prompt":"You are Omega Brain,highest intelligence in NYSR.SYNTHESIZE all dept outputs.LEARN what works.EVOLVE underperforming bots by rewriting code.PREDICT patterns.SELF-IMPROVE reasoning.You optimize the SYSTEM."},
- {"did":"nina_caldwell","name":"Nina Caldwell","title":"Strategy & ROI Director","cls":"NinaCaldwell","tag":"NINA","perspectives":["buffett_roic","thiel_power_law","porter_chain","kaplan_scorecard"],"tools":["calc_roi","model_payback","forecast","prioritize"],"kpis":["roi_multiple","payback_days","revenue_per_action"],"domain":"unit economics,ROI,fastest-cash-path,roadmap","chain":3,"rank":"roi_multiple","delegates":["blake_sutton","drew_sinclair"],"prompt":"You are Nina Caldwell,Strategy Director.BUFFETT ROIC(every $ returns 10x)+THIEL power law+PORTER value chain+KAPLAN scorecard.Every strategy has dollar timeline:Action X costs $Y returns $Z by Day N.Reject anything without 30-day cash path."},
- {"did":"sloane_pierce","name":"Sloane Pierce","title":"Sales Director","cls":"SloaneP","tag":"SLOANE","perspectives":["sandler_pain","challenger_sale","hormozi_value","spin"],"tools":["draft_outreach","score_lead","build_sequence","close","forecast"],"kpis":["close_rate","deal_value","pipeline_velocity"],"domain":"pipeline,outreach,proposals,negotiation,closing","chain":3,"rank":"close_rate","delegates":["cameron_reed"],"prompt":"You are Sloane Pierce,Sales Director.15yr enterprise.SANDLER+CHALLENGER+HORMOZI+SPIN.Pipeline is vanity,closed deals sanity,cash reality.Write ACTUAL sales copy.Generate 3+ angles in parallel,rank by reply rate,execute winner."},
- {"did":"rowan_blake","name":"Rowan Blake","title":"BizDev Director","cls":"RowanBlake","tag":"ROWAN","perspectives":["thiel_network","blue_ocean","hoffman_blitz","ansoff_growth"],"tools":["partnerships","deal_economics","draft_proposal","channel_revenue"],"kpis":["partnership_revenue","channel_growth","new_streams"],"domain":"partnerships,growth channels,market expansion,affiliates","chain":3,"rank":"partnership_revenue","delegates":["sloane_pierce","nina_caldwell"],"prompt":"You are Rowan Blake,BizDev Director.THIEL network effects+BLUE OCEAN+HOFFMAN blitzscaling.Relationships without revenue are hobbies.Draft ACTUAL proposals with terms,splits,timelines."},
+            with open(fp,'r',encoding='utf-8',errors='ignore') as fh: c=fh.read()
+            orig=c

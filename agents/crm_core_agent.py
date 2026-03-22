@@ -1,22 +1,22 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-CRM Core Agent — NYSR Mega-Agency Phase 1
+CRM Core Agent ΓÇö NYSR Mega-Agency Phase 1
 The Salesforce/HubSpot replacement, built on Claude + Apollo + HubSpot.
 
 Pipeline Stages:
-  1. LEAD       — identified, not yet contacted
-  2. PROSPECT   — first contact made
-  3. QUALIFIED  — confirmed budget/need/authority/timeline
-  4. PROPOSAL   — offer sent
-  5. NEGOTIATION — in discussion
-  6. CLOSED_WON — deal signed
-  7. CLOSED_LOST — deal dead (with reason)
+  1. LEAD       ΓÇö identified, not yet contacted
+  2. PROSPECT   ΓÇö first contact made
+  3. QUALIFIED  ΓÇö confirmed budget/need/authority/timeline
+  4. PROPOSAL   ΓÇö offer sent
+  5. NEGOTIATION ΓÇö in discussion
+  6. CLOSED_WON ΓÇö deal signed
+  7. CLOSED_LOST ΓÇö deal dead (with reason)
 
 Scoring:
   - Fit Score (0-100):  how well they match ideal customer profile
   - Engagement Score:  email opens, replies, site visits
   - Intent Score:      job posts, funding, tech stack signals
-  - Composite Score:   weighted average → priority queue
+  - Composite Score:   weighted average ΓåÆ priority queue
 """
 import os, sys, json, time, logging
 from datetime import datetime, timedelta
@@ -39,7 +39,7 @@ SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
 
 import urllib.request, urllib.error
 
-# ── PIPELINE STAGES ───────────────────────────────────────────────
+# ΓöÇΓöÇ PIPELINE STAGES ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 STAGES = {
     "LEAD":        {"order": 1, "color": "#64748B", "goal": "Qualify the lead"},
     "PROSPECT":    {"order": 2, "color": "#3B82F6", "goal": "Book discovery call"},
@@ -50,7 +50,7 @@ STAGES = {
     "CLOSED_LOST": {"order": 7, "color": "#94A3B8", "goal": "Learn and reactivate"},
 }
 
-# ── IDEAL CUSTOMER PROFILES ───────────────────────────────────────
+# ΓöÇΓöÇ IDEAL CUSTOMER PROFILES ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 ICPS = {
     "proflow_ai": {
         "name": "ProFlow AI SaaS ICP",
@@ -84,7 +84,7 @@ ICPS = {
     },
 }
 
-# ── CONTACT SCORING ───────────────────────────────────────────────
+# ΓöÇΓöÇ CONTACT SCORING ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def score_contact(contact: Dict, icp_key: str = "dfy_agency") -> Dict:
     """Score a contact 0-100 against our ICP. Returns scoring breakdown."""
     icp = ICPS.get(icp_key, ICPS["dfy_agency"])
@@ -127,7 +127,7 @@ def score_contact(contact: Dict, icp_key: str = "dfy_agency") -> Dict:
         if contact.get(field): completeness += 3
     scores["data_completeness"] = completeness
 
-    # Engagement signals (0-15 points) — email opens/replies if available
+    # Engagement signals (0-15 points) ΓÇö email opens/replies if available
     engagement = contact.get("engagement_score", 0)
     scores["engagement"] = min(15, engagement)
 
@@ -142,7 +142,7 @@ def score_contact(contact: Dict, icp_key: str = "dfy_agency") -> Dict:
         "priority": "HIGH" if total >= 70 else "MEDIUM" if total >= 45 else "LOW"
     }
 
-# ── AI DEAL INTELLIGENCE ──────────────────────────────────────────
+# ΓöÇΓöÇ AI DEAL INTELLIGENCE ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def analyze_deal(contact: Dict, stage: str, history: List[str] = None) -> Dict:
     """Use Claude to analyze a deal and recommend next best action."""
     if not ANTHROPIC:
@@ -150,7 +150,7 @@ def analyze_deal(contact: Dict, stage: str, history: List[str] = None) -> Dict:
 
     context = f"""
 Contact: {contact.get('name','')} | {contact.get('title','')} at {contact.get('company','')}
-Stage: {stage} — {STAGES.get(stage,{}).get('goal','')}
+Stage: {stage} ΓÇö {STAGES.get(stage,{}).get('goal','')}
 Score: {contact.get('score',{}).get('total',0)}/100 ({contact.get('score',{}).get('grade','?')})
 Last contact: {contact.get('last_contacted','unknown')}
 History: {' | '.join(history or ['No history yet'])}
@@ -170,11 +170,11 @@ Return JSON: {
         max_tokens=400
     ) or {"next_action": "Send follow-up email", "probability": 0.25}
 
-# ── HUBSPOT SYNC ──────────────────────────────────────────────────
+# ΓöÇΓöÇ HUBSPOT SYNC ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def sync_to_hubspot(contact: Dict, stage: str) -> bool:
     """Sync a contact and deal to HubSpot CRM."""
     if not HUBSPOT_KEY:
-        log.warning("No HUBSPOT_API_KEY — skipping HubSpot sync")
+        log.warning("No HUBSPOT_API_KEY ΓÇö skipping HubSpot sync")
         return False
 
     try:
@@ -221,7 +221,7 @@ def sync_to_hubspot(contact: Dict, stage: str) -> bool:
         log.warning(f"HubSpot sync error: {e}")
         return False
 
-# ── SUPABASE PERSISTENCE ──────────────────────────────────────────
+# ΓöÇΓöÇ SUPABASE PERSISTENCE ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def supabase_request(method: str, table: str, data: dict = None, query: str = "") -> Optional[Any]:
     """Make a request to Supabase REST API."""
     if not SUPABASE_URL or not SUPABASE_KEY:
@@ -280,7 +280,7 @@ def get_pipeline_stats() -> Dict:
             stats[stage] = {"count": 0, "avg_score": 0, "total_pipeline_value": 0}
     return stats
 
-# ── APOLLO LEAD PULL ──────────────────────────────────────────────
+# ΓöÇΓöÇ APOLLO LEAD PULL ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def pull_apollo_leads(num_leads: int = 50) -> List[Dict]:
     """Pull fresh leads from Apollo and score them."""
     if not APOLLO_KEY:
@@ -312,7 +312,7 @@ def pull_apollo_leads(num_leads: int = 50) -> List[Dict]:
                 result = json.loads(r.read())
         except urllib.error.HTTPError as apollo_err:
             if apollo_err.code in [403, 429]:
-                log.warning(f"Apollo API blocked (HTTP {apollo_err.code}) — likely IP restriction on CI. Skipping lead pull, using existing CRM contacts.")
+                log.warning(f"Apollo API blocked (HTTP {apollo_err.code}) ΓÇö likely IP restriction on CI. Skipping lead pull, using existing CRM contacts.")
                 return []
             raise
 
@@ -354,7 +354,7 @@ def pull_apollo_leads(num_leads: int = 50) -> List[Dict]:
         log.error(f"Apollo pull failed: {e}")
         return []
 
-# ── PIPELINE MANAGER ──────────────────────────────────────────────
+# ΓöÇΓöÇ PIPELINE MANAGER ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def advance_stage(contact_id: str, new_stage: str, reason: str = "") -> bool:
     """Move a contact to the next pipeline stage."""
     result = supabase_request("PATCH", "contacts",
@@ -362,7 +362,7 @@ def advance_stage(contact_id: str, new_stage: str, reason: str = "") -> bool:
         query=f"?id=eq.{contact_id}"
     )
     if result:
-        log.info(f"Contact {contact_id} → {new_stage}: {reason}")
+        log.info(f"Contact {contact_id} ΓåÆ {new_stage}: {reason}")
     return result is not None
 
 def get_high_priority_contacts(limit: int = 10) -> List[Dict]:
@@ -372,7 +372,7 @@ def get_high_priority_contacts(limit: int = 10) -> List[Dict]:
     )
     return result or []
 
-# ── DAILY CRM RUN ─────────────────────────────────────────────────
+# ΓöÇΓöÇ DAILY CRM RUN ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def run():
     log.info("CRM Agent starting daily run...")
 
@@ -409,7 +409,7 @@ def run():
             "score":   contact.get("score", 0),
             "analysis": analysis
         })
-        log.info(f"Deal analysis: {contact.get('name','')} @ {contact.get('company','')} — {analysis.get('next_action','')}")
+        log.info(f"Deal analysis: {contact.get('name','')} @ {contact.get('company','')} ΓÇö {analysis.get('next_action','')}")
 
     total_pipeline = sum(s.get("total_pipeline_value",0) for s in stats.values())
     log.info(f"Pipeline: {sum(s['count'] for s in stats.values())} contacts | ${total_pipeline:,} value")
@@ -432,5 +432,5 @@ if __name__ == "__main__":
         log.info(f"CRM run complete. Leads: {leads}")
     except Exception as e:
         log.error(f"CRM run error: {e}")
-        # Exit 0 — partial success is acceptable, don't fail the workflow
+        # Exit 0 ΓÇö partial success is acceptable, don't fail the workflow
     import sys; sys.exit(0)

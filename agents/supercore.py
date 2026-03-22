@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""agents/supercore.py — NYSR Super-Intelligence Core v1.0"""
+﻿#!/usr/bin/env python3
+"""agents/supercore.py ΓÇö NYSR Super-Intelligence Core v1.0"""
 import os,sys,json,logging,hashlib,time,threading,re
 from datetime import datetime,date
 from concurrent.futures import ThreadPoolExecutor,as_completed
@@ -52,7 +52,7 @@ class SuperDirector:
         self.log=logging.getLogger(self.DIRECTOR_ID)
         self.sid=hashlib.md5(f"{self.DIRECTOR_ID}-{time.time()}".encode()).hexdigest()[:12]
         self.action_log=[]
-        self.log.info(f"{self.DIRECTOR_NAME} — {self.DIRECTOR_TITLE} — ACTIVATED [{self.sid}]")
+        self.log.info(f"{self.DIRECTOR_NAME} ΓÇö {self.DIRECTOR_TITLE} ΓÇö ACTIVATED [{self.sid}]")
     def think(self,task,max_tokens=1500):
         s=f"{self.DIRECTOR_PROMPT}\n{self.SYSTEM_CONTEXT}\nRULES: Answer how this generates cash. Include $ amounts. Executable in 24h. Self-grade A+ to F."
         r=claude(s,task,max_tokens=max_tokens);self._log("think",task[:100],r[:200] if r else "");return r or ""

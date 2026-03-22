@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Vivian Cole — PR & Reputation Director\nAgentic Super-intelligence for brand authority.\nAutonomous: Monitor mentions → Track domain authority → Generate press pitches → Build media list
+Vivian Cole ΓÇö PR & Reputation Director\nAgentic Super-intelligence for brand authority.\nAutonomous: Monitor mentions ΓåÆ Track domain authority ΓåÆ Generate press pitches ΓåÆ Build media list
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -98,7 +98,7 @@ def generate_pr_pitches():
         max_tokens=800) or "API needed"
 
 def run():
-    log.info("VIVIAN COLE — PR Director — Activating")
+    log.info("VIVIAN COLE ΓÇö PR Director ΓÇö Activating")
     signals = check_brand_signals()
     pitches = generate_pr_pitches()
     save_output("Vivian Cole", "weekly_pr", pitches, signals)
@@ -108,7 +108,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

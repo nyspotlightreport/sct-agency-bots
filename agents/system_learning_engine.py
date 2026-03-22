@@ -1,18 +1,18 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-System-Wide Learning & Self-Correction Engine — NYSR Intelligence
-═══════════════════════════════════════════════════════════════════
+System-Wide Learning & Self-Correction Engine ΓÇö NYSR Intelligence
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
 
 This is the brain that makes every department smarter over time.
-NO department operates in a static mode — all learn and evolve.
+NO department operates in a static mode ΓÇö all learn and evolve.
 
 DEPARTMENTS MONITORED:
-  • Sales — conversion rates, funnel velocity, objection frequency
-  • Marketing — traffic, CTR, channel ROI, CAC
-  • Content/Deliverables — quality scores, engagement, shares
-  • Product — feature usage, pricing acceptance, churn signals
-  • Finance — revenue trends, MRR growth, unit economics
-  • Operations — workflow success rates, error patterns
+  ΓÇó Sales ΓÇö conversion rates, funnel velocity, objection frequency
+  ΓÇó Marketing ΓÇö traffic, CTR, channel ROI, CAC
+  ΓÇó Content/Deliverables ΓÇö quality scores, engagement, shares
+  ΓÇó Product ΓÇö feature usage, pricing acceptance, churn signals
+  ΓÇó Finance ΓÇö revenue trends, MRR growth, unit economics
+  ΓÇó Operations ΓÇö workflow success rates, error patterns
 
 LEARNING METHODOLOGY:
   1. OBSERVE: Collect raw performance data from all departments
@@ -20,18 +20,18 @@ LEARNING METHODOLOGY:
   3. HYPOTHESIZE: Generate 3 candidate fixes ranked by expected impact
   4. TEST: Deploy fix as variant alongside current approach (A/B)
   5. MEASURE: Track result for 7 days
-  6. ADOPT: If fix wins → replace current; if not → try next hypothesis
+  6. ADOPT: If fix wins ΓåÆ replace current; if not ΓåÆ try next hypothesis
   7. DOCUMENT: Log what was learned to prevent repeating mistakes
 
 ERROR CORRECTION:
-  • Any workflow failing 3+ times → auto-diagnose + fix attempted
-  • Any metric below threshold 7+ days → escalate + root cause
-  • Any department going dark (no output) → emergency alert
+  ΓÇó Any workflow failing 3+ times ΓåÆ auto-diagnose + fix attempted
+  ΓÇó Any metric below threshold 7+ days ΓåÆ escalate + root cause
+  ΓÇó Any department going dark (no output) ΓåÆ emergency alert
 
 MEMORY SYSTEM:
-  • All learnings stored in data/learning/memory.json
-  • Each entry: what was tried, what happened, what was learned
-  • New strategies checked against memory to avoid repeating failures
+  ΓÇó All learnings stored in data/learning/memory.json
+  ΓÇó Each entry: what was tried, what happened, what was learned
+  ΓÇó New strategies checked against memory to avoid repeating failures
 """
 import os, sys, json, logging, requests, base64
 from datetime import datetime, date, timedelta
@@ -52,11 +52,11 @@ REPO      = "nyspotlightreport/sct-agency-bots"
 
 LEARNING_SYSTEM = """You are the intelligence core of NY Spotlight Report.
 Your job: analyze performance data, find root causes, generate fixes, and make every part of the system better.
-You are rigorous, data-driven, and direct. You do not guess — you hypothesize and test.
+You are rigorous, data-driven, and direct. You do not guess ΓÇö you hypothesize and test.
 When something is failing, you say exactly why and exactly what to try next.
 Format: specific, actionable, numbered. No vague advice."""
 
-# ── DEPARTMENT HEALTH MONITORS ────────────────────────────────────
+# ΓöÇΓöÇ DEPARTMENT HEALTH MONITORS ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 THRESHOLDS = {
     "sales": {
@@ -156,7 +156,7 @@ def run_department_analysis(health: dict) -> dict:
 {health_str}
 
 For each department with issues, provide:
-1. Root cause (be specific — not "needs improvement")
+1. Root cause (be specific ΓÇö not "needs improvement")
 2. Top 3 fixes ranked by expected impact and ease
 3. What to measure to know if the fix worked
 4. What NOT to do (avoid repeating past failures)
@@ -184,7 +184,7 @@ Return JSON:
 
 def store_memory(learning: dict):
     """
-    Persistent memory — every lesson stored so the system never
+    Persistent memory ΓÇö every lesson stored so the system never
     makes the same mistake twice.
     """
     path = "data/learning/memory.json"
@@ -249,19 +249,19 @@ def run():
     
     if issues:
         for issue in issues[:3]:
-            log.warning(f"  ❗ {issue.get('department','')}: {issue.get('issue','')}")
+            log.warning(f"  Γ¥ù {issue.get('department','')}: {issue.get('issue','')}")
             if issue.get("fixes"):
                 log.info(f"     Fix: {issue['fixes'][0].get('action','')}")
     
     # 3. Store to memory
     store_memory(analysis)
-    log.info("  ✅ Learnings stored to system memory")
+    log.info("  Γ£à Learnings stored to system memory")
     
     # 4. Alert if critical
     if score < 50 or any(i for i in issues if "CLOSED" not in i.get("department","")):
         alert_chairman(f"System health: {score}/100. {len(issues)} critical issues. Check data/learning/analysis_{date.today()}.json")
     
-    log.info("✅ Learning Engine complete")
+    log.info("Γ£à Learning Engine complete")
 
 if __name__ == "__main__":
     run()

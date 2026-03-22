@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Performance Memory & Self-Learning Engine — NYSR
-═══════════════════════════════════════════════════
+Performance Memory & Self-Learning Engine ΓÇö NYSR
+ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
 Every bot feeds results here. This engine:
-1. Stores every outcome (email sent → reply rate, post → engagement, etc.)
+1. Stores every outcome (email sent ΓåÆ reply rate, post ΓåÆ engagement, etc.)
 2. Identifies patterns: what topics/angles/times work best
 3. Updates bot configurations automatically based on learnings
 4. Generates weekly "what's working" report
@@ -39,7 +39,7 @@ You analyze real data to extract winning patterns and specific improvements.
 Always give precise, numbers-backed recommendations.
 Think like a quant trader: what's the signal, what's the noise?"""
 
-# ── DATA COLLECTION ────────────────────────────────────────
+# ΓöÇΓöÇ DATA COLLECTION ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def get_stripe_metrics() -> dict:
     if not STRIPE_KEY: return {}
@@ -108,12 +108,12 @@ def save_performance_data(data: dict):
     if r.status_code == 200: body["sha"] = r.json()["sha"]
     requests.put(f"https://api.github.com/repos/{REPO}/contents/{path}", json=body, headers=H2, verify=False)
 
-# ── LEARNING ENGINE ────────────────────────────────────────
+# ΓöÇΓöÇ LEARNING ENGINE ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def extract_learnings(current: dict, historical: dict) -> dict:
     """Claude analyzes all data and extracts actionable learnings."""
     if not ANTHROPIC:
-        return {"learnings": ["Insufficient data — needs more runs to analyze"], "recommendations": []}
+        return {"learnings": ["Insufficient data ΓÇö needs more runs to analyze"], "recommendations": []}
     
     return claude_json(
         LEARNING_SYSTEM,
@@ -196,7 +196,7 @@ def update_bot_configs(learnings: dict):
             "content": base64.b64encode(payload.encode()).decode()}
     if r.status_code == 200: body["sha"] = r.json()["sha"]
     requests.put(f"https://api.github.com/repos/{REPO}/contents/{path}", json=body, headers=H2, verify=False)
-    log.info("✅ Bot configs updated with weekly learnings")
+    log.info("Γ£à Bot configs updated with weekly learnings")
 
 def send_weekly_report(learnings: dict, metrics: dict):
     """Send weekly performance brief to Chairman."""
@@ -208,7 +208,7 @@ def send_weekly_report(learnings: dict, metrics: dict):
     score = learnings.get("weekly_health_score",0)
     top = learnings.get("top_learning","")
     
-    msg = f"""📊 WEEKLY PERFORMANCE BRIEF
+    msg = f"""≡ƒôè WEEKLY PERFORMANCE BRIEF
 
 Revenue (30d): ${revenue:.2f}
 Newsletter open rate: {open_rate:.1%}
@@ -221,7 +221,7 @@ Revenue optimization: {learnings.get('revenue_optimization','')[:100]}"""
     
     requests.post("https://api.pushover.net/1/messages.json",
         data={"token": PUSHOVER_KEY, "user": PUSHOVER_USR,
-              "message": msg, "title": "📊 Weekly Performance Brief"},
+              "message": msg, "title": "≡ƒôè Weekly Performance Brief"},
         timeout=8)
 
 def run():
@@ -248,7 +248,7 @@ def run():
         log.info(f"Revenue optimization: {learnings.get('revenue_optimization','')[:80]}")
         log.info(f"System health score: {learnings.get('weekly_health_score',0)}/100")
         
-        # Apply learnings — update bot configs
+        # Apply learnings ΓÇö update bot configs
         update_bot_configs(learnings)
         
         # Save to history
@@ -267,7 +267,7 @@ def run():
         # Send weekly report
         send_weekly_report(learnings, metrics)
     
-    log.info("✅ Performance Memory Engine complete — system is smarter this week")
+    log.info("Γ£à Performance Memory Engine complete ΓÇö system is smarter this week")
     return learnings
 
 if __name__ == "__main__":

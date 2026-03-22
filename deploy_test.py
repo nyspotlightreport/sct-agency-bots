@@ -1,1 +1,0 @@
-print("DEPLOY TEST OK")

@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Jordan Wells — Operations Director\nAgentic Super-intelligence for execution excellence.\nAutonomous: Audit all 133 workflows → Identify bottlenecks → Track completion rates → Optimize scheduling
+Jordan Wells ΓÇö Operations Director\nAgentic Super-intelligence for execution excellence.\nAutonomous: Audit all 133 workflows ΓåÆ Identify bottlenecks ΓåÆ Track completion rates ΓåÆ Optimize scheduling
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -99,7 +99,7 @@ def identify_bottlenecks(health):
             "broken": len([n for n,s in health.items() if s["status"]=="red"])}
 
 def run():
-    log.info("JORDAN WELLS — Operations Director — Activating")
+    log.info("JORDAN WELLS ΓÇö Operations Director ΓÇö Activating")
     health = audit_workflow_health()
     bottlenecks = identify_bottlenecks(health)
     log.info(f"Workflows: {bottlenecks['total_workflows']} total, {bottlenecks['healthy']} healthy, {bottlenecks['broken']} broken")
@@ -123,7 +123,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

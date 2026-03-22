@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Cameron Reed — Content & Publishing Director\nAgentic Super-intelligence for content-driven revenue.\nAutonomous: Audit published content → Track rankings → Generate content calendar → Ensure all content has CTAs
+Cameron Reed ΓÇö Content & Publishing Director\nAgentic Super-intelligence for content-driven revenue.\nAutonomous: Audit published content ΓåÆ Track rankings ΓåÆ Generate content calendar ΓåÆ Ensure all content has CTAs
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -98,7 +98,7 @@ def generate_content_calendar():
         max_tokens=800) or "API needed"
 
 def run():
-    log.info("CAMERON REED — Content Director — Activating")
+    log.info("CAMERON REED ΓÇö Content Director ΓÇö Activating")
     audit = audit_published_content()
     log.info(f"Content audit: {json.dumps(audit)}")
     calendar = generate_content_calendar()
@@ -112,7 +112,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

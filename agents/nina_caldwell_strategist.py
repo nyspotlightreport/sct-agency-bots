@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Nina Caldwell — Strategy & ROI Director\nFully Developed Agentic Super-intelligence for unit economics.\nAutonomous: Pull revenue → Calculate ROI all initiatives → Forecast 30/60/90 → Recommend highest-ROI action → Store to Supabase → Brief Chairman
+Nina Caldwell ΓÇö Strategy & ROI Director\nFully Developed Agentic Super-intelligence for unit economics.\nAutonomous: Pull revenue ΓåÆ Calculate ROI all initiatives ΓåÆ Forecast 30/60/90 ΓåÆ Recommend highest-ROI action ΓåÆ Store to Supabase ΓåÆ Brief Chairman
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -103,7 +103,7 @@ def roi_analysis(financials):
     return initiatives
 
 def run():
-    log.info("NINA CALDWELL — Strategy & ROI Director — Activating")
+    log.info("NINA CALDWELL ΓÇö Strategy & ROI Director ΓÇö Activating")
     fin = gather_financials()
     initiatives = roi_analysis(fin)
     log.info(f"Financials: {json.dumps(fin, indent=2)}")
@@ -127,7 +127,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

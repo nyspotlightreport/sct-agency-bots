@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Taylor Grant — HR / Workforce Director\nAgentic Super-intelligence for AI workforce management.\nAutonomous: Audit agent/bot performance → Track output per agent → Identify underperformers → Recommend scaling
+Taylor Grant ΓÇö HR / Workforce Director\nAgentic Super-intelligence for AI workforce management.\nAutonomous: Audit agent/bot performance ΓåÆ Track output per agent ΓåÆ Identify underperformers ΓåÆ Recommend scaling
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -90,7 +90,7 @@ def audit_workforce():
             "active_workflows_24h": len(active_wfs), "dormant_estimate": max(0, wf_count - len(active_wfs))}
 
 def run():
-    log.info("TAYLOR GRANT — HR Director — Activating")
+    log.info("TAYLOR GRANT ΓÇö HR Director ΓÇö Activating")
     workforce = audit_workforce()
     log.info(f"Workforce: {workforce['agents']} agents, {workforce['bots']} bots, {workforce['workflows']} workflows")
     
@@ -110,7 +110,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

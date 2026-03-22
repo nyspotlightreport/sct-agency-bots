@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Blake Sutton — Finance Director\nAgentic Super-intelligence for financial intelligence.\nAutonomous: Pull Stripe → Track expenses → Calculate burn rate → Forecast runway → Unit economics
+Blake Sutton ΓÇö Finance Director\nAgentic Super-intelligence for financial intelligence.\nAutonomous: Pull Stripe ΓåÆ Track expenses ΓåÆ Calculate burn rate ΓåÆ Forecast runway ΓåÆ Unit economics
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -96,7 +96,7 @@ def pull_financial_data():
     return fin
 
 def run():
-    log.info("BLAKE SUTTON — Finance Director — Activating")
+    log.info("BLAKE SUTTON ΓÇö Finance Director ΓÇö Activating")
     fin = pull_financial_data()
     log.info(f"Financial snapshot: Revenue MTD ${fin['revenue']['total_mtd']}, Expenses ${fin['expenses']['total_monthly']}/mo")
     
@@ -120,7 +120,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

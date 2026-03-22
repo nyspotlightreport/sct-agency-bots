@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Hayden Cross — Quality Control Director\nAgentic Super-intelligence for output excellence.\nAutonomous: Grade all director outputs → Block low-quality content → Enforce standards → Track quality trends
+Hayden Cross ΓÇö Quality Control Director\nAgentic Super-intelligence for output excellence.\nAutonomous: Grade all director outputs ΓåÆ Block low-quality content ΓåÆ Enforce standards ΓåÆ Track quality trends
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -88,7 +88,7 @@ def grade_output(director, content):
         max_tokens=400) or {"grade": "N/A", "score": 0}
 
 def run():
-    log.info("HAYDEN CROSS — Quality Control Director — Activating")
+    log.info("HAYDEN CROSS ΓÇö Quality Control Director ΓÇö Activating")
     outputs = audit_recent_outputs()
     log.info(f"Outputs to review: {len(outputs)}")
     
@@ -104,9 +104,9 @@ def run():
     avg_score = round(sum(g["score"] for g in grades)/max(len(grades),1))
     failing = [g for g in grades if g["score"] < 70]
     
-    summary = f"QC REPORT — {date.today()}\nOutputs reviewed: {len(grades)}\nAvg score: {avg_score}/100\nFailing: {len(failing)}"
+    summary = f"QC REPORT ΓÇö {date.today()}\nOutputs reviewed: {len(grades)}\nAvg score: {avg_score}/100\nFailing: {len(failing)}"
     if failing:
-        summary += "\n\nFAILING OUTPUTS:\n" + "\n".join(f"  {g['director']}: {g['grade']} — {g['recommendation']}" for g in failing)
+        summary += "\n\nFAILING OUTPUTS:\n" + "\n".join(f"  {g['director']}: {g['grade']} ΓÇö {g['recommendation']}" for g in failing)
     
     save_output("Hayden Cross", "daily_qc", summary, {"avg_score": avg_score, "grades": grades})
     save_to_repo(f"data/qc/hayden_{date.today()}.json",
@@ -118,7 +118,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):

@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Cold Outreach Agent — NYSR Multi-Channel Cold Outreach Engine
+Cold Outreach Agent ΓÇö NYSR Multi-Channel Cold Outreach Engine
 Generates and sends personalized cold outreach across email, LinkedIn, Twitter.
 
 Channels:
-  - Email via Apollo sequences (primary — 200/day limit)
+  - Email via Apollo sequences (primary ΓÇö 200/day limit)
   - LinkedIn via direct message drafts
   - Twitter/X via DM
 
@@ -15,11 +15,11 @@ Personalization uses Claude to:
   4. Generate full sequence (7 touches over 21 days)
 
 NYSR Offer Menu:
-  A. ProFlow AI Starter ($97/mo) — for content teams
-  B. ProFlow AI Growth ($297/mo) — for agencies
-  C. DFY Bot Setup ($1,497 one-time) — done-for-you system build
-  D. DFY Bot Agency ($4,997 one-time) — full agency automation
-  E. Newsletter Monetization System ($997) — for newsletter operators
+  A. ProFlow AI Starter ($97/mo) ΓÇö for content teams
+  B. ProFlow AI Growth ($297/mo) ΓÇö for agencies
+  C. DFY Bot Setup ($1,497 one-time) ΓÇö done-for-you system build
+  D. DFY Bot Agency ($4,997 one-time) ΓÇö full agency automation
+  E. Newsletter Monetization System ($997) ΓÇö for newsletter operators
 """
 import os, sys, json, logging
 from datetime import datetime
@@ -54,7 +54,7 @@ NYSR_OFFERS = {
         "name":    "ProFlow AI Growth",
         "price":   "$297/mo",
         "hook":    "automates 90% of your agency content workflow",
-        "cta":     "Happy to show you a custom demo for your agency — 20 mins?",
+        "cta":     "Happy to show you a custom demo for your agency ΓÇö 20 mins?",
         "url":     "https://nyspotlightreport.com/proflow/",
         "for":     ["agency owner","marketing director","CMO","digital director"],
     },
@@ -69,7 +69,7 @@ NYSR_OFFERS = {
     "dfy_agency": {
         "name":    "DFY Agency Automation",
         "price":   "$4,997 one-time",
-        "hook":    "automates your entire agency operations — lead gen, content, client delivery",
+        "hook":    "automates your entire agency operations ΓÇö lead gen, content, client delivery",
         "cta":     "Could we jump on a 30-min call this week?",
         "url":     "https://nyspotlightreport.com/dfy/",
         "for":     ["agency owner","agency CEO","digital agency"],
@@ -112,7 +112,7 @@ def write_cold_email(contact: dict, offer: dict, touch_num: int = 1, angle: str 
 
 Contact: {contact.get("name","")} | {contact.get("title","")} at {contact.get("company","")}
 Industry: {contact.get("industry","unknown")} | ~{contact.get("employees","?")} employees
-Offer: {offer["name"]} — {offer["price"]} — {offer["hook"]}
+Offer: {offer["name"]} ΓÇö {offer["price"]} ΓÇö {offer["hook"]}
 CTA: {offer["cta"]}
 
 Rules:
@@ -137,7 +137,7 @@ Return JSON: {{
         prompt, max_tokens=600
     ) or {
         "subject": f"Quick question, {contact.get('name','').split()[0] if contact.get('name') else 'there'}",
-        "body": f"Hi {contact.get('name','').split()[0] if contact.get('name') else 'there'},\n\nQuick question — are you currently using any AI tools to automate your content workflow?\n\nReason I ask: {offer['hook']}.\n\n{offer['cta']}\n\nBest,\nSean\nNY Spotlight Report",
+        "body": f"Hi {contact.get('name','').split()[0] if contact.get('name') else 'there'},\n\nQuick question ΓÇö are you currently using any AI tools to automate your content workflow?\n\nReason I ask: {offer['hook']}.\n\n{offer['cta']}\n\nBest,\nSean\nNY Spotlight Report",
         "personalization_note": "Generic fallback",
         "expected_reply_rate": 0.05
     }
@@ -147,7 +147,7 @@ def write_linkedin_message(contact: dict, offer: dict, msg_type: str = "connecti
     if msg_type == "connection_req":
         prompt = f"""Write a LinkedIn connection request note (max 300 chars).
 Contact: {contact.get("name","")} | {contact.get("title","")} at {contact.get("company","")}
-My offer: {offer["name"]} — {offer["hook"]}
+My offer: {offer["name"]} ΓÇö {offer["hook"]}
 Rules: No pitch. Reference something specific. Sound human. Max 300 chars."""
     else:
         prompt = f"""Write a LinkedIn DM follow-up (max 500 chars).
@@ -159,7 +159,7 @@ Rules: Reference connection. Brief value proposition. Clear ask. Max 500 chars."
     return claude(
         "You write LinkedIn messages with 35%+ acceptance rates.",
         prompt, max_tokens=150
-    ) or f"Hi {contact.get('name','').split()[0] if contact.get('name') else 'there'} — saw your work at {contact.get('company','')} and thought it'd be worth connecting. Always great to connect with {contact.get('title','')}s in this space."
+    ) or f"Hi {contact.get('name','').split()[0] if contact.get('name') else 'there'} ΓÇö saw your work at {contact.get('company','')} and thought it'd be worth connecting. Always great to connect with {contact.get('title','')}s in this space."
 
 def send_apollo_email(contact_id: str, sequence_id: str = None) -> bool:
     """Enroll contact in Apollo email sequence."""
@@ -237,7 +237,7 @@ def run(limit: int = 20):
         if contact.get("id"):
             save_sequence(contact["id"], seq)
         sequences_generated += 1
-        log.info(f"  Sequence for {contact.get('name','')} @ {contact.get('company','')} — {seq['offer']}")
+        log.info(f"  Sequence for {contact.get('name','')} @ {contact.get('company','')} ΓÇö {seq['offer']}")
 
     log.info(f"Generated {sequences_generated} sequences")
     return {"sequences_generated": sequences_generated, "contacts_processed": len(contacts)}

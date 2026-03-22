@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Sales Commander Agent — NYSR Enterprise Sales Department Director
+Sales Commander Agent ΓÇö NYSR Enterprise Sales Department Director
 Orchestrates the entire sales operation. Manages pipeline progression,
 sequences, proposals, and revenue targets.
 
@@ -97,7 +97,7 @@ def auto_advance_warm_leads(contacts: list) -> int:
         if stage == "LEAD" and contact.get("score", 0) > 70 and contact.get("email"):
             if advance_stage(contact["id"], "PROSPECT", "Auto-advanced: high score + email available"):
                 advanced += 1
-                log.info(f"Advanced {contact.get('name','')} → PROSPECT")
+                log.info(f"Advanced {contact.get('name','')} ΓåÆ PROSPECT")
 
     return advanced
 
@@ -168,13 +168,13 @@ def run():
 
     # 6. Alert Chairman with briefing
     if hot:
-        hot_summary = "\n".join([f"  • {h['company']} ({h['stage']}) — ${h['deal_size']:,} at {int(h['probability']*100)}%" for h in hot[:3]])
+        hot_summary = "\n".join([f"  ΓÇó {h['company']} ({h['stage']}) ΓÇö ${h['deal_size']:,} at {int(h['probability']*100)}%" for h in hot[:3]])
         notify(
-            f"🔥 {len(hot)} hot deals needing action:\n{hot_summary}\n\n{briefing[:400]}",
+            f"≡ƒöÑ {len(hot)} hot deals needing action:\n{hot_summary}\n\n{briefing[:400]}",
             "Sales: Hot Deals"
         )
     else:
-        notify(f"📈 Sales Daily\n{briefing[:600]}", "Sales Commander")
+        notify(f"≡ƒôê Sales Daily\n{briefing[:600]}", "Sales Commander")
 
     elapsed = (datetime.utcnow() - start).seconds
     log.info(f"Sales Commander complete in {elapsed}s")

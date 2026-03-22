@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-Rowan Blake — Business Development Director\nAgentic Super-intelligence for growth channels.\nAutonomous: Scan partnerships → Track affiliate approvals → Identify new channels → Model deal economics
+Rowan Blake ΓÇö Business Development Director\nAgentic Super-intelligence for growth channels.\nAutonomous: Scan partnerships ΓåÆ Track affiliate approvals ΓåÆ Identify new channels ΓåÆ Model deal economics
 """
 from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
@@ -97,7 +97,7 @@ def track_affiliate_status():
             "pending": len([a for a in (affiliates if isinstance(affiliates, list) else []) if isinstance(a,dict) and "pending" in str(a.get("status",""))])}
 
 def run():
-    log.info("ROWAN BLAKE — BizDev Director — Activating")
+    log.info("ROWAN BLAKE ΓÇö BizDev Director ΓÇö Activating")
     partners = scan_partnership_opportunities()
     affiliates = track_affiliate_status()
     log.info(f"Partners found: {len(partners)}, Affiliates: {json.dumps(affiliates)}")
@@ -119,7 +119,7 @@ def run():
 
 
 
-# ═══ SUPERCORE PARALLELISM WIRING ═══
+# ΓòÉΓòÉΓòÉ SUPERCORE PARALLELISM WIRING ΓòÉΓòÉΓòÉ
 def execute_super(task=None):
     """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
     class Dir(SuperDirector):
