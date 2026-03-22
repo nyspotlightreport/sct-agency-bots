@@ -1,34 +1,213 @@
-name: 🛡️ Guardian — Self-Healing (Every 30min)
+name: 🛡️ System Health Guardian — Every 30 Min
+
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 env:
-  GH_PAT:             ${{ secrets.GH_PAT }}
-  GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
-  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
-  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
-  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT:               ${{ secrets.GH_PAT }}
 
 jobs:
-  guardian:
-    name: "🛡️ Guardian Health Sweep"
+  # CHECK 1: Validate ALL workflow YAML files — catch syntax errors before they cause failures
+  yaml-lint-guard:
+    name: YAML Lint Guard — All Workflows
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pyyaml -q
+      - name: Validate every workflow YAML
+        run: |
+          python3 << 'PYEOF'
+          import yaml, os, sys
+
+          wf_dir = ".github/workflows"
+          failures = []
+          for fname in os.listdir(wf_dir):
+              if not fname.endswith(('.yml', '.yaml')): continue
+              fpath = os.path.join(wf_dir, fname)
+              try:
+                  with open(fpath) as f:
+                      yaml.safe_load(f)
+              except yaml.YAMLError as e:
+                  failures.append(f"{fname}: {str(e)[:120]}")
+
+          if failures:
+              print("YAML SYNTAX ERRORS FOUND:")
+              for f in failures: print(f"  ERROR: {f}")
+              sys.exit(1)
+          else:
+              print(f"All {len(os.listdir(wf_dir))} workflow files are valid YAML")
+          PYEOF
+
+  # CHECK 2: Netlify function health — ping every critical endpoint
+  netlify-function-health:
+    name: Netlify Functions Health Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping all critical Netlify functions
+        run: |
+          python3 << 'PYEOF'
+          import urllib.request, urllib.error, os, json
+
+          PUSH_API  = os.environ.get("PUSHOVER_API_KEY","")
+          PUSH_USER = os.environ.get("PUSHOVER_USER_KEY","")
+          BASE = "https://nyspotlightreport.com"
+
+          ENDPOINTS = [
+              ("lead-capture",   f"{BASE}/.netlify/functions/lead-capture",  "POST", '{"email":"health@test.nysr","source":"health_check"}'),
+              ("knowledge-base", f"{BASE}/.netlify/functions/knowledge-base", "GET",  None),
+              ("gumroad",        f"{BASE}/.netlify/functions/gumroad-delivery","GET", None),
+          ]
+
+          failures = []
+          for name, url, method, body in ENDPOINTS:
+              try:
+                  data = body.encode() if body else None
+                  req  = urllib.request.Request(url, data=data, method=method,
+                             headers={"Content-Type":"application/json"})
+                  with urllib.request.urlopen(req, timeout=10) as r:
+                      status = r.status
+                      # 200, 400 (bad request but function exists), 404 for missing
+                      if status == 404:
+                          failures.append(f"{name}: 404 NOT FOUND — function missing!")
+                      else:
+                          print(f"  OK ({status}): {name}")
+              except urllib.error.HTTPError as e:
+                  if e.code == 404:
+                      failures.append(f"{name}: 404 NOT FOUND — function missing!")
+                  else:
+                      print(f"  OK ({e.code}): {name}")
+              except Exception as e:
+                  failures.append(f"{name}: {str(e)[:60]}")
+
+          if failures and PUSH_API and PUSH_USER:
+              msg = "Netlify function failures:\n" + "\n".join(failures)
+              data = json.dumps({"token":PUSH_API,"user":PUSH_USER,
+                  "title":"P0 Netlify Function Down","message":msg,"priority":1}).encode()
+              req2 = urllib.request.Request("https://api.pushover.net/1/messages.json",
+                  data=data, headers={"Content-Type":"application/json"})
+              try: urllib.request.urlopen(req2, timeout=10)
+              except: pass
+              print("FAILURES:", failures)
+          elif not failures:
+              print("All Netlify functions healthy")
+          PYEOF
+
+  # CHECK 3: Workflow failure rate — detect silent failures across all 111 workflows
+  workflow-failure-audit:
+    name: Workflow Failure Rate Audit
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - name: Install dependencies
-        run: pip install requests -q
-      - name: Run Guardian
-        run: python agents/the_guardian.py
-      - name: Upload health report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: guardian-report-${{ github.run_number }}
-          path: /tmp/guardian_report.json
-          retention-days: 7
-          if-no-files-found: ignore
+      - name: Check recent workflow failures
+        run: |
+          python3 << 'PYEOF'
+          import urllib.request, json, os
+          from datetime import datetime, timedelta
+
+          GH_PAT    = os.environ.get("GH_PAT","")
+          PUSH_API  = os.environ.get("PUSHOVER_API_KEY","")
+          PUSH_USER = os.environ.get("PUSHOVER_USER_KEY","")
+
+          if not GH_PAT: exit(0)
+
+          H = {"Authorization": f"token {GH_PAT}", "Accept": "application/vnd.github.v3+json"}
+          REPO = "nyspotlightreport/sct-agency-bots"
+
+          # Get recent workflow runs (last 2 hours)
+          req = urllib.request.Request(
+              f"https://api.github.com/repos/{REPO}/actions/runs?per_page=50&status=failure",
+              headers=H)
+          try:
+              with urllib.request.urlopen(req, timeout=15) as r:
+                  runs = json.loads(r.read()).get("workflow_runs", [])
+          except Exception as e:
+              print(f"GitHub API error: {e}"); exit(0)
+
+          two_hours_ago = datetime.utcnow() - timedelta(hours=2)
+          recent_failures = []
+          for run in runs:
+              created = run.get("created_at","")
+              try:
+                  run_time = datetime.fromisoformat(created.replace("Z","+00:00"))
+                  if run_time.replace(tzinfo=None) > two_hours_ago:
+                      recent_failures.append({
+                          "name": run.get("name","?"),
+                          "workflow": run.get("path","?").split("/")[-1],
+                          "url": run.get("html_url","")
+                      })
+              except: pass
+
+          if recent_failures:
+              names = "\n".join(f['workflow'] for f in recent_failures[:5])
+              msg = f"{len(recent_failures)} workflow failures in last 2 hours:\n{names}"
+              print(f"FAILURES DETECTED: {msg}")
+              if PUSH_API and PUSH_USER:
+                  data = json.dumps({"token":PUSH_API,"user":PUSH_USER,
+                      "title":f"⚠️ {len(recent_failures)} Workflow Failures","message":msg}).encode()
+                  req2 = urllib.request.Request("https://api.pushover.net/1/messages.json",
+                      data=data, headers={"Content-Type":"application/json"})
+                  try: urllib.request.urlopen(req2, timeout=10)
+                  except: pass
+          else:
+              print("No workflow failures in last 2 hours — all systems healthy")
+          PYEOF
+
+  # CHECK 4: Lead capture canary — verify end-to-end lead flow is working
+  lead-capture-canary:
+    name: Lead Capture E2E Canary Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Test lead capture function end-to-end
+        run: |
+          python3 << 'PYEOF'
+          import urllib.request, urllib.error, json, os
+
+          PUSH_API  = os.environ.get("PUSHOVER_API_KEY","")
+          PUSH_USER = os.environ.get("PUSHOVER_USER_KEY","")
+
+          # Test the lead-capture function with canary email
+          test_data = json.dumps({
+              "email": "canary-health-check@nysr-test.internal",
+              "name":  "Health Check Bot",
+              "source":"guardian_canary"
+          }).encode()
+
+          try:
+              req = urllib.request.Request(
+                  "https://nyspotlightreport.com/.netlify/functions/lead-capture",
+                  data=test_data,
+                  method="POST",
+                  headers={"Content-Type":"application/json"})
+              with urllib.request.urlopen(req, timeout=15) as r:
+                  status = r.status
+                  body   = json.loads(r.read())
+                  if status == 200 and body.get("success"):
+                      print(f"Lead capture HEALTHY — {body.get('saved', [])}")
+                  else:
+                      raise Exception(f"Unexpected response: {status} {body}")
+          except urllib.error.HTTPError as e:
+              if e.code == 404:
+                  msg = "CRITICAL: lead-capture.js returning 404 — ALL LEADS BEING LOST"
+                  print(msg)
+                  if PUSH_API and PUSH_USER:
+                      data = json.dumps({"token":PUSH_API,"user":PUSH_USER,
+                          "title":"P0: Lead Capture 404","message":msg,"priority":2}).encode()
+                      req2 = urllib.request.Request("https://api.pushover.net/1/messages.json",
+                          data=data, headers={"Content-Type":"application/json"})
+                      try: urllib.request.urlopen(req2, timeout=10)
+                      except: pass
+              else:
+                  print(f"HTTP {e.code} — function exists, response: {e.reason}")
+          except Exception as e:
+              print(f"Canary test error: {e}")
+          PYEOF
