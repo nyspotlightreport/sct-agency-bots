@@ -1,19 +1,19 @@
 {
-  "date": "2026-03-21",
+  "date": "2026-03-22",
   "viral_opportunities": [
     {
       "topic": "content marketing automation 2026",
-      "count": 249,
+      "count": 239,
       "urgency": "HIGH"
     },
     {
       "topic": "AI replaces content team",
-      "count": 76,
+      "count": 73,
       "urgency": "HIGH"
     },
     {
       "topic": "GitHub Actions automation business",
-      "count": 42,
+      "count": 44,
       "urgency": "HIGH"
     }
   ],
@@ -47,28 +47,7 @@
       "priority": "HIGH"
     }
   ],
-  "content_briefs": [
-    [
-      "LinkedIn",
-      "Twitter",
-      "Reddit r/marketing",
-      "Growth Hackers"
-    ],
-    {
-      "headline": "We Fired Our Content Team and Revenue Dropped 67% in 30 Days",
-      "hook": "Everyone's celebrating AI content wins, but nobody's talking about the $340K mistake we made when we replaced our writers with ChatGPT.",
-      "format": "blog",
-      "platforms": [
-        "LinkedIn",
-        "Twitter",
-        "Reddit",
-        "Hacker News"
-      ],
-      "angle": "Contrarian failure story with data - why AI content killed our funnel metrics and what actually works (hybrid model with ProFlow automation)",
-      "cta_url": "/proflow/",
-      "urgency": "publish within 6 hours"
-    }
-  ],
+  "content_briefs": [],
   "ab_tests": {
     "homepage_headline": {
       "A": "Replace Your Entire Content Team With 63 AI Bots \u2014 $70/Month",
