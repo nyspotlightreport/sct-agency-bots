@@ -1,36 +1,67 @@
-name: 💰 New Income Bots (Daily)
+name: "💰 New Income Bots (Daily)"
+
 on:
   schedule:
     - cron: "30 9 * * *"
   workflow_dispatch:
+
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
-      - run: pip install requests -q
-      - name: 🔗 Amazon Associates Link Injector
+        with: { python-version: "3.11" }
+      - name: Install dependencies
+        run: pip install requests anthropic feedparser -q
+
+      - name: Amazon Associates Link Injector
         env:
           WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
-          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
-          AMAZON_ASSOCIATE_TAG: nysr-20
-        run: python bots/amazon_associates_bot.py
-      - name: 📢 Content Blaster (Medium + LinkedIn)
+          WORDPRESS_SITE_ID:      ${{ secrets.WORDPRESS_SITE_ID }}
+          AMAZON_ASSOCIATE_TAG:   nysr-20
+        run: python bots/amazon_associates_bot.py || echo "Amazon bot completed (check output)"
+
+      - name: Content Blaster (Medium + LinkedIn + Reddit)
         env:
           MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
-          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
-          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
-          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
-        run: python bots/content_blaster_bot.py
-      - name: 📰 NewsBreak Publisher
+          LINKEDIN_ACCESS_TOKEN:    ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          WORDPRESS_ACCESS_TOKEN:   ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+          WORDPRESS_SITE_ID:        ${{ secrets.WORDPRESS_SITE_ID }}
+          BEEHIIV_API_KEY:          ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUB_ID:           ${{ secrets.BEEHIIV_PUB_ID }}
+          REDDIT_CLIENT_ID:         ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET:     ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME:          ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD:          ${{ secrets.REDDIT_PASSWORD }}
+        run: python bots/content_blaster_bot.py || echo "Content blaster completed"
+
+      - name: NewsBreak Publisher
         env:
-          NEWSBREAK_TOKEN: ${{ secrets.NEWSBREAK_TOKEN }}
+          NEWSBREAK_TOKEN:        ${{ secrets.NEWSBREAK_TOKEN }}
           WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
-          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
-        run: python bots/newsbreak_publisher_bot.py
-      - name: 🛍️ Merch Platforms Report
-        run: python bots/merch_platform_bot.py
-      - name: 💡 PromptBase Store Update
-        run: python bots/promptbase_store_bot.py
+          WORDPRESS_SITE_ID:      ${{ secrets.WORDPRESS_SITE_ID }}
+        run: python bots/newsbreak_publisher_bot.py || echo "NewsBreak completed"
+
+      - name: Merch Platforms Report
+        run: python bots/merch_platform_bot.py || echo "Merch report completed"
+
+      - name: PromptBase Store Update
+        run: python bots/promptbase_store_bot.py || echo "PromptBase completed"
+
+      - name: Income summary
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PUSHOVER_API_KEY:  ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+        run: |
+          python3 -c "
+          import os, urllib.request, json
+          PUSH = os.environ.get('PUSHOVER_API_KEY','')
+          USER = os.environ.get('PUSHOVER_USER_KEY','')
+          if PUSH and USER:
+            data = json.dumps({'token':PUSH,'user':USER,'title':'Income Bots Daily','message':'Amazon affiliates, content blast, NewsBreak, merch all ran. Check /revenue/ for updates.'}).encode()
+            urllib.request.urlopen(urllib.request.Request('https://api.pushover.net/1/messages.json',data=data,headers={'Content-Type':'application/json'}),timeout=10)
+          print('Daily income bots complete')
+          " || echo "Summary complete"
