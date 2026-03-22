@@ -1,0 +1,28 @@
+name: "🤝 Affiliate Program Applications"
+
+on:
+  schedule:
+    - cron: '0 15 * * *'    # 11am ET daily
+  workflow_dispatch:
+
+env:
+  SUPABASE_URL:       ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:  ${{ secrets.SUPABASE_ANON_KEY }}
+  SMTP_USER:          ${{ secrets.SMTP_USER }}
+  GMAIL_APP_PASS:     ${{ secrets.GMAIL_APP_PASS }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+  APPLICANT_EMAIL:    ${{ secrets.APPLICANT_EMAIL }}
+
+jobs:
+  apply:
+    name: "Apply to 15 affiliate programs"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/affiliate_direct_apply_bot.py || echo "done"
