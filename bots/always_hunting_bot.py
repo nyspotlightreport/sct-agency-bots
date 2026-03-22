@@ -44,8 +44,7 @@ LINKS = {
     "elite":     "https://buy.stripe.com/aFacN5fzSdazfzd3YH2400e",
     "dfy":       "https://buy.stripe.com/9B6dR9fzSeeDev9eDl2400f",
     "agency":    "https://buy.stripe.com/8x214n9bu3zZ86L9j12400g",
-    "enterprise":"https://buy.stripe.com/00weVd5ZigmL86Ldzh2400h",
-}
+    "enterprise":"https://buy.stripe.com/00weVd5ZigmL86Ldzh2400h"}
 
 ICP = [
     {"titles":["CMO","Chief Marketing Officer"],      "industries":["Marketing","Advertising"],       "offer":"growth"},
@@ -84,8 +83,7 @@ def find_prospects(icp):
             "person_titles": icp["titles"],
             "q_organization_keyword_tags": icp.get("industries",[]),
             "contact_email_status": ["verified","likely to engage"],
-            "page": random.randint(1,40),
-        }).encode()
+            "page": random.randint(1,40)}).encode()
         req = urllib.request.Request("https://api.apollo.io/v1/mixed_people/search",
             data=data, headers={"Content-Type":"application/json","Cache-Control":"no-cache"})
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -205,9 +203,7 @@ def run():
                 "tags":["cold_outreach","apollo_hunt"]})
             supa("POST","conversation_log",{"channel":"email","direction":"outbound",
                 "body":f"Cold email: {subject}","intent":"revenue_outreach",
-                "agent_name":"HuntingBot",
-                "metadata":{"email":email,"company":p.get("company",""),
-                            "smtp_user":SMTP_USER,"from_display":FROM_EMAIL}})
+                "agent_name":"HuntingBot"})
         else:
             failed+=1
             log.warning(f"  ❌ Failed: {email}")
