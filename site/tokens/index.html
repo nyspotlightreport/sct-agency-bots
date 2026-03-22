@@ -3,196 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NYSR — One-Click Platform Connect</title>
+<title>NYSR Platform Connections</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#060a0f;color:#e2e8f0;padding:40px 20px}
 .page{max-width:600px;margin:0 auto}
 h1{font-size:22px;color:#f8fafc;margin-bottom:6px}
 .sub{font-size:14px;color:#64748b;margin-bottom:32px}
-.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;margin-bottom:16px}
-.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;margin-bottom:14px}
+.card-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:10px}
 .platform{font-size:16px;font-weight:600;color:#f1f5f9}
 .badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px}
-.badge-auto{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2)}
-.badge-once{background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.2)}
-.badge-manual{background:rgba(148,163,184,.1);color:#94a3b8;border:1px solid rgba(148,163,184,.15)}
-.mechanic{font-size:13px;color:#64748b;margin-bottom:16px;line-height:1.6}
-.mechanic strong{color:#94a3b8}
-.btn{display:inline-block;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;color:#fff;cursor:pointer;border:none;transition:opacity .2s}
-.btn:hover{opacity:.85}
-.btn-li{background:#0077B5}.btn-meta{background:#1877F2}.btn-reddit{background:#FF4500}
-.btn-google{background:#4285F4}.btn-shopify{background:#96bf48;color:#000}
-.status{font-size:12px;margin-top:12px;padding:8px 12px;border-radius:6px;display:none}
-.status-ok{background:rgba(34,197,94,.08);color:#22c55e;border:1px solid rgba(34,197,94,.2)}
-.status-info{background:rgba(201,168,76,.08);color:#C9A84C;border:1px solid rgba(201,168,76,.2)}
-.divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin:8px 0 16px}
+.b-auto{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2)}
+.b-once{background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.2)}
+.b-ui{background:rgba(148,163,184,.1);color:#94a3b8;border:1px solid rgba(148,163,184,.15)}
+.mech{font-size:13px;color:#64748b;line-height:1.6;margin-bottom:14px}
+.mech strong{color:#94a3b8}
+hr{border:none;border-top:1px solid rgba(255,255,255,.06);margin:0 0 14px}
+.btn{display:inline-block;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;color:#fff;border:none;cursor:pointer}
+.li{background:#0077B5}.meta{background:#1877F2}.reddit{background:#FF4500}
+.google{background:#4285F4}.shopify{background:#96bf48;color:#000}
+inp{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:7px;padding:9px 12px;color:#e2e8f0;font-size:13px;margin-bottom:8px;outline:none;display:block}
+inp:focus{border-color:rgba(201,168,76,.5)}
+.save{background:#C9A84C;color:#060a0f;border:none;padding:8px 18px;border-radius:7px;font-weight:700;cursor:pointer;font-size:13px;margin-top:4px}
+.msg{font-size:12px;padding:8px 12px;border-radius:6px;margin-top:8px;display:none}
+.ok{background:rgba(34,197,94,.08);color:#22c55e;border:1px solid rgba(34,197,94,.2)}
+.warn{background:rgba(201,168,76,.08);color:#C9A84C;border:1px solid rgba(201,168,76,.2)}
 </style>
 </head>
 <body>
 <div class="page">
-  <h1>🔑 Platform Connections</h1>
-  <p class="sub">Each platform: click the button → authorize → done permanently.</p>
+  <h1>🔑 NYSR Platform Connections</h1>
+  <p class="sub">Fix LinkedIn/Meta: click button → authorize → auto-saves. Reddit: zero-click. Google: service account bypasses consent screen.</p>
 
-  <!-- LinkedIn: 1 click → token auto-saved, auto-refreshed every 45 days -->
+  <!-- LinkedIn -->
   <div class="card">
-    <div class="card-header">
+    <div class="card-top">
       <span class="platform">LinkedIn</span>
-      <span class="badge badge-once">1 click → automated forever</span>
+      <span class="badge b-once">1 click → automated forever</span>
     </div>
-    <div class="mechanic">
-      <strong>Why it needs a click:</strong> LinkedIn requires the account owner to approve 
-      the connection once — they call this "user consent" and enforce it for every API client.<br><br>
-      <strong>What happens after:</strong> Our system gets a refresh token that lasts 365 days 
-      and auto-refreshes itself every 45 days. This click never repeats.
-    </div>
-    <hr class="divider">
-    <button class="btn btn-li" onclick="startLinkedInAuth()">Connect LinkedIn →</button>
-    <div id="li_status" class="status"></div>
+    <div class="mech"><strong>Mechanism:</strong> Authorization Code Flow — LinkedIn requires account owner to click Allow once. Our server exchanges the code automatically and saves both access + refresh tokens. Refresh runs every 45 days, forever.</div>
+    <hr>
+    <a href="/.netlify/functions/linkedin-auth-start" class="btn li">Connect LinkedIn →</a>
+    <div class="msg warn" id="li_note">Opening LinkedIn authorization page. Approve in the window that opens.</div>
   </div>
 
-  <!-- Meta: 1 click → NON-EXPIRING page token saved -->
+  <!-- Meta -->
   <div class="card">
-    <div class="card-header">
+    <div class="card-top">
       <span class="platform">Instagram + Facebook</span>
-      <span class="badge badge-once">1 click → token never expires</span>
+      <span class="badge b-once">1 click → never expires</span>
     </div>
-    <div class="mechanic">
-      <strong>Why it needs a click:</strong> Same as LinkedIn — Meta requires owner approval once.<br><br>
-      <strong>What's different:</strong> Meta Page Tokens derived from a long-lived user token 
-      <strong>do not expire</strong>. One click today = working forever. No refresh ever needed.
-    </div>
-    <hr class="divider">
-    <button class="btn btn-meta" onclick="startMetaAuth()">Connect Instagram + Facebook →</button>
-    <div id="meta_status" class="status"></div>
+    <div class="mech"><strong>Mechanism:</strong> Authorization Code Flow. Meta page tokens from long-lived user tokens do not expire — this is a permanent token. One click today = working forever.</div>
+    <hr>
+    <a href="/.netlify/functions/meta-auth-start" class="btn meta">Connect Instagram + Facebook →</a>
   </div>
 
-  <!-- Reddit: password grant — zero clicks after app creation -->
+  <!-- Reddit — password grant, zero click -->
   <div class="card">
-    <div class="card-header">
+    <div class="card-top">
       <span class="platform">Reddit</span>
-      <span class="badge badge-auto">fully automated via password grant</span>
+      <span class="badge b-auto">zero-click after setup</span>
     </div>
-    <div class="mechanic">
-      <strong>Reddit is different:</strong> Reddit's API supports "password grant" for script apps — 
-      meaning it uses your username + password + client credentials directly with no browser redirect.<br><br>
-      <strong>What's needed:</strong> Create a Reddit app once at reddit.com/prefs/apps (script type), 
-      then paste the client_id and secret below. After that our system handles everything including token refresh.
-    </div>
-    <hr class="divider">
-    <input id="r_user" placeholder="Reddit username" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px;color:#e2e8f0;font-size:13px;margin-bottom:8px;outline:none">
-    <input id="r_pass" type="password" placeholder="Reddit password" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px;color:#e2e8f0;font-size:13px;margin-bottom:8px;outline:none">
-    <input id="r_id"   placeholder="Reddit client_id" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px;color:#e2e8f0;font-size:13px;margin-bottom:8px;outline:none">
-    <input id="r_sec" type="password" placeholder="Reddit client_secret" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px;color:#e2e8f0;font-size:13px;margin-bottom:8px;outline:none">
-    <button class="btn btn-reddit" onclick="connectReddit()">Save Reddit Credentials →</button>
-    <div id="reddit_status" class="status"></div>
+    <div class="mech"><strong>Mechanism:</strong> Reddit script apps use password grant — no browser redirect at all. Token generated directly from credentials. Auto-refreshes every run. Steps: <a href="https://www.reddit.com/prefs/apps" target="_blank" style="color:#C9A84C">reddit.com/prefs/apps</a> → create app (type: script) → paste below.</div>
+    <hr>
+    <input class="inp" id="r_user" placeholder="Reddit username (e.g. nyspotlightreport)"/>
+    <input class="inp" id="r_pass" type="password" placeholder="Reddit password"/>
+    <input class="inp" id="r_id"   placeholder="Reddit client_id (shown under app name)"/>
+    <input class="inp" id="r_sec"  type="password" placeholder="Reddit client_secret"/>
+    <button class="save" onclick="saveMulti({REDDIT_USERNAME:'r_user',REDDIT_PASSWORD:'r_pass',REDDIT_CLIENT_ID:'r_id',REDDIT_CLIENT_SECRET:'r_sec'}, 'r_msg')">Save Reddit Credentials →</button>
+    <div class="msg" id="r_msg"></div>
   </div>
 
-  <!-- Google: Service Account bypasses consent screen entirely -->
+  <!-- Google — service account, bypasses consent screen -->
   <div class="card">
-    <div class="card-header">
+    <div class="card-top">
       <span class="platform">Google / YouTube</span>
-      <span class="badge badge-auto">service account — bypasses consent screen</span>
+      <span class="badge b-auto">service account — consent screen bypassed</span>
     </div>
-    <div class="mechanic">
-      <strong>The problem:</strong> Publishing the OAuth consent app requires human verification at Google.<br><br>
-      <strong>The bypass:</strong> Use a Service Account instead. Service accounts are for server-to-server 
-      authentication — they don't go through the consent screen at all. Tokens never expire (JWT-based).<br><br>
-      <strong>Steps (done once):</strong><br>
-      1. console.cloud.google.com → IAM → Service Accounts → Create<br>
-      2. Download the JSON key file<br>
-      3. In YouTube Studio → Settings → Permissions → add service account email<br>
-      4. Paste the JSON key below → saved to GitHub Secrets → done permanently
-    </div>
-    <hr class="divider">
-    <textarea id="g_json" placeholder='Paste the full Google service account JSON key here ({"type":"service_account",...})' 
-      style="width:100%;height:100px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 12px;color:#e2e8f0;font-size:12px;margin-bottom:8px;outline:none;resize:vertical"></textarea>
-    <button class="btn btn-google" onclick="saveGoogleKey()">Save Google Service Account →</button>
-    <div id="google_status" class="status"></div>
+    <div class="mech"><strong>Mechanism:</strong> Service accounts skip the OAuth consent screen entirely — they authenticate server-to-server. Tokens never expire (JWT). Steps: <a href="https://console.cloud.google.com/iam-admin/serviceaccounts" target="_blank" style="color:#C9A84C">Google Cloud → Service Accounts</a> → Create → download JSON → share YouTube channel with service account email → paste below.</div>
+    <hr>
+    <textarea class="inp" id="g_json" rows="4" placeholder='{"type":"service_account","project_id":"...","client_email":"...@....iam.gserviceaccount.com",...}'></textarea>
+    <button class="save" onclick="saveOne('GOOGLE_SERVICE_ACCOUNT_JSON','g_json','g_msg')">Save Google Service Account →</button>
+    <div class="msg" id="g_msg"></div>
   </div>
 
-  <!-- Shopify: API can update store name, entity is UI only (2 min) -->
+  <!-- Shopify — genuinely UI only -->
   <div class="card">
-    <div class="card-header">
+    <div class="card-top">
       <span class="platform">Shopify Entity Name</span>
-      <span class="badge badge-manual">2-min UI task — no API path exists</span>
+      <span class="badge b-ui">2-min UI task — no API exists</span>
     </div>
-    <div class="mechanic">
-      <strong>What we found:</strong> The Shopify Admin API can update the store name, 
-      but the "legal business entity" field in Shopify Payments is in their billing compliance 
-      layer — it's write-protected via API by design (fraud prevention).<br><br>
-      <strong>This one is genuinely a UI task.</strong> No workaround exists that isn't 
-      rebuilding Shopify Payments from scratch.
-    </div>
-    <hr class="divider">
-    <a href="https://nysr.myshopify.com/admin/settings/general" target="_blank" class="btn btn-shopify">
-      Open Shopify Settings → change entity name (2 min) →
-    </a>
+    <div class="mech"><strong>Why no workaround:</strong> Shopify Payments legal entity is in their billing compliance layer, write-protected via API as fraud prevention. Every third-party billing integration faces this same wall.</div>
+    <hr>
+    <a href="https://nysr.myshopify.com/admin/settings/general" target="_blank" class="btn shopify">Open Shopify → change entity to "NY Spotlight Report" →</a>
   </div>
 
 </div>
-
 <script>
-const LI_CLIENT_ID     = '78pdfizp8xkukg';  // Set your LinkedIn App client_id here
-const LI_REDIRECT_URI  = 'https://nyspotlightreport.com/.netlify/functions/linkedin-callback';
-const META_APP_ID      = '';  // Set your Meta App ID here
-const META_REDIRECT    = 'https://nyspotlightreport.com/.netlify/functions/facebook-callback';
-
-function startLinkedInAuth() {
-  const scope = 'openid profile email w_member_social';
-  const state = Math.random().toString(36).substr(2,12);
-  sessionStorage.setItem('li_state', state);
-  const url = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${LI_CLIENT_ID}&redirect_uri=${encodeURIComponent(LI_REDIRECT_URI)}&scope=${encodeURIComponent(scope)}&state=${state}`;
-  window.open(url, '_blank', 'width=600,height=700');
-  showStatus('li_status', 'Authorize the app in the popup → token saves automatically.', 'info');
+async function saveOne(secretName, inputId, msgId) {
+  const val = document.getElementById(inputId).value.trim();
+  const msg = document.getElementById(msgId);
+  if (!val) { show(msg, 'Paste the value first', 'warn'); return; }
+  const r = await fetch('/.netlify/functions/save-secret', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ secrets: { [secretName]: val } })
+  }).catch(e => ({ ok:false, json: async()=>({ error:e.message }) }));
+  const d = await r.json();
+  show(msg, d.success ? '✅ Saved to GitHub Secrets — live within 60 seconds' : '❌ ' + (d.error||'Failed. Use GitHub Secrets UI directly.'), d.success ? 'ok' : 'warn');
 }
 
-function startMetaAuth() {
-  if (!META_APP_ID) {
-    showStatus('meta_status', 'META_APP_ID not configured. Check /tokens/ for manual entry.', 'info');
-    return;
+async function saveMulti(mapping, msgId) {
+  const msg = document.getElementById(msgId);
+  const secrets = {};
+  for (const [k, id] of Object.entries(mapping)) {
+    const v = document.getElementById(id).value.trim();
+    if (!v) { show(msg, `Fill in all 4 fields first`, 'warn'); return; }
+    secrets[k] = v;
   }
-  const scope = 'pages_manage_posts,pages_read_engagement,instagram_basic,instagram_content_publish';
-  const url = `https://www.facebook.com/v18.0/dialog/oauth?client_id=${META_APP_ID}&redirect_uri=${encodeURIComponent(META_REDIRECT)}&scope=${encodeURIComponent(scope)}&response_type=code`;
-  window.open(url, '_blank', 'width=600,height=700');
-  showStatus('meta_status', 'Authorize in the popup → permanent non-expiring token saved automatically.', 'info');
-}
-
-async function connectReddit() {
-  const user = document.getElementById('r_user').value.trim();
-  const pass = document.getElementById('r_pass').value.trim();
-  const id   = document.getElementById('r_id').value.trim();
-  const sec  = document.getElementById('r_sec').value.trim();
-  if (!user || !pass || !id || !sec) { showStatus('reddit_status', 'Fill all 4 fields.', 'info'); return; }
-  
   const r = await fetch('/.netlify/functions/save-secret', {
     method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({ secrets: {
-      REDDIT_USERNAME: user, REDDIT_PASSWORD: pass,
-      REDDIT_CLIENT_ID: id, REDDIT_CLIENT_SECRET: sec
-    }})
-  });
+    body: JSON.stringify({ secrets })
+  }).catch(e => ({ ok:false, json: async()=>({ error:e.message }) }));
   const d = await r.json();
-  showStatus('reddit_status', d.success ? '✅ Reddit credentials saved. Password grant flow activated — no browser auth ever needed.' : '❌ ' + (d.error||'Failed'), d.success ? 'ok' : 'info');
+  show(msg, d.success ? '✅ Reddit credentials saved — password grant activated, zero-click from here' : '❌ ' + (d.error||'Failed'), d.success ? 'ok' : 'warn');
 }
 
-async function saveGoogleKey() {
-  const json = document.getElementById('g_json').value.trim();
-  if (!json) { showStatus('google_status', 'Paste the JSON key.', 'info'); return; }
-  try { JSON.parse(json); } catch(e) { showStatus('google_status', 'Invalid JSON — check the key file.', 'info'); return; }
-  
-  const r = await fetch('/.netlify/functions/save-secret', {
-    method:'POST', headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({ secrets: { GOOGLE_SERVICE_ACCOUNT_JSON: json }})
-  });
-  const d = await r.json();
-  showStatus('google_status', d.success ? '✅ Service account key saved. YouTube uploads now use service account — consent screen bypassed.' : '❌ ' + (d.error||'Failed'), d.success ? 'ok' : 'info');
-}
-
-function showStatus(id, msg, type) {
-  const el = document.getElementById(id);
-  el.textContent = msg;
-  el.className = 'status ' + (type === 'ok' ? 'status-ok' : 'status-info');
+function show(el, text, type) {
+  el.textContent = text;
+  el.className = 'msg ' + type;
   el.style.display = 'block';
 }
 </script>
