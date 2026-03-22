@@ -1,0 +1,134 @@
+{
+  "updated": "2026-03-21",
+  "irreducible_only": true,
+  "total": 11,
+  "total_time_minutes": 65,
+  "tasks": [
+    {
+      "id": "netlify_token",
+      "title": "Refresh Netlify Token",
+      "time": "60s",
+      "priority": 1,
+      "why": "Deploy is failing \u2014 expired token",
+      "url": "https://app.netlify.com/user/applications/personal",
+      "secret": "NETLIFY_AUTH_TOKEN"
+    },
+    {
+      "id": "pushover",
+      "title": "Enable Phone Alerts",
+      "time": "45s",
+      "priority": 2,
+      "why": "All push notifications blocked without this",
+      "url": "https://pushover.net/apps/build",
+      "secrets": [
+        "PUSHOVER_API_KEY",
+        "PUSHOVER_USER_KEY"
+      ]
+    },
+    {
+      "id": "linkedin",
+      "title": "LinkedIn Access Token",
+      "time": "90s",
+      "priority": 3,
+      "why": "Daily B2B posting unlocked \u2014 2 weeks of posts staged",
+      "url": "https://www.linkedin.com/developers/tools/oauth/token-generator?clientId=78b8ect8u8qgbe&scopes=w_member_social,r_liteprofile,r_emailaddress",
+      "secrets": [
+        "LINKEDIN_ACCESS_TOKEN"
+      ]
+    },
+    {
+      "id": "reddit",
+      "title": "Reddit App",
+      "time": "2min",
+      "priority": 4,
+      "why": "5M+ audience \u2014 posts staged and waiting",
+      "url": "https://www.reddit.com/prefs/apps",
+      "secrets": [
+        "REDDIT_CLIENT_ID",
+        "REDDIT_CLIENT_SECRET",
+        "REDDIT_USERNAME",
+        "REDDIT_PASSWORD"
+      ]
+    },
+    {
+      "id": "youtube",
+      "title": "YouTube OAuth Step 3",
+      "time": "2min",
+      "priority": 5,
+      "why": "Tab still open \u2014 just confirm email + save",
+      "url": "https://console.cloud.google.com/auth/overview/create?project=nysr-bots",
+      "secrets": [
+        "YOUTUBE_CLIENT_ID",
+        "YOUTUBE_CLIENT_SECRET"
+      ]
+    },
+    {
+      "id": "twitter",
+      "title": "Twitter Dev App",
+      "time": "5min",
+      "priority": 6,
+      "why": "Daily threads staged and waiting",
+      "url": "https://developer.twitter.com/en/portal/apps/new",
+      "secrets": [
+        "TWITTER_API_KEY",
+        "TWITTER_API_SECRET",
+        "TWITTER_ACCESS_TOKEN",
+        "TWITTER_ACCESS_SECRET"
+      ]
+    },
+    {
+      "id": "hn",
+      "title": "Post Show HN",
+      "time": "3min",
+      "priority": 7,
+      "why": "Full post written \u2014 paste and submit. 10k-50k visitors.",
+      "url": "https://news.ycombinator.com/submit",
+      "secrets": []
+    },
+    {
+      "id": "kingsumo",
+      "title": "KingSumo API Key",
+      "time": "30s",
+      "priority": 8,
+      "why": "Already purchased \u2014 just copy the key",
+      "url": "https://app.kingsumo.com/account/api",
+      "secrets": [
+        "KINGSUMO_API_KEY"
+      ]
+    },
+    {
+      "id": "instagram",
+      "title": "Instagram Meta API",
+      "time": "8min",
+      "priority": 9,
+      "why": "1B users \u2014 posts scripted and waiting",
+      "url": "https://developers.facebook.com/apps/create/",
+      "secrets": [
+        "INSTAGRAM_PAGE_TOKEN",
+        "INSTAGRAM_USER_ID",
+        "FB_PAGE_TOKEN",
+        "FB_PAGE_ID"
+      ]
+    },
+    {
+      "id": "producthunt",
+      "title": "Product Hunt Launch",
+      "time": "15min",
+      "priority": 10,
+      "why": "500-5k targeted visitors on launch day",
+      "url": "https://www.producthunt.com/posts/new",
+      "secrets": []
+    },
+    {
+      "id": "tiktok",
+      "title": "TikTok Dev Account",
+      "time": "10min",
+      "priority": 11,
+      "why": "Apply now \u2014 3-day review. James handles after.",
+      "url": "https://developers.tiktok.com/app/",
+      "secrets": [
+        "TIKTOK_ACCESS_TOKEN"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+name: 🧠 Multi-Agent Intelligence System (Daily)
+on:
+  schedule:
+    - cron: "0 8 * * 1-5"
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+  WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
+  BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+  BEEHIIV_PUB_ID: ${{ secrets.BEEHIIV_PUB_ID }}
+  APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+  GMAIL_USER: ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+  HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+  NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  PUBLER_API_KEY: ${{ secrets.PUBLER_API_KEY }}
+  LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+
+jobs:
+  orchestrate:
+    name: "🎯 Alex Mercer — Morning Brief"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests feedparser -q
+      - name: Run Orchestrator
+        continue-on-error: true
+        run: python agents/alex_mercer_orchestrator.py
+
+  content_agent:
+    name: "✍️ Content Intelligence"
+    needs: orchestrate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Write all content
+        continue-on-error: true
+        run: python agents/content_intelligence_agent.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUB_ID: ${{ secrets.BEEHIIV_PUB_ID }}
+
+  sales_agent:
+    name: "🎯 Sales Intelligence"
+    needs: orchestrate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Send personalized outreach
+        continue-on-error: true
+        run: python agents/sales_intelligence_agent.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+          HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
+
+  inbox_agent:
+    name: "📬 Inbox Intelligence"
+    needs: orchestrate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Read and reply to emails
+        continue-on-error: true
+        run: python agents/inbox_intelligence_agent.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+
+  trend_agent:
+    name: "📈 Trend Intelligence"
+    needs: orchestrate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests feedparser -q
+      - name: Ride viral trends
+        continue-on-error: true
+        run: python agents/trend_intelligence_agent.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+          WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+          WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}

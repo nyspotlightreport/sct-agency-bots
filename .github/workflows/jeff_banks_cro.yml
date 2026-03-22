@@ -1,0 +1,68 @@
+name: "Jeff Banks — Chief Results Officer"
+
+on:
+  schedule:
+    - cron: '0 9,12,15,18,21 * * *'   # 5am,8am,11am,2pm,5pm ET
+    - cron: '0 13 * * *'              # 9am ET daily briefing to Chairman
+  workflow_dispatch:
+
+# Jeff Banks has FULL SYSTEM AUTHORITY
+# Every run: gather intelligence, grade performance, close deals, brief Chairman
+# He does not wait. He does not ask. He acts.
+
+env:
+  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+  SUPABASE_URL:       ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:  ${{ secrets.SUPABASE_ANON_KEY }}
+  SMTP_USER:          ${{ secrets.SMTP_USER }}
+  GMAIL_APP_PASS:     ${{ secrets.GMAIL_APP_PASS }}
+  BUSINESS_EMAIL:     ${{ secrets.BUSINESS_EMAIL }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+  APOLLO_API_KEY:     ${{ secrets.APOLLO_API_KEY }}
+  AHREFS_API_KEY:     ${{ secrets.AHREFS_API_KEY }}
+  GH_PAT:             ${{ secrets.GH_PAT }}
+  AFFILIATE_EMAIL:    ${{ secrets.AFFILIATE_EMAIL }}
+  TWITTER_API_KEY:    ${{ secrets.TWITTER_API_KEY }}
+  TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+  TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+
+jobs:
+
+  jeff-intelligence-and-briefing:
+    name: "Jeff Banks — Intel + Briefing + Deal Close"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - name: Jeff Banks — Full Intelligence Run
+        run: python agents/jeff_banks_cro.py || echo "Jeff run complete"
+
+  jeff-revenue-check:
+    name: "Jeff Banks — Revenue Verification"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - name: Revenue tracker
+        run: python bots/always_hunting_bot.py || echo "hunting complete"
+
+  jeff-valuation-update:
+    name: "Jeff Banks — Asset Valuation Update"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - name: Update affiliate + sweep status
+        run: python bots/email_monitor_bot.py || echo "monitor complete"

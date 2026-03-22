@@ -1,0 +1,24 @@
+name: 🎨 Redbubble Design Generator (Weekly)
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'    # Monday 5 AM UTC
+  workflow_dispatch:
+
+jobs:
+  generate-designs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests pillow
+      - name: 🎨 Generate POD designs
+        run: python bots/redbubble_design_bot.py
+      - name: Commit designs
+        run: |
+          git config user.name "NYSR Bot"
+          git config user.email "nyspotlightreport@gmail.com"
+          git add data/redbubble_designs/ data/REDBUBBLE_UPLOAD_GUIDE.md || true
+          git diff --staged --quiet || git commit -m "🎨 New Redbubble designs $(date +%Y-%m-%d)" && git push || true

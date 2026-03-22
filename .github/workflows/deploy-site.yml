@@ -1,0 +1,66 @@
+name: 🚀 Deploy Site to Netlify
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', 'netlify/**']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: "🚀 Deploy to Netlify"
+    runs-on: ubuntu-latest
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID:    ${{ secrets.NETLIFY_SITE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli --silent
+
+      - name: Check site structure
+        run: |
+          echo "Site files:"
+          ls site/ | head -20
+          echo "Functions dir exists: $([ -d site/netlify/functions ] && echo YES || echo NO)"
+          echo "Netlify dir exists:   $([ -d netlify ] && echo YES || echo NO)"
+
+      - name: Deploy to Netlify (with functions if present)
+        run: |
+          # Determine functions path
+          if [ -d "site/netlify/functions" ]; then
+            FUNC_FLAG="--functions site/netlify/functions"
+          elif [ -d "netlify/functions" ]; then
+            FUNC_FLAG="--functions netlify/functions"
+          else
+            FUNC_FLAG=""
+            echo "No functions directory found — deploying static site only"
+          fi
+
+          netlify deploy --prod \
+            --dir site \
+            $FUNC_FLAG \
+            --site "$NETLIFY_SITE_ID" \
+            --auth "$NETLIFY_AUTH_TOKEN" \
+            --message "Deploy $(date +%Y-%m-%d-%H%M)" \
+            --timeout 120
+
+      - name: Verify deployment
+        run: |
+          sleep 15
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://nyspotlightreport.com || echo "000")
+          echo "Site status: $STATUS"
+          if [ "$STATUS" = "200" ]; then
+            echo "✅ nyspotlightreport.com is live"
+          else
+            echo "⚠️  Status $STATUS — may still be propagating"
+          fi
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          curl -s --form-string "token=${{ secrets.PUSHOVER_API_KEY }}" \
+            --form-string "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+            --form-string "message=❌ Netlify deploy FAILED. Check GitHub Actions." \
+            --form-string "title=NYSR Deploy Alert" \
+            https://api.pushover.net/1/messages.json || true

@@ -1,0 +1,92 @@
+version: '3.8'
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# NYSR Passive Bandwidth Income Stack
+# Run ALL bandwidth sharing apps simultaneously
+# Setup: copy .env.example to .env, fill in credentials, then:
+#   docker-compose -f docker-compose.passive.yml up -d
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+services:
+
+  earnapp:
+    image: fazalfarhan01/earnapp:lite
+    volumes:
+      - earnapp-data:/etc/earnapp
+    environment:
+      - EARNAPP_UUID=${EARNAPP_UUID:-sdk-node-abc123changeMe}
+    restart: unless-stopped
+    network_mode: host
+
+  honeygain:
+    image: honeygain/honeygain
+    command: -tou-accept -email ${HONEYGAIN_EMAIL} -pass ${HONEYGAIN_PASS} -device NYSR-passive-1
+    restart: unless-stopped
+    network_mode: host
+
+  iproyalpawns:
+    image: iproyalpawns/pawns-cli:latest
+    command: -accept-tos -email=${IPROYAL_EMAIL:-${HONEYGAIN_EMAIL}} -password=${IPROYAL_PASS:-${HONEYGAIN_PASS}} -device-name=NYSR-node
+    restart: unless-stopped
+
+  packetstream:
+    image: packetstream/psclient:latest
+    environment:
+      - CID=${PACKETSTREAM_CID:-your_cid_here}
+    restart: unless-stopped
+
+  repocket:
+    image: repocket/repocket:latest
+    environment:
+      - RP_EMAIL=${REPOCKET_EMAIL:-${HONEYGAIN_EMAIL}}
+      - RP_API_KEY=${REPOCKET_API_KEY:-your_api_key_here}
+    restart: unless-stopped
+
+  peer2profit:
+    image: peer2profit/peer2profit_linux:latest
+    environment:
+      - P2P_EMAIL=${P2P_EMAIL:-${HONEYGAIN_EMAIL}}
+    restart: unless-stopped
+
+  traffmonetizer:
+    image: traffmonetizer/cli_v2:latest
+    command: start accept --token ${TRAFFMONETIZER_TOKEN:-your_token_here}
+    restart: unless-stopped
+
+  bitping:
+    image: bitping/bitping-node:latest
+    volumes:
+      - bitping-data:/root/.bitping
+    restart: unless-stopped
+
+  grass-node:
+    image: mrcolorr/grass-desktop:latest
+    environment:
+      - GRASS_USER=${GRASS_EMAIL:-${HONEYGAIN_EMAIL}}
+      - GRASS_PASS=${GRASS_PASS:-${HONEYGAIN_PASS}}
+    restart: unless-stopped
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 86400 --cleanup
+    restart: unless-stopped
+
+volumes:
+  earnapp-data:
+  bitping-data:
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# EXPECTED EARNINGS (residential IP):
+# EarnApp:        $3-8/month
+# Honeygain:      $2-5/month  
+# IPRoyal:        $3-8/month
+# PacketStream:   $2-5/month
+# Repocket:       $3-6/month
+# Peer2Profit:    $2-4/month
+# Traffmonetizer: $2-4/month
+# Grass:          $5-15/month (token upside)
+# ─────────────────────────────────────────────
+# TOTAL:          $22-55/month per IP
+# 2 home IPs:     $44-110/month
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

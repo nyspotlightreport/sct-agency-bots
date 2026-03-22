@@ -1,0 +1,18 @@
+{
+  "target": "Content managers, marketing leads, agency owners",
+  "emails": [
+    {
+      "subject": "Cut your content team cost by 90%",
+      "body": "Hi {{first_name}},\n\nI replaced a $4,000/month content team with 63 AI bots.\n\nThe system now publishes daily blogs, weekly newsletters, and posts to 6 social platforms \u2014 automatically.\n\nTotal cost: $70/month.\n\nIf you're spending more than that on content, I'd love to show you how it works.\n\n15-minute call? nyspotlightreport.com/proflow/\n\n\u2014 SC Thomas\nNY Spotlight Report"
+    },
+    {
+      "subject": "Re: Cut your content team cost by 90%",
+      "body": "Hi {{first_name}},\n\nJust following up \u2014 wanted to make sure this landed.\n\nQuick question: what does your current content operation cost monthly? (Team, tools, agencies combined)\n\nI ask because most people I talk to are at $2,000-8,000/month. Our system replaces all of it for $70.\n\nHappy to walk you through the architecture \u2014 no pitch, just a look at what we built.\n\n\u2014 SC Thomas"
+    },
+    {
+      "subject": "Last note from NY Spotlight Report",
+      "body": "Hi {{first_name}},\n\nLast time reaching out.\n\nIf content cost and consistency aren't a problem, no worries at all.\n\nIf they ever are \u2014 nyspotlightreport.com/proflow/ \u2014 the full system is there.\n\nWishing you the best,\n\u2014 SC Thomas"
+    }
+  ],
+  "status": "ready_for_apollo_import"
+}

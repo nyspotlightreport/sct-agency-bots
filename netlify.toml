@@ -1,0 +1,116 @@
+[build]
+  publish = "site"
+  functions = "netlify/functions"
+  command = "npm install --prefix . 2>/dev/null || true"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    Cache-Control = "public, max-age=300"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=60"
+
+# --- API redirects (all Netlify functions) ---
+
+[[redirects]]
+  from = "/api/lead-capture"
+  to   = "/.netlify/functions/lead-capture"
+  status = 200
+
+[[redirects]]
+  from = "/api/linkedin-callback"
+  to   = "/.netlify/functions/linkedin-callback"
+  status = 200
+
+[[redirects]]
+  from = "/api/facebook-callback"
+  to   = "/.netlify/functions/facebook-callback"
+  status = 200
+
+[[redirects]]
+  from = "/api/save-secret"
+  to   = "/.netlify/functions/save-secret"
+  status = 200
+
+[[redirects]]
+  from = "/api/news"
+  to   = "/.netlify/functions/knowledge-base"
+  status = 200
+
+[[redirects]]
+  from = "/api/knowledge-base"
+  to   = "/.netlify/functions/knowledge-base"
+  status = 200
+
+[[redirects]]
+  from = "/api/gumroad-delivery"
+  to   = "/.netlify/functions/gumroad-delivery"
+  status = 200
+
+[[redirects]]
+  from = "/api/chat-lead"
+  to   = "/.netlify/functions/chat-lead-capture"
+  status = 200
+
+[[redirects]]
+  from = "/tokens/linkedin-auth"
+  to   = "/.netlify/functions/linkedin-auth-start"
+  status = 200
+
+[[redirects]]
+  from = "/.netlify/functions/linkedin-auth-start"
+  to   = "/.netlify/functions/linkedin-auth-start"
+  status = 200
+
+[[redirects]]
+  from = "/tokens/meta-auth"
+  to   = "/.netlify/functions/meta-auth-start"
+  status = 200
+
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to   = "/.netlify/functions/stripe-webhook"
+  status = 200
+
+[[redirects]]
+  from = "/api/create-checkout-session"
+  to   = "/.netlify/functions/create-checkout-session"
+  status = 200
+
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to   = "/.netlify/functions/stripe-webhook"
+  status = 200
+
+[[redirects]]
+  from = "/api/create-checkout"
+  to   = "/.netlify/functions/create-checkout"
+  status = 200
+
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to   = "/.netlify/functions/stripe-webhook"
+  status = 200
+
+[[redirects]]
+  from = "/api/rep-portal-auth"
+  to   = "/.netlify/functions/rep-portal-auth"
+  status = 200
+
+[[redirects]]
+  from = "/api/rep-apply"
+  to   = "/.netlify/functions/rep-apply"
+  status = 200
+
+[[redirects]]
+  from = "/api/save-google-sa"
+  to   = "/.netlify/functions/save-google-sa"
+  status = 200

@@ -1,0 +1,110 @@
+{
+  "date": "2026-03-22",
+  "viral_opportunities": [
+    {
+      "topic": "content marketing automation 2026",
+      "count": 239,
+      "urgency": "HIGH"
+    },
+    {
+      "topic": "AI replaces content team",
+      "count": 73,
+      "urgency": "HIGH"
+    },
+    {
+      "topic": "GitHub Actions automation business",
+      "count": 44,
+      "urgency": "HIGH"
+    }
+  ],
+  "funnel_fixes": [
+    {
+      "stage": "visitor_to_lead",
+      "target": 5.0,
+      "current": 0,
+      "gap": 5.0,
+      "priority": "MEDIUM"
+    },
+    {
+      "stage": "lead_to_trial",
+      "target": 25.0,
+      "current": 0,
+      "gap": 25.0,
+      "priority": "HIGH"
+    },
+    {
+      "stage": "trial_to_paid",
+      "target": 15.0,
+      "current": 0,
+      "gap": 15.0,
+      "priority": "HIGH"
+    },
+    {
+      "stage": "paid_to_retained",
+      "target": 85.0,
+      "current": 0,
+      "gap": 85.0,
+      "priority": "HIGH"
+    }
+  ],
+  "content_briefs": [],
+  "ab_tests": {
+    "homepage_headline": {
+      "A": "Replace Your Entire Content Team With 63 AI Bots \u2014 $70/Month",
+      "B": "Your Content Operation Runs Itself. $70/Month. No Team Required.",
+      "C": "63 AI Bots. $70/Month. The Content Team You Never Have to Manage.",
+      "data": {
+        "A": {
+          "shows": 0,
+          "converts": 0
+        },
+        "B": {
+          "shows": 0,
+          "converts": 0
+        },
+        "C": {
+          "shows": 0,
+          "converts": 0
+        }
+      }
+    },
+    "email_subject": {
+      "A": "Your content team, replaced",
+      "B": "63 bots, $70/month \u2014 want to see?",
+      "C": "How we publish daily without a team",
+      "data": {
+        "A": {
+          "sent": 0,
+          "opens": 0
+        },
+        "B": {
+          "sent": 0,
+          "opens": 0
+        },
+        "C": {
+          "sent": 0,
+          "opens": 0
+        }
+      }
+    },
+    "cta_button": {
+      "A": "Get Free Plan \u2192",
+      "B": "Start Automating \u2192",
+      "C": "See How It Works \u2192",
+      "data": {
+        "A": {
+          "shows": 0,
+          "clicks": 0
+        },
+        "B": {
+          "shows": 0,
+          "clicks": 0
+        },
+        "C": {
+          "shows": 0,
+          "clicks": 0
+        }
+      }
+    }
+  }
+}

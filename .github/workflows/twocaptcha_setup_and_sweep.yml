@@ -1,0 +1,96 @@
+name: "🔍 2Captcha Setup + Sweepstakes Full Run"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * *'   # 8am daily — check key + run entries
+
+env:
+  TWOCAPTCHA_LOGIN:    ${{ secrets.TWOCAPTCHA_LOGIN }}
+  TWOCAPTCHA_PASSWORD: ${{ secrets.TWOCAPTCHA_PASSWORD }}
+  TWOCAPTCHA_API_KEY:  ${{ secrets.TWOCAPTCHA_API_KEY }}
+  GMAIL_USER:          ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS:      ${{ secrets.GMAIL_APP_PASS }}
+  ENTRY_FIRST_NAME:    Sean
+  ENTRY_LAST_NAME:     Thomas
+  ENTRY_FULL_NAME:     Sean Thomas
+  ENTRY_EMAIL:         ${{ secrets.GMAIL_USER }}
+  ENTRY_EMAIL_ALT:     seanb041992+sweep@gmail.com
+  ENTRY_CITY:          Coram
+  ENTRY_STATE:         NY
+  ENTRY_ZIP:           "11727"
+  ENTRY_DOB:           04/19/1992
+  SUPABASE_URL:        ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:        ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:   ${{ secrets.SUPABASE_ANON_KEY }}
+  PUSHOVER_API_KEY:    ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:   ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT:              ${{ secrets.GH_PAT }}
+  ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+
+  setup-2captcha:
+    name: "Retrieve 2Captcha API Key via Playwright"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      has_key: ${{ steps.check.outputs.has_key }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Install Playwright + Chrome
+        run: |
+          pip install playwright requests -q
+          playwright install chromium --with-deps
+      - name: Retrieve API key from 2captcha.com dashboard
+        run: python bots/twocaptcha_setup_bot.py || echo "Setup completed"
+      - name: Check if key was retrieved
+        id: check
+        run: |
+          if [ -f /tmp/2captcha_api_key.txt ]; then
+            KEY=$(cat /tmp/2captcha_api_key.txt)
+            echo "has_key=true" >> $GITHUB_OUTPUT
+            echo "TWOCAPTCHA_API_KEY=$KEY" >> $GITHUB_ENV
+            echo "Key retrieved: ${KEY:0:8}..."
+          elif [ -n "$TWOCAPTCHA_API_KEY" ]; then
+            echo "has_key=true" >> $GITHUB_OUTPUT
+            echo "Using existing key from secrets"
+          else
+            echo "has_key=false" >> $GITHUB_OUTPUT
+            echo "No API key available yet"
+          fi
+
+  parse-sweepstakes-emails:
+    name: "Parse Digest Emails → Populate Queue"
+    runs-on: ubuntu-latest
+    needs: setup-2captcha
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests anthropic -q
+      - run: python bots/sweepstakes_email_parser_bot.py || echo "Parser completed"
+
+  enter-all-sweepstakes:
+    name: "Enter All Queued Sweepstakes (with captcha solving)"
+    runs-on: ubuntu-latest
+    needs: [setup-2captcha, parse-sweepstakes-emails]
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Install Playwright + Chrome + deps
+        run: |
+          pip install playwright requests anthropic -q
+          playwright install chromium --with-deps
+      - name: Enter all sweepstakes (captcha solving active if funded)
+        run: |
+          # If key was just retrieved this run, load it
+          if [ -f /tmp/2captcha_api_key.txt ]; then
+            export TWOCAPTCHA_API_KEY=$(cat /tmp/2captcha_api_key.txt)
+          fi
+          python bots/sweepstakes_auto_entry_bot.py || echo "Entry run completed"

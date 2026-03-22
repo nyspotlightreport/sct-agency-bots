@@ -1,0 +1,73 @@
+name: 🧠 NYSR Intelligence Stack — Full Tech Upgrade
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # Alert brain every 30 min
+  workflow_dispatch:
+
+env:
+  SUPABASE_URL:           ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:           ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:      ${{ secrets.SUPABASE_ANON_KEY }}
+  ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
+  PUSHOVER_API_KEY:       ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:      ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT:                 ${{ secrets.GH_PAT }}
+  APOLLO_API_KEY:         ${{ secrets.APOLLO_API_KEY }}
+  HUBSPOT_API_KEY:        ${{ secrets.HUBSPOT_API_KEY }}
+  LINKEDIN_CLIENT_ID:     ${{ secrets.LINKEDIN_CLIENT_ID }}
+  LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+  LINKEDIN_REFRESH_TOKEN: ${{ secrets.LINKEDIN_REFRESH_TOKEN }}
+  GMAIL_USER:             ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS:         ${{ secrets.GMAIL_APP_PASS }}
+
+jobs:
+  # Run every 30 min — silent unless broken
+  alert-brain:
+    name: Alert Intelligence Brain
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/alert_intelligence_brain.py || echo "alert check completed"
+
+  # Sync live context once per hour
+  context-sync:
+    name: Living Context Sync
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && contains(github.run_number, '0')) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/living_context_sync_bot.py || echo "context sync completed"
+
+  # Check tokens every 6 hours
+  token-guardian:
+    name: OAuth Token Guardian
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests PyNaCl -q
+      - run: python bots/token_auto_refresh_bot.py || echo "token check completed"
+
+  # Content QA every 30 min
+  content-qa:
+    name: Content QA Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/content_qa_gate_bot.py || echo "content qa completed"

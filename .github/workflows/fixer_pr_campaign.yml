@@ -1,0 +1,92 @@
+name: 🎯 Fixer PR Campaign
+on:
+  workflow_dispatch:
+    inputs:
+      campaign_type:
+        description: 'Campaign type: serp | brand | narrative | crisis'
+        required: true
+        default: 'serp'
+      target:
+        description: 'Target name or keyword'
+        required: true
+        default: 'S.C. Thomas'
+      goal:
+        description: 'Campaign goal'
+        required: false
+        default: 'Establish as recognized authority'
+      urgency:
+        description: 'Urgency: normal | urgent | emergency'
+        required: false
+        default: 'normal'
+      facts:
+        description: 'Key facts (comma-separated)'
+        required: false
+        default: 'Built 63 AI bots, Replaced $4000/month team, NY entrepreneur'
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
+  AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+  GMAIL_USER: ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CAMPAIGN_TYPE: ${{ github.event.inputs.campaign_type }}
+  CAMPAIGN_SUBJECT: ${{ github.event.inputs.target }}
+  CAMPAIGN_GOAL: ${{ github.event.inputs.goal }}
+  CRISIS_TARGET: ${{ github.event.inputs.target }}
+  BRAND_CLIENT: ${{ github.event.inputs.target }}
+  BRAND_EXPERTISE: ${{ github.event.inputs.goal }}
+
+jobs:
+  serp-domination:
+    name: "🎯 SERP Domination Engine"
+    if: github.event.inputs.campaign_type == 'serp'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Run SERP domination campaign
+        run: python bots/serp_domination_engine.py
+
+  brand-acceleration:
+    name: "🚀 Brand Acceleration Protocol"
+    if: github.event.inputs.campaign_type == 'brand'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Run 30-day brand acceleration
+        run: python bots/personal_brand_accelerator.py
+
+  narrative-control:
+    name: "📖 Narrative Control System"
+    if: github.event.inputs.campaign_type == 'narrative'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Deploy narrative campaign
+        run: python bots/narrative_control_system.py
+
+  crisis-response:
+    name: "🛡️ Crisis Response"
+    if: github.event.inputs.campaign_type == 'crisis'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Deploy crisis response
+        env:
+          CRISIS_NEGATIVE: ${{ github.event.inputs.goal }}
+          CRISIS_URGENCY: ${{ github.event.inputs.urgency }}
+          CRISIS_FACTS: ${{ github.event.inputs.facts }}
+        run: python bots/crisis_response_bot.py

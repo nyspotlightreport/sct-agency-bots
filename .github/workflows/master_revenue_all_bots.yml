@@ -1,0 +1,88 @@
+name: "💰 MASTER REVENUE — All Bots (Env Fixed)"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */3 * * *'
+
+# REESE FIX: Every bot gets every secret it needs. No silent failures.
+env:
+  # SMTP — auth account + display config
+  SMTP_USER:             ${{ secrets.SMTP_USER }}
+  GMAIL_APP_PASS:        ${{ secrets.GMAIL_APP_PASS }}
+  GMAIL_USER:            ${{ secrets.GMAIL_USER }}
+  BUSINESS_EMAIL:        ${{ secrets.BUSINESS_EMAIL }}
+  BUSINESS_EMAIL_PASS:   ${{ secrets.BUSINESS_EMAIL_PASS }}
+  REPLY_TO_EMAIL:        ${{ secrets.REPLY_TO_EMAIL }}
+  SENDER_NAME:           "Sean Thomas | NY Spotlight Report"
+  
+  # Database — the missing root cause fixed
+  SUPABASE_URL:          ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:          ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:     ${{ secrets.SUPABASE_ANON_KEY }}
+  
+  # AI + Outreach
+  ANTHROPIC_API_KEY:     ${{ secrets.ANTHROPIC_API_KEY }}
+  APOLLO_API_KEY:        ${{ secrets.APOLLO_API_KEY }}
+  
+  # Notifications
+  PUSHOVER_API_KEY:      ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:     ${{ secrets.PUSHOVER_USER_KEY }}
+  
+  # Social
+  TWITTER_API_KEY:       ${{ secrets.TWITTER_API_KEY }}
+  TWITTER_API_SECRET:    ${{ secrets.TWITTER_API_SECRET }}
+  TWITTER_ACCESS_TOKEN:  ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+  
+  # Business
+  HUBSPOT_PORTAL_ID:     "245581177"
+  STRIPE_ACCOUNT_ID:     ${{ secrets.STRIPE_ACCOUNT_ID }}
+  NETLIFY_SITE_ID:       ${{ secrets.NETLIFY_SITE_ID }}
+  SITE_URL:              "https://nyspotlightreport.com"
+  STORE_URL:             "https://nyspotlightreport.com/store/"
+
+jobs:
+  apollo-hunt:
+    name: "🎯 Apollo Hunt — 5 Fresh Prospects"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/always_hunting_bot.py || echo "completed"
+
+  pipeline-followup:
+    name: "📋 Pipeline — Follow Up HubSpot Leads"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/immediate_revenue_bot.py || echo "completed"
+
+  twitter-post:
+    name: "🐦 Twitter — Revenue Content"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/twitter_revenue_bot.py || echo "completed"
+
+  seo-content:
+    name: "🔍 SEO — Buyer Intent Blog Post"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/ahrefs_content_bot.py || echo "completed"

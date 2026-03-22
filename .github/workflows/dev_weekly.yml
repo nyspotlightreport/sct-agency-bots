@@ -1,0 +1,81 @@
+name: 🔧 Dev — Weekly Engineering Review
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # Monday 6am (first thing)
+  workflow_dispatch:
+    inputs:
+      feature_request:
+        description: "Feature to build (optional)"
+        default: ""
+
+env:
+  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT:             ${{ secrets.GH_PAT }}
+  GITHUB_REPOSITORY:  "nyspotlightreport/sct-agency-bots"
+
+jobs:
+  security-scan:
+    name: "🔒 Security Audit"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/security_audit_agent.py
+
+  tech-debt:
+    name: "🔧 Tech Debt Tracker"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/tech_debt_tracker_bot.py
+
+  changelog:
+    name: "📝 Generate Changelog"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/changelog_bot.py
+
+  generate-docs:
+    name: "📚 Auto Documentation"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/doc_generator_bot.py
+
+  dependency-check:
+    name: "📦 Dependency Updater"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/dependency_updater_bot.py
+
+  feature-builder:
+    name: "🏗️ Feature Builder"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: ${{ github.event.inputs.feature_request != '' }}
+    env:
+      FEATURE_REQUEST: ${{ github.event.inputs.feature_request }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/feature_builder_bot.py

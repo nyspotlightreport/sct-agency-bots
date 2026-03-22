@@ -1,0 +1,12 @@
+{
+  "ready": true,
+  "description": "Pre-written responses to common HN comment types. James monitors and deploys.",
+  "responses": {
+    "how_does_it_work": "The stack runs on GitHub Actions (free CI/CD), Anthropic's Claude API for content generation, and Python bots for platform publishing. Full architecture writeup at nyspotlightreport.com/blog/automated-content-operation/",
+    "open_source": "Not yet public, but working on a packaged version. If you want early access, nyspotlightreport.com/free-plan/ \u2014 I'll reach out when it's ready.",
+    "quality_concern": "Fair question. Claude Sonnet produces content that consistently passes human review. We run every post through SEO checks and publish only if it meets our standard. About 15% get regenerated.",
+    "cost_question": "Core stack: Claude API ~$1/day, GitHub Actions free tier, Netlify free tier, DigitalOcean VPS $6/month. Optional: Apollo $99/mo, Ahrefs $99/mo, ElevenLabs $22/mo. Total $70-230 depending on which you activate.",
+    "skeptical": "Fair skepticism. The content is genuinely AI-generated \u2014 I'm not claiming it isn't. The value is in the system design and the automation layer. The blog at nyspotlightreport.com shows real output.",
+    "interested_in_using": "If you want to use it without building it yourself, I offer a done-for-you setup: nyspotlightreport.com/dfy-setup/ or the self-serve SaaS: nyspotlightreport.com/proflow/"
+  }
+}

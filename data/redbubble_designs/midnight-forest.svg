@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
+  <defs>
+    <linearGradient id="sky2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000520"/>
+      <stop offset="100%" style="stop-color:#0a1a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="3000" height="3000" fill="url(#sky2)"/>
+  <circle cx="1500" cy="600" r="120" fill="white" opacity="0.9"/>
+  <circle cx="1500" cy="600" r="115" fill="#000520"/>
+  <circle cx="1620" cy="540" r="115" fill="white" opacity="0.9"/>
+  <!-- Trees -->
+  <polygon points="200,2200 350,1400 500,2200" fill="#0a1a0a"/>
+  <polygon points="350,2200 500,1200 650,2200" fill="#0d200d"/>
+  <polygon points="600,2200 780,1350 960,2200" fill="#0a1a0a"/>
+  <polygon points="900,2200 1100,1100 1300,2200" fill="#0d200d"/>
+  <polygon points="1200,2200 1500,950 1800,2200" fill="#0a1a0a"/>
+  <polygon points="1600,2200 1800,1100 2000,2200" fill="#0d200d"/>
+  <polygon points="1900,2200 2100,1300 2300,2200" fill="#0a1a0a"/>
+  <polygon points="2200,2200 2380,1400 2560,2200" fill="#0d200d"/>
+  <polygon points="2400,2200 2600,1600 2800,2200" fill="#0a1a0a"/>
+  <rect x="0" y="2200" width="3000" height="800" fill="#0d200d"/>
+  <text x="1500" y="2700" font-family="Georgia" font-size="80" fill="#1a3a1a" text-anchor="middle" letter-spacing="12">INTO THE WILD</text>
+</svg>

@@ -1,0 +1,94 @@
+name: "MASTER OPPORTUNITY ACTIVATION — All Directors + Revenue"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 13 * * *'   # 9am ET daily
+
+env:
+  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  SMTP_USER:            ${{ secrets.SMTP_USER }}
+  GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
+  BUSINESS_EMAIL:       ${{ secrets.BUSINESS_EMAIL }}
+  REPLY_TO_EMAIL:       ${{ secrets.REPLY_TO_EMAIL }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
+  AHREFS_API_KEY:       ${{ secrets.AHREFS_API_KEY }}
+  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  GH_PAT:               ${{ secrets.GH_PAT }}
+  TWITTER_API_KEY:      ${{ secrets.TWITTER_API_KEY }}
+  TWITTER_API_SECRET:   ${{ secrets.TWITTER_API_SECRET }}
+  TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  TWITTER_ACCESS_SECRET:${{ secrets.TWITTER_ACCESS_SECRET }}
+  AFFILIATE_EMAIL:      ${{ secrets.AFFILIATE_EMAIL }}
+
+jobs:
+  jeff-banks-cro:
+    name: "Jeff Banks — CRO Intelligence + Deal Close"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python agents/jeff_banks_cro.py || echo "Jeff done"
+
+  reese-engineering:
+    name: "Reese Morgan — Engineering Audit + Gumroad Products"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python agents/reese_morgan_director.py || echo "Reese done"
+
+  all-directors-scan:
+    name: "15 Directors — Full Opportunity Scan"
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python agents/directors_super_intelligence.py || echo "Directors done"
+
+  apollo-hunt:
+    name: "Apollo — 5 Fresh Prospects"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/always_hunting_bot.py || echo "Hunt done"
+
+  twitter-revenue:
+    name: "Twitter — Revenue Post + Store Link"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/twitter_revenue_bot.py || echo "Twitter done"
+
+  affiliate-check:
+    name: "Affiliate — Check Approvals + Apply Pending"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/affiliate_engine.py || echo "Affiliate done"

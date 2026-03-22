@@ -1,0 +1,23 @@
+name: Fetch Service IDs
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'bots/get_publer_workspace.py'
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Get Publer Workspace ID
+        run: python bots/get_publer_workspace.py
+        env:
+          PUBLER_API_KEY: ${{ secrets.PUBLER_API_KEY }}
+      - name: Test Alpha Vantage Key
+        run: python bots/test_alpha_vantage.py
+        env:
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}

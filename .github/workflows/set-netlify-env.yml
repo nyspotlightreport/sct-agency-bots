@@ -1,0 +1,34 @@
+name: Set Netlify Env Vars
+on:
+  workflow_dispatch:
+jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+      - name: Set env vars via CLI
+        run: |
+          SITE_ID="8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
+          
+          set_var() {
+            netlify env:set "$1" "$2" --site "$SITE_ID" 2>&1 | tail -1
+          }
+          
+          echo "Setting environment variables on Netlify..."
+          set_var "NEWSAPI_KEY"           "$NEWSAPI_KEY_VAL"     && echo "✅ NEWSAPI_KEY"
+          set_var "ANTHROPIC_API_KEY"     "$ANTHROPIC_KEY_VAL"   && echo "✅ ANTHROPIC_API_KEY"
+          set_var "ALPHA_VANTAGE_API_KEY" "$AV_KEY_VAL"          && echo "✅ ALPHA_VANTAGE_API_KEY"
+          set_var "PUBLER_API_KEY"        "$PUBLER_KEY_VAL"      && echo "✅ PUBLER_API_KEY"
+          set_var "OPENAI_API_KEY"        "$OPENAI_KEY_VAL"      && echo "✅ OPENAI_API_KEY"
+          
+          echo "Triggering redeploy..."
+          netlify deploy --prod --dir site --site "$SITE_ID" --message "Env vars updated" 2>&1 | tail -5
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NEWSAPI_KEY_VAL:    ${{ secrets.NEWSAPI_KEY }}
+          ANTHROPIC_KEY_VAL:  ${{ secrets.ANTHROPIC_API_KEY }}
+          AV_KEY_VAL:         ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          PUBLER_KEY_VAL:     ${{ secrets.PUBLER_API_KEY }}
+          OPENAI_KEY_VAL:     ${{ secrets.OPENAI_API_KEY }}

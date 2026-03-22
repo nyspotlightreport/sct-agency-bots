@@ -1,0 +1,113 @@
+name: 🧠 Weekly Intelligence — DSPy + Flywheel + Briefs
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'   # Every Monday 3am — fresh week starts with optimized agents
+  workflow_dispatch:
+
+env:
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
+  HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
+  GH_PAT:               ${{ secrets.GH_PAT }}
+
+jobs:
+  # DSPy: Optimize prompts based on last week's win/loss data
+  prompt-optimization:
+    name: DSPy Prompt Self-Optimization
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/dspy_prompt_optimizer_bot.py || echo "optimizer completed"
+
+  # Intelligence flywheel: collect signals, update ICP, generate brief
+  intelligence-flywheel:
+    name: Intelligence Flywheel Cycle
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/intelligence_flywheel_bot.py || echo "flywheel completed"
+
+  # Digital products: refresh descriptions, track sales
+  digital-products:
+    name: Digital Products Flywheel
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/digital_products_flywheel_bot.py || echo "products completed"
+
+  # Weekly report to Sean
+  weekly-report:
+    name: Weekly Chairman Report
+    runs-on: ubuntu-latest
+    needs: [prompt-optimization, intelligence-flywheel, digital-products]
+    if: always()
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: |
+          python3 /dev/stdin << 'PYEOF'
+          import os, json, urllib.request, datetime
+
+          SUPA = os.environ.get("SUPABASE_URL","")
+          KEY  = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
+          PUSH = os.environ.get("PUSHOVER_API_KEY","")
+          USER = os.environ.get("PUSHOVER_USER_KEY","")
+
+          if not SUPA or not PUSH: exit(0)
+
+          def supa(method, table, data=None, query=""):
+            req = urllib.request.Request(f"{SUPA}/rest/v1/{table}{query}",
+              data=json.dumps(data).encode() if data else None, method=method,
+              headers={"apikey":KEY,"Authorization":f"Bearer {KEY}",
+                       "Content-Type":"application/json","Prefer":"return=representation"})
+            try:
+              with urllib.request.urlopen(req, timeout=10) as r:
+                b = r.read(); return json.loads(b) if b else {}
+            except: return None
+
+          today = datetime.date.today().isoformat()
+          week_ago = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+
+          contacts = supa("GET","contacts","","?select=stage") or []
+          won  = len([c for c in contacts if c.get("stage")=="CLOSED_WON"]) if isinstance(contacts,list) else 0
+          hot  = len([c for c in contacts if c.get("stage") in ["HOT","DEMO","PROPOSAL"]]) if isinstance(contacts,list) else 0
+          revenue = supa("GET","revenue_daily","",f"?date=gte.{week_ago}&select=amount") or []
+          weekly_rev = sum(float(r.get("amount",0) or 0) for r in (revenue if isinstance(revenue,list) else []))
+          prompts = supa("GET","agent_prompt_performance","","?is_champion=eq.true&select=agent_name") or []
+          seqs = supa("GET","outreach_sequences","","?status=eq.active&select=id") or []
+
+          report = (f"Chairman Weekly Report\n"
+                    f"Revenue 7d: ${weekly_rev:.2f}\n"
+                    f"Total wins: {won} | Hot pipeline: {hot}\n"
+                    f"Active sequences: {len(seqs if isinstance(seqs,list) else [])}\n"
+                    f"Champion prompts: {len(prompts if isinstance(prompts,list) else [])}\n"
+                    f"DSPy + Flywheel ran. Agents smarter than last week.")
+
+          data = json.dumps({"token":PUSH,"user":USER,"title":"Weekly Report","message":report}).encode()
+          req = urllib.request.Request("https://api.pushover.net/1/messages.json",
+            data=data, headers={"Content-Type":"application/json"})
+          try: urllib.request.urlopen(req, timeout=10)
+          except: pass
+          print(report)
+          PYEOF

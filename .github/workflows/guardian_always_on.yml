@@ -1,0 +1,36 @@
+name: 🛡️ Guardian — Always-On (4h)
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+  BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+  BEEHIIV_PUB_ID: ${{ secrets.BEEHIIV_PUB_ID }}
+  AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+
+jobs:
+  guardian:
+    name: "🛡️ Self-Heal Everything"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Run Guardian
+        run: python agents/the_guardian.py
+      - name: Update intelligence dashboard
+        continue-on-error: true
+        run: python agents/reputation_intelligence_engine.py
+      - name: Check for threats
+        continue-on-error: true
+        run: python bots/threat_intelligence_feed.py

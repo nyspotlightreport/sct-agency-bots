@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
+  <defs>
+    <linearGradient id="aqua" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a2e"/>
+      <stop offset="100%" style="stop-color:#1a1a5e"/>
+    </linearGradient>
+  </defs>
+  <rect width="3000" height="3000" fill="url(#aqua)"/>
+  <text x="1500" y="700" font-family="Georgia" font-size="90" fill="#88aaff" text-anchor="middle" letter-spacing="20">AQUARIUS</text>
+  <text x="1500" y="900" font-family="Georgia" font-size="55" fill="#4466aa" text-anchor="middle" letter-spacing="8">♒ JAN 20 - FEB 18 ♒</text>
+  <text x="1500" y="1450" font-family="serif" font-size="280" fill="#6699ff" text-anchor="middle">♒</text>
+  <path d="M 400 1700 Q 800 1600 1200 1700 Q 1600 1800 2000 1700 Q 2400 1600 2600 1700" fill="none" stroke="#4488ff" stroke-width="12" opacity="0.6"/>
+  <path d="M 400 1780 Q 800 1680 1200 1780 Q 1600 1880 2000 1780 Q 2400 1680 2600 1780" fill="none" stroke="#4488ff" stroke-width="12" opacity="0.4"/>
+  <text x="1500" y="2100" font-family="Georgia" font-size="65" fill="#4466aa" text-anchor="middle" font-style="italic">Visionary. Free. Humanitarian.</text>
+</svg>

@@ -1,0 +1,62 @@
+name: 🚦 Traffic Engine (Daily)
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+  REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+  REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+  REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+
+jobs:
+  quora:
+    name: "❓ Quora Authority Answers"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Generate + save Quora answers
+        continue-on-error: true
+        run: python bots/quora_authority_bot.py
+
+  reddit:
+    name: "📢 Reddit Traffic Post"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Post to Reddit
+        continue-on-error: true
+        run: python bots/reddit_traffic_machine.py
+
+  internal-links:
+    name: "🔗 Internal Link Network"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Build internal link network
+        continue-on-error: true
+        run: python bots/internal_link_network_bot.py
+
+  schema-seo:
+    name: "📊 Schema Markup"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - name: Apply schema markup
+        continue-on-error: true
+        run: python bots/schema_seo_bot.py

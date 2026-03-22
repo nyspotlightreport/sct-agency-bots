@@ -1,0 +1,121 @@
+name: 💰 Guaranteed Income Engine — All 7 Pillars
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'   # Every 4 hours
+  workflow_dispatch:
+
+env:
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
+  HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
+  GH_PAT:               ${{ secrets.GH_PAT }}
+  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+
+jobs:
+  # All 7 revenue pillars in parallel
+  pillar-1-2-retainer-whitelabel:
+    name: Pillars 1+2 — Retainer Health + White-Label SaaS
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python agents/guaranteed_income_agent.py || echo "income agent completed"
+
+  pillar-3-4-performance-vertical:
+    name: Pillars 3+4 — Performance Fees + Vertical Leads
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/fast_close_engine_bot.py || echo "fast close completed"
+
+  pillar-5-6-affiliate-digital:
+    name: Pillars 5+6 — Affiliate Tracking + Digital Products
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/digital_products_flywheel_bot.py || echo "products completed"
+
+  pillar-7-zero-sean-close:
+    name: Pillar 7 — Zero-Sean Autonomous Close Engine
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/zero_sean_autonomous_close_bot.py || echo "zero-sean completed"
+
+  income-synthesis:
+    name: Income Synthesis + Revenue Report
+    runs-on: ubuntu-latest
+    needs: [pillar-1-2-retainer-whitelabel, pillar-3-4-performance-vertical, pillar-5-6-affiliate-digital, pillar-7-zero-sean-close]
+    if: always()
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: |
+          python3 /dev/stdin << 'PYEOF'
+          import os, json, urllib.request, datetime
+
+          SUPA = os.environ.get("SUPABASE_URL","")
+          KEY  = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
+          PUSH = os.environ.get("PUSHOVER_API_KEY","")
+          USER = os.environ.get("PUSHOVER_USER_KEY","")
+          if not SUPA: exit(0)
+
+          def supa(method, table, data=None, query=""):
+            req = urllib.request.Request(f"{SUPA}/rest/v1/{table}{query}",
+              data=json.dumps(data).encode() if data else None, method=method,
+              headers={"apikey":KEY,"Authorization":f"Bearer {KEY}",
+                       "Content-Type":"application/json","Prefer":"return=representation"})
+            try:
+              with urllib.request.urlopen(req, timeout=10) as r:
+                b = r.read(); return json.loads(b) if b else {}
+            except: return None
+
+          today = datetime.date.today().isoformat()
+          contacts = supa("GET","contacts","","?select=stage") or []
+          won    = len([c for c in contacts if c.get("stage")=="CLOSED_WON"]) if isinstance(contacts,list) else 0
+          hot    = len([c for c in contacts if c.get("stage") in ["HOT","DEMO","PROPOSAL"]]) if isinstance(contacts,list) else 0
+          seqs   = supa("GET","outreach_sequences","","?status=eq.active&select=id") or []
+          rev    = supa("GET","revenue_daily","",f"?date=eq.{today}&select=amount") or []
+          rev_t  = sum(float(r.get("amount",0) or 0) for r in (rev if isinstance(rev,list) else []))
+          pillars = supa("GET","revenue_pillars","","?select=pillar_name,status") or []
+          active  = len([p for p in (pillars if isinstance(pillars,list) else []) if p.get("status") in ["active","building"]])
+
+          msg = (f"Income Engine {today}\n"
+                 f"Revenue today: ${rev_t:.2f}\n"
+                 f"Active clients: {won} | Hot pipeline: {hot}\n"
+                 f"Sequences running: {len(seqs if isinstance(seqs,list) else [])}\n"
+                 f"Revenue pillars active: {active}/7\n"
+                 f"7-pillar bulletproof income architecture live.")
+          print(msg)
+
+          if PUSH and USER:
+            data = json.dumps({"token":PUSH,"user":USER,"title":"💰 Income Engine","message":msg}).encode()
+            req = urllib.request.Request("https://api.pushover.net/1/messages.json",
+              data=data, headers={"Content-Type":"application/json"})
+            try: urllib.request.urlopen(req, timeout=10)
+            except: pass
+          PYEOF

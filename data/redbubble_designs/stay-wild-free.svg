@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
+  <rect width="3000" height="3000" fill="#fdf8f0"/>
+  <text x="1500" y="750" font-family="Georgia" font-size="190" fill="#8B6B47" text-anchor="middle" font-style="italic" font-weight="bold">Stay</text>
+  <text x="1500" y="1050" font-family="Georgia" font-size="190" fill="#6B4A27" text-anchor="middle" font-style="italic" font-weight="bold">Wild</text>
+  <text x="1500" y="1280" font-family="Arial" font-size="80" fill="#A08060" text-anchor="middle" letter-spacing="20">&amp;</text>
+  <text x="1500" y="1560" font-family="Georgia" font-size="190" fill="#8B6B47" text-anchor="middle" font-style="italic" font-weight="bold">Free</text>
+  <!-- Feather decorations -->
+  <line x1="400" y1="900" x2="600" y2="1800" stroke="#c8a878" stroke-width="4" opacity="0.5"/>
+  <line x1="2400" y1="900" x2="2600" y2="1800" stroke="#c8a878" stroke-width="4" opacity="0.5"/>
+  <line x1="600" y1="900" x2="400" y2="1800" stroke="#c8a878" stroke-width="3" opacity="0.3"/>
+  <line x1="2600" y1="900" x2="2400" y2="1800" stroke="#c8a878" stroke-width="3" opacity="0.3"/>
+  <text x="1500" y="2600" font-family="Georgia" font-size="60" fill="#c8a878" text-anchor="middle" letter-spacing="8">boho spirit</text>
+</svg>

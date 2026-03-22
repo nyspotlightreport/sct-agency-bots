@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
+  <rect width="3000" height="3000" fill="#1a1a1a"/>
+  <!-- Cab body -->
+  <rect x="700" y="1400" width="1600" height="500" rx="30" fill="#FFD700"/>
+  <rect x="850" y="1200" width="1300" height="280" rx="20" fill="#FFD700"/>
+  <!-- Windows -->
+  <rect x="900" y="1230" width="350" height="200" rx="10" fill="#88ccff" opacity="0.7"/>
+  <rect x="1325" y="1230" width="350" height="200" rx="10" fill="#88ccff" opacity="0.7"/>
+  <rect x="1750" y="1230" width="300" height="200" rx="10" fill="#88ccff" opacity="0.7"/>
+  <!-- Wheels -->
+  <circle cx="950" cy="1900" r="160" fill="#333"/>
+  <circle cx="950" cy="1900" r="100" fill="#555"/>
+  <circle cx="950" cy="1900" r="40" fill="#888"/>
+  <circle cx="2050" cy="1900" r="160" fill="#333"/>
+  <circle cx="2050" cy="1900" r="100" fill="#555"/>
+  <circle cx="2050" cy="1900" r="40" fill="#888"/>
+  <!-- Taxi sign -->
+  <rect x="1350" y="1130" width="300" height="90" rx="8" fill="#FFD700"/>
+  <text x="1500" y="1198" font-family="Arial Black" font-size="55" fill="black" text-anchor="middle" font-weight="900">TAXI</text>
+  <!-- Checkerboard stripe -->
+  <rect x="700" y="1540" width="1600" height="60" fill="black"/>
+  <rect x="700" y="1540" width="60" height="60" fill="#FFD700"/>
+  <rect x="820" y="1540" width="60" height="60" fill="#FFD700"/>
+  <rect x="940" y="1540" width="60" height="60" fill="#FFD700"/>
+  <text x="1500" y="700" font-family="Arial Black" font-size="120" fill="#FFD700" text-anchor="middle">NEW YORK</text>
+  <text x="1500" y="860" font-family="Arial" font-size="70" fill="#888" text-anchor="middle" letter-spacing="15">CITY</text>
+</svg>

@@ -2,6 +2,7 @@
 """
 Cameron Reed — Content & Publishing Director\nAgentic Super-intelligence for content-driven revenue.\nAutonomous: Audit published content → Track rankings → Generate content calendar → Ensure all content has CTAs
 """
+from agents.supercore import SuperDirector,pushover as super_push
 import os, sys, json, logging, urllib.request, urllib.parse, time, base64
 from datetime import datetime, date, timedelta
 sys.path.insert(0, ".")
@@ -110,6 +111,27 @@ def run():
     return calendar
 
 
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    run()
+
+# ═══ SUPERCORE PARALLELISM WIRING ═══
+def execute_super(task=None):
+    """Fan-out parallel reasoning + generate-then-rank + chain-of-thought."""
+    class Dir(SuperDirector):
+        DIRECTOR_ID="cameron_reed"
+        DIRECTOR_NAME="Cameron Reed"
+        DIRECTOR_TITLE="Director"
+        PERSPECTIVES=['seo_authority', 'viral_social', 'email_nurture', 'repurpose_10x']
+        DIRECTOR_PROMPT=SYSTEM if 'SYSTEM' in dir() else "You are a director."
+    d=Dir()
+    if not task:
+        task="Daily autonomous assessment: 1.Highest-leverage cash action in 24h? 2.Wasted tool/integration? 3.Cross-dept synergy? 4.Grade your domain A+ to F."
+    return d.execute_full(task,parallel_perspectives=['seo_authority', 'viral_social', 'email_nurture', 'repurpose_10x'],chain_steps=3,rank_criteria="seo_conversion")
+
+if __name__=="__main__":
+    import sys as _s
+    if len(_s.argv)>1 and _s.argv[1]=="--super":
+        t=" ".join(_s.argv[2:]) if len(_s.argv)>2 else None
+        r=execute_super(t)
+        print(f"Grade:{r.get('grade','?')}
+{r.get('final_output','')[:1000]}")
+    else:
+        run()

@@ -1,0 +1,96 @@
+{
+  "campaigns": [
+    {
+      "name": "ProFlow AI \u2014 Lead Magnet (Cold)",
+      "objective": "LEAD_GENERATION",
+      "daily_budget": 15,
+      "audience": {
+        "interests": [
+          "Entrepreneurship",
+          "Digital marketing",
+          "Passive income",
+          "Content marketing",
+          "Online business"
+        ],
+        "behaviors": [
+          "Small business owners",
+          "Engaged shoppers"
+        ],
+        "age_min": 25,
+        "age_max": 50,
+        "geo": [
+          "US",
+          "CA",
+          "AU",
+          "GB"
+        ],
+        "exclusions": [
+          "existing customers"
+        ]
+      },
+      "ad": {
+        "headline": "Your Blog Writes Itself. Seriously.",
+        "primary_text": "What if your blog published daily, your newsletter went out weekly, and your social media posted every day \u2014 without you doing any of it?\n\nProFlow AI does exactly that. 63 bots. Zero writing. Starting at $97/month.\n\nGet your free 30-day content plan (60 seconds) \u2192",
+        "cta": "LEARN_MORE",
+        "destination_url": "https://nyspotlightreport.com/free-plan/"
+      }
+    },
+    {
+      "name": "ProFlow AI \u2014 Retargeting (Warm)",
+      "objective": "CONVERSIONS",
+      "daily_budget": 10,
+      "audience": {
+        "custom_audience": "Website visitors last 30 days",
+        "exclude": "Customers"
+      },
+      "ad": {
+        "headline": "Still Doing Content Manually?",
+        "primary_text": "You visited ProFlow AI but didn't start your free trial.\n\nHere's what you're leaving on the table: every day without automated content is a day your competitors are publishing and you're not.\n\n14-day free trial. No credit card. Cancel anytime.",
+        "cta": "START_TRIAL",
+        "destination_url": "https://nyspotlightreport.com/proflow/"
+      }
+    },
+    {
+      "name": "DFY Agency \u2014 LinkedIn Decision Makers",
+      "objective": "LEAD_GENERATION",
+      "platform": "LinkedIn",
+      "daily_budget": 30,
+      "audience": {
+        "job_titles": [
+          "Founder",
+          "CEO",
+          "Agency Owner",
+          "Marketing Director"
+        ],
+        "company_size": "11-200",
+        "industries": [
+          "Marketing and Advertising",
+          "Internet",
+          "E-Learning",
+          "Professional Training"
+        ],
+        "geo": [
+          "US"
+        ]
+      },
+      "ad": {
+        "headline": "We Run Your Entire Content Operation",
+        "primary_text": "Daily blog posts. Weekly newsletter. Social media every day. YouTube Shorts. All done for you, starting at $997/month.\n\nOur clients get more content in a week than most businesses publish in a quarter.\n\n30-day results guarantee. Book a free strategy call.",
+        "cta": "BOOK_CALL",
+        "destination_url": "https://nyspotlightreport.com/agency/"
+      }
+    }
+  ],
+  "pixel_events": {
+    "free_plan_submit": "Lead",
+    "proflow_trial_start": "StartTrial",
+    "stripe_purchase": "Purchase"
+  },
+  "retargeting_windows": [
+    3,
+    7,
+    14,
+    30
+  ],
+  "lookalike_seed": "Email list from Beehiiv (upload when 1k+)"
+}

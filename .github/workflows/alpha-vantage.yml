@@ -1,0 +1,23 @@
+name: Alpha Vantage Market Data
+on:
+  schedule:
+    - cron: '0 13 * * 1-5'  # 8am ET weekdays (13:00 UTC)
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install requests
+      - run: python bots/alpha_vantage_bot.py
+        env:
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          AV_WATCHLIST:          ${{ secrets.AV_WATCHLIST }}
+          ANTHROPIC_API_KEY:     ${{ secrets.ANTHROPIC_API_KEY }}
+          PUBLER_API_KEY:        ${{ secrets.PUBLER_API_KEY }}
+          PUBLER_WORKSPACE_ID:   ${{ secrets.PUBLER_WORKSPACE_ID }}
+          CHAIRMAN_EMAIL:        ${{ secrets.CHAIRMAN_EMAIL }}
+          GMAIL_USER:            ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS:        ${{ secrets.GMAIL_APP_PASS }}

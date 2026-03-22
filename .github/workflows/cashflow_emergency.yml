@@ -1,0 +1,120 @@
+name: 💰 Cashflow Emergency — Close Deals NOW
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Mode: full (all revenue actions) or outreach (outreach only)"
+        default: "full"
+
+# Run ALL revenue-generating components in parallel
+env:
+  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+  APOLLO_API_KEY:     ${{ secrets.APOLLO_API_KEY }}
+  HUBSPOT_API_KEY:    ${{ secrets.HUBSPOT_API_KEY }}
+  SUPABASE_URL:       ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}
+  PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+  AHREFS_API_KEY:     ${{ secrets.AHREFS_API_KEY }}
+  TWITTER_API_KEY:    ${{ secrets.TWITTER_API_KEY }}
+  TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+  TWITTER_ACCESS_TOKEN:        ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+  WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
+  WORDPRESS_SITE_ID:      ${{ secrets.WORDPRESS_SITE_ID }}
+  GH_PAT:             ${{ secrets.GH_PAT }}
+  GITHUB_REPOSITORY:  "nyspotlightreport/sct-agency-bots"
+
+jobs:
+  # STEP 1: Pull fresh high-value leads immediately
+  pull-leads:
+    name: "🎯 Pull + Score High-Value Leads"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/crm_core_agent.py
+
+  # STEP 2: Send outreach to ALL warm leads NOW
+  blast-outreach:
+    name: "📧 Blast — Outreach to All Warm Leads"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: pull-leads
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/sales_commander_agent.py
+      - run: python agents/cold_outreach_agent.py
+      - run: python bots/follow_up_bot.py
+
+  # STEP 3: Run all 5 journey sequences at once
+  journeys:
+    name: "🔁 Run All 5 Nurture Journeys"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: pull-leads
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/email_journey_builder_bot.py
+
+  # STEP 4: Generate proposals for all qualified leads
+  proposals:
+    name: "📄 Generate + Send All Proposals"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: pull-leads
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python agents/proposal_agent.py
+      - run: python bots/appointment_setter_bot.py
+
+  # STEP 5: Post on all social channels NOW
+  social-blast:
+    name: "📱 Social Media Blast (All Platforms)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/social_scheduler_bot.py
+
+  # STEP 6: Identify + contact upsell opportunities
+  upsell-push:
+    name: "💎 Push Upsells to All Clients"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/upsell_engine_bot.py
+      - run: python bots/referral_engine_bot.py
+
+  # STEP 7: Alert Chairman with full revenue report
+  cashflow-report:
+    name: "📊 Cashflow Report to Chairman"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [blast-outreach, journeys, proposals, social-blast, upsell-push]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests -q
+      - run: python bots/win_loss_analyzer_bot.py
+      - run: python bots/deal_pipeline_bot.py

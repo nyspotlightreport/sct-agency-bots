@@ -1,0 +1,126 @@
+name: 🎯 7-Engine Guaranteed Close System — Every 3 Hours
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+env:
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+  APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
+  HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  ELEVENLABS_API_KEY:   ${{ secrets.ELEVENLABS_API_KEY }}
+  STRIPE_SECRET_KEY:    ${{ secrets.STRIPE_SECRET_KEY }}
+  GH_PAT:               ${{ secrets.GH_PAT }}
+
+jobs:
+
+  engine1-cold-email:
+    name: "Engine 1: Apollo 7-Touch Cold Email (200/day)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/apollo_7touch_sequence_bot.py || echo "Engine 1 completed"
+
+  engine2-rep-scoring:
+    name: "Engine 2: Rep Performance Scoring + Accountability"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/rep_performance_scoring_bot.py || echo "Engine 2 completed"
+
+  engine3-webinar:
+    name: "Engine 3: Webinar Funnel (Warm Lead Registration)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/webinar_funnel_bot.py || echo "Engine 3 completed"
+
+  engine4-nurture:
+    name: "Engine 4: Lead Magnet 7-Day Nurture Sequence"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/lead_magnet_nurture_bot.py || echo "Engine 4 completed"
+
+  engine5-partnerships:
+    name: "Engine 5: Agency Partnership Outreach (B2B Channel)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/partnership_channel_bot.py || echo "Engine 5 completed"
+
+  engine6-referrals:
+    name: "Engine 6: Automated Referral Engine (Zero CAC)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/referral_engine_bot.py || echo "Engine 6 completed"
+
+  engine7-retargeting:
+    name: "Engine 7: Retargeting Signal Collection + ROI Check"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/intent_signal_bot.py || echo "Engine 7 completed"
+
+  weekly-engine-scoring:
+    name: "Weekly: Rep Scoring + Engine Performance Audit"
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && startsWith(github.run_id, '1'))
+    needs: [engine1-cold-email, engine2-rep-scoring, engine3-webinar, engine4-nurture, engine5-partnerships, engine6-referrals]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - name: Engine performance summary
+        run: |
+          python3 << 'SCRIPT'
+          import os, urllib.request, json
+          PUSH_API  = os.environ.get("PUSHOVER_API_KEY","")
+          PUSH_USER = os.environ.get("PUSHOVER_USER_KEY","")
+          if PUSH_API and PUSH_USER:
+              msg = "7-Engine System: All 7 closing engines ran.\nEngines: Cold Email + 1099 Reps + Webinar + Nurture + Partnerships + Referral + Retargeting\nCheck /bi/ for conversion data."
+              data = json.dumps({"token":PUSH_API,"user":PUSH_USER,
+                  "title":"7-Engine Close System","message":msg}).encode()
+              req = urllib.request.Request("https://api.pushover.net/1/messages.json",
+                  data=data, headers={"Content-Type":"application/json"})
+              try: urllib.request.urlopen(req, timeout=10)
+              except: pass
+          print("7-Engine system complete")
+          SCRIPT

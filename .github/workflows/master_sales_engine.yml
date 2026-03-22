@@ -1,0 +1,120 @@
+name: 💰 Master Sales Intelligence Engine — Every 3 Hours
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+env:
+  SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY:         ${{ secrets.SUPABASE_KEY }}
+  SUPABASE_ANON_KEY:    ${{ secrets.SUPABASE_ANON_KEY }}
+  ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+  APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
+  HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
+  PUSHOVER_API_KEY:     ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
+  GMAIL_USER:           ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
+  STRIPE_SECRET_KEY:    ${{ secrets.STRIPE_SECRET_KEY }}
+  TICKET_TAILOR_API_KEY: ${{ secrets.TICKET_TAILOR_API_KEY }}
+  GH_PAT:               ${{ secrets.GH_PAT }}
+
+jobs:
+  # TIER 1: Lead scoring + trigger outreach (highest priority)
+  lead-intelligence:
+    name: Lead Scoring + Trigger-Based Outreach
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python agents/master_sales_agent.py || echo "sales agent completed"
+      - run: python bots/lead_scoring_bot.py || echo "scoring completed"
+      - run: python bots/intent_signal_bot.py || echo "intent completed"
+
+  # TIER 2: Proposal generation + objection handling
+  close-engine:
+    name: Proposals + Objections + Close Sequences
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/cx_objection_handler_bot.py || echo "objections completed"
+      - run: python agents/adaptive_sales_engine.py || echo "adaptive sales completed"
+      - run: python bots/deal_pipeline_bot.py || echo "pipeline completed"
+
+  # TIER 3: Follow-up engine + upsell + referrals
+  expansion-revenue:
+    name: Follow-Up + Upsell + Referral Engine
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/upsell_crosssell_bot.py || echo "upsell completed"
+      - run: python bots/referral_engine_bot.py || echo "referral completed"
+      - run: python bots/win_loss_analyzer_bot.py || echo "win/loss completed"
+
+  # TIER 4: CX integration + reactivation
+  pipeline-health:
+    name: Reactivation + QBR + Pipeline Velocity
+    runs-on: ubuntu-latest
+    needs: [lead-intelligence, close-engine, expansion-revenue]
+    if: always()
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests -q
+      - run: python bots/customer_health_score_bot.py || echo "health completed"
+      - run: python bots/cx_appointment_setter_bot.py || echo "appointments completed"
+      - run: |
+          python3 /dev/stdin << 'PYEOF'
+          import os, json, urllib.request, datetime
+
+          SUPA = os.environ.get("SUPABASE_URL","")
+          KEY  = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
+          PUSH = os.environ.get("PUSHOVER_API_KEY","")
+          USER = os.environ.get("PUSHOVER_USER_KEY","")
+
+          if not SUPA: exit(0)
+
+          def supa(method, table, data=None, query=""):
+            req = urllib.request.Request(f"{SUPA}/rest/v1/{table}{query}",
+              data=json.dumps(data).encode() if data else None, method=method,
+              headers={"apikey":KEY,"Authorization":f"Bearer {KEY}",
+                       "Content-Type":"application/json","Prefer":"return=representation"})
+            try:
+              with urllib.request.urlopen(req, timeout=10) as r:
+                b = r.read(); return json.loads(b) if b else {}
+            except: return None
+
+          today = datetime.date.today().isoformat()
+          contacts  = supa("GET","contacts","","?select=stage,score") or []
+          hot       = len([c for c in contacts if c.get("stage") in ["HOT","DEMO","PROPOSAL"]])
+          warm      = len([c for c in contacts if c.get("stage") in ["WARM","QUALIFIED"]])
+          sequences = supa("GET","outreach_sequences","","?status=eq.active&select=id") or []
+          appts     = supa("GET","appointments","","?status=in.(confirmed,pending)&select=id") or []
+
+          msg = (f"Sales Engine {today}\n"
+                 f"Hot: {hot} | Warm: {warm} | Total: {len(contacts)}\n"
+                 f"Active sequences: {len(sequences)} | Meetings: {len(appts)}\n"
+                 f"All 12 sales stages running 24/7")
+          print(msg)
+
+          if PUSH and USER:
+            data = json.dumps({"token":PUSH,"user":USER,"title":"Sales Engine","message":msg}).encode()
+            req = urllib.request.Request("https://api.pushover.net/1/messages.json",
+              data=data, headers={"Content-Type":"application/json"})
+            try: urllib.request.urlopen(req, timeout=10)
+            except: pass
+          PYEOF

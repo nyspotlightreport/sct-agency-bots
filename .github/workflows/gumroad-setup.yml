@@ -1,0 +1,25 @@
+name: 🛒 Gumroad Product Setup (One-Time)
+
+on:
+  workflow_dispatch:   # Manual trigger only
+
+jobs:
+  create-products:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: 🛒 Create All 20 Gumroad Products
+        env:
+          GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+        run: python bots/gumroad_product_creator.py
+      - name: Save product list
+        run: |
+          git config user.name "NYSR Bot"
+          git config user.email "nyspotlightreport@gmail.com"
+          git add data/gumroad_products.json || true
+          git diff --staged --quiet || git commit -m "🛒 Gumroad products created $(date +%Y-%m-%d)"
+          git push || true

@@ -1,0 +1,20 @@
+name: Stripe Revenue
+on:
+  schedule:
+    - cron: '0 13 * * *'  # 8am ET daily
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install requests -q
+      - run: python bots/stripe_revenue_bot.py
+        env:
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          GMAIL_USER:        ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
+          CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
+          PAYPAL_ME_LINK:    ${{ secrets.PAYPAL_ME_LINK }}
