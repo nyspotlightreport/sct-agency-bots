@@ -49,8 +49,7 @@ PAYMENT_LINKS = {
     "proflow_elite": "https://buy.stripe.com/aFacN5fzSdazfzd3YH2400e",
     "dfy_setup":     "https://buy.stripe.com/9B6dR9fzSeeDev9eDl2400f",
     "dfy_agency":    "https://buy.stripe.com/8x214n9bu3zZ86L9j12400g",
-    "enterprise":    "https://buy.stripe.com/00weVd5ZigmL86Ldzh2400h",
-}
+    "enterprise":    "https://buy.stripe.com/00weVd5ZigmL86Ldzh2400h"}
 
 def ai_personalize(prospect):
     """Generate a genuinely personalized email via Claude."""
@@ -221,16 +220,13 @@ NY Spotlight Report"""
                 "stage": "CONTACTED",
                 "score": 75,
                 "source": "immediate_revenue_outreach",
-                "tags": [p['offer'], p['company'].lower().replace(' ','_'), "cold_outreach"],
-            })
+                "tags": [p['offer'], p['company'].lower().replace(' ','_'), "cold_outreach"]})
             supa("POST", "conversation_log", {
                 "channel": "email",
                 "direction": "outbound",
                 "body": f"Cold email sent: {subject}",
                 "intent": "revenue_outreach",
-                "agent_name": "ImmediateRevenuBot",
-                "metadata": {"prospect": p['email'], "offer": p['offer']}
-            })
+                "agent_name": "ImmediateRevenuBot"})
         else:
             failed += 1
 
