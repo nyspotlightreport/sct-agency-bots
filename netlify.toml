@@ -74,3 +74,8 @@
   from = "/tokens/meta-auth"
   to   = "/.netlify/functions/meta-auth-start"
   status = 200
+
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to   = "/.netlify/functions/stripe-webhook"
+  status = 200
