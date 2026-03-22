@@ -1,57 +1,294 @@
-name: 🎬 NYSR Faceless Webinar — Full Video Generation
+name: 🎬 NYSR Webinar Video — Bulletproof Build
 
 on:
-  workflow_dispatch:    # Run NOW on demand
+  workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'  # 2am daily — regenerate if needed
+    - cron: '0 3 * * *'
 
 env:
   ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
   GH_PAT:             ${{ secrets.GH_PAT }}
   PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
-  ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
 
 jobs:
-  generate-webinar-video:
-    name: Generate Faceless Webinar Video
+  build-video:
+    name: Build Faceless Webinar Video
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install system dependencies
+      - name: Install dependencies
         run: |
-          sudo apt-get update -q
-          sudo apt-get install -y ffmpeg imagemagick fonts-dejavu-core -q
-          echo "FFmpeg version:"
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg python3-pip -q
+          pip install requests Pillow -q
           ffmpeg -version | head -1
-          echo "ImageMagick version:"
-          convert --version | head -1
 
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+      - name: Generate slides with Pillow
+        run: |
+          python3 /dev/stdin << 'PYEOF'
+          from PIL import Image, ImageDraw
+          import os
 
-      - name: Install Python dependencies
-        run: pip install requests -q
+          SLIDES = [
+            ("The Problem", "40+ hours wasted weekly on tasks AI does better"),
+            ("What We Built", "170 bots. 100 workflows. Zero daily management."),
+            ("The 4 Offers", "$97 / $297 / $1,497 / $4,997"),
+            ("What It Does Daily", "Leads. Email. Social. SEO. Revenue. Automatic."),
+            ("The Math", "1 DFY close = 15 ProFlow AI sales"),
+            ("Day 1 Results", "Store live. 4 products. 100 workflows running."),
+            ("Who This Is For", "Agency owners. Consultants. Business owners."),
+            ("How to Start", "nyspotlightreport.com/store -- live in 24hrs"),
+            ("Webinar Bonus", "Free call + audit + 50% off -- today only"),
+            ("Next Steps", "Visit nyspotlightreport.com/store right now"),
+          ]
 
-      - name: Generate webinar video
-        run: python bots/webinar_video_generator.py
+          os.makedirs("slides", exist_ok=True)
 
-      - name: Upload video artifact (backup)
+          for i, (title, subtitle) in enumerate(SLIDES, 1):
+            img = Image.new('RGB', (1920, 1080), color=(8, 12, 16))
+            draw = ImageDraw.Draw(img)
+            draw.rectangle([0, 0, 1920, 8], fill=(201, 168, 76))
+            draw.rectangle([0, 1072, 1920, 1080], fill=(201, 168, 76))
+            draw.text((80, 50), "NY SPOTLIGHT REPORT  |  {} of {}".format(i, len(SLIDES)), fill=(201, 168, 76))
+            draw.text((960, 420), title, fill=(248, 250, 252), anchor="mm")
+            draw.text((960, 520), subtitle, fill=(100, 116, 139), anchor="mm")
+            draw.text((80, 1045), "nyspotlightreport.com", fill=(100, 116, 139))
+            img.save("slides/slide_{:02d}.png".format(i))
+            print("  Slide {}: {}".format(i, title))
+
+          print("Generated {} slides".format(len(SLIDES)))
+          PYEOF
+
+      - name: Generate audio via ElevenLabs
+        run: |
+          python3 /dev/stdin << 'PYEOF'
+          import os, json, urllib.request, urllib.error, time, subprocess
+
+          ELEVENLABS_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
+          VOICE_ID = "21m00Tcm4TlvDq8ikWAM"
+
+          os.makedirs("audio", exist_ok=True)
+
+          NARRATIONS = [
+            "Small business owners waste over 40 hours per week on tasks that AI handles automatically. Email marketing. Social media. Lead generation. Manual reporting. This changes today.",
+            "On March 21, 2026, NY Spotlight Report deployed 170 AI bots, 100 automated workflows, and a complete agency stack. 16 self-improving departments. Zero daily management. Running right now.",
+            "Four ways to work together. ProFlow AI at 97 dollars per month. ProFlow Growth at 297. Done For You Setup at 1497 one time. Done For You Enterprise at 4997. All available now.",
+            "Every morning: fresh leads pulled, scored, and emailed automatically. Social posts written and published daily. SEO opportunities found. Revenue tracked in real time. You do nothing.",
+            "The math is simple. One Done For You client at 1497 dollars equals 15 ProFlow AI clients at 97. One conversation. One close. Fifteen times the revenue.",
+            "As of today: store is live, four products on sale, PayPal connected, 100 workflows running. This is not a demo. You can buy right now and go live within 24 hours.",
+            "This is for agency owners who want to scale without hiring. Consultants who want passive income. Anyone spending more than 10 hours a week on tasks that should be automated.",
+            "Getting started is simple. Go to nyspotlightreport dot com slash store. ProFlow AI at 97 per month. Done For You Setup at 1497. Both go live within 24 hours of purchase.",
+            "Webinar registrants get three exclusive bonuses. A free 30-minute strategy call. A custom automation audit. And your first month at 50 percent off. These expire when this webinar ends.",
+            "Go to nyspotlightreport dot com slash store. Choose your plan. Your AI agency goes live within 24 hours. This is running right now. The question is whether it is running for you.",
+          ]
+
+          def make_silent(path, duration=30):
+            subprocess.run(["ffmpeg", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
+              "-t", str(duration), "-acodec", "libmp3lame", path, "-y", "-loglevel", "error"])
+
+          for i, text in enumerate(NARRATIONS, 1):
+            audio_file = "audio/slide_{:02d}.mp3".format(i)
+            if ELEVENLABS_KEY:
+              url = "https://api.elevenlabs.io/v1/text-to-speech/{}".format(VOICE_ID)
+              data = json.dumps({
+                "text": text,
+                "model_id": "eleven_monolingual_v1",
+                "voice_settings": {"stability": 0.71, "similarity_boost": 0.75}
+              }).encode()
+              req = urllib.request.Request(url, data=data, headers={
+                "Accept": "audio/mpeg",
+                "Content-Type": "application/json",
+                "xi-api-key": ELEVENLABS_KEY
+              })
+              try:
+                with urllib.request.urlopen(req, timeout=60) as r:
+                  with open(audio_file, "wb") as f:
+                    f.write(r.read())
+                print("  Audio {}: {}KB".format(i, os.path.getsize(audio_file)//1024))
+              except Exception as e:
+                print("  Audio {} failed: {} -- using silent".format(i, str(e)[:60]))
+                make_silent(audio_file)
+              time.sleep(1.5)
+            else:
+              print("  No ElevenLabs key -- silent audio {}".format(i))
+              make_silent(audio_file)
+
+          print("Audio complete: {} files".format(len(os.listdir("audio"))))
+          PYEOF
+
+      - name: Build video clips
+        run: |
+          python3 /dev/stdin << 'PYEOF'
+          import subprocess, os, glob
+
+          os.makedirs("clips", exist_ok=True)
+          slides = sorted(glob.glob("slides/slide_*.png"))
+          audios = sorted(glob.glob("audio/slide_*.mp3"))
+
+          print("Slides: {} | Audio: {}".format(len(slides), len(audios)))
+
+          for i, (slide, audio) in enumerate(zip(slides, audios), 1):
+            clip = "clips/clip_{:02d}.mp4".format(i)
+            result = subprocess.run(
+              ["ffprobe", "-v", "quiet", "-show_entries", "format=duration",
+               "-of", "csv=p=0", audio],
+              capture_output=True, text=True)
+            try:
+              duration = float(result.stdout.strip()) + 2.0
+            except:
+              duration = 32.0
+
+            cmd = ["ffmpeg", "-y",
+              "-loop", "1", "-i", slide,
+              "-i", audio,
+              "-c:v", "libx264", "-preset", "ultrafast", "-crf", "28",
+              "-c:a", "aac", "-b:a", "96k",
+              "-t", str(duration),
+              "-pix_fmt", "yuv420p",
+              "-vf", "scale=1920:1080",
+              "-r", "24",
+              clip]
+
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+            if result.returncode == 0:
+              print("  Clip {}: {:.0f}s ({:.1f}MB)".format(i, duration, os.path.getsize(clip)/(1024*1024)))
+            else:
+              print("  Clip {} FAILED: {}".format(i, result.stderr[-150:]))
+          PYEOF
+
+      - name: Concatenate final video
+        run: |
+          python3 /dev/stdin << 'PYEOF'
+          import subprocess, os, glob
+
+          clips = sorted(glob.glob("clips/clip_*.mp4"))
+          print("Concatenating {} clips...".format(len(clips)))
+          if len(clips) < 3:
+            print("ERROR: only {} clips".format(len(clips)))
+            exit(1)
+
+          with open("concat_list.txt", "w") as f:
+            for c in clips:
+              f.write("file '{}'\n".format(os.path.abspath(c)))
+
+          result = subprocess.run(
+            ["ffmpeg", "-y", "-f", "concat", "-safe", "0",
+             "-i", "concat_list.txt", "-c", "copy", "nysr_webinar_final.mp4"],
+            capture_output=True, text=True, timeout=300)
+
+          if result.returncode == 0:
+            size_mb = os.path.getsize("nysr_webinar_final.mp4") / (1024*1024)
+            print("FINAL VIDEO: {:.1f}MB".format(size_mb))
+          else:
+            print("FAILED: {}".format(result.stderr[-300:]))
+            exit(1)
+          PYEOF
+
+      - name: Upload to GitHub Releases and update webinar page
+        run: |
+          python3 /dev/stdin << 'PYEOF'
+          import os, json, urllib.request, urllib.error, time, base64
+
+          GH_TOKEN = os.environ.get("GH_PAT", "")
+          PUSH = os.environ.get("PUSHOVER_API_KEY", "")
+          PUSER = os.environ.get("PUSHOVER_USER_KEY", "")
+          REPO = "nyspotlightreport/sct-agency-bots"
+          H = {"Authorization": "token {}".format(GH_TOKEN), "Content-Type": "application/json",
+               "Accept": "application/vnd.github.v3+json"}
+
+          if not os.path.exists("nysr_webinar_final.mp4"):
+            print("No video file")
+            exit(1)
+
+          size_mb = os.path.getsize("nysr_webinar_final.mp4") / (1024*1024)
+          print("Uploading {:.1f}MB...".format(size_mb))
+
+          tag = "webinar-v{}".format(int(time.time()))
+          data = json.dumps({
+            "tag_name": tag,
+            "name": "NYSR Faceless Webinar Video",
+            "body": "Auto-generated. {:.0f}MB. {}".format(size_mb, time.strftime("%Y-%m-%d")),
+            "prerelease": False
+          }).encode()
+
+          req = urllib.request.Request(
+            "https://api.github.com/repos/{}/releases".format(REPO),
+            data=data, method="POST", headers=H)
+          with urllib.request.urlopen(req, timeout=30) as r:
+            release = json.loads(r.read())
+            upload_url = release["upload_url"].replace("{?name,label}", "")
+
+          with open("nysr_webinar_final.mp4", "rb") as f:
+            video_data = f.read()
+
+          up_req = urllib.request.Request(
+            "{}?name=nysr_webinar.mp4".format(upload_url),
+            data=video_data, method="POST",
+            headers=dict(list(H.items()) + [("Content-Type", "video/mp4"),
+                         ("Content-Length", str(len(video_data)))]))
+          with urllib.request.urlopen(up_req, timeout=600) as r:
+            asset = json.loads(r.read())
+            video_url = asset["browser_download_url"]
+            print("VIDEO LIVE: {}".format(video_url))
+
+          # Update webinar page
+          req2 = urllib.request.Request(
+            "https://api.github.com/repos/{}/contents/site/webinar/index.html".format(REPO),
+            headers=H)
+          with urllib.request.urlopen(req2, timeout=10) as r:
+            d = json.loads(r.read())
+          content = base64.b64decode(d["content"]).decode()
+          sha = d["sha"]
+
+          video_tag = '<video controls style="width:100%;height:100%;object-fit:cover;" preload="metadata"><source src="{}" type="video/mp4"></video>'.format(video_url)
+          updated = content.replace(
+            'id="videoPlaceholder"',
+            'id="videoPlaceholder" style="display:none;"'
+          ).replace(
+            '<div class="video-container" id="videoContainer">',
+            '<div class="video-container" id="videoContainer">{}'.format(video_tag)
+          )
+
+          payload = {"message": "feat: webinar video live",
+                     "content": base64.b64encode(updated.encode()).decode(), "sha": sha}
+          req3 = urllib.request.Request(
+            "https://api.github.com/repos/{}/contents/site/webinar/index.html".format(REPO),
+            data=json.dumps(payload).encode(), method="PUT", headers=H)
+          with urllib.request.urlopen(req3, timeout=20) as r:
+            print("Page updated: {}".format(r.status))
+
+          # Deploy
+          req4 = urllib.request.Request(
+            "https://api.github.com/repos/{}/actions/workflows/deploy-site.yml/dispatches".format(REPO),
+            data=json.dumps({"ref": "main"}).encode(), method="POST", headers=H)
+          urllib.request.urlopen(req4, timeout=15)
+
+          # Pushover
+          if PUSH and PUSER:
+            msg = "Webinar video LIVE!\nPage: nyspotlightreport.com/webinar/\n{}".format(video_url[:80])
+            data2 = json.dumps({"token":PUSH,"user":PUSER,"title":"Webinar LIVE","message":msg,"priority":1}).encode()
+            req5 = urllib.request.Request("https://api.pushover.net/1/messages.json",
+              data=data2, headers={"Content-Type":"application/json"})
+            urllib.request.urlopen(req5, timeout=10)
+            print("Chairman notified")
+          PYEOF
+
+      - name: Upload video artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: webinar-video-${{ github.run_id }}
-          path: "*.mp4"
+          name: nysr-webinar-video
+          path: nysr_webinar_final.mp4
           retention-days: 90
           if-no-files-found: ignore
 
       - name: Summary
         if: always()
         run: |
-          echo "## Webinar Video Generation" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Pipeline: ElevenLabs Voice → ImageMagick Slides → FFmpeg Video → GitHub Release" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Webinar page: https://nyspotlightreport.com/webinar/" >> $GITHUB_STEP_SUMMARY
+          echo "## Webinar Video Build" >> $GITHUB_STEP_SUMMARY
+          [ -f nysr_webinar_final.mp4 ] && echo "Video: $(du -h nysr_webinar_final.mp4 | cut -f1)" >> $GITHUB_STEP_SUMMARY
+          [ -f video_url.txt ] && echo "URL: $(cat video_url.txt)" >> $GITHUB_STEP_SUMMARY
+          echo "Webinar: https://nyspotlightreport.com/webinar/" >> $GITHUB_STEP_SUMMARY
