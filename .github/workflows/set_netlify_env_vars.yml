@@ -1,0 +1,95 @@
+name: "🔧 Set Netlify Environment Variables"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  set-netlify-env:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Set all OAuth credentials as Netlify env vars
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SUPABASE_URL:       ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_ANON_KEY:  ${{ secrets.SUPABASE_ANON_KEY }}
+          HUBSPOT_API_KEY:    ${{ secrets.HUBSPOT_API_KEY }}
+          PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
+          GH_PAT:             ${{ secrets.GH_PAT }}
+          STRIPE_SECRET_KEY:  ${{ secrets.STRIPE_SECRET_KEY }}
+          ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python3 - << 'SCRIPT'
+          import os, json, urllib.request, urllib.error
+
+          TOKEN   = os.environ.get('NETLIFY_AUTH_TOKEN','')
+          SITE_ID = '8ef722e1-4110-42af-8ddb-ff6c2ce1745e'
+
+          if not TOKEN:
+            print("ERROR: NETLIFY_AUTH_TOKEN not set")
+            exit(1)
+
+          VARS = {
+            'LINKEDIN_CLIENT_ID':     '78b8ect8u8qgbe',
+            'LINKEDIN_CLIENT_SECRET': 'WPL_AP1.Tiutg0R3JAVqfPCv.z',
+            'META_APP_ID':            '1319442660014439',
+            'META_APP_SECRET':        'fc7086cc72f8f5fc36b9ba6489bf086b',
+            'FB_APP_ID':              '1319442660014439',
+            'FB_APP_SECRET':          'fc7086cc72f8f5fc36b9ba6489bf086b',
+            'SUPABASE_URL':           os.environ.get('SUPABASE_URL',''),
+            'SUPABASE_KEY':           os.environ.get('SUPABASE_KEY',''),
+            'SUPABASE_ANON_KEY':      os.environ.get('SUPABASE_ANON_KEY',''),
+            'HUBSPOT_API_KEY':        os.environ.get('HUBSPOT_API_KEY',''),
+            'PUSHOVER_API_KEY':       os.environ.get('PUSHOVER_API_KEY',''),
+            'PUSHOVER_USER_KEY':      os.environ.get('PUSHOVER_USER_KEY',''),
+            'GH_PAT':                 os.environ.get('GH_PAT',''),
+            'STRIPE_SECRET_KEY':      os.environ.get('STRIPE_SECRET_KEY',''),
+            'ANTHROPIC_API_KEY':      os.environ.get('ANTHROPIC_API_KEY',''),
+          }
+
+          HEADERS = {'Authorization': f'Bearer {TOKEN}', 'Content-Type': 'application/json'}
+          ok = 0
+
+          for key, val in VARS.items():
+            if not val:
+              print(f"  SKIP (empty): {key}")
+              continue
+            body = json.dumps([{"key": key, "scopes": ["functions","builds"],
+                                "values": [{"context": "production", "value": val}]}]).encode()
+            req = urllib.request.Request(f'https://api.netlify.com/api/v1/sites/{SITE_ID}/env',
+              data=body, method='POST', headers=HEADERS)
+            try:
+              with urllib.request.urlopen(req, timeout=15) as r:
+                print(f"  SET: {key}")
+                ok += 1
+            except urllib.error.HTTPError as e:
+              if e.code == 422:
+                body2 = json.dumps({"scopes": ["functions","builds"],
+                                    "values": [{"context": "production", "value": val}]}).encode()
+                req2 = urllib.request.Request(
+                  f'https://api.netlify.com/api/v1/sites/{SITE_ID}/env/{key}',
+                  data=body2, method='PUT', headers=HEADERS)
+                try:
+                  with urllib.request.urlopen(req2, timeout=15) as r2:
+                    print(f"  UPDATE: {key}")
+                    ok += 1
+                except Exception as e2:
+                  print(f"  ERR update {key}: {e2}")
+              else:
+                print(f"  ERR {key}: {e.code}")
+            except Exception as ex:
+              print(f"  ERR {key}: {ex}")
+
+          print(f"\nComplete: {ok}/{len(VARS)} vars set on Netlify")
+          SCRIPT
+
+      - name: Redeploy Netlify to pick up new env vars
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          curl -s -X POST "https://api.netlify.com/api/v1/sites/8ef722e1-4110-42af-8ddb-ff6c2ce1745e/deploys" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{}' | python3 -c "import sys,json; d=json.load(sys.stdin); print('Deploy:', d.get('id','?'), 'state:', d.get('state','?'))"
