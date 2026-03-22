@@ -12,3 +12,5 @@ google-api-python-client>=2.100.0
 
 # PDF generation (invoice bot - optional)
 # reportlab>=4.0.0
+
+yaml
