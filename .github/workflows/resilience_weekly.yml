@@ -1,0 +1,37 @@
+name: System Resilience - Weekly Backup and Independence Audit
+on:
+  schedule:
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+  SMTP_USER: ${{ secrets.SMTP_USER }}
+  GMAIL_USER: ${{ secrets.GMAIL_USER }}
+  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+jobs:
+  resilience:
+    name: Backup + Recovery Plan + Independence Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python agents/system_resilience.py
+      - name: Commit backup data
+        run: |
+          git config user.name "NYSR Resilience Bot"
+          git config user.email "nyspotlightreport@gmail.com"
+          git add data/backups/ data/recovery_plan.json || true
+          git diff --staged --quiet || git commit -m "resilience: weekly backup + recovery plan update"
+          git push || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
