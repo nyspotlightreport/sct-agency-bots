@@ -21,7 +21,7 @@
 - **Kindle Price:** $2.99
 - **Keywords:** habit tracker daily planner 30 days self improvement journal
 - **Categories:** Self-Help > Personal Transformation
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY
 
 ### 3. Monthly Budget Planner — Finance Tracker
@@ -32,7 +32,7 @@
 - **Kindle Price:** $2.99
 - **Keywords:** budget planner monthly finance tracker expense log income tracker
 - **Categories:** Self-Help > Personal Transformation
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY — use FULL version
 
 ### 4. Weekly Meal Prep Planner
@@ -41,7 +41,7 @@
 - **Kindle Price:** $2.99
 - **Keywords:** meal prep planner weekly grocery list nutrition tracker recipe journal
 - **Categories:** Health, Fitness & Dieting > Diets & Weight Loss
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY
 
 ### 5. Business Plan Template — Annual Planner
@@ -51,7 +51,7 @@
 - **Kindle Price:** $3.99
 - **Keywords:** business plan template startup planner entrepreneur annual planning
 - **Categories:** Business & Money > Small Business & Entrepreneurship
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY
 
 ### 6. Fitness Workout Log — 90 Days
@@ -60,7 +60,7 @@
 - **Kindle Price:** $2.99
 - **Keywords:** workout log fitness journal exercise tracker gym planner 90 day
 - **Categories:** Health, Fitness & Dieting > Exercise & Fitness
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY
 
 ### 7. Word Search Puzzles for Adults — 100 Puzzles
@@ -70,7 +70,7 @@
 - **Kindle Price:** $2.99
 - **Keywords:** word search puzzle book adults large print activity book brain games
 - **Categories:** Humor & Entertainment > Puzzles & Games > Word Search
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY
 
 ### 8. Gratitude Journal — 365 Days Daily Prompts
@@ -80,7 +80,7 @@
 - **Kindle Price:** $2.99
 - **Keywords:** gratitude journal daily prompts mindfulness self care positivity
 - **Categories:** Self-Help > Personal Transformation
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY
 
 ### 9. Password Keeper Log Book — Organizer
@@ -90,7 +90,7 @@
 - **Kindle Price:** $2.99
 - **Keywords:** password keeper log book internet organizer address book
 - **Categories:** Computers & Technology > Internet & Social Media
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY
 
 ### 10. Sudoku Puzzles — Easy to Hard (200 Puzzles)
@@ -100,7 +100,7 @@
 - **Kindle Price:** $2.99
 - **Keywords:** sudoku puzzle book adults easy medium hard 200 puzzles large print
 - **Categories:** Humor & Entertainment > Puzzles & Games > Sudoku
-- **Cover:** NEEDS KDP-format cover (2560×1600px)
+- **Cover:** ✅ KDP-ready (1600×2560px, ~800KB) in site/downloads/covers/
 - **Status:** ✅ READY
 
 ---
@@ -146,11 +146,12 @@
 ---
 
 ## COVER STATUS SUMMARY
-All 10 existing titles have web-resolution cover JPGs in `site/downloads/covers/`.
-**ACTION REQUIRED:** All covers need regeneration at KDP-required dimensions:
-- Paperback: 2560 × 1600 px minimum (front cover)
-- Full wrap: varies by page count (use KDP Cover Calculator)
-- Generate via DALL-E 3 at high resolution, then format to KDP specs
+All 10 existing titles have KDP-ready cover JPGs in `site/downloads/covers/`.
+- **Dimensions:** 1600 × 2560 px (portrait, meets KDP minimum)
+- **File size:** ~800KB each (high quality DALL-E 3 generated)
+- **Format:** JPEG
+- **STATUS:** ✅ ALL 10 COVERS ARE KDP-READY
+- **Note:** Full wrap covers (front + spine + back) may be needed for paperback — varies by page count. Use KDP Cover Calculator for exact dimensions.
 
 ---
 
