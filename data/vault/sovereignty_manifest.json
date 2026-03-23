@@ -1,0 +1,156 @@
+{
+  "last_updated": "2026-03-23T00:48:08.647793",
+  "auth_independence_map": {
+    "email_independent": {
+      "description": "These APIs authenticate WITHOUT email. Email loss does NOT affect them.",
+      "services": {
+        "GitHub": {
+          "auth": "GH_PAT (Personal Access Token)",
+          "recovery": "Create new PAT at github.com/settings/tokens"
+        },
+        "Stripe": {
+          "auth": "STRIPE_SECRET_KEY (API key)",
+          "recovery": "Dashboard > Developers > API Keys"
+        },
+        "Supabase": {
+          "auth": "SUPABASE_URL + SUPABASE_KEY",
+          "recovery": "Supabase dashboard > Settings > API"
+        },
+        "Anthropic": {
+          "auth": "ANTHROPIC_API_KEY",
+          "recovery": "console.anthropic.com > API Keys"
+        },
+        "Pushover": {
+          "auth": "PUSHOVER_API_KEY + USER_KEY",
+          "recovery": "pushover.net > Your Applications"
+        },
+        "Netlify": {
+          "auth": "NETLIFY_AUTH_TOKEN",
+          "recovery": "app.netlify.com > User Settings > Applications > Personal access tokens"
+        },
+        "Apollo": {
+          "auth": "APOLLO_API_KEY",
+          "recovery": "app.apollo.io > Settings > API"
+        },
+        "Ahrefs": {
+          "auth": "AHREFS_API_KEY",
+          "recovery": "ahrefs.com > Account > API"
+        }
+      }
+    },
+    "email_dependent": {
+      "description": "These ONLY need email for SMTP sending. Login uses API keys, not email.",
+      "services": {
+        "Gmail SMTP": {
+          "auth": "GMAIL_APP_PASS",
+          "impact_if_lost": "Welcome emails stop",
+          "alternatives": [
+            "SendGrid (free 100/day)",
+            "Mailgun (free 5k/mo)",
+            "Amazon SES ($0.10/1k)"
+          ],
+          "recovery": "Create new Gmail OR switch to SendGrid API key"
+        }
+      }
+    }
+  },
+  "platform_alternatives": {
+    "github.com": {
+      "mirrors": [
+        "gitlab.com",
+        "bitbucket.org",
+        "codeberg.org"
+      ],
+      "switch_time": "15 min",
+      "data_portable": true,
+      "switch_steps": [
+        "git remote add backup <url>",
+        "git push backup --mirror",
+        "Update webhook URLs"
+      ]
+    },
+    "netlify.com": {
+      "alternatives": [
+        "vercel.com",
+        "pages.cloudflare.com",
+        "render.com"
+      ],
+      "switch_time": "10 min",
+      "data_portable": true,
+      "switch_steps": [
+        "npx vercel --prod (Vercel)",
+        "npx wrangler pages deploy site/ (CF)",
+        "Update DNS CNAME"
+      ]
+    },
+    "supabase.com": {
+      "alternatives": [
+        "neon.tech",
+        "railway.app",
+        "planetscale.com"
+      ],
+      "switch_time": "30 min",
+      "data_portable": true,
+      "switch_steps": [
+        "Export from local SQLite backup",
+        "Create new Postgres DB",
+        "Import data",
+        "Update URL+KEY"
+      ]
+    },
+    "stripe.com": {
+      "alternatives": [
+        "gumroad.com (already configured)",
+        "lemonsqueezy.com",
+        "paddle.com"
+      ],
+      "switch_time": "60 min",
+      "data_portable": true,
+      "switch_steps": [
+        "Already have Gumroad account",
+        "Create products",
+        "Update payment links on site"
+      ]
+    },
+    "gmail.com": {
+      "alternatives": [
+        "sendgrid.com",
+        "mailgun.com",
+        "ses.amazonaws.com"
+      ],
+      "switch_time": "15 min",
+      "data_portable": true,
+      "switch_steps": [
+        "Sign up for SendGrid",
+        "Get API key",
+        "Update SMTP_USER and GMAIL_APP_PASS"
+      ]
+    }
+  },
+  "local_assets": {
+    "full_repo": "C:\\Users\\S\\sct-agency-bots",
+    "agents": "agents/ (111 files)",
+    "bots": "bots/ (222 files)",
+    "site": "site/ (126 pages)",
+    "kdp_books": "data/kdp_books/ (15 PDFs)",
+    "designs": "data/redbubble_designs/ (20 SVGs)",
+    "backups": "data/backups/ (SQLite weekly)"
+  },
+  "nuclear_recovery": {
+    "description": "Rebuild EVERYTHING from local machine in 30 minutes",
+    "requirements": [
+      "Windows PC",
+      "Python 3.11+",
+      "Internet connection"
+    ],
+    "steps": [
+      "1. Open PowerShell in C:\\Users\\S\\sct-agency-bots",
+      "2. git init (if .git lost) or git clone from mirror",
+      "3. python NYSR_MASTER_DEPLOY.py",
+      "4. Set GitHub Secrets (see data/vault/secrets_manifest.json)",
+      "5. Trigger 'Sync ALL Secrets to Netlify' workflow",
+      "6. System fully operational"
+    ],
+    "time_estimate": "30 minutes from scratch"
+  }
+}

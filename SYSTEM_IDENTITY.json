@@ -1,0 +1,67 @@
+{
+  "system_identity": {
+    "name": "NY Spotlight Report Agency",
+    "chairman": "S.C. Thomas",
+    "domain": "nyspotlightreport.com",
+    "repo": "nyspotlightreport/sct-agency-bots",
+    "created": "2026-03-19",
+    "version": "5.0"
+  },
+  "ai_connection": {
+    "instructions": "Open claude.ai and start a new Project. Upload this file + NEXT_SESSION_BRIEF.md. The AI will have full context instantly.",
+    "recovery_prompt": "I am Chairman S.C. Thomas of NY Spotlight Report. My repo is nyspotlightreport/sct-agency-bots. I have 117 agents, 222 bots, 150 workflows. My system has Desktop Commander and Claude in Chrome connected. Continue from NEXT_SESSION_BRIEF.md.",
+    "memory_location": "This file + data/vault/sovereignty_manifest.json + NEXT_SESSION_BRIEF.md",
+    "plug_and_play": "Upload these 3 files to ANY Claude conversation to restore full context"
+  },
+  "access_urls": {
+    "site": "https://nyspotlightreport.com",
+    "github_repo": "https://github.com/nyspotlightreport/sct-agency-bots",
+    "github_actions": "https://github.com/nyspotlightreport/sct-agency-bots/actions",
+    "github_secrets": "https://github.com/nyspotlightreport/sct-agency-bots/settings/secrets/actions",
+    "netlify": "https://app.netlify.com/projects/nyspotlightreport/overview",
+    "netlify_env": "https://app.netlify.com/projects/nyspotlightreport/configuration/env",
+    "stripe": "https://dashboard.stripe.com",
+    "stripe_webhooks": "https://dashboard.stripe.com/webhooks",
+    "supabase": "https://supabase.com/dashboard",
+    "hubspot": "https://app.hubspot.com",
+    "apollo": "https://app.apollo.io",
+    "gumroad": "https://app.gumroad.com/dashboard",
+    "kdp": "https://kdp.amazon.com/bookshelf",
+    "beehiiv": "https://app.beehiiv.com",
+    "publer": "https://app.publer.io",
+    "pushover": "https://pushover.net",
+    "anthropic": "https://console.anthropic.com"
+  },
+  "secrets_needed": {
+    "critical": ["ANTHROPIC_API_KEY", "STRIPE_SECRET_KEY", "SUPABASE_URL", "SUPABASE_KEY", "GH_PAT", "PUSHOVER_API_KEY", "PUSHOVER_USER_KEY", "GMAIL_APP_PASS", "SMTP_USER"],
+    "revenue": ["STRIPE_SECRET_KEY", "GUMROAD_ACCESS_TOKEN"],
+    "content": ["WORDPRESS_ACCESS_TOKEN", "PUBLER_API_KEY", "BEEHIIV_API_KEY", "MEDIUM_INTEGRATION_TOKEN"],
+    "social": ["TWITTER_API_KEY", "LINKEDIN_CLIENT_ID", "PINTEREST_ACCESS_TOKEN", "TIKTOK_CLIENT_KEY"],
+    "note": "ALL of these are API keys — NOT email passwords. If you lose email access, the system still runs."
+  },
+  "local_paths": {
+    "repo": "C:\\Users\\S\\sct-agency-bots",
+    "agents": "C:\\Users\\S\\sct-agency-bots\\agents",
+    "bots": "C:\\Users\\S\\sct-agency-bots\\bots",
+    "site": "C:\\Users\\S\\sct-agency-bots\\site",
+    "data": "C:\\Users\\S\\sct-agency-bots\\data",
+    "backups": "C:\\Users\\S\\sct-agency-bots\\data\\backups",
+    "vault": "C:\\Users\\S\\sct-agency-bots\\data\\vault",
+    "desktop_launcher": "C:\\Users\\S\\Desktop\\NYSR Command Center.bat"
+  },
+  "plug_and_play_instructions": {
+    "step1": "Clone repo: git clone https://github.com/nyspotlightreport/sct-agency-bots",
+    "step2": "Set secrets in GitHub repo Settings > Secrets > Actions",
+    "step3": "Run: python NYSR_MASTER_DEPLOY.py",
+    "step4": "Trigger 'Sync ALL Secrets to Netlify' in GitHub Actions",
+    "step5": "System fully operational. Upload SYSTEM_IDENTITY.json to Claude for AI context.",
+    "account_change": "If you change GitHub/Claude/email accounts: just re-clone the repo and re-set secrets. All code, data, and configs travel with the repo."
+  },
+  "watchdog": {
+    "frequency": "every 30 minutes",
+    "checks": 16,
+    "auto_repair": true,
+    "file": "agents/ultra_watchdog.py",
+    "workflow": ".github/workflows/watchdog_6h.yml"
+  }
+}
