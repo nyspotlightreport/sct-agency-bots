@@ -1,158 +1,102 @@
 // netlify/functions/create-checkout.js
-// Creates Stripe Checkout Sessions for NYSR offers.
-// Architecture: Stripe collects payment → webhook issues TT ticket
-// Zero Ticket Tailor payment integration needed. Bypassed entirely.
+// Creates a Stripe Checkout session when customer clicks "Start Now"
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+const PLANS = {
+  starter: {
+    name: 'ProFlow Starter',
+    price: 9700, // cents
+    interval: 'month',
+    description: 'Daily blog posts, 3-platform social, HD images, SEO optimization',
+  },
+  growth: {
+    name: 'ProFlow Growth',
+    price: 29700,
+    interval: 'month',
+    description: 'Everything in Starter + 6-platform social, newsletter, AI receptionist, weekly reports',
+  },
+  agency: {
+    name: 'ProFlow Agency',
+    price: 49700,
+    interval: 'month',
+    description: 'Everything in Growth + white-label, ad creative, video, dedicated account manager',
+  },
+  dfy_setup: {
+    name: 'DFY Content Engine Setup',
+    price: 149700,
+    interval: null, // one-time
+    description: 'Complete done-for-you content engine setup and configuration',
+  },
+  dfy_agency: {
+    name: 'DFY Full Agency Automation',
+    price: 499700,
+    interval: null,
+    description: 'Complete agency automation build — content, social, voice AI, CRM, analytics',
+  },
+};
 
 exports.handler = async (event) => {
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Content-Type': 'application/json'
-  };
-  if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
-  if (event.httpMethod !== 'POST') return { statusCode: 405, headers, body: '{}' };
-
-  const STRIPE_SK = process.env.STRIPE_SECRET_KEY;
-  if (!STRIPE_SK) return { statusCode: 500, headers, body: JSON.stringify({ error: 'Stripe not configured' }) };
-
-  let body;
-  try { body = JSON.parse(event.body || '{}'); } catch { return { statusCode: 400, headers, body: '{}' }; }
-
-  const { offer_key, customer_email, rep_code, source } = body;
-
-  // Complete offer catalog — all 7 tiers
-  const OFFERS = {
-    'proflow_ai': {
-      name: 'ProFlow AI — $97/month',
-      description: 'Full AI content + marketing automation. Social, blog, email, SEO — all automated.',
-      amount: 9700,
-      mode: 'subscription',
-      interval: 'month',
-      tt_product_id: 'pr_60343',
-      metadata: { tier: 'proflow_ai', rep_code: rep_code || '' }
-    },
-    'proflow_growth': {
-      name: 'ProFlow Growth — $297/month',
-      description: 'Everything in ProFlow AI plus advanced outreach, lead scoring, and CRM automation.',
-      amount: 29700,
-      mode: 'subscription',
-      interval: 'month',
-      metadata: { tier: 'proflow_growth', rep_code: rep_code || '' }
-    },
-    'proflow_elite': {
-      name: 'ProFlow Elite — $797/month',
-      description: 'Hands-on AI agency. 4 strategy meetings per month. Full system customization.',
-      amount: 79700,
-      mode: 'subscription',
-      interval: 'month',
-      metadata: { tier: 'proflow_elite', rep_code: rep_code || '' }
-    },
-    'dfy_setup': {
-      name: 'DFY Setup — $1,497',
-      description: 'Done-for-you AI content system setup. Live in 14 days guaranteed.',
-      amount: 149700,
-      mode: 'payment',
-      metadata: { tier: 'dfy_setup', rep_code: rep_code || '' }
-    },
-    'dfy_agency': {
-      name: 'DFY Agency — $2,997 Setup',
-      description: 'Full agency-grade AI system. Custom build + monthly retainer.',
-      amount: 299700,
-      mode: 'payment',
-      metadata: { tier: 'dfy_agency', rep_code: rep_code || '' }
-    },
-    'enterprise': {
-      name: 'Enterprise — $4,997',
-      description: 'Enterprise AI automation. 10 guaranteed meetings in 90 days.',
-      amount: 499700,
-      mode: 'payment',
-      metadata: { tier: 'enterprise', rep_code: rep_code || '' }
-    },
-    'annual_proflow_ai': {
-      name: 'ProFlow AI Annual — $982 (Save $182)',
-      description: 'ProFlow AI billed annually. Best value.',
-      amount: 98200,
-      mode: 'payment',
-      metadata: { tier: 'annual_proflow_ai', rep_code: rep_code || '' }
-    },
-  };
-
-  const offer = OFFERS[offer_key];
-  if (!offer) return { statusCode: 400, headers, body: JSON.stringify({ error: `Unknown offer: ${offer_key}` }) };
-
-  const SITE = 'https://nyspotlightreport.com';
+  if (event.httpMethod === 'OPTIONS') {
+    return { statusCode: 200, headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type' }, body: '' };
+  }
+  
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: JSON.stringify({ error: 'Method not allowed' }) };
+  }
 
   try {
-    // Build line items
-    const price_data = {
-      currency: 'usd',
-      product_data: {
-        name: offer.name,
-        description: offer.description,
-        metadata: offer.metadata,
-      },
-      unit_amount: offer.amount,
+    const { plan, email, name } = JSON.parse(event.body || '{}');
+    const planData = PLANS[plan];
+    
+    if (!planData) {
+      return { statusCode: 400, body: JSON.stringify({ error: 'Invalid plan' }) };
+    }
+
+    const sessionParams = {
+      payment_method_types: ['card'],
+      customer_email: email || undefined,
+      success_url: `https://nyspotlightreport.com/activate/?plan=${plan}&session={CHECKOUT_SESSION_ID}`,
+      cancel_url: 'https://nyspotlightreport.com/proflow/?cancelled=true',
+      metadata: { plan, customer_name: name || '' },
     };
 
-    if (offer.mode === 'subscription') {
-      price_data.recurring = { interval: offer.interval };
+    if (planData.interval) {
+      // Subscription
+      sessionParams.mode = 'subscription';
+      sessionParams.line_items = [{
+        price_data: {
+          currency: 'usd',
+          product_data: { name: planData.name, description: planData.description },
+          unit_amount: planData.price,
+          recurring: { interval: planData.interval },
+        },
+        quantity: 1,
+      }];
+    } else {
+      // One-time payment
+      sessionParams.mode = 'payment';
+      sessionParams.line_items = [{
+        price_data: {
+          currency: 'usd',
+          product_data: { name: planData.name, description: planData.description },
+          unit_amount: planData.price,
+        },
+        quantity: 1,
+      }];
     }
 
-    const session_params = new URLSearchParams();
-    session_params.append('mode', offer.mode);
-    session_params.append('line_items[0][price_data][currency]', 'usd');
-    session_params.append('line_items[0][price_data][product_data][name]', offer.name);
-    session_params.append('line_items[0][price_data][product_data][description]', offer.description);
-    session_params.append('line_items[0][price_data][unit_amount]', String(offer.amount));
-    session_params.append('line_items[0][quantity]', '1');
-
-    if (offer.mode === 'subscription') {
-      session_params.append('line_items[0][price_data][recurring][interval]', offer.interval);
-    }
-
-    session_params.append('success_url', `${SITE}/store/success?session_id={CHECKOUT_SESSION_ID}`);
-    session_params.append('cancel_url', `${SITE}/store/`);
-    session_params.append('metadata[offer_key]', offer_key);
-    session_params.append('metadata[rep_code]', rep_code || '');
-    session_params.append('metadata[source]', source || 'store');
-
-    if (customer_email) {
-      session_params.append('customer_email', customer_email);
-    }
-
-    // Allow promotion codes for discounts
-    session_params.append('allow_promotion_codes', 'true');
-
-    // Collect billing address for compliance
-    session_params.append('billing_address_collection', 'auto');
-
-    const stripeRes = await fetch('https://api.stripe.com/v1/checkout/sessions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${STRIPE_SK}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: session_params.toString()
-    });
-
-    const session = await stripeRes.json();
-
-    if (session.error) {
-      console.error('Stripe error:', session.error);
-      return { statusCode: 400, headers, body: JSON.stringify({ error: session.error.message }) };
-    }
-
+    const session = await stripe.checkout.sessions.create(sessionParams);
+    
     return {
       statusCode: 200,
-      headers,
-      body: JSON.stringify({
-        url: session.url,
-        session_id: session.id
-      })
+      headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: session.url, id: session.id }),
     };
-
-  } catch(e) {
-    console.error('Checkout error:', e.message);
-    return { statusCode: 500, headers, body: JSON.stringify({ error: e.message }) };
+  } catch (err) {
+    console.error('Stripe error:', err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Checkout creation failed', details: err.message }),
+    };
   }
 };

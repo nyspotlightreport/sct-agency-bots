@@ -1,0 +1,29 @@
+name: Sales Force Operations — Daily
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  GMAIL_USER: ${{ secrets.GMAIL_USER }}
+  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+jobs:
+  sales-force:
+    name: Victoria Cross — Sales Force Ops
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -c "
+          import sys; sys.path.insert(0,'.');
+          from agents.sales_force.director import run;
+          result = run();
+          print(f'Sales Force Daily: {result}');
+          "
