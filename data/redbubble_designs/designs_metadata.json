@@ -1,0 +1,102 @@
+[
+  {
+    "name": "nyc-skyline-minimal",
+    "category": "NYC",
+    "prompt": "minimal New York City skyline silhouette, black and white, clean lines, vector art style, t-shirt design"
+  },
+  {
+    "name": "brooklyn-bridge-sunset",
+    "category": "NYC",
+    "prompt": "Brooklyn Bridge at sunset, watercolor illustration, vibrant orange and purple sky, art print style"
+  },
+  {
+    "name": "nyc-map-typography",
+    "category": "NYC",
+    "prompt": "New York City borough names as artistic typography map, clean modern design, dark background"
+  },
+  {
+    "name": "times-square-neon",
+    "category": "NYC",
+    "prompt": "Times Square neon signs abstract art, colorful retro style, poster design"
+  },
+  {
+    "name": "hustle-daily-minimal",
+    "category": "Motivational",
+    "prompt": "hustle daily typography, minimal black and gold design, bold serif font, motivational poster"
+  },
+  {
+    "name": "create-your-path",
+    "category": "Motivational",
+    "prompt": "create your own path inspirational quote, forest trail illustration, green and brown tones, art print"
+  },
+  {
+    "name": "no-days-off",
+    "category": "Fitness",
+    "prompt": "no days off fitness typography, bold blocky letters, athletic design, black background white text"
+  },
+  {
+    "name": "morning-routine-wins",
+    "category": "Motivational",
+    "prompt": "morning routine wins the day quote, sunrise illustration, yellow and orange gradient, minimalist poster"
+  },
+  {
+    "name": "leo-constellation",
+    "category": "Astrology",
+    "prompt": "Leo constellation art, gold stars on navy background, celestial illustration, zodiac design"
+  },
+  {
+    "name": "aquarius-mystical",
+    "category": "Astrology",
+    "prompt": "Aquarius zodiac watercolor art, mystical blue and purple tones, flowing water illustration"
+  },
+  {
+    "name": "scorpio-dark-art",
+    "category": "Astrology",
+    "prompt": "Scorpio zodiac dark aesthetic art, deep red and black, scorpion constellation, gothic style"
+  },
+  {
+    "name": "moon-phases-minimal",
+    "category": "Astrology",
+    "prompt": "minimalist moon phases design, clean white circles on dark background, lunar cycle art print"
+  },
+  {
+    "name": "coffee-first-sarcastic",
+    "category": "Humor",
+    "prompt": "coffee first everything else later funny quote, coffee mug illustration, hand-drawn cartoon style"
+  },
+  {
+    "name": "introvert-recharge",
+    "category": "Humor",
+    "prompt": "introverts need to recharge funny design, cartoon character with battery symbol, pastel colors"
+  },
+  {
+    "name": "monday-vibes-off",
+    "category": "Humor",
+    "prompt": "Monday vibes: off button illustration, humorous minimal design, black and white"
+  },
+  {
+    "name": "cat-space-astronaut",
+    "category": "Pets",
+    "prompt": "cute cat wearing astronaut helmet, space background, cartoon illustration style, vibrant colors"
+  },
+  {
+    "name": "golden-retriever-minimal",
+    "category": "Pets",
+    "prompt": "golden retriever dog minimal line art, single line illustration, elegant and simple"
+  },
+  {
+    "name": "cactus-desert-vibes",
+    "category": "Nature",
+    "prompt": "cute cactus with sunglasses desert vibes, cartoon illustration, warm desert colors"
+  },
+  {
+    "name": "gradient-waves-abstract",
+    "category": "Abstract",
+    "prompt": "abstract flowing gradient waves, purple blue pink tones, modern art print design"
+  },
+  {
+    "name": "geometric-mountains",
+    "category": "Nature",
+    "prompt": "geometric low-poly mountain landscape, sunset colors, triangle art style, poster design"
+  }
+]
