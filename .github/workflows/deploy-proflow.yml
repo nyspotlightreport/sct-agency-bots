@@ -1,0 +1,56 @@
+name: Deploy ProFlow Site
+on: workflow_dispatch
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deploy on myproflow.org Netlify site
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          python3 << 'EOF'
+          import json, os, urllib.request
+
+          token = os.environ['TOKEN']
+          site_id = "1eff9af2-de39-44d1-8f31-378ea691e17a"
+
+          # Check site status
+          req = urllib.request.Request(
+            f"https://api.netlify.com/api/v1/sites/{site_id}",
+            headers={"Authorization": f"Bearer {token}"}
+          )
+          resp = urllib.request.urlopen(req)
+          site = json.loads(resp.read())
+          print(f"Site: {site.get('name')}")
+          print(f"URL: {site.get('ssl_url')}")
+          print(f"Custom domain: {site.get('custom_domain')}")
+          print(f"State: {site.get('state')}")
+          print(f"Published deploy: {site.get('published_deploy', {}).get('id', 'none')}")
+
+          # Trigger a build
+          build_req = urllib.request.Request(
+            f"https://api.netlify.com/api/v1/sites/{site_id}/builds",
+            data=json.dumps({"clear_cache": True}).encode(),
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+            method="POST"
+          )
+          try:
+            build_resp = urllib.request.urlopen(build_req)
+            build = json.loads(build_resp.read())
+            print(f"\nBuild triggered: {build.get('id', '?')}")
+            print(f"Deploy ID: {build.get('deploy_id', '?')}")
+          except urllib.error.HTTPError as e:
+            body = e.read().decode()
+            print(f"Build trigger failed ({e.code}): {body[:300]}")
+
+          # List recent deploys
+          deploys_req = urllib.request.Request(
+            f"https://api.netlify.com/api/v1/sites/{site_id}/deploys?per_page=3",
+            headers={"Authorization": f"Bearer {token}"}
+          )
+          deploys_resp = urllib.request.urlopen(deploys_req)
+          deploys = json.loads(deploys_resp.read())
+          print(f"\nRecent deploys:")
+          for d in deploys:
+            print(f"  {d['id']} | {d['state']} | {d.get('error_message','ok')}")
+          EOF
