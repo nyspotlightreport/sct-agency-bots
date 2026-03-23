@@ -1,60 +1,39 @@
 name: Sync ALL Secrets to Netlify
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/set-netlify-env.yml']
 jobs:
-  sync-env:
+  sync:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-      - name: Sync all critical env vars
+      - run: npm install -g netlify-cli
+      - name: Sync
         run: |
-          SITE_ID="8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
-          sv() { netlify env:set "$1" "$2" --site "$SITE_ID" 2>&1 | tail -1; echo "  set $1"; }
-          echo "=== SYNCING ALL CRITICAL SECRETS TO NETLIFY ==="
-          sv "STRIPE_SECRET_KEY"    "$V_STRIPE"
-          sv "SUPABASE_URL"         "$V_SUPA_URL"
-          sv "SUPABASE_KEY"         "$V_SUPA_KEY"
-          sv "SUPABASE_ANON_KEY"    "$V_SUPA_ANON"
-          sv "PUSHOVER_API_KEY"     "$V_PUSH_API"
-          sv "PUSHOVER_USER_KEY"    "$V_PUSH_USER"
-          sv "GH_PAT"              "$V_GH_PAT"
-          sv "GMAIL_APP_PASS"      "$V_GMAIL_PASS"
-          sv "GMAIL_USER"          "$V_GMAIL_USER"
-          sv "SMTP_USER"           "$V_SMTP_USER"
-          sv "HUBSPOT_API_KEY"     "$V_HS_KEY"
-          sv "ANTHROPIC_API_KEY"   "$V_ANTHROPIC"
-          sv "APOLLO_API_KEY"      "$V_APOLLO"
-          sv "NEWSAPI_KEY"         "$V_NEWS"
-          sv "OPENAI_API_KEY"      "$V_OPENAI"
-          sv "AHREFS_API_KEY"      "$V_AHREFS"
-          sv "TICKET_TAILOR_API_KEY" "$V_TT"
-          sv "BEEHIIV_API_KEY"     "$V_BEEHIIV"
-          echo "=== TRIGGERING REDEPLOY ==="
-          netlify deploy --prod --dir site --site "$SITE_ID" --message "All env vars synced" 2>&1 | tail -5
-          echo "=== DONE ==="
+          S="8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
+          sv() { [ -n "$2" ] && netlify env:set "$1" "$2" --site "$S" 2>&1|tail -1 && echo "SET $1" || echo "SKIP $1"; }
+          sv STRIPE_SECRET_KEY "$V1"; sv GMAIL_APP_PASS "$V2"; sv SMTP_USER "$V3"
+          sv SUPABASE_URL "$V4"; sv SUPABASE_KEY "$V5"
+          sv PUSHOVER_API_KEY "$V6"; sv PUSHOVER_USER_KEY "$V7"; sv GH_PAT "$V8"
+          sv HUBSPOT_API_KEY "$V9"; sv ANTHROPIC_API_KEY "$V10"; sv OPENAI_API_KEY "$V11"
+          sv GMAIL_USER "$V12"; sv TICKET_TAILOR_API_KEY "$V13"
+          sv HUBSPOT_PORTAL_ID "$V14"; sv STRIPE_ACCOUNT_ID "$V15"
+          echo "Redeploying..."
+          netlify deploy --prod --dir site --site "$S" --message "Secret sync" 2>&1|tail -3
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          V_STRIPE:      ${{ secrets.STRIPE_SECRET_KEY }}
-          V_SUPA_URL:    ${{ secrets.SUPABASE_URL }}
-          V_SUPA_KEY:    ${{ secrets.SUPABASE_KEY }}
-          V_SUPA_ANON:   ${{ secrets.SUPABASE_ANON_KEY }}
-          V_PUSH_API:    ${{ secrets.PUSHOVER_API_KEY }}
-          V_PUSH_USER:   ${{ secrets.PUSHOVER_USER_KEY }}
-          V_GH_PAT:      ${{ secrets.GH_PAT }}
-          V_GMAIL_PASS:  ${{ secrets.GMAIL_APP_PASS }}
-          V_GMAIL_USER:  ${{ secrets.GMAIL_USER }}
-          V_SMTP_USER:   ${{ secrets.SMTP_USER }}
-          V_HS_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
-          V_ANTHROPIC:   ${{ secrets.ANTHROPIC_API_KEY }}
-          V_APOLLO:      ${{ secrets.APOLLO_API_KEY }}
-          V_NEWS:        ${{ secrets.NEWSAPI_KEY }}
-          V_OPENAI:      ${{ secrets.OPENAI_API_KEY }}
-          V_AHREFS:      ${{ secrets.AHREFS_API_KEY }}
-          V_TT:          ${{ secrets.TICKET_TAILOR_API_KEY }}
-          V_BEEHIIV:     ${{ secrets.BEEHIIV_API_KEY }}
+          V1: ${{ secrets.STRIPE_SECRET_KEY }}
+          V2: ${{ secrets.GMAIL_APP_PASS }}
+          V3: ${{ secrets.SMTP_USER }}
+          V4: ${{ secrets.SUPABASE_URL }}
+          V5: ${{ secrets.SUPABASE_KEY }}
+          V6: ${{ secrets.PUSHOVER_API_KEY }}
+          V7: ${{ secrets.PUSHOVER_USER_KEY }}
+          V8: ${{ secrets.GH_PAT }}
+          V9: ${{ secrets.HUBSPOT_API_KEY }}
+          V10: ${{ secrets.ANTHROPIC_API_KEY }}
+          V11: ${{ secrets.OPENAI_API_KEY }}
+          V12: ${{ secrets.GMAIL_USER }}
+          V13: ${{ secrets.TICKET_TAILOR_API_KEY }}
+          V14: ${{ secrets.HUBSPOT_PORTAL_ID }}
+          V15: ${{ secrets.STRIPE_ACCOUNT_ID }}
