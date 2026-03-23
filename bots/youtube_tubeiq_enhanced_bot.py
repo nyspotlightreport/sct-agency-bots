@@ -45,7 +45,8 @@ def tubeiq_get_tags(topic):
             timeout=10)
         if r.status_code == 200:
             return r.json().get("tags", [])
-    except:
+    except Exception:  # noqa: bare-except
+
         pass
     return ["#shorts", "#passiveincome", "#sidehustle"]
 

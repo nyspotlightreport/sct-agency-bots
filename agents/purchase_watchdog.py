@@ -11,7 +11,7 @@ from datetime import datetime
 sys.path.insert(0, ".")
 try:
     from agents.supercore import pushover, supa
-except:
+except Exception:  # noqa: bare-except
     def pushover(*a,**k): pass
     def supa(*a,**k): return None
 import urllib.request as urlreq

@@ -7,7 +7,7 @@ try:
     from agents.claude_core import claude, claude_json
     from agents.fullstack_builder_agent import build_app
     from agents.tech_lead_agent import design_architecture
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def build_app(s): return {}

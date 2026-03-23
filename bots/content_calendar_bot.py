@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude_json(s, u, **k): return {}
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [CalendarBot] %(message)s")

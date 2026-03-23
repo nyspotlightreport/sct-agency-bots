@@ -29,7 +29,7 @@ sys.path.insert(0,".")
 try:
     from agents.claude_core import claude, claude_json
     from agents.crm_core_agent import get_pipeline_stats, get_high_priority_contacts, score_contact, ICPS, STAGES
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def get_pipeline_stats(): return {}
@@ -46,8 +46,9 @@ def notify(msg, title="Sloane Pierce ΓÇö Sales"):
     try:
         data = urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title[:50],"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ΓöÇΓöÇ QUOTA & TARGETS ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 QUARTERLY_TARGETS = {
     "new_mrr":         5000,   # $5k new MRR per quarter

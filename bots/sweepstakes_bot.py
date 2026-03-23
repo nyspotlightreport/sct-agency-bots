@@ -74,7 +74,9 @@ def score(text):
     s = sum(v for k,v in PRIZE_SCORE.items() if k in t)
     for m in re.findall(r'\$[\d,]+', t):
         try: s += min(int(m.replace('$','').replace(',',''))//100, 500)
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return s
 
 def uid(url): return hashlib.md5(url.encode()).hexdigest()[:14]

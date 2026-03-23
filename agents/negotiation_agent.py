@@ -4,7 +4,7 @@ import os, sys, json, logging
 sys.path.insert(0,".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 log = logging.getLogger(__name__)

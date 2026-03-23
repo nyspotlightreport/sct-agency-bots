@@ -143,8 +143,9 @@ def find_content_patterns(signals):
             props = json.loads(e.get("properties","{}") or "{}")
             t = props.get("type","unknown")
             types[t] = types.get(t,0) + 1
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     if types:
         best_type = max(types.items(), key=lambda x:x[1])[0]
         supa("PATCH","nysr_live_context",

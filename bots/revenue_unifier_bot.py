@@ -39,8 +39,9 @@ def push(title, msg, priority=0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",data=data,
                                   headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req,timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def upsert_revenue(date, source, amount, orders, refunds=0):
     existing = supa("GET","revenue_daily",f"?date=eq.{date}&source=eq.{source}&select=id&limit=1") or []
     data = {"date":date,"source":source,"amount":amount,"orders":orders,"refunds":refunds}

@@ -6,7 +6,7 @@ sys.path.insert(0,".")
 try:
     from agents.claude_core import claude
     from agents.crm_core_agent import supabase_request
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def supabase_request(m,t,**k): return None
 

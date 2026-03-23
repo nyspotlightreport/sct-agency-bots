@@ -17,7 +17,7 @@ from datetime import datetime, timedelta
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -37,8 +37,9 @@ def notify(msg, title="Dev Commander"):
     try:
         data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":title,"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def gh_api(path, method="GET", body=None):
     if not GH_TOKEN: return {}
     try:

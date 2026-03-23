@@ -4,7 +4,7 @@ import os, sys, json, logging
 sys.path.insert(0,".")
 try:
     from agents.crm_core_agent import score_contact, supabase_request
-except:
+except Exception:  # noqa: bare-except
     def score_contact(c,i): return {"total":50,"grade":"B","priority":"MEDIUM"}
     def supabase_request(m,t,**k): return None
 log = logging.getLogger(__name__)
@@ -21,7 +21,9 @@ def route_lead(contact):
         try:
             if rule["condition"](contact):
                 return {"route":rule["route"],"sequence":rule["sequence"],"priority":rule["priority"]}
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return {"route":"NURTURE","sequence":"proflow_nurture","priority":"LOW"}
 
 def process_inbound(contact):

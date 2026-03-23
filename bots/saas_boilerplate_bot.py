@@ -4,7 +4,7 @@ import os, sys, json, logging
 sys.path.insert(0,".")
 try:
     from agents.fullstack_builder_agent import build_app
-except:
+except Exception:  # noqa: bare-except
     def build_app(s): return {"app":s.get("name"),"total_files":5,"cost":"$0/mo"}
 log = logging.getLogger(__name__)
 

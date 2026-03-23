@@ -67,7 +67,9 @@ def gh_commit(repo,path,content,msg):
     try:
         r=urlreq.Request(f"https://api.github.com/repos/{repo}/contents/{path}",headers={"Authorization":f"token {GH_PAT}","Accept":"application/vnd.github+json"})
         with urlreq.urlopen(r,timeout=10) as resp:sha=json.loads(resp.read()).get("sha","")
-    except:pass
+    except Exception:  # noqa: bare-except
+
+        pass
     d={"message":msg,"content":enc}
     if sha:d["sha"]=sha
     try:
@@ -79,8 +81,9 @@ def gh_commit(repo,path,content,msg):
 def push(t,m):
     if not PUSH_API:return
     try:urlreq.urlopen("https://api.pushover.net/1/messages.json",urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":t[:100],"message":m[:1000]}).encode(),timeout=5)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def send_email(to,subject,html):
     if not GMAIL_PASS:return False
     import smtplib

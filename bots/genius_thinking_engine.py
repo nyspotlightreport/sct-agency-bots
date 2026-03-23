@@ -337,8 +337,9 @@ Musk's first principles, and Jobs's simplicity standard.
                 headers={"apikey":self.supa_key,"Authorization":f"Bearer {self.supa_key}",
                          "Content-Type":"application/json","Prefer":"return=minimal"})
             urllib.request.urlopen(req, timeout=10)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     def apply_to_cold_email(self, prospect_name, prospect_title, prospect_company,
                              prospect_employees=50, offer="proflow_ai"):
         """

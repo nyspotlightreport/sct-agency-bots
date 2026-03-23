@@ -6,7 +6,7 @@ sys.path.insert(0,".")
 try:
     from agents.crm_core_agent import get_pipeline_stats, supabase_request
     from agents.sales_analytics_agent import calculate_cac_ltv, calculate_conversion_rates
-except:
+except Exception:  # noqa: bare-except
     def get_pipeline_stats(): return {}
     def supabase_request(m,t,**k): return None
     def calculate_cac_ltv(): return {}
@@ -21,8 +21,9 @@ def notify(msg,title="Sales Report"):
     try:
         data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def generate_weekly_report():
     stats = get_pipeline_stats()
     conv  = calculate_conversion_rates(stats)

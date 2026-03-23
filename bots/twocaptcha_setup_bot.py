@@ -30,8 +30,9 @@ def pushover(title, msg, priority=0, sound=None):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def save_gh_secret(name, value):
     """Save value to GitHub Secrets."""
     if not GH_PAT: 
@@ -164,14 +165,16 @@ def get_api_key_via_playwright():
                         if bal_result.get('status') == 1:
                             balance = float(bal_result.get('request', 0))
                             log.info(f"  Balance: ${balance:.4f}")
-                except: pass
+                except Exception:  # noqa: bare-except
 
+                    pass
             # Take screenshot for debugging
             try:
                 page.screenshot(path="/tmp/2captcha_dashboard.png")
                 log.info("  Screenshot saved to /tmp/2captcha_dashboard.png")
-            except: pass
+            except Exception:  # noqa: bare-except
 
+                pass
             browser.close()
 
     except Exception as e:

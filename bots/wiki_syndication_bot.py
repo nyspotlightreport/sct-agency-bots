@@ -50,8 +50,9 @@ def push(title, msg):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",data=data,
                                   headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req,timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def publish_to_wordpress(title, content, tags):
     """Publish to WordPress.com via API."""
     if not WP_TOKEN: return False

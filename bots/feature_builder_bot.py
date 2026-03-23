@@ -32,8 +32,9 @@ def notify(msg, title="Feature Builder"):
     try:
         data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":title,"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def plan_feature(requirement: str) -> dict:
     """Use Claude to decompose a feature into implementation plan."""
     return claude_json(

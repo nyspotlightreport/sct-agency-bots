@@ -12,7 +12,7 @@ try:
     from agents.claude_core import claude, claude_json
     from agents.crm_core_agent import supabase_request, get_pipeline_stats
     from agents.sales_analytics_agent import calculate_cac_ltv, calculate_conversion_rates
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def supabase_request(m,t,**k): return None

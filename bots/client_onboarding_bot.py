@@ -52,8 +52,9 @@ def push(title, msg):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",data=data,
                                   headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req,timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def send_email(to_email, subject, html_body):
     if not GMAIL_USER or not GMAIL_PASS:
         log.warning(f"Email not configured — would send to {to_email}: {subject}")

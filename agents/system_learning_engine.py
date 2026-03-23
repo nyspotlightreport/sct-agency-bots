@@ -38,7 +38,7 @@ from datetime import datetime, date, timedelta
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -124,8 +124,9 @@ def collect_system_health() -> dict:
                 "avg_quality": round(avg_q, 2),
                 "approved_rate": round(sum(1 for d in recent if d.get("approved")) / max(len(recent),1) * 100, 1)
             }
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     # Sales funnel health
     r3 = requests.get(f"https://api.github.com/repos/{REPO}/contents/data/sales/funnel.json", headers=GH_H)
     if r3.status_code == 200:
@@ -138,8 +139,9 @@ def collect_system_health() -> dict:
                 "closed_won": stages.count("CLOSED_WON"),
                 "closed_lost": stages.count("CLOSED_LOST"),
             }
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     return health
 
 def run_department_analysis(health: dict) -> dict:
@@ -192,8 +194,9 @@ def store_memory(learning: dict):
     memory = []
     if r.status_code == 200:
         try: memory = json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     entry = {
         "date": str(date.today()),
         "health_score": learning.get("overall_health_score"),
@@ -223,8 +226,9 @@ def alert_chairman(message: str):
             data=message.encode(), timeout=10,
             headers={"Title":"NYSR System Learning Alert",
                     "Priority":"default","Tags":"brain,robot"})
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def run():
     log.info("System Learning Engine starting...")
     

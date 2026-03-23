@@ -43,7 +43,9 @@ def run():
             req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                 data=data, headers={"Content-Type":"application/json"})
             try: urllib.request.urlopen(req, timeout=10)
-            except: pass
+            except Exception:  # noqa: bare-except
+
+                pass
         # Request testimonials from promoters
         if promoters:
             log.info(f"Requesting testimonials from {len(promoters)} promoters")

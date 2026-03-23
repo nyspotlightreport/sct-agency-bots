@@ -21,7 +21,7 @@ from email.mime.multipart import MIMEMultipart
 sys.path.insert(0,".")
 try:
     from agents.claude_core import claude,claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -219,7 +219,9 @@ def run():
     existing=[]
     if r.status_code==200:
         try: existing=json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     existing.insert(0,{"date":str(date.today()),"replies_processed":len(results),"results":results[:10]})
     existing=existing[:30]
     enc=base64.b64encode(json.dumps(existing,indent=2).encode()).decode()

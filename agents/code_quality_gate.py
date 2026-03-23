@@ -10,7 +10,7 @@ sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
     from agents.supercore import SuperDirector, pushover, supa
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def pushover(*a,**k): pass
@@ -104,7 +104,9 @@ def run():
                 code = base64.b64decode(file_data["content"]).decode()
                 issues = review_file(f"{folder}/{item['name']}", code)
                 all_issues.extend(issues)
-            except: pass
+            except Exception:  # noqa: bare-except
+
+                pass
     commit_reviews = ai_review_recent_commits()
     high = [i for i in all_issues if i["severity"]=="HIGH"]
     report = f"""CODE QUALITY REPORT — {datetime.utcnow().strftime('%Y-%m-%d')}

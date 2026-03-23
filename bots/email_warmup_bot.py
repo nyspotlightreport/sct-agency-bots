@@ -5,7 +5,7 @@ from datetime import datetime
 sys.path.insert(0,".")
 try:
     from agents.claude_core import claude
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
 log = logging.getLogger(__name__)
 
@@ -30,7 +30,7 @@ def get_warmup_status(start_date_str):
         days = (date.today() - start).days
         schedule = WARMUP_SCHEDULE.get(min(days,30), WARMUP_SCHEDULE[30])
         return {"days_warmed":days,"current_daily_volume":schedule["emails_per_day"],"status":"ON_TRACK" if days > 0 else "STARTING"}
-    except:
+    except Exception:  # noqa: bare-except
         return {"status":"UNKNOWN"}
 
 def run():

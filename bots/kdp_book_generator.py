@@ -56,7 +56,7 @@ Include 8-12 chapters. Make it genuinely valuable and specific."""}]
         text = json.loads(r.read()).get("content",[{}])[0].get("text","")
     try:
         return json.loads(text.replace("```json","").replace("```","").strip())
-    except:
+    except Exception:  # noqa: bare-except
         return {"title": title, "chapters": []}
 
 if __name__ == "__main__":

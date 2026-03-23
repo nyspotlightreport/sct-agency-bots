@@ -17,7 +17,7 @@ class SocialPosterBot(BaseBot):
     def __init__(self):
         super().__init__("social-poster")
         self.api_key   = os.getenv("PUBLER_API_KEY", "")
-        self.workspace = os.getenv("PUBLER_WORKSPACE_ID", "69bc5c22ef1de019931daeae")
+        self.workspace = os.getenv("PUBLER_WORKSPACE_ID", "")
 
     @property
     def headers(self):

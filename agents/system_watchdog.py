@@ -22,14 +22,16 @@ REPO="nyspotlightreport/sct-agency-bots"
 def push(t,m,p=0):
     if not PUSH_API:return
     try:urlreq.urlopen("https://api.pushover.net/1/messages.json",urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":t[:100],"message":m[:1000],"priority":p}).encode(),timeout=5)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def gh(path,method="GET",data=None):
     body=json.dumps(data).encode() if data else None
     req=urlreq.Request(f"https://api.github.com/repos/{REPO}/{path}",data=body,method=method,
         headers={"Authorization":f"token {GH_PAT}","Accept":"application/vnd.github+json","Content-Type":"application/json"})
     try:
-        with urlreq.urlopen(req,timeout=20) as r:return json.loads(r.read()) if r.read() else {}
+        with urlreq.urlopen(req,timeout=20) as r:
+            body=r.read(); return json.loads(body) if body else {}
     except urllib.error.HTTPError as e:
         try:return json.loads(e.read())
         except:return {"error":e.code}
@@ -42,8 +44,9 @@ def supa_post(table,data):
         req=urlreq.Request(f"{SUPA_URL}/rest/v1/{table}",data=body,method="POST",
             headers={"apikey":SUPA_KEY,"Authorization":f"Bearer {SUPA_KEY}","Content-Type":"application/json","Prefer":"return=minimal"})
         urlreq.urlopen(req,timeout=10)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ═══ CHECKS ═══
 def check_site():
     try:

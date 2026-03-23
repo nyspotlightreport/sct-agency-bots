@@ -12,8 +12,9 @@ def notify(msg,title="Lighthouse"):
     try:
         data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 PAGES_TO_AUDIT = [
     "https://nyspotlightreport.com",
     "https://nyspotlightreport.com/proflow/",

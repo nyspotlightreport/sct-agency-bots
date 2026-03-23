@@ -6,7 +6,7 @@ sys.path.insert(0,".")
 try:
     from agents.claude_core import claude
     from agents.crm_core_agent import supabase_request
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def supabase_request(m,t,**k): return None
 log = logging.getLogger(__name__)
@@ -19,8 +19,9 @@ def notify(msg):
     try:
         data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":"Billing Recovery","message":msg}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 DUNNING_SEQUENCE = [
     {"day":0,"subject":"Payment failed - action required","urgency":"HIGH"},
     {"day":3,"subject":"Your account is at risk of suspension","urgency":"URGENT"},

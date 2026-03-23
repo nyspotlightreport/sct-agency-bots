@@ -21,7 +21,7 @@ sys.path.insert(0,".")
 try:
     from agents.claude_core import claude,claude_json
     from agents.adaptive_sales_engine import generate_full_sequence,score_lead,ICPS
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def generate_full_sequence(p,i="proflow_starter"): return {}
@@ -201,7 +201,9 @@ def run():
     existing=[]
     if r.status_code==200:
         try: existing=json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     existing.insert(0,{"date":str(date.today()),"prospects_fetched":len(prospects),
                        "hot":len(hot),"warm":len(warm),"touches_executed":len(executed)})
     existing=existing[:30]

@@ -291,8 +291,9 @@ def run():
             "message":msg,"priority":0,"sound":"cashregister"}).encode()
         try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     log.info(f"\nDONE: {applied} applied, {failed} queued")
     return {"applied":applied,"failed":failed}
 

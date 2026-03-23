@@ -23,8 +23,9 @@ def pushover(title, msg, priority=0):
         "message":msg,"priority":priority,"sound":"cashregister"}).encode()
     try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data,headers={"Content-Type":"application/json"}),timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def run():
     if not GMAIL_PASS: log.warning("No GMAIL_APP_PASS"); return
     wins=[];approvals=[]
@@ -56,7 +57,9 @@ def run():
                                     headers={"apikey":SUPA_KEY,"Authorization":f"Bearer {SUPA_KEY}",
                                              "Content-Type":"application/json","Prefer":"return=minimal"})
                                 try: urllib.request.urlopen(req2, timeout=10)
-                                except: pass
+                                except Exception:  # noqa: bare-except
+
+                                    pass
                             break
         imap.logout()
     except Exception as e: log.error(f"IMAP: {e}")

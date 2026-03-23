@@ -33,8 +33,9 @@ def notify(msg, title="Pipeline Alert"):
     try:
         data = urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def find_stuck_deals() -> list:
     """Find deals that haven't moved in 7+ days."""
     cutoff = (datetime.utcnow() - timedelta(days=7)).isoformat()

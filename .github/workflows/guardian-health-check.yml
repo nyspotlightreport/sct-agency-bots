@@ -1,0 +1,23 @@
+name: Guardian Health Check — Endpoint Monitoring
+
+on:
+  schedule:
+    - cron: '11 */3 * * *'  # Every 3 hours at :11
+  workflow_dispatch:
+
+env:
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install requests
+      - run: python bots/guardian_health_check_bot.py

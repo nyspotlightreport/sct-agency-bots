@@ -43,7 +43,9 @@ def pushover(title,message,priority=0):
     if not PUSH_API or not PUSH_USER: return
     data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title[:100],"message":message[:1000],"priority":priority}).encode()
     try: urlreq.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
+
+        pass
 class SuperDirector:
     DIRECTOR_ID="base";DIRECTOR_NAME="Base";DIRECTOR_TITLE="Base"
     DIRECTOR_PROMPT="You are a director.";TOOLS=[];KPIs=[];PERSPECTIVES=[]

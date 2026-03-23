@@ -16,7 +16,7 @@ from datetime import datetime
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -34,8 +34,9 @@ def notify(msg, title="Auto Debugger"):
     try:
         data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":title,"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def gh(path, method="GET", body=None):
     if not GH_TOKEN: return None
     try:
@@ -80,7 +81,7 @@ def get_run_logs(run_id: int) -> str:
                         content = re.sub(r"\[[0-9;]*m","",content)
                         content = re.sub(r"^\d{4}-\d{2}-\d{2}T[\d:.Z]+\s","",content,flags=re.MULTILINE)
                         text_parts.append(content[-3000:])  # last 3k chars per file
-        except:
+        except Exception:  # noqa: bare-except
             text_parts.append(raw.decode("utf-8","replace")[-5000:])
         
         return "\n".join(text_parts)[-8000:]  # max 8k chars

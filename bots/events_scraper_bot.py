@@ -13,7 +13,7 @@ class EventsScraperBot:
         self.eventbrite_key   = os.environ.get("EVENTBRITE_API_KEY","")
         self.anthropic_key    = os.environ.get("ANTHROPIC_API_KEY","")
         self.publer_key       = os.environ.get("PUBLER_API_KEY","")
-        self.publer_ws_id     = os.environ.get("PUBLER_WORKSPACE_ID","69bc5c22ef1de019931daeae")
+        self.publer_ws_id     = os.environ.get("PUBLER_WORKSPACE_ID","")
 
     def fetch_ticketmaster_events(self, days_ahead=14, max_events=20):
         """Get upcoming NYC events from Ticketmaster"""

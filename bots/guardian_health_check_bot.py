@@ -41,8 +41,9 @@ def run():
             "message":"\n".join(failed),"priority":0}).encode()
         try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     all_ok = len(failed) == 0
     print(f"Health: {'✅ All OK' if all_ok else f'❌ {len(failed)} failed: {failed}'}")
     return {"ok": all_ok, "failed": failed}

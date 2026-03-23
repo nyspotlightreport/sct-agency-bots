@@ -32,8 +32,9 @@ PUSH_USER=os.environ.get("PUSHOVER_USER_KEY","")
 def push(t,m):
     if not PUSH_API:return
     try:urlreq.urlopen("https://api.pushover.net/1/messages.json",urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":t[:100],"message":m[:1000]}).encode(),timeout=5)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def claude(prompt, max_tokens=500):
     if not ANTHROPIC: return ""
     try:
@@ -48,8 +49,9 @@ def supa_log(data):
         req=urlreq.Request(SUPA_URL+"/rest/v1/director_outputs",data=json.dumps(data).encode(),method="POST",
             headers={"apikey":SUPA_KEY,"Authorization":"Bearer "+SUPA_KEY,"Content-Type":"application/json","Prefer":"return=minimal"})
         urlreq.urlopen(req,timeout=10)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def channel_cold_outreach():
     """Channel 1: Cold email outreach to agency owners."""
     log.info("[CH1] Cold Email Outreach")
@@ -137,7 +139,7 @@ def channel_affiliate():
     try:
         from bots.affiliate_engine import run
         return run()
-    except:
+    except Exception:  # noqa: bare-except
         return {"status":"armed","note":"Affiliate engine ready for activation"}
 
 def run():

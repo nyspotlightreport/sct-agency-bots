@@ -182,13 +182,15 @@ def log_call(call_data):
         req = urlreq.Request(f"{SUPA_URL}/rest/v1/director_outputs", data=json.dumps(record).encode(), method="POST",
             headers={"apikey":SUPA_KEY,"Authorization":f"Bearer {SUPA_KEY}","Content-Type":"application/json","Prefer":"return=minimal"})
         urlreq.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def push(t,m,p=0):
     if not PUSH_API:return
     try:urlreq.urlopen("https://api.pushover.net/1/messages.json",urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":t[:100],"message":m[:1000],"priority":p}).encode(),timeout=5)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 from agents.voice_ai.agent_prompts import AGENT_PROMPTS
 
 # ═══ FULL CONVERSATION PIPELINE ═══

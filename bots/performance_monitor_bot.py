@@ -10,7 +10,7 @@ from datetime import datetime
 sys.path.insert(0, ".")
 try:
     from agents.crm_core_agent import supabase_request
-except:
+except Exception:  # noqa: bare-except
     def supabase_request(m,t,**k): return None
 
 import urllib.request, urllib.parse
@@ -84,8 +84,9 @@ def notify(msg, title="Perf Monitor"):
     try:
         data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":title,"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def run():
     log.info("Performance Monitor Bot checking all endpoints...")
     results   = [check_endpoint(ep) for ep in ENDPOINTS_TO_TEST]

@@ -24,8 +24,9 @@ def notify(title: str, message: str, priority: int = 0, tags: list = None) -> bo
                 timeout=5)
             if r.status_code == 200:
                 return True
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     # ntfy.sh fallback (free, no account)
     try:
         r = requests.post(f"https://ntfy.sh/{NTFY_CHANNEL}",
@@ -34,8 +35,9 @@ def notify(title: str, message: str, priority: int = 0, tags: list = None) -> bo
             headers={"Content-Type":"application/json"}, timeout=5)
         if r.status_code == 200:
             return True
-    except: pass
-    
+    except Exception:  # noqa: bare-except
+
+        pass
     # Email fallback
     if GMAIL_PASS:
         try:
@@ -49,8 +51,9 @@ def notify(title: str, message: str, priority: int = 0, tags: list = None) -> bo
                 s.login(GMAIL_USER, GMAIL_PASS)
                 s.send_message(msg)
             return True
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     logging.warning(f"NOTIFY (no channel): {title} — {message}")
     return False
 

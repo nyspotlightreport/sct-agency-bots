@@ -31,7 +31,7 @@ def is_valid_email_domain(email):
         # Check if domain has MX records
         socket.getaddrinfo(domain, None)
         return True
-    except:
+    except Exception:  # noqa: bare-except
         return False
 
 def safe_to_send(email):
@@ -271,8 +271,9 @@ NY Spotlight Report"""
             "message":msg,"priority":1,"sound":"magic"}).encode()
         try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     log.info(f"\n{'═'*60}")
     log.info(f"DONE: {sent} sent, {failed} failed, tweet: {tweet_ok}")
     log.info(f"{'═'*60}")

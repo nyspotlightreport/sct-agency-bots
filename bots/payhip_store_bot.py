@@ -85,7 +85,7 @@ def run():
                 link = d.get("link", d.get("url", "created"))
                 print(f"  ✅ Live: {link}")
                 results.append({"name": p["name"], "price": p["price"], "url": link})
-            except:
+            except Exception:  # noqa: bare-except
                 print(f"  ✅ Created (status {r.status_code})")
         else:
             print(f"  ❌ Failed ({r.status_code}): {r.text[:150]}")

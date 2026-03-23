@@ -67,7 +67,7 @@ def voice_all_pending_scripts() -> int:
     try:
         with open("/tmp/youtube_scripts_pending.json") as f:
             scripts = json.load(f)
-    except:
+    except Exception:  # noqa: bare-except
         log.info("No pending scripts file — checking data/video_scripts/")
         scripts = []
     

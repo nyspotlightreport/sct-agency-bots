@@ -8,7 +8,7 @@ from datetime import datetime, date, timedelta
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s, u, **k): return ""
     def claude_json(s, u, **k): return {}
 
@@ -38,8 +38,9 @@ def push(title, msg, p=0):
     if not PUSH_API: return
     try: urllib.request.urlopen("https://api.pushover.net/1/messages.json",
         urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title[:100],"message":msg[:1000],"priority":p}).encode(), timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def gh(path, method="GET", data=None):
     url = f"https://api.github.com/repos/{REPO}/{path}"
     req = urllib.request.Request(url, data=json.dumps(data).encode() if data else None,

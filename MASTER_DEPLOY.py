@@ -2,7 +2,7 @@
 """MASTER DEPLOY — Executes everything. Chairman does nothing."""
 import os, subprocess, json, time, base64, re
 import urllib.request as urlreq, urllib.parse, urllib.error
-REPO = r'C:\Users\S\sct-agency-bots'
+REPO = os.path.dirname(os.path.abspath(__file__))
 os.chdir(REPO)
 def run_cmd(cmd):
     r = subprocess.run(cmd, capture_output=True, text=True)

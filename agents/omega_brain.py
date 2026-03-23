@@ -27,7 +27,7 @@ from datetime import datetime, date, timedelta
 sys.path.insert(0,".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -64,7 +64,7 @@ def load_all_intelligence() -> dict:
             try:
                 content = base64.b64decode(r.json()["content"]).decode()
                 intel[key] = json.loads(content)
-            except:
+            except Exception:  # noqa: bare-except
                 intel[key] = {}
     
     # Get latest opportunities
@@ -75,8 +75,9 @@ def load_all_intelligence() -> dict:
         if files:
             r2 = requests.get(files[0]["download_url"])
             try: intel["opportunities"] = r2.json()
-            except: pass
-    
+            except Exception:  # noqa: bare-except
+
+                pass
     return intel
 
 def get_workflow_performance() -> dict:

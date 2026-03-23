@@ -228,8 +228,9 @@ def run():
         try: urllib.request.urlopen(urllib.request.Request(
             "https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     log.info(f"Done: sent={sent} skipped={skipped} failed={failed}")
     return {"sent":sent,"skipped":skipped,"failed":failed,
             "smtp":SMTP_USER,"from":FROM_EMAIL}

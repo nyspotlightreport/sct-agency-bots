@@ -4,7 +4,7 @@ import os, sys, json, logging
 sys.path.insert(0,".")
 try:
     from agents.crm_core_agent import supabase_request
-except:
+except Exception:  # noqa: bare-except
     def supabase_request(m,t,**k): return None
 log = logging.getLogger(__name__)
 

@@ -302,8 +302,9 @@ def run():
             "message":msg,"priority":0}).encode()
         try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     log.info(f"\nDone: {applied} processed, {email_sent} emails sent")
     return {"applied": applied, "email_sent": email_sent}
 

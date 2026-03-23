@@ -59,7 +59,7 @@ def get_pending_scripts() -> list:
     try:
         with open("/tmp/youtube_scripts_pending.json") as f:
             return json.load(f)
-    except:
+    except Exception:  # noqa: bare-except
         # Fallback: generate test script
         return [{"title": "Test Video", "script": "Three ways to build passive income this month. Number one: digital products..."}]
 

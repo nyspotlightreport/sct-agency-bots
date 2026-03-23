@@ -47,8 +47,9 @@ def push_notify(title, msg, priority=0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ── PILLAR 1: RETAINER HEALTH ─────────────────────────────
 def check_retainer_health():
     """Monitor retainer clients, flag churn risk, trigger upsells."""

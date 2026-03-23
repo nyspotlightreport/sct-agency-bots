@@ -5,7 +5,7 @@ from datetime import datetime
 sys.path.insert(0,".")
 try:
     from agents.crm_core_agent import supabase_request, get_pipeline_stats
-except:
+except Exception:  # noqa: bare-except
     def supabase_request(m,t,**k): return None
     def get_pipeline_stats(): return {}
 log = logging.getLogger(__name__)
@@ -18,8 +18,9 @@ def notify(msg,title="Leaderboard"):
     try:
         data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def calculate_leaderboard():
     stats = get_pipeline_stats()
     won   = stats.get("CLOSED_WON",{}).get("count",0)

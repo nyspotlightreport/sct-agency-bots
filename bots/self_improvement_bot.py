@@ -66,8 +66,9 @@ def pushover(title, msg, priority=0, sound=None):
     data = json.dumps(payload).encode()
     try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type":"application/json"}), timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def get_gh_workflow_runs(limit=30):
     """Get recent GitHub Actions workflow runs."""
     if not GH_PAT: return []
@@ -95,7 +96,9 @@ def analyze_workflow_failures(runs):
                         "time":     updated[:16],
                         "workflow": run.get("path","").split("/")[-1]
                     })
-            except: pass
+            except Exception:  # noqa: bare-except
+
+                pass
     return failures
 
 def scan_bot_files():
@@ -125,8 +128,10 @@ def scan_bot_files():
                 if "def run(" in code and "if __name__" not in code:
                     issues.append({"file":fname,"issue":"Missing if __name__ == '__main__' guard","severity":"low"})
                     
-            except: pass
-    
+            except Exception:  # noqa: bare-except
+
+                    
+                pass
     scan_dir(bot_dir)
     scan_dir(agent_dir)
     return issues[:20]  # Cap at 20 issues per run

@@ -137,7 +137,7 @@ Return JSON:
 
         try:
             return ClaudeClient.complete(system, prompt, max_tokens=1000, json_mode=True)
-        except:
+        except Exception:  # noqa: bare-except
             return {"subject": email_brief.get("subject", ""), "body_html": "", "error": True}
 
     # ── SCHEDULER ─────────────────────────────────────────────────────────────

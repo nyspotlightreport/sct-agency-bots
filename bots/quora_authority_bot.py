@@ -11,7 +11,7 @@ import os, sys, json, logging, requests, time
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s, u, **k): return ""
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [QuoraBot] %(message)s")
 log = logging.getLogger()

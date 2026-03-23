@@ -346,8 +346,9 @@ def smart_fill_form(page):
                     els.first.fill(str(value), timeout=2000)
                     filled += 1
                     break
-            except: pass
-    
+            except Exception:  # noqa: bare-except
+
+                pass
     # Dropdowns
     for state_sel in ["select[name*='state']","select[name*='State']","select[id*='state']"]:
         try:
@@ -355,25 +356,30 @@ def smart_fill_form(page):
             if el.count() > 0:
                 el.first.select_option(value="NY", timeout=2000)
                 filled += 1; break
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     for country_sel in ["select[name*='country']","select[id*='country']"]:
         try:
             el = page.locator(country_sel)
             if el.count() > 0:
                 for val in ["US","USA","United States"]:
                     try: el.first.select_option(value=val, timeout=1000); filled += 1; break
-                    except: pass
-        except: pass
-    
+                    except Exception:  # noqa: bare-except
+
+                        pass
+        except Exception:  # noqa: bare-except
+
+            pass
     # Terms/agree checkboxes
     for agree_sel in ["[name*='agree']","[name*='terms']","[id*='agree']","[name*='consent']"]:
         try:
             el = page.locator(agree_sel)
             if el.count() > 0 and not el.first.is_checked():
                 el.first.check(timeout=2000)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     return filled
 
 def enter_sweepstakes(url, title="Sweepstakes", api_key=None):
@@ -423,8 +429,9 @@ def enter_sweepstakes(url, title="Sweepstakes", api_key=None):
                             time.sleep(1.5)
                             filled = smart_fill_form(page)
                             break
-                    except: pass
-            
+                    except Exception:  # noqa: bare-except
+
+                        pass
             if filled == 0:
                 browser.close()
                 return "no_form"
@@ -461,8 +468,9 @@ def enter_sweepstakes(url, title="Sweepstakes", api_key=None):
                         time.sleep(3)
                         submitted = True
                         break
-                except: pass
-            
+                except Exception:  # noqa: bare-except
+
+                    pass
             if submitted:
                 content_after = page.content().lower()
                 success_words = ["thank you","thanks","congratulations","you've entered",
@@ -506,8 +514,9 @@ def pushover(title, msg, priority=0, sound=None):
     try: urllib.request.urlopen(
         urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data, headers={"Content-Type":"application/json"}), timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ── MAIN ──────────────────────────────────────────────────────
 
 def run():

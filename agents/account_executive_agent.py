@@ -7,7 +7,7 @@ try:
     from agents.claude_core import claude, claude_json
     from agents.crm_core_agent import supabase_request, advance_stage
     from agents.proposal_generator_agent import generate_proposal, generate_quick_proposal
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def supabase_request(m,t,**k): return None
@@ -24,8 +24,9 @@ def notify(msg,title="AE Alert"):
     try:
         data = urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def run_demo(contact):
     name = (contact.get("name","") or "").split()[0] or "there"
     company = contact.get("company","")

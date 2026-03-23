@@ -1,0 +1,82 @@
+name: Reusable Bot Runner
+
+on:
+  workflow_call:
+    inputs:
+      bot_script:
+        description: 'Path to the bot script to run (e.g., bots/uptime_monitor_bot.py)'
+        required: true
+        type: string
+      extra_deps:
+        description: 'Extra pip packages to install (space-separated)'
+        required: false
+        type: string
+        default: ''
+      python_version:
+        description: 'Python version to use'
+        required: false
+        type: string
+        default: '3.11'
+      timeout_minutes:
+        description: 'Job timeout in minutes'
+        required: false
+        type: number
+        default: 15
+      cache_state:
+        description: 'Whether to cache state files between runs'
+        required: false
+        type: boolean
+        default: false
+      state_file:
+        description: 'State file to cache (relative path)'
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.timeout_minutes }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python_version }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          if [ -n "${{ inputs.extra_deps }}" ]; then
+            pip install ${{ inputs.extra_deps }}
+          fi
+
+      - name: Restore state cache
+        if: inputs.cache_state && inputs.state_file != ''
+        uses: actions/cache@v3
+        with:
+          path: ${{ inputs.state_file }}
+          key: state-${{ inputs.bot_script }}-latest
+
+      - name: Run bot
+        run: python ${{ inputs.bot_script }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+          CHAIRMAN_EMAIL: ${{ secrets.CHAIRMAN_EMAIL }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          PUBLER_API_KEY: ${{ secrets.PUBLER_API_KEY }}
+          PUBLER_WORKSPACE_ID: ${{ secrets.PUBLER_WORKSPACE_ID }}
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUB_ID: ${{ secrets.BEEHIIV_PUB_ID }}
+          GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+          TARGET_DOMAIN: ${{ secrets.TARGET_DOMAIN }}

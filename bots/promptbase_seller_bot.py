@@ -66,7 +66,7 @@ Include 5 high-quality prompts. Make them genuinely useful and specific."""
 
     try:
         return json.loads(text.replace("```json","").replace("```","").strip())
-    except:
+    except Exception:  # noqa: bare-except
         return {"pack_name": category, "prompts": []}
 
 def generate_gumroad_listing(pack: dict, price: float) -> str:

@@ -10,7 +10,7 @@ try:
     from agents.claude_core import claude, claude_json
     from agents.crm_core_agent import supabase_request, ICPS
     from agents.cold_outreach_agent import NYSR_OFFERS
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def supabase_request(m,t,**k): return None
     ICPS = {}
@@ -70,7 +70,9 @@ def run():
         try:
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"Upsell Engine","message":f"💰 {len(opps)} upsell opportunities identified"}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return {"opportunities": len(opps)}
 
 if __name__ == "__main__":

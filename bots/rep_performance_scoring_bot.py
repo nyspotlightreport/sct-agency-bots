@@ -120,8 +120,9 @@ def score_reps():
                 if 30 <= days_old <= 35 and closes == 0:
                     log.warning(f"PROBATION FAIL: {name} — 0 closes in 30 days — flagging for review")
                     supa("PATCH","sales_reps",{"status":"paused","notes":"30-day probation: 0 closes"},f"?id=eq.{rid}")
-            except: pass
-    
+            except Exception:  # noqa: bare-except
+
+                pass
     # Weekly pushover summary
     if PUSH_API and PUSH_USER:
         top = rep_scores[-1] if rep_scores else None
@@ -134,7 +135,8 @@ def score_reps():
         req2 = urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data, headers={"Content-Type":"application/json"})
         try: urllib.request.urlopen(req2, timeout=10)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
 if __name__ == "__main__":
     score_reps()

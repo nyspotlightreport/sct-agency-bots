@@ -10,7 +10,7 @@ sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
     from agents.supercore import SuperDirector, pushover, supa
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def pushover(*a,**k): pass

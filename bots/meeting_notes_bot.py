@@ -107,7 +107,9 @@ def create_hubspot_tasks(action_items):
                 timeout=10
             )
             if r.status_code in [200, 201]: created += 1
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     print(f"[meeting-bot] Created {created} HubSpot tasks")
     return created
 

@@ -5,7 +5,7 @@ sys.path.insert(0,".")
 try:
     from agents.claude_core import claude, claude_json
     from agents.tech_lead_agent import select_stack
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def select_stack(t): return {}

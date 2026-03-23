@@ -31,7 +31,7 @@ from typing import Optional
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -331,8 +331,9 @@ def register_deliverable(deliverable: dict, dtype: str, score: dict) -> bool:
     if r.status_code == 200:
         try:
             registry = json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     entry = {
         "id": f"{dtype.lower()}_{date.today()}_{len(registry)}",
         "type": dtype,

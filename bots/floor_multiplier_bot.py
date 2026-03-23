@@ -30,7 +30,9 @@ def check_gumroad():
             prods = r.json().get("products",[])
             total_sales = sum(p.get("sales_count",0) for p in prods)
             return len(prods), total_sales
-    except: pass
+    except Exception:  # noqa: bare-except
+
+        pass
     return 0, 0
 
 def run():

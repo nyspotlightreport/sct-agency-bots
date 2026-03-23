@@ -205,8 +205,9 @@ def run():
         try:
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"Journey Builder","message":msg}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     log.info(f"Journey Builder complete: {total_sent} emails queued across {len(JOURNEYS)} journeys")
     return {"total_sent": total_sent, "journey_stats": journey_stats}
 

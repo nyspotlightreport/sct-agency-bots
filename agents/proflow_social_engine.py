@@ -37,8 +37,9 @@ def supa_post(table,data):
         req=urlreq.Request(f"{SUPA_URL}/rest/v1/{table}",data=json.dumps(data).encode(),method="POST",
             headers={"apikey":SUPA_KEY,"Authorization":f"Bearer {SUPA_KEY}","Content-Type":"application/json","Prefer":"return=minimal"})
         urlreq.urlopen(req,timeout=10)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def generate_social_posts(topic, platforms=["linkedin","twitter","instagram"]):
     """Generate platform-native posts using Claude."""
     posts={}

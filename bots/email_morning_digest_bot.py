@@ -70,8 +70,9 @@ def run():
         req2 = urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data, headers={"Content-Type":"application/json"})
         try: urllib.request.urlopen(req2, timeout=10)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     # Save digest
     supa("POST","email_digest",{
         "digest_date": datetime.utcnow().date().isoformat(),

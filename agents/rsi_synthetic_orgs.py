@@ -92,7 +92,9 @@ class StrategyROICorp(RSIBaseAgent):
                     self.send_message("sales_corp","request",
                         f"High-ROI action needed: {a.get('action','')[:60]}",
                         {"action":a,"priority":"high"}, priority=2)
-            except: pass
+            except Exception:  # noqa: bare-except
+
+                pass
         self.decide(f"MTD Revenue: ${mtd_rev:.0f}, run rate: ${run_rate:.0f}/mo, gap: ${gap:.0f}")
         return {"mtd_revenue": mtd_rev, "run_rate": run_rate, "gap_to_target": gap, "target": target}
 
@@ -203,7 +205,9 @@ class EngineeringBuildCorp(RSIBaseAgent):
                                           headers={"User-Agent":"NYSR-Engineering/1.0"})
             with urllib.request.urlopen(req, timeout=8) as r:
                 site_up = r.status == 200
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
         # Check GitHub workflows
         if os.environ.get("GH_PAT"):
             req2 = urllib.request.Request(
@@ -214,7 +218,7 @@ class EngineeringBuildCorp(RSIBaseAgent):
                     runs = json.loads(r.read()).get("workflow_runs",[])
                 recent_failures = len([r for r in runs if r.get("conclusion")=="failure"])
                 recent_success  = len([r for r in runs if r.get("conclusion")=="success"])
-            except:
+            except Exception:  # noqa: bare-except
                 recent_failures, recent_success = 0, 0
         else:
             recent_failures, recent_success = 0, 0

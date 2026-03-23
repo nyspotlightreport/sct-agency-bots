@@ -18,7 +18,7 @@ from datetime import datetime
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
 
 import urllib.request, base64

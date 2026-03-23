@@ -75,7 +75,9 @@ def prep_discovery_calls():
                 req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                     data=data, headers={"Content-Type":"application/json"})
                 try: urllib.request.urlopen(req, timeout=10)
-                except: pass
+                except Exception:  # noqa: bare-except
+
+                    pass
             prepped += 1
     log.info(f"Discovery calls prepped: {prepped}")
     return prepped

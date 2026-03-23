@@ -19,7 +19,7 @@ from email.mime.multipart import MIMEMultipart
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude
-except:
+except Exception:  # noqa: bare-except
     def claude(s, u, **k): return u[:200]
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [PR-Bot] %(message)s")

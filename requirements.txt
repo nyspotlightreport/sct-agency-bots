@@ -1,16 +1,18 @@
 # S.C. Thomas Internal Agency — Python Dependencies
 # Install: pip install -r requirements.txt
 
-requests>=2.31.0
-schedule>=1.2.0
+requests>=2.31.0,<3.0
+schedule>=1.2.0,<2.0
 
 # Gmail (inbox triage bot)
-google-auth>=2.23.0
-google-auth-oauthlib>=1.1.0
-google-auth-httplib2>=0.1.1
-google-api-python-client>=2.100.0
+google-auth>=2.23.0,<3.0
+google-auth-oauthlib>=1.1.0,<2.0
+google-auth-httplib2>=0.1.1,<1.0
+google-api-python-client>=2.100.0,<3.0
 
-# PDF generation (invoice bot - optional)
-# reportlab>=4.0.0
+# YAML parsing
+pyyaml>=6.0,<7.0
 
-yaml
+# Testing (dev)
+pytest>=7.0,<9.0
+pytest-mock>=3.0,<4.0

@@ -12,7 +12,7 @@ sys.path.insert(0,".")
 try:
     from agents.claude_core import claude_json
     from agents.crm_core_agent import supabase_request, get_pipeline_stats, ICPS
-except:
+except Exception:  # noqa: bare-except
     def claude_json(s,u,**k): return {}
     def supabase_request(m,t,**k): return None
     def get_pipeline_stats(): return {}
@@ -29,8 +29,9 @@ def notify(msg, title="Sales Analytics"):
     try:
         data = urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg[:1000]}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def calculate_conversion_rates(stats: Dict) -> Dict:
     """Calculate stage-by-stage conversion rates."""
     stages  = ["LEAD","PROSPECT","QUALIFIED","PROPOSAL","NEGOTIATION","CLOSED_WON"]

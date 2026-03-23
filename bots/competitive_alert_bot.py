@@ -5,7 +5,7 @@ sys.path.insert(0,".")
 try:
     from agents.claude_core import claude
     from agents.competitor_intelligence_agent import COMPETITORS
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     COMPETITORS = {}
 log = logging.getLogger(__name__)
@@ -18,8 +18,9 @@ def notify(msg,title="Competitive Intel"):
     try:
         data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def monitor_competitor_pricing(competitor):
     # In production: scrape pricing pages
     return {"competitor":competitor,"price_changed":False,"last_checked":__import__("datetime").datetime.utcnow().isoformat()}

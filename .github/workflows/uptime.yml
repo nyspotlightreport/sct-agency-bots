@@ -1,7 +1,7 @@
 name: Uptime Monitor
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 jobs:
   monitor:
@@ -10,17 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
+        with: {python-version: '3.11', cache: 'pip'}
       - run: pip install requests
       - name: Restore uptime state
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: uptime_state.json
-          key: uptime-state-${{ github.run_number }}
-          restore-keys: uptime-state-
+          key: uptime-state-latest
       - run: python bots/uptime_monitor_bot.py
         env:
           GMAIL_USER:      ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASS:  ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:  ${{ secrets.CHAIRMAN_EMAIL }}
-          MONITORED_SITES: ${{ secrets.MONITORED_SITES }}
+          MONITORED_SITES: "https://nyspotlightreport.com,https://nyspotlightreport.com/proflow/,https://nyspotlightreport.com/portal/,https://nyspotlightreport.com/store/"
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}

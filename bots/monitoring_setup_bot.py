@@ -12,8 +12,9 @@ def notify(msg, title="Monitor Alert"):
     try:
         data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":title,"message":msg}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def check_url(url, timeout=10):
     import time
     start = time.time()

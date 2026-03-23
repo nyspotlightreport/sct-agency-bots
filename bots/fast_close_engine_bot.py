@@ -46,8 +46,9 @@ def push_notify(title, msg, priority=0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # CLOSE #1: TRIPWIRE OFFER ────────────────────────────────
 def fire_tripwire_offers():
     """Present $750 tripwire to all warm leads who haven't seen it."""

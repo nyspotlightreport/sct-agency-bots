@@ -12,7 +12,7 @@ from datetime import datetime
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -157,8 +157,9 @@ def run():
         try:
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"SEO Audit","message":msg}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     log.info(f"SEO Audit complete: {briefs_generated} briefs | {len(nearly_ranking)} page-2 opportunities")
     return {"briefs_generated":briefs_generated,"page_2_opportunities":len(nearly_ranking),"revenue_keywords":len(REVENUE_KEYWORDS)}
 

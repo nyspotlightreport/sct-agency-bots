@@ -47,8 +47,9 @@ def push(title: str, message: str, priority: int = 0):
         req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                                      data=data, headers={"Content-Type": "application/json"})
         urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def ai(prompt: str) -> str:
     if not ANTHROPIC_KEY: return ""
     data = json.dumps({

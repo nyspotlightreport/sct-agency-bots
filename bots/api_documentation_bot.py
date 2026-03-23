@@ -4,7 +4,7 @@ import os, sys, json, logging
 sys.path.insert(0,".")
 try:
     from agents.api_architect_agent import generate_openapi_spec, design_rest_api
-except:
+except Exception:  # noqa: bare-except
     def generate_openapi_spec(n,r): return "{}"
     def design_rest_api(r,a=None): return {"resource":r,"endpoints":[]}
 log = logging.getLogger(__name__)

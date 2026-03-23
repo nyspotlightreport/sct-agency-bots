@@ -54,8 +54,9 @@ def push_notify(title, msg, priority=0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # LAYER 1: SELF-SERVE CHECKOUT — route warm leads to store ─
 def route_to_self_serve():
     """Every ready-to-buy lead gets a direct Stripe link. No call needed."""

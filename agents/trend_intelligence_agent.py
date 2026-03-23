@@ -47,7 +47,9 @@ def get_rss_trends() -> list:
             for entry in feed.entries[:3]:
                 items.append({"title": entry.title, "source": feed.feed.title,
                                "summary": getattr(entry,"summary","")[:200]})
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return items
 
 def identify_opportunities(headlines: list, rss: list) -> list:

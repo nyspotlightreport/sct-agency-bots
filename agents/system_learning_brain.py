@@ -34,7 +34,7 @@ from datetime import datetime, date, timedelta
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -67,7 +67,9 @@ def load_knowledge_base() -> dict:
     r = requests.get(f"https://api.github.com/repos/{REPO}/contents/data/brain/knowledge_base.json", headers=GH_H)
     if r.status_code == 200:
         try: return json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return {
         "rules": [],
         "patterns": [],
@@ -189,8 +191,9 @@ def detect_performance_patterns() -> list:
         if r.status_code == 200:
             try:
                 all_data[path] = json.loads(base64.b64decode(r.json()["content"]).decode())
-            except: pass
-    
+            except Exception:  # noqa: bare-except
+
+                pass
     if not ANTHROPIC or not all_data:
         return [{"pattern":"Insufficient data","recommendation":"Collect 7 days of data first","priority":"low"}]
     
@@ -301,8 +304,9 @@ def escalate_to_chairman(issues: list):
         requests.post(f"https://ntfy.sh/{NTFY}",
             json={"topic":NTFY,"title":"Agency Brain Alert","message":msg,"priority":4,"tags":["warning"]},
             headers={"Content-Type":"application/json"}, timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ΓöÇΓöÇ WEEKLY LEARNING REPORT ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 
 def generate_weekly_report(audit, patterns, learning) -> str:

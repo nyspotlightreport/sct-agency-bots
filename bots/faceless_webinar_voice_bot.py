@@ -233,8 +233,9 @@ def push_notification(title, msg):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json", data=data,
                                   headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def run():
     log.info("=== Faceless Webinar Voice Bot ===")
     log.info("Generating AI voiceover via ElevenLabs...")

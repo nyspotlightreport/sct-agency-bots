@@ -84,7 +84,7 @@ def check_page_speed(url):
         ms   = int((datetime.now() - start).total_seconds() * 1000)
         size = len(r.content) / 1024  # KB
         return {"load_ms": ms, "size_kb": round(size, 1), "slow": ms > 3000}
-    except:
+    except Exception:  # noqa: bare-except
         return {"load_ms": None, "size_kb": None, "slow": None}
 
 # ─── ALERTS ───────────────────────────────────────────────────────────────────

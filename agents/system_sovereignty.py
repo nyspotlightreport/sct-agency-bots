@@ -29,8 +29,9 @@ REPO="nyspotlightreport/sct-agency-bots"
 def push(t,m,p=0):
     if not PUSH_API:return
     try:urlreq.urlopen("https://api.pushover.net/1/messages.json",urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":t[:100],"message":m[:1000],"priority":p}).encode(),timeout=5)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ═══════════════════════════════════════════════════════
 # 1. LOCAL SECRETS VAULT — Encrypted backup of all credentials
 # ═══════════════════════════════════════════════════════
@@ -139,7 +140,9 @@ def backup_all_data():
     backups=sorted([f for f in os.listdir(backup_dir) if f.endswith(".db")])
     for old in backups[:-10]:
         try:os.remove(os.path.join(backup_dir,old));log.info(f"  Cleaned: {old}")
-        except:pass
+        except Exception:  # noqa: bare-except
+
+            pass
     log.info(f"  Backup: {total} rows → {db_path}")
     return total
 

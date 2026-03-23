@@ -331,8 +331,9 @@ def send_pushover(title, msg, priority=0):
         "message":msg,"priority":priority,"sound":"cashregister"}).encode()
     try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data,headers={"Content-Type":"application/json"}),timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def save_briefing(briefing_text, intel, grade, valuation):
     """Save briefing to Supabase."""
     supa("POST","jeff_daily_briefing",{

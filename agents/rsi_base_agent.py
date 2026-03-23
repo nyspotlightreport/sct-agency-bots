@@ -79,9 +79,9 @@ def _push(title: str, msg: str, priority: int = 0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json", data=data,
                                   headers={"Content-Type": "application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
-
+        pass
 # ══════════════════════════════════════════════════════════════
 # RSI BASE AGENT CLASS
 # ══════════════════════════════════════════════════════════════
@@ -316,8 +316,9 @@ Return JSON: {{"title":"...","proposal_type":"config_change","config_diff":{{}},
             if float(proposal.get("confidence", 0)) > 0.8:
                 self._apply_config_improvement({**proposal, "org_id": self.ORG_ID,
                                                  "agent_name": self.NAME, "baseline_score": self._fitness})
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     def _propose_capability_improvement(self):
         """When performing well, propose new capabilities to add."""
         prompt = f"""Agent {self.NAME} is performing excellently at {self._fitness:.2f}/1.0.
@@ -337,8 +338,9 @@ Return JSON: {{"title":"New capability name","description":"What it does","expec
                 "expected_improvement": cap.get("expected_impact",""),
                 "confidence": 0.5,
             })
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     def _apply_config_improvement(self, proposal: Dict):
         """Apply a config-level improvement to the agent's genome."""
         config_diff = proposal.get("config_diff", {})

@@ -10,7 +10,7 @@ from datetime import datetime
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude_json(s,u,**k): return {}
 
 import urllib.request
@@ -71,8 +71,9 @@ def run():
                 content = base64.b64decode(resp.get("content","").replace("\n","")).decode("utf-8","replace")
                 debt = scan_file_for_debt(f["path"], content)
                 all_debt.extend(debt)
-            except: pass
-    
+            except Exception:  # noqa: bare-except
+
+                pass
     high     = len([d for d in all_debt if d["severity"]=="HIGH"])
     medium   = len([d for d in all_debt if d["severity"]=="MEDIUM"])
     low      = len([d for d in all_debt if d["severity"]=="LOW"])
@@ -84,8 +85,9 @@ def run():
             msg = f"🔧 Tech Debt Report\n{len(all_debt)} items found\n{high} HIGH | {medium} MEDIUM | {low} LOW"
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"Tech Debt Weekly","message":msg}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     return {"total_debt":len(all_debt),"high":high,"medium":medium,"low":low,"items":all_debt[:20]}
 
 import urllib.parse

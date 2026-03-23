@@ -10,7 +10,7 @@ sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
     from agents.crm_core_agent import supabase_request
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def supabase_request(m, t, data=None, query="", **k): return None
@@ -201,8 +201,9 @@ def run():
         try:
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"Social Scheduler","message":msg}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=5)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     log.info("Social Scheduler: " + str(posted) + " posted | " + str(len(scheduled)) + " queued")
     return {"posted": posted, "scheduled": len(scheduled), "pillar": pillar["pillar"]}
 

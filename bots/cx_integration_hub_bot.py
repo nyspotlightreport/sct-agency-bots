@@ -65,8 +65,9 @@ def push_notify(title, msg, priority=0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 today = datetime.date.today().isoformat()
 now   = datetime.datetime.utcnow().isoformat()
 

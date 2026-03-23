@@ -10,7 +10,7 @@ class MultiPlatformPosterBot:
     def __init__(self):
         self.anthropic_key  = os.environ.get("ANTHROPIC_API_KEY","")
         self.publer_key     = os.environ.get("PUBLER_API_KEY","")
-        self.publer_ws_id   = os.environ.get("PUBLER_WORKSPACE_ID","69bc5c22ef1de019931daeae")
+        self.publer_ws_id   = os.environ.get("PUBLER_WORKSPACE_ID","")
         self.reddit_client  = os.environ.get("REDDIT_CLIENT_ID","")
         self.reddit_secret  = os.environ.get("REDDIT_CLIENT_SECRET","")
         self.reddit_user    = os.environ.get("REDDIT_USERNAME","")

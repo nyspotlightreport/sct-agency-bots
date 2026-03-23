@@ -26,8 +26,9 @@ REPO="nyspotlightreport/sct-agency-bots"
 def push(t,m,p=0):
     if not PUSH_API:return
     try:urlreq.urlopen("https://api.pushover.net/1/messages.json",urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":t[:100],"message":m[:1000],"priority":p}).encode(),timeout=5)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def gh(path,method="GET",data=None):
     body=json.dumps(data).encode() if data else None
     req=urlreq.Request(f"https://api.github.com/repos/{REPO}/{path}",data=body,method=method,
@@ -53,8 +54,9 @@ def supa_post(table,data):
         req=urlreq.Request(f"{SUPA_URL}/rest/v1/{table}",data=json.dumps(data).encode(),method="POST",
             headers={"apikey":SUPA_KEY,"Authorization":f"Bearer {SUPA_KEY}","Content-Type":"application/json","Prefer":"return=minimal"})
         urlreq.urlopen(req,timeout=10)
-    except:pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ═══════════════════════════════════════════════════════
 # SELF-HEALING ENGINE — Can repair ANY file on GitHub
 # ═══════════════════════════════════════════════════════
@@ -92,8 +94,9 @@ def supa_ensure_table(table, columns):
         urlreq.urlopen(urlreq.Request(
             f"{SUPA_URL}/rest/v1/{table}?created_at=eq.{row['created_at']}",
             method="DELETE", headers={"apikey": SUPA_KEY, "Authorization": f"Bearer {SUPA_KEY}"}), timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ═══════════════════════════════════════════════════════
 # ALL CHECKS — Each returns (ok, message, repair_action)
 # ═══════════════════════════════════════════════════════
@@ -210,7 +213,7 @@ def check_and_repair_package_json():
         gh_write_file("package.json",fixed,"watchdog: auto-fix package.json")
         return True,"AUTO-FIXED package.json","removed broken line"
     try:json.loads(content);return True,"Valid JSON",None
-    except:
+    except Exception:  # noqa: bare-except
         fix='{"name":"nysr-site","version":"1.0.0","dependencies":{"nodemailer":"^6.9.7"}}'
         gh_write_file("package.json",fix,"watchdog: auto-fix invalid package.json")
         return True,"AUTO-FIXED invalid JSON","rewrote file"
@@ -269,6 +272,19 @@ def check_anthropic():
     if not ANTHROPIC_KEY:return False,"ANTHROPIC_API_KEY not set","add to secrets"
     return True,"Key present",None
 
+def check_stripe_products():
+    """Verify Stripe products and prices exist."""
+    if not STRIPE_SK:return False,"STRIPE_SECRET_KEY not set","add to secrets"
+    try:
+        auth=base64.b64encode(f"{STRIPE_SK}:".encode()).decode()
+        with urlreq.urlopen(urlreq.Request("https://api.stripe.com/v1/products?active=true&limit=10",
+            headers={"Authorization":f"Basic {auth}"}),timeout=10) as r:
+            data=json.loads(r.read())
+            products=data.get("data",[])
+            if not products:return False,"No active Stripe products found","create products in Stripe dashboard"
+            return True,f"{len(products)} active products",None
+    except Exception as e:return False,str(e)[:80],"check Stripe API"
+
 # ═══════════════════════════════════════════════════════
 # MAIN: Run ALL checks, AUTO-REPAIR all failures
 # ═══════════════════════════════════════════════════════
@@ -277,7 +293,7 @@ ALL_CHECKS=[
     ("ALL_PAGES",check_and_repair_pages),
     ("NETLIFY_FUNCTIONS",check_and_repair_functions),
     ("STRIPE_WEBHOOK",check_and_repair_stripe_webhook),
-    ("STRIPE_PRODUCTS",lambda:(True,"Checked",None)),
+    ("STRIPE_PRODUCTS",check_stripe_products),
     ("SUPABASE",check_and_repair_supabase),
     ("ANTHROPIC",check_anthropic),
     ("ZERO_BYTE_FILES",check_and_repair_zero_bytes),

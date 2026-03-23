@@ -21,7 +21,7 @@ def get_service_account_token():
     
     try:
         sa_data = json.loads(SA_JSON)
-    except:
+    except Exception:  # noqa: bare-except
         log.error("Invalid service account JSON")
         return None, YT_KEY
 

@@ -245,7 +245,7 @@ score = average of 4 dimensions / 10. No other text."""
             score = float(result.get("score", 0.7))
             reasoning = result.get("reasoning", "")
             return min(max(score, 0.0), 1.0), reasoning
-        except:
+        except Exception:  # noqa: bare-except
             return 0.75, "Parse error — default score"
     
     # ── UPGRADE #10: BIAS + HALLUCINATION AUDIT ──────────────
@@ -269,7 +269,7 @@ Return ONLY JSON: {{"is_hallucination": false, "bias_flags": [], "severity": "lo
             text = text.strip().strip('`')
             if text.startswith('json'): text = text[4:]
             return json.loads(text)
-        except:
+        except Exception:  # noqa: bare-except
             return {"is_hallucination": False, "bias_flags": [], "severity": "low", "finding": ""}
     
     # ── UPGRADE #5: ITERATIVE REFINEMENT ─────────────────────

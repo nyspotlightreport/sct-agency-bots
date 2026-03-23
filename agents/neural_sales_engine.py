@@ -38,7 +38,7 @@ from email.mime.multipart import MIMEMultipart
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -467,7 +467,9 @@ def load_performance_data() -> dict:
     if r.status_code == 200:
         try:
             return json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return {
         "sequences": {},  # template_id -> {sent, opened, replied, closed, revenue}
         "icps": {},       # icp_name -> {contacted, replied, closed, avg_deal}

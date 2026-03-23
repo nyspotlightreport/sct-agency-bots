@@ -21,8 +21,9 @@ GH_PAT = os.environ.get("GH_PAT", "")
 def push(t, m, p=0):
     if not PUSH_API: return
     try: urlreq.urlopen("https://api.pushover.net/1/messages.json", urllib.parse.urlencode({"token": PUSH_API, "user": PUSH_USER, "title": t[:100], "message": m[:1000], "priority": p}).encode(), timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def supa_get(table, query=""):
     if not SUPA_URL: return []
     try:
@@ -39,8 +40,9 @@ def gh_trigger(workflow):
             data=data, headers={"Authorization": f"token {GH_PAT}", "Accept": "application/vnd.github+json", "Content-Type": "application/json"})
         urlreq.urlopen(req, timeout=15)
         log.info(f"  TRIGGERED: {workflow}")
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ═══ SYNERGY ROUTES ═══
 # Each route defines: source director → action → target
 ROUTES = [

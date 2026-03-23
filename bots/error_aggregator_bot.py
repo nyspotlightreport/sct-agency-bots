@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 sys.path.insert(0, ".")
 try:
     from agents.crm_core_agent import supabase_request
-except:
+except Exception:  # noqa: bare-except
     def supabase_request(m,t,**k): return None
 
 import urllib.request, urllib.parse
@@ -108,8 +108,9 @@ def run():
             try:
                 data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"Error Aggregator","message":summary[:1000]}).encode()
                 urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-            except: pass
-    
+            except Exception:  # noqa: bare-except
+
+                pass
     return {"total_errors":len(all_errors),"groups":len(groups),"github":len(gh_errors),"netlify":len(netlify_errors)}
 
 if __name__ == "__main__":

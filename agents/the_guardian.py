@@ -24,7 +24,7 @@ from typing import Optional, Dict, List, Tuple
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s, u, **k): return ""
     def claude_json(s, u, **k): return {}
 
@@ -175,7 +175,7 @@ def get_file(path: str) -> Tuple[Optional[str], Optional[str]]:
         import base64
         content = base64.b64decode(r["content"]).decode(errors="replace")
         return content, r["sha"]
-    except:
+    except Exception:  # noqa: bare-except
         return None, None
 
 def put_file(path: str, content: str, sha: Optional[str], msg: str) -> bool:
@@ -197,8 +197,9 @@ def notify(msg: str, title: str = "Guardian Alert", priority: int = 0):
             "title": title[:50], "message": msg[:1000], "priority": priority
         }).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ΓöÇΓöÇ LOG DOWNLOADER ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def download_run_logs(run_id: int) -> str:
     """Download and extract full log text from a workflow run."""
@@ -218,7 +219,9 @@ def download_run_logs(run_id: int) -> str:
                 text = re.sub(r"\x1b\[[0-9;]*m", "", text)
                 text = re.sub(r"\u001b\[[0-9;]*m", "", text)
                 all_text.append(f"=== {name} ===\n{text}")
-            except: pass
+            except Exception:  # noqa: bare-except
+
+                pass
         return "\n".join(all_text)
     except urllib.error.HTTPError as e:
         if e.code == 403:
@@ -270,7 +273,7 @@ def fix_netlify_dependency(finding: Dict, run_logs: str) -> bool:
     if content:
         try:
             pkg = json.loads(content)
-        except:
+        except Exception:  # noqa: bare-except
             pkg = {"name": "nysr-site", "version": "1.0.0", "dependencies": {}}
     else:
         pkg = {"name": "nysr-site", "version": "1.0.0", "dependencies": {}}
@@ -283,7 +286,7 @@ def fix_netlify_dependency(finding: Dict, run_logs: str) -> bool:
         with urllib.request.urlopen(req, timeout=10) as r:
             data = json.loads(r.read())
             version = f"^{data.get('version','1.0.0')}"
-    except:
+    except Exception:  # noqa: bare-except
         version = "latest"
 
     deps[pkg_name] = version
@@ -494,15 +497,18 @@ def was_recently_fixed(fix_hash: str) -> bool:
         if os.path.exists(cache_file):
             age = time.time() - os.path.getmtime(cache_file)
             return age < 7200  # 2 hours
-    except: pass
+    except Exception:  # noqa: bare-except
+
+        pass
     return False
 
 def mark_fixed(fix_hash: str):
     try:
         with open(f"/tmp/guardian_fixes_{fix_hash}.txt", "w") as f:
             f.write(str(time.time()))
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ΓöÇΓöÇ MAIN SWEEP ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def run():
     log.info("=" * 60)

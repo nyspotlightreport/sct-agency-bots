@@ -94,8 +94,9 @@ def run():
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,
                 "title":"Follow-Up Bot","message":f"📧 {sent} follow-ups queued for today"}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=5)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     return {"follow_ups_sent": sent, "contacts_checked": len(needs_follow_up)}
 
 if __name__ == "__main__":

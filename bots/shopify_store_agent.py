@@ -45,8 +45,9 @@ def push(title: str, message: str, priority: int = 0):
         req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                                      data=data, headers={"Content-Type": "application/json"})
         urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def ai(prompt: str) -> str:
     if not ANTHROPIC_KEY: return ""
     data = json.dumps({"model": "claude-sonnet-4-20250514", "max_tokens": 600,
@@ -184,8 +185,9 @@ def handle_cart_abandonment():
                     "body": email_data.get("body", "Come back and complete your purchase.")
                 })
                 log.info(f"Cart recovery triggered for contact {contact_id}")
-            except: pass
+            except Exception:  # noqa: bare-except
 
+                pass
 # ── REVENUE REPORT ─────────────────────────────────────────────────
 def daily_revenue_report():
     today = datetime.date.today().isoformat()

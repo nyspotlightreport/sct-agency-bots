@@ -36,7 +36,7 @@ from typing import Optional
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -436,7 +436,9 @@ def load_performance_data() -> dict:
     r = requests.get(f"https://api.github.com/repos/{REPO}/contents/data/sales/performance.json", headers=GH_H)
     if r.status_code == 200:
         try: return json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return {"campaigns": []}
 
 def save_learning_insights(insights: dict):
@@ -445,7 +447,9 @@ def save_learning_insights(insights: dict):
     existing = []
     if r.status_code == 200:
         try: existing = json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     existing.insert(0, insights)
     existing = existing[:30]  # Keep last 30 cycles
     body = {"message": f"sales: learning cycle {date.today()}",
@@ -465,8 +469,9 @@ def update_funnel_stage(prospect_id: str, new_stage: str, notes: str = "") -> bo
     funnel = {}
     if r.status_code == 200:
         try: funnel = json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     if prospect_id not in funnel:
         funnel[prospect_id] = {"history": [], "current_stage": "IDENTIFIED"}
     
@@ -511,8 +516,9 @@ def get_stalled_leads() -> list:
                     "id": pid, "stage": stage, "days_stalled": days_stalled,
                     "action": _suggest_unstick_action(stage, days_stalled)
                 })
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     return sorted(stalled, key=lambda x: x["days_stalled"], reverse=True)
 
 def _suggest_unstick_action(stage: str, days: int) -> str:

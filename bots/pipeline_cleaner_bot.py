@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 sys.path.insert(0,".")
 try:
     from agents.crm_core_agent import supabase_request
-except:
+except Exception:  # noqa: bare-except
     def supabase_request(m,t,**k): return None
 log = logging.getLogger(__name__)
 PUSH_API  = os.environ.get("PUSHOVER_API_KEY","")
@@ -17,8 +17,9 @@ def notify(msg):
     try:
         data=urllib.parse.urlencode({"token":PUSH_API,"user":PUSH_USER,"title":"Pipeline Cleaner","message":msg}).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def find_stale_leads(days=30):
     cutoff = (datetime.utcnow()-timedelta(days=days)).isoformat()
     return supabase_request("GET","contacts",query=f"?stage=eq.LEAD&created_at=lt.{cutoff}&limit=100") or []

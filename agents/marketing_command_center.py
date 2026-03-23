@@ -29,7 +29,7 @@ from datetime import datetime, date, timedelta
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -158,7 +158,9 @@ def load_channel_performance() -> dict:
     r = requests.get(f"https://api.github.com/repos/{REPO}/contents/data/marketing/channel_performance.json", headers=GH_H)
     if r.status_code == 200:
         try: return json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return CHANNELS.copy()
 
 def save_optimization_plan(plan: dict):
@@ -167,7 +169,9 @@ def save_optimization_plan(plan: dict):
     existing = []
     if r.status_code == 200:
         try: existing = json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     if not isinstance(existing, list): existing = []
     existing.insert(0, plan)
     existing = existing[:12]

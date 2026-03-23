@@ -61,7 +61,9 @@ def score_text(text):
     s = sum(v for k,v in PRIZE_SCORE.items() if k in t)
     for m in re.findall(r'\$[\d,]+', t):
         try: s += min(int(m.replace('$','').replace(',',''))//200, 600)
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return min(s, 1000)
 
 def fetch_all():
@@ -101,7 +103,9 @@ def get_entry_links(url):
             if any(w in text for w in ['enter','submit','claim','win','free','click here']):
                 if href.startswith('http'): direct_entry.append(href)
                 elif href.startswith('/'): direct_entry.append(urljoin(url, href))
-    except: pass
+    except Exception:  # noqa: bare-except
+
+        pass
     return direct_entry[:3]
 
 def build_email_html(top_sweeps, total, newly_found, entered_today):

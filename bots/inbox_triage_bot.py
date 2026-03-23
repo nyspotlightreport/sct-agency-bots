@@ -64,7 +64,8 @@ def get_email_body(msg):
                     return base64.urlsafe_b64decode(data).decode('utf-8', errors='ignore')[:2000]
         elif payload.get('body', {}).get('data'):
             return base64.urlsafe_b64decode(payload['body']['data']).decode('utf-8', errors='ignore')[:2000]
-    except:
+    except Exception:  # noqa: bare-except
+
         pass
     return ""
 

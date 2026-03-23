@@ -66,7 +66,9 @@ except ImportError:
         req = urllib.request.Request("https://api.pushover.net/1/messages.json", data=data,
                                       headers={"Content-Type":"application/json"})
         try: urllib.request.urlopen(req, timeout=10)
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     class RSIBaseAgent:
         ORG_ID = "base"; NAME = "Base"
         def supa(self, *a, **k): return _supa(*a, **k)

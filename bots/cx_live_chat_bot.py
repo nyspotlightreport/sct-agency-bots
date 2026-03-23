@@ -76,7 +76,9 @@ def process_new_chats():
             req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                 data=data, headers={"Content-Type":"application/json"})
             try: urllib.request.urlopen(req, timeout=10)
-            except: pass
+            except Exception:  # noqa: bare-except
+
+                pass
         processed += 1
     log.info(f"Chat: {processed} conversations processed")
     return {"chats_processed":processed}

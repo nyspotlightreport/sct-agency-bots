@@ -39,8 +39,9 @@ def push(title, msg, priority=0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json", data=data,
                                   headers={"Content-Type": "application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def ai(prompt):
     if not ANTHROPIC_KEY: return ""
     data = json.dumps({"model": "claude-haiku-4-5-20251001", "max_tokens": 400,
@@ -95,7 +96,9 @@ def build_customer_360():
             try:
                 la = datetime.datetime.fromisoformat(last_active.replace("Z", ""))
                 days_since = (datetime.datetime.utcnow() - la).days
-            except: pass
+            except Exception:  # noqa: bare-except
+
+                pass
         # Churn risk scoring
         health = c.get("health_score", 50) or 50
         churn_risk = "low"

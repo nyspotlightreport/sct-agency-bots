@@ -29,7 +29,7 @@ from email.mime.multipart import MIMEMultipart
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -312,7 +312,9 @@ def _log_outreach(email, subject, body):
     log_data = []
     if r.status_code == 200:
         try: log_data = json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     log_data.insert(0, {"email":email,"subject":subject,"sent_at":datetime.now().isoformat(),"status":"sent"})
     log_data = log_data[:1000]
     body_data = {"message":f"sales: outreach logged {email[:20]}","content":base64.b64encode(json.dumps(log_data,indent=2).encode()).decode()}
@@ -358,7 +360,9 @@ def _load_cached_prospects():
     r = requests.get(f"https://api.github.com/repos/{REPO}/contents/data/sales/prospect_cache.json", headers=GH_H)
     if r.status_code == 200:
         try: return json.loads(base64.b64decode(r.json()["content"]).decode())[:20]
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     return []
 
 def _cache_prospects(prospects: list):
@@ -367,7 +371,9 @@ def _cache_prospects(prospects: list):
     existing = []
     if r.status_code == 200:
         try: existing = json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     # Merge, deduplicate by email
     all_p = {p.get("email",""):p for p in existing+prospects if p.get("email")}
     merged = sorted(all_p.values(), key=lambda x: x.get("lead_score",0), reverse=True)[:500]
@@ -425,7 +431,9 @@ def _save_daily_stats(stats):
     existing = []
     if r.status_code == 200:
         try: existing = json.loads(base64.b64decode(r.json()["content"]).decode())
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     existing.insert(0, {**stats, "date": str(date.today())})
     existing = existing[:90]
     body = {"message":f"sales: daily stats {date.today()}","content":base64.b64encode(json.dumps(existing,indent=2).encode()).decode()}

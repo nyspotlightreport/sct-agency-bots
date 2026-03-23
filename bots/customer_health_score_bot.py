@@ -22,7 +22,7 @@ sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude
     from agents.crm_core_agent import supabase_request
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def supabase_request(m,t,**k): return None
 
@@ -44,8 +44,9 @@ def score_customer(contact: dict) -> dict:
             elif days_ago <= 14: score += 5
             elif days_ago <= 30: score -= 5
             else:               score -= 15; reasons.append("No contact 30+ days")
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     # Touch count momentum
     touches = contact.get("touch_count", 0)
     if touches >= 5:  score += 10; reasons.append("High engagement history")
@@ -103,14 +104,17 @@ def run():
         try:
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"Churn Alert!","message":msg,"priority":"1"}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     elif at_risk and PUSHOVER_API and PUSHOVER_USER:
         msg = f"⚠️ {len(at_risk)} customers at risk\n{len(healthy)} healthy\n\nTop at-risk: {at_risk[0].get('name','?')} — {at_risk[0]['action']}"
         try:
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"Health Monitor","message":msg}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     return {"total":len(customers),"healthy":len(healthy),"at_risk":len(at_risk),"danger":len(danger)}
 
 if __name__ == "__main__":

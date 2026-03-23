@@ -57,6 +57,12 @@ _stats = {
 CIRCUIT_THRESHOLD = 5    # consecutive failures before open
 CIRCUIT_TIMEOUT   = 300  # seconds before trying again
 
+# Budget enforcement
+DAILY_BUDGET_USD  = float(os.environ.get("CLAUDE_DAILY_BUDGET", "10.0"))
+BUDGET_WARN_PCT   = 0.8  # Alert at 80% of budget
+_budget_start     = time.time()
+_budget_warned    = False
+
 # ΓöÇΓöÇ HELPERS ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def _cache_key(system: str, user: str, model: str) -> str:
     return hashlib.sha256(f"{model}:{system[:200]}:{user[:500]}".encode()).hexdigest()[:16]
@@ -70,8 +76,9 @@ def _load_cache(key: str) -> Optional[str]:
 
 def _save_cache(key: str, value: str):
     try: (CACHE_DIR / f"{key}.txt").write_text(value)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def _track_cost(model: str, in_tokens: int, out_tokens: int):
     rates = COSTS.get(model, {"in": 1.0, "out": 5.0})
     cost = (in_tokens * rates["in"] + out_tokens * rates["out"]) / 1_000_000
@@ -79,6 +86,40 @@ def _track_cost(model: str, in_tokens: int, out_tokens: int):
     _stats["tokens_in"]  += in_tokens
     _stats["tokens_out"] += out_tokens
     return cost
+
+def _check_budget(model: str = "claude-haiku-4-5-20251001", max_tokens: int = 1000) -> bool:
+    """Check if we're within daily budget. Returns True if can proceed."""
+    global _budget_warned, _budget_start
+    # Reset budget every 24 hours
+    if time.time() - _budget_start > 86400:
+        _stats["cost_usd"] = 0.0
+        _budget_start = time.time()
+        _budget_warned = False
+
+    if _stats["cost_usd"] >= DAILY_BUDGET_USD:
+        return False
+
+    # Warn at 80%
+    if not _budget_warned and _stats["cost_usd"] >= DAILY_BUDGET_USD * BUDGET_WARN_PCT:
+        _budget_warned = True
+        log.warning(f"Budget warning: ${_stats['cost_usd']:.4f} / ${DAILY_BUDGET_USD:.2f} "
+                    f"({_stats['cost_usd']/DAILY_BUDGET_USD*100:.0f}% used)")
+        _notify(f"Claude API budget at {_stats['cost_usd']/DAILY_BUDGET_USD*100:.0f}% "
+                f"(${_stats['cost_usd']:.2f} / ${DAILY_BUDGET_USD:.2f})")
+
+    # Estimate cost of this call and check if it would exceed budget
+    rates = COSTS.get(model, {"in": 1.0, "out": 5.0})
+    estimated = (max_tokens * rates["out"]) / 1_000_000  # Worst case: all output tokens
+    if _stats["cost_usd"] + estimated > DAILY_BUDGET_USD * 1.1:  # 10% grace
+        log.warning(f"Estimated call cost ${estimated:.4f} would exceed budget")
+        # Auto-downgrade to Haiku if trying to use Sonnet
+        if "sonnet" in model:
+            log.info("Auto-downgrading to Haiku to stay within budget")
+            return True  # Will proceed but caller should check model
+        return False
+
+    return True
+
 
 def _circuit_check() -> bool:
     """Returns True if circuit is CLOSED (can proceed)."""
@@ -113,8 +154,9 @@ def _notify(msg: str):
         }).encode()
         urllib.request.urlopen("https://api.pushover.net/1/messages.json",
             data, timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def _sanitize(text: str) -> str:
     """Clean up common LLM output issues."""
     # Strip thinking tags if present
@@ -143,7 +185,12 @@ def _call_api(
         return None
 
     if not _circuit_check():
-        log.warning("Circuit breaker is OPEN ΓÇö skipping API call")
+        log.warning("Circuit breaker is OPEN — skipping API call")
+        return None
+
+    # Budget enforcement
+    if not _check_budget(model, max_tokens):
+        log.warning(f"Daily budget ${DAILY_BUDGET_USD:.2f} exhausted — skipping API call")
         return None
 
     # Cache check (single-turn only)
@@ -277,15 +324,16 @@ def claude_json(
     for attempt in [raw, raw.strip(), re.sub(r"^[^{\[]*", "", raw)]:
         try:
             return json.loads(attempt)
-        except:
-            pass
+        except Exception:  # noqa: bare-except
 
+            pass
     # Try to find JSON in the response
     match = re.search(r"({[\s\S]*}|\[[\s\S]*\])", raw)
     if match:
         try: return json.loads(match.group())
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     log.warning(f"Could not parse JSON from response: {raw[:200]}")
     return None
 

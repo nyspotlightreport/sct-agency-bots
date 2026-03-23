@@ -38,8 +38,9 @@ def push_alert(title, msg, priority=0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def log_alert(key, category, severity, title, msg, cause, fix, auto_fixed=False):
     """Log alert to Supabase and push to Chairman if needed."""
     # Check if already alerted in last 4 hours (don't spam)
@@ -146,8 +147,9 @@ def check_tokens():
                         f"{service.upper()} token expiring in {days_left} days",
                         f"OAuth token expires {exp.date().isoformat()}",
                         f"Auto-refresh workflow should handle this. If it fails, re-authenticate at /tokens/")
-            except: pass
+            except Exception:  # noqa: bare-except
 
+                pass
     log.info(f"Token check: {len(tokens if isinstance(tokens,list) else [])} services monitored")
 
 # ── SYSTEM HEALTH CHECKS ──────────────────────────────────

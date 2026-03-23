@@ -103,8 +103,9 @@ def fill_affiliate_form(page, program_name):
                     els.first.fill(str(value)[:500], timeout=2000)
                     filled += 1
                     break
-            except: pass
-    
+            except Exception:  # noqa: bare-except
+
+                pass
     # Handle dropdowns
     for how_sel in ["select[name*='how']","select[name*='promo']","select[name*='source']"]:
         try:
@@ -116,16 +117,18 @@ def fill_affiliate_form(page, program_name):
                         el.select_option(label=[o for o in options if pref in str(o).lower()][0])
                         filled += 1
                         break
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     # Accept terms
     for agree_sel in ["[name*='agree']","[name*='terms']","[id*='agree']","input[type='checkbox']"]:
         try:
             el = page.locator(agree_sel)
             if el.count() > 0 and not el.first.is_checked():
                 el.first.check(timeout=2000)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     return filled
 
 def apply_to_affiliate(program_name, url):
@@ -179,8 +182,9 @@ def apply_to_affiliate(program_name, url):
                             time.sleep(1.5)
                             filled = fill_affiliate_form(page, program_name)
                             break
-                    except: pass
-            
+                    except Exception:  # noqa: bare-except
+
+                        pass
             if filled == 0:
                 log.info(f"  No form found on {url} — may need manual sign-in first")
                 browser.close()
@@ -203,8 +207,9 @@ def apply_to_affiliate(program_name, url):
                         time.sleep(2.5)
                         submitted = True
                         break
-                except: pass
-            
+                except Exception:  # noqa: bare-except
+
+                    pass
             if submitted:
                 content_after = page.content().lower()
                 success_words = ["thank you","thanks","application received","we'll review","we will review",
@@ -299,8 +304,9 @@ def run():
         req = urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data, headers={"Content-Type":"application/json"})
         try: urllib.request.urlopen(req, timeout=10)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     log.info(f"\nDone: {stats}")
     return stats
 

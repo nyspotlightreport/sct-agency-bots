@@ -1,0 +1,27 @@
+name: Error Aggregator — Collect & Analyze Failures
+
+on:
+  schedule:
+    - cron: '43 */6 * * *'  # Every 6 hours at :43
+  workflow_dispatch:
+
+env:
+  GH_PAT: ${{ secrets.GH_PAT }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  aggregate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: pip install requests
+      - run: python bots/error_aggregator_bot.py

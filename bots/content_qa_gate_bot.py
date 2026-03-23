@@ -119,7 +119,9 @@ def process_content_queue():
                 try:
                     urllib.request.urlopen(req, timeout=10)
                     supa("PATCH","content_qa_queue",{"pushover_sent":True},f"?id=eq.{item_id}")
-                except: pass
+                except Exception:  # noqa: bare-except
+
+                    pass
             queued += 1
 
         else:
@@ -133,7 +135,9 @@ def process_content_queue():
                 req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                     data=data, headers={"Content-Type":"application/json"})
                 try: urllib.request.urlopen(req, timeout=10)
-                except: pass
+                except Exception:  # noqa: bare-except
+
+                    pass
             vetoed += 1
 
     # Process auto-approve timeouts

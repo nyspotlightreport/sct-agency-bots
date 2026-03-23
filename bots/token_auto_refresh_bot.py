@@ -146,7 +146,9 @@ def check_and_refresh_all():
                     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                         data=data, headers={"Content-Type":"application/json"})
                     try: urllib.request.urlopen(req, timeout=10)
-                    except: pass
+                    except Exception:  # noqa: bare-except
+
+                        pass
                 alerts += 1
 
             elif now_aware >= ref_aware:
@@ -164,8 +166,9 @@ def check_and_refresh_all():
                         req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                             data=data, headers={"Content-Type":"application/json"})
                         try: urllib.request.urlopen(req, timeout=10)
-                        except: pass
+                        except Exception:  # noqa: bare-except
 
+                            pass
         except Exception as e:
             log.warning(f"Token check {service}: {e}")
 

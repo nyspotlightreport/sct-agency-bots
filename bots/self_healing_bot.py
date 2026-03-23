@@ -45,8 +45,9 @@ def push(title: str, message: str, priority: int = 0):
         req = urllib.request.Request("https://api.pushover.net/1/messages.json",
                                      data=data, headers={"Content-Type": "application/json"})
         urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ── HEALTH CHECKS ───────────────────────────────────────────────────
 
 def check_supabase():
@@ -198,7 +199,9 @@ def attempt_repairs():
                     try:
                         urllib.request.urlopen(rerun_req, timeout=10)
                         log.info(f"Re-triggered workflow: {run['name']}")
-                    except: pass
+                    except Exception:  # noqa: bare-except
+
+                        pass
             except Exception as e:
                 log.warning(f"Workflow re-trigger failed: {e}")
 
@@ -245,7 +248,9 @@ def run():
                 headers={"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}",
                           "Content-Type": "application/json", "Prefer": "return=minimal"})
             urllib.request.urlopen(req, timeout=10)
-        except: pass
+        except Exception:  # noqa: bare-except
+
+            pass
     log.info("=== Health Check Done ===")
     return failing
 

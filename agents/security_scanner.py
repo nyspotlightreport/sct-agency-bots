@@ -11,7 +11,7 @@ sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
     from agents.supercore import SuperDirector, pushover, supa
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
     def pushover(*a,**k): pass
@@ -94,7 +94,9 @@ def scan_codebase():
                 code = base64.b64decode(file_data["content"]).decode()
                 findings = scan_file(f"{folder}/{item['name']}", code)
                 all_findings.extend(findings)
-            except: pass
+            except Exception:  # noqa: bare-except
+
+                pass
     dep_issues = scan_dependencies()
     return all_findings, dep_issues
 

@@ -143,8 +143,9 @@ Write an improved system_prompt that addresses these issues. Keep the persona. R
             "priority":-1}).encode()
         try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     log.info(f"RLHF complete. {len(improved_prompts)} prompts upgraded.")
     return {"improved": len(improved_prompts), "analyzed": len(prompt_stats)}
 

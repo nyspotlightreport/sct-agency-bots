@@ -16,7 +16,7 @@ from datetime import datetime, date
 sys.path.insert(0, ".")
 try:
     from agents.claude_core import claude, claude_json
-except:
+except Exception:  # noqa: bare-except
     def claude(s,u,**k): return ""
     def claude_json(s,u,**k): return {}
 
@@ -96,7 +96,7 @@ def load_historical_data() -> dict:
     if r.status_code == 200:
         try:
             return json.loads(base64.b64decode(r.json()["content"]).decode())
-        except:
+        except Exception:  # noqa: bare-except
             return {}
     return {"entries": [], "learnings": [], "ab_tests": []}
 

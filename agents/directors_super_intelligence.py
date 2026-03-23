@@ -323,7 +323,9 @@ Be BRUTALLY specific. Name exact tools, exact actions, exact dollar amounts."""
                     headers={"apikey":SUPA_KEY,"Authorization":f"Bearer {SUPA_KEY}",
                              "Content-Type":"application/json","Prefer":"return=minimal"})
                 try: ur.urlopen(req, timeout=10)
-                except: pass
+                except Exception:  # noqa: bare-except
+
+                    pass
         time.sleep(1)  # Rate limit
     
     log.info(f"Scan complete: {len(results)}/{len(DIRECTORS)} directors responded")
@@ -337,8 +339,9 @@ Be BRUTALLY specific. Name exact tools, exact actions, exact dollar amounts."""
             "priority":0}).encode()
         try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     return results
 
 def run():

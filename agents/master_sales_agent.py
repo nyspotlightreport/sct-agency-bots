@@ -49,8 +49,9 @@ def push_notify(title, msg, priority=0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 # ── STAGE 1: LEAD SCORING ─────────────────────────────────
 def score_all_leads():
     """Apply full 220-point scoring to all unscored leads."""
@@ -423,8 +424,9 @@ def schedule_qbrs():
                     "status":"scheduled"
                 })
                 scheduled += 1
-        except: pass
+        except Exception:  # noqa: bare-except
 
+            pass
     log.info(f"QBRs scheduled: {scheduled}")
     return scheduled
 

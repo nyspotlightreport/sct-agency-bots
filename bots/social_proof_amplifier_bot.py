@@ -52,8 +52,9 @@ def push(title, message):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json", data=data,
                                   headers={"Content-Type":"application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def post_tweet(text):
     """Post to Twitter v2 API."""
     if not all([TWITTER_KEY, TWITTER_SECRET, TWITTER_TOKEN, TWITTER_TSEC]):

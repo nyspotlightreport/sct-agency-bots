@@ -244,8 +244,9 @@ def run():
             "priority":-1}).encode()
         try: urllib.request.urlopen(urllib.request.Request("https://api.pushover.net/1/messages.json",
             data=data,headers={"Content-Type":"application/json"}),timeout=10)
-        except: pass
-    
+        except Exception:  # noqa: bare-except
+
+            pass
     log.info("REESE: Run complete")
     return {"audit":audit,"published_products":published}
 

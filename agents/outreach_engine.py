@@ -26,8 +26,9 @@ APOLLO_KEY = os.environ.get("APOLLO_API_KEY", "")
 def push(t, m, p=0):
     if not PUSH_API: return
     try: urlreq.urlopen("https://api.pushover.net/1/messages.json", urllib.parse.urlencode({"token": PUSH_API, "user": PUSH_USER, "title": t[:100], "message": m[:1000], "priority": p}).encode(), timeout=5)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def claude(system, user, max_tokens=500):
     if not ANTHROPIC: return ""
     try:

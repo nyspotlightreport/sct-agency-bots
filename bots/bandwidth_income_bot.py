@@ -97,10 +97,14 @@ class BandwidthIncomeBot:
             if isinstance(data, dict):
                 usd = data.get("usd","$0").replace("$","")
                 try: total_usd += float(usd)
-                except: pass
+                except Exception:  # noqa: bare-except
+
+                    pass
                 balance = data.get("balance",0)
                 try: total_usd += float(balance)
-                except: pass
+                except Exception:  # noqa: bare-except
+
+                    pass
         return total_usd
 
     def money4band_setup_instructions(self):

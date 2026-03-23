@@ -229,7 +229,7 @@ def get_audio_duration(audio_path: str) -> float:
              "-of", "csv=p=0", audio_path],
             capture_output=True, text=True, check=True)
         return float(result.stdout.strip())
-    except:
+    except Exception:  # noqa: bare-except
         return 60.0
 
 def create_slide_image(slide_num: int, title: str, output_dir: str) -> str:
@@ -456,8 +456,9 @@ def push_notification(title: str, msg: str, priority: int = 0):
     req = urllib.request.Request("https://api.pushover.net/1/messages.json",
         data=data, headers={"Content-Type": "application/json"})
     try: urllib.request.urlopen(req, timeout=10)
-    except: pass
+    except Exception:  # noqa: bare-except
 
+        pass
 def run():
     log.info("=" * 60)
     log.info("NYSR FACELESS WEBINAR VIDEO GENERATOR")
@@ -541,8 +542,9 @@ def run():
                 try:
                     urllib.request.urlopen(req, timeout=15)
                     log.info("Site deploy triggered")
-                except: pass
-            
+                except Exception:  # noqa: bare-except
+
+                    pass
             push_notification(
                 "Webinar Video LIVE",
                 f"Faceless webinar video generated and live!\n"
