@@ -1,0 +1,100 @@
+name: Rotate Twilio Auth Token
+on: workflow_dispatch
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rotate Twilio auth token
+        env:
+          TWILIO_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          python3 << 'EOF'
+          import json, os, urllib.request, base64
+
+          sid = os.environ['TWILIO_SID']
+          token = os.environ['TWILIO_TOKEN']
+          gh_token = os.environ.get('GH_TOKEN', '')
+          netlify_token = os.environ.get('NETLIFY_TOKEN', '')
+          netlify_site = os.environ.get('NETLIFY_SITE', '')
+
+          # Step 1: Rotate Twilio auth token via API
+          print("Rotating Twilio auth token...")
+          auth = base64.b64encode(f"{sid}:{token}".encode()).decode()
+          req = urllib.request.Request(
+            f"https://api.twilio.com/2010-04-01/Accounts/{sid}/Auth/Tokens/Secondary.json",
+            data=b'',
+            headers={
+              'Authorization': f'Basic {auth}',
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            method='POST'
+          )
+          try:
+            resp = urllib.request.urlopen(req)
+            data = json.loads(resp.read())
+            new_token = data.get('auth_token', '')
+            print(f"New secondary token created (first 4 chars): {new_token[:4]}...")
+
+            # Now promote the secondary token to primary
+            promote_req = urllib.request.Request(
+              f"https://api.twilio.com/2010-04-01/Accounts/{sid}/Auth/Tokens/Promote.json",
+              data=b'',
+              headers={
+                'Authorization': f'Basic {auth}',
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              method='POST'
+            )
+            promote_resp = urllib.request.urlopen(promote_req)
+            promote_data = json.loads(promote_resp.read())
+            final_token = promote_data.get('auth_token', new_token)
+            print(f"Token promoted. New primary token (first 4): {final_token[:4]}...")
+
+            # Step 2: Update GitHub secret
+            if gh_token:
+              print("Updating GitHub secret TWILIO_AUTH_TOKEN...")
+              # Note: GitHub API for secrets requires encryption with the repo's public key
+              # This is complex, so we'll use gh CLI in next step
+              with open('/tmp/new_twilio_token', 'w') as f:
+                f.write(final_token)
+              print("Token saved for gh secret set")
+
+            # Step 3: Update Netlify env var
+            if netlify_token and netlify_site:
+              print("Updating Netlify env var TWILIO_AUTH_TOKEN...")
+              payload = json.dumps({
+                'key': 'TWILIO_AUTH_TOKEN',
+                'scopes': ['functions', 'runtime'],
+                'values': [{'context': 'all', 'value': final_token}]
+              }).encode()
+              netlify_req = urllib.request.Request(
+                f'https://api.netlify.com/api/v1/accounts/me/env/TWILIO_AUTH_TOKEN?site_id={netlify_site}',
+                data=payload,
+                headers={'Authorization': f'Bearer {netlify_token}', 'Content-Type': 'application/json'},
+                method='PUT'
+              )
+              netlify_resp = urllib.request.urlopen(netlify_req)
+              print(f"Netlify updated: {netlify_resp.status}")
+
+          except urllib.error.HTTPError as e:
+            body = e.read().decode()
+            print(f"Twilio API error {e.code}: {body}")
+            print("Token rotation may require Twilio console access.")
+          EOF
+
+      - name: Update GitHub secret with new token
+        if: always()
+        run: |
+          if [ -f /tmp/new_twilio_token ]; then
+            gh secret set TWILIO_AUTH_TOKEN --repo nyspotlightreport/sct-agency-bots < /tmp/new_twilio_token
+            echo "GitHub secret updated"
+            rm /tmp/new_twilio_token
+          else
+            echo "No new token to set"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
