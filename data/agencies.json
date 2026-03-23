@@ -1,0 +1,1475 @@
+[
+  {
+    "id": "content-studio",
+    "name": "Content Creation Studio",
+    "icon": "📝",
+    "tagline": "30 SEO blog posts, articles, and guides every month in your brand voice",
+    "description": "Our AI content team produces research-backed, keyword-optimized blog posts, articles, and long-form guides that drive organic traffic and establish your authority.",
+    "litePrice": 67,
+    "fullPrice": 297,
+    "dayPass": 29.97,
+    "replaceCost": "$2,000-$4,000/mo",
+    "replaceLabel": "Freelance content writers",
+    "traditionalCost": 3000,
+    "liteFeatures": [
+      "8 blog posts/month",
+      "Basic SEO optimization",
+      "Standard templates",
+      "Email support",
+      "48-hour turnaround"
+    ],
+    "fullFeatures": [
+      "30 blog posts/month",
+      "Advanced SEO + keyword research",
+      "Custom brand voice profile",
+      "Content calendar",
+      "Unlimited revisions",
+      "Priority publishing",
+      "Long-form guides (2,000+ words)",
+      "Internal linking strategy",
+      "Dedicated strategist",
+      "Weekly performance reports"
+    ],
+    "deliverables": [
+      {
+        "name": "SEO Blog Posts",
+        "lite": "8/month",
+        "full": "30/month",
+        "desc": "Keyword-optimized articles in your brand voice"
+      },
+      {
+        "name": "SEO Optimization",
+        "lite": "Basic meta tags",
+        "full": "Full keyword strategy",
+        "desc": "On-page SEO for every piece"
+      },
+      {
+        "name": "Content Calendar",
+        "lite": "Monthly outline",
+        "full": "Detailed 30-day plan",
+        "desc": "Planned topics with dates and keywords"
+      },
+      {
+        "name": "Brand Voice",
+        "lite": "Standard tone",
+        "full": "Custom voice profile",
+        "desc": "Consistent tone across all content"
+      },
+      {
+        "name": "Revisions",
+        "lite": "1 per post",
+        "full": "Unlimited",
+        "desc": "Refine until perfect"
+      },
+      {
+        "name": "Long-Form Guides",
+        "lite": "Not included",
+        "full": "4/month",
+        "desc": "2,000+ word comprehensive guides"
+      },
+      {
+        "name": "Performance Reports",
+        "lite": "Monthly",
+        "full": "Weekly detailed",
+        "desc": "Traffic, rankings, and engagement"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly do I get my first content?",
+        "a": "Within 48 hours of onboarding."
+      },
+      {
+        "q": "Can I review before it publishes?",
+        "a": "Yes. Approve each piece or enable auto-publish."
+      },
+      {
+        "q": "What if it doesn't match my voice?",
+        "a": "We refine your brand profile until every piece sounds like you. FULL includes unlimited revisions."
+      },
+      {
+        "q": "Do you publish to WordPress?",
+        "a": "Yes. Content is formatted and published directly to your CMS."
+      },
+      {
+        "q": "What topics do you cover?",
+        "a": "Any topic in your industry. We research keywords and create a strategy for your niche."
+      }
+    ],
+    "sampleOutput": "10 AI Tools Every Entrepreneur Needs in 2026 - 1,847 words, SEO score 94/100, published to WordPress with meta tags."
+  },
+  {
+    "id": "social-media",
+    "name": "Social Media Management",
+    "icon": "📱",
+    "tagline": "Daily posts on 6 platforms with engagement tracking and hashtag strategy",
+    "description": "Complete social media management across LinkedIn, Twitter/X, Instagram, Facebook, Pinterest, and TikTok with platform-specific content and analytics.",
+    "litePrice": 67,
+    "fullPrice": 297,
+    "dayPass": 29.97,
+    "replaceCost": "$1,500-$3,000/mo",
+    "replaceLabel": "Social media agency",
+    "traditionalCost": 2000,
+    "liteFeatures": [
+      "3 platforms",
+      "15 posts/month",
+      "Basic scheduling",
+      "Monthly analytics",
+      "Standard hashtags"
+    ],
+    "fullFeatures": [
+      "6 platforms",
+      "90+ posts/month",
+      "AI-optimized timing",
+      "Weekly analytics",
+      "Custom hashtag strategy",
+      "Engagement tracking",
+      "Carousels and Reels",
+      "Social listening",
+      "Competitor analysis",
+      "Content repurposing"
+    ],
+    "deliverables": [
+      {
+        "name": "Social Posts",
+        "lite": "15/month",
+        "full": "90+/month",
+        "desc": "Platform-native posts for each channel"
+      },
+      {
+        "name": "Platforms",
+        "lite": "3 platforms",
+        "full": "6 platforms",
+        "desc": "Full presence across major channels"
+      },
+      {
+        "name": "Scheduling",
+        "lite": "Standard times",
+        "full": "AI-optimized times",
+        "desc": "Posts when your audience is active"
+      },
+      {
+        "name": "Hashtags",
+        "lite": "Basic tags",
+        "full": "Researched strategy",
+        "desc": "Maximize discoverability"
+      },
+      {
+        "name": "Analytics",
+        "lite": "Monthly",
+        "full": "Weekly",
+        "desc": "Engagement and growth metrics"
+      },
+      {
+        "name": "Visual Content",
+        "lite": "Text only",
+        "full": "Carousels + Reels + Stories",
+        "desc": "Rich media formats"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which platforms?",
+        "a": "LinkedIn, Twitter/X, Instagram, Facebook, Pinterest, TikTok."
+      },
+      {
+        "q": "Do you create images?",
+        "a": "FULL includes custom graphics and video content."
+      },
+      {
+        "q": "Can I approve posts?",
+        "a": "Yes, or enable auto-publish."
+      },
+      {
+        "q": "Platform-specific content?",
+        "a": "Each post is adapted for the platform style."
+      },
+      {
+        "q": "Do you respond to comments?",
+        "a": "FULL includes engagement monitoring."
+      }
+    ],
+    "sampleOutput": "LinkedIn thought piece: 2,400 impressions, 89 likes, 12 comments in 48 hours."
+  },
+  {
+    "id": "seo",
+    "name": "SEO Agency",
+    "icon": "🔍",
+    "tagline": "Technical audits, keyword research, on-page optimization, and rank tracking",
+    "description": "Comprehensive SEO that drives organic traffic. Technical audits, keyword strategy, on-page optimization, and rank tracking.",
+    "litePrice": 57,
+    "fullPrice": 247,
+    "dayPass": 29.97,
+    "replaceCost": "$500-$2,000/mo",
+    "replaceLabel": "SEO consultant",
+    "traditionalCost": 1500,
+    "liteFeatures": [
+      "Monthly audit",
+      "5 keywords tracked",
+      "Basic on-page",
+      "Monthly report",
+      "Meta optimization"
+    ],
+    "fullFeatures": [
+      "Weekly audits",
+      "25+ keywords",
+      "Full technical SEO",
+      "Weekly tracking",
+      "Backlink analysis",
+      "Competitor gaps",
+      "Schema markup",
+      "Speed optimization",
+      "Internal linking",
+      "Search Console management"
+    ],
+    "deliverables": [
+      {
+        "name": "Site Audits",
+        "lite": "Monthly",
+        "full": "Weekly",
+        "desc": "Technical health checks"
+      },
+      {
+        "name": "Keywords",
+        "lite": "5 tracked",
+        "full": "25+ tracked",
+        "desc": "Monitor target search terms"
+      },
+      {
+        "name": "On-Page SEO",
+        "lite": "Meta tags",
+        "full": "Full optimization",
+        "desc": "Titles, descriptions, headers, schema"
+      },
+      {
+        "name": "Backlinks",
+        "lite": "Not included",
+        "full": "Monthly report",
+        "desc": "Link profile monitoring"
+      },
+      {
+        "name": "Competitors",
+        "lite": "Not included",
+        "full": "Gap reports",
+        "desc": "Find ranking opportunities"
+      },
+      {
+        "name": "Reports",
+        "lite": "Monthly PDF",
+        "full": "Weekly dashboard",
+        "desc": "Rankings and traffic impact"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How long for results?",
+        "a": "Most see improvements within 60-90 days."
+      },
+      {
+        "q": "Do you build backlinks?",
+        "a": "We focus on on-page. Backlink analysis included in FULL."
+      },
+      {
+        "q": "Which tools?",
+        "a": "Ahrefs, Google Search Console, and proprietary AI tools."
+      },
+      {
+        "q": "Local SEO?",
+        "a": "Google Business Profile included in FULL."
+      },
+      {
+        "q": "Technical issues?",
+        "a": "Our audits identify problems with actionable fixes."
+      }
+    ],
+    "sampleOutput": "Client moved from page 3 to position 4 for target keyword in 8 weeks. Organic traffic up 340%."
+  },
+  {
+    "id": "email-marketing",
+    "name": "Email & Newsletter Agency",
+    "icon": "✉️",
+    "tagline": "Weekly newsletters, drip campaigns, list management, and A/B testing",
+    "description": "End-to-end email marketing from newsletters to drip campaigns to list segmentation.",
+    "litePrice": 47,
+    "fullPrice": 197,
+    "dayPass": 24.97,
+    "replaceCost": "$400-$1,500/mo",
+    "replaceLabel": "Email marketing firm",
+    "traditionalCost": 800,
+    "liteFeatures": [
+      "2 newsletters/month",
+      "Basic templates",
+      "List management",
+      "Open rate tracking",
+      "Standard sequences"
+    ],
+    "fullFeatures": [
+      "4+ newsletters/month",
+      "Custom templates",
+      "Advanced segmentation",
+      "A/B testing",
+      "Drip campaigns",
+      "Behavioral triggers",
+      "List growth strategy",
+      "Detailed analytics",
+      "Subscriber management",
+      "Deliverability optimization"
+    ],
+    "deliverables": [
+      {
+        "name": "4+ newsletters/month",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "4+ newsletters/month"
+      },
+      {
+        "name": "Custom templates",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Custom templates"
+      },
+      {
+        "name": "Advanced segmentation",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Advanced segmentation"
+      },
+      {
+        "name": "A/B testing",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "A/B testing"
+      },
+      {
+        "name": "Drip campaigns",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Drip campaigns"
+      },
+      {
+        "name": "Behavioral triggers",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Behavioral triggers"
+      },
+      {
+        "name": "List growth strategy",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "List growth strategy"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade email & newsletter agency deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "marketing",
+    "name": "Marketing Agency",
+    "icon": "📈",
+    "tagline": "Full-funnel strategy, campaign management, and performance analytics",
+    "description": "A complete marketing department. Strategy, campaigns, content, ads, analytics managed by AI.",
+    "litePrice": 97,
+    "fullPrice": 397,
+    "dayPass": 39.97,
+    "replaceCost": "$3,000-$8,000/mo",
+    "replaceLabel": "Marketing agency",
+    "traditionalCost": 5000,
+    "liteFeatures": [
+      "Basic marketing plan",
+      "Monthly campaign",
+      "Standard analytics",
+      "Email support",
+      "Quarterly review"
+    ],
+    "fullFeatures": [
+      "Comprehensive strategy",
+      "Weekly campaigns",
+      "Multi-channel execution",
+      "Real-time analytics",
+      "Ad creatives",
+      "Landing pages",
+      "CRO",
+      "Competitor intel",
+      "Monthly calls",
+      "Custom KPI dashboard"
+    ],
+    "deliverables": [
+      {
+        "name": "Comprehensive strategy",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Comprehensive strategy"
+      },
+      {
+        "name": "Weekly campaigns",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Weekly campaigns"
+      },
+      {
+        "name": "Multi-channel execution",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Multi-channel execution"
+      },
+      {
+        "name": "Real-time analytics",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Real-time analytics"
+      },
+      {
+        "name": "Ad creatives",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Ad creatives"
+      },
+      {
+        "name": "Landing pages",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Landing pages"
+      },
+      {
+        "name": "CRO",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "CRO"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade marketing agency deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "sales-team",
+    "name": "Full Cycle Sales Team",
+    "icon": "💼",
+    "tagline": "Lead gen, outreach, qualification, demos, proposals, and pipeline management",
+    "description": "Complete AI sales operation from cold outreach to closed deals.",
+    "litePrice": 97,
+    "fullPrice": 497,
+    "dayPass": 49.97,
+    "replaceCost": "$5,000-$15,000/mo",
+    "replaceLabel": "Sales team",
+    "traditionalCost": 8000,
+    "liteFeatures": [
+      "100 outreach emails/month",
+      "Basic lead list",
+      "Standard sequences",
+      "Pipeline tracking",
+      "Monthly report"
+    ],
+    "fullFeatures": [
+      "500+ outreach emails/month",
+      "AI-qualified leads",
+      "Multi-touch sequences",
+      "Auto demo scheduling",
+      "Proposals",
+      "CRM integration",
+      "Pipeline management",
+      "Win/loss analysis",
+      "Weekly reviews",
+      "Apollo + HubSpot"
+    ],
+    "deliverables": [
+      {
+        "name": "500+ outreach emails/month",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "500+ outreach emails/month"
+      },
+      {
+        "name": "AI-qualified leads",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "AI-qualified leads"
+      },
+      {
+        "name": "Multi-touch sequences",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Multi-touch sequences"
+      },
+      {
+        "name": "Auto demo scheduling",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Auto demo scheduling"
+      },
+      {
+        "name": "Proposals",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Proposals"
+      },
+      {
+        "name": "CRM integration",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "CRM integration"
+      },
+      {
+        "name": "Pipeline management",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Pipeline management"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade full cycle sales team deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "customer-service",
+    "name": "Customer Service Provider",
+    "icon": "🎧",
+    "tagline": "24/7 AI support agents, ticket management, and satisfaction tracking",
+    "description": "Always-on support that never sleeps. AI agents handle inquiries and resolve issues 24/7.",
+    "litePrice": 67,
+    "fullPrice": 297,
+    "dayPass": 29.97,
+    "replaceCost": "$2,000-$5,000/mo",
+    "replaceLabel": "Customer service department",
+    "traditionalCost": 3000,
+    "liteFeatures": [
+      "Business hours",
+      "Email only",
+      "Basic tickets",
+      "Monthly CSAT",
+      "Standard responses"
+    ],
+    "fullFeatures": [
+      "24/7 coverage",
+      "Email + chat + phone",
+      "Advanced routing",
+      "Real-time CSAT",
+      "Custom responses",
+      "Escalation management",
+      "Knowledge base",
+      "Multilingual",
+      "SLA tracking",
+      "Feedback loops"
+    ],
+    "deliverables": [
+      {
+        "name": "24/7 coverage",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "24/7 coverage"
+      },
+      {
+        "name": "Email + chat + phone",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Email + chat + phone"
+      },
+      {
+        "name": "Advanced routing",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Advanced routing"
+      },
+      {
+        "name": "Real-time CSAT",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Real-time CSAT"
+      },
+      {
+        "name": "Custom responses",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Custom responses"
+      },
+      {
+        "name": "Escalation management",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Escalation management"
+      },
+      {
+        "name": "Knowledge base",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Knowledge base"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade customer service provider deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "voice-ai",
+    "name": "Voice AI & Appointment Setting",
+    "icon": "📞",
+    "tagline": "AI receptionist, sales bots, appointment booking, and call analytics",
+    "description": "Never miss a call. AI receptionist answers 24/7, qualifies callers, books appointments.",
+    "litePrice": 57,
+    "fullPrice": 247,
+    "dayPass": 29.97,
+    "replaceCost": "$1,500-$3,000/mo",
+    "replaceLabel": "Receptionist service",
+    "traditionalCost": 2000,
+    "liteFeatures": [
+      "Business hours",
+      "Basic routing",
+      "Voicemail transcription",
+      "Monthly report",
+      "Standard greeting"
+    ],
+    "fullFeatures": [
+      "24/7 receptionist",
+      "AI sales bot",
+      "AI support bot",
+      "Appointment scheduling",
+      "Call analytics",
+      "Custom voice",
+      "CRM logging",
+      "Lead scoring",
+      "SMS follow-ups",
+      "Multi-department routing"
+    ],
+    "deliverables": [
+      {
+        "name": "24/7 receptionist",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "24/7 receptionist"
+      },
+      {
+        "name": "AI sales bot",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "AI sales bot"
+      },
+      {
+        "name": "AI support bot",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "AI support bot"
+      },
+      {
+        "name": "Appointment scheduling",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Appointment scheduling"
+      },
+      {
+        "name": "Call analytics",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Call analytics"
+      },
+      {
+        "name": "Custom voice",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Custom voice"
+      },
+      {
+        "name": "CRM logging",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "CRM logging"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade voice ai & appointment setting deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "pr",
+    "name": "PR Agency",
+    "icon": "📰",
+    "tagline": "Press releases, media outreach, reputation monitoring, and crisis management",
+    "description": "Professional PR powered by AI. Press releases, media outreach, brand monitoring.",
+    "litePrice": 67,
+    "fullPrice": 297,
+    "dayPass": 29.97,
+    "replaceCost": "$3,000-$10,000/mo",
+    "replaceLabel": "PR firm",
+    "traditionalCost": 5000,
+    "liteFeatures": [
+      "2 press releases/month",
+      "Basic media list",
+      "Monthly mentions",
+      "Standard distribution",
+      "Email support"
+    ],
+    "fullFeatures": [
+      "8+ press releases/month",
+      "Targeted outreach",
+      "Real-time monitoring",
+      "Crisis response",
+      "Journalist database",
+      "Social listening",
+      "Thought leadership",
+      "Award submissions",
+      "Media training",
+      "Weekly reports"
+    ],
+    "deliverables": [
+      {
+        "name": "8+ press releases/month",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "8+ press releases/month"
+      },
+      {
+        "name": "Targeted outreach",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Targeted outreach"
+      },
+      {
+        "name": "Real-time monitoring",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Real-time monitoring"
+      },
+      {
+        "name": "Crisis response",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Crisis response"
+      },
+      {
+        "name": "Journalist database",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Journalist database"
+      },
+      {
+        "name": "Social listening",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Social listening"
+      },
+      {
+        "name": "Thought leadership",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Thought leadership"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade pr agency deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "hr",
+    "name": "HR, Hiring & Compliance",
+    "icon": "👥",
+    "tagline": "Job postings, candidate screening, onboarding, and compliance tracking",
+    "description": "Streamline HR. Job descriptions, candidate screening, onboarding docs, compliance.",
+    "litePrice": 57,
+    "fullPrice": 247,
+    "dayPass": 29.97,
+    "replaceCost": "$1,000-$4,000/mo",
+    "replaceLabel": "HR outsourcing",
+    "traditionalCost": 2000,
+    "liteFeatures": [
+      "5 job postings/month",
+      "Basic screening",
+      "Standard letters",
+      "Monthly compliance",
+      "Templates"
+    ],
+    "fullFeatures": [
+      "Unlimited postings",
+      "AI screening + ranking",
+      "Custom onboarding",
+      "Continuous compliance",
+      "Handbook generation",
+      "Policy docs",
+      "Background checks",
+      "Benefits admin",
+      "Review templates",
+      "HR analytics"
+    ],
+    "deliverables": [
+      {
+        "name": "Unlimited postings",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Unlimited postings"
+      },
+      {
+        "name": "AI screening + ranking",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "AI screening + ranking"
+      },
+      {
+        "name": "Custom onboarding",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Custom onboarding"
+      },
+      {
+        "name": "Continuous compliance",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Continuous compliance"
+      },
+      {
+        "name": "Handbook generation",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Handbook generation"
+      },
+      {
+        "name": "Policy docs",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Policy docs"
+      },
+      {
+        "name": "Background checks",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Background checks"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade hr, hiring & compliance deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "executive-assistant",
+    "name": "Executive & Personal Assistant",
+    "icon": "🗓️",
+    "tagline": "Calendar, email triage, research, travel planning, and briefings",
+    "description": "AI executive assistant handles email, calendar, meeting prep, research, and travel.",
+    "litePrice": 47,
+    "fullPrice": 197,
+    "dayPass": 24.97,
+    "replaceCost": "$1,500-$3,500/mo",
+    "replaceLabel": "Virtual assistant",
+    "traditionalCost": 2500,
+    "liteFeatures": [
+      "Basic email sorting",
+      "Calendar scheduling",
+      "Weekly briefing",
+      "Simple research",
+      "Reminders"
+    ],
+    "fullFeatures": [
+      "Advanced email triage",
+      "Smart calendar optimization",
+      "Daily briefings",
+      "Deep research",
+      "Travel planning",
+      "Meeting prep",
+      "Doc summarization",
+      "Priority inbox",
+      "Expense reports",
+      "Communication drafts"
+    ],
+    "deliverables": [
+      {
+        "name": "Advanced email triage",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Advanced email triage"
+      },
+      {
+        "name": "Smart calendar optimization",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Smart calendar optimization"
+      },
+      {
+        "name": "Daily briefings",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Daily briefings"
+      },
+      {
+        "name": "Deep research",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Deep research"
+      },
+      {
+        "name": "Travel planning",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Travel planning"
+      },
+      {
+        "name": "Meeting prep",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Meeting prep"
+      },
+      {
+        "name": "Doc summarization",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Doc summarization"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade executive & personal assistant deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "web-development",
+    "name": "Website Development Agency",
+    "icon": "🌐",
+    "tagline": "Full-stack builds, landing pages, e-commerce, hosting, and maintenance",
+    "description": "Complete website development and management. Landing pages to full e-commerce stores.",
+    "litePrice": 97,
+    "fullPrice": 497,
+    "dayPass": 49.97,
+    "replaceCost": "$3,000-$10,000/mo",
+    "replaceLabel": "Web development agency",
+    "traditionalCost": 5000,
+    "liteFeatures": [
+      "1 landing page/month",
+      "Basic maintenance",
+      "Standard templates",
+      "SSL + hosting",
+      "Monthly backup"
+    ],
+    "fullFeatures": [
+      "Unlimited pages",
+      "Custom design",
+      "E-commerce",
+      "Performance optimization",
+      "A/B testing",
+      "Analytics",
+      "SEO-optimized",
+      "Mobile-first",
+      "API integrations",
+      "24/7 uptime"
+    ],
+    "deliverables": [
+      {
+        "name": "Unlimited pages",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Unlimited pages"
+      },
+      {
+        "name": "Custom design",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Custom design"
+      },
+      {
+        "name": "E-commerce",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "E-commerce"
+      },
+      {
+        "name": "Performance optimization",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Performance optimization"
+      },
+      {
+        "name": "A/B testing",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "A/B testing"
+      },
+      {
+        "name": "Analytics",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Analytics"
+      },
+      {
+        "name": "SEO-optimized",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "SEO-optimized"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade website development agency deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "app-development",
+    "name": "Mobile & Desktop App Agency",
+    "icon": "📲",
+    "tagline": "Native and cross-platform app development, UI/UX design, and deployment",
+    "description": "Full-service app development for iOS, Android, and desktop with ongoing maintenance.",
+    "litePrice": 97,
+    "fullPrice": 497,
+    "dayPass": 49.97,
+    "replaceCost": "$5,000-$25,000/mo",
+    "replaceLabel": "App development firm",
+    "traditionalCost": 10000,
+    "liteFeatures": [
+      "Basic prototype",
+      "Standard UI",
+      "Single platform",
+      "Monthly updates",
+      "Bug fixes"
+    ],
+    "fullFeatures": [
+      "Full development",
+      "Custom UI/UX",
+      "Cross-platform",
+      "Backend APIs",
+      "App Store submission",
+      "Push notifications",
+      "Analytics",
+      "Continuous deployment",
+      "Performance monitoring",
+      "Feature roadmap"
+    ],
+    "deliverables": [
+      {
+        "name": "Full development",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Full development"
+      },
+      {
+        "name": "Custom UI/UX",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Custom UI/UX"
+      },
+      {
+        "name": "Cross-platform",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Cross-platform"
+      },
+      {
+        "name": "Backend APIs",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Backend APIs"
+      },
+      {
+        "name": "App Store submission",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "App Store submission"
+      },
+      {
+        "name": "Push notifications",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Push notifications"
+      },
+      {
+        "name": "Analytics",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Analytics"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade mobile & desktop app agency deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "content-strategy",
+    "name": "Content Strategy & Posting",
+    "icon": "🗺️",
+    "tagline": "Editorial calendars, content audits, competitive analysis, and publishing workflows",
+    "description": "Strategic content planning aligned with business goals. Audit, plan, schedule, optimize.",
+    "litePrice": 57,
+    "fullPrice": 247,
+    "dayPass": 29.97,
+    "replaceCost": "$2,000-$5,000/mo",
+    "replaceLabel": "Content strategist",
+    "traditionalCost": 3000,
+    "liteFeatures": [
+      "Monthly audit",
+      "Basic calendar",
+      "3 themes",
+      "Standard publishing",
+      "Monthly review"
+    ],
+    "fullFeatures": [
+      "Weekly audits",
+      "Detailed calendar",
+      "Unlimited themes",
+      "Multi-channel publishing",
+      "Competitive analysis",
+      "Content gaps",
+      "Repurposing",
+      "Performance optimization",
+      "Trend monitoring",
+      "Strategy sessions"
+    ],
+    "deliverables": [
+      {
+        "name": "Weekly audits",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Weekly audits"
+      },
+      {
+        "name": "Detailed calendar",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Detailed calendar"
+      },
+      {
+        "name": "Unlimited themes",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Unlimited themes"
+      },
+      {
+        "name": "Multi-channel publishing",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Multi-channel publishing"
+      },
+      {
+        "name": "Competitive analysis",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Competitive analysis"
+      },
+      {
+        "name": "Content gaps",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Content gaps"
+      },
+      {
+        "name": "Repurposing",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Repurposing"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade content strategy & posting deliverables within 48 hours of onboarding."
+  },
+  {
+    "id": "creative-studio",
+    "name": "Image & Creative Studio",
+    "icon": "🎨",
+    "tagline": "HD images, social graphics, ad creatives, brand assets, and design systems",
+    "description": "Professional visual content on demand. HD images, graphics, creatives in your brand style.",
+    "litePrice": 47,
+    "fullPrice": 197,
+    "dayPass": 24.97,
+    "replaceCost": "$1,500-$4,000/mo",
+    "replaceLabel": "Design agency",
+    "traditionalCost": 2500,
+    "liteFeatures": [
+      "10 HD images/month",
+      "Basic graphics",
+      "Standard sizes",
+      "PNG/JPG",
+      "Email support"
+    ],
+    "fullFeatures": [
+      "50+ HD images/month",
+      "Custom graphics",
+      "Ad creatives",
+      "Brand asset library",
+      "All formats",
+      "Design system",
+      "Video thumbnails",
+      "Infographics",
+      "Presentations",
+      "Unlimited revisions"
+    ],
+    "deliverables": [
+      {
+        "name": "50+ HD images/month",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "50+ HD images/month"
+      },
+      {
+        "name": "Custom graphics",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Custom graphics"
+      },
+      {
+        "name": "Ad creatives",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Ad creatives"
+      },
+      {
+        "name": "Brand asset library",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Brand asset library"
+      },
+      {
+        "name": "All formats",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "All formats"
+      },
+      {
+        "name": "Design system",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Design system"
+      },
+      {
+        "name": "Video thumbnails",
+        "lite": "Limited",
+        "full": "Full access",
+        "desc": "Video thumbnails"
+      }
+    ],
+    "faq": [
+      {
+        "q": "How quickly can I start?",
+        "a": "Most clients are running within 24-48 hours."
+      },
+      {
+        "q": "Can I upgrade LITE to FULL?",
+        "a": "Yes, upgrade instantly. Price difference is prorated."
+      },
+      {
+        "q": "What about day passes?",
+        "a": "Full access for 24 hours, no commitment needed."
+      },
+      {
+        "q": "Any contracts?",
+        "a": "No contracts. Cancel anytime with one click."
+      },
+      {
+        "q": "Quality vs hiring a firm?",
+        "a": "Enterprise-grade output at a fraction of the cost, with faster turnaround."
+      }
+    ],
+    "sampleOutput": "Enterprise-grade image & creative studio deliverables within 48 hours of onboarding."
+  }
+]

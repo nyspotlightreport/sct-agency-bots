@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{name}} — NY Spotlight Report</title>
+<meta name="description" content="{{tagline}} Starting at ${{litePrice}}/mo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f6; --paper: #fff; --ink: #0f0f0f; --g500: #6b6b6b;
+    --g100: #e5e5e5; --accent: #9e7c0c; --green: #16793a; --red: #b91c1c;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+  .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: .95rem; text-align: center; cursor: pointer; transition: opacity .2s; border: none; }
+  .btn:hover { opacity: .88; text-decoration: none; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-outline { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  .section { padding: 64px 0; }
+  .section-title { font-size: 1.75rem; margin-bottom: 32px; text-align: center; }
+  .card { background: var(--paper); border: 1px solid var(--g100); border-radius: 10px; padding: 32px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--g100); }
+  th { font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--g500); }
+  .tag { display: inline-block; font-size: .75rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+  .tag-green { background: #e6f4ec; color: var(--green); }
+  .tag-accent { background: #fdf4dc; color: var(--accent); }
+  @media (max-width: 640px) {
+    .grid-2 { grid-template-columns: 1fr !important; }
+    .hero-btns { flex-direction: column; }
+    .hero-btns .btn { width: 100%; }
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  details summary { cursor: pointer; font-weight: 600; padding: 16px 0; border-bottom: 1px solid var(--g100); list-style: none; }
+  details summary::after { content: '+'; float: right; font-size: 1.25rem; color: var(--g500); }
+  details[open] summary::after { content: '−'; }
+  details .faq-body { padding: 12px 0 24px; color: var(--g500); }
+</style>
+</head>
+<body>
+
+<!-- ───────── NAV ───────── -->
+<nav style="background:var(--paper);border-bottom:1px solid var(--g100);padding:16px 0;position:sticky;top:0;z-index:50;">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <a href="/" style="font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;color:var(--ink);">NY Spotlight Report</a>
+    <div style="display:flex;gap:24px;align-items:center;font-size:.9rem;">
+      <a href="/">Home</a>
+      <a href="/services/">Services</a>
+      <a href="/demo/">Demo</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/blog/">Blog</a>
+      <a href="/sign-in/" class="btn btn-outline" style="padding:8px 18px;font-size:.85rem;">Sign In</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────── HERO ───────── -->
+<header class="section" style="text-align:center;padding-top:80px;">
+  <div class="wrap">
+    <div style="font-size:3rem;margin-bottom:8px;">{{icon}}</div>
+    <h1 style="font-size:2.5rem;margin-bottom:12px;">{{name}}</h1>
+    <p style="font-size:1.15rem;color:var(--g500);max-width:600px;margin:0 auto 24px;">{{tagline}}</p>
+    <p style="font-size:1rem;margin-bottom:8px;">Starting at <strong>${{litePrice}}/mo</strong></p>
+    <p style="font-size:.9rem;color:var(--g500);margin-bottom:32px;">or <strong>${{dayPass}}</strong> for a day pass</p>
+    <div class="hero-btns" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#pricing" class="btn btn-primary">Start LITE &mdash; ${{litePrice}}/mo</a>
+      <a href="#pricing" class="btn btn-outline">Go FULL &mdash; ${{fullPrice}}/mo</a>
+    </div>
+  </div>
+</header>
+
+<!-- ───────── WHAT YOU GET ───────── -->
+<section class="section" style="background:var(--paper);">
+  <div class="wrap">
+    <h2 class="section-title">What You Get</h2>
+    <div class="card" style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:50%;">Deliverable</th>
+            <th style="text-align:center;">LITE</th>
+            <th style="text-align:center;">FULL</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{deliverables_html}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── LITE vs FULL ───────── -->
+<section id="pricing" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Choose Your Plan</h2>
+    <div class="grid-2">
+      <!-- LITE -->
+      <div class="card">
+        <span class="tag tag-accent">LITE</span>
+        <h3 style="font-size:1.35rem;margin:16px 0 8px;">Essentials</h3>
+        <ul style="list-style:none;margin-bottom:24px;color:var(--g500);">
+          {{lite_features_html}}
+        </ul>
+        <p style="font-size:2rem;font-weight:700;margin-bottom:16px;">${{litePrice}}<span style="font-size:.9rem;font-weight:400;color:var(--g500);">/mo</span></p>
+        <a href="/checkout/?plan=lite&agency={{slug}}" class="btn btn-outline" style="width:100%;">Start LITE</a>
+      </div>
+      <!-- FULL -->
+      <div class="card" style="border:2px solid var(--accent);">
+        <span class="tag tag-green">FULL</span>
+        <h3 style="font-size:1.35rem;margin:16px 0 8px;">Everything</h3>
+        <ul style="list-style:none;margin-bottom:24px;color:var(--g500);">
+          {{full_features_html}}
+        </ul>
+        <p style="font-size:2rem;font-weight:700;margin-bottom:16px;">${{fullPrice}}<span style="font-size:.9rem;font-weight:400;color:var(--g500);">/mo</span></p>
+        <a href="/checkout/?plan=full&agency={{slug}}" class="btn btn-primary" style="width:100%;">Go FULL</a>
+      </div>
+    </div>
+    <!-- Day Pass -->
+    <div class="card" style="text-align:center;margin-top:24px;">
+      <p style="font-weight:700;font-size:1.1rem;margin-bottom:4px;">Just need a one-time deliverable?</p>
+      <p style="color:var(--g500);margin-bottom:16px;">Get a Day Pass for <strong>${{dayPass}}</strong> &mdash; no subscription required.</p>
+      <a href="/checkout/?plan=daypass&agency={{slug}}" class="btn btn-outline">Get Day Pass &mdash; ${{dayPass}}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── WHY US vs TRADITIONAL ───────── -->
+<section class="section" style="background:var(--paper);">
+  <div class="wrap">
+    <h2 class="section-title">Why Us vs. Traditional</h2>
+    <div class="grid-2">
+      <div class="card" style="text-align:center;">
+        <p style="font-size:.85rem;color:var(--g500);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;">{{replaceLabel}}</p>
+        <p style="font-size:1.75rem;font-weight:700;color:var(--red);">{{replaceCost}}</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <p style="font-size:.85rem;color:var(--g500);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;">This Agency</p>
+        <p style="font-size:1.75rem;font-weight:700;color:var(--green);">${{litePrice}}&ndash;${{fullPrice}}/mo</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:16px;font-weight:600;color:var(--green);">{{savings_label}}</p>
+
+    <!-- ROI Mini-Calculator -->
+    <div class="card" style="max-width:480px;margin:32px auto 0;text-align:center;">
+      <h3 style="font-size:1.1rem;margin-bottom:16px;">Quick ROI Calculator</h3>
+      <label for="roi-input" style="font-size:.9rem;color:var(--g500);display:block;margin-bottom:8px;">Your current monthly spend</label>
+      <input id="roi-input" type="number" value="{{traditional_cost}}" style="width:100%;padding:12px;border:1px solid var(--g100);border-radius:6px;font-size:1rem;text-align:center;margin-bottom:12px;">
+      <p style="font-size:.9rem;color:var(--g500);">Potential savings: <strong id="roi-result" style="color:var(--green);">—</strong>/mo</p>
+    </div>
+    <script>
+      (function(){
+        var inp=document.getElementById('roi-input'),out=document.getElementById('roi-result');
+        var full={{fullPrice}};
+        function calc(){var v=parseFloat(inp.value)||0;var s=v-full;out.textContent=s>0?'$'+s.toLocaleString():'$0';}
+        inp.addEventListener('input',calc);calc();
+      })();
+    </script>
+  </div>
+</section>
+
+<!-- ───────── HOW IT WORKS ───────── -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">How It Works</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;">
+      {{how_it_works_html}}
+    </div>
+  </div>
+</section>
+
+<!-- ───────── SAMPLE OUTPUT ───────── -->
+<section class="section" style="background:var(--paper);">
+  <div class="wrap">
+    <h2 class="section-title">Sample Output</h2>
+    <div class="card" style="white-space:pre-wrap;font-size:.9rem;color:var(--g500);max-height:420px;overflow-y:auto;">
+{{sample_output}}
+    </div>
+  </div>
+</section>
+
+<!-- ───────── FAQ ───────── -->
+<section class="section">
+  <div class="wrap" style="max-width:720px;">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    {{faq_html}}
+  </div>
+</section>
+
+<!-- ───────── BUNDLE CTA ───────── -->
+<section class="section" style="background:var(--accent);color:#fff;text-align:center;">
+  <div class="wrap">
+    <h2 style="font-size:1.5rem;margin-bottom:12px;">Bundle &amp; Save up to 55%</h2>
+    <p style="opacity:.9;margin-bottom:24px;">Combine this with other agencies for a single discounted subscription.</p>
+    <a href="/services/bundle/" class="btn" style="background:#fff;color:var(--accent);">View Bundles</a>
+  </div>
+</section>
+
+<!-- ───────── BOTTOM CTA ───────── -->
+<section class="section" style="text-align:center;">
+  <div class="wrap">
+    <h2 style="font-size:2rem;margin-bottom:12px;">Ready to start with {{name}}?</h2>
+    <p style="color:var(--g500);margin-bottom:24px;">14-day delivery guarantee. Cancel anytime.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="/checkout/?plan=lite&agency={{slug}}" class="btn btn-primary">Start LITE &mdash; ${{litePrice}}/mo</a>
+      <a href="/checkout/?plan=full&agency={{slug}}" class="btn btn-outline">Go FULL &mdash; ${{fullPrice}}/mo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── FOOTER ───────── -->
+<footer style="border-top:1px solid var(--g100);padding:32px 0;text-align:center;font-size:.85rem;color:var(--g500);">
+  <div class="wrap">
+    <p>&copy; 2020&ndash;2026 NY Spotlight Report LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
