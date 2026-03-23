@@ -1,0 +1,36 @@
+name: Department Integration - Daily Synergies
+on:
+  schedule:
+    - cron: '30 8 * * *'
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+  TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+  TWILIO_PHONE_NUMBER: ${{ secrets.TWILIO_PHONE_NUMBER }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  RUNWAY_API_KEY: ${{ secrets.RUNWAY_API_KEY }}
+  KLING_API_KEY: ${{ secrets.KLING_API_KEY }}
+  LUMA_API_KEY: ${{ secrets.LUMA_API_KEY }}
+jobs:
+  integration:
+    name: Cross-Department Synergy Engine
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -c "
+          import sys; sys.path.insert(0,'.');
+          from agents.department_integrator import run;
+          results = run();
+          ok = sum(1 for r in results.values() if r['status']=='OK');
+          print(f'Synergy Report: {ok}/{len(results)} integrations live');
+          "
