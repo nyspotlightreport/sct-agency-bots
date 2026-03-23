@@ -4,40 +4,138 @@ on:
 jobs:
   set-env:
     runs-on: ubuntu-latest
+    env:
+      NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
     steps:
       - name: Set ELEVENLABS_API_KEY on Netlify
+        env:
+          SECRET_VALUE: ${{ secrets.ELEVENLABS_API_KEY }}
         run: |
-          curl -s -X PATCH \
-            "https://api.netlify.com/api/v1/accounts/me/env/ELEVENLABS_API_KEY?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
-            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d '{"key":"ELEVENLABS_API_KEY","scopes":["functions"],"values":[{"context":"all","value":"${{ secrets.ELEVENLABS_API_KEY }}"}]}' || \
-          curl -s -X POST \
-            "https://api.netlify.com/api/v1/accounts/me/env?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
-            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d '[{"key":"ELEVENLABS_API_KEY","scopes":["functions"],"values":[{"context":"all","value":"${{ secrets.ELEVENLABS_API_KEY }}"}]}]'
+          python3 -c "
+          import json, os, urllib.request
+          token = os.environ['NETLIFY_TOKEN']
+          site = os.environ['SITE_ID']
+          val = os.environ['SECRET_VALUE']
+          payload = json.dumps([{'key':'ELEVENLABS_API_KEY','scopes':['functions','runtime'],'values':[{'context':'all','value':val}]}]).encode()
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/accounts/me/env?site_id={site}',
+            data=payload,
+            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+            method='POST'
+          )
+          try:
+            resp = urllib.request.urlopen(req)
+            print(f'Created ELEVENLABS_API_KEY: {resp.status}')
+          except Exception as e:
+            print(f'POST failed (may already exist): {e}')
+            payload2 = json.dumps({'key':'ELEVENLABS_API_KEY','scopes':['functions','runtime'],'values':[{'context':'all','value':val}]}).encode()
+            req2 = urllib.request.Request(
+              f'https://api.netlify.com/api/v1/accounts/me/env/ELEVENLABS_API_KEY?site_id={site}',
+              data=payload2,
+              headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+              method='PUT'
+            )
+            resp2 = urllib.request.urlopen(req2)
+            print(f'Updated ELEVENLABS_API_KEY: {resp2.status}')
+          "
+
       - name: Set TWILIO_AUTH_TOKEN on Netlify
+        env:
+          SECRET_VALUE: ${{ secrets.TWILIO_AUTH_TOKEN }}
         run: |
-          curl -s -X PATCH \
-            "https://api.netlify.com/api/v1/accounts/me/env/TWILIO_AUTH_TOKEN?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
-            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d '{"key":"TWILIO_AUTH_TOKEN","scopes":["functions"],"values":[{"context":"all","value":"${{ secrets.TWILIO_AUTH_TOKEN }}"}]}' || \
-          curl -s -X POST \
-            "https://api.netlify.com/api/v1/accounts/me/env?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
-            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d '[{"key":"TWILIO_AUTH_TOKEN","scopes":["functions"],"values":[{"context":"all","value":"${{ secrets.TWILIO_AUTH_TOKEN }}"}]}]'
-      - name: Set ELEVENLABS_VOICE_ID on Netlify
+          python3 -c "
+          import json, os, urllib.request
+          token = os.environ['NETLIFY_TOKEN']
+          site = os.environ['SITE_ID']
+          val = os.environ['SECRET_VALUE']
+          payload = json.dumps([{'key':'TWILIO_AUTH_TOKEN','scopes':['functions','runtime'],'values':[{'context':'all','value':val}]}]).encode()
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/accounts/me/env?site_id={site}',
+            data=payload,
+            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+            method='POST'
+          )
+          try:
+            resp = urllib.request.urlopen(req)
+            print(f'Created TWILIO_AUTH_TOKEN: {resp.status}')
+          except Exception as e:
+            print(f'POST failed: {e}')
+            payload2 = json.dumps({'key':'TWILIO_AUTH_TOKEN','scopes':['functions','runtime'],'values':[{'context':'all','value':val}]}).encode()
+            req2 = urllib.request.Request(
+              f'https://api.netlify.com/api/v1/accounts/me/env/TWILIO_AUTH_TOKEN?site_id={site}',
+              data=payload2,
+              headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+              method='PUT'
+            )
+            resp2 = urllib.request.urlopen(req2)
+            print(f'Updated TWILIO_AUTH_TOKEN: {resp2.status}')
+          "
+
+      - name: Set additional env vars on Netlify
+        env:
+          SUPABASE_URL_VAL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY_VAL: ${{ secrets.SUPABASE_ANON_KEY }}
+          PUSHOVER_API_VAL: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_VAL: ${{ secrets.PUSHOVER_USER_KEY }}
+          STRIPE_KEY_VAL: ${{ secrets.STRIPE_SECRET_KEY }}
+          HUBSPOT_GUID_VAL: ${{ secrets.HUBSPOT_FORM_GUID }}
         run: |
-          curl -s -X POST \
-            "https://api.netlify.com/api/v1/accounts/me/env?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
-            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d '[{"key":"ELEVENLABS_VOICE_ID","scopes":["functions"],"values":[{"context":"all","value":"EXAVITQu4vr4xnSDxMaL"}]}]' || true
-      - name: Verify env vars
+          python3 -c "
+          import json, os, urllib.request
+          token = os.environ['NETLIFY_TOKEN']
+          site = os.environ['SITE_ID']
+          env_vars = {
+            'SUPABASE_URL': os.environ.get('SUPABASE_URL_VAL',''),
+            'SUPABASE_KEY': os.environ.get('SUPABASE_KEY_VAL',''),
+            'PUSHOVER_API_KEY': os.environ.get('PUSHOVER_API_VAL',''),
+            'PUSHOVER_USER_KEY': os.environ.get('PUSHOVER_USER_VAL',''),
+            'STRIPE_SECRET_KEY': os.environ.get('STRIPE_KEY_VAL',''),
+            'HUBSPOT_FORM_GUID': os.environ.get('HUBSPOT_GUID_VAL',''),
+          }
+          for key, val in env_vars.items():
+            if not val:
+              print(f'Skipping {key} (empty)')
+              continue
+            payload = json.dumps([{'key':key,'scopes':['functions','runtime'],'values':[{'context':'all','value':val}]}]).encode()
+            req = urllib.request.Request(
+              f'https://api.netlify.com/api/v1/accounts/me/env?site_id={site}',
+              data=payload,
+              headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+              method='POST'
+            )
+            try:
+              resp = urllib.request.urlopen(req)
+              print(f'Created {key}: {resp.status}')
+            except Exception as e:
+              print(f'{key} exists, updating...')
+              payload2 = json.dumps({'key':key,'scopes':['functions','runtime'],'values':[{'context':'all','value':val}]}).encode()
+              req2 = urllib.request.Request(
+                f'https://api.netlify.com/api/v1/accounts/me/env/{key}?site_id={site}',
+                data=payload2,
+                headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+                method='PUT'
+              )
+              try:
+                resp2 = urllib.request.urlopen(req2)
+                print(f'Updated {key}: {resp2.status}')
+              except Exception as e2:
+                print(f'Failed {key}: {e2}')
+          "
+
+      - name: Verify all env vars
         run: |
-          echo "Listing Netlify env vars for site..."
-          curl -s "https://api.netlify.com/api/v1/accounts/me/env?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
-            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" | python3 -c "import sys,json; [print(e['key']) for e in json.load(sys.stdin)]"
+          python3 -c "
+          import json, os, urllib.request
+          token = os.environ['NETLIFY_TOKEN']
+          site = os.environ['SITE_ID']
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/accounts/me/env?site_id={site}',
+            headers={'Authorization': f'Bearer {token}'}
+          )
+          resp = urllib.request.urlopen(req)
+          data = json.loads(resp.read())
+          print(f'Total env vars: {len(data)}')
+          for e in sorted(data, key=lambda x: x['key']):
+            print(f'  {e[\"key\"]}')
+          "
