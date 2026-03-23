@@ -1,0 +1,89 @@
+name: Get Build Log
+on: workflow_dispatch
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for deploy to start then get log
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          echo "Waiting 30s for build to start..."
+          sleep 30
+          python3 << 'PYEOF'
+          import json, os, urllib.request, time
+
+          token = os.environ['TOKEN']
+          site = os.environ['SITE']
+
+          # Get latest deploy
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}/deploys?per_page=1',
+            headers={'Authorization': f'Bearer {token}'}
+          )
+          resp = urllib.request.urlopen(req)
+          deploys = json.loads(resp.read())
+          deploy = deploys[0]
+          deploy_id = deploy['id']
+
+          print(f'Deploy: {deploy_id} | State: {deploy["state"]}')
+          print(f'Error: {deploy.get("error_message", "none")}')
+
+          # Try multiple log endpoints
+          endpoints = [
+            f'https://api.netlify.com/api/v1/deploys/{deploy_id}/log',
+            f'https://api.netlify.com/api/v1/sites/{site}/deploys/{deploy_id}/log',
+          ]
+
+          for url in endpoints:
+            print(f'\nTrying: {url}')
+            try:
+              log_req = urllib.request.Request(url, headers={'Authorization': f'Bearer {token}'})
+              log_resp = urllib.request.urlopen(log_req)
+              content = log_resp.read().decode('utf-8', errors='replace')
+              # Parse NDJSON or raw text
+              lines = content.strip().split('\n')
+              for line in lines[-50:]:  # last 50 lines
+                try:
+                  entry = json.loads(line)
+                  print(entry.get('message', line[:200]))
+                except:
+                  print(line[:200])
+              break
+            except Exception as e:
+              print(f'  Failed: {e}')
+
+          # Also get deploy detail
+          print('\n=== Deploy Detail ===')
+          detail_req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/deploys/{deploy_id}',
+            headers={'Authorization': f'Bearer {token}'}
+          )
+          detail_resp = urllib.request.urlopen(detail_req)
+          detail = json.loads(detail_resp.read())
+          for key in ['state','error_message','framework','log_access_attributes','build_id']:
+            val = detail.get(key)
+            if val:
+              print(f'{key}: {val}')
+
+          # Get build log if build_id exists
+          build_id = detail.get('build_id')
+          if build_id:
+            print(f'\n=== Build Log ({build_id}) ===')
+            try:
+              build_req = urllib.request.Request(
+                f'https://api.netlify.com/api/v1/builds/{build_id}/log',
+                headers={'Authorization': f'Bearer {token}'}
+              )
+              build_resp = urllib.request.urlopen(build_req)
+              build_log = build_resp.read().decode('utf-8', errors='replace')
+              for line in build_log.strip().split('\n')[-80:]:
+                try:
+                  entry = json.loads(line)
+                  print(entry.get('message', line[:200]))
+                except:
+                  print(line[:200])
+            except Exception as e:
+              print(f'Build log fetch failed: {e}')
+          PYEOF
