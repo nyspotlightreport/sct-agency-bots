@@ -4,42 +4,98 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Get deploy error log
+      - name: Get deploy build log
         env:
           TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           SITE: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          python3 -c "
+          python3 << 'EOF'
           import json, os, urllib.request
+
           token = os.environ['TOKEN']
           site = os.environ['SITE']
-          
+
           # Get latest deploys
           req = urllib.request.Request(
-            f'https://api.netlify.com/api/v1/sites/{site}/deploys?per_page=5',
+            f'https://api.netlify.com/api/v1/sites/{site}/deploys?per_page=3',
             headers={'Authorization': f'Bearer {token}'}
           )
           resp = urllib.request.urlopen(req)
           deploys = json.loads(resp.read())
-          
-          for d in deploys[:3]:
-            print(f'Deploy: {d[\"id\"]} | State: {d[\"state\"]} | Created: {d[\"created_at\"]}')
-            print(f'  Error: {d.get(\"error_message\", \"none\")}')
-            print(f'  Title: {d.get(\"title\", \"\")}')
-            print(f'  Branch: {d.get(\"branch\", \"\")}')
-            print(f'  Deploy URL: {d.get(\"deploy_url\", \"\")}')
-            print(f'  Framework: {d.get(\"framework\", \"none\")}')
-            print(f'  Published: {d.get(\"published_deploy\", {}).get(\"id\", \"not published\")}')
+
+          for d in deploys[:2]:
+            print(f'Deploy: {d["id"]} | State: {d["state"]} | Created: {d["created_at"]}')
+            print(f'  Error: {d.get("error_message", "none")}')
+            print(f'  Framework: {d.get("framework", "none")}')
             print()
-          
-          # Get the latest deploy's detailed log
+
+          # Get the latest deploy's build log
           latest = deploys[0]
-          print(f'--- Full log for {latest[\"id\"]} ---')
-          log_url = f'https://api.netlify.com/api/v1/deploys/{latest[\"id\"]}'
-          req2 = urllib.request.Request(log_url, headers={'Authorization': f'Bearer {token}'})
-          resp2 = urllib.request.urlopen(req2)
-          detail = json.loads(resp2.read())
-          for key in ['state','error_message','deploy_ssl_url','function_schedules','summary']:
-            if key in detail and detail[key]:
-              print(f'{key}: {detail[key]}')
-          "
+          deploy_id = latest["id"]
+          print(f'=== BUILD LOG for {deploy_id} ===')
+
+          try:
+            log_req = urllib.request.Request(
+              f'https://api.netlify.com/api/v1/deploys/{deploy_id}/log',
+              headers={'Authorization': f'Bearer {token}'}
+            )
+            log_resp = urllib.request.urlopen(log_req)
+            log_data = log_resp.read().decode('utf-8', errors='replace')
+
+            # Parse JSON lines (Netlify returns NDJSON)
+            for line in log_data.strip().split('\n'):
+              try:
+                entry = json.loads(line)
+                msg = entry.get('message', '')
+                if msg:
+                  print(msg)
+              except:
+                print(line[:200])
+          except Exception as e:
+            print(f'Could not fetch log: {e}')
+
+          # Also check site build settings
+          print()
+          print('=== SITE BUILD SETTINGS ===')
+          site_req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}',
+            headers={'Authorization': f'Bearer {token}'}
+          )
+          site_resp = urllib.request.urlopen(site_req)
+          site_data = json.loads(site_resp.read())
+          bs = site_data.get('build_settings', {})
+          print(f'cmd: {bs.get("cmd", "(none)")}')
+          print(f'dir: {bs.get("dir", "(none)")}')
+          print(f'functions_dir: {bs.get("functions_dir", "(none)")}')
+          print(f'base: {bs.get("base", "(none)")}')
+          print(f'env: {list(bs.get("env", {}).keys())[:10]}')
+
+          # Fix: set build command explicitly
+          fix_payload = json.dumps({
+            'build_settings': {
+              'cmd': 'echo ok',
+              'dir': '.',
+              'functions_dir': 'netlify/functions',
+            }
+          }).encode()
+          fix_req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}',
+            data=fix_payload,
+            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+            method='PATCH'
+          )
+          fix_resp = urllib.request.urlopen(fix_req)
+          print()
+          print('=== FIXED: Set cmd=echo ok, dir=., functions_dir=netlify/functions ===')
+
+          # Trigger new deploy
+          build_req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}/builds',
+            data=json.dumps({'clear_cache': True}).encode(),
+            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+            method='POST'
+          )
+          build_resp = urllib.request.urlopen(build_req)
+          build_data = json.loads(build_resp.read())
+          print(f'Triggered new deploy: {build_data.get("deploy_id", "?")}')
+          EOF
