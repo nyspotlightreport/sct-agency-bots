@@ -1,0 +1,67 @@
+name: Set Admin Credentials on Netlify
+on: workflow_dispatch
+jobs:
+  set-creds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set admin email, password hash, and JWT secret on Netlify
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          python3 << 'EOF'
+          import json, os, urllib.request
+
+          token = os.environ['NETLIFY_TOKEN']
+          site = os.environ['SITE_ID']
+
+          env_vars = {
+            'ADMIN_EMAIL': 'Seanc11792@icloud.com',
+            'ADMIN_PASSWORD_HASH': '$2b$12$VpK2ZZ3NuUgIygWjG47zvu10GOT.vPkPFsevPczhW5v5oRH.UCdu.',
+            'JWT_SECRET': 'ba4aa96463ad91182c3408ea10cd195652f5cf212bd482a87c0f199985ba6fd5',
+          }
+
+          for key, val in env_vars.items():
+            payload = json.dumps([{
+              'key': key,
+              'scopes': ['functions', 'runtime'],
+              'values': [{'context': 'all', 'value': val}]
+            }]).encode()
+            req = urllib.request.Request(
+              f'https://api.netlify.com/api/v1/accounts/me/env?site_id={site}',
+              data=payload,
+              headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+              method='POST'
+            )
+            try:
+              resp = urllib.request.urlopen(req)
+              print(f'Created {key}: {resp.status}')
+            except:
+              payload2 = json.dumps({
+                'key': key,
+                'scopes': ['functions', 'runtime'],
+                'values': [{'context': 'all', 'value': val}]
+              }).encode()
+              try:
+                req2 = urllib.request.Request(
+                  f'https://api.netlify.com/api/v1/accounts/me/env/{key}?site_id={site}',
+                  data=payload2,
+                  headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+                  method='PUT'
+                )
+                resp2 = urllib.request.urlopen(req2)
+                print(f'Updated {key}: {resp2.status}')
+              except Exception as e:
+                print(f'Failed {key}: {e}')
+
+          # Verify
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/accounts/me/env?site_id={site}',
+            headers={'Authorization': f'Bearer {token}'}
+          )
+          resp = urllib.request.urlopen(req)
+          data = json.loads(resp.read())
+          print(f'\nTotal env vars: {len(data)}')
+          for e in sorted(data, key=lambda x: x['key']):
+            print(f'  {e["key"]}')
+          EOF
