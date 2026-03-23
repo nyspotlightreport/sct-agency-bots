@@ -1,0 +1,41 @@
+name: Voice AI - Daily Operations
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  DEEPGRAM_API_KEY: ${{ secrets.DEEPGRAM_API_KEY }}
+  TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+  TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+  TWILIO_PHONE_NUMBER: ${{ secrets.TWILIO_PHONE_NUMBER }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  GH_PAT: ${{ secrets.GH_PAT }}
+jobs:
+  voice-ai:
+    name: ProFlow Voice AI Operations
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -c "
+          import sys; sys.path.insert(0,'.');
+          from agents.voice_ai.orchestrator import VoiceSession, list_voices, think;
+          print('ProFlow Voice AI Platform v1.0 — Online');
+          voices = list_voices();
+          print(f'Available voices: {len(voices)}');
+          for v in voices[:5]: print(f'  {v[\"name\"]} ({v[\"category\"]})');
+          session = VoiceSession('sales_outbound', 'en');
+          result = session.process_turn(user_text='Tell me about your content services.');
+          print(f'Test response: {result[\"response_text\"][:100]}...');
+          session.end_session();
+          print('Voice AI system check: PASSED');
+          "
