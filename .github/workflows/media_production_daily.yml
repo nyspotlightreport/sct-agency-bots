@@ -1,0 +1,32 @@
+name: Media Production - Daily Operations
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  RUNWAY_API_KEY: ${{ secrets.RUNWAY_API_KEY }}
+  KLING_API_KEY: ${{ secrets.KLING_API_KEY }}
+  LUMA_API_KEY: ${{ secrets.LUMA_API_KEY }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+jobs:
+  media-production:
+    name: Media Production Dept - Marcus Kane
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -c "
+          import sys; sys.path.insert(0,'.');
+          from agents.media_production.director import run;
+          result = run();
+          print(f'Media Dept Status: {result}');
+          "
