@@ -3,780 +3,249 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NY Spotlight Report — The AI-Powered Content & Growth Agency</title>
-<meta name="description" content="We build autonomous AI-powered content systems that publish daily, grow audiences, and generate passive income for entrepreneurs. Trusted by founders and agencies.">
-<meta property="og:title" content="NY Spotlight Report — The AI-Powered Growth Agency">
-<meta property="og:description" content="63 bots. Zero manual work. Your content, newsletter, social media, and digital products on autopilot.">
-<meta property="og:image" content="https://nyspotlightreport.com/assets/og-image.jpg">
+<title>NY Spotlight Report — Content Systems That Run Themselves</title>
+<meta name="description" content="We build autonomous content engines for agencies and founders. Daily blogs, social media, newsletters — published on schedule, every single day.">
+<meta property="og:title" content="NY Spotlight Report — Content That Runs Itself">
+<meta property="og:description" content="Autonomous content systems for agencies. Daily blogs, social, newsletters — zero manual work.">
 <link rel="canonical" href="https://nyspotlightreport.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --gold:#C9A84C;--gold-light:#e8c96e;
-  --dark:#0D1B2A;--darker:#060f1a;
-  --mid:#111d2e;--border:#1a2d42;
-  --text:#e8edf2;--muted:#7a8fa0;
-  --green:#27a060;--teal:#1D9E75;
-}
-html{scroll-behavior:smooth;}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;background:var(--darker);color:var(--text);line-height:1.6;overflow-x:hidden;}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--sand:#f7f5f0;--ink:#141413;--warm:#3d3929;--accent:#c9a84c;--accent-dark:#a08536;--muted:#8a8578;--border:rgba(0,0,0,.08);--card:#fff;--serif:'Instrument Serif',Georgia,serif;--sans:'Outfit','Helvetica Neue',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--sand);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,15,26,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-mark{width:32px;height:32px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--dark);}
-.logo-text{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.3px;}
-.logo-text span{color:var(--gold);}
-.nav-links{display:flex;align-items:center;gap:32px;}
-.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;}
-.nav-links a:hover{color:var(--text);}
-.nav-cta{background:var(--gold);color:var(--dark)!important;padding:9px 22px;border-radius:6px;font-weight:700!important;font-size:13px;}
-.nav-cta:hover{background:var(--gold-light)!important;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,245,240,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 clamp(24px,5vw,80px);height:64px;display:flex;align-items:center;justify-content:space-between}
+.n-logo{font-family:var(--serif);font-size:18px;letter-spacing:-.02em;color:var(--ink)}
+.n-logo i{color:var(--accent);font-style:italic}
+.n-links{display:flex;align-items:center;gap:28px}
+.n-links a{font-size:13px;color:var(--muted);font-weight:500;letter-spacing:.01em;transition:color .2s}
+.n-links a:hover{color:var(--ink)}
+.n-cta{background:var(--ink)!important;color:var(--sand)!important;padding:10px 24px;border-radius:100px;font-weight:600!important;font-size:13px!important;transition:all .2s}
+.n-cta:hover{background:var(--warm)!important}
 
-/* ── HERO ── */
-.hero{padding:160px 48px 100px;max-width:1200px;margin:0 auto;position:relative;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:28px;}
-.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
-h1{font-size:clamp(38px,5.5vw,72px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;max-width:900px;}
-h1 em{font-style:normal;color:var(--gold);}
-.hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:44px;}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:72px;}
-.btn-primary{background:var(--gold);color:var(--dark);padding:16px 36px;border-radius:8px;font-size:15px;font-weight:800;text-decoration:none;display:inline-block;transition:all .2s;}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);}
-.btn-secondary{background:rgba(255,255,255,.06);color:var(--text);padding:16px 36px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid var(--border);display:inline-block;transition:all .2s;}
-.btn-secondary:hover{background:rgba(255,255,255,.1);}
-.hero-stats{display:flex;gap:48px;flex-wrap:wrap;}
-.stat{display:flex;flex-direction:column;}
-.stat-n{font-size:32px;font-weight:800;color:var(--gold);line-height:1;}
-.stat-l{font-size:12px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.04em;}
+/* HERO */
+.hero{padding:140px clamp(24px,5vw,80px) 80px;max-width:1100px;margin:0 auto}
+.hero-over{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:24px}
+.hero h1{font-family:var(--serif);font-size:clamp(42px,6vw,76px);font-weight:400;line-height:1.05;letter-spacing:-.03em;margin-bottom:28px;max-width:800px}
+.hero h1 i{font-style:italic;color:var(--warm)}
+.hero-p{font-size:18px;color:var(--muted);max-width:520px;line-height:1.7;font-weight:300;margin-bottom:40px}
+.hero-btns{display:flex;gap:12px;margin-bottom:80px;flex-wrap:wrap}
+.btn-a{background:var(--ink);color:var(--sand);padding:16px 36px;border-radius:100px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.btn-a:hover{background:var(--warm);transform:translateY(-1px)}
+.btn-a svg{width:16px;height:16px;transition:transform .2s}
+.btn-a:hover svg{transform:translateX(3px)}
+.btn-b{color:var(--ink);padding:16px 36px;border-radius:100px;font-size:14px;font-weight:500;border:1px solid rgba(0,0,0,.15);display:inline-block;transition:all .25s}
+.btn-b:hover{border-color:var(--ink)}
 
-/* ── TICKER ── */
-.ticker-wrap{background:var(--gold);padding:14px 0;overflow:hidden;white-space:nowrap;}
-.ticker-inner{display:inline-flex;animation:ticker 30s linear infinite;}
-.ticker-item{font-size:12px;font-weight:700;color:var(--dark);padding:0 48px;letter-spacing:.04em;text-transform:uppercase;}
-.ticker-sep{color:rgba(13,27,42,.4);}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* PROOF BAR */
+.proof{display:flex;gap:48px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.proof-i{display:flex;flex-direction:column}
+.proof-n{font-family:var(--serif);font-size:36px;color:var(--ink);line-height:1}
+.proof-l{font-size:12px;color:var(--muted);margin-top:4px;font-weight:400}
 
-/* ── LOGOS ── */
-.logos-section{padding:64px 48px;text-align:center;border-bottom:1px solid var(--border);}
-.logos-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:28px;}
-.logos-row{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
-.logo-item{font-size:15px;font-weight:700;color:rgba(122,143,160,.5);letter-spacing:-.3px;}
+/* DIVIDER */
+.divider{width:100%;height:1px;background:var(--border);margin:0}
 
-/* ── SECTION BASICS ── */
-.section{padding:100px 48px;}
-.section-inner{max-width:1200px;margin:0 auto;}
-.section-label{font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
-h2{font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
-.section-desc{font-size:17px;color:var(--muted);max-width:540px;line-height:1.7;}
+/* SECTION */
+section{padding:80px clamp(24px,5vw,80px);max-width:1100px;margin:0 auto}
+.s-tag{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:12px}
+.s-head{font-family:var(--serif);font-size:clamp(30px,4vw,48px);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;max-width:600px}
+.s-sub{font-size:16px;color:var(--muted);max-width:480px;line-height:1.6;font-weight:300;margin-bottom:48px}
 
-/* ── PROBLEM SECTION ── */
-.problem{background:var(--mid);}
-.problem-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:48px;}
-.problem-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:24px;}
-.problem-icon{font-size:24px;margin-bottom:12px;}
-.problem-card h3{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;}
-.problem-card p{font-size:14px;color:var(--muted);line-height:1.6;}
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px 28px}
+.step-num{font-family:var(--serif);font-size:48px;color:rgba(201,168,76,.3);line-height:1;margin-bottom:16px}
+.step h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.step p{font-size:14px;color:var(--muted);line-height:1.6;font-weight:300}
 
-/* ── SERVICES ── */
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
-@media(max-width:800px){.services-grid{grid-template-columns:1fr;}}
-.service{border:1px solid var(--border);border-radius:14px;padding:28px;position:relative;transition:border .2s,transform .2s;}
-.service:hover{border-color:rgba(201,168,76,.4);transform:translateY(-2px);}
-.service.featured{border-color:var(--gold);}
-.service-tag{position:absolute;top:-12px;left:24px;background:var(--gold);color:var(--dark);font-size:10px;font-weight:800;padding:3px 12px;border-radius:10px;letter-spacing:.04em;text-transform:uppercase;}
-.service-icon{width:44px;height:44px;border-radius:10px;background:rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;}
-.service h3{font-size:18px;font-weight:700;margin-bottom:8px;}
-.service-price{font-size:26px;font-weight:800;color:var(--gold);margin:12px 0 4px;line-height:1;}
-.service-price sub{font-size:14px;font-weight:400;color:var(--muted);}
-.service-desc{font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.6;}
-.service ul{list-style:none;margin-bottom:24px;}
-.service ul li{font-size:13px;color:rgba(232,237,242,.7);padding:5px 0;border-bottom:1px solid rgba(26,45,66,.6);display:flex;gap:8px;}
-.service ul li:last-child{border:none;}
-.service ul li::before{content:"✓";color:var(--gold);font-weight:800;flex-shrink:0;}
-.service-btn{display:block;width:100%;padding:12px;border-radius:8px;font-size:14px;font-weight:700;text-align:center;text-decoration:none;transition:all .2s;}
-.sb-gold{background:var(--gold);color:var(--dark);}
-.sb-gold:hover{background:var(--gold-light);}
-.sb-outline{background:transparent;color:var(--text);border:1px solid var(--border);}
-.sb-outline:hover{background:rgba(255,255,255,.05);}
+/* WHAT YOU GET */
+.features{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.feat{display:flex;gap:16px;padding:24px;border-radius:12px;transition:background .2s}
+.feat:hover{background:rgba(0,0,0,.02)}
+.feat-ico{width:40px;height:40px;border-radius:10px;background:rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.feat h4{font-size:15px;font-weight:600;margin-bottom:4px}
+.feat p{font-size:13px;color:var(--muted);line-height:1.5;font-weight:300}
 
-/* ── HOW IT WORKS ── */
-.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px;position:relative;}
-.how-grid::before{content:"";position:absolute;top:28px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:0;}
-@media(max-width:700px){.how-grid{grid-template-columns:1fr 1fr;}}
-.how-step{text-align:center;position:relative;z-index:1;}
-.how-num{width:56px;height:56px;border-radius:50%;background:var(--dark);border:2px solid var(--gold);color:var(--gold);font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
-.how-step h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
-.how-step p{font-size:12px;color:var(--muted);line-height:1.5;}
+/* PRICING */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plan{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px 28px;position:relative;transition:all .25s}
+.plan:hover{border-color:rgba(0,0,0,.15);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.plan.pop{border:2px solid var(--accent)}
+.plan-badge{position:absolute;top:-12px;left:28px;background:var(--accent);color:var(--ink);font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;letter-spacing:.04em}
+.plan-name{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+.plan-price{font-family:var(--serif);font-size:42px;color:var(--ink);line-height:1;margin-bottom:4px}
+.plan-price span{font-size:16px;color:var(--muted);font-family:var(--sans)}
+.plan-desc{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.5;font-weight:300}
+.plan ul{list-style:none;margin-bottom:28px}
+.plan li{font-size:13px;color:var(--warm);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.plan li:last-child{border:0}
+.plan li::before{content:"✓";color:var(--accent-dark);font-weight:700;font-size:12px}
+.plan-btn{display:block;text-align:center;padding:14px;border-radius:100px;font-size:13px;font-weight:600;transition:all .2s}
+.plan-btn-dark{background:var(--ink);color:var(--sand)}
+.plan-btn-dark:hover{background:var(--warm)}
+.plan-btn-outline{border:1px solid rgba(0,0,0,.15);color:var(--ink)}
+.plan-btn-outline:hover{border-color:var(--ink)}
 
-/* ── RESULTS ── */
-.results{background:var(--dark);}
-.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
-@media(max-width:700px){.results-grid{grid-template-columns:1fr;}}
-.result-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:28px;}
-.result-quote{font-size:15px;color:rgba(232,237,242,.85);line-height:1.7;margin-bottom:20px;font-style:italic;}
-.result-quote strong{color:var(--gold);font-style:normal;}
-.result-author{display:flex;align-items:center;gap:12px;}
-.result-avatar{width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--dark);flex-shrink:0;}
-.result-name{font-size:14px;font-weight:700;color:var(--text);}
-.result-role{font-size:12px;color:var(--muted);}
-.result-metric{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:12px 16px;margin-top:16px;font-size:13px;color:var(--gold);font-weight:600;}
+/* TESTIMONIAL */
+.test{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:48px;text-align:center;max-width:640px;margin:0 auto}
+.test-q{font-family:var(--serif);font-size:clamp(20px,3vw,28px);line-height:1.4;margin-bottom:24px;font-style:italic;color:var(--warm)}
+.test-who{font-size:13px;color:var(--muted);font-weight:500}
 
-/* ── BLOG PREVIEW ── */
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
-@media(max-width:700px){.blog-grid{grid-template-columns:1fr;}}
-.blog-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border .2s;}
-.blog-card:hover{border-color:rgba(201,168,76,.3);}
-.blog-thumb{height:160px;background:linear-gradient(135deg,var(--mid),var(--border));display:flex;align-items:center;justify-content:center;font-size:40px;}
-.blog-body{padding:20px;}
-.blog-cat{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;}
-.blog-title{font-size:16px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:8px;}
-.blog-excerpt{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px;}
-.blog-meta{font-size:11px;color:rgba(122,143,160,.6);}
-.blog-card a{text-decoration:none;color:inherit;}
+/* CTA */
+.cta-s{background:var(--ink);border-radius:20px;padding:64px;text-align:center;margin:0 clamp(24px,5vw,80px) 80px;max-width:1100px;margin-left:auto;margin-right:auto}
+.cta-s h2{font-family:var(--serif);font-size:clamp(28px,4vw,44px);color:var(--sand);margin-bottom:16px;line-height:1.1}
+.cta-s p{color:rgba(247,245,240,.6);font-size:16px;margin-bottom:32px;font-weight:300}
+.btn-gold{background:var(--accent);color:var(--ink);padding:16px 40px;border-radius:100px;font-size:14px;font-weight:700;display:inline-block;transition:all .25s}
+.btn-gold:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
-/* ── CTA ── */
-.cta-section{background:linear-gradient(135deg,var(--dark) 0%,#0a2240 100%);padding:100px 48px;text-align:center;}
-.cta-section h2{margin-bottom:16px;}
-.cta-section p{color:var(--muted);font-size:17px;max-width:500px;margin:0 auto 36px;}
-.cta-pair{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+/* FOOTER */
+footer{padding:40px clamp(24px,5vw,80px);max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+footer p{font-size:12px;color:var(--muted)}
+footer a{font-size:12px;color:var(--muted);margin-left:24px;transition:color .2s}
+footer a:hover{color:var(--ink)}
 
-/* ── FOOTER ── */
-footer{background:#04090f;padding:60px 48px 32px;border-top:1px solid var(--border);}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
-@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
-.footer-brand p{font-size:13px;color:var(--muted);max-width:280px;margin-top:12px;line-height:1.7;}
-.footer-col h4{font-size:12px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;}
-.footer-col a{display:block;font-size:13px;color:var(--muted);text-decoration:none;padding:4px 0;transition:color .2s;}
-.footer-col a:hover{color:var(--gold);}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--border);flex-wrap:wrap;gap:12px;}
-.footer-copy{font-size:12px;color:rgba(122,143,160,.5);}
-.footer-links{display:flex;gap:20px;}
-.footer-links a{font-size:12px;color:rgba(122,143,160,.5);text-decoration:none;}
-
+/* MOBILE */
 @media(max-width:768px){
-  nav{padding:0 20px;}
-  .hero,.section,.cta-section{padding-left:20px;padding-right:20px;}
-  .nav-links{display:none;}
-  .hero-stats{gap:24px;}
-  footer{padding:40px 20px 24px;}
-  .footer-grid{grid-template-columns:1fr;}
+  .n-links a:not(.n-cta){display:none}
+  .steps,.features,.plans{grid-template-columns:1fr}
+  .proof{gap:24px}
+  .cta-s{margin:0 16px 40px;padding:40px 24px;border-radius:16px}
+  footer{flex-direction:column;gap:16px;text-align:center}
 }
+
+/* ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero h1,.hero-p,.hero-btns,.proof,.step,.feat,.plan,.test{animation:fadeUp .6s ease both}
+.hero-p{animation-delay:.1s}.hero-btns{animation-delay:.2s}.proof{animation-delay:.3s}
 </style>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "logo": "https://nyspotlightreport.com/assets/logo.png",
-  "sameAs": [
-    "https://twitter.com/nyspotlightreport",
-    "https://www.linkedin.com/company/ny-spotlight-report",
-    "https://www.youtube.com/@nyspotlightreport"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "nyspotlightreport@gmail.com",
-    "contactType": "customer support"
-  }
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "NY Spotlight Report",
-  "url": "https://nyspotlightreport.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://nyspotlightreport.com/blog/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}</script>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">
-    <div class="logo-mark">NY</div>
-    <div class="logo-text">NY Spotlight <span>Report</span></div>
-  </a>
-  <div class="nav-links">
+  <a href="/" class="n-logo">NY Spotlight <i>Report</i></a>
+  <div class="n-links">
     <a href="/blog/">Insights</a>
-    <a href="/proflow/">ProFlow AI</a>
-    <a href="/agency/">Agency</a>
-    <a href="/free-plan/">Free Audit</a>
-    <a href="/proflow/" class="nav-cta">Start Free Trial</a>
+    <a href="/proflow/">How It Works</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/proflow/" class="n-cta">Get Started</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-badge"><span class="badge-dot"></span>AI-Powered Content & Growth System</div>
-  <h1>Your Entire Marketing<br>Operation. On <em>Autopilot.</em></h1>
-  <p class="hero-sub">We build and run AI-powered content systems that publish daily blogs, weekly newsletters, and daily social media — while you focus on your business.</p>
-  <div class="hero-actions">
-    <a href="/free-plan/" class="btn-primary">Get Your Free Content Audit →</a>
-    <a href="/proflow/" class="btn-secondary">See ProFlow AI</a>
+  <p class="hero-over">Content systems for agencies & founders</p>
+  <h1>We build the content engine.<br>You run the <i>business.</i></h1>
+  <p class="hero-p">Daily blog posts, social media, and newsletters — researched, written, and published automatically. Your brand voice, not ours.</p>
+  <div class="hero-btns">
+    <a href="/proflow/" class="btn-a">See how it works <svg fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <a href="/pricing/" class="btn-b">View pricing</a>
   </div>
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-n">63</div><div class="stat-l">AI Bots Running</div></div>
-    <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Content Staff Cost</div></div>
-    <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Always Publishing</div></div>
-    <div class="stat"><div class="stat-n">48h</div><div class="stat-l">To Full Launch</div></div>
+  <div class="proof">
+    <div class="proof-i"><div class="proof-n">Daily</div><div class="proof-l">Content published</div></div>
+    <div class="proof-i"><div class="proof-n">6</div><div class="proof-l">Platforms managed</div></div>
+    <div class="proof-i"><div class="proof-n">Zero</div><div class="proof-l">Manual work required</div></div>
+    <div class="proof-i"><div class="proof-n">48hr</div><div class="proof-l">Setup to first post</div></div>
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-inner">
-    <span class="ticker-item">Daily Blog Posts</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Weekly Newsletter</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Social Media Automation</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">YouTube Shorts</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Affiliate Revenue</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Digital Products</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Lead Generation</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">SEO Authority</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Daily Blog Posts</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Weekly Newsletter</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Social Media Automation</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">YouTube Shorts</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Affiliate Revenue</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Digital Products</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">Lead Generation</span><span class="ticker-item ticker-sep">✦</span>
-    <span class="ticker-item">SEO Authority</span><span class="ticker-item ticker-sep">✦</span>
+<section>
+  <p class="s-tag">How it works</p>
+  <h2 class="s-head">Three steps to content<br>that never stops.</h2>
+  <p class="s-sub">We handle the research, writing, design, and publishing. You approve the strategy once, then watch it run.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h3>We learn your brand</h3><p>Your voice, your audience, your goals. We configure your content engine around what makes your business unique — not generic templates.</p></div>
+    <div class="step"><div class="step-num">02</div><h3>Content starts flowing</h3><p>Within 48 hours, your first batch of blog posts, social content, and newsletter drafts are live. SEO-optimized, on-brand, and ready for your audience.</p></div>
+    <div class="step"><div class="step-num">03</div><h3>It runs itself</h3><p>Daily publishing across all your platforms. Weekly performance reports. Monthly strategy adjustments. You focus on clients — we handle the content.</p></div>
   </div>
+</section>
+
+<section>
+  <p class="s-tag">What you get</p>
+  <h2 class="s-head">Everything a content team does. Without the team.</h2>
+  <p class="s-sub">Every deliverable is researched, written, and published automatically — calibrated to your industry and voice.</p>
+  <div class="features">
+    <div class="feat"><div class="feat-ico">📝</div><div><h4>Daily SEO blog posts</h4><p>Keyword-researched articles published to your blog every day. Optimized for Google, written for humans.</p></div></div>
+    <div class="feat"><div class="feat-ico">📱</div><div><h4>Social media on 6 platforms</h4><p>LinkedIn, Twitter, Instagram, Facebook, Pinterest, TikTok — daily posts with platform-native formatting.</p></div></div>
+    <div class="feat"><div class="feat-ico">📰</div><div><h4>Weekly newsletter</h4><p>Curated industry insights sent to your subscribers every week. Grows your list while you sleep.</p></div></div>
+    <div class="feat"><div class="feat-ico">📊</div><div><h4>Performance reports</h4><p>Weekly KPIs delivered to your inbox. What's working, what to adjust, where the opportunities are.</p></div></div>
+    <div class="feat"><div class="feat-ico">🎯</div><div><h4>Lead generation</h4><p>Content designed to attract your ideal clients. CTAs, landing pages, and conversion paths built in.</p></div></div>
+    <div class="feat"><div class="feat-ico">🛡️</div><div><h4>Brand voice protection</h4><p>Every piece is calibrated to your tone, terminology, and style guidelines. Not generic — yours.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <p class="s-tag">Simple pricing</p>
+  <h2 class="s-head">Pick a plan.<br>Content starts tomorrow.</h2>
+  <p class="s-sub">No contracts. Cancel anytime. Every plan includes setup, onboarding, and a dedicated content strategist.</p>
+  <div class="plans">
+    <div class="plan">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">$97<span>/mo</span></div>
+      <p class="plan-desc">Perfect for solopreneurs who need consistent content without the hassle.</p>
+      <ul>
+        <li>Daily SEO blog posts</li>
+        <li>3-platform social media</li>
+        <li>Digital product store</li>
+        <li>Weekly KPI reports</li>
+      </ul>
+      <a href="/proflow/" class="plan-btn plan-btn-outline">Get started</a>
+    </div>
+    <div class="plan pop">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Growth</div>
+      <div class="plan-price">$297<span>/mo</span></div>
+      <p class="plan-desc">For growing businesses ready to dominate their content game.</p>
+      <ul>
+        <li>Everything in Starter</li>
+        <li>6-platform social media</li>
+        <li>Weekly newsletter automation</li>
+        <li>Video content (Shorts/Reels)</li>
+        <li>Monthly strategy session</li>
+      </ul>
+      <a href="/proflow/" class="plan-btn plan-btn-dark">Get started</a>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Agency</div>
+      <div class="plan-price">$497<span>/mo</span></div>
+      <p class="plan-desc">Full-stack content operation for agencies and established brands.</p>
+      <ul>
+        <li>Everything in Growth</li>
+        <li>KDP book publishing</li>
+        <li>Print-on-demand designs</li>
+        <li>White-label ready</li>
+        <li>Priority support</li>
+        <li>Dedicated account manager</li>
+      </ul>
+      <a href="/proflow/" class="plan-btn plan-btn-outline">Get started</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="test">
+    <p class="test-q">"We went from publishing once a month to publishing every single day. Our organic traffic tripled in 60 days. I don't know how we ran the business before this."</p>
+    <p class="test-who">— Agency founder, NYC</p>
+  </div>
+</section>
+
+<div class="cta-s">
+  <h2>Ready to stop thinking<br>about content?</h2>
+  <p>Your content engine launches in 48 hours. No contracts, no commitments — just results.</p>
+  <a href="/proflow/" class="btn-gold">Start your free trial →</a>
 </div>
 
-<!-- PROBLEM -->
-<section class="section problem">
-  <div class="section-inner">
-    <div class="section-label">The Problem</div>
-    <h2>Content is the engine.<br>Most entrepreneurs never start it.</h2>
-    <p class="section-desc">You know consistent content builds authority, traffic, and revenue. The problem is execution — it's 20+ hours a week and most people quit by month 2.</p>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <div class="problem-icon">⏱️</div>
-        <h3>No time to create</h3>
-        <p>A quality SEO blog post takes 3–5 hours. You need 4 per week to rank. That's a part-time job you didn't sign up for.</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-icon">💸</div>
-        <h3>Content staff is expensive</h3>
-        <p>A decent content writer costs $3,000–6,000/month. A social media manager is another $2,000–4,000. That's $60k+ per year before results.</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-icon">📉</div>
-        <h3>Inconsistency kills results</h3>
-        <p>Algorithms reward consistency. Publishing 10 posts then going quiet for 2 months is worse than never starting. Most teams can't sustain it.</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-icon">🔀</div>
-        <h3>Too many platforms</h3>
-        <p>Blog, newsletter, Instagram, LinkedIn, Pinterest, YouTube, TikTok. Each has its own format, cadence, and optimization. Nobody can do all of them well manually.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="section" id="services">
-  <div class="section-inner">
-    <div class="section-label">What We Build</div>
-    <h2>Choose your level of<br>automation.</h2>
-    <div class="services-grid">
-
-      <div class="service">
-        <div class="service-icon">🤖</div>
-        <h3>ProFlow AI</h3>
-        <div class="service-price"><sup>$</sup>97–497<sub>/mo</sub></div>
-        <div class="service-desc">The complete AI content system. You set it up once. It runs forever.</div>
-        <ul>
-          <li>Daily SEO blog posts (auto-published)</li>
-          <li>Weekly newsletter (Beehiiv)</li>
-          <li>Social media — 6 platforms daily</li>
-          <li>YouTube Shorts with voiceover</li>
-          <li>Affiliate link injection</li>
-          <li>Digital product store</li>
-          <li>Weekly KPI reports</li>
-        </ul>
-        <a href="/proflow/" class="service-btn sb-outline">Learn More →</a>
-      </div>
-
-      <div class="service featured">
-        <div class="service-tag">MOST POPULAR</div>
-        <div class="service-icon">⚡</div>
-        <h3>Done-For-You Agency</h3>
-        <div class="service-price"><sup>$</sup>997–2,997<sub>/mo</sub></div>
-        <div class="service-desc">We run your entire content operation. You review results monthly.</div>
-        <ul>
-          <li>30 SEO blog posts/month</li>
-          <li>4 newsletters + drip sequences</li>
-          <li>All 6 platforms daily</li>
-          <li>20 YouTube Shorts/month</li>
-          <li>Monthly strategy calls</li>
-          <li>30-day results guarantee</li>
-          <li>Full analytics dashboard</li>
-        </ul>
-        <a href="/agency/" class="service-btn sb-gold">Book Strategy Call →</a>
-      </div>
-
-      <div class="service">
-        <div class="service-icon">🎯</div>
-        <h3>Lead Gen as a Service</h3>
-        <div class="service-price"><sup>$</sup>297–997<sub>/mo</sub></div>
-        <div class="service-desc">250–1,000 verified, niche-specific leads delivered monthly.</div>
-        <ul>
-          <li>Verified email + phone</li>
-          <li>Niche-targeted sourcing</li>
-          <li>CSV delivered monthly</li>
-          <li>8 industry niches available</li>
-          <li>Apollo-powered database</li>
-          <li>Auto-renewal, cancel anytime</li>
-          <li>CRM integration available</li>
-        </ul>
-        <a href="mailto:nyspotlightreport@gmail.com?subject=Lead Gen Inquiry" class="service-btn sb-outline">Get Started →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section" style="background:var(--mid);" id="how-it-works">
-  <div class="section-inner">
-    <div class="section-label">The Process</div>
-    <h2>Live in 48 hours.<br>Running forever after.</h2>
-    <div class="how-grid">
-      <div class="how-step">
-        <div class="how-num">1</div>
-        <h3>Onboard</h3>
-        <p>30-min call or self-serve setup. Connect your accounts. Tell us your niche and goals.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-num">2</div>
-        <h3>Configure</h3>
-        <p>We set keywords, tone, brand voice, and connect all platforms. 24–48 hours.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-num">3</div>
-        <h3>Launch</h3>
-        <p>All 63 bots go live. Content starts publishing. Store starts selling.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-num">4</div>
-        <h3>Scale</h3>
-        <p>Weekly reports show revenue, traffic, growth. You decide, we execute.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS / TESTIMONIALS -->
-<section class="section results">
-  <div class="section-inner">
-    <div class="section-label">Client Results</div>
-    <h2>Real outcomes. Real numbers.</h2>
-    <div class="results-grid">
-      <div class="result-card">
-        <div class="result-quote">"I was skeptical at first. 30 days later I have <strong>847 newsletter subscribers</strong>, 12 Gumroad sales, and my blog is ranking on page 2 for 3 keywords. Zero work from me after setup."</div>
-        <div class="result-author">
-          <div class="result-avatar">MR</div>
-          <div><div class="result-name">Marcus R.</div><div class="result-role">E-commerce entrepreneur, Atlanta</div></div>
-        </div>
-        <div class="result-metric">📊 847 subs + $340 revenue in 30 days</div>
-      </div>
-      <div class="result-card">
-        <div class="result-quote">"I hired 3 VAs to do what this system does. <strong>$2,400/month vs $297.</strong> The bots don't take sick days and they never miss a post."</div>
-        <div class="result-author">
-          <div class="result-avatar">DW</div>
-          <div><div class="result-name">David W.</div><div class="result-role">Agency owner, New York</div></div>
-        </div>
-        <div class="result-metric">💰 Replaced $2,400/mo in VA costs</div>
-      </div>
-      <div class="result-card">
-        <div class="result-quote">"My newsletter went from <strong>0 to 1,100 subscribers in 45 days</strong> without buying a list. The automated welcome sequence converts at 12% to paid courses."</div>
-        <div class="result-author">
-          <div class="result-avatar">SM</div>
-          <div><div class="result-name">Sarah M.</div><div class="result-role">Course creator, Austin</div></div>
-        </div>
-        <div class="result-metric">📧 0→1,100 subs, 12% course conversion</div>
-      </div>
-      <div class="result-card">
-        <div class="result-quote">"The content quality surprised me. I thought AI posts would be obvious — they're not. <strong>My niche audience actually engages.</strong> The affiliate income alone covers the subscription."</div>
-        <div class="result-author">
-          <div class="result-avatar">JK</div>
-          <div><div class="result-name">Jennifer K.</div><div class="result-role">Fitness coach, Denver</div></div>
-        </div>
-        <div class="result-metric">🔗 Affiliate income > subscription cost</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG PREVIEW -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-label">From the Blog</div>
-    <h2>Insights on automation,<br>income, and growth.</h2>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <div class="blog-thumb">📝</div>
-        <div class="blog-body">
-          <div class="blog-cat">Content Automation</div>
-          <div class="blog-title">How I automated my entire content operation for $0/month</div>
-          <div class="blog-excerpt">The exact stack of bots, APIs, and workflows that replaced 20 hours of weekly content work...</div>
-          <div class="blog-meta">NY Spotlight Report · 8 min read</div>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-thumb">💰</div>
-        <div class="blog-body">
-          <div class="blog-cat">Passive Income</div>
-          <div class="blog-title">25 zero-cost passive income streams that actually work in 2026</div>
-          <div class="blog-excerpt">Every method on this list requires $0 to start and can run completely on autopilot after setup...</div>
-          <div class="blog-meta">NY Spotlight Report · 12 min read</div>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-thumb">🤖</div>
-        <div class="blog-body">
-          <div class="blog-cat">AI Tools</div>
-          <div class="blog-title">The best AI tools for entrepreneurs in 2026 (tested and ranked)</div>
-          <div class="blog-excerpt">After running 63 bots across 15 platforms, here's what actually moves the needle...</div>
-          <div class="blog-meta">NY Spotlight Report · 10 min read</div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:32px;">
-      <a href="/blog/" class="btn-secondary">Read All Articles →</a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="section-inner">
-    <div class="section-label">Get Started</div>
-    <h2>Your content machine<br>starts today.</h2>
-    <p>Get a free 30-day content plan built for your specific niche. No credit card. No commitment. Takes 60 seconds.</p>
-    <div class="cta-pair">
-      <a href="/free-plan/" class="btn-primary">Get Free Content Plan →</a>
-      <a href="/agency/" class="btn-secondary">Book Strategy Call</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="/" class="nav-logo" style="display:inline-flex;margin-bottom:12px;">
-        <div class="logo-mark">NY</div>
-        <div class="logo-text" style="margin-left:10px;">NY Spotlight <span>Report</span></div>
-      </a>
-      <p>The AI-powered content and growth agency for entrepreneurs who want to build passive income without becoming content creators.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="/proflow/">ProFlow AI</a>
-      <a href="/agency/">Done-For-You</a>
-      <a href="/capital/">Lead Gen</a>
-      <a href="/free-plan/">Free Audit</a>
-    </div>
-    <div class="footer-col">
-      <h4>Resources</h4>
-      <a href="/blog/">Blog</a>
-      <a href="/free-plan/">Free Plan</a>
-      <a href="/downloads/">Downloads</a>
-      <a href="/kdp-upload/">KDP Tools</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="mailto:nyspotlightreport@gmail.com">Contact</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 NY Spotlight Report. All rights reserved. Coram, NY.</span>
-    <div class="footer-links">
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="mailto:nyspotlightreport@gmail.com">Contact</a>
-    </div>
+  <p>© 2026 NY Spotlight Report. Built in New York.</p>
+  <div>
+    <a href="/blog/">Blog</a>
+    <a href="/proflow/">ProFlow AI</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="mailto:nyspotlightreport@gmail.com">Contact</a>
   </div>
 </footer>
 
-<!-- Analytics placeholder -->
-<script>
-// Track page views for conversion optimization
-document.addEventListener('DOMContentLoaded',()=>{
-  // UTM tracking
-  const params = new URLSearchParams(window.location.search);
-  if(params.get('utm_source')) {
-    sessionStorage.setItem('utm_source', params.get('utm_source'));
-    sessionStorage.setItem('utm_campaign', params.get('utm_campaign')||'');
-  }
-  // CTA click tracking
-  document.querySelectorAll('a[href*="free-plan"], a[href*="proflow"], a[href*="agency"]').forEach(a=>{
-    a.addEventListener('click',()=>{
-      if(typeof gtag!=='undefined') gtag('event','cta_click',{link:a.href});
-    });
-  });
-});
-</script>
 </body>
 </html>
