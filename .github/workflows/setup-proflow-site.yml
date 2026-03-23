@@ -1,0 +1,153 @@
+name: Setup ProFlow Netlify Site
+on: workflow_dispatch
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Netlify site and configure domain
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          python3 << 'EOF'
+          import json, os, urllib.request
+
+          token = os.environ['TOKEN']
+
+          # Step 1: Create a new Netlify site linked to the NY-Spotlight-Report-good repo
+          print("=== Creating new Netlify site for myproflow.org ===")
+          payload = json.dumps({
+            "name": "myproflow",
+            "custom_domain": "myproflow.org",
+            "repo": {
+              "provider": "github",
+              "repo": "nyspotlightreport/NY-Spotlight-Report-good",
+              "branch": "main",
+              "cmd": "echo ok",
+              "dir": "."
+            }
+          }).encode()
+
+          req = urllib.request.Request(
+            "https://api.netlify.com/api/v1/sites",
+            data=payload,
+            headers={
+              "Authorization": f"Bearer {token}",
+              "Content-Type": "application/json"
+            },
+            method="POST"
+          )
+
+          try:
+            resp = urllib.request.urlopen(req)
+            site = json.loads(resp.read())
+            site_id = site.get("id", "")
+            site_url = site.get("ssl_url", "")
+            default_domain = site.get("default_domain", "")
+            print(f"Site created: {site_id}")
+            print(f"Default domain: {default_domain}")
+            print(f"SSL URL: {site_url}")
+            print(f"Custom domain: {site.get('custom_domain', '')}")
+          except urllib.error.HTTPError as e:
+            body = e.read().decode()
+            print(f"Create failed ({e.code}): {body[:500]}")
+            # If site already exists, try to find it
+            print("\nLooking for existing site...")
+            req2 = urllib.request.Request(
+              "https://api.netlify.com/api/v1/sites?filter=all&per_page=100",
+              headers={"Authorization": f"Bearer {token}"}
+            )
+            resp2 = urllib.request.urlopen(req2)
+            sites = json.loads(resp2.read())
+            for s in sites:
+              if "proflow" in (s.get("name","") + s.get("custom_domain","")).lower():
+                print(f"  Found: {s['name']} | {s.get('custom_domain','')} | {s['id']}")
+                site_id = s["id"]
+                default_domain = s.get("default_domain","")
+            if not site_id:
+              print("No proflow site found")
+              exit(1)
+
+          # Step 2: Set up DNS zone for myproflow.org
+          print(f"\n=== Setting up Netlify DNS for myproflow.org ===")
+          dns_payload = json.dumps({"name": "myproflow.org"}).encode()
+          dns_req = urllib.request.Request(
+            "https://api.netlify.com/api/v1/dns_zones",
+            data=dns_payload,
+            headers={
+              "Authorization": f"Bearer {token}",
+              "Content-Type": "application/json"
+            },
+            method="POST"
+          )
+          try:
+            dns_resp = urllib.request.urlopen(dns_req)
+            dns_data = json.loads(dns_resp.read())
+            print(f"DNS Zone created: {dns_data.get('id','')}")
+            print(f"DNS Zone name: {dns_data.get('name','')}")
+            nameservers = dns_data.get("dns_servers", [])
+            print(f"\n=== NAMESERVERS (set these in Namecheap) ===")
+            for ns in nameservers:
+              print(f"  {ns}")
+          except urllib.error.HTTPError as e:
+            body = e.read().decode()
+            print(f"DNS zone error ({e.code}): {body[:300]}")
+            # Try to get existing DNS zone
+            try:
+              zones_req = urllib.request.Request(
+                "https://api.netlify.com/api/v1/dns_zones",
+                headers={"Authorization": f"Bearer {token}"}
+              )
+              zones_resp = urllib.request.urlopen(zones_req)
+              zones = json.loads(zones_resp.read())
+              for z in zones:
+                if "myproflow" in z.get("name",""):
+                  print(f"Found existing zone: {z['name']}")
+                  nameservers = z.get("dns_servers", [])
+                  print(f"\n=== NAMESERVERS ===")
+                  for ns in nameservers:
+                    print(f"  {ns}")
+            except:
+              pass
+
+          # Step 3: Copy env vars from existing site to new site
+          print(f"\n=== Copying env vars to new site ===")
+          existing_site = os.environ.get("EXISTING_SITE", "8ef722e1-4110-42af-8ddb-ff6c2ce1745e")
+          env_req = urllib.request.Request(
+            f"https://api.netlify.com/api/v1/accounts/me/env?site_id={existing_site}",
+            headers={"Authorization": f"Bearer {token}"}
+          )
+          env_resp = urllib.request.urlopen(env_req)
+          env_vars = json.loads(env_resp.read())
+          print(f"Found {len(env_vars)} env vars to copy")
+
+          for ev in env_vars:
+            key = ev["key"]
+            values = ev.get("values", [])
+            if not values:
+              continue
+            val = values[0].get("value", "")
+            if not val:
+              continue
+            copy_payload = json.dumps([{
+              "key": key,
+              "scopes": ["functions", "runtime"],
+              "values": [{"context": "all", "value": val}]
+            }]).encode()
+            copy_req = urllib.request.Request(
+              f"https://api.netlify.com/api/v1/accounts/me/env?site_id={site_id}",
+              data=copy_payload,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              method="POST"
+            )
+            try:
+              urllib.request.urlopen(copy_req)
+              print(f"  Copied: {key}")
+            except:
+              print(f"  Exists: {key}")
+
+          print(f"\n=== DONE ===")
+          print(f"Site ID: {site_id}")
+          print(f"Default URL: https://{default_domain}")
+          print(f"Custom domain: myproflow.org")
+          print(f"\nNext: Set nameservers in Namecheap to point to Netlify DNS")
+          EOF
