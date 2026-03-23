@@ -2,6 +2,7 @@
   "name": "nysr-site",
   "version": "1.0.0",
   "dependencies": {
-    "nodemailer": "^8.0.3"
+    "nodemailer": "^8.0.3",
+    "stripe": "^20.4.1"
   }
 }
