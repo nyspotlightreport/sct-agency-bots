@@ -1,0 +1,63 @@
+name: Set Auth Env Vars on Netlify
+on: workflow_dispatch
+jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set ADMIN_EMAIL, ADMIN_PASSWORD_HASH, JWT_SECRET
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          ADMIN_EMAIL_VAL: ${{ secrets.CHAIRMAN_EMAIL }}
+          ADMIN_HASH_VAL: ${{ secrets.ADMIN_PASSWORD_HASH }}
+          JWT_SECRET_VAL: ${{ secrets.JWT_SECRET }}
+        run: |
+          python3 << 'EOF'
+          import json, os, urllib.request
+
+          token = os.environ['NETLIFY_TOKEN']
+          site = os.environ['SITE_ID']
+
+          env_vars = {
+            'ADMIN_EMAIL': os.environ.get('ADMIN_EMAIL_VAL', ''),
+            'ADMIN_PASSWORD_HASH': os.environ.get('ADMIN_HASH_VAL', ''),
+            'JWT_SECRET': os.environ.get('JWT_SECRET_VAL', ''),
+          }
+
+          for key, val in env_vars.items():
+            if not val:
+              print(f'Skipping {key} (empty/not in secrets)')
+              continue
+            payload = json.dumps([{
+              'key': key,
+              'scopes': ['functions', 'runtime'],
+              'values': [{'context': 'all', 'value': val}]
+            }]).encode()
+            req = urllib.request.Request(
+              f'https://api.netlify.com/api/v1/accounts/me/env?site_id={site}',
+              data=payload,
+              headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+              method='POST'
+            )
+            try:
+              resp = urllib.request.urlopen(req)
+              print(f'Created {key}: {resp.status}')
+            except Exception as e:
+              print(f'{key} may exist, trying PUT...')
+              payload2 = json.dumps({
+                'key': key,
+                'scopes': ['functions', 'runtime'],
+                'values': [{'context': 'all', 'value': val}]
+              }).encode()
+              try:
+                req2 = urllib.request.Request(
+                  f'https://api.netlify.com/api/v1/accounts/me/env/{key}?site_id={site}',
+                  data=payload2,
+                  headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+                  method='PUT'
+                )
+                resp2 = urllib.request.urlopen(req2)
+                print(f'Updated {key}: {resp2.status}')
+              except Exception as e2:
+                print(f'Failed {key}: {e2}')
+          EOF
