@@ -1,0 +1,45 @@
+name: Check Deploy Logs
+on: workflow_dispatch
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get deploy error log
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          python3 -c "
+          import json, os, urllib.request
+          token = os.environ['TOKEN']
+          site = os.environ['SITE']
+          
+          # Get latest deploys
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}/deploys?per_page=5',
+            headers={'Authorization': f'Bearer {token}'}
+          )
+          resp = urllib.request.urlopen(req)
+          deploys = json.loads(resp.read())
+          
+          for d in deploys[:3]:
+            print(f'Deploy: {d[\"id\"]} | State: {d[\"state\"]} | Created: {d[\"created_at\"]}')
+            print(f'  Error: {d.get(\"error_message\", \"none\")}')
+            print(f'  Title: {d.get(\"title\", \"\")}')
+            print(f'  Branch: {d.get(\"branch\", \"\")}')
+            print(f'  Deploy URL: {d.get(\"deploy_url\", \"\")}')
+            print(f'  Framework: {d.get(\"framework\", \"none\")}')
+            print(f'  Published: {d.get(\"published_deploy\", {}).get(\"id\", \"not published\")}')
+            print()
+          
+          # Get the latest deploy's detailed log
+          latest = deploys[0]
+          print(f'--- Full log for {latest[\"id\"]} ---')
+          log_url = f'https://api.netlify.com/api/v1/deploys/{latest[\"id\"]}'
+          req2 = urllib.request.Request(log_url, headers={'Authorization': f'Bearer {token}'})
+          resp2 = urllib.request.urlopen(req2)
+          detail = json.loads(resp2.read())
+          for key in ['state','error_message','deploy_ssl_url','function_schedules','summary']:
+            if key in detail and detail[key]:
+              print(f'{key}: {detail[key]}')
+          "
