@@ -1,39 +1,43 @@
-name: Sync ALL Secrets to Netlify
+name: Set Netlify Environment Variables
 on:
   workflow_dispatch:
 jobs:
-  sync:
+  set-env:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install -g netlify-cli
-      - name: Sync
+      - name: Set ELEVENLABS_API_KEY on Netlify
         run: |
-          S="8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
-          sv() { [ -n "$2" ] && netlify env:set "$1" "$2" --site "$S" 2>&1|tail -1 && echo "SET $1" || echo "SKIP $1"; }
-          sv STRIPE_SECRET_KEY "$V1"; sv GMAIL_APP_PASS "$V2"; sv SMTP_USER "$V3"
-          sv SUPABASE_URL "$V4"; sv SUPABASE_KEY "$V5"
-          sv PUSHOVER_API_KEY "$V6"; sv PUSHOVER_USER_KEY "$V7"; sv GH_PAT "$V8"
-          sv HUBSPOT_API_KEY "$V9"; sv ANTHROPIC_API_KEY "$V10"; sv OPENAI_API_KEY "$V11"
-          sv GMAIL_USER "$V12"; sv TICKET_TAILOR_API_KEY "$V13"
-          sv HUBSPOT_PORTAL_ID "$V14"; sv STRIPE_ACCOUNT_ID "$V15"
-          echo "Redeploying..."
-          netlify deploy --prod --dir site --site "$S" --message "Secret sync" 2>&1|tail -3
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          V1: ${{ secrets.STRIPE_SECRET_KEY }}
-          V2: ${{ secrets.GMAIL_APP_PASS }}
-          V3: ${{ secrets.SMTP_USER }}
-          V4: ${{ secrets.SUPABASE_URL }}
-          V5: ${{ secrets.SUPABASE_KEY }}
-          V6: ${{ secrets.PUSHOVER_API_KEY }}
-          V7: ${{ secrets.PUSHOVER_USER_KEY }}
-          V8: ${{ secrets.GH_PAT }}
-          V9: ${{ secrets.HUBSPOT_API_KEY }}
-          V10: ${{ secrets.ANTHROPIC_API_KEY }}
-          V11: ${{ secrets.OPENAI_API_KEY }}
-          V12: ${{ secrets.GMAIL_USER }}
-          V13: ${{ secrets.TICKET_TAILOR_API_KEY }}
-          V14: ${{ secrets.HUBSPOT_PORTAL_ID }}
-          V15: ${{ secrets.STRIPE_ACCOUNT_ID }}
+          curl -s -X PATCH \
+            "https://api.netlify.com/api/v1/accounts/me/env/ELEVENLABS_API_KEY?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
+            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"key":"ELEVENLABS_API_KEY","scopes":["functions"],"values":[{"context":"all","value":"${{ secrets.ELEVENLABS_API_KEY }}"}]}' || \
+          curl -s -X POST \
+            "https://api.netlify.com/api/v1/accounts/me/env?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
+            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '[{"key":"ELEVENLABS_API_KEY","scopes":["functions"],"values":[{"context":"all","value":"${{ secrets.ELEVENLABS_API_KEY }}"}]}]'
+      - name: Set TWILIO_AUTH_TOKEN on Netlify
+        run: |
+          curl -s -X PATCH \
+            "https://api.netlify.com/api/v1/accounts/me/env/TWILIO_AUTH_TOKEN?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
+            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"key":"TWILIO_AUTH_TOKEN","scopes":["functions"],"values":[{"context":"all","value":"${{ secrets.TWILIO_AUTH_TOKEN }}"}]}' || \
+          curl -s -X POST \
+            "https://api.netlify.com/api/v1/accounts/me/env?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
+            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '[{"key":"TWILIO_AUTH_TOKEN","scopes":["functions"],"values":[{"context":"all","value":"${{ secrets.TWILIO_AUTH_TOKEN }}"}]}]'
+      - name: Set ELEVENLABS_VOICE_ID on Netlify
+        run: |
+          curl -s -X POST \
+            "https://api.netlify.com/api/v1/accounts/me/env?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
+            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '[{"key":"ELEVENLABS_VOICE_ID","scopes":["functions"],"values":[{"context":"all","value":"EXAVITQu4vr4xnSDxMaL"}]}]' || true
+      - name: Verify env vars
+        run: |
+          echo "Listing Netlify env vars for site..."
+          curl -s "https://api.netlify.com/api/v1/accounts/me/env?site_id=${{ secrets.NETLIFY_SITE_ID }}" \
+            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" | python3 -c "import sys,json; [print(e['key']) for e in json.load(sys.stdin)]"
