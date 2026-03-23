@@ -1,0 +1,44 @@
+name: Check Netlify Deploy
+on: workflow_dispatch
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check latest deploy
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          python3 -c "
+          import json, os, urllib.request
+          token = os.environ['TOKEN']
+          site = os.environ['SITE']
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}/deploys?per_page=3',
+            headers={'Authorization': f'Bearer {token}'}
+          )
+          resp = urllib.request.urlopen(req)
+          deploys = json.loads(resp.read())
+          for d in deploys:
+            print(f'{d[\"id\"]} | {d[\"state\"]} | {d[\"created_at\"]} | {d.get(\"title\",\"\")}')
+          "
+      - name: Trigger new deploy
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          python3 -c "
+          import json, os, urllib.request
+          token = os.environ['TOKEN']
+          site = os.environ['SITE']
+          # Trigger a new deploy with clear cache
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}/builds',
+            data=json.dumps({'clear_cache': True}).encode(),
+            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+            method='POST'
+          )
+          resp = urllib.request.urlopen(req)
+          data = json.loads(resp.read())
+          print(f'Triggered deploy: {data.get(\"id\", \"unknown\")} | state: {data.get(\"state\", \"unknown\")}')
+          "
