@@ -1,0 +1,80 @@
+name: Fix Netlify Deploy
+on: workflow_dispatch
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check and fix build settings
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          python3 -c "
+          import json, os, urllib.request
+
+          token = os.environ['TOKEN']
+          site = os.environ['SITE']
+
+          # Get current site settings
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}',
+            headers={'Authorization': f'Bearer {token}'}
+          )
+          resp = urllib.request.urlopen(req)
+          data = json.loads(resp.read())
+
+          print('=== Current Build Settings ===')
+          br = data.get('build_settings', {})
+          print(f'Build command: {br.get(\"cmd\", \"(none)\")}')
+          print(f'Publish dir: {br.get(\"dir\", \"(none)\")}')
+          print(f'Functions dir: {br.get(\"functions_dir\", \"(none)\")}')
+          print(f'Base dir: {br.get(\"base\", \"(none)\")}')
+          print(f'Package path: {br.get(\"package_path\", \"(none)\")}')
+          print(f'Repo URL: {br.get(\"repo_url\", \"(none)\")}')
+          print(f'Repo branch: {br.get(\"repo_branch\", \"(none)\")}')
+          print()
+
+          # Update build settings to remove build command
+          payload = json.dumps({
+            'build_settings': {
+              'cmd': '',
+              'dir': '',
+              'functions_dir': 'netlify/functions',
+              'base': '',
+            }
+          }).encode()
+
+          req2 = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}',
+            data=payload,
+            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+            method='PATCH'
+          )
+          resp2 = urllib.request.urlopen(req2)
+          result = json.loads(resp2.read())
+          print('=== Updated Build Settings ===')
+          br2 = result.get('build_settings', {})
+          print(f'Build command: {br2.get(\"cmd\", \"(none)\")}')
+          print(f'Publish dir: {br2.get(\"dir\", \"(none)\")}')
+          print(f'Functions dir: {br2.get(\"functions_dir\", \"(none)\")}')
+          "
+
+      - name: Trigger clean deploy
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          python3 -c "
+          import json, os, urllib.request
+          token = os.environ['TOKEN']
+          site = os.environ['SITE']
+          req = urllib.request.Request(
+            f'https://api.netlify.com/api/v1/sites/{site}/builds',
+            data=json.dumps({'clear_cache': True}).encode(),
+            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+            method='POST'
+          )
+          resp = urllib.request.urlopen(req)
+          data = json.loads(resp.read())
+          print(f'Triggered clean deploy: {data.get(\"deploy_id\", \"unknown\")}')
+          "
