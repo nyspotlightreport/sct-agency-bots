@@ -140,8 +140,8 @@ def check_onboarding_page():
 
 
 def check_gumroad_webhook():
-    """Gumroad delivery webhook should be active (responds to ping)."""
-    url = f"{SITE}/.netlify/functions/gumroad-webhook"
+    """Gumroad delivery function should be active (responds to ping)."""
+    url = f"{SITE}/.netlify/functions/gumroad-delivery"
     try:
         req = urllib.request.Request(url, method="GET")
         resp = urllib.request.urlopen(req, timeout=15)
