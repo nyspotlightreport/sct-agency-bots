@@ -1,0 +1,64 @@
+name: Cross-Repo File Parity Check
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+jobs:
+  parity:
+    name: Check File Parity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: code-repo
+
+      - name: Clone live repo
+        run: |
+          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
+
+      - name: Compare files
+        id: compare
+        run: |
+          MISSING=""
+
+          # Check HTML files from site/
+          if [ -d "code-repo/site" ]; then
+            cd code-repo/site
+            find . -name "*.html" -type f | while read f; do
+              rel="${f#./}"
+              if [ ! -f "/tmp/live-repo/$rel" ]; then
+                MISSING="${MISSING}site/$rel -> $rel\n"
+              fi
+            done
+            cd ../..
+          fi
+
+          # Check netlify functions
+          if [ -d "code-repo/netlify/functions" ]; then
+            for f in code-repo/netlify/functions/*.js; do
+              fname=$(basename "$f")
+              if [ ! -f "/tmp/live-repo/netlify/functions/$fname" ]; then
+                MISSING="${MISSING}netlify/functions/$fname\n"
+              fi
+            done
+          fi
+
+          if [ -n "$MISSING" ]; then
+            echo "has_drift=true" >> $GITHUB_OUTPUT
+            echo "missing<<EOF" >> $GITHUB_OUTPUT
+            echo -e "$MISSING" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "has_drift=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Alert on drift
+        if: steps.compare.outputs.has_drift == 'true'
+        run: |
+          curl -s -F "token=${{ secrets.PUSHOVER_API_KEY }}" \
+               -F "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+               -F "title=⚠️ UNDEPLOYED FILES" \
+               -F "message=Files in code repo but NOT live repo:
+          ${{ steps.compare.outputs.missing }}" \
+               https://api.pushover.net/1/messages.json

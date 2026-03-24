@@ -1,0 +1,72 @@
+name: Auto-Sync to Live Site Repo
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  sync:
+    name: Sync to NY-Spotlight-Report-good
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone live repo
+        run: |
+          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
+
+      - name: Sync site files (strip site/ prefix)
+        run: |
+          if [ -d "site" ]; then
+            rsync -av --delete --exclude='.git' --exclude='.github' --exclude='netlify' --exclude='package.json' --exclude='node_modules' site/ /tmp/live-repo/
+          fi
+
+      - name: Sync netlify functions
+        run: |
+          if [ -d "netlify/functions" ]; then
+            mkdir -p /tmp/live-repo/netlify/functions
+            rsync -av netlify/functions/ /tmp/live-repo/netlify/functions/
+          fi
+
+      - name: Sync netlify.toml (transform publish path)
+        run: |
+          if [ -f "netlify.toml" ]; then
+            sed 's/publish = "site"/publish = "."/' netlify.toml > /tmp/live-repo/netlify.toml
+          fi
+
+      - name: Merge package.json dependencies
+        run: |
+          if [ -f "package.json" ] && [ -f "/tmp/live-repo/package.json" ]; then
+            cd /tmp/live-repo
+            node -e "
+              const src = JSON.parse(require('fs').readFileSync('$GITHUB_WORKSPACE/package.json','utf8'));
+              const dst = JSON.parse(require('fs').readFileSync('package.json','utf8'));
+              dst.dependencies = {...(dst.dependencies||{}), ...(src.dependencies||{})};
+              require('fs').writeFileSync('package.json', JSON.stringify(dst, null, 2) + '\n');
+            "
+          fi
+
+      - name: Commit and push
+        run: |
+          cd /tmp/live-repo
+          git config user.name "SCT Auto-Sync Bot"
+          git config user.email "sync@nyspotlightreport.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+          else
+            git commit -m "auto-sync from sct-agency-bots [$(echo $GITHUB_SHA | cut -c1-7)]"
+            git push origin main
+          fi
+
+      - name: Alert on failure
+        if: failure()
+        run: |
+          curl -s -F "token=${{ secrets.PUSHOVER_API_KEY }}" \
+               -F "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+               -F "title=SYNC FAILED" \
+               -F "message=Auto-sync to live repo failed. Commit: ${{ github.sha }}" \
+               -F "priority=1" \
+               https://api.pushover.net/1/messages.json

@@ -57,7 +57,7 @@ exports.handler = async (event) => {
         await fetch(`${SUPA_URL}/rest/v1/contacts`, {
           method: 'POST',
           headers: { 'apikey': SUPA_KEY, 'Authorization': `Bearer ${SUPA_KEY}`, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
-          body: JSON.stringify({ email, name, phone, score, source, stage: 'LEAD', tags: ['web_capture'], created_at: new Date().toISOString() })
+          body: JSON.stringify({ email, name, phone, score, source, stage: 'LEAD', nurture_stage: 0, tags: ['web_capture'], created_at: new Date().toISOString() })
         });
         results.saved.push('supabase_created');
       }

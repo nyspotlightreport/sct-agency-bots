@@ -1,24 +1,22 @@
-name: Email Blaster - Daily Outreach
+name: Chairman Morning Briefing
 on:
   schedule:
-    - cron: '0 14 * * 1-5'
+    - cron: '0 11 * * *'
   workflow_dispatch:
 env:
-  GMAIL_USER: ${{ secrets.GMAIL_USER }}
-  GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
   PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
 jobs:
-  blast:
-    name: Send Daily Cold Emails
+  briefing:
+    name: Generate Morning Briefing
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python agents/email_blaster.py
+      - run: python agents/chairman_briefing.py

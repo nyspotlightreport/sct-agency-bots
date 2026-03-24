@@ -162,3 +162,51 @@ All 10 existing titles have KDP-ready cover JPGs in `site/downloads/covers/`.
 - [ ] Upload all 10 ready titles to KDP
 - [ ] Check "Expanded Distribution" for all
 - [ ] Set 72-hour price matching after publish
+
+---
+
+## STEP-BY-STEP KDP UPLOAD INSTRUCTIONS
+
+### For Each Book (repeat 10 times):
+
+1. **Go to** https://kdp.amazon.com and sign in
+2. Click **"Create New Title"** → **Paperback** (do Kindle eBook too for dual listing)
+3. **Book Details Tab:**
+   - Language: English
+   - Book Title: [exact title from list above]
+   - Subtitle: (optional, use keyword-rich subtitle)
+   - Series: "NY Spotlight Report Planners" (for planners) or skip
+   - Edition: 1
+   - Author: "NY Spotlight Report" or "S.C. Thomas"
+   - Description: Write 150+ words describing the book. Use bullet points. Include keywords.
+   - Publishing Rights: "I own the copyright"
+   - Keywords: Enter all 7 keywords from the listing above (one per box)
+   - Categories: Select the category listed above (search for it)
+   - Adult Content: No
+4. **Content Tab:**
+   - Upload manuscript: Use the PDF file listed for that title
+   - Upload cover: Use the JPG from site/downloads/covers/
+   - Interior: Black & white, cream paper, 6x9 trim size (standard)
+   - Bleed: No bleed
+   - Click **"Launch Previewer"** — verify it looks correct
+5. **Pricing Tab:**
+   - Primary marketplace: Amazon.com
+   - Paperback list price: Use the price listed above ($5.99-$8.99)
+   - **CHECK**: "Expanded Distribution" box → YES
+   - Royalty: 60% for paperback is standard
+6. Click **"Publish Your Paperback"**
+7. **Repeat for Kindle eBook:**
+   - Same book details
+   - Upload same PDF as manuscript (KDP converts it)
+   - Kindle price: Use the Kindle price listed ($2.99-$3.99)
+   - Enroll in KDP Select (optional — gives Kindle Unlimited access, 90-day exclusive)
+8. **After publishing:** Book goes live in 24-72 hours
+   - Check back for proof approval if needed
+   - Copy the Amazon URL once live
+
+### Pro Tips:
+- Upload ALL 10 in one sitting (takes ~2 hours)
+- Use the same author name consistently
+- Add "NY Spotlight Report" as publisher name
+- Set up an Author Central page at author.amazon.com after first book is live
+- Link all books on the Author Central page for cross-selling
