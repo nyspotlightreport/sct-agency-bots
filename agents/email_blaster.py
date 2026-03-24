@@ -76,7 +76,27 @@ Chairman, NY Spotlight Report
     return subject, body
 
 def send_email(to_email, subject, body):
-    """Send email via Gmail SMTP"""
+    """Send email via Netlify relay (bypasses GitHub IP blocks on Gmail SMTP)"""
+    # Method 1: Netlify relay (works from GitHub Actions)
+    try:
+        data = json.dumps({"to": to_email, "subject": subject, "text": body}).encode()
+        req = urlreq.Request(
+            f"{SITE_URL}/.netlify/functions/send-email",
+            data=data,
+            headers={
+                "Content-Type": "application/json",
+                "x-auth-key": PUSH_API  # shared secret
+            }
+        )
+        resp = urlreq.urlopen(req, timeout=15)
+        result = json.loads(resp.read())
+        if result.get("sent"):
+            return True
+        log.warning("Relay returned: %s", result)
+    except Exception as e:
+        log.warning("Relay failed, trying direct SMTP: %s", e)
+
+    # Method 2: Direct SMTP fallback (works from local/Netlify)
     if not GMAIL_USER or not GMAIL_PASS:
         log.error("Gmail credentials not set")
         return False

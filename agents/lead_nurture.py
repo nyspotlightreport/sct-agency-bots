@@ -124,7 +124,24 @@ def should_send(lead, stage):
         return False
     return False
 
+SITE_URL = "https://nyspotlightreport.com"
+
 def send_email(to_email, subject, body):
+    # Method 1: Netlify relay (bypasses GitHub IP blocks)
+    try:
+        data = json.dumps({"to": to_email, "subject": subject, "text": body}).encode()
+        req = urlreq.Request(
+            f"{SITE_URL}/.netlify/functions/send-email",
+            data=data,
+            headers={"Content-Type": "application/json", "x-auth-key": PUSH_API}
+        )
+        resp = urlreq.urlopen(req, timeout=15)
+        result = json.loads(resp.read())
+        if result.get("sent"):
+            return True
+    except Exception as e:
+        log.warning("Relay failed, trying direct: %s", e)
+    # Method 2: Direct SMTP fallback
     if not GMAIL_USER or not GMAIL_PASS:
         return False
     try:

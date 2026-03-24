@@ -158,18 +158,27 @@ def check_gumroad_webhook():
 
 
 def check_smtp():
-    """Test Gmail SMTP login to verify email delivery capability."""
-    if not GMAIL_PASS:
-        return ["GMAIL_APP_PASS not set — cannot verify SMTP"]
+    """Test email relay endpoint (Netlify function proxies Gmail SMTP)."""
+    url = f"{SITE}/.netlify/functions/send-email"
     try:
-        ctx = ssl.create_default_context()
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ctx, timeout=10) as server:
-            server.login(GMAIL_USER, GMAIL_PASS)
-        return []
-    except smtplib.SMTPAuthenticationError:
-        return ["Gmail SMTP authentication failed — check GMAIL_APP_PASS"]
+        data = json.dumps({"to": "healthcheck@test.invalid", "subject": "healthcheck"}).encode()
+        req = urllib.request.Request(
+            url, data=data,
+            headers={"Content-Type": "application/json", "x-auth-key": PUSHOVER_API},
+            method="POST"
+        )
+        resp = urllib.request.urlopen(req, timeout=15)
+        status = resp.getcode()
+        if status == 200:
+            return []  # Relay endpoint is live
+        return [f"Email relay returned {status}"]
+    except urllib.error.HTTPError as e:
+        if e.code in (400, 401, 500):
+            body = e.read().decode("utf-8", errors="replace")[:200]
+            return [f"Email relay returned {e.code}: {body}"]
+        return [f"Email relay returned {e.code}"]
     except Exception as e:
-        return [f"Gmail SMTP connection failed: {e}"]
+        return [f"Email relay unreachable: {e}"]
 
 
 def log_to_supabase(results):

@@ -105,16 +105,20 @@ def check_cover_images():
         log.info(f"  Found {cover_count} cover images")
 
     # Cross-check: every PDF should have a corresponding cover
+    # Normalize names for fuzzy matching (strip _FULL, _cover, lowercase)
     if os.path.isdir(KDP_BOOKS_DIR):
+        cover_bases = set()
+        if os.path.isdir(COVERS_DIR):
+            for cf in os.listdir(COVERS_DIR):
+                cb = os.path.splitext(cf)[0].lower().replace("_cover", "").replace("-", "_")
+                cover_bases.add(cb)
+
         for f in os.listdir(KDP_BOOKS_DIR):
             if not f.lower().endswith(".pdf"):
                 continue
-            base = os.path.splitext(f)[0]
-            has_cover = any(
-                os.path.isfile(os.path.join(COVERS_DIR, f"{base}{ext}"))
-                for ext in image_exts
-            )
-            if not has_cover:
+            base = os.path.splitext(f)[0].lower().replace("_full", "").replace("-", "_")
+            # Check if any cover matches this normalized base
+            if not any(base.startswith(cb) or cb.startswith(base) or base in cb or cb in base for cb in cover_bases):
                 issues.append(f"No cover image found for {f}")
 
     return issues
