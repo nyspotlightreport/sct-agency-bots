@@ -1,4 +1,4 @@
-name: Secret Relay v2 + Supabase Setup
+name: Setup Relay - Secrets + Supabase + Apollo
 on: workflow_dispatch
 permissions:
   contents: write
