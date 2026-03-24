@@ -46,13 +46,14 @@ def pushover(title, msg, priority=0):
 
 
 def check_stripe_webhook():
-    """Stripe webhook GET should return 400 (signature enforced)."""
+    """Stripe webhook POST without signature should return 400 (signature enforced)."""
     url = f"{SITE}/.netlify/functions/stripe-webhook"
     try:
-        req = urllib.request.Request(url, method="GET")
+        data = json.dumps({"type": "healthcheck"}).encode()
+        req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"}, method="POST")
         resp = urllib.request.urlopen(req, timeout=15)
-        # If we get 200, that's unexpected — webhook should reject unsigned requests
-        return [f"stripe-webhook returned {resp.getcode()}, expected 400 (signature not enforced?)"]
+        # If we get 200, signature is NOT being enforced
+        return [f"stripe-webhook returned {resp.getcode()} on unsigned POST — signature not enforced!"]
     except urllib.error.HTTPError as e:
         if e.code == 400:
             return []  # Good — signature enforcement active
