@@ -17,32 +17,24 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           REPO="nyspotlightreport/NY-Spotlight-Report-good"
-          echo "=== Checking GH_PAT scopes ==="
           HEADERS=$(curl -sS -I -H "Authorization: token $GH_TOKEN" https://api.github.com/rate_limit 2>&1)
           echo "$HEADERS" | grep -i "x-oauth-scopes" || echo "No scopes header"
-          echo "=== Getting repo public key ==="
           PK_RESPONSE=$(curl -sS -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$REPO/actions/secrets/public-key")
           KEY_ID=$(echo "$PK_RESPONSE" | jq -r '.key_id')
           PUB_KEY=$(echo "$PK_RESPONSE" | jq -r '.key')
           if [ "$KEY_ID" = "null" ] || [ -z "$KEY_ID" ]; then
-            echo "::warning::GH_PAT cannot access secrets API"
-            echo "MANUAL: Set PUSHOVER_API_KEY, PUSHOVER_USER_KEY, SUPABASE_URL, SUPABASE_KEY, SUPABASE_SERVICE_KEY in NY-Spotlight-Report-good > Settings > Secrets"
+            echo "::warning::GH_PAT cannot write secrets cross-repo. Set manually."
           else
             pip install pynacl > /dev/null 2>&1
             for SECRET_NAME in PUSHOVER_API_KEY PUSHOVER_USER_KEY SUPABASE_URL SUPABASE_KEY SUPABASE_SERVICE_KEY; do
               SECRET_VALUE="${!SECRET_NAME}"
-              [ -z "$SECRET_VALUE" ] && echo "SKIP: $SECRET_NAME empty" && continue
+              [ -z "$SECRET_VALUE" ] && continue
               ENCRYPTED=$(python3 -c "
-          from base64 import b64encode, b64decode
-          from nacl import encoding, public
-          import os
-          pk = public.PublicKey(b64decode('$PUB_KEY'))
-          box = public.SealedBox(pk)
-          encrypted = box.encrypt(os.environ['$SECRET_NAME'].encode())
-          print(b64encode(encrypted).decode())
-          ")
-              HTTP_CODE=$(curl -sS -o /dev/null -w '%{http_code}' -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$REPO/actions/secrets/$SECRET_NAME" -d "{\"encrypted_value\":\"$ENCRYPTED\",\"key_id\":\"$KEY_ID\"}")
-              echo "$SECRET_NAME -> HTTP $HTTP_CODE"
+          from base64 import b64encode, b64decode; from nacl.public import PublicKey, SealedBox; import os
+          pk=PublicKey(b64decode('$PUB_KEY')); box=SealedBox(pk)
+          print(b64encode(box.encrypt(os.environ['$SECRET_NAME'].encode())).decode())")
+              HTTP=$(curl -sS -o /dev/null -w '%{http_code}' -X PUT -H "Authorization: token $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$REPO/actions/secrets/$SECRET_NAME" -d "{\"encrypted_value\":\"$ENCRYPTED\",\"key_id\":\"$KEY_ID\"}")
+              echo "$SECRET_NAME -> HTTP $HTTP"
             done
           fi
       - name: Create Supabase tables
@@ -50,21 +42,12 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
-          SQL1="CREATE TABLE IF NOT EXISTS site_health_log (id SERIAL PRIMARY KEY, checked_at TIMESTAMPTZ DEFAULT NOW(), all_passed BOOLEAN, failures TEXT[], details JSONB)"
-          SQL2="CREATE TABLE IF NOT EXISTS outreach_log (id SERIAL PRIMARY KEY, recipient_email TEXT, subject TEXT, status TEXT DEFAULT 'sent', sent_at TIMESTAMPTZ DEFAULT NOW(), template TEXT, prospect_name TEXT)"
-          for SQL in "$SQL1" "$SQL2"; do
-            echo "Running: ${SQL:0:60}..."
-            RESP=$(curl -sS -w "\nHTTP_%{http_code}" -X POST "${SUPABASE_URL}/rest/v1/rpc/exec_sql" \
-              -H "apikey: ${SUPABASE_SERVICE_KEY}" \
-              -H "Authorization: Bearer ${SUPABASE_SERVICE_KEY}" \
-              -H "Content-Type: application/json" \
-              -d "{\"sql\": \"$SQL\"}")
-            echo "$RESP"
+          for SQL in "CREATE TABLE IF NOT EXISTS site_health_log(id SERIAL PRIMARY KEY,checked_at TIMESTAMPTZ DEFAULT NOW(),all_passed BOOLEAN,failures TEXT[],details JSONB)" "CREATE TABLE IF NOT EXISTS outreach_log(id SERIAL PRIMARY KEY,recipient_email TEXT,subject TEXT,status TEXT DEFAULT 'sent',sent_at TIMESTAMPTZ DEFAULT NOW(),template TEXT,prospect_name TEXT)"; do
+            echo "Executing..."
+            curl -sS -X POST "${SUPABASE_URL}/rest/v1/rpc/exec_sql" -H "apikey: ${SUPABASE_SERVICE_KEY}" -H "Authorization: Bearer ${SUPABASE_SERVICE_KEY}" -H "Content-Type: application/json" -d "{\"sql\":\"$SQL\"}" 2>&1 || true
           done
-          echo "=== Verify tables ==="
           for TBL in site_health_log outreach_log; do
-            HTTP=$(curl -sS -o /dev/null -w "%{http_code}" "${SUPABASE_URL}/rest/v1/${TBL}?limit=1" \
-              -H "apikey: ${SUPABASE_SERVICE_KEY}" -H "Authorization: Bearer ${SUPABASE_SERVICE_KEY}")
+            HTTP=$(curl -sS -o /dev/null -w "%{http_code}" "${SUPABASE_URL}/rest/v1/${TBL}?limit=1" -H "apikey: ${SUPABASE_SERVICE_KEY}" -H "Authorization: Bearer ${SUPABASE_SERVICE_KEY}")
             echo "$TBL -> HTTP $HTTP"
           done
       - name: Pull Apollo prospects
@@ -73,35 +56,21 @@ jobs:
         run: |
           [ -z "$APOLLO_API_KEY" ] && echo "No APOLLO_API_KEY" && exit 0
           mkdir -p data/sales
-          python3 << 'PYEOF'
-          import json, os, urllib.request, urllib.error
-          api_key = os.environ['APOLLO_API_KEY']
-          titles = ["Marketing Manager", "Agency Owner", "Content Director", "Digital Marketing Manager"]
-          prospects = []
-          for title in titles:
-              payload = json.dumps({"api_key": api_key, "q_person_title": title, "person_locations": ["United States"], "organization_num_employees_ranges": ["1,50"], "page": 1, "per_page": 15}).encode()
-              req = urllib.request.Request("https://api.apollo.io/v1/mixed_people/search", data=payload, headers={"Content-Type": "application/json"}, method="POST")
-              try:
-                  with urllib.request.urlopen(req, timeout=30) as resp:
-                      data = json.loads(resp.read())
-                      for p in data.get('people', []):
-                          email = p.get('email')
-                          if not email: continue
-                          org = p.get('organization', {})
-                          prospects.append({"name": p.get('name',''), "email": email, "company": org.get('name',''), "title": p.get('title',''), "industry": org.get('industry','Business Services'), "pain_point": f"Looking to streamline operations with AI", "source": "apollo", "status": "new"})
-              except Exception as e:
-                  print(f"ERROR {title}: {e}")
-          seen, unique = set(), []
-          for p in prospects:
-              if p['email'] not in seen: seen.add(p['email']); unique.append(p)
-          unique = unique[:50]
-          print(f"Total: {len(unique)} prospects")
-          with open('data/sales/prospects.json', 'w') as f: json.dump(unique, f, indent=2)
-          PYEOF
-      - name: Commit and push
+          python3 -c "
+          import json,os,urllib.request
+          key=os.environ['APOLLO_API_KEY'];prospects=[]
+          for t in ['Marketing Manager','Agency Owner','Content Director','Digital Marketing Manager']:
+            try:
+              r=urllib.request.urlopen(urllib.request.Request('https://api.apollo.io/v1/mixed_people/search',json.dumps({'api_key':key,'q_person_title':t,'person_locations':['United States'],'organization_num_employees_ranges':['1,50'],'page':1,'per_page':15}).encode(),{'Content-Type':'application/json'}),timeout=30)
+              for p in json.loads(r.read()).get('people',[]):
+                e=p.get('email');o=p.get('organization',{})
+                if e:prospects.append({'name':p.get('name',''),'email':e,'company':o.get('name',''),'title':p.get('title',''),'industry':o.get('industry',''),'pain_point':'Looking to streamline operations with AI','source':'apollo','status':'new'})
+            except Exception as ex:print(f'ERR {t}:{ex}')
+          seen=set();u=[p for p in prospects if not(p['email'] in seen or seen.add(p['email']))][:50]
+          print(f'{len(u)} prospects');json.dump(u,open('data/sales/prospects.json','w'),indent=2)"
+      - name: Commit
         run: |
           git config user.name "NYSR Bot"
           git config user.email "bot@nyspotlightreport.com"
-          git add data/sales/prospects.json || true
-          git diff --cached --quiet || git commit -m "auto: setup relay results"
-          git push || true
+          git add data/sales/prospects.json 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "auto: setup relay results" && git push)
