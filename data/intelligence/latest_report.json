@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-24T19:38:11.659891",
+  "timestamp": "2026-03-24T21:56:12.758386",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -38,8 +38,8 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
       "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -93,9 +93,9 @@
     },
     {
       "source": "google_news",
-      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
-      "outlet": "The New York Times",
+      "title": "Gateway Program\u2019s long-term economic benefits estimated - NJ Spotlight News",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZkdkVkFUNmF0Rk9tcVVCUms4NjhQUl91enQ5MERuNWxGNk9BNHZXWnVZb2czTXg2LUZkeUoyYTFaa1hPM0hORmhhRkpRUGdpVjRkX05yUzlCNFRlR1p0NkJqb2FYSmJVWW1zdEtTOTBETU11aGRTOWtVNGNBWnpNWWREQ3ZOdVhtM013RjFRV0xpZ1BWQTNZZmROV2Z3RmxHTHVKVkF3XzAtZW9FY0xJYzhfWkNZQ1Zha293R0pXT3huc1NObE1xSDYxZFFzaUsxTndzaEV3?oc=5",
+      "outlet": "NJ Spotlight News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -104,9 +104,9 @@
     },
     {
       "source": "google_news",
-      "title": "Gateway Program\u2019s long-term economic benefits estimated - NJ Spotlight News",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZkdkVkFUNmF0Rk9tcVVCUms4NjhQUl91enQ5MERuNWxGNk9BNHZXWnVZb2czTXg2LUZkeUoyYTFaa1hPM0hORmhhRkpRUGdpVjRkX05yUzlCNFRlR1p0NkJqb2FYSmJVWW1zdEtTOTBETU11aGRTOWtVNGNBWnpNWWREQ3ZOdVhtM013RjFRV0xpZ1BWQTNZZmROV2Z3RmxHTHVKVkF3XzAtZW9FY0xJYzhfWkNZQ1Zha293R0pXT3huc1NObE1xSDYxZFFzaUsxTndzaEV3?oc=5",
-      "outlet": "NJ Spotlight News",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,17 +181,6 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
       "outlet": "SCBiz",
@@ -203,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - CanvasRebel Magazine",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "CanvasRebel Magazine",
+      "title": "Taiwanese entrepreneur shakes up satellite industry - Taipei Times",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE4tZUt4SU5XZXZkd1VoRzlVMDYzVWs4dW13aVZQc2gyeURjekxTZXUxaS1ESWpnaXpzUHY0bGQzOFUzd09OeGxfRGoxbXpzMkw2dy1xZzQycUx2U1hLZmd5dHFsbHgxM3RmbFkyNG9RM1g5LUNhMS1VdXJB?oc=5",
+      "outlet": "Taipei Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +203,20 @@
     },
     {
       "source": "google_news",
-      "title": "Taiwanese entrepreneur shakes up satellite industry - Taipei Times",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE4tZUt4SU5XZXZkd1VoRzlVMDYzVWs4dW13aVZQc2gyeURjekxTZXUxaS1ESWpnaXpzUHY0bGQzOFUzd09OeGxfRGoxbXpzMkw2dy1xZzQycUx2U1hLZmd5dHFsbHgxM3RmbFkyNG9RM1g5LUNhMS1VdXJB?oc=5",
-      "outlet": "Taipei Times",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Meet Erin Thomas - CanvasRebel Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
+      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
