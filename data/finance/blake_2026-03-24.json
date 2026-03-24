@@ -1,0 +1,30 @@
+{
+  "financials": {
+    "date": "2026-03-24",
+    "revenue": {
+      "stripe_mtd": 49.99,
+      "gumroad_mtd": 0,
+      "total_mtd": 49.99
+    },
+    "expenses": {
+      "apollo_pro": 99,
+      "elevenlabs": 22,
+      "total_monthly": 121
+    },
+    "assets": {
+      "stripe_payment_links": 7,
+      "gumroad_products": 10,
+      "kdp_books": 15,
+      "redbubble_designs": 20,
+      "site_pages": 126,
+      "blog_posts": 7
+    },
+    "pipeline": {
+      "hubspot_deals": 5,
+      "pipeline_value": 2985
+    },
+    "burn_rate_daily": 4.03,
+    "runway_days": "infinite (no debt)"
+  },
+  "analysis": "# FINANCIAL INTELLIGENCE REPORT\n**Blake Sutton, Finance Director | 2026-03-24**\n\n---\n\n## 1. P&L SUMMARY: MARCH 2026 (YTD)\n\n| Line Item | Amount | Status |\n|-----------|--------|--------|\n| **REVENUE** | | |\n| Stripe (MTD) | $49.99 | \u26a0\ufe0f CRITICAL |\n| Gumroad (MTD) | $0.00 | INACTIVE |\n| **Total Revenue (24 days)** | **$49.99** | **-94% vs target** |\n| | | |\n| **EXPENSES** | | |\n| Apollo Pro | $99.00 | Fixed |\n| ElevenLabs | $22.00 | Variable |\n| **Total Monthly Burn** | **$121.00** | **+142% vs revenue** |\n| | | |\n| **NET POSITION** | **-$71.01** | NEGATIVE |\n| **Burn Rate (Daily)** | **$4.03** | Sustainable but wrong direction |\n\n**VERDICT:** You're bleeding $71/month on $50 revenue. This is a **cash flow emergency masquerading as infinite runway.**\n\n---\n\n## 2. UNIT ECONOMICS: CAC & LTV ANALYSIS\n\n### Current Acquisition Reality\n- **Pipeline Value:** $2,985 across 5 deals\n- **Conversion Probability (estimated):** 15-25% (HubSpot deals historically close at 20%)\n- **Expected Revenue Next 30 Days:** $447-$746\n\n### Offer-Tier Unit Economics\n\n| Tier | Price | Assumed LTV (12mo) | Required CAC | CAC:LTV Ratio | Status |\n|------|-------|-------------------|--------------|---------------|--------|\n| **ProFlow AI** | $97/mo | $1,164 | <$116 | 1:10 \u2713 | HEALTHY |\n| **Growth** | $297/mo | $3,564 | <$356 | 1:10 \u2713 | HEALTHY |\n| **DFY Setup** | $1,497 | $1,497 | <$150 | 1:10 \u2713 | ONE-TIME RISK |\n| **DFY Agency** | $4,997 | $4,997 | <$500 | 1:10 \u2713 | ONE-TIME RISK |\n\n### Current CAC Calculation\n- **Total spend ("
+}
