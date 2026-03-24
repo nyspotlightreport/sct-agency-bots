@@ -24,4 +24,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests -q
-      - run: python agents/casey_lin_it.py
+      - run: PYTHONPATH=. python agents/casey_lin_it.py

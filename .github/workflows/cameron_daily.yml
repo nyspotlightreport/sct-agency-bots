@@ -24,4 +24,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests -q
-      - run: python agents/cameron_reed_content.py
+      - run: PYTHONPATH=. python agents/cameron_reed_content.py

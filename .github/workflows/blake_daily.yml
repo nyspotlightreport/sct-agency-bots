@@ -24,4 +24,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests -q
-      - run: python agents/blake_sutton_finance.py
+      - run: PYTHONPATH=. python agents/blake_sutton_finance.py
