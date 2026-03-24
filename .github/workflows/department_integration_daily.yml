@@ -28,10 +28,11 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests -q
-      - run: PYTHONPATH=. python -c "
+      - run: |
+          PYTHONPATH=. python -c "
           import sys; sys.path.insert(0,'.');
           from agents.department_integrator import run;
           results = run();
-          ok = sum(1 for r in results.values() if r['status']=='OK');
-          print(f'Synergy Report: {ok}/{len(results)} integrations live');
+          ok = sum(1 for r in results.values() if r.get('status')=='OK');
+          print('Synergy Report:', ok, '/', len(results), 'integrations live')
           "

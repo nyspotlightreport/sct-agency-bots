@@ -24,9 +24,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -c "
+      - run: |
+          PYTHONPATH=. python -c "
           import sys; sys.path.insert(0,'.');
           from agents.media_production.director import run;
           result = run();
-          print(f'Media Dept Status: {result}');
+          print('Media Dept Status:', result)
           "

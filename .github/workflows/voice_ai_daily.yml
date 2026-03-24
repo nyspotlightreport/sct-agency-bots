@@ -26,16 +26,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -c "
+      - run: |
+          PYTHONPATH=. python -c "
           import sys; sys.path.insert(0,'.');
-          from agents.voice_ai.orchestrator import VoiceSession, list_voices, think;
-          print('ProFlow Voice AI Platform v1.0 — Online');
-          voices = list_voices();
-          print(f'Available voices: {len(voices)}');
-          for v in voices[:5]: print(f'  {v[\"name\"]} ({v[\"category\"]})');
-          session = VoiceSession('sales_outbound', 'en');
-          result = session.process_turn(user_text='Tell me about your content services.');
-          print(f'Test response: {result[\"response_text\"][:100]}...');
-          session.end_session();
-          print('Voice AI system check: PASSED');
+          from agents.voice_ai.director import run;
+          result = run();
+          print('Voice AI check:', result)
           "
