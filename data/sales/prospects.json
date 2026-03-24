@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "name": "PLACEHOLDER - Replace with real Apollo/LinkedIn leads",
+    "email": "REPLACE_ME@example.com",
+    "company": "Example Agency",
+    "title": "Marketing Manager",
+    "industry": "Marketing and Advertising",
+    "pain_point": "Struggling to scale content production across channels",
+    "source": "manual",
+    "status": "placeholder",
+    "notes": "Apollo API returned 403 - key may need renewal at app.apollo.io > Settings > API. Once renewed, re-run setup_relay workflow or use the apollo:prospect skill to pull 50 real leads."
+  }
+]
