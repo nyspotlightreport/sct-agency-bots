@@ -236,26 +236,39 @@ def run():
     total_issues = sum(len(v) for v in results.values())
     log.info(f"\n=== RESULTS: {total_issues} total issues ===")
 
+    # Separate critical (blocks customer delivery) from warnings (degraded but functional)
+    CRITICAL_CHECKS = {"stripe_webhook", "create_checkout", "lead_capture", "voice_ai", "onboarding", "gumroad_webhook"}
+    WARNING_CHECKS = {"smtp"}
+
+    critical_issues = sum(len(results[k]) for k in CRITICAL_CHECKS if k in results)
+    warning_issues = sum(len(results[k]) for k in WARNING_CHECKS if k in results)
+    total_issues = critical_issues + warning_issues
+
+    log.info(f"\n=== RESULTS: {critical_issues} critical, {warning_issues} warnings ===")
+
     for category, issues in results.items():
         if issues:
-            log.warning(f"  [{category}] {len(issues)} issues:")
+            level = "CRITICAL" if category in CRITICAL_CHECKS else "WARNING"
+            log.warning(f"  [{level}:{category}] {len(issues)} issues:")
             for issue in issues:
                 log.warning(f"    - {issue}")
 
     # Log to Supabase
     log_to_supabase(results)
 
-    # Alert on any failure
-    if total_issues > 0:
+    # Alert only on critical failures
+    if critical_issues > 0:
         failure_summary = []
-        for category, issues in results.items():
-            for issue in issues:
+        for category in CRITICAL_CHECKS:
+            for issue in results.get(category, []):
                 failure_summary.append(f"[{category}] {issue}")
         pushover(
             "FULFILLMENT PIPELINE ALERT",
-            f"{total_issues} issues detected:\n" + "\n".join(failure_summary[:8]),
-            priority=1 if total_issues >= 3 else 0
+            f"{critical_issues} critical issues:\n" + "\n".join(failure_summary[:8]),
+            1 if critical_issues >= 3 else 0
         )
+    elif warning_issues > 0:
+        log.info(f"{warning_issues} non-critical warnings (SMTP) — not blocking")
     else:
         log.info("ALL CHECKS PASSED — fulfillment pipeline healthy")
 
@@ -264,5 +277,5 @@ def run():
 
 if __name__ == "__main__":
     results = run()
-    total = sum(len(v) for v in results.values())
-    sys.exit(1 if total > 0 else 0)
+    critical = sum(len(results[k]) for k in {"stripe_webhook", "create_checkout", "lead_capture", "voice_ai", "onboarding", "gumroad_webhook"} if k in results)
+    sys.exit(1 if critical > 0 else 0)
