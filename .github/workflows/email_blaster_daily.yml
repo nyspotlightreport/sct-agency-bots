@@ -1,0 +1,32 @@
+name: "📧 Email Blaster — 10 Cold Emails/Day"
+
+on:
+  schedule:
+    - cron: "15 13 * * 1-5"  # 9:15 AM ET weekdays
+  workflow_dispatch:
+
+jobs:
+  blast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Send cold emails
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+        run: python scripts/email_blaster.py
+
+      - name: Commit outreach log
+        run: |
+          git config user.name "NYSR Bot"
+          git config user.email "bot@nyspotlightreport.com"
+          git add data/sales/outreach_log.json || true
+          git diff --cached --quiet || git commit -m "log: email blaster $(date +%Y-%m-%d)"
+          git push || true
