@@ -336,7 +336,7 @@ def run():
     log.info(f"\n{report}")
     # Alert on failure
     if failed:
-        push(f"WATCHDOG|{len(failed)} FAIL|{len(repairs)} FIX",report[:800],priority=1)
+        push(f"WATCHDOG|{len(failed)} FAIL|{len(repairs)} FIX",report[:800],1)
         # Cascade to Omega Brain for system-wide learning
         gh_trigger("omega_orchestration.yml")
     else:

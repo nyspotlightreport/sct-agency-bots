@@ -142,7 +142,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
-      - run: pip install requests -q
+      - run: pip install requests pyyaml -q
       - name: Validate YAML self-test
         run: python3 -c "import yaml; yaml.safe_load(open('.github/workflows/maximum_deal_velocity.yml'))" && echo "YAML valid"
       - name: Push velocity report to Chairman
