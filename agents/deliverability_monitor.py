@@ -122,7 +122,7 @@ def check_cover_images():
 
 def check_gumroad_webhook():
     """Verify Gumroad delivery webhook maps to valid download files."""
-    url = f"{SITE}/.netlify/functions/gumroad-webhook"
+    url = f"{SITE}/.netlify/functions/gumroad-delivery"
     issues = []
     try:
         req = urllib.request.Request(url, method="GET")
@@ -160,7 +160,7 @@ def check_proflow_download():
 def check_checkout_success_onboarding():
     """Checkout success page should link to onboarding."""
     # Check success page exists and references onboarding
-    url = f"{SITE}/success/"
+    url = f"{SITE}/checkout/success/"
     try:
         req = urllib.request.Request(url, method="GET")
         resp = urllib.request.urlopen(req, timeout=15)
