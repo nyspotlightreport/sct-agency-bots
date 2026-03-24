@@ -118,18 +118,21 @@ def send_summary_email(data, original_notes):
     date_str = datetime.now().strftime("%B %d, %Y")
     title    = data.get("meeting_title", "Meeting")
 
-    action_rows = "".join([
-        f"""<tr style="{'background:#fff8e1' if item.get('priority')=='HIGH' else ''}">
-          <td style="padding:8px 10px;border-bottom:1px solid #eee;">
-            {'🔴 ' if item.get('priority')=='HIGH' else '🟡 ' if item.get('priority')=='MEDIUM' else '⚪ '}
-            <strong>{item['task']}</strong>
-            {'<br><span style=\"color:#888;font-size:12px;\">' + item.get('context','') + '</span>' if item.get('context') else ''}
-          </td>
-          <td style="padding:8px 10px;border-bottom:1px solid #eee;white-space:nowrap;">{item.get('owner','Chairman')}</td>
-          <td style="padding:8px 10px;border-bottom:1px solid #eee;white-space:nowrap;">{item.get('deadline','ASAP')}</td>
-        </tr>"""
-        for item in data.get("action_items", [])
-    ])
+    def _action_row(item):
+        bg = 'background:#fff8e1' if item.get('priority') == 'HIGH' else ''
+        icon = '🔴 ' if item.get('priority') == 'HIGH' else '🟡 ' if item.get('priority') == 'MEDIUM' else '⚪ '
+        ctx = '<br><span style="color:#888;font-size:12px;">' + item.get('context', '') + '</span>' if item.get('context') else ''
+        owner = item.get('owner', 'Chairman')
+        deadline = item.get('deadline', 'ASAP')
+        return (
+            f'<tr style="{bg}">'
+            f'<td style="padding:8px 10px;border-bottom:1px solid #eee;">'
+            f'{icon}<strong>{item["task"]}</strong>{ctx}</td>'
+            f'<td style="padding:8px 10px;border-bottom:1px solid #eee;white-space:nowrap;">{owner}</td>'
+            f'<td style="padding:8px 10px;border-bottom:1px solid #eee;white-space:nowrap;">{deadline}</td>'
+            f'</tr>'
+        )
+    action_rows = "".join([_action_row(item) for item in data.get("action_items", [])])
 
     decisions_html = "".join([f"<li>{d}</li>" for d in data.get("decisions", [])])
     insights_html  = "".join([f"<li>{i}</li>" for i in data.get("key_insights", [])])

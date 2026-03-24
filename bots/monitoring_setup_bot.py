@@ -36,9 +36,7 @@ def run_uptime_check():
     results = [check_url(url) for url in MONITOR_URLS]
     down = [r for r in results if not r["ok"]]
     if down:
-        msg = f"DOWN: {len(down)} pages
-" + "
-".join([f"  {r['url']}: {r.get('error','status '+str(r['status']))}" for r in down])
+        msg = f"DOWN: {len(down)} pages\n" + "\n".join([f"  {r['url']}: {r.get('error','status '+str(r['status']))}" for r in down])
         notify(msg, "NYSR Uptime Alert")
         logging.error(msg)
     else:
@@ -48,10 +46,8 @@ def run_uptime_check():
 
 def sentry_snippet(platform="python"):
     if platform == "python":
-        return "import sentry_sdk
-sentry_sdk.init(dsn=os.environ['SENTRY_DSN'],traces_sample_rate=0.1,environment='production')"
-    return "import*as Sentry from '@sentry/nextjs';
-Sentry.init({dsn:process.env.NEXT_PUBLIC_SENTRY_DSN,tracesSampleRate:0.1});"
+        return "import sentry_sdk\nsentry_sdk.init(dsn=os.environ['SENTRY_DSN'],traces_sample_rate=0.1,environment='production')"
+    return "import*as Sentry from '@sentry/nextjs';\nSentry.init({dsn:process.env.NEXT_PUBLIC_SENTRY_DSN,tracesSampleRate:0.1});"
 
 def run():
     return run_uptime_check()

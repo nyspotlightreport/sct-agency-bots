@@ -41,10 +41,8 @@ def handle_objection(message, contact_name, company, channel):
     data = json.dumps({"model":"claude-haiku-4-5-20251001","max_tokens":200,
         "system":"You are an expert B2B sales objection handler. Respond with empathy, precision, and a clear path forward. Never be pushy. Always be helpful.",
         "messages":[{"role":"user","content":
-            f"Objection from {contact_name} at {company} via {channel}: '{message}'
-"
-            f"Playbook: {playbook_hint}
-"
+            f"Objection from {contact_name} at {company} via {channel}: '{message}'\n"
+            f"Playbook: {playbook_hint}\n"
             f"Write response. Under 100 words. Warm but confident."}]}).encode()
     req = urllib.request.Request("https://api.anthropic.com/v1/messages", data=data,
         headers={"Content-Type":"application/json","x-api-key":ANTHROPIC,"anthropic-version":"2023-06-01"})

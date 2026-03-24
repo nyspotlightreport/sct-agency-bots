@@ -56,13 +56,10 @@ def format_testimonial(raw: str, customer: dict, format_type: str = "short") -> 
     title   = customer.get("title","")
     formatted = claude(
         f"Format this testimonial as a professional {format_type} testimonial. Keep the authentic voice. Add attribution.",
-        f"Raw testimonial: {raw}
-Customer: {name}, {title} at {company}
-Format: {TESTIMONIAL_FORMATS[format_type]}",
+        f"Raw testimonial: {raw}\nCustomer: {name}, {title} at {company}\nFormat: {TESTIMONIAL_FORMATS[format_type]}",
         max_tokens=300
     ) or raw
-    return f'"{formatted}"
-— {name}, {title}, {company}'
+    return f'"{formatted}"\n— {name}, {title}, {company}'
 
 def generate_case_study(customer: dict, results: dict) -> str:
     company = customer.get("company","Company")
@@ -70,13 +67,7 @@ def generate_case_study(customer: dict, results: dict) -> str:
         "Write a compelling B2B case study. Format: Challenge → Solution → Results. 300 words. Specific numbers.",
         f"Company: {company} | Results: {json.dumps(results)} | Product: {customer.get('product','ProFlow')}",
         max_tokens=500
-    ) or f"## {company} Case Study
-
-**Challenge:** Content bottleneck.
-
-**Solution:** NYSR ProFlow.
-
-**Results:** {results}"
+    ) or f"## {company} Case Study\n\n**Challenge:** Content bottleneck.\n\n**Solution:** NYSR ProFlow.\n\n**Results:** {results}"
 
 def run():
     customers = [{"name":"Sarah Kim","company":"DigitalAgency","title":"Founder","email":"sarah@agency.com","months_active":4}]

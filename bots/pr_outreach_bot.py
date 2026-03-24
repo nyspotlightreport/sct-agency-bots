@@ -124,44 +124,17 @@ def _static_pitch(target: dict, pitch_type: str) -> dict:
     if pitch_type == "podcast":
         return {
             "subject": "Guest pitch: How I replaced $4,000/month in content staff with AI bots",
-            "body": f"Hi {target.get('host', 'there')},
-
-I'm SC Thomas, founder of NY Spotlight Report (Coram, NY).
-
-I replaced my entire content team — $4,000/month — with 63 AI bots I built myself. The system now publishes daily blogs, weekly newsletters, and social media across 6 platforms automatically, for $70/month.
-
-For your audience: I'll walk through exactly what I built, what it costs, and how to replicate the core of it in a weekend.
-
-Open to 30-45 minutes whenever works for you.
-
-— SC Thomas
-nyspotlightreport.com"
+            "body": f"Hi {target.get('host', 'there')},\n\nI'm SC Thomas, founder of NY Spotlight Report (Coram, NY).\n\nI replaced my entire content team — $4,000/month — with 63 AI bots I built myself. The system now publishes daily blogs, weekly newsletters, and social media across 6 platforms automatically, for $70/month.\n\nFor your audience: I'll walk through exactly what I built, what it costs, and how to replicate the core of it in a weekend.\n\nOpen to 30-45 minutes whenever works for you.\n\n— SC Thomas\nnyspotlightreport.com"
         }
     elif pitch_type == "newsletter":
         return {
             "subject": f"Case study for {target.get('name','')}: 63 AI bots, $0 content costs",
-            "body": f"Hi {target.get('editor', 'there')},
-
-I built a fully automated content business — 63 bots handling daily blogs, newsletters, social media, cold email, and digital product delivery. Total cost: $70/month vs $4,000-8,000/month for a human team.
-
-Think your readers would find a behind-the-scenes breakdown useful? Happy to write a 1,500-word case study exclusively for {target.get('name', 'your newsletter')}.
-
-— SC Thomas, NY Spotlight Report"
+            "body": f"Hi {target.get('editor', 'there')},\n\nI built a fully automated content business — 63 bots handling daily blogs, newsletters, social media, cold email, and digital product delivery. Total cost: $70/month vs $4,000-8,000/month for a human team.\n\nThink your readers would find a behind-the-scenes breakdown useful? Happy to write a 1,500-word case study exclusively for {target.get('name', 'your newsletter')}.\n\n— SC Thomas, NY Spotlight Report"
         }
     else:
         return {
             "subject": "Story tip: Solo founder replaces content team with AI bots",
-            "body": f"Hi,
-
-Story tip for {target.get('section', 'your tech section')}:
-
-• Solo entrepreneur replaced $4,000/month content staff with 63 custom AI bots
-• System publishes 365 blog posts/year, manages 6 social platforms, sends newsletters — all automated
-• Cost: $70/month. Approach: Python + Claude API + GitHub Actions
-
-Happy to provide quotes, data, or a full interview.
-
-SC Thomas, NY Spotlight Report — nyspotlightreport.com"
+            "body": f"Hi,\n\nStory tip for {target.get('section', 'your tech section')}:\n\n• Solo entrepreneur replaced $4,000/month content staff with 63 custom AI bots\n• System publishes 365 blog posts/year, manages 6 social platforms, sends newsletters — all automated\n• Cost: $70/month. Approach: Python + Claude API + GitHub Actions\n\nHappy to provide quotes, data, or a full interview.\n\nSC Thomas, NY Spotlight Report — nyspotlightreport.com"
         }
 
 def send_pitch(target: dict, pitch: dict) -> bool:

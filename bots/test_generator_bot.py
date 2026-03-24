@@ -37,22 +37,19 @@ def generate_tests(path: str, content: str) -> str:
         "Generate a complete pytest test file for this Python module. Include: smoke test for run(), mock tests for external APIs, edge case tests. Use unittest.mock for patching. File must be immediately runnable.",
         f"Module to test: {path}\n\n```python\n{content[:2500]}\n```\n\nGenerate complete test file:",
         max_tokens=1000
-    ) or f"""import pytest
-from unittest.mock import patch, MagicMock
-
-def test_{path.split("/")[-1].replace(".py","")}_imports():
-    """Smoke test: module imports without errors."""
-    try:
-        import importlib.util
-        spec = importlib.util.spec_from_file_location("module", "{path}")
-        assert spec is not None
-    except ImportError:
-        pytest.skip("Dependencies not available in test environment")
-
-def test_run_returns_dict():
-    """run() should return a dict with at least one key."""
-    pass  # TODO: implement after mock setup
-"""
+    ) or ("import pytest\n"
+        "from unittest.mock import patch, MagicMock\n\n"
+        "def test_" + path.split("/")[-1].replace(".py","") + "_imports():\n"
+        "    \"\"\"Smoke test: module imports without errors.\"\"\"\n"
+        "    try:\n"
+        "        import importlib.util\n"
+        "        spec = importlib.util.spec_from_file_location(\"module\", \"" + path + "\")\n"
+        "        assert spec is not None\n"
+        "    except ImportError:\n"
+        "        pytest.skip(\"Dependencies not available in test environment\")\n\n"
+        "def test_run_returns_dict():\n"
+        "    \"\"\"run() should return a dict with at least one key.\"\"\"\n"
+        "    pass  # TODO: implement after mock setup\n")
 
 def run():
     log.info("Test Generator Bot running...")

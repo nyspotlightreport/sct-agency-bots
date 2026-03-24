@@ -37,7 +37,13 @@ Call type: {call_type} ({call["duration"]} minutes)
 Booking link: {call["url"]}
 Write 3-4 sentences. Include the booking link naturally. End with specific value they'll get from the call.""",
         max_tokens=150
-    ) or f"Hi {first},\n\nI'd love to show you exactly how this could work for {company}. I've set aside a few spots for a quick {call['duration']}-minute call this week.\n\nYou can grab a time that works best here: {call['url']}\n\nLooking forward to connecting."
+    ) or (
+        f"Hi {first},\n\n"
+        f"I'd love to show you exactly how this could work for {company}. "
+        f"I've set aside a few spots for a quick {call['duration']}-minute call this week.\n\n"
+        f"You can grab a time that works best here: {call['url']}\n\n"
+        f"Looking forward to connecting."
+    )
 
 def get_contacts_to_book() -> list:
     return supabase_request("GET","contacts",

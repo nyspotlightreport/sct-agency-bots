@@ -24,7 +24,7 @@ Combined: 7-10 results controlled = page 1 owned.
 Methods: 100% white-hat. No blackhat SEO. No link schemes.
 Pure authority platform publishing + optimization.
 """
-import os, sys, json, logging, requests, time
+import os, sys, json, logging, requests, time, base64
 from datetime import datetime, date
 sys.path.insert(0, ".")
 try:
@@ -160,17 +160,16 @@ def _fallback_content(name, description, keyword):
         "press_release": {
             "headline": f"{name} Launches AI-Powered Content System for Entrepreneurs",
             "subheadline": f"NY Spotlight Report founder {name} automates entire content operation",
-            "body": f"FOR IMMEDIATE RELEASE
-
-Coram, NY — {name}, founder of NY Spotlight Report, today announced the launch of ProFlow AI, a fully automated content marketing system for entrepreneurs.
-
-The system, which uses 63 AI bots built on Anthropic's Claude API, publishes daily blog posts, weekly newsletters, and daily social media posts across six platforms — all without manual input.
-
-"{name} has built something that replaces a $40,000/year content team for $70/month," said a beta user.
-
-ProFlow AI is available now at nyspotlightreport.com/proflow/
-
-###",
+            "body": ("FOR IMMEDIATE RELEASE\n\n"
+                f"Coram, NY -- {name}, founder of NY Spotlight Report, today announced "
+                "the launch of ProFlow AI, a fully automated content marketing system "
+                "for entrepreneurs.\n\n"
+                "The system, which uses 63 AI bots built on Anthropic's Claude API, "
+                "publishes daily blog posts, weekly newsletters, and daily social media "
+                "posts across six platforms -- all without manual input.\n\n"
+                f"\"{name} has built something that replaces a $40,000/year content team "
+                "for $70/month,\" said a beta user.\n\n"
+                "ProFlow AI is available now at nyspotlightreport.com/proflow/\n\n###"),
             "boilerplate": "About NY Spotlight Report: NY Spotlight Report is an AI-powered content and growth agency headquartered in Coram, NY.",
             "contact": f"Press contact: nyspotlightreport@gmail.com"
         }

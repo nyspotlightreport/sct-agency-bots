@@ -47,14 +47,10 @@ def process_positive_replies():
         appt_type = "demo" if c.get("score",0) > 70 else "discovery"
         meeting_link = "https://calendly.com/nyspotlightreport/30min"
         follow_up = ai(
-            f"Write a short, confident email to book a {appt_type} call.
-"
-            f"Contact: {c.get('name')} at {c.get('company')}.
-"
-            f"They replied positively to our outreach.
-"
-            f"Include Calendly link: {meeting_link}
-"
+            f"Write a short, confident email to book a {appt_type} call.\n"
+            f"Contact: {c.get('name')} at {c.get('company')}.\n"
+            f"They replied positively to our outreach.\n"
+            f"Include Calendly link: {meeting_link}\n"
             f"Under 80 words. Confident. Clear CTA.",
             max_tokens=150)
         if follow_up:

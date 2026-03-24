@@ -27,9 +27,7 @@ def generate_webinar_funnel(topic: dict) -> dict:
     reg_headline = claude("Write a webinar registration page headline. Power word + specific benefit. Under 12 words.",
         f"Webinar: {title}", max_tokens=30) or title
     reg_body = claude("Write 3-bullet registration page copy. Specific. Results-focused. Under 30 words each bullet.",
-        f"Webinar: {title}. Target: {target} audience.", max_tokens=150) or f"• Learn exactly how to {title.lower()}
-• Real examples and live demo
-• Q&A with implementation expert"
+        f"Webinar: {title}. Target: {target} audience.", max_tokens=150) or f"• Learn exactly how to {title.lower()}\n• Real examples and live demo\n• Q&A with implementation expert"
 
     # Reminder sequence
     reminder_24h = f"Tomorrow at 2pm EST: {title} — here's what we'll cover..."

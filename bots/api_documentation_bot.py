@@ -16,10 +16,8 @@ def generate_postman_collection(api_name, endpoints):
 def generate_readme_docs(api_name, endpoints):
     lines = [f"# {api_name}","","## Authentication","All requests: `Authorization: Bearer <token>`",""]
     for ep in endpoints:
-        lines += [f"### {ep['method']} {ep['path']}",ep.get("description",""),"```bash",f'curl -X {ep["method"]} "https://api.nyspotlightreport.com/v1{ep["path"]}" \
-  -H "Authorization: Bearer YOUR_TOKEN"',"```",""]
-    return "
-".join(lines)
+        lines += [f"### {ep['method']} {ep['path']}",ep.get("description",""),"```bash",f'curl -X {ep["method"]} "https://api.nyspotlightreport.com/v1{ep["path"]}" \\n-H "Authorization: Bearer YOUR_TOKEN"',"```",""]
+    return "\n".join(lines)
 
 def run():
     endpoints = [{"method":"GET","path":"/contacts","description":"List contacts"},{"method":"POST","path":"/contacts","description":"Create contact"},{"method":"GET","path":"/analytics","description":"Get analytics"}]

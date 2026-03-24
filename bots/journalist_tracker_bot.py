@@ -121,15 +121,7 @@ def generate_pitch(journalist: dict, window: dict) -> dict:
     if not ANTHROPIC or window.get("window") == "cold":
         return {
             "subject": f"Source for {journalist['outlet']} story on AI content automation",
-            "body": f"Hi {journalist['name'].split()[0]},
-
-I saw your recent work on {journalist['beat']} — I've been building in that space.
-
-I'm SC Thomas, founder of NY Spotlight Report. I've replaced an entire content marketing team with 63 AI bots for $70/month. Happy to be a source if you're covering AI tools, content automation, or the future of solopreneurship.
-
-Full system breakdown: nyspotlightreport.com
-
-— SC Thomas"
+            "body": f"Hi {journalist['name'].split()[0]},\n\nI saw your recent work on {journalist['beat']} — I've been building in that space.\n\nI'm SC Thomas, founder of NY Spotlight Report. I've replaced an entire content marketing team with 63 AI bots for $70/month. Happy to be a source if you're covering AI tools, content automation, or the future of solopreneurship.\n\nFull system breakdown: nyspotlightreport.com\n\n— SC Thomas"
         }
     
     return claude_json(
@@ -175,8 +167,7 @@ def run():
         for opp in haro_opps[:3]:
             log.info(f"  {opp['outlet']}: '{opp['article'][:60]}'")
     
-    log.info(f"
-Pitchable journalists this week: {len(pitchable)}")
+    log.info(f"\nPitchable journalists this week: {len(pitchable)}")
     for p in pitchable:
         log.info(f"  → {p['journalist']} | {p['outlet']}")
         if p.get("pitch",{}).get("subject"):

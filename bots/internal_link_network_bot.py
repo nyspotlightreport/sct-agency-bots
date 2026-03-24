@@ -69,10 +69,10 @@ def inject_internal_links(html_content, current_slug):
         # Don't link to the current page
         if current_slug in url: continue
         # Only link first occurrence, not already linked
-        pattern = f"(?<!href=['"]{url}['">])(?<!</a>)\b({re.escape(keyword)})\b"
+        pattern = r"(?<!href=['\"]" + re.escape(url) + r"['\">])(?<!</a>)" + r"(" + re.escape(keyword) + r")"
         new_html, n = re.subn(
             pattern,
-            f'<a href="{url}" style="color:#C9A84C;font-weight:600;">\\1</a>',
+            f'<a href="{url}" style="color:#C9A84C;font-weight:600;">\1</a>',
             modified, count=1, flags=re.IGNORECASE
         )
         if n > 0:
@@ -94,10 +94,8 @@ def run():
     if not GH_TOKEN:
         log.warning("No GH_PAT token")
         return
-    
     posts = get_blog_posts()
     log.info(f"Blog posts to process: {len(posts)}")
-    
     total_links = 0
     for slug in posts:
         content, sha = read_post(slug)
@@ -108,9 +106,9 @@ def run():
             if ok:
                 log.info(f"  +{n} internal links: {slug}")
                 total_links += n
-    
     log.info(f"Total internal links added: {total_links}")
     log.info("SEO impact: all connected posts get 30-50% more link equity")
 
 if __name__ == "__main__":
     run()
+

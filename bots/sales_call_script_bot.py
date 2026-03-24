@@ -72,11 +72,7 @@ def run():
     contact = {"name":"Alex Chen","company":"ContentCo","title":"CEO","icp":"proflow_ai"}
     for call_type in ["discovery","demo","closing"]:
         script = generate_call_script(contact, call_type)
-        log.info(f"
-{'='*50}
-{call_type.upper()} CALL SCRIPT
-{script[:200]}...
-")
+        log.info(f"\n{'='*50}\n{call_type.upper()} CALL SCRIPT\n{script[:200]}...\n")
     return True
 
 if __name__ == "__main__":

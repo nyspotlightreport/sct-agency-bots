@@ -27,8 +27,7 @@ def gh(method, path, body=None):
 def review_pr(pr_number, diff_content):
     review = claude_json(
         "Review this code diff. Return JSON: {summary, issues:[{line,severity,message}], suggestions:[str], approve_recommendation}",
-        f"PR #{pr_number} diff:
-{diff_content[:3000]}",
+        f"PR #{pr_number} diff:\n{diff_content[:3000]}",
         max_tokens=600
     ) or {"summary":"Review complete","issues":[],"suggestions":[],"approve_recommendation":True}
     return review

@@ -71,13 +71,7 @@ def generate_upsell_email(contact: dict, opportunity: dict) -> dict:
         "Write a natural, non-pushy upsell email. 80 words max. Lead with value, end with a question.",
         f"Customer: {name} at {contact.get('company','')}. Opportunity: {opportunity['message']}. Current plan: {contact.get('product','starter')}",
         max_tokens=180
-    ) or f"Hi {name},
-
-{opportunity['message']}
-
-Worth a quick chat?
-
-S.C."
+    ) or f"Hi {name},\n\n{opportunity['message']}\n\nWorth a quick chat?\n\nS.C."
     return {"subject": f"Expanding your NYSR setup — {contact.get('company','')}", "body": body, "opportunity": opportunity}
 
 def run():

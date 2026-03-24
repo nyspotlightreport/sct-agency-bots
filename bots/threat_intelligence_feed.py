@@ -175,8 +175,7 @@ def run():
                 threats_detected.append(threat)
                 log.warning(f"⚠️  THREAT [{assessment.get('risk_level','?').upper()}]: {article.get('title','')[:70]}")
     
-    log.info(f"
-Threats detected: {len(threats_detected)}")
+    log.info(f"\nThreats detected: {len(threats_detected)}")
     
     # Sort by relevance
     threats_detected.sort(key=lambda x: x.get("assessment",{}).get("relevance_score",0), reverse=True)
@@ -184,14 +183,9 @@ Threats detected: {len(threats_detected)}")
     # Alert on high relevance threats
     critical = [t for t in threats_detected if t.get("assessment",{}).get("risk_level") in ["high","critical"]]
     if critical:
-        msg = f"⚠️ {len(critical)} HIGH RELEVANCE threats detected
-
-"
+        msg = f"⚠️ {len(critical)} HIGH RELEVANCE threats detected\n\n"
         for t in critical[:3]:
-            msg += f"• {t['headline'][:60]}
-  Impact: {t['assessment'].get('impact_on_nysr','')[:60]}
-
-"
+            msg += f"• {t['headline'][:60]}\nImpact: {t['assessment'].get('impact_on_nysr','')[:60]}\n\n"
         if PUSHOVER_KEY:
             requests.post("https://api.pushover.net/1/messages.json",
                 data={"token":PUSHOVER_KEY,"user":PUSHOVER_USR,

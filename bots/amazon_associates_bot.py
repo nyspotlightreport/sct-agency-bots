@@ -39,9 +39,10 @@ def inject_amazon_links(content):
     modified = content
     count = 0
     for kw, url in PRODUCT_KEYWORDS.items():
-        pattern = r"(?<!["'>])(" + re.escape(kw) + r")(?!["'<])"
-        new, n = re.subn(pattern,
-            f'<a href="{url}" rel="sponsored nofollow" target="_blank">\1</a>',
+        pattern = r'(?<!["\x27>])(' + re.escape(kw) + r')(?!["\x27<])'
+        new, n = re.subn(
+            pattern,
+            f'<a href="{url}" rel="sponsored nofollow" target="_blank">\\1</a>',
             modified, count=1, flags=re.IGNORECASE)
         if n:
             modified = new
@@ -61,4 +62,4 @@ if __name__ == "__main__":
             log.info(f"+{n} Amazon links: {p['title'][:50]}")
             total += n
     log.info(f"Total Amazon links injected: {total}")
-    log.info("Register: affiliate-program.amazon.com → tag: nysr-20")
+    log.info("Register: affiliate-program.amazon.com -> tag: nysr-20")

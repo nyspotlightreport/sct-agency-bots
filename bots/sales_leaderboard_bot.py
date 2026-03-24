@@ -40,9 +40,7 @@ def calculate_leaderboard():
 def send_leaderboard():
     lb = calculate_leaderboard()
     entry = lb.get("chairman_sc_thomas",{})
-    msg = f"LEADERBOARD - {datetime.utcnow().strftime('%b %d')}
-1. S.C. Thomas {entry.get('streak','')}
-   Won: {entry.get('deals_won',0)} | Active: {entry.get('pipeline_active',0)} | Pts: {entry.get('points',0)}"
+    msg = f"LEADERBOARD - {datetime.utcnow().strftime('%b %d')}\n1. S.C. Thomas {entry.get('streak','')}\nWon: {entry.get('deals_won',0)} | Active: {entry.get('pipeline_active',0)} | Pts: {entry.get('points',0)}"
     notify(msg,"Daily Leaderboard")
     log.info(msg)
     return lb

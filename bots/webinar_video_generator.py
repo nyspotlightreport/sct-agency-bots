@@ -430,8 +430,8 @@ def update_webinar_page(video_url: str):
         updated = content.replace("function loadVideo() {", new_fn, 1)
         # Remove the placeholder and show video directly
         updated = updated.replace(
-            "onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})"",
-            f"onclick="loadVideo()""
+            'onclick="document.getElementById(' + "'register').scrollIntoView({behavior:'smooth'})" + '"',
+            'onclick="loadVideo()"'
         )
         
         payload = {

@@ -25,12 +25,7 @@ def build_integration(service):
         "Write a Python integration class. Include: __init__ with auth, 3 core methods, proper error handling, logging. Return only code.",
         f"Service: {json.dumps(template)}",
         max_tokens=700
-    ) or f"class {service.title()}Integration:
-    def __init__(self, api_key: str):
-        self.api_key = api_key
-    def connect(self):
-        pass
-"
+    ) or f"class {service.title()}Integration:\ndef __init__(self, api_key: str):\nself.api_key = api_key\ndef connect(self):\npass\n"
     return {"service":service,"template":template,"code":code}
 
 def run():

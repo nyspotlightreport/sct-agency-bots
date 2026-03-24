@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-LinkedIn Multi-Touch Outreach Bot — NYSR Agency  
+LinkedIn Multi-Touch Outreach Bot — NYSR Agency
 Sends connection requests + follow-up messages to targeted prospects.
 Targets entrepreneurs with 1k+ followers who post about content/marketing.
 Expected: 30-40% connection accept rate, 5-10% response rate.
@@ -28,7 +28,7 @@ What's your current content setup like?""",
 
 I built a free tool that generates a custom 30-day automated content plan for any business niche. Takes 60 seconds.
 
-Would this be useful for {company}? → nyspotlightreport.com/free-plan/
+Would this be useful for {company}? -> nyspotlightreport.com/free-plan/
 
 Happy to walk through what the output looks like if you're curious.""",
 
@@ -75,7 +75,7 @@ def send_connection_request(person_urn, note):
     return r.status_code in [201,200]
 
 def log_outreach_activity(prospect, action, result):
-    log.info(f"[{action}] {prospect.get('first_name','')} {prospect.get('last_name','')} @ {prospect.get('org','')} → {result}")
+    log.info(f"[{action}] {prospect.get('first_name','')} {prospect.get('last_name','')} @ {prospect.get('org','')} -> {result}")
 
 if __name__ == "__main__":
     profile = get_li_profile()
@@ -83,10 +83,10 @@ if __name__ == "__main__":
         log.warning("LinkedIn token may need refresh — check LINKEDIN_ACCESS_TOKEN")
     else:
         log.info(f"LinkedIn authenticated as: {profile.get('name','')}")
-    
+
     prospects = find_prospects_via_apollo(50)
     log.info(f"Found {len(prospects)} prospects via Apollo")
-    
+
     sent = 0
     for p in prospects[:25]:
         fn = p.get("first_name","there")
@@ -97,7 +97,7 @@ if __name__ == "__main__":
         log_outreach_activity({"first_name":fn,"org":company}, "CONNECTION", f"queued: {note[:50]}")
         sent += 1
         time.sleep(1)
-    
+
     log.info(f"Queued {sent} connection requests")
     log.info(f"Expected accepts (30-40%): {int(sent*.30)}-{int(sent*.40)}")
     log.info(f"Expected responses (8%): {max(1,int(sent*.08))}/day")

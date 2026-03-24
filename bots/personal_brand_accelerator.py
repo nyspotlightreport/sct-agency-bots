@@ -183,12 +183,9 @@ Establish {client_name} as a recognized authority in {expertise} within 30-90 da
     
     if "serp_domination_sequence" in plan:
         for step in plan["serp_domination_sequence"]:
-            brief += f"- **Day {step.get('day')}** [{step.get('platform')}]: {step.get('action')} → *{step.get('expected_rank')}*
-"
+            brief += f"- **Day {step.get('day')}** [{step.get('platform')}]: {step.get('action')} → *{step.get('expected_rank')}*\n"
     
-    brief += "
-## Full 30-Day Plan
-"
+    brief += "\n## Full 30-Day Plan\n"
     brief += json.dumps(plan, indent=2)
     
     return brief

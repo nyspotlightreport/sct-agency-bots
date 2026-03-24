@@ -101,30 +101,19 @@ Return JSON: {{
 
 def generate_objection_cheatsheet(package: str = "all") -> str:
     """Generate a full objection handling cheatsheet as markdown."""
-    lines = [f"# NYSR Sales — Objection Handling Cheatsheet
-*Package: {package}*
-"]
+    lines = [f"# NYSR Sales — Objection Handling Cheatsheet\n*Package: {package}*\n"]
 
     for key, obj in OBJECTIONS.items():
         response = handle_objection(f"I have a {obj['category'].lower()} concern", package=package)
         lines.append(f"## {obj['category'].upper()} Objection")
         lines.append(f"**Reframe:** {obj['reframe']}")
-        lines.append(f"
-**Short response:**
-{response.get('response_short','')}")
-        lines.append(f"
-**Full response:**
-{response.get('response_medium','')}")
-        lines.append(f"
-**Follow-up question:** {response.get('follow_up_question','')}")
-        lines.append(f"
-**Hidden concern:** {response.get('warning_signs','')}
-")
-        lines.append("---
-")
+        lines.append(f"\n**Short response:**\n{response.get('response_short','')}")
+        lines.append(f"\n**Full response:**\n{response.get('response_medium','')}")
+        lines.append(f"\n**Follow-up question:** {response.get('follow_up_question','')}")
+        lines.append(f"\n**Hidden concern:** {response.get('warning_signs','')}\n")
+        lines.append("---\n")
 
-    return "
-".join(lines)
+    return "\n".join(lines)
 
 def run():
     log.info("Objection Handler Bot generating cheatsheet...")
@@ -139,7 +128,7 @@ def run():
     ]
     for obj in test_objections:
         response = handle_objection(obj)
-        log.info(f"  Objection: "{obj[:40]}..."")
+        log.info(f'  Objection: "{obj[:40]}..."')
         log.info(f"  → Type: {response.get('objection_type','?')} | Rate: {response.get('success_rate',0):.0%}")
 
     return {"cheatsheet_generated": True, "objections_processed": len(test_objections)}

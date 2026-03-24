@@ -42,54 +42,23 @@ End with ONE easy yes/no question. No generic openers. No "I hope this email fin
 Sign as: S.C. Thomas, NY Spotlight Report""",
             f"To: {name}, {title} at {company}. Their industry: {industry}. Selling: AI content automation starting at $97/mo.",
             max_tokens=200
-        ) or f"Hi {name},
-
-I noticed {company} is growing fast — content production usually becomes a bottleneck around your stage.
-
-We help {industry} companies automate content creation and lead gen with AI bots. Most clients 10× output in 30 days.
-
-Worth a 15-min call this week?
-
-S.C. Thomas
-NY Spotlight Report"
+        ) or f"Hi {name},\n\nI noticed {company} is growing fast — content production usually becomes a bottleneck around your stage.\n\nWe help {industry} companies automate content creation and lead gen with AI bots. Most clients 10× output in 30 days.\n\nWorth a 15-min call this week?\n\nS.C. Thomas\nNY Spotlight Report"
 
     elif sequence_step == 2:
         subject = f"Re: {company} — still relevant?"
         body = claude("Write a 3-sentence follow-up email. Acknowledge no reply. Add one new insight. Ask if timing is off.",
             f"Following up with {name} at {company}", max_tokens=120
-        ) or f"Hi {name},
-
-Wanted to follow up — I know things get busy.
-
-I put together a quick analysis showing how 3 companies in {industry} cut content costs by 60% with our system.
-
-Is this even on your radar right now?
-
-S.C."
+        ) or f"Hi {name},\n\nWanted to follow up — I know things get busy.\n\nI put together a quick analysis showing how 3 companies in {industry} cut content costs by 60% with our system.\n\nIs this even on your radar right now?\n\nS.C."
 
     elif sequence_step == 3:
         subject = f"Something useful for {company}"
-        body = f"Hi {name},
-
-Sharing this because it's directly relevant to {company}:
-
-→ [Quick case study: How a {industry} company went from 5 to 50 articles/week in 30 days]
-
-No ask. Just thought it might be useful.
-
-S.C. Thomas"
+        body = f"Hi {name},\n\nSharing this because it's directly relevant to {company}:\n\n→ [Quick case study: How a {industry} company went from 5 to 50 articles/week in 30 days]\n\nNo ask. Just thought it might be useful.\n\nS.C. Thomas"
 
     elif sequence_step == 4:
         subject = f"Closing the loop — {company}"
         body = claude("Write a 2-sentence breakup email. Graceful. Leave door open. Create mild FOMO.",
             f"Last email to {name} at {company}", max_tokens=80
-        ) or f"Hi {name},
-
-I won't keep filling your inbox — if AI content automation isn't a priority at {company} right now, totally understood.
-
-If things change, you know where to find us.
-
-S.C."
+        ) or f"Hi {name},\n\nI won't keep filling your inbox — if AI content automation isn't a priority at {company} right now, totally understood.\n\nIf things change, you know where to find us.\n\nS.C."
 
     return {
         "to":      contact.get("email",""),

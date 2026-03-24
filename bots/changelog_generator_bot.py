@@ -46,8 +46,7 @@ def generate_changelog(version="latest"):
     if cats["fix"]:  lines += ["## Bug Fixes",*[f"- {c['message'][:80]}" for c in cats["fix"][:10]],""]
     if cats["refactor"]: lines += ["## Improvements",*[f"- {c['message'][:80]}" for c in cats["refactor"][:5]],""]
     lines += [f"**{len(commits)} commits** from {len(set(c['author'] for c in commits))} contributors"]
-    return "
-".join(lines)
+    return "\n".join(lines)
 
 def run():
     changelog = generate_changelog()

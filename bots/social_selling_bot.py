@@ -48,8 +48,7 @@ def generate_comment_strategy(post: str, contact: dict) -> str:
     name = (contact.get("name","") or "").split()[0]
     return claude(
         "Write a LinkedIn comment. Adds genuine value. Positions expertise. Under 50 words. Not promotional.",
-        f"Post content: {post[:300]}
-Commenter persona: AI automation expert building AI agency systems",
+        f"Post content: {post[:300]}\nCommenter persona: AI automation expert building AI agency systems",
         max_tokens=80
     ) or "Great perspective on this. The companies seeing the most traction right now are combining this with AI automation — the compounding effect is significant."
 

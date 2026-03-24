@@ -42,7 +42,7 @@ def inject_links_into_post(post_id, content):
     injected = 0
     for keyword, url in AFFILIATE_LINKS.items():
         # Only link first occurrence of each keyword, not already linked
-        pattern = f"(?<!href=[\"\']{url}[\"\'}>])\b({re.escape(keyword)})\b"
+        pattern = f"(?<!href=[\"']{url}[\"'>])" + r"\b(" + re.escape(keyword) + r")\b"
         new_content, n = re.subn(
             pattern,
             f'<a href="{url}" rel="sponsored nofollow" target="_blank">\\1</a>',

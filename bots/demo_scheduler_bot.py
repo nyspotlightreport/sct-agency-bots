@@ -103,8 +103,7 @@ def run():
     reminder = generate_reminder(contact, 24)
     brief = generate_demo_brief(contact)
     log.info(f"Demo booking email ready for {contact['name']} @ {contact['company']}")
-    log.info(f"Brief:
-{brief}")
+    log.info(f"Brief:\n{brief}")
     return {"booking": booking, "reminder": reminder, "brief": brief}
 
 if __name__ == "__main__":

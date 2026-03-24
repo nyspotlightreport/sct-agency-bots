@@ -79,15 +79,7 @@ def generate_save_campaign(customer: dict, health: dict) -> dict:
         f"Write a {'urgent' if risk == 'CRITICAL' else 'warm'} customer success email. Focus on their success. Offer: {offer}. Under 100 words.",
         f"Customer {name} at {company} is at {risk} churn risk. Signals: {health.get('churn_signals',[])}",
         max_tokens=180
-    ) or f"Hi {name},
-
-Wanted to reach out personally and make sure {company} is getting full value from the platform.
-
-I'd love to offer you a {offer} — no strings attached.
-
-Can we schedule 20 minutes this week?
-
-S.C. Thomas"
+    ) or f"Hi {name},\n\nWanted to reach out personally and make sure {company} is getting full value from the platform.\n\nI'd love to offer you a {offer} — no strings attached.\n\nCan we schedule 20 minutes this week?\n\nS.C. Thomas"
 
     return {"subject": subject, "body": body, "risk": risk, "offer": offer}
 

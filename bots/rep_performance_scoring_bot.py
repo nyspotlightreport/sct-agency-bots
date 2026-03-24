@@ -126,9 +126,7 @@ def score_reps():
     # Weekly pushover summary
     if PUSH_API and PUSH_USER:
         top = rep_scores[-1] if rep_scores else None
-        msg = (f"Rep Perf Weekly
-{n} active reps | avg {avg:.1f} closes
-"
+        msg = (f"Rep Perf Weekly\n{n} active reps | avg {avg:.1f} closes\n"
                f"Top: {top['rep'].get('first_name','')} ({top['closes']} closes)" if top else "No reps yet")
         data = json.dumps({"token":PUSH_API,"user":PUSH_USER,
             "title":"Rep Performance Weekly","message":msg}).encode()

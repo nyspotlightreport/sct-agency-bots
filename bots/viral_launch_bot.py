@@ -208,21 +208,18 @@ nyspotlightreport.com/blog/automated-content-operation/
 What part of this would you want to apply to your business?"""
 
 if __name__ == "__main__":
-    log.info("Viral Launch Assets Ready
-")
+    log.info("Viral Launch Assets Ready\n")
     
     log.info("HACKER NEWS:")
     log.info(f"Title: {HN_POST['title']}")
     log.info(f"Submit at: {HN_POST['submit_url']}")
     log.info("Best time: Tuesday-Thursday, 8-11 AM EST")
     
-    log.info("
-TWITTER THREAD:")
+    log.info("\nTWITTER THREAD:")
     log.info(f"Length: {len(TWITTER_VIRAL_THREAD.split('---'))} tweets")
     log.info("Post as thread, not individual tweets")
     
-    log.info("
-LINKEDIN:")
+    log.info("\nLINKEDIN:")
     log.info(f"Length: {len(LINKEDIN_VIRAL_POST.split(chr(10)))} lines")
     log.info("Best engagement: Tuesday-Thursday 8-10 AM")
     
@@ -233,5 +230,4 @@ LINKEDIN:")
             "twitter_thread": TWITTER_VIRAL_THREAD,
             "linkedin": LINKEDIN_VIRAL_POST
         }, f, indent=2)
-    log.info("
-✅ All viral assets saved to data/viral_launch_assets.json")
+    log.info("\n✅ All viral assets saved to data/viral_launch_assets.json")

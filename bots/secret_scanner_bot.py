@@ -13,7 +13,7 @@ DANGEROUS_PATTERNS = [
     (r"sk_live_[a-zA-Z0-9]{24,}", "Stripe live secret"),
     (r"ghp_[a-zA-Z0-9]{36,}", "GitHub PAT"),
     (r"AKIA[0-9A-Z]{16}", "AWS access key"),
-    (r'password\s*=\s*["'][^"']{8,}["']', "Hardcoded password"),
+    (r'password\s*=\s*["''][^\"' + "'" + r']{8,}["'']', "Hardcoded password"),
     (r"private_key.*BEGIN", "Private key"),
 ]
 
@@ -21,8 +21,7 @@ SAFE_PATTERNS = ["YOUR_","example","REPLACE","placeholder","test_","demo_","<YOU
 
 def scan_content(content, filename):
     findings = []
-    for i, line in enumerate(content.split("
-"),1):
+    for i, line in enumerate(content.split("\n"),1):
         if any(safe in line for safe in SAFE_PATTERNS): continue
         for pattern, name in DANGEROUS_PATTERNS:
             if re.search(pattern, line, re.IGNORECASE):

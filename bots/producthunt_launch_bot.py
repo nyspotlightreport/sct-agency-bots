@@ -69,37 +69,13 @@ Try it: nyspotlightreport.com/free-plan/""",
 
 LAUNCH_ANNOUNCEMENT = {
     "twitter_thread": [
-        "🚀 We just launched ProFlow AI on Product Hunt today! (link below)
-
-TL;DR: 63 AI bots run your entire content marketing operation on autopilot.
-
-Here's exactly what it does: 🧵",
-        "1/ Every morning, Claude AI researches trending keywords in your niche and writes a full 1,800-word SEO blog post.
-
-It publishes directly to your site. You don't touch it.
-
-365 posts/year. Zero writing.",
-        "2/ A separate bot takes each post, writes 6 platform-native social versions, and schedules them via Publer.
-
-Instagram, LinkedIn, Pinterest, Twitter, Facebook.
-
-30 posts/month per platform. Automated.",
-        "3/ The newsletter bot reads the week's best content, writes an issue, and sends it to your list via Beehiiv.
-
-Your subscribers get consistent value. You write nothing.",
-        "4/ The affiliate injector scans every piece of published content and adds contextual affiliate links.
-
-25+ programs. Links inserted automatically.
-
-Old posts get updated too.",
-        "5/ The sales agent finds prospects via Apollo, uses Claude to write a unique email per person, and sends 200/day.
-
-Not templates. Genuinely personalized.",
-        "We're live on Product Hunt today. If this is useful, an upvote means the world 🙏
-
-→ [PRODUCT HUNT LINK]
-
-Free trial (no credit card): nyspotlightreport.com/free-plan/"
+        "🚀 We just launched ProFlow AI on Product Hunt today! (link below)\n\nTL;DR: 63 AI bots run your entire content marketing operation on autopilot.\n\nHere's exactly what it does: 🧵",
+        "1/ Every morning, Claude AI researches trending keywords in your niche and writes a full 1,800-word SEO blog post.\n\nIt publishes directly to your site. You don't touch it.\n\n365 posts/year. Zero writing.",
+        "2/ A separate bot takes each post, writes 6 platform-native social versions, and schedules them via Publer.\n\nInstagram, LinkedIn, Pinterest, Twitter, Facebook.\n\n30 posts/month per platform. Automated.",
+        "3/ The newsletter bot reads the week's best content, writes an issue, and sends it to your list via Beehiiv.\n\nYour subscribers get consistent value. You write nothing.",
+        "4/ The affiliate injector scans every piece of published content and adds contextual affiliate links.\n\n25+ programs. Links inserted automatically.\n\nOld posts get updated too.",
+        "5/ The sales agent finds prospects via Apollo, uses Claude to write a unique email per person, and sends 200/day.\n\nNot templates. Genuinely personalized.",
+        "We're live on Product Hunt today. If this is useful, an upvote means the world 🙏\n\n→ [PRODUCT HUNT LINK]\n\nFree trial (no credit card): nyspotlightreport.com/free-plan/"
     ],
     "email_subject": "🚀 We're live on Product Hunt today — would love your support",
     "email_body": """Hey,
