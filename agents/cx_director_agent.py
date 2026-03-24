@@ -66,9 +66,9 @@ def process_inbound():
             breaches.append(t.get("id"))
         if t.get("status") == "open" and t.get("title"):
             resp = ai(
-                f"Ticket: {t.get('title')}
+                f"""Ticket: {t.get('title')}
 {t.get('description','')}
-"
+"""
                 "Write a warm, specific, solution-focused response. Ritz-Carlton standard. Under 200 words.",
                 max_tokens=300)
             if resp:
@@ -96,14 +96,14 @@ def run_outbound():
         step = s.get("current_step",0)
         channel = s.get("channel","email")
         msg = ai(
-            f"B2B outreach step {step+1} via {channel}.
-"
-            f"Contact: {c.get('name')} | {c.get('title')} at {c.get('company')}
-"
-            f"Industry: {c.get('industry')} | Stage: {c.get('stage')}
-"
-            f"Offer: NYSR ProFlow AI ($97-$4997). Lead with DFY $1497 for agencies.
-"
+            f"""B2B outreach step {step+1} via {channel}.
+"""
+            f"""Contact: {c.get('name')} | {c.get('title')} at {c.get('company')}
+"""
+            f"""Industry: {c.get('industry')} | Stage: {c.get('stage')}
+"""
+            f"""Offer: NYSR ProFlow AI ($97-$4997). Lead with DFY $1497 for agencies.
+"""
             f"{'Subject line then body. Under 120 words. Specific pain point. No fluff.' if channel=='email' else 'Under 300 chars. Conversational. Not salesy.'}",
             max_tokens=250)
         if msg:
@@ -125,10 +125,10 @@ def daily_report():
     convos = supa("GET","conversation_log","",f"?created_at=gte.{today}T00:00:00&select=id") or []
     campaigns = supa("GET","outreach_campaigns","","?status=eq.active&select=name,meetings_booked,replied") or []
     total_meetings = sum(c.get("meetings_booked",0) for c in campaigns)
-    report = (f"CX Daily — {today}
-"
-              f"Open tickets: {len(open_t)} | Convos: {len(convos)}
-"
+    report = (f"""CX Daily — {today}
+"""
+              f"""Open tickets: {len(open_t)} | Convos: {len(convos)}
+"""
               f"Active campaigns: {len(campaigns)} | Meetings booked: {total_meetings}")
     push_notify("CX Report", report)
     log.info(report)

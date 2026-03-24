@@ -22,14 +22,14 @@ def design_schema(domain, entities):
         "You are a senior DB architect. Design a PostgreSQL schema. Include: UUID PKs, timestamps, soft deletes, indexes, RLS. Return only valid SQL.",
         f"Domain: {domain}. Entities: {', '.join(entities)}. Requirements: multi-tenant, audit trail, performance.",
         max_tokens=1500
-    ) or f"-- {domain} Schema
+    ) or f"""-- {domain} Schema
 CREATE TABLE {entities[0].lower()}s (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   name TEXT NOT NULL,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW(),
   deleted_at TIMESTAMPTZ
-);"
+);"""
 
 def analyze_query(query):
     return claude_json(
@@ -41,10 +41,10 @@ def analyze_query(query):
 def generate_migration(name, up_sql):
     import datetime
     ts = datetime.datetime.utcnow().strftime("%Y%m%d%H%M%S")
-    return f"-- Migration: {ts}_{name}
+    return f"""-- Migration: {ts}_{name}
 BEGIN;
 {up_sql}
-COMMIT;"
+COMMIT;"""
 
 def redis_strategy(data_types):
     return {t:{"key":f"{t}:{{id}}","ttl":3600 if t in ["user","session"] else 300} for t in data_types}

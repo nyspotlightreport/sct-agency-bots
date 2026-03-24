@@ -348,9 +348,9 @@ def send_alert(threat_level: str, subject: str, details: str):
         requests.post("https://api.pushover.net/1/messages.json",
             data={
                 "token": PUSHOVER_KEY, "user": PUSHOVER_USR,
-                "message": f"{emoji} {subject}
+                "message": f"""{emoji} {subject}
 
-{details[:500]}",
+{details[:500]}""",
                 "title": f"NYSR Fixer Alert — {threat_level.upper()}",
                 "priority": priority,
                 "sound": "siren" if priority >= 1 else "pushover"
@@ -402,9 +402,9 @@ def auto_deploy_response(threat_analysis: dict, rep_score: dict):
     import base64 as b64
     send_alert(threat_level,
         f"Counter-content staged — Rep score: {rep_score['score']}/100",
-        f"Threat signals: {rep_score.get('explanation','')}
+        f"""Threat signals: {rep_score.get('explanation','')}
 
-Counter-content ready to deploy. Reply Y to publish.")
+Counter-content ready to deploy. Reply Y to publish.""")
 
 # ── OPPORTUNITY CAPTURE ───────────────────────────────────────────
 
@@ -561,24 +561,16 @@ def run():
         send_alert(
             rep_score["threat_level"],
             f"Rep Score: {rep_score['score']}/100 | Crisis Risk: {crisis_pred['probability']}%",
-            f"{crisis_pred['prediction'].upper()}
-
-Signals:
-" + 
-            "
-".join(crisis_pred.get("signals",[])) +
-            f"
-
-Action: {crisis_pred['recommended_action']}"
+            f"{crisis_pred['prediction'].upper()}\n\nSignals:\n" +
+            "\n".join(crisis_pred.get("signals",[])) +
+            f"\n\nAction: {crisis_pred['recommended_action']}"
         )
         auto_deploy_response(crisis_pred, rep_score)
     elif opportunities and opportunities[0]["score"] >= 8:
         send_alert(
             "yellow",
             f"HIGH-VALUE OPPORTUNITY: {opportunities[0]['title'][:50]}",
-            f"Score: {opportunities[0]['score']}/10
-Type: {opportunities[0]['type']}
-Action: {opportunities[0]['action']}"
+            f"Score: {opportunities[0]['score']}/10\nType: {opportunities[0]['type']}\nAction: {opportunities[0]['action']}"
         )
     else:
         log.info(f"✅ All clear — Rep: {rep_score['score']}/100 | No active threats")

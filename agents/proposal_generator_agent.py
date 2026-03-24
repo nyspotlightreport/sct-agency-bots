@@ -2,7 +2,7 @@
 """
 Proposal Generator Agent — Enterprise Sales
 Generates fully personalized, professional proposals for every product tier.
-Each proposal is researched, tailored to the prospect's specific pain points,
+Each proposal is researched, tailored to the prospect'''s specific pain points,
 includes ROI calculations, and is designed to close.
 """
 import os, sys, json, logging
@@ -130,7 +130,7 @@ def generate_proposal(contact: Dict, product_key: str = None, custom_notes: str 
     product  = PRODUCTS.get(product_key, PRODUCTS["proflow_growth"])
     roi_data = calculate_roi(product_key)
 
-    price_display = f"${product.get('price_monthly',0):,}/mo" if product.get("price_monthly") else f"${product.get('price_one_time',0):,} one-time"
+    price_display = f"${product.get('price_monthly''',0):,}/mo" if product.get("price_monthly") else f"${product.get('price_one_time',0):,} one-time"
 
     proposal_prompt = f"""You are a senior sales writer for NYSR, an elite AI automation agency.
 Write a professional, persuasive sales proposal for {name} at {company}.
@@ -145,10 +145,10 @@ Custom notes: {custom_notes}
 Write a compelling proposal with:
 1. Personalized subject line
 2. Opening paragraph acknowledging their specific situation at {company}
-3. The problem they're facing (be specific and empathetic)
+3. The problem they'''re facing (be specific and empathetic)
 4. Our solution (how ProFlow/NYSR solves it exactly)
 5. ROI calculation table
-6. What's included (features)
+6. What'''s included (features)
 7. Social proof (mention 2-3 types of clients like them)
 8. Investment (pricing with annual discount if applicable)
 9. Next steps (specific, time-bound)
@@ -157,13 +157,13 @@ Write a compelling proposal with:
 Tone: Professional but warm. Confident, not pushy. Data-driven.
 Length: 400-600 words."""
 
-    body = claude("You are an elite sales copywriter.", proposal_prompt, max_tokens=1200) or f"Hi {name},
+    body = claude("You are an elite sales copywriter.", proposal_prompt, max_tokens=1200) or f"""Hi {name},
 
-I'd love to show you how NYSR can help {company} with {product['name']}.
+I'd love to show you how NYSR can help {company} with {product["name"]}.
 
 {price_display}
 
-Let's talk!"
+Let's talk!"""
 
     # Wrap in professional HTML
     return f"""<!DOCTYPE html>

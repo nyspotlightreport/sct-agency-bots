@@ -17,22 +17,45 @@ jobs:
         run: |
           git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
 
-      - name: Sync site files (strip site/ prefix)
+      - name: Sync site files (ADDITIVE — never delete live-only files)
         run: |
           if [ -d "site" ]; then
-            rsync -av --delete --exclude='.git' --exclude='.github' --exclude='netlify' --exclude='package.json' --exclude='node_modules' site/ /tmp/live-repo/
+            rsync -av \
+              --exclude='.git' \
+              --exclude='.github' \
+              --exclude='netlify' \
+              --exclude='package.json' \
+              --exclude='node_modules' \
+              --exclude='CODE_FREEZE.md' \
+              --exclude='images/' \
+              --exclude='autopublish*' \
+              --exclude='.env*' \
+              --exclude='vitest.config.js' \
+              --exclude='Delivery' \
+              site/ /tmp/live-repo/
           fi
 
-      - name: Sync netlify functions
+      - name: Sync netlify functions (ADDITIVE — never delete live-only functions)
         run: |
           if [ -d "netlify/functions" ]; then
             mkdir -p /tmp/live-repo/netlify/functions
             rsync -av netlify/functions/ /tmp/live-repo/netlify/functions/
           fi
 
-      - name: Sync netlify.toml (transform publish path)
+      - name: Sync netlify.toml ONLY if live repo has no redirects we'd lose
         run: |
-          if [ -f "netlify.toml" ]; then
+          # Only sync netlify.toml if code repo has MORE redirects than live
+          # This prevents overwriting live-only API routes
+          if [ -f "netlify.toml" ] && [ -f "/tmp/live-repo/netlify.toml" ]; then
+            CODE_REDIRECTS=$(grep -c '^\[\[redirects\]\]' netlify.toml || true)
+            LIVE_REDIRECTS=$(grep -c '^\[\[redirects\]\]' /tmp/live-repo/netlify.toml || true)
+            if [ "$CODE_REDIRECTS" -gt "$LIVE_REDIRECTS" ]; then
+              echo "Code repo has more redirects ($CODE_REDIRECTS > $LIVE_REDIRECTS), syncing"
+              sed 's/publish = "site"/publish = "."/' netlify.toml > /tmp/live-repo/netlify.toml
+            else
+              echo "SKIP: Live repo has $LIVE_REDIRECTS redirects vs code's $CODE_REDIRECTS — preserving live version"
+            fi
+          elif [ -f "netlify.toml" ] && [ ! -f "/tmp/live-repo/netlify.toml" ]; then
             sed 's/publish = "site"/publish = "."/' netlify.toml > /tmp/live-repo/netlify.toml
           fi
 

@@ -13,6 +13,9 @@ google-api-python-client>=2.100.0,<3.0
 # YAML parsing
 pyyaml>=6.0,<7.0
 
+# RSS feeds (trend_intelligence_agent)
+feedparser>=6.0,<7.0
+
 # Testing (dev)
 pytest>=7.0,<9.0
 pytest-mock>=3.0,<4.0

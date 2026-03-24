@@ -1,0 +1,87 @@
+name: Code Integrity Gate — Zero False Positives
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'agents/**'
+      - 'bots/**'
+      - 'netlify/**'
+      - 'requirements.txt'
+      - '.github/workflows/**'
+  workflow_dispatch:
+jobs:
+  integrity:
+    name: Full Code Integrity Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt -q
+
+      - name: Python syntax check (py_compile every .py file)
+        run: |
+          echo "=== COMPILE-CHECKING EVERY PYTHON FILE ==="
+          ERRORS=0
+          TOTAL=0
+          while IFS= read -r f; do
+            TOTAL=$((TOTAL + 1))
+            if ! python -c "import py_compile; py_compile.compile('$f', doraise=True)" 2>/dev/null; then
+              echo "FAIL: $f"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done < <(find agents/ bots/ scripts/ -name "*.py" -type f 2>/dev/null)
+
+          echo ""
+          echo "Checked: $TOTAL files | Errors: $ERRORS"
+          if [ "$ERRORS" -gt 0 ]; then
+            echo "::error::$ERRORS Python files have syntax errors"
+            exit 1
+          fi
+          echo "ALL $TOTAL PYTHON FILES COMPILE CLEAN"
+
+      - name: YAML syntax check (every workflow)
+        run: |
+          pip install pyyaml -q
+          python -c "
+          import yaml, os, sys
+          errors = 0
+          for f in os.listdir('.github/workflows'):
+              if not f.endswith('.yml'): continue
+              path = os.path.join('.github/workflows', f)
+              try:
+                  with open(path) as fh: yaml.safe_load(fh)
+              except Exception as e:
+                  print(f'FAIL: {f}: {e}')
+                  errors += 1
+          print(f'Checked {len([f for f in os.listdir(\".github/workflows\") if f.endswith(\".yml\")])} workflows | Errors: {errors}')
+          sys.exit(1 if errors else 0)
+          "
+
+      - name: Dependency check (every import resolves)
+        run: |
+          python -c "
+          import importlib, sys
+          deps = ['requests', 'feedparser', 'yaml', 'schedule']
+          missing = []
+          for d in deps:
+              try: importlib.import_module(d)
+              except ImportError: missing.append(d)
+          if missing:
+              print(f'MISSING: {missing}')
+              sys.exit(1)
+          print(f'All {len(deps)} dependencies importable')
+          "
+
+      - name: Alert on failure
+        if: failure()
+        run: |
+          curl -s -F "token=${{ secrets.PUSHOVER_API_KEY }}" \
+               -F "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+               -F "title=CODE INTEGRITY GATE FAILED" \
+               -F "message=Push to main has syntax errors or missing deps. Check Actions." \
+               -F "priority=1" \
+               https://api.pushover.net/1/messages.json

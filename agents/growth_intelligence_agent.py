@@ -115,8 +115,8 @@ def send_brief(message: str):
     if PUSHOVER_KEY:
         requests.post("https://api.pushover.net/1/messages.json",
             data={"token":PUSHOVER_KEY,"user":PUSHOVER_USR,
-                  "message":f"NYSR Growth Brief
-{message}","title":"📊 Social Studio"},
+                  "message":f"""NYSR Growth Brief
+{message}""","title":"📊 Social Studio"},
             timeout=5)
 
 def run():
@@ -148,11 +148,11 @@ def run():
         log.info(f"Top priority: {priority}")
         log.info(f"Brief: {brief}")
         
-        send_brief(f"Score: {growth_score}/10
+        send_brief(f"""Score: {growth_score}/10
 
 {brief}
 
-Priority: {priority}")
+Priority: {priority}""")
     
     log.info("✅ Growth Intelligence Agent complete")
 

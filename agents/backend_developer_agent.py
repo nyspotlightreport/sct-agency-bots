@@ -21,20 +21,20 @@ def generate_fastapi_endpoint(method, path, description, auth_required=True):
         "Write a production FastAPI endpoint. Include: Pydantic models, error handling, auth dependency, docstring. Return only the code.",
         f"Endpoint: {method} {path}. Description: {description}. Auth: {auth_required}",
         max_tokens=600
-    ) or f"@app.{method.lower()}('{path}')
+    ) or f"""@app.{method.lower()}('{path}')
 async def endpoint():
     # TODO: implement {description}
-    return {{'status':'ok'}}"
+    return {{'status':'ok'}}"""
 
 def generate_service_layer(service_name, operations):
     return claude(
         "Write a Python service class with async methods. Proper error handling, logging, type hints. Return only code.",
         f"Service: {service_name}. Operations: {operations}",
         max_tokens=800
-    ) or f"class {service_name}Service:
+    ) or f"""class {service_name}Service:
     def __init__(self):
         pass
-"
+"""
 
 def generate_middleware(middleware_type):
     middlewares = {
@@ -48,8 +48,8 @@ def generate_middleware(middleware_type):
         f"Write FastAPI {middleware_type} middleware. Production-grade. Return only code.",
         middlewares.get(middleware_type,""),
         max_tokens=400
-    ) or f"# {middleware_type} middleware
-# TODO: implement"
+    ) or f"""# {middleware_type} middleware
+# TODO: implement"""
 
 def run():
     ep = generate_fastapi_endpoint("POST","/contacts","Create a new contact",True)

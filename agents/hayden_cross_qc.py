@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Hayden Cross ΓÇö Quality Control Director\nAgentic Super-intelligence for output excellence.\nAutonomous: Grade all director outputs ΓåÆ Block low-quality content ΓåÆ Enforce standards ΓåÆ Track quality trends
 """
@@ -81,8 +81,8 @@ def grade_output(director, content):
     """Use Claude to grade a director's output."""
     return claude_json(SYSTEM,
         f"Grade this director output from {director}.\n\nContent:\n{content[:1500]}\n\n"
-        f"Return JSON: {{\"grade\": \"A+/A/A-/B+/B/B-/C+/C/D/F\", "
-        f"\"score\": 0-100, \"strengths\": [\"...\"], "
+        f"""Return JSON: {{\"grade\": \"A+/A/A-/B+/B/B-/C+/C/D/F\", "
+        f"\"score\": 0-100, \"strengths\": [\"...\"], """
         f"\"weaknesses\": [\"...\"], \"actionable\": true/false, "
         f"\"has_specific_numbers\": true/false, \"has_revenue_link\": true/false, "
         f"\"recommendation\": \"one sentence improvement\"}}",
@@ -138,7 +138,7 @@ if __name__=="__main__":
     if len(_s.argv)>1 and _s.argv[1]=="--super":
         t=" ".join(_s.argv[2:]) if len(_s.argv)>2 else None
         r=execute_super(t)
-        print(f"Grade:{r.get('grade','?')}
-{r.get('final_output','')[:1000]}")
+        print(f"""Grade:{r.get('grade','?')}
+{r.get('final_output','')[:1000]}""")
     else:
         run()

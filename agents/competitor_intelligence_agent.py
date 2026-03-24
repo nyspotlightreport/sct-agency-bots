@@ -96,9 +96,7 @@ WHERE WE WIN:
 {weaknesses_as_wins}
 
 THE CLOSE:
-"Most companies who go with {name} come back to us within 6 months 
-because {top_weakness}. What if we did a side-by-side comparison 
-so you can see the difference before committing?"
+"Most companies who go with {name} come back to us within 6 months because {top_weakness}. What if we did a side-by-side comparison so you can see the difference before committing?"
 
 PRICING COMPARISON:
 {name}: {pricing}
@@ -111,10 +109,8 @@ WIN RATE vs {name}: {win_rate}% in our favor
 def generate_battle_card(competitor_key: str) -> str:
     comp = COMPETITORS.get(competitor_key)
     if not comp: return f"No data for competitor: {competitor_key}"
-    strengths_str = "
-".join([f"  ✓ {s}" for s in comp["strengths"]])
-    wins_str = "
-".join([f"  🏆 {w}" for w in comp["weaknesses"]])
+    strengths_str = "\n".join([f"  ✓ {s}" for s in comp["strengths"]])
+    wins_str = "\n".join([f"  🏆 {w}" for w in comp["weaknesses"]])
     return BATTLE_CARD_TEMPLATE.format(
         name=comp["name"],
         our_angle=comp["our_angle"],
@@ -137,8 +133,8 @@ def run():
     log.info("Competitor Intelligence — generating all battle cards")
     for key, comp in COMPETITORS.items():
         card = generate_battle_card(key)
-        log.info(f"
-{card}")
+        log.info(f"""
+{card}""")
     return {comp: generate_battle_card(key) for key, comp in [(k,v["name"]) for k,v in COMPETITORS.items()]}
 
 if __name__ == "__main__":

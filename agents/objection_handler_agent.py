@@ -49,7 +49,7 @@ on the waitlist. Worth a quick 10-min call to see if the timing could actually w
 Usually when someone says that, it means there's either a question I haven't answered,
 a concern about fit, or another stakeholder involved. Which is it for you?
 
-I'd rather answer your real question now than have you spend a week thinking about
+I'''d rather answer your real question now than have you spend a week thinking about
 a concern I could resolve in 2 minutes.""",
     },
     "competitor": {
@@ -58,9 +58,9 @@ a concern I could resolve in 2 minutes.""",
         "response_template": """Good to know. What do you like most about what you're using?
 
 Most clients who switched came because [COMPETITOR_WEAKNESS].
-We're fundamentally different because [KEY_DIFFERENTIATOR].
+We'''re fundamentally different because [KEY_DIFFERENTIATOR].
 
-It's actually easy to run us side by side for a month. Most clients see the difference
+It'''s actually easy to run us side by side for a month. Most clients see the difference
 in week 1. Want to do a quick comparison on your specific use case?""",
     },
     "need_approval": {
@@ -68,7 +68,7 @@ in week 1. Want to do a quick comparison on your specific use case?""",
         "framework": "STAKEHOLDER_ENABLEMENT",
         "response_template": """Makes sense — who else is typically involved in these decisions?
 
-I've put together an executive summary that makes it really easy to share internally.
+I'''ve put together an executive summary that makes it really easy to share internally.
 It covers the ROI, risk profile, and a one-page overview of what we do.
 
 Would it help if I sent that directly to your [TITLE], or would you prefer to forward it?
@@ -79,7 +79,7 @@ I can also do a 20-min demo for the full team — most decisions get made in tha
         "framework": "TRUST_BUILDING",
         "response_template": """Completely valid concern. Security is non-negotiable for us too.
 
-Here's our posture: [SECURITY_DETAILS]. We don't store your data beyond what's needed
+Here's our posture: [SECURITY_DETAILS]. We don't store your data beyond what'''s needed
 for the service. Everything is encrypted in transit and at rest.
 
 We can also do a technical deep-dive with your IT/security team if needed.
@@ -90,7 +90,7 @@ What specific requirements does [COMPANY] need met?""",
         "framework": "SIMPLICITY_PROOF",
         "response_template": """You'd be surprised — most clients are live in under 48 hours.
 
-The DFY option means we handle everything. You log in and it's already running.
+The DFY option means we handle everything. You log in and it'''s already running.
 No technical knowledge needed.
 
 Our average client goes from zero to publishing 10× more content in week 1.
@@ -101,11 +101,11 @@ Want me to walk you through exactly what setup looks like for [COMPANY] specific
         "framework": "SOCIAL_PROOF",
         "response_template": """Fair — you shouldn't take my word for it.
 
-Here's what I can show you: [CASE_STUDY_TEASER]. Similar company, similar situation,
+Here'''s what I can show you: [CASE_STUDY_TEASER]. Similar company, similar situation,
 these were the results in 90 days.
 
-Better yet — let's do a 14-day pilot on your actual content. You see real results
-with your brand, your industry, your keywords. No risk. If it doesn't work, we part ways.
+Better yet — let'''s do a 14-day pilot on your actual content. You see real results
+with your brand, your industry, your keywords. No risk. If it doesn'''t work, we part ways.
 Interested?""",
     },
 }
@@ -138,10 +138,10 @@ def handle_objection(objection_text: str, contact: Dict = None, context: Dict = 
         """You are Sloane Pierce, VP of Sales at an elite AI agency. 
 Respond to this objection with a confident, empathetic, psychologically effective response.
 3-4 sentences. End with a question that moves the deal forward. Never be pushy.""",
-        f"Objection: {objection_text}
+        f"""Objection: {objection_text}
 Company: {company}
 Product price: ${price}/mo
-Objection type: {obj_type}",
+Objection type: {obj_type}""",
         max_tokens=200
     ) or template_response or f"That's a fair point. Can you tell me more about what's driving that concern?"
 
@@ -167,11 +167,11 @@ def run():
     contact = {"company":"TestCorp","title":"CEO"}
     for obj in test_objections:
         result = handle_objection(obj, contact)
-        log.info(f"Objection: '{obj}'
+        log.info(f"""Objection: '{obj}'''''''''''''''''''
 Type: {result['objection_type']}
 Response: {result['response'][:100]}...
-")
+""""")
 
-if __name__ == "__main__":
+if __name__ == "__main__""":
     logging.basicConfig(level=logging.INFO)
     run()

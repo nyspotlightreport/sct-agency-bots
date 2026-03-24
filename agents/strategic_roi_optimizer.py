@@ -4,7 +4,7 @@ Strategic ROI Optimizer — NYSR Business Development
 ╔══════════════════════════════════════════════════════════════╗
 ║  The single most valuable BD function:                      ║
 ║  Know EXACTLY where every dollar and hour goes.             ║
-║  Kill what doesn't work. Double what does.                  ║
+║  Kill what doesn'''t work. Double what does.                  ║
 ║  Find the hidden money in what you already have.            ║
 ╚══════════════════════════════════════════════════════════════╝
 
@@ -108,7 +108,7 @@ def analyze_revenue_leaks(stripe: dict, gumroad: dict, workflows: dict) -> dict:
         if prod["views"] > 0 and prod["sales"] == 0:
             leaks.append({
                 "type": "conversion_gap",
-                "asset": f"Gumroad: {prod['name']}",
+                "asset": f"Gumroad: {prod['name''']}",
                 "issue": f"{prod['views']} views, 0 sales",
                 "fix": "Check price, description, preview. Add social proof. Test lower entry price.",
                 "revenue_impact": f"${5-15}/sale × {max(1,prod['views']//10)} expected converts = ${prod['views']//10 * 10:.0f}/month potential"
@@ -212,14 +212,14 @@ def run():
     # Analyze
     analysis = analyze_revenue_leaks(stripe, gumroad, wf_health)
     
-    log.info(f"
-Revenue leaks found: {len(analysis['leaks'])}")
+    log.info(f"""
+Revenue leaks found: {len(analysis['leaks'])}""")
     for leak in analysis["leaks"][:3]:
         log.info(f"  🔴 {leak['asset']}: {leak['issue'][:60]}")
         log.info(f"     Fix: {leak['fix'][:80]}")
     
-    log.info(f"
-Opportunities identified: {len(analysis['opportunities'])}")
+    log.info(f"""
+Opportunities identified: {len(analysis['opportunities'])}""")
     for opp in analysis["opportunities"][:3]:
         log.info(f"  💰 {opp['description'][:60]}")
         log.info(f"     Revenue: {opp['revenue_model']}")
@@ -227,8 +227,8 @@ Opportunities identified: {len(analysis['opportunities'])}")
     # Generate priority actions
     actions = generate_priority_action_list(analysis)
     
-    log.info(f"
-PRIORITY ACTION LIST:")
+    log.info(f"""
+PRIORITY ACTION LIST:""")
     for action in actions[:5]:
         log.info(f"  #{action.get('rank','?')} {action.get('action','')[:70]}")
         log.info(f"      Impact: {action.get('revenue_impact','')[:60]} | Deadline: {action.get('deadline','')}")
@@ -238,14 +238,14 @@ PRIORITY ACTION LIST:")
         top = actions[0] if isinstance(actions, list) else {}
         requests.post("https://api.pushover.net/1/messages.json",
             data={"token":PUSHOVER_KEY,"user":PUSHOVER_USR,
-                  "message":f"📊 WEEKLY ROI BRIEF
+                  "message":f"""📊 WEEKLY ROI BRIEF
 
 Revenue: ${stripe.get('total_revenue',0) + gumroad.get('total_revenue',0):.2f} total
 
 #1 Priority:
 {top.get('action','')[:100]}
 
-Impact: {top.get('revenue_impact','')}",
+Impact: {top.get('revenue_impact','')}""",
                   "title":"💼 ROI Optimizer"},
             timeout=5)
     
@@ -267,8 +267,8 @@ Impact: {top.get('revenue_impact','')}",
         if r.status_code==200: body["sha"]=r.json()["sha"]
         requests.put(f"https://api.github.com/repos/{REPO2}/contents/{path}",json=body,headers=H2)
     
-    log.info("
-✅ ROI Optimizer complete")
+    log.info("""
+✅ ROI Optimizer complete""")
     return actions
 
 if __name__ == "__main__":

@@ -145,7 +145,7 @@ def _fallback_content(topic: str, hashtags: str) -> dict:
             "estimated_reach": "500-2000"
         },
         "linkedin_post": {
-            "post": f"Most entrepreneurs think {topic} is about working harder.
+            "post": f"""Most entrepreneurs think {topic} is about working harder.
 
 It's not.
 
@@ -162,12 +162,12 @@ It's leverage.
 
 We documented the full system at nyspotlightreport.com
 
-What would you automate first if you could?",
+What would you automate first if you could?""",
             "best_time": "Tuesday 8am",
             "estimated_impressions": "2000-8000"
         },
         "instagram_caption": {
-            "caption": f"The {topic} formula nobody teaches you 📌
+            "caption": f"""The {topic} formula nobody teaches you 📌
 
 (Save this before it gets buried)
 
@@ -187,7 +187,7 @@ Don't be that story.
 
 🔗 Free breakdown at nyspotlightreport.com (link in bio)
 
-{hashtags}",
+{hashtags}""",
             "visual_concept": "Clean dark background with 3-step framework text overlay, gold accent colors",
             "story_concept": "Poll: 'Do you automate your content?' → Yes/No → swipe up for the system"
         },
@@ -199,7 +199,7 @@ Don't be that story.
         },
         "youtube_short": {
             "hook": "I made $80 this month doing literally nothing.",
-            "script": f"I made $80 this month doing literally nothing.
+            "script": f"""I made $80 this month doing literally nothing.
 
 Here's exactly how:
 
@@ -217,14 +217,14 @@ But it's the first income stream.
 
 I have 9 more.
 
-Follow for the full stack.",
+Follow for the full stack.""",
             "title": "I earn $80/month doing literally nothing (real setup)",
             "description": f"How I built a {topic} system that runs without me. Full breakdown at nyspotlightreport.com",
             "tags": ["passiveincome","sidehustle","makemoneyonline","automation","entrepreneur"]
         },
         "tiktok_script": {
             "hook": "POV: your business makes money while you sleep",
-            "script": f"POV: your business makes money while you sleep.
+            "script": f"""POV: your business makes money while you sleep.
 
 Not a dream. This is what I actually built.
 
@@ -244,7 +244,7 @@ The system runs itself.
 
 This is what {topic} actually looks like in 2026.
 
-Follow and I'll show you how to build it.",
+Follow and I'll show you how to build it.""",
             "audio_suggestion": "Trending lo-fi/study beat or original talking head",
             "caption": f"Building a fully automated business in 2026 🤖 #entrepreneur #automation #passiveincome #aitools #sidehustle"
         },

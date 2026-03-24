@@ -73,8 +73,7 @@ Client: _________________________ Date: _______________
 def generate_dfy_sow(contact: Dict, scope: List[str], price: float, timeline_weeks: int = 4) -> str:
     today     = datetime.utcnow().strftime("%B %d, %Y")
     end_date  = (datetime.utcnow() + timedelta(weeks=timeline_weeks)).strftime("%B %d, %Y")
-    scope_str = "
-".join([f"  {i+1}. {item}" for i,item in enumerate(scope)])
+    scope_str = "\n".join([f"  {i+1}. {item}" for i,item in enumerate(scope)])
     return f"""STATEMENT OF WORK (SOW)
 
 Date: {today}

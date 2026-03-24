@@ -27,7 +27,7 @@ PUSHOVER_USER = os.environ.get("PUSHOVER_USER_KEY","")
 
 # Patterns that indicate security issues
 SECURITY_PATTERNS = {
-    "hardcoded_secret":    re.compile(r"(api_key|secret|password|token|passwd)\s*=\s*['"][a-zA-Z0-9_\-]{10,}['"]", re.IGNORECASE),
+    "hardcoded_secret":    re.compile(r"(api_key|secret|password|token|passwd)\s*=\s*['\"][a-zA-Z0-9_\-]{10,}['\"]", re.IGNORECASE),
     "hardcoded_key_var":   re.compile(r"ghp_[a-zA-Z0-9]{36}|sk-[a-zA-Z0-9]{32,}|pat-na1-[a-zA-Z0-9\-_]{50,}"),
     "sql_injection":       re.compile(r"(SELECT|INSERT|UPDATE|DELETE).+\+\s*[a-z_]+\s*\+", re.IGNORECASE),
     "eval_exec":           re.compile(r"(eval|exec)\s*\("),

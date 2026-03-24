@@ -27,7 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -c "
+      - run: pip install requests -q
+      - run: PYTHONPATH=. python -c "
           import sys; sys.path.insert(0,'.');
           from agents.department_integrator import run;
           results = run();

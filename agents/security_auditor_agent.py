@@ -37,8 +37,8 @@ def security_checklist(project="saas"):
     return base
 
 def run():
-    test = 'api_key = "sk-ant-abc123"
-query = "SELECT * FROM users WHERE id = " + user_id'
+    test = '''api_key = "sk-ant-abc123"
+query = "SELECT * FROM users WHERE id = " + user_id'''
     result = audit_code(test)
     log.info(f"Audit: {result['critical']} critical issues found")
     return result

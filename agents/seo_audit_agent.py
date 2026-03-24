@@ -148,12 +148,12 @@ def run():
             "created_at":      datetime.utcnow().isoformat(),
         })
         briefs_generated += 1
-        log.info(f"  Brief: "{keyword}" — est. {est_traffic:,} visits/mo at #1")
+        log.info(f"  Brief: '{keyword}' - est. {est_traffic:,} visits/mo at #1")
 
     # Alert on biggest opportunities
     if opportunities and PUSHOVER_API and PUSHOVER_USER:
         top = max(opportunities, key=lambda x: x["estimated_monthly_traffic"])
-        msg = f"🔍 SEO Audit Complete\n{briefs_generated} content briefs generated\n\nBiggest opportunity:\n"{top['keyword']}"\n~{top['estimated_monthly_traffic']:,} visits/mo at rank #1"
+        msg = f"SEO Audit Complete\n{briefs_generated} content briefs generated\n\nBiggest opportunity:\n{top['keyword']}\n~{top['estimated_monthly_traffic']:,} visits/mo at rank #1"
         try:
             data = urllib.parse.urlencode({"token":PUSHOVER_API,"user":PUSHOVER_USER,"title":"SEO Audit","message":msg}).encode()
             urllib.request.urlopen("https://api.pushover.net/1/messages.json",data,timeout=5)

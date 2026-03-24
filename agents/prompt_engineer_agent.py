@@ -27,8 +27,8 @@ def build_system_prompt(role, goal, constraints=None, output_format=None):
 def optimize_for_task(task_description, current_prompt):
     return claude(
         "Improve this prompt. Apply: clear role, specific output format, examples if beneficial, constraints. Return only the improved prompt, nothing else.",
-        f"Task: {task_description}
-Current prompt: {current_prompt}",
+        f"""Task: {task_description}
+Current prompt: {current_prompt}""",
         max_tokens=400
     ) or current_prompt
 
@@ -42,8 +42,8 @@ def test_prompt(prompt, test_inputs):
 def run():
     for name, template in list(PROMPT_LIBRARY.items())[:3]:
         log.info(f"Prompt '{name}': {len(template)} chars")
-    system = build_system_prompt("an elite sales copywriter","write personalized cold emails that get replies",["Under 100 words","No generic openers","End with one yes/no question"],"Subject: [line]
-Body: [email]")
+    system = build_system_prompt("an elite sales copywriter","write personalized cold emails that get replies",["Under 100 words","No generic openers","End with one yes/no question"],"""Subject: [line]
+Body: [email]""")
     log.info(f"Built system prompt: {len(system)} chars")
     return True
 

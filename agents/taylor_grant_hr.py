@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Taylor Grant ΓÇö HR / Workforce Director\nAgentic Super-intelligence for AI workforce management.\nAutonomous: Audit agent/bot performance ΓåÆ Track output per agent ΓåÆ Identify underperformers ΓåÆ Recommend scaling
 """
@@ -130,7 +130,7 @@ if __name__=="__main__":
     if len(_s.argv)>1 and _s.argv[1]=="--super":
         t=" ".join(_s.argv[2:]) if len(_s.argv)>2 else None
         r=execute_super(t)
-        print(f"Grade:{r.get('grade','?')}
-{r.get('final_output','')[:1000]}")
+        print(f"""Grade:{r.get('grade','?')}
+{r.get('final_output','')[:1000]}""")
     else:
         run()

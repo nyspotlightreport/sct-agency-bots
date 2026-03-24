@@ -157,26 +157,26 @@ Return JSON array of 8 emails.""",
 def _static_sequence(name, company, title, product, value, pay_link):
     return [
         {"day":0,  "subject":f"Content team costs at {company}",
-         "body":f"Hi {name},
+         "body":f"""Hi {name},
 
 Running content at {company} on {title} budget — curious what your monthly output costs including tools + headcount?
 
 We automated ours entirely. Happy to share the setup.
 
 — SC Thomas
-NY Spotlight Report",
+NY Spotlight Report""",
          "cta_type":"curiosity"},
         {"day":3,  "subject":f"Re: Content team costs at {company}",
-         "body":f"Hi {name},
+         "body":f"""Hi {name},
 
 Following up — we replaced $4,200/month in content team costs with $70/month in automation. 63 bots running daily.
 
 Worth 15 minutes to walk you through it?
 
-— SC",
+— SC""",
          "cta_type":"proof"},
         {"day":7,  "subject":"The math on content automation",
-         "body":f"Hi {name},
+         "body":f"""Hi {name},
 
 Quick math: if your content operation costs $2k+/month, the ROI on automating it is under 45 days.
 
@@ -184,10 +184,10 @@ ProFlow AI: {value}
 
 {pay_link}
 
-— SC",
+— SC""",
          "cta_type":"roi"},
         {"day":12, "subject":"How Starter Story featured our system",
-         "body":f"Hi {name},
+         "body":f"""Hi {name},
 
 We've been getting press on this — Starter Story, Indie Hackers, HN front page.
 
@@ -195,19 +195,19 @@ The angle: sole operator running a full content agency with bots.
 
 Case study: {pay_link}
 
-— SC",
+— SC""",
          "cta_type":"social_proof"},
         {"day":18, "subject":"Did I get this wrong?",
-         "body":f"Hi {name},
+         "body":f"""Hi {name},
 
 I've been assuming content costs are your pain at {company} — maybe I'm wrong.
 
 What's actually the bottleneck right now?
 
-— SC",
+— SC""",
          "cta_type":"question"},
         {"day":25, "subject":"$4,000/month vs $97/month",
-         "body":f"Hi {name},
+         "body":f"""Hi {name},
 
 Industry average content team: $4,000-8,000/month.
 ProFlow Starter: $97/month. Same output.
@@ -216,18 +216,18 @@ Hard to justify NOT trying it.
 
 {pay_link}
 
-— SC Thomas",
+— SC Thomas""",
          "cta_type":"comparison"},
         {"day":32, "subject":"Last note from me this month",
-         "body":f"Hi {name},
+         "body":f"""Hi {name},
 
 Last time reaching out for now. If content automation ever becomes a priority — nyspotlightreport.com
 
 Wishing you the best,
-— SC",
+— SC""",
          "cta_type":"breakup"},
         {"day":60, "subject":"Checking back in",
-         "body":f"Hi {name},
+         "body":f"""Hi {name},
 
 Hoping things are going well at {company}.
 
@@ -235,7 +235,7 @@ We've scaled a lot since I last reached out — worth a fresh look if you're sti
 
 {pay_link}
 
-— SC",
+— SC""",
          "cta_type":"reengage"},
     ]
 
@@ -324,13 +324,13 @@ def handle_objection(reply: str, prospect: dict, objection_type: str) -> str:
         return generate_close_email(prospect)
     
     if config.get("action") == "BOOK_CALL":
-        return f"Hi {name},
+        return f"""Hi {name},
 
 Love it. Here's my calendar: calendly.com/sc-thomas/proflow-demo
 
 15 minutes, no slides — just a live walkthrough of the system running.
 
-— SC"
+— SC"""
     
     response_fn = config.get("response")
     if response_fn and callable(response_fn):
@@ -365,7 +365,7 @@ def generate_close_email(prospect: dict) -> str:
     
     return f"""Hi {name},
 
-Perfect timing. Here's the fastest way to get started:
+Perfect timing. Here'''s the fastest way to get started:
 
 🔗 ProFlow Starter ($97/month): https://buy.stripe.com/fZu3cv3Ra2vV0Ej8eX24005
 🔗 ProFlow Growth ($297/month): https://buy.stripe.com/9B600j87q9Yn5YDeDl24006  
@@ -373,7 +373,7 @@ Perfect timing. Here's the fastest way to get started:
 
 All plans include 30-day money-back guarantee.
 
-After payment, you'll receive the full setup guide within 2 hours.
+After payment, you'''ll receive the full setup guide within 2 hours.
 
 Which tier fits {company if company else "your situation"} best?
 
@@ -560,8 +560,7 @@ def run():
     total_sent = 0
     
     for icp in ICPS:
-        log.info(f"
-ICP: {icp['name']}")
+        log.info(f"ICP: {icp['name']}")
         
         # Get prospects from Apollo
         prospects = get_apollo_prospects(icp)
@@ -629,21 +628,21 @@ ICP: {icp['name']}")
     if total_sent > 0:
         changes = analyze_and_adapt(perf)
         if changes:
-            log.info(f"
-🧠 LEARNING ENGINE: {len(changes)} adaptations identified")
+            log.info(f"""
+🧠 LEARNING ENGINE: {len(changes)} adaptations identified""")
             for c in changes[:3]:
                 log.info(f"  → {c['type']}: {c['reason']}")
         
         report = generate_weekly_learning_report(perf)
-        log.info(f"
-{report}")
+        log.info(f"""
+{report}""")
         
         # Alert on first close
         if perf.get("total_closed",0) > 0:
             alert(f"SALE CLOSED! Revenue: ${perf.get('total_revenue',0):.2f} | Total: {perf.get('total_closed',0)} clients")
     
-    log.info(f"
-✅ Neural Sales Engine: {total_sent} emails sent today")
+    log.info(f"""
+✅ Neural Sales Engine: {total_sent} emails sent today""")
 
 def get_apollo_prospects(icp: dict) -> list:
     """Fetch prospects from Apollo based on ICP."""

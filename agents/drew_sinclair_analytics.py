@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Drew Sinclair ΓÇö Analytics Director\nAgentic Super-intelligence for data intelligence.\nAutonomous: Pull all metrics ΓåÆ Compare forecasts vs actuals ΓåÆ Identify winning patterns ΓåÆ Generate insights
 """
@@ -143,7 +143,7 @@ if __name__=="__main__":
     if len(_s.argv)>1 and _s.argv[1]=="--super":
         t=" ".join(_s.argv[2:]) if len(_s.argv)>2 else None
         r=execute_super(t)
-        print(f"Grade:{r.get('grade','?')}
-{r.get('final_output','')[:1000]}")
+        print(f"""Grade:{r.get('grade','?')}
+{r.get('final_output','')[:1000]}""")
     else:
         run()

@@ -1,0 +1,71 @@
+name: EMERGENCY ROLLBACK — Restore Last Known Good
+on:
+  workflow_dispatch:
+    inputs:
+      target_repo:
+        description: 'Which repo to rollback (code or live)'
+        required: true
+        default: 'live'
+        type: choice
+        options:
+          - live
+          - code
+          - both
+      backup_tag:
+        description: 'Backup tag to restore (e.g., backup-20260324). Leave empty for latest.'
+        required: false
+        type: string
+jobs:
+  rollback:
+    name: Emergency Rollback
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Determine backup tag
+        id: tag
+        run: |
+          if [ -n "${{ inputs.backup_tag }}" ]; then
+            echo "tag=${{ inputs.backup_tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "Finding latest backup tag..."
+            git clone --bare https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/sct-agency-bots.git /tmp/code-bare
+            TAG=$(cd /tmp/code-bare && git tag -l "backup-*" | sort -r | head -1)
+            echo "Latest: $TAG"
+            echo "tag=$TAG" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Rollback live repo
+        if: inputs.target_repo == 'live' || inputs.target_repo == 'both'
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          if [ -z "$TAG" ]; then echo "No backup tag found!"; exit 1; fi
+
+          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
+          cd /tmp/live-repo
+
+          # Check if this tag exists in live repo
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Restoring live repo to $TAG"
+            git checkout "$TAG" -- .
+            git add -A
+            git config user.name "Emergency Rollback"
+            git config user.email "rollback@nyspotlightreport.com"
+            git commit -m "EMERGENCY ROLLBACK to $TAG — triggered by Chairman" || echo "No changes"
+            git push origin main
+            echo "LIVE REPO RESTORED to $TAG"
+          else
+            echo "Tag $TAG not found in live repo. Available tags:"
+            git tag -l "backup-*" | sort -r | head -5
+            exit 1
+          fi
+
+      - name: Alert Chairman
+        if: always()
+        run: |
+          STATUS="${{ job.status }}"
+          curl -s -F "token=${{ secrets.PUSHOVER_API_KEY }}" \
+               -F "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+               -F "title=EMERGENCY ROLLBACK: $STATUS" \
+               -F "message=Rollback to ${{ steps.tag.outputs.tag }} for ${{ inputs.target_repo }} repo: $STATUS" \
+               -F "priority=2" \
+               https://api.pushover.net/1/messages.json

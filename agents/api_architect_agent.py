@@ -42,8 +42,7 @@ def generate_python_sdk(api_name):
         "    def create_contact(self, **d): return self.post('/contacts', json=d)",
         "    def generate_content(self, prompt, **o): return self.post('/content/generate', json={'prompt':prompt,**o})",
     ]
-    return "
-".join(lines)
+    return "\n".join(lines)
 
 def run():
     spec = generate_openapi_spec("NYSR API", ["contact","deal","content","analytics"])

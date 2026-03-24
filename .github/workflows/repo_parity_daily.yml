@@ -20,17 +20,18 @@ jobs:
       - name: Compare files
         id: compare
         run: |
-          MISSING=""
+          MISSING_FILE=$(mktemp)
 
-          # Check HTML files from site/
+          # Check HTML files from site/ (use temp file to avoid subshell variable loss)
           if [ -d "code-repo/site" ]; then
             cd code-repo/site
-            find . -name "*.html" -type f | while read f; do
+            find . -name "*.html" -type f > /tmp/html_list.txt
+            while read f; do
               rel="${f#./}"
               if [ ! -f "/tmp/live-repo/$rel" ]; then
-                MISSING="${MISSING}site/$rel -> $rel\n"
+                echo "site/$rel -> $rel" >> "$MISSING_FILE"
               fi
-            done
+            done < /tmp/html_list.txt
             cd ../..
           fi
 
@@ -39,15 +40,31 @@ jobs:
             for f in code-repo/netlify/functions/*.js; do
               fname=$(basename "$f")
               if [ ! -f "/tmp/live-repo/netlify/functions/$fname" ]; then
-                MISSING="${MISSING}netlify/functions/$fname\n"
+                echo "netlify/functions/$fname" >> "$MISSING_FILE"
               fi
             done
           fi
 
+          # Also check REVERSE: live-only files not in code repo
+          if [ -d "/tmp/live-repo" ]; then
+            cd /tmp/live-repo
+            find . -name "*.html" -type f -not -path './.git/*' -not -path './.github/*' > /tmp/live_list.txt
+            while read f; do
+              rel="${f#./}"
+              if [ ! -f "$GITHUB_WORKSPACE/code-repo/site/$rel" ]; then
+                echo "LIVE-ONLY: $rel (not in code repo)" >> "$MISSING_FILE"
+              fi
+            done < /tmp/live_list.txt
+            cd "$GITHUB_WORKSPACE"
+          fi
+
+          MISSING=$(cat "$MISSING_FILE" 2>/dev/null || true)
+          rm -f "$MISSING_FILE"
+
           if [ -n "$MISSING" ]; then
             echo "has_drift=true" >> $GITHUB_OUTPUT
             echo "missing<<EOF" >> $GITHUB_OUTPUT
-            echo -e "$MISSING" >> $GITHUB_OUTPUT
+            echo "$MISSING" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
           else
             echo "has_drift=false" >> $GITHUB_OUTPUT

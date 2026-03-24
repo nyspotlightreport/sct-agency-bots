@@ -230,7 +230,7 @@ def _static_sequence(name, company, title, icp):
             {
                 "day": 1, "channel": "email",
                 "subject": f"Your content operation, {name}",
-                "body": f"Hi {name},
+                "body": f"""Hi {name},
 
 Most {title}s I talk to are spending $2,000-4,000/month on content. Writers, VAs, social scheduling — it adds up fast and the output is still inconsistent.
 
@@ -238,7 +238,7 @@ I replaced all of it with 63 AI bots for $70/month. The system publishes daily w
 
 Worth a 5-minute look? nyspotlightreport.com/proflow/
 
-— SC Thomas",
+— SC Thomas""",
                 "goal": "get a reply"
             },
             {
@@ -249,7 +249,7 @@ Worth a 5-minute look? nyspotlightreport.com/proflow/
             {
                 "day": 5, "channel": "email",
                 "subject": "From $4k/month to $70/month (case study)",
-                "body": f"Hi {name},
+                "body": f"""Hi {name},
 
 Quick case study since I mentioned it:
 
@@ -260,13 +260,13 @@ Output actually improved. Consistency went from 3x/week to 7x/week.
 
 Is {company} dealing with the same cost/consistency problem?
 
-— SC",
+— SC""",
                 "goal": "create belief"
             },
             {
                 "day": 10, "channel": "email",
                 "subject": "15 minutes?",
-                "body": f"Hi {name},
+                "body": f"""Hi {name},
 
 I'll be direct: I think we can cut your content costs by 80% and make output more consistent.
 
@@ -274,13 +274,13 @@ If I'm wrong, the call costs you 15 minutes. If I'm right, it's worth a lot more
 
 Cal link: calendly.com/nyspotlightreport
 
-— SC",
+— SC""",
                 "goal": "book call"
             },
             {
                 "day": 21, "channel": "email",
                 "subject": "Closing the loop",
-                "body": f"Hi {name},
+                "body": f"""Hi {name},
 
 I'll stop after this — don't want to be that person.
 
@@ -289,7 +289,7 @@ If you're happy with your current content operation, completely understood.
 If the cost/consistency problem is still there in Q2, nyspotlightreport.com/proflow/ will be here.
 
 All the best,
-— SC Thomas",
+— SC Thomas""",
                 "goal": "close or closure"
             }
         ],
@@ -347,7 +347,7 @@ def _pick_icp(prospect: dict, score: int) -> str:
 
 def run_learning_cycle() -> dict:
     """
-    The core learning loop. Analyzes what worked, kills what didn't,
+    The core learning loop. Analyzes what worked, kills what didn'''t,
     generates better versions of top performers.
     
     Runs weekly or when performance drops below thresholds.
@@ -380,7 +380,7 @@ def run_learning_cycle() -> dict:
     # Kill bottom performers
     for camp in bottom_20_pct:
         if camp.get("open_rate",100) < 15:  # Below 15% open = kill subject line
-            insights["killed"].append(f"Subject: '{camp.get('subject','')}' — {camp.get('open_rate',0):.1f}% open rate")
+            insights["killed"].append(f"Subject: '{camp.get('subject''','')}' — {camp.get('open_rate',0):.1f}% open rate")
         if camp.get("reply_rate",100) < 2:   # Below 2% reply = kill body
             insights["killed"].append(f"Body variant '{camp.get('variant','')}' — {camp.get('reply_rate',0):.1f}% reply rate")
     

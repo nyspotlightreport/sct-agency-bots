@@ -5,7 +5,7 @@ Market Intelligence Scout — NYSR Business Development
 ║  OBJECTIVE: Never miss a money-making opportunity again.    ║
 ║  Scans the entire internet daily for:                       ║
 ║  • New platforms paying creators/builders                   ║
-║  • Emerging monetization methods before they're crowded     ║
+║  • Emerging monetization methods before they'''re crowded     ║
 ║  • Competitor revenue moves we should copy                  ║
 ║  • Tools and tactics being used by top earners              ║
 ║  • Pricing trends across our markets                        ║
@@ -154,7 +154,7 @@ def fetch_reddit_opportunities() -> list:
                     results.append({
                         "source": f"r/{sub}", "title": pd.get("title",""),
                         "body": pd.get("selftext","")[:300],
-                        "url": f"https://reddit.com{pd.get('permalink','')}",
+                        "url": f"https://reddit.com{pd.get('permalink''','')}",
                         "score_reddit": pd.get("score",0),
                         "comments": pd.get("num_comments",0)
                     })
@@ -209,20 +209,20 @@ def generate_opportunity_brief(opportunities: list) -> str:
         return "No high-score opportunities today. Standard monitoring continues."
     
     if not ANTHROPIC:
-        brief = f"📊 DAILY BD BRIEF — {date.today()}
+        brief = f"""📊 DAILY BD BRIEF — {date.today()}
 
-"
+"""
         for i, opp in enumerate(top[:3], 1):
             a = opp.get("analysis",{})
-            brief += f"{i}. [{a.get('score',0)}/10] {opp.get('title','')[:60]}
-"
-            brief += f"   Type: {a.get('opportunity_type','')}
-"
-            brief += f"   Revenue: {a.get('potential_revenue','')}
-"
-            brief += f"   Action: {a.get('action','')}
+            brief += f"""{i}. [{a.get('score',0)}/10] {opp.get('title','')[:60]}
+"""
+            brief += f"""   Type: {a.get('opportunity_type','')}
+"""
+            brief += f"""   Revenue: {a.get('potential_revenue','')}
+"""
+            brief += f"""   Action: {a.get('action','')}
 
-"
+"""
         return brief
     
     return claude(
@@ -309,9 +309,9 @@ def run():
     
     # Generate brief
     brief = generate_opportunity_brief(analyzed)
-    log.info(f"
+    log.info(f"""
 DAILY BRIEF:
-{brief}")
+{brief}""")
     
     # Alert Chairman on high-value finds
     urgent = [o for o in analyzed if o.get("analysis",{}).get("time_sensitivity") in ["today","this week"] and o.get("analysis",{}).get("score",0) >= 8]
@@ -320,12 +320,12 @@ DAILY BRIEF:
         a = top.get("analysis",{})
         requests.post("https://api.pushover.net/1/messages.json",
             data={"token":PUSHOVER_KEY,"user":PUSHOVER_USR,
-                  "message":f"🎯 BD OPPORTUNITY [{a.get('score',0)}/10]
+                  "message":f"""🎯 BD OPPORTUNITY [{a.get('score',0)}/10]
 {top.get('title','')[:60]}
 
 Revenue: {a.get('potential_revenue','')}
 Action: {a.get('action','')}
-Timing: {a.get('time_sensitivity','')}",
+Timing: {a.get('time_sensitivity','')}""",
                   "title":"💼 Market Intelligence"},
             timeout=5)
     

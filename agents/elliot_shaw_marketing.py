@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Elliot Shaw ΓÇö Marketing Director\nFully Developed Agentic Super-intelligence for demand generation.\nAutonomous: Audit all content ΓåÆ Check social links for store CTAs ΓåÆ SEO keyword gaps ΓåÆ Campaign recommendations ΓåÆ Store to Supabase
 """
@@ -142,7 +142,7 @@ if __name__=="__main__":
     if len(_s.argv)>1 and _s.argv[1]=="--super":
         t=" ".join(_s.argv[2:]) if len(_s.argv)>2 else None
         r=execute_super(t)
-        print(f"Grade:{r.get('grade','?')}
-{r.get('final_output','')[:1000]}")
+        print(f"""Grade:{r.get('grade','?')}
+{r.get('final_output','')[:1000]}""")
     else:
         run()

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Sloane Pierce ΓÇö VP of Sales & Revenue
 NYSR Internal Agency ΓÇö Sales Department Director
@@ -18,7 +18,7 @@ Responsibilities:
   - Competitive positioning and battle cards
   - Key account strategy
 
-Under Sloane's leadership, NYSR Sales converts at 3├ù industry average
+Under Sloane'''s leadership, NYSR Sales converts at 3├ù industry average
 because every step is systematized, every message is personalized,
 and every deal has a clear next action.
 """
@@ -158,11 +158,11 @@ def generate_coaching_note(contact: Dict, stage: str) -> str:
     return claude(
         f"""You are Sloane Pierce, VP Sales. Write a 3-bullet coaching note for this deal.
 Be specific. No fluff. Focus on the single biggest risk and the exact next action.""",
-        f"Contact: {contact.get('name')} | {contact.get('title')} at {contact.get('company')} | Stage: {stage} | Score: {contact.get('score',{}).get('total',0)}/100",
+        f"Contact: {contact.get('name''')} | {contact.get('title')} at {contact.get('company')} | Stage: {stage} | Score: {contact.get('score',{}).get('total',0)}/100",
         max_tokens=200
-    ) or "ΓÇó Pull Apollo data on this company
+    ) or """ΓÇó Pull Apollo data on this company
 ΓÇó Send personalized value prop
-ΓÇó Follow up in 3 days"
+ΓÇó Follow up in 3 days"""
 
 # ΓöÇΓöÇ DAILY SALES BRIEFING ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
 def run_daily_briefing():
@@ -196,8 +196,8 @@ Quota attainment: {forecast['quota_attainment']}%
 TOP DEALS:
 {chr(10).join(coaching) if coaching else "ΓÇó No priority deals ΓÇö time to load the pipeline!"}
 
-TODAY'S PRIORITY:
-ΓåÆ {'Focus on NEGOTIATION deals ΓÇö highest close probability' if stats.get('NEGOTIATION',{}).get('count',0) > 0 else 'Move 3 prospects to QUALIFIED today'}"""
+TODAY'''S PRIORITY:
+ΓåÆ {'Focus on NEGOTIATION deals ΓÇö highest close probability' if stats.get('NEGOTIATION''',{}).get('count',0) > 0 else 'Move 3 prospects to QUALIFIED today'}"""
 
     log.info(briefing)
     notify(briefing, "Sloane ΓÇö Daily Sales Brief")

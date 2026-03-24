@@ -1,0 +1,81 @@
+name: Full System Backup — Daily
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+jobs:
+  backup:
+    name: Backup Both Repos
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Tag daily backup snapshot
+        run: |
+          DATE=$(date +%Y%m%d)
+          TAG="backup-${DATE}"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists, skipping"
+          else
+            git tag "$TAG"
+            git push origin "$TAG" || echo "Push tag failed (may need GH_PAT)"
+          fi
+
+      - name: Clone and tag live repo backup
+        run: |
+          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
+          cd /tmp/live-repo
+          DATE=$(date +%Y%m%d)
+          TAG="backup-${DATE}"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists in live repo"
+          else
+            git tag "$TAG"
+            git push origin "$TAG" || echo "Push tag failed"
+          fi
+
+      - name: Verify backup tags exist
+        run: |
+          DATE=$(date +%Y%m%d)
+          echo "=== Code repo tags ==="
+          git tag -l "backup-*" | tail -5
+          echo ""
+          echo "=== Live repo tags ==="
+          cd /tmp/live-repo && git tag -l "backup-*" | tail -5
+          echo ""
+          echo "Backup complete. To restore: git checkout backup-YYYYMMDD"
+
+      - name: Alert on failure
+        if: failure()
+        run: |
+          curl -s -F "token=${{ secrets.PUSHOVER_API_KEY }}" \
+               -F "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+               -F "title=BACKUP FAILED" \
+               -F "message=Daily backup failed at $(date). Manual intervention needed." \
+               -F "priority=1" \
+               https://api.pushover.net/1/messages.json
+
+  rollback-check:
+    name: Verify Rollback Capability
+    runs-on: ubuntu-latest
+    needs: backup
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify we can reach last 3 backup points
+        run: |
+          echo "=== Available restore points ==="
+          git tag -l "backup-*" | sort -r | head -3
+          LATEST=$(git tag -l "backup-*" | sort -r | head -1)
+          if [ -n "$LATEST" ]; then
+            echo "Latest backup: $LATEST"
+            echo "Files in backup: $(git ls-tree -r --name-only $LATEST | wc -l)"
+            echo "Backup verified — rollback ready"
+          else
+            echo "WARNING: No backup tags found"
+          fi

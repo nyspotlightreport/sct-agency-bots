@@ -10,7 +10,7 @@ except Exception:  # noqa: bare-except
 log = logging.getLogger(__name__)
 
 WORKFLOW_TEMPLATES = {
-    "daily_bot": "name: Daily Bot
+    "daily_bot": """name: Daily Bot
 on:
   schedule:
     - cron: '0 9 * * *'
@@ -23,8 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - run: pip install requests -q
-      - run: python bots/BOT_NAME.py",
-    "deploy":    "name: Deploy
+      - run: python bots/BOT_NAME.py""",
+    "deploy":    """name: Deploy
 on:
   push:
     branches: [main]
@@ -34,8 +34,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm install -g vercel
-      - run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}",
-    "test":      "name: Tests
+      - run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}""",
+    "test":      """name: Tests
 on: [push, pull_request]
 jobs:
   test:
@@ -45,16 +45,14 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - run: pip install pytest pytest-cov
-      - run: pytest --cov=. --cov-report=xml",
+      - run: pytest --cov=. --cov-report=xml""",
 }
 
 def generate_workflow(bot_name, schedule="0 9 * * *", env_vars=None):
     env_section = ""
     if env_vars:
-        env_section = "env:
-" + "
-".join([f"  {k}: ${{{{ secrets.{k} }}}}" for k in env_vars])
-    return f"name: {bot_name.replace('_',' ').title()}
+        env_section = "env:\n" + "\n".join([f"  {k}: ${{{{ secrets.{k} }}}}" for k in env_vars])
+    return f"""name: {bot_name.replace('_',' ').title()}
 on:
   schedule:
     - cron: '{schedule}'
@@ -71,7 +69,7 @@ jobs:
       - run: pip install requests anthropic -q
       - name: Run {bot_name}
         run: python bots/{bot_name}.py
-        continue-on-error: true"
+        continue-on-error: true"""
 
 def audit_workflows():
     return claude_json(

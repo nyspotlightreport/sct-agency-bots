@@ -16,9 +16,9 @@ def generate_react_component(name, description, props=None):
         "Write a production React component with TypeScript and Tailwind. Include proper props interface, error boundaries where needed. Return only the component code.",
         f"Component: {name}. Description: {description}. Props: {props or {}}",
         max_tokens=800
-    ) or f"// {name} component
+    ) or f"""// {name} component
 import React from 'react';
-export default function {name}() {{ return <div className='p-4'>{description}</div>; }}"
+export default function {name}() {{ return <div className='p-4'>{description}</div>; }}"""
 
 def generate_design_system(brand):
     return claude_json(

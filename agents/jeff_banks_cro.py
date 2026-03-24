@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 agents/jeff_banks_cro.py
 ΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü
@@ -169,7 +169,7 @@ def gather_revenue_data():
     affiliates = supa("GET","affiliate_programs","","?select=status") or []
     if isinstance(affiliates, list):
         data["affiliate_active"]  = len([a for a in affiliates if isinstance(a,dict) and a.get("status") == "approved"])
-        data["affiliate_pending"] = len([a for a in affiliates if isinstance(a,dict) and "pending" in str(a.get("status",""))))
+        data["affiliate_pending"] = len([a for a in affiliates if isinstance(a,dict) and "pending" in str(a.get("status",""))])
     
     emails = supa("GET","conversation_log","","?channel=eq.email&direction=eq.outbound&select=id") or []
     data["emails_sent"] = len(emails) if isinstance(emails, list) else 0

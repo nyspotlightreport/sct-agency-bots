@@ -11,7 +11,7 @@ The sequence:
   Day 5:  Email (case study)
   Day 7:  LinkedIn DM (if connected)
   Day 10: Email (direct ask)
-  Day 14: Content mention (relevant post they'd care about)
+  Day 14: Content mention (relevant post they'''d care about)
   Day 21: Final email (breakup / urgency)
   Day 28: Reddit reply to their post (if found)
 """
@@ -76,10 +76,10 @@ def enrich_prospect(prospect:dict)->dict:
     # Generate personalization hook
     if ANTHROPIC:
         hook=claude("You are a sales researcher. Find one specific, relevant hook for a personalized sales message.",
-            f"Name: {prospect.get('first_name','')} {prospect.get('last_name','')} | Title: {prospect.get('title','')} | Company: {prospect.get('company','')} | Employees: {prospect.get('employees','unknown')}
-Write ONE specific observation about their likely content challenges in under 20 words.",
+            f"""Name: {prospect.get('first_name''','')} {prospect.get('last_name','')} | Title: {prospect.get('title','')} | Company: {prospect.get('company','')} | Employees: {prospect.get('employees','unknown')}
+Write ONE specific observation about their likely content challenges in under 20 words.""""",
             max_tokens=40)
-        prospect["personalization_hook"]=hook or f"At {prospect.get('company','')}, content consistency is probably a challenge at {prospect.get('employees','your')} headcount."
+        prospect["personalization_hook"""]=hook or f"At {prospect.get('company','')}, content consistency is probably a challenge at {prospect.get('employees','your')} headcount."
     return prospect
 
 def stage_outreach_sequence(prospect:dict)->dict:
