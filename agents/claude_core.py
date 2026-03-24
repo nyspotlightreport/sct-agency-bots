@@ -162,9 +162,7 @@ def _sanitize(text: str) -> str:
     # Strip thinking tags if present
     text = re.sub(r"<thinking>.*?</thinking>", "", text, flags=re.DOTALL)
     # Strip JSON fences if the output IS JSON
-    text = re.sub(r"^```(?:json)?
-?(.*)
-?```$", r"", text.strip(), flags=re.DOTALL)
+    text = re.sub(r"^```(?:json)?\n?(.*?)\n?```$", r"\1", text.strip(), flags=re.DOTALL)
     return text.strip()
 
 # ΓöÇΓöÇ CORE API CALL ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
