@@ -62,10 +62,11 @@ def generate_cover(name, prompt):
 
     log.info(f"Generating: {name}")
     data = json.dumps({
-        "model": "gpt-image-1",
+        "model": "dall-e-3",
         "prompt": f"Book cover design, 6x9 inch portrait format, KDP paperback cover. {prompt}. High resolution, print quality, professional publishing standard.",
         "n": 1,
-        "size": "1024x1536"
+        "size": "1024x1792",
+        "quality": "hd"
     }).encode()
 
     req = urllib.request.Request(
