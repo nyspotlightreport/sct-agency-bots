@@ -21,8 +21,10 @@ PUSH_API = os.environ.get("PUSHOVER_API_KEY", "")
 PUSH_USER = os.environ.get("PUSHOVER_USER_KEY", "")
 ANTHROPIC = os.environ.get("ANTHROPIC_API_KEY", "")
 
+PROFLOW_URL = "https://myproflow.org"
 SITE_URL = "https://nyspotlightreport.com"
 PHONE = "(631) 892-9817"
+RESEND_KEY = os.environ.get("RESEND_API_KEY", "")
 
 def load_prospects():
     """Load prospect list from data/sales/prospects.json"""
@@ -56,55 +58,34 @@ def personalize_email(prospect):
     company = prospect.get("company", "your business")
     industry = prospect.get("industry", "your industry")
 
-    subject = f"Automate {company}'s content — zero manual work"
+    subject = f"{name}, automate {company}'s entire content pipeline"
     body = f"""Hi {name},
 
-I noticed {company} could benefit from automated content publishing. We built ProFlow AI — it publishes daily blog posts, social media, newsletters, and sells digital products on autopilot.
+I came across {company} and thought this might be relevant for your team.
 
-Our clients see 63+ active bots running 24/7 with zero daily management time.
+We built ProFlow AI — it automates blog publishing, social media, newsletters, and digital product sales. Our clients run 63+ bots 24/7 with zero daily management.
 
-Plans start at $97/mo:
-{SITE_URL}/proflow/
+It starts at $97/mo and pays for itself in the first week:
+{PROFLOW_URL}
 
-Want to see it in action? Call our AI receptionist: {PHONE}
+Worth a quick look? Happy to walk you through a live demo.
 
 Best,
 S.C. Thomas
-Chairman, NY Spotlight Report
-Editor-in-Chief: editor-in-chief@nyspotlightreport.com
-{SITE_URL}
+Editor-in-Chief, NY Spotlight Report
+{PHONE}
 """
     return subject, body
 
 def send_email(to_email, subject, body):
-    """Send email via Netlify relay (bypasses GitHub IP blocks on Gmail SMTP)"""
-    # Method 1: Netlify relay (works from GitHub Actions)
-    try:
-        data = json.dumps({"to": to_email, "subject": subject, "text": body}).encode()
-        req = urlreq.Request(
-            f"{SITE_URL}/.netlify/functions/send-email",
-            data=data,
-            headers={
-                "Content-Type": "application/json",
-                "x-auth-key": PUSH_API  # shared secret
-            }
-        )
-        resp = urlreq.urlopen(req, timeout=15)
-        result = json.loads(resp.read())
-        if result.get("sent"):
-            return True
-        log.warning("Relay returned: %s", result)
-    except Exception as e:
-        log.warning("Relay failed, trying direct SMTP: %s", e)
-
-    # Method 2: Direct Resend API fallback (no Gmail SMTP needed)
-    RESEND_KEY = os.environ.get("RESEND_API_KEY", "")
+    """Send email via Resend API (primary) with Netlify relay fallback."""
+    # Method 1: Resend API (primary — Gmail is receiving only)
     if not RESEND_KEY:
         log.error("RESEND_API_KEY not set — cannot send email")
         return False
     try:
         resend_data = json.dumps({
-            "from": "NY Spotlight Report <onboarding@resend.dev>",
+            "from": "S.C. Thomas <onboarding@resend.dev>",
             "to": [to_email],
             "subject": subject,
             "text": body
@@ -122,6 +103,25 @@ def send_email(to_email, subject, body):
         if result.get("id"):
             return True
         log.warning("Resend returned: %s", result)
+    except Exception as e:
+        log.warning("Resend failed, trying Netlify relay: %s", e)
+
+    # Method 2: Netlify relay fallback
+    try:
+        data = json.dumps({"to": to_email, "subject": subject, "text": body}).encode()
+        req = urlreq.Request(
+            f"{SITE_URL}/.netlify/functions/send-email",
+            data=data,
+            headers={
+                "Content-Type": "application/json",
+                "x-auth-key": PUSH_API
+            }
+        )
+        resp = urlreq.urlopen(req, timeout=15)
+        result = json.loads(resp.read())
+        if result.get("sent"):
+            return True
+        log.warning("Relay returned: %s", result)
         return False
     except Exception as e:
         log.error("Failed to send to %s: %s", to_email, e)
