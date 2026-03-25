@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-25T11:11:43.626002",
+  "timestamp": "2026-03-25T14:51:17.824707",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 154,
+  "mention_count": 186,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -203,17 +203,6 @@
     },
     {
       "source": "google_news",
-      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
-      "outlet": "obits.robinsonfuneralhomes.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy obituary",
@@ -236,8 +225,19 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Daniels Obituary (1940 - 2022) - Charleston - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZXhveTBLMG11YnVqN1FpYVdqQ1piQXF2UDNSVTI3ejRnbDZJdDYwSXdiOGtXaVUxUFlCelQxZWZ3UUhOY1ZrOGY2MTBwTUJTZlRBVl9VVGdsTWVoT0VNSXdIZEVsTllsYUF3eVVSTHVFVkN4ZzdLQWFFVkhwS0lZdzFzYU5LYS1EX05FOG1veDZOZU43akt0V3ZkLWM2cms?oc=5",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia, SC - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
       "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
