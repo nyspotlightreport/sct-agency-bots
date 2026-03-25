@@ -1229,13 +1229,13 @@ h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;color:var(--dark);margin-bot
 <div id="sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f0f;padding:10px 24px;display:flex;justify-content:center;align-items:center;gap:16px;z-index:9999;transform:translateY(100%);transition:transform .3s ease;box-shadow:0 -2px 20px rgba(0,0,0,.15)">
 <span style="font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.7)">Replace your content team for <strong style="color:#fff">$297/mo</strong></span>
 <a href="/proflow/" style="background:#9e7c0c;color:#fff;padding:8px 20px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap">See How It Works →</a>
-<span style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.3);cursor:pointer" onclick="this.parentElement.style.display='none';sessionStorage.setItem('cta_closed','1')">✕</span>
+<span style="font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.3);cursor:pointer" onclick="this.parentElement.style.display='none';localStorage.setItem('cta_closed',Date.now().toString())">✕</span>
 </div>
 
 <!-- EXIT INTENT POPUP -->
 <div id="exit-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;justify-content:center;align-items:center;backdrop-filter:blur(4px)">
 <div style="background:#fff;border-radius:8px;padding:40px;max-width:480px;width:90%;text-align:center;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.3)">
-<span onclick="document.getElementById('exit-popup').style.display='none';sessionStorage.setItem('exit_shown','1')" style="position:absolute;top:12px;right:16px;font-size:20px;color:#a3a3a3;cursor:pointer">✕</span>
+<span onclick="document.getElementById('exit-popup').style.display='none';localStorage.setItem('exit_shown',Date.now().toString())" style="position:absolute;top:12px;right:16px;font-size:20px;color:#a3a3a3;cursor:pointer">✕</span>
 <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:8px;color:#0f0f0f">Before you go...</h3>
 <p style="font-family:'DM Sans',sans-serif;font-size:15px;color:#6b6b6b;margin-bottom:20px;line-height:1.55">Get our free guide: <strong style="color:#0f0f0f">"How to Replace Your Content Team with AI — The Complete Playbook"</strong></p>
 <input type="email" id="exit-email" placeholder="your@email.com" style="width:100%;padding:12px;border:1px solid #e5e5e5;border-radius:5px;font-size:15px;font-family:'DM Sans',sans-serif;margin-bottom:10px;outline:none">
@@ -1267,7 +1267,7 @@ h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;color:var(--dark);margin-bot
 <script>
 // Sticky CTA — show after 30% scroll
 (function(){
-  if(sessionStorage.getItem('cta_closed'))return;
+  var _cc=localStorage.getItem('cta_closed');if(_cc&&(Date.now()-Number(_cc))<2592000000)return;
   var shown=false;
   window.addEventListener('scroll',function(){
     if(shown)return;
@@ -1281,12 +1281,12 @@ h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;color:var(--dark);margin-bot
 
 // Exit intent — show when mouse leaves viewport (desktop only)
 (function(){
-  if(sessionStorage.getItem('exit_shown'))return;
+  var _es=localStorage.getItem('exit_shown');if(_es&&(Date.now()-Number(_es))<2592000000)return;
   if('ontouchstart' in window)return; // skip mobile
   document.addEventListener('mouseout',function(e){
     if(!e.relatedTarget && !e.toElement && e.clientY<10){
       document.getElementById('exit-popup').style.display='flex';
-      sessionStorage.setItem('exit_shown','1');
+      localStorage.setItem('exit_shown',Date.now().toString());
     }
   });
 })();
