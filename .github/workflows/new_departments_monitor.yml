@@ -1,0 +1,57 @@
+name: New Departments Monitor (Every 6 Hours)
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Health Check All 5 New Departments
+        env:
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+        run: |
+          python3 << 'SCRIPT'
+          import os, json, urllib.request as urlreq
+
+          PUSH_API=os.environ.get("PUSHOVER_API_KEY","")
+          PUSH_USER=os.environ.get("PUSHOVER_USER_KEY","")
+          def push(t,m,p=0):
+              if not PUSH_API: return
+              try:
+                  data=json.dumps({"token":PUSH_API,"user":PUSH_USER,"title":t,"message":m[:1000],"priority":p}).encode()
+                  urlreq.urlopen(urlreq.Request("https://api.pushover.net/1/messages.json",data=data,headers={"Content-Type":"application/json"}),timeout=10)
+              except: pass
+
+          depts = {
+              "bookkeeping": "agents/bookkeeping/director.py",
+              "chatbot": "agents/chatbot/director.py",
+              "ad_management": "agents/ad_management/director.py",
+              "reputation": "agents/reputation/director.py",
+              "recruiting": "agents/recruiting/director.py"
+          }
+          ok=0; fail=[]
+          for name, path in depts.items():
+              if os.path.isfile(path):
+                  try:
+                      with open(path) as f: code=f.read()
+                      if len(code)>100 and "def " in code:
+                          ok+=1; print(f"  {name}: OK ({len(code)} bytes)")
+                      else:
+                          fail.append(f"{name}: stub/empty"); print(f"  {name}: STUB")
+                  except Exception as e:
+                      fail.append(f"{name}: {e}"); print(f"  {name}: ERROR {e}")
+              else:
+                  fail.append(f"{name}: MISSING"); print(f"  {name}: MISSING")
+
+          print(f"\nDepartments: {ok}/5 healthy")
+          if fail:
+              push("DEPT MONITOR ALERT", f"{ok}/5 OK | FAIL: {', '.join(fail)}", 1)
+              exit(1)
+          else:
+              push("Dept Monitor OK", f"All 5 departments healthy")
+          SCRIPT
