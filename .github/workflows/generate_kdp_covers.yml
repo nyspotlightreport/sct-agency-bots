@@ -1,0 +1,22 @@
+name: Generate KDP Covers — Marcus Kane Media Production
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-covers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Generate 10 Missing KDP Covers via DALL-E 3
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python agents/generate_kdp_covers.py
+      - name: Commit covers to repo
+        run: |
+          git config user.name "Marcus Kane Media Bot"
+          git config user.email "media@nyspotlightreport.com"
+          git add data/kdp_books/covers/*.jpg
+          git diff --cached --quiet || git commit -m "media: generate 10 missing KDP covers via DALL-E 3"
+          git push
