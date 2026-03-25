@@ -4,6 +4,7 @@ on:
     - cron: '0 14 * * 1-5'
   workflow_dispatch:
 env:
+  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
   GMAIL_USER: ${{ secrets.GMAIL_USER }}
   GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

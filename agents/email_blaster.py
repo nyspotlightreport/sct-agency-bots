@@ -96,21 +96,32 @@ def send_email(to_email, subject, body):
     except Exception as e:
         log.warning("Relay failed, trying direct SMTP: %s", e)
 
-    # Method 2: Direct SMTP fallback (works from local/Netlify)
-    if not GMAIL_USER or not GMAIL_PASS:
-        log.error("Gmail credentials not set")
+    # Method 2: Direct Resend API fallback (no Gmail SMTP needed)
+    RESEND_KEY = os.environ.get("RESEND_API_KEY", "")
+    if not RESEND_KEY:
+        log.error("RESEND_API_KEY not set — cannot send email")
         return False
     try:
-        msg = MIMEMultipart()
-        msg["From"] = f"S.C. Thomas <{GMAIL_USER}>"
-        msg["To"] = to_email
-        msg["Subject"] = subject
-        msg.attach(MIMEText(body, "plain"))
-
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-            server.login(GMAIL_USER, GMAIL_PASS)
-            server.send_message(msg)
-        return True
+        resend_data = json.dumps({
+            "from": "NY Spotlight Report <onboarding@resend.dev>",
+            "to": [to_email],
+            "subject": subject,
+            "text": body
+        }).encode()
+        req = urlreq.Request(
+            "https://api.resend.com/emails",
+            data=resend_data,
+            headers={
+                "Authorization": f"Bearer {RESEND_KEY}",
+                "Content-Type": "application/json"
+            }
+        )
+        resp = urlreq.urlopen(req, timeout=15)
+        result = json.loads(resp.read())
+        if result.get("id"):
+            return True
+        log.warning("Resend returned: %s", result)
+        return False
     except Exception as e:
         log.error("Failed to send to %s: %s", to_email, e)
         return False
