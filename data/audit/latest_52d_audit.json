@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-25T15:52:09.302002+00:00",
-  "pass_count": 26,
-  "fail_count": 4,
+  "timestamp": "2026-03-25T23:52:47.981422+00:00",
+  "pass_count": 23,
+  "fail_count": 7,
   "total": 30,
-  "score": 87,
-  "grade": "B+",
+  "score": 77,
+  "grade": "B",
   "results": [
     {
       "name": "Pages responding",
       "status": "PASS",
-      "detail": "31/31 pages return 200"
+      "detail": "30/31 pages return 200"
     },
     {
       "name": "Stripe LIVE checkout",
@@ -53,7 +53,7 @@
     },
     {
       "name": "Phone CTA",
-      "status": "PASS",
+      "status": "FAIL",
       "detail": "(631) 892-9817"
     },
     {
@@ -118,13 +118,13 @@
     },
     {
       "name": "Guardrail workflows active",
-      "status": "PASS",
-      "detail": "12/12 active"
+      "status": "FAIL",
+      "detail": "0/12 active"
     },
     {
       "name": "Sweepstakes running",
-      "status": "PASS",
-      "detail": "Last run: 2026-03-25T11:29:05Z"
+      "status": "FAIL",
+      "detail": "API error"
     },
     {
       "name": "Affiliate content",
@@ -167,6 +167,21 @@
       "name": "Functions alive",
       "status": "FAIL",
       "detail": "13/20 responding"
+    },
+    {
+      "name": "Phone CTA",
+      "status": "FAIL",
+      "detail": "(631) 892-9817"
+    },
+    {
+      "name": "Guardrail workflows active",
+      "status": "FAIL",
+      "detail": "0/12 active"
+    },
+    {
+      "name": "Sweepstakes running",
+      "status": "FAIL",
+      "detail": "API error"
     },
     {
       "name": "Affiliate content",
