@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-03-25T15:05:17.809583+00:00",
-  "pass_count": 21,
-  "fail_count": 2,
-  "total": 23,
-  "score": 91,
-  "grade": "A",
+  "timestamp": "2026-03-25T15:52:09.302002+00:00",
+  "pass_count": 26,
+  "fail_count": 4,
+  "total": 30,
+  "score": 87,
+  "grade": "B+",
   "results": [
     {
       "name": "Pages responding",
@@ -120,6 +120,41 @@
       "name": "Guardrail workflows active",
       "status": "PASS",
       "detail": "12/12 active"
+    },
+    {
+      "name": "Sweepstakes running",
+      "status": "PASS",
+      "detail": "Last run: 2026-03-25T11:29:05Z"
+    },
+    {
+      "name": "Affiliate content",
+      "status": "FAIL",
+      "detail": "0 affiliate refs found"
+    },
+    {
+      "name": "Mention monitor configured",
+      "status": "PASS",
+      "detail": "BRAND_TERMS set"
+    },
+    {
+      "name": "Zoho email on credibility pages",
+      "status": "PASS",
+      "detail": "3/3 pages have it"
+    },
+    {
+      "name": "Newsletter page live",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Gumroad products configured",
+      "status": "FAIL",
+      "detail": "0 products in delivery webhook"
+    },
+    {
+      "name": "KDP books in pipeline",
+      "status": "PASS",
+      "detail": "21 PDFs ready"
     }
   ],
   "failures": [
@@ -132,6 +167,16 @@
       "name": "Functions alive",
       "status": "FAIL",
       "detail": "13/20 responding"
+    },
+    {
+      "name": "Affiliate content",
+      "status": "FAIL",
+      "detail": "0 affiliate refs found"
+    },
+    {
+      "name": "Gumroad products configured",
+      "status": "FAIL",
+      "detail": "0 products in delivery webhook"
     }
   ]
 }
