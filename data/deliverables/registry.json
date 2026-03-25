@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-03-25_1",
+    "type": "BLOG_POST",
+    "title": "Cold Email Automation: 200 Personalized Emails Per Day with Apollo",
+    "created": "2026-03-25T08:07:33.666367",
+    "quality_score": 9.36,
+    "grade": "A",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-03-21_0",
     "type": "BLOG_POST",
     "title": "How to Build a Content Marketing System for Under $200/Month",
