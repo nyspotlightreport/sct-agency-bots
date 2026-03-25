@@ -1,0 +1,68 @@
+{
+  "prospect_id": "jamie_torres_growthlab_digital",
+  "prospect": {
+    "first_name": "Jamie",
+    "last_name": "Torres",
+    "title": "CEO",
+    "company": "GrowthLab Digital",
+    "email": "jamie@growthlabdigital.com",
+    "linkedin_url": "linkedin.com/in/jamietorres",
+    "employees": 7,
+    "lead_score": 85,
+    "tier": "HOT",
+    "recommended_icp": "dfy_agency",
+    "outreach_priority": "today",
+    "personalization_hook": "At GrowthLab Digital, content consistency is probably a challenge at 7 headcount."
+  },
+  "sequence": {
+    "sequence": [
+      {
+        "day": 1,
+        "channel": "email",
+        "subject": "Your content operation, Jamie",
+        "body": "Hi Jamie,\n\nMost CEOs I talk to are spending $2,000-4,000/month on content. Writers, VAs, social scheduling \u2014 it adds up fast and the output is still inconsistent.\n\nI replaced all of it with 63 AI bots for $70/month. The system publishes daily without me.\n\nWorth a 5-minute look? nyspotlightreport.com/proflow/\n\n\u2014 SC Thomas",
+        "goal": "get a reply"
+      },
+      {
+        "day": 3,
+        "channel": "linkedin",
+        "message": "Hi Jamie \u2014 SC Thomas from NY Spotlight Report. I help CEOs cut content costs 90% with AI automation. Would love to connect.",
+        "goal": "connection"
+      },
+      {
+        "day": 5,
+        "channel": "email",
+        "subject": "From $4k/month to $70/month (case study)",
+        "body": "Hi Jamie,\n\nQuick case study since I mentioned it:\n\n6 months ago: $4,200/month (writer, VA, social manager, tools)\nToday: $187/month \u2014 63 AI bots, publishes daily, zero management\n\nOutput actually improved. Consistency went from 3x/week to 7x/week.\n\nIs GrowthLab Digital dealing with the same cost/consistency problem?\n\n\u2014 SC",
+        "goal": "create belief"
+      },
+      {
+        "day": 10,
+        "channel": "email",
+        "subject": "15 minutes?",
+        "body": "Hi Jamie,\n\nI'll be direct: I think we can cut your content costs by 80% and make output more consistent.\n\nIf I'm wrong, the call costs you 15 minutes. If I'm right, it's worth a lot more.\n\nCal link: calendly.com/nyspotlightreport\n\n\u2014 SC",
+        "goal": "book call"
+      },
+      {
+        "day": 21,
+        "channel": "email",
+        "subject": "Closing the loop",
+        "body": "Hi Jamie,\n\nI'll stop after this \u2014 don't want to be that person.\n\nIf you're happy with your current content operation, completely understood.\n\nIf the cost/consistency problem is still there in Q2, nyspotlightreport.com/proflow/ will be here.\n\nAll the best,\n\u2014 SC Thomas",
+        "goal": "close or closure"
+      }
+    ],
+    "objection_handlers": {
+      "too_expensive": "You're paying $X/month in time. $97 replaces that and gives you better output.",
+      "not_interested": "Totally fine. Quick question before I go \u2014 what's your current content cost/month?",
+      "send_me_info": "Sending the overview now. What's the one thing you'd need to see to know if it's worth a call?",
+      "already_have_someone": "Smart. What would make you consider switching \u2014 is it cost, output quality, or something else?",
+      "bad_timing": "Understood. When would be better \u2014 Q2, after the [event], or when you're next evaluating tools?"
+    },
+    "priority": "high"
+  },
+  "created": "2026-03-25",
+  "status": "staged",
+  "next_action_day": 1,
+  "next_action_date": "2026-03-25",
+  "completed_touches": []
+}
