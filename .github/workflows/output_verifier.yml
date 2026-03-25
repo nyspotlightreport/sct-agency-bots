@@ -1,0 +1,33 @@
+name: Output Verifier — Zero Output Detection
+
+on:
+  schedule:
+    - cron: '0 12 * * *'   # 8am ET (12 UTC)
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify bot outputs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+        run: python agents/output_verifier.py
+      - name: Commit report
+        if: always()
+        run: |
+          git config user.name "NYSR Output Bot"
+          git config user.email "output@nyspotlightreport.com"
+          git add data/audit/output_verification.json || true
+          git diff --cached --quiet || git commit -m "verify: output check $(date -u +%Y-%m-%d)"
+          git push || true

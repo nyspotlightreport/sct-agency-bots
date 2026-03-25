@@ -1,0 +1,273 @@
+{
+  "audit_date": "2026-03-25",
+  "pages_checked": 4,
+  "total_links": 22,
+  "verified_working": 13,
+  "broken": 2,
+  "blocked_by_bot_protection": 7,
+  "summary": {
+    "best_ai_tools_page": "8 affiliate links found, all use ?ref=nysr or ?via=nysr pattern",
+    "best_productivity_tools_page": "3 affiliate links found (subset of AI tools page content)",
+    "kinsta_vs_siteground_page": "1 affiliate link (Kinsta ?ref=nysr), SiteGround has no tracking param",
+    "income_hub_page": "10 action links to monetization platforms, no traditional affiliate tracking params"
+  },
+  "links": [
+    {
+      "url": "https://jasper.ai/?ref=nysr",
+      "status_code": 200,
+      "affiliate_program": "jasper",
+      "tracking_param": "ref=nysr",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://grammarly.com/?ref=nysr",
+      "status_code": 405,
+      "affiliate_program": "grammarly",
+      "tracking_param": "ref=nysr",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "blocked_by_bot_protection",
+      "note": "405 Method Not Allowed on HEAD request - likely bot protection, page loads fine in browser"
+    },
+    {
+      "url": "https://hubspot.com/?via=nysr",
+      "status_code": 200,
+      "affiliate_program": "hubspot",
+      "tracking_param": "via=nysr",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://beehiiv.com/?via=nysr",
+      "status_code": 403,
+      "affiliate_program": "beehiiv",
+      "tracking_param": "via=nysr",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "blocked_by_bot_protection",
+      "note": "403 Forbidden on HEAD - likely Cloudflare protection"
+    },
+    {
+      "url": "https://convertkit.com/?ref=nysr",
+      "status_code": 200,
+      "affiliate_program": "convertkit",
+      "tracking_param": "ref=nysr",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://ahrefs.com/?ref=nysr",
+      "status_code": 200,
+      "affiliate_program": "ahrefs",
+      "tracking_param": "ref=nysr",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://semrush.com/?ref=nysr",
+      "status_code": 200,
+      "affiliate_program": "semrush",
+      "tracking_param": "ref=nysr",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://elevenlabs.io/?ref=nysr",
+      "status_code": 200,
+      "affiliate_program": "elevenlabs",
+      "tracking_param": "ref=nysr",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://kinsta.com/?ref=nysr",
+      "status_code": 200,
+      "affiliate_program": "kinsta",
+      "tracking_param": "ref=nysr",
+      "page_found_on": "/kinsta-vs-siteground-2026/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://siteground.com",
+      "status_code": 200,
+      "affiliate_program": "siteground",
+      "tracking_param": "none",
+      "page_found_on": "/kinsta-vs-siteground-2026/",
+      "verified_date": "2026-03-25",
+      "status": "working",
+      "note": "No affiliate tracking parameter - may be missing affiliate tag"
+    },
+    {
+      "url": "https://affiliate-program.amazon.com",
+      "status_code": 405,
+      "affiliate_program": "amazon_associates",
+      "tracking_param": "affiliate in domain",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "blocked_by_bot_protection",
+      "note": "Amazon affiliate program signup page, 405 on HEAD"
+    },
+    {
+      "url": "https://appsumo.com/partners",
+      "status_code": 404,
+      "affiliate_program": "appsumo",
+      "tracking_param": "partners in path",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "broken",
+      "note": "404 Not Found - partner page URL may have changed"
+    },
+    {
+      "url": "https://adsense.google.com/start",
+      "status_code": 200,
+      "affiliate_program": "google_adsense",
+      "tracking_param": "none",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://ko-fi.com/nyspotlightreport",
+      "status_code": 403,
+      "affiliate_program": "ko-fi",
+      "tracking_param": "none",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "blocked_by_bot_protection"
+    },
+    {
+      "url": "https://promptbase.com/sell",
+      "status_code": 200,
+      "affiliate_program": "promptbase",
+      "tracking_param": "none",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://www.buymeacoffee.com",
+      "status_code": 200,
+      "affiliate_program": "buymeacoffee",
+      "tracking_param": "none",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://www.teepublic.com/sell",
+      "status_code": 406,
+      "affiliate_program": "teepublic",
+      "tracking_param": "none",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "blocked_by_bot_protection",
+      "note": "406 Not Acceptable on HEAD"
+    },
+    {
+      "url": "https://publishers.newsbreak.com",
+      "status_code": 200,
+      "affiliate_program": "newsbreak",
+      "tracking_param": "publishers in domain",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://vocal.media/for-creators",
+      "status_code": 404,
+      "affiliate_program": "vocal_media",
+      "tracking_param": "none",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "broken",
+      "note": "404 Not Found - creator page URL may have changed"
+    },
+    {
+      "url": "https://www.fiverr.com/selling/gigs",
+      "status_code": 403,
+      "affiliate_program": "fiverr",
+      "tracking_param": "none",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "blocked_by_bot_protection"
+    },
+    {
+      "url": "https://creators.brave.com",
+      "status_code": 200,
+      "affiliate_program": "brave_creators",
+      "tracking_param": "creators in domain",
+      "page_found_on": "/income-hub/",
+      "verified_date": "2026-03-25",
+      "status": "working"
+    },
+    {
+      "url": "https://proflowdigital.beehiiv.com/subscribe",
+      "status_code": 403,
+      "affiliate_program": "beehiiv_newsletter",
+      "tracking_param": "none",
+      "page_found_on": "/best-ai-tools-entrepreneurs-2026/",
+      "verified_date": "2026-03-25",
+      "status": "blocked_by_bot_protection",
+      "note": "Newsletter subscribe CTA - 403 from Cloudflare bot protection"
+    }
+  ],
+  "task2_captcha_report": {
+    "service": "2Captcha (2captcha.com)",
+    "github_secrets": [
+      {"name": "TWOCAPTCHA_API_KEY", "updated": "2026-03-25T10:35:29Z"},
+      {"name": "TWOCAPTCHA_LOGIN", "updated": "2026-03-22T12:34:17Z"},
+      {"name": "TWOCAPTCHA_PASSWORD", "updated": "2026-03-22T12:34:18Z"}
+    ],
+    "balance_check_function": true,
+    "balance_check_locations": [
+      "bots/twocaptcha_setup_bot.py - get_api_key_via_playwright() retrieves key via Playwright browser login, then checks balance via 2captcha.com/res.php?action=getbalance",
+      "bots/affiliate_engine.py - get_2captcha_key() fetches API key via login/password REST endpoint",
+      "bots/sweepstakes_auto_entry_bot.py - get_2captcha_apikey() tries env var first, falls back to REST getkey",
+      "netlify/functions/captcha-status.js - Netlify function that checks balance and sweepstakes count for status dashboard"
+    ],
+    "current_status": "ERROR_WRONG_USER_KEY - the 2captcha getkey endpoint is returning an error. The TWOCAPTCHA_API_KEY secret was updated today but the login/password-based key retrieval is failing. Balance is effectively $0 or unknown.",
+    "integration_points": [
+      "sweepstakes_auto_entry_bot.py - uses 2captcha to solve reCAPTCHA v2 during sweepstakes form entry",
+      "affiliate_engine.py - uses 2captcha as fallback for affiliate signup forms with captchas",
+      "twocaptcha_setup_bot.py - dedicated bot to login to 2captcha.com via Playwright, extract API key, save to GitHub Secrets"
+    ],
+    "other_captcha_services": "None. Only 2Captcha is configured. No anticaptcha, capmonster, or capsolver references found."
+  },
+  "task3_sweepstakes_report": {
+    "workflow_status": "Running - sweepstakes_entry.yml",
+    "last_5_runs": [
+      {"conclusion": "success", "created_at": "2026-03-25T11:29:05Z", "id": 23538729124},
+      {"conclusion": "success", "created_at": "2026-03-24T22:04:52Z", "id": 23514448172},
+      {"conclusion": "success", "created_at": "2026-03-24T19:55:53Z", "id": 23509461662},
+      {"conclusion": "success", "created_at": "2026-03-24T16:40:46Z", "id": 23501134246},
+      {"conclusion": "success", "created_at": "2026-03-24T11:34:59Z", "id": 23487362751}
+    ],
+    "actual_entries_made": 0,
+    "honest_assessment": "ZERO sweepstakes have been actually entered. Every single run follows the same pattern: (1) sweepstakes_email_parser_bot.py runs and finds 'No sweepstakes digest emails found. Waiting for Priya to classify them.' (2) sweepstakes_auto_entry_bot.py starts, fails to get 2Captcha API key (ERROR_WRONG_USER_KEY), then checks sweepstakes_queue table which has 0 entries, and exits with 'Queue empty'. The workflow succeeds (exit 0) because it uses '|| echo done' error suppression, but no actual sweepstakes entries are being made.",
+    "root_causes": [
+      "1. Priya email classifier is not populating sweepstakes_queue - the email parser depends on Priya having already classified emails as SWEEPSTAKES type, but no emails are being classified",
+      "2. 2Captcha API key retrieval is broken - ERROR_WRONG_USER_KEY from the getkey endpoint, meaning even if queue had entries, captcha-protected ones would fail",
+      "3. The sweepstakes_queue Supabase table appears to have 0 pending entries"
+    ],
+    "tracking_files": {
+      "sweepstakes_db": "data/sweepstakes.db exists (303KB SQLite), used by sweepstakes_digest_bot.py to track found sweepstakes from RSS feeds",
+      "latest_digest_html": "data/latest_digest.html exists with 25 sweepstakes entries scraped from RSS feeds (Sweepstakes Bible, iLoveGiveaways, Sweepstakes Lovers)",
+      "supabase_tables": ["sweepstakes_queue (entry URLs to process)", "sweepstakes_entries (log of attempted entries)"]
+    },
+    "sweepstakes_bots": [
+      "bots/sweepstakes_digest_bot.py - scrapes RSS feeds, builds HTML digest email, stores in local SQLite DB",
+      "bots/sweepstakes_email_parser_bot.py - parses incoming digest emails (from Priya), extracts URLs to sweepstakes_queue",
+      "bots/sweepstakes_auto_entry_bot.py - reads sweepstakes_queue, opens each URL with Playwright, fills forms, submits entries",
+      "bots/sweepstakes_bot.py - older/simpler version"
+    ],
+    "pipeline_gap": "The digest bot FINDS sweepstakes (25 in latest digest) and the auto-entry bot CAN enter them, but the middle step (Priya classifying emails -> parser populating queue) is the broken link. The queue stays empty so nothing gets entered."
+  }
+}

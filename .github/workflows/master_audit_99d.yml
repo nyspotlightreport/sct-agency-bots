@@ -1,0 +1,46 @@
+name: Master 99-Dimension Audit
+
+on:
+  schedule:
+    - cron: '0 10 * * *'
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run 99-Dimension Audit
+        env:
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+        run: python agents/master_audit_99d.py
+      - name: Commit audit report
+        if: always()
+        run: |
+          git config user.name "NYSR Audit Bot"
+          git config user.email "audit@nyspotlightreport.com"
+          git add data/audit/latest_99d_audit.json || true
+          git diff --cached --quiet || git commit -m "audit: 99d report $(date -u +%Y-%m-%d_%H%M)"
+          git push || true
+      - name: Create issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          SCORE=$(python -c "import json; d=json.load(open('data/audit/latest_99d_audit.json')); print(d.get('score',0))" 2>/dev/null || echo "?")
+          FAILS=$(python -c "import json; d=json.load(open('data/audit/latest_99d_audit.json')); print(', '.join(r['name'] for r in d.get('failures',[])))" 2>/dev/null || echo "unknown")
+          gh issue create \
+            --title "AUDIT FAILURE: Score $SCORE/100 - $(date -u +%Y-%m-%d)" \
+            --body "## 99-Dimension Audit Failed\n\n**Score:** $SCORE/100\n**Failures:** $FAILS\n\n**Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label "audit,critical" || true

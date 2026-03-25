@@ -1,0 +1,33 @@
+name: Self-Repair Engine
+
+on:
+  workflow_run:
+    workflows: ["Master 99-Dimension Audit"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  repair:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run Self-Repair
+        env:
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python agents/self_repair_engine.py
+      - name: Commit repairs
+        if: always()
+        run: |
+          git config user.name "NYSR Self-Repair"
+          git config user.email "repair@nyspotlightreport.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "self-repair: auto-fix $(date -u +%Y-%m-%d_%H%M)"
+          git push || true
