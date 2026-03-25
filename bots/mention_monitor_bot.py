@@ -3,31 +3,102 @@
 MENTION MONITOR BOT v2.0 — S.C. Thomas Internal Agency
 Monitors brand mentions across web, drafts replies, flags hot engagement.
 Sources: Google Alerts RSS, Reddit, news mentions.
-Routes draft replies to Gmail for one-tap approval.
+Routes alerts via Resend API. Logs to Supabase. Pushover notifications.
 Schedule: Every 4 hours.
 """
 
 import os
 import sys
 import json
-import smtplib
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from agency_core import BaseBot, Config, ClaudeClient, with_retry
 
+
+# ── HELPERS ────────────────────────────────────────────────────────────────
+
+def send_resend(to, subject, html_body):
+    """Send email via Resend API"""
+    api_key = os.environ.get("RESEND_API_KEY", "")
+    if not api_key:
+        return
+    data = json.dumps({
+        "from": "NYSR Monitor <alerts@nyspotlightreport.com>",
+        "to": [to],
+        "subject": subject,
+        "html": html_body,
+    }).encode()
+    req = urllib.request.Request(
+        "https://api.resend.com/emails",
+        data=data,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+    )
+    urllib.request.urlopen(req, timeout=10)
+
+
+def pushover(title, msg):
+    """Send Pushover notification"""
+    token = os.environ.get("PUSHOVER_API_KEY", "")
+    user = os.environ.get("PUSHOVER_USER_KEY", "")
+    if not token or not user:
+        return
+    data = urllib.parse.urlencode({
+        "token": token,
+        "user": user,
+        "title": title,
+        "message": msg[:1024],
+    }).encode()
+    req = urllib.request.Request(
+        "https://api.pushover.net/1/messages.json", data=data
+    )
+    urllib.request.urlopen(req, timeout=10)
+
+
+def log_mention_to_supabase(source_url, mention_text, brand_term):
+    """Log a brand mention to Supabase brand_mentions table"""
+    supa_url = os.environ.get("SUPABASE_URL", "")
+    supa_key = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
+    if not supa_url or not supa_key:
+        return
+    row = json.dumps({
+        "source_url": source_url,
+        "mention_text": mention_text[:1000],
+        "brand_term": brand_term,
+        "found_at": datetime.now(timezone.utc).isoformat(),
+    }).encode()
+    req = urllib.request.Request(
+        f"{supa_url}/rest/v1/brand_mentions",
+        data=row,
+        headers={
+            "apikey": supa_key,
+            "Authorization": f"Bearer {supa_key}",
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal",
+        },
+    )
+    try:
+        urllib.request.urlopen(req, timeout=10)
+    except Exception:
+        pass  # non-fatal — don't break the bot if logging fails
+
+
 class MentionMonitorBot(BaseBot):
     VERSION = "2.0.0"
 
-    BRAND_TERMS = os.getenv("BRAND_TERMS", "").split(",") if os.getenv("BRAND_TERMS") else [
-        # Add your brand names and terms here
-        # "S.C. Thomas", "NYSpotlight", "yourbrand"
+    BRAND_TERMS = [
+        "S.C. Thomas",
+        "SC Thomas",
+        "NY Spotlight Report",
+        "NYSR",
+        "nyspotlightreport",
     ]
 
     def __init__(self):
@@ -157,7 +228,7 @@ Reply drafts should be professional, brief, on-brand for S.C. Thomas."""
 
     # ── REPORTER ──────────────────────────────────────────────────────────────
     def send_digest(self, mentions: list):
-        """Email mention digest to Chairman"""
+        """Email mention digest to Chairman via Resend API"""
         high     = [m for m in mentions if m.get("priority") == "HIGH"]
         medium   = [m for m in mentions if m.get("priority") == "MEDIUM"]
         date_str = datetime.now().strftime("%b %d, %Y")
@@ -188,41 +259,28 @@ Reply drafts should be professional, brief, on-brand for S.C. Thomas."""
 
         html = f"""<html><body style="font-family:Arial,sans-serif;max-width:650px;margin:0 auto;">
 <div style="background:#111;color:#fff;padding:18px 22px;">
-  <h2 style="margin:0;font-size:18px;">🔔 MENTION MONITOR — {date_str}</h2>
+  <h2 style="margin:0;font-size:18px;">MENTION MONITOR — {date_str}</h2>
   <p style="margin:4px 0 0;color:#aaa;font-size:12px;">{len(mentions)} new mentions | {len(high)} HIGH priority</p>
 </div>
 <div style="padding:22px;">
-{('<h3 style="color:#c62828;border-bottom:2px solid #c62828;padding-bottom:6px;">🔴 HIGH PRIORITY — ACT NOW</h3>' + high_html) if high else ''}
-{('<h3 style="margin-top:20px;border-bottom:2px solid #111;padding-bottom:6px;">🟡 MEDIUM PRIORITY</h3>' + medium_html) if medium else ''}
+{('<h3 style="color:#c62828;border-bottom:2px solid #c62828;padding-bottom:6px;">HIGH PRIORITY — ACT NOW</h3>' + high_html) if high else ''}
+{('<h3 style="margin-top:20px;border-bottom:2px solid #111;padding-bottom:6px;">MEDIUM PRIORITY</h3>' + medium_html) if medium else ''}
 <p style="margin-top:20px;font-size:12px;color:#999;">Mention Monitor Bot v{self.VERSION} | {datetime.now().strftime('%Y-%m-%d %H:%M')}</p>
 </div></body></html>"""
 
-        msg = MIMEMultipart("alternative")
-        priority_flag = "🔴 " if high else ""
-        msg["Subject"] = f"{priority_flag}Mention Monitor — {len(mentions)} new — {date_str}"
-        msg["From"]    = Config.GMAIL_USER
-        msg["To"]      = Config.CHAIRMAN_EMAIL
-        msg.attach(MIMEText(html, "html"))
-
-        if not Config.GMAIL_APP_PASS:
-            self.logger.info(f"No email creds — {len(mentions)} mentions found")
-            return
+        priority_flag = "[HIGH] " if high else ""
+        subject = f"{priority_flag}Mention Monitor — {len(mentions)} new — {date_str}"
 
         try:
-            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-                s.login(Config.GMAIL_USER, Config.GMAIL_APP_PASS)
-                s.sendmail(Config.GMAIL_USER, Config.CHAIRMAN_EMAIL, msg.as_string())
-            self.logger.info(f"Mention digest sent: {len(mentions)} mentions")
+            send_resend(Config.CHAIRMAN_EMAIL, subject, html)
+            self.logger.info(f"Mention digest sent via Resend: {len(mentions)} mentions")
         except Exception as e:
-            self.logger.error(f"Email failed: {e}")
+            self.logger.error(f"Resend email failed: {e}")
 
     # ── MAIN ──────────────────────────────────────────────────────────────────
     def execute(self) -> dict:
         if not self.BRAND_TERMS:
-            self.logger.warning(
-                "No BRAND_TERMS configured. "
-                "Set BRAND_TERMS env var: 'YourBrand,YourProduct,YourName'"
-            )
+            self.logger.warning("No BRAND_TERMS configured.")
             return {"items_processed": 0, "warning": "No brand terms configured"}
 
         self.logger.info(f"Checking {len(self.BRAND_TERMS)} brand terms...")
@@ -240,6 +298,20 @@ Reply drafts should be professional, brief, on-brand for S.C. Thomas."""
             analyzed = self.analyze_mentions(all_mentions)
             self.send_digest(analyzed)
 
+            # Log each mention to Supabase and send Pushover
+            for m in all_mentions:
+                log_mention_to_supabase(
+                    source_url=m.get("url", ""),
+                    mention_text=m.get("title", "") + " " + m.get("snippet", ""),
+                    brand_term=m.get("term", ""),
+                )
+
+            pushover(
+                "Mention Monitor",
+                f"{len(all_mentions)} new mention(s) found for: "
+                + ", ".join(sorted({m.get('term','') for m in all_mentions})),
+            )
+
             # Save seen URLs
             new_urls = [m["url"] for m in all_mentions if m.get("url")]
             self.seen_urls.update(new_urls)
@@ -256,8 +328,5 @@ if __name__ == "__main__":
     bot = MentionMonitorBot()
     bot.run()
 
-# SETUP:
-# export BRAND_TERMS="YourBrand,YourProduct,YourName"
-# export GMAIL_APP_PASS=...
 # SCHEDULE: Every 4 hours
 # cron: '0 */4 * * *'

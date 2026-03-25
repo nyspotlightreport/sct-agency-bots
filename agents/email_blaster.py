@@ -71,6 +71,7 @@ Want to see it in action? Call our AI receptionist: {PHONE}
 Best,
 S.C. Thomas
 Chairman, NY Spotlight Report
+Editor-in-Chief: editor-in-chief@nyspotlightreport.com
 {SITE_URL}
 """
     return subject, body

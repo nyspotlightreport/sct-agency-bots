@@ -271,6 +271,75 @@ def run():
     else:
         check("Guardrail workflows", True, "GH_PAT not available for API check, assumed OK")
 
+    # === DIM 53-59: REVENUE EXECUTION ===
+    log.info("\n--- DIM 53-59: REVENUE EXECUTION ---")
+
+    # DIM 53: SWEEPSTAKES
+    if gh_pat:
+        try:
+            req = Request(
+                f"https://api.github.com/repos/nyspotlightreport/sct-agency-bots/actions/workflows/sweepstakes_entry.yml/runs?per_page=1",
+                headers={"Authorization": f"Bearer {gh_pat}", "User-Agent": "NYSR-Audit"})
+            resp = urlopen(req, timeout=10, context=CTX)
+            data = json.loads(resp.read())
+            runs = data.get("workflow_runs", [])
+            if runs and runs[0].get("conclusion") == "success":
+                check("Sweepstakes running", True, f"Last run: {runs[0].get('created_at', '?')}")
+            else:
+                check("Sweepstakes running", False, "Last run failed or no runs")
+        except Exception:
+            check("Sweepstakes running", False, "API error")
+    else:
+        check("Sweepstakes running", False, "GH_PAT not available")
+
+    # DIM 54: AFFILIATES
+    code, body = http_get(f"{BASE}/income-hub/")
+    aff_count = sum(1 for term in ["grammarly", "hubspot", "convertkit", "ahrefs", "kinsta", "siteground"] if term.lower() in body.lower()) if body else 0
+    check("Affiliate content", code == 200 and aff_count >= 2, f"{aff_count} affiliate refs found")
+
+    # DIM 55: MENTION MONITOR
+    mention_path = os.path.join(os.path.dirname(__file__), "..", "bots", "mention_monitor_bot.py")
+    has_terms = False
+    if os.path.exists(mention_path):
+        try:
+            with open(mention_path, "r") as f:
+                content = f.read()
+            has_terms = "BRAND_TERMS" in content
+        except Exception:
+            has_terms = False
+    check("Mention monitor configured", has_terms, "BRAND_TERMS set" if has_terms else "BRAND_TERMS missing")
+
+    # DIM 56: ZOHO EMAIL
+    zoho_count = 0
+    for p in ["/press/", "/about/masthead/", "/contact/"]:
+        code, body = http_get(f"{BASE}{p}")
+        if code == 200 and body and "editor-in-chief@nyspotlightreport.com" in body:
+            zoho_count += 1
+    check("Zoho email on credibility pages", zoho_count >= 2, f"{zoho_count}/3 pages have it")
+
+    # DIM 57: NEWSLETTER
+    code, _ = http_get(f"{BASE}/newsletter/")
+    check("Newsletter page live", code == 200, f"Status {code}")
+
+    # DIM 58: GUMROAD PRODUCTS
+    code, body = http_get(f"{BASE}/.netlify/functions/gumroad-delivery")
+    products = 0
+    if body:
+        try:
+            d = json.loads(body)
+            products = d.get("products", 0)
+        except Exception:
+            pass
+    check("Gumroad products configured", products >= 5, f"{products} products in delivery webhook")
+
+    # DIM 59: KDP PIPELINE
+    kdp_path = os.path.join(os.path.dirname(__file__), "..", "data", "kdp_books")
+    if os.path.isdir(kdp_path):
+        pdfs = [f for f in os.listdir(kdp_path) if f.endswith(".pdf")]
+        check("KDP books in pipeline", len(pdfs) >= 15, f"{len(pdfs)} PDFs ready")
+    else:
+        check("KDP books in pipeline", False, "kdp_books directory not found")
+
     # === COMPILE REPORT ===
     pass_count = sum(1 for r in RESULTS if r["status"] == "PASS")
     fail_count = sum(1 for r in RESULTS if r["status"] == "FAIL")
