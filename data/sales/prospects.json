@@ -1,7 +1,62 @@
 [
-  {"name":"Judi Lazaro","email":"jlazaro@aibinternational.com","company":"AIB International","title":"Vice President of Sales","industry":"Food Safety","city":"Wamego, KS"},
-  {"name":"Heather Palmer","email":"hpalmer@davidsbrown.com","company":"David S Brown Enterprises","title":"Vice President Marketing","industry":"Real Estate","city":"Bloomfield, CT"},
-  {"name":"Todd Reubold","email":"todd.reubold@drawdown.org","company":"Project Drawdown","title":"Director of Marketing","industry":"Environmental","city":"Saint Paul, MN"},
-  {"name":"Lisa Marie Wilson","email":"lwilson@zerotothree.org","company":"Zero to Three","title":"Director of Outreach","industry":"Education","city":"Los Angeles, CA"},
-  {"name":"Asif Munir","email":"asif.munir@brownandjoseph.com","company":"Brown and Joseph","title":"VP of Operations","industry":"Financial Services","city":"Rolling Meadows, IL"}
+  {
+    "name": "Judi Lazaro",
+    "email": "jlazaro@aibinternational.com",
+    "company": "AIB International",
+    "title": "Vice President of Sales",
+    "industry": "Food Safety",
+    "city": "Wamego, KS",
+    "linkedin": "linkedin.com/in/judi-lazaro-3a778658",
+    "status": "new",
+    "source": "vibe_prospecting",
+    "added": "2026-03-25"
+  },
+  {
+    "name": "Heather Palmer",
+    "email": "hpalmer@davidsbrown.com",
+    "company": "David S Brown Enterprises",
+    "title": "Vice President Marketing",
+    "industry": "Real Estate",
+    "city": "Bloomfield, CT",
+    "linkedin": "linkedin.com/in/heather-palmer-43915651",
+    "status": "new",
+    "source": "vibe_prospecting",
+    "added": "2026-03-25"
+  },
+  {
+    "name": "Todd Reubold",
+    "email": "todd.reubold@drawdown.org",
+    "company": "Project Drawdown",
+    "title": "Director of Marketing and Communications",
+    "industry": "Environmental",
+    "city": "Saint Paul, MN",
+    "linkedin": "linkedin.com/in/toddreubold",
+    "status": "new",
+    "source": "vibe_prospecting",
+    "added": "2026-03-25"
+  },
+  {
+    "name": "Lisa Marie Wilson",
+    "email": "lwilson@zerotothree.org",
+    "company": "Zero to Three",
+    "title": "Director of Outreach & Engagement",
+    "industry": "Education",
+    "city": "Los Angeles, CA",
+    "linkedin": "linkedin.com/in/lisamwilsonfreedreamer",
+    "status": "new",
+    "source": "vibe_prospecting",
+    "added": "2026-03-25"
+  },
+  {
+    "name": "Asif Munir",
+    "email": "asif.munir@brownandjoseph.com",
+    "company": "Brown and Joseph",
+    "title": "Vice President of Operations",
+    "industry": "Financial Services",
+    "city": "Rolling Meadows, IL",
+    "linkedin": "linkedin.com/in/asif-munir-3802553a",
+    "status": "new",
+    "source": "vibe_prospecting",
+    "added": "2026-03-25"
+  }
 ]
