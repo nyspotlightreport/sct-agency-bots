@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-03-25T16:47:02.928292+00:00",
+  "producing": 4,
+  "zero_output": 6,
+  "total": 10,
+  "results": [
+    {
+      "name": "Email Blaster",
+      "status": "ZERO_OUTPUT",
+      "detail": "Supabase not accessible or table missing"
+    },
+    {
+      "name": "Lead Nurture",
+      "status": "ZERO_OUTPUT",
+      "detail": "Supabase not accessible or table missing"
+    },
+    {
+      "name": "Auto-Publisher",
+      "status": "ZERO_OUTPUT",
+      "detail": "No March 2026 content on /blog/"
+    },
+    {
+      "name": "Sweepstakes Bot",
+      "status": "PRODUCING",
+      "detail": "Last success: 2026-03-25"
+    },
+    {
+      "name": "Mention Monitor",
+      "status": "ZERO_OUTPUT",
+      "detail": "brand_mentions table not accessible"
+    },
+    {
+      "name": "Chairman Briefing",
+      "status": "PRODUCING",
+      "detail": "Last success: 2026-03-25"
+    },
+    {
+      "name": "Health Monitor",
+      "status": "ZERO_OUTPUT",
+      "detail": "site_health_log not accessible"
+    },
+    {
+      "name": "Department Agents",
+      "status": "ZERO_OUTPUT",
+      "detail": "director_outputs not accessible"
+    },
+    {
+      "name": "Affiliate Links",
+      "status": "PRODUCING",
+      "detail": "22 links audited"
+    },
+    {
+      "name": "Stripe Revenue",
+      "status": "PRODUCING",
+      "detail": "Charges exist"
+    }
+  ]
+}
