@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-03-25T15:05:17.809583+00:00",
+  "pass_count": 21,
+  "fail_count": 2,
+  "total": 23,
+  "score": 91,
+  "grade": "A",
+  "results": [
+    {
+      "name": "Pages responding",
+      "status": "PASS",
+      "detail": "31/31 pages return 200"
+    },
+    {
+      "name": "Stripe LIVE checkout",
+      "status": "PASS",
+      "detail": "Status 200, cs_live=found"
+    },
+    {
+      "name": "Webhook signature enforcement",
+      "status": "PASS",
+      "detail": "Returns 400 (want 400)"
+    },
+    {
+      "name": "Voice AI (ProFlow)",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Voice AI (Emma)",
+      "status": "PASS",
+      "detail": "Emma persona active"
+    },
+    {
+      "name": "Lead capture",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Free trial eliminated",
+      "status": "FAIL",
+      "detail": "2 pages still have it"
+    },
+    {
+      "name": "Functions alive",
+      "status": "FAIL",
+      "detail": "13/20 responding"
+    },
+    {
+      "name": "startCheckout present",
+      "status": "PASS",
+      "detail": "Checkout function wired"
+    },
+    {
+      "name": "Phone CTA",
+      "status": "PASS",
+      "detail": "(631) 892-9817"
+    },
+    {
+      "name": "Pricing tiers",
+      "status": "PASS",
+      "detail": "All 3 tiers shown"
+    },
+    {
+      "name": "HTTPS active",
+      "status": "PASS",
+      "detail": "Site serves over HTTPS"
+    },
+    {
+      "name": "Webhook sig verification",
+      "status": "PASS",
+      "detail": "constructEvent in webhook code"
+    },
+    {
+      "name": "Viewport meta",
+      "status": "PASS",
+      "detail": "Mobile responsive"
+    },
+    {
+      "name": "Title tag",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Meta description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Open Graph tags",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Schema.org JSON-LD",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Privacy policy",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Terms of service",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Gumroad storefront live",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Onboarding page live",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Guardrail workflows active",
+      "status": "PASS",
+      "detail": "12/12 active"
+    }
+  ],
+  "failures": [
+    {
+      "name": "Free trial eliminated",
+      "status": "FAIL",
+      "detail": "2 pages still have it"
+    },
+    {
+      "name": "Functions alive",
+      "status": "FAIL",
+      "detail": "13/20 responding"
+    }
+  ]
+}
