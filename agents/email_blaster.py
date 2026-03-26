@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 agents/email_blaster.py — Daily Cold Email Outreach
-Sends 10 personalized ProFlow emails/day via Gmail SMTP.
+Sends 10 personalized ProFlow emails/day via Resend API.
 Logs to Supabase outreach_log table.
 """
 import os, json, smtplib, logging
