@@ -85,7 +85,7 @@ def send_email(to_email, subject, body):
         return False
     try:
         resend_data = json.dumps({
-            "from": "S.C. Thomas <onboarding@resend.dev>",
+            "from": "NY Spotlight Report <outreach@mail.nyspotlightreport.com>",
             "to": [to_email],
             "subject": subject,
             "text": body
