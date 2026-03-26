@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Gothamist Newsletter",
+    "contact": "tips@gothamist.com",
+    "topic": "NYC news and culture",
+    "subscriber_est": "40000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:46.218451"
+  },
+  {
+    "name": "Untapped New York",
+    "contact": "info@untappedcities.com",
+    "topic": "NYC hidden gems",
+    "subscriber_est": "15000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:47.180783"
+  },
+  {
+    "name": "Brownstoner",
+    "contact": "editor@brownstoner.com",
+    "topic": "Brooklyn history and culture",
+    "subscriber_est": "20000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:48.096105"
+  },
+  {
+    "name": "HellGate NYC",
+    "contact": "tips@hellgatenyc.com",
+    "topic": "NYC independent journalism",
+    "subscriber_est": "10000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:48.979543"
+  },
+  {
+    "name": "The Lo-Down NYC",
+    "contact": "editor@thelodownnyc.com",
+    "topic": "Lower East Side culture",
+    "subscriber_est": "4000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:49.874095"
+  },
+  {
+    "name": "Queens Daily Eagle",
+    "contact": "editor@queensdailyeagle.com",
+    "topic": "Queens news and culture",
+    "subscriber_est": "6000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:50.931349"
+  },
+  {
+    "name": "The Greenpointer",
+    "contact": "hello@thegreenpointer.com",
+    "topic": "Brooklyn neighborhoods",
+    "subscriber_est": "3000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:51.932870"
+  },
+  {
+    "name": "Brooklyn Magazine",
+    "contact": "editor@brooklynmagazine.com",
+    "topic": "Brooklyn culture",
+    "subscriber_est": "10000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:52.857936"
+  },
+  {
+    "name": "Bedford + Bowery",
+    "contact": "info@bedfordandbowery.com",
+    "topic": "NYC neighborhood culture",
+    "subscriber_est": "5000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:53.835410"
+  },
+  {
+    "name": "The Bushwick Daily",
+    "contact": "editor@bushwickdaily.com",
+    "topic": "Bushwick/Brooklyn culture",
+    "subscriber_est": "8000+",
+    "status": "contacted",
+    "contacted_at": "2026-03-26T09:15:54.730825"
+  }
+]

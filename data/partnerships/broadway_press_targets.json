@@ -1,0 +1,62 @@
+[
+  {
+    "show": "Hamilton",
+    "press_email": "press@hamiltonmusical.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "The Lion King",
+    "press_email": "press@lionkingbroadway.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "Wicked",
+    "press_email": "press@wickedthemusical.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "Chicago",
+    "press_email": "press@chicagothemusical.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "Moulin Rouge! The Musical",
+    "press_email": "press@moulinrougemusical.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "The Notebook",
+    "press_email": "press@thenotebookmusical.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "Cabaret",
+    "press_email": "press@cabaretbroadway.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "The Outsiders",
+    "press_email": "press@theoutsidersbroadway.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "Suffs",
+    "press_email": "press@suffsmusical.com",
+    "genre": "Musical",
+    "status": "contacted"
+  },
+  {
+    "show": "How to Dance in Ohio",
+    "press_email": "press@howtodanceinohio.com",
+    "genre": "Musical",
+    "status": "contacted"
+  }
+]
