@@ -17,7 +17,7 @@ jobs:
 
       - name: Clone site repo
         run: |
-          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/Seanc11792/NY-Spotlight-Report-good.git site-repo
+          git clone https://${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git site-repo
 
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
@@ -40,6 +40,6 @@ jobs:
         run: |
           git config user.name "Article Image Bot"
           git config user.email "media@nyspotlightreport.com"
-          git add images/articles/*.jpg blog/*.html
+          git add images/ blog/
           git diff --cached --quiet || git commit -m "media: generate DALL-E 3 editorial images for articles"
           git push
