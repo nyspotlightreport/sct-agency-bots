@@ -21,6 +21,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
+      - run: pip install requests -q
 
       - name: Generate article images via DALL-E 3
         env:
@@ -35,11 +36,14 @@ jobs:
           python agents/article_image_generator.py $FLAGS
 
       - name: Commit and push images + updated HTML
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         if: github.event.inputs.dry_run != 'true'
         working-directory: site-repo
         run: |
           git config user.name "Article Image Bot"
           git config user.email "media@nyspotlightreport.com"
+          git remote set-url origin "https://${GH_TOKEN}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git"
           git add images/ blog/
           git diff --cached --quiet || git commit -m "media: generate DALL-E 3 editorial images for articles"
           git push
