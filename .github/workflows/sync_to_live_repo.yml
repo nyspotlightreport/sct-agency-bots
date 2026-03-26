@@ -72,6 +72,8 @@ jobs:
           fi
 
       - name: Commit and push
+        env:
+          SYNC_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           cd /tmp/live-repo
           git config user.name "SCT Auto-Sync Bot"
@@ -81,7 +83,7 @@ jobs:
             echo "No changes to sync"
           else
             git commit -m "auto-sync from sct-agency-bots [$(echo $GITHUB_SHA | cut -c1-7)]"
-            git remote set-url origin "https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git"
+            git remote set-url origin "https://${SYNC_TOKEN}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git"
             git push origin main
           fi
 
