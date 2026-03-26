@@ -1,0 +1,33 @@
+name: Effectiveness Audit (Daily 6:50am ET)
+on:
+  schedule:
+    - cron: '50 11 * * *'
+  workflow_dispatch:
+jobs:
+  audit:
+    name: Effectiveness Audit - 8 Business Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_PAT: ${{ secrets.GH_PAT }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+      PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Effectiveness Audit
+        run: python agents/effectiveness_auditor.py
+      - name: Save audit results
+        if: always()
+        run: |
+          git config user.name "Effectiveness Auditor"
+          git config user.email "audit@nyspotlightreport.com"
+          git add data/audits/ || true
+          if ! git diff --cached --quiet; then
+            git commit -m "audit: effectiveness $(date +%Y-%m-%d)"
+            git push origin main || true
+          fi
