@@ -1,0 +1,48 @@
+name: "Track 2 - Venue Extractor Daily"
+
+on:
+  schedule:
+    - cron: "30 7 * * *"
+  workflow_run:
+    workflows: ["Auto-Publish Daily"]
+    types: [completed]
+  workflow_dispatch:
+
+env:
+  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+  BLOG_DIR: "./NY-Spotlight-Report-good/blog"
+  SITE_URL: "https://nyspotlightreport.com"
+
+jobs:
+  extract-venues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Checkout blog repo
+        uses: actions/checkout@v4
+        with:
+          repository: scthomasnyc/NY-Spotlight-Report-good
+          path: NY-Spotlight-Report-good
+          token: ${{ secrets.GH_PAT }}
+        continue-on-error: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run venue extractor
+        run: python agents/venue_extractor.py
+
+      - name: Commit prospect data
+        run: |
+          git config user.name "SCT Agency Bot"
+          git config user.email "bot@myproflow.org"
+          git add data/sales/ || true
+          git diff --staged --quiet || git commit -m "chore: update venue prospects $(date +%Y-%m-%d)"
+          git push || true

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "amazon_associates",
+    "name": "Amazon Associates",
+    "status": "active",
+    "tag": "nyspotlightrepo-20",
+    "commission": "1-10% depending on category",
+    "cookie_days": 24,
+    "signup_url": null,
+    "base_url": "https://www.amazon.com/dp/{asin}?tag=nyspotlightrepo-20",
+    "categories": [
+      "fashion",
+      "culture",
+      "music",
+      "lgbtq",
+      "broadway"
+    ],
+    "link_templates": {
+      "product": "https://www.amazon.com/dp/{asin}?tag=nyspotlightrepo-20",
+      "search": "https://www.amazon.com/s?k={query}&tag=nyspotlightrepo-20"
+    },
+    "cta_text": "Shop on Amazon",
+    "notes": "Already active. Use for book recs, fashion items, NYC guides."
+  },
+  {
+    "id": "viator",
+    "name": "Viator",
+    "status": "needs_signup",
+    "tag": null,
+    "commission": "8%",
+    "cookie_days": 30,
+    "signup_url": "https://www.viator.com/affiliates",
+    "base_url": "https://www.viator.com/tours/New-York-City?pid={partner_id}",
+    "categories": [
+      "tourism",
+      "culture",
+      "nightlife",
+      "broadway",
+      "food"
+    ],
+    "link_templates": {
+      "nyc_tours": "https://www.viator.com/tours/New-York-City?pid={partner_id}",
+      "search": "https://www.viator.com/searchResults/all?text={query}&pid={partner_id}"
+    },
+    "cta_text": "Book NYC Tours on Viator",
+    "notes": "8% on all bookings. Great for tourism and culture articles."
+  },
+  {
+    "id": "seatgeek",
+    "name": "SeatGeek",
+    "status": "needs_signup",
+    "tag": null,
+    "commission": "$5-20 per ticket sold",
+    "cookie_days": 30,
+    "signup_url": "https://seatgeek.com/affiliates",
+    "base_url": "https://seatgeek.com/search?q={query}&aid={affiliate_id}",
+    "categories": [
+      "broadway",
+      "music",
+      "nightlife",
+      "culture"
+    ],
+    "link_templates": {
+      "broadway": "https://seatgeek.com/broadway-tickets?aid={affiliate_id}",
+      "concerts": "https://seatgeek.com/concert-tickets?aid={affiliate_id}",
+      "search": "https://seatgeek.com/search?q={query}&aid={affiliate_id}"
+    },
+    "cta_text": "Get Tickets on SeatGeek",
+    "notes": "$5-20 per ticket. Perfect for Broadway and concert articles."
+  },
+  {
+    "id": "hotels_com",
+    "name": "Hotels.com",
+    "status": "needs_signup",
+    "tag": null,
+    "commission": "4-6%",
+    "cookie_days": 7,
+    "signup_url": "https://www.hotels.com/affiliate",
+    "base_url": "https://www.hotels.com/search.do?q-destination=New+York&aid={affiliate_id}",
+    "categories": [
+      "tourism",
+      "nightlife",
+      "broadway",
+      "culture",
+      "food"
+    ],
+    "link_templates": {
+      "nyc_hotels": "https://www.hotels.com/search.do?q-destination=New+York&aid={affiliate_id}",
+      "search": "https://www.hotels.com/search.do?q-destination={query}&aid={affiliate_id}"
+    },
+    "cta_text": "Find NYC Hotels",
+    "notes": "4-6% commission. Good for tourism, nightlife, any visitor content."
+  },
+  {
+    "id": "getyourguide",
+    "name": "GetYourGuide",
+    "status": "needs_signup",
+    "tag": null,
+    "commission": "8%",
+    "cookie_days": 31,
+    "signup_url": "https://www.getyourguide.com/affiliates",
+    "base_url": "https://www.getyourguide.com/new-york-l59/?partner_id={partner_id}",
+    "categories": [
+      "culture",
+      "tourism",
+      "broadway",
+      "food",
+      "lgbtq"
+    ],
+    "link_templates": {
+      "nyc_activities": "https://www.getyourguide.com/new-york-l59/?partner_id={partner_id}",
+      "search": "https://www.getyourguide.com/s/?q={query}&partner_id={partner_id}"
+    },
+    "cta_text": "Explore NYC Activities",
+    "notes": "8% commission. Culture, tours, food experiences."
+  },
+  {
+    "id": "opentable",
+    "name": "OpenTable",
+    "status": "needs_signup",
+    "tag": null,
+    "commission": "per reservation ($1-2)",
+    "cookie_days": 14,
+    "signup_url": "https://www.opentable.com/start/affiliates",
+    "base_url": "https://www.opentable.com/s?covers=2&metroId=4&affiliate={affiliate_id}",
+    "categories": [
+      "food",
+      "nightlife",
+      "culture",
+      "lgbtq"
+    ],
+    "link_templates": {
+      "nyc_restaurants": "https://www.opentable.com/s?covers=2&metroId=4&affiliate={affiliate_id}",
+      "search": "https://www.opentable.com/s?term={query}&metroId=4&affiliate={affiliate_id}"
+    },
+    "cta_text": "Reserve a Table on OpenTable",
+    "notes": "Per-reservation payout. Perfect for food and restaurant articles."
+  },
+  {
+    "id": "stubhub",
+    "name": "StubHub",
+    "status": "needs_signup",
+    "tag": null,
+    "commission": "10%",
+    "cookie_days": 30,
+    "signup_url": "https://www.stubhub.com/partnerships",
+    "base_url": "https://www.stubhub.com/search?q={query}&partnerid={partner_id}",
+    "categories": [
+      "broadway",
+      "music",
+      "nightlife",
+      "culture"
+    ],
+    "link_templates": {
+      "broadway": "https://www.stubhub.com/broadway-tickets?partnerid={partner_id}",
+      "concerts": "https://www.stubhub.com/concert-tickets-new-york?partnerid={partner_id}",
+      "search": "https://www.stubhub.com/search?q={query}&partnerid={partner_id}"
+    },
+    "cta_text": "Find Tickets on StubHub",
+    "notes": "10% commission. Broadway, concerts, events."
+  }
+]
