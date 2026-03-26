@@ -1,32 +1,272 @@
 [
-  {"name": "Marco DiLorenzo", "business": "Tavola Rossa Italian Kitchen", "email": "marco@tavolarossa.com", "title": "Owner", "city": "New York", "industry": "restaurant", "status": "new"},
-  {"name": "Angela Tsai", "business": "Jade Blossom Dumpling House", "email": "angela@jadeblossomnyc.com", "title": "Owner", "city": "New York", "industry": "restaurant", "status": "new"},
-  {"name": "Derek Okafor", "business": "Flame & Smoke BBQ", "email": "derek@flamesmokenyc.com", "title": "Owner", "city": "New York", "industry": "restaurant", "status": "new"},
-  {"name": "Sofia Reyes", "business": "Casa Bonita Taqueria", "email": "sofia@casabonitanyc.com", "title": "Owner", "city": "New York", "industry": "restaurant", "status": "new"},
-  {"name": "Daniel Kessler", "business": "The Copper Table Bistro", "email": "daniel@coppertablenyc.com", "title": "Owner", "city": "New York", "industry": "restaurant", "status": "new"},
-  {"name": "Priya Nair", "business": "Saffron & Vine Modern Indian", "email": "priya@saffronvinenyc.com", "title": "Owner", "city": "New York", "industry": "restaurant", "status": "new"},
-  {"name": "Lauren Vitale", "business": "Glow Beauty Lounge", "email": "lauren@glowbeautyli.com", "title": "Owner", "city": "Long Island", "industry": "salon_spa", "status": "new"},
-  {"name": "Christina Park", "business": "Serenity Day Spa", "email": "christina@serenitydayspa.com", "title": "Owner", "city": "Long Island", "industry": "salon_spa", "status": "new"},
-  {"name": "Danielle Ferraro", "business": "Luxe Hair Studio", "email": "danielle@luxehairstudioli.com", "title": "Owner", "city": "Long Island", "industry": "salon_spa", "status": "new"},
-  {"name": "Tanya Brooks", "business": "Radiance Med Spa", "email": "tanya@radiancemedspa.com", "title": "Owner", "city": "Long Island", "industry": "salon_spa", "status": "new"},
-  {"name": "Michelle Andrade", "business": "Polished Nail & Skin Bar", "email": "michelle@polishedli.com", "title": "Owner", "city": "Long Island", "industry": "salon_spa", "status": "new"},
-  {"name": "Jessica Kim", "business": "Bloom Wellness Spa", "email": "jessica@bloomwellnessli.com", "title": "Owner", "city": "Long Island", "industry": "salon_spa", "status": "new"},
-  {"name": "Richard Alvarez", "business": "Alvarez Realty Group", "email": "richard@alvarezrealtynyc.com", "title": "Senior Agent", "city": "New York", "industry": "real_estate", "status": "new"},
-  {"name": "Samantha Chen", "business": "Skyline Properties NYC", "email": "samantha@skylinepropsnyc.com", "title": "Broker", "city": "New York", "industry": "real_estate", "status": "new"},
-  {"name": "Michael Brennan", "business": "Brennan & Associates Realty", "email": "michael@brennanrealtynyc.com", "title": "Managing Broker", "city": "New York", "industry": "real_estate", "status": "new"},
-  {"name": "Keisha Williams", "business": "Urban Nest Real Estate", "email": "keisha@urbannestnyc.com", "title": "Principal Agent", "city": "New York", "industry": "real_estate", "status": "new"},
-  {"name": "David Petrov", "business": "Petrov Luxury Homes", "email": "david@petrovluxurynyc.com", "title": "Lead Agent", "city": "New York", "industry": "real_estate", "status": "new"},
-  {"name": "Nina Castellano", "business": "Castellano Real Estate Advisory", "email": "nina@castellanorealty.com", "title": "Senior Advisor", "city": "New York", "industry": "real_estate", "status": "new"},
-  {"name": "Jonathan Stein", "business": "Stein, Harker & Bloom LLP", "email": "jstein@steinharkerbloom.com", "title": "Managing Partner", "city": "New York", "industry": "law_firm", "status": "new"},
-  {"name": "Patricia Okonkwo", "business": "Okonkwo & Partners PLLC", "email": "pokonkwo@okonkwolaw.com", "title": "Senior Partner", "city": "New York", "industry": "law_firm", "status": "new"},
-  {"name": "Robert Gallagher", "business": "Gallagher Hayes Law Group", "email": "rgallagher@gallagherhayes.com", "title": "Partner", "city": "New York", "industry": "law_firm", "status": "new"},
-  {"name": "Maria Fontana", "business": "Fontana Legal Associates", "email": "mfontana@fontanalegal.com", "title": "Founding Partner", "city": "New York", "industry": "law_firm", "status": "new"},
-  {"name": "Alan Chowdhury", "business": "Chowdhury & Lin Attorneys", "email": "achowdhury@chowdhurylin.com", "title": "Name Partner", "city": "New York", "industry": "law_firm", "status": "new"},
-  {"name": "Elizabeth Moreau", "business": "Moreau Strauss Law PLLC", "email": "emoreau@moreaustrauss.com", "title": "Managing Partner", "city": "New York", "industry": "law_firm", "status": "new"},
-  {"name": "Jason Torres", "business": "Iron Republic Fitness", "email": "jason@ironrepublicnyc.com", "title": "Owner", "city": "New York", "industry": "gym_fitness", "status": "new"},
-  {"name": "Megan Sullivan", "business": "CorePower Studio", "email": "megan@corepowerstudionyc.com", "title": "Owner", "city": "New York", "industry": "gym_fitness", "status": "new"},
-  {"name": "Andre Baptiste", "business": "BeastMode Boxing & Fitness", "email": "andre@beastmodenyc.com", "title": "Owner", "city": "New York", "industry": "gym_fitness", "status": "new"},
-  {"name": "Rachel Goldman", "business": "ZenFit Yoga & Pilates", "email": "rachel@zenfitli.com", "title": "Owner", "city": "Long Island", "industry": "gym_fitness", "status": "new"},
-  {"name": "Carlos Mendez", "business": "Apex Performance Gym", "email": "carlos@apexperformanceli.com", "title": "Owner", "city": "Long Island", "industry": "gym_fitness", "status": "new"},
-  {"name": "Brittany Harper", "business": "Elevate Fitness Collective", "email": "brittany@elevatefitli.com", "title": "Owner", "city": "Long Island", "industry": "gym_fitness", "status": "new"}
+  {
+    "name": "Marco DiLorenzo",
+    "business": "Tavola Rossa Italian Kitchen",
+    "email": "marco@tavolarossa.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "restaurant",
+    "status": "contacted"
+  },
+  {
+    "name": "Angela Tsai",
+    "business": "Jade Blossom Dumpling House",
+    "email": "angela@jadeblossomnyc.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "restaurant",
+    "status": "contacted"
+  },
+  {
+    "name": "Derek Okafor",
+    "business": "Flame & Smoke BBQ",
+    "email": "derek@flamesmokenyc.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "restaurant",
+    "status": "contacted"
+  },
+  {
+    "name": "Sofia Reyes",
+    "business": "Casa Bonita Taqueria",
+    "email": "sofia@casabonitanyc.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "restaurant",
+    "status": "contacted"
+  },
+  {
+    "name": "Daniel Kessler",
+    "business": "The Copper Table Bistro",
+    "email": "daniel@coppertablenyc.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "restaurant",
+    "status": "contacted"
+  },
+  {
+    "name": "Priya Nair",
+    "business": "Saffron & Vine Modern Indian",
+    "email": "priya@saffronvinenyc.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "restaurant",
+    "status": "contacted"
+  },
+  {
+    "name": "Lauren Vitale",
+    "business": "Glow Beauty Lounge",
+    "email": "lauren@glowbeautyli.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "salon_spa",
+    "status": "contacted"
+  },
+  {
+    "name": "Christina Park",
+    "business": "Serenity Day Spa",
+    "email": "christina@serenitydayspa.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "salon_spa",
+    "status": "contacted"
+  },
+  {
+    "name": "Danielle Ferraro",
+    "business": "Luxe Hair Studio",
+    "email": "danielle@luxehairstudioli.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "salon_spa",
+    "status": "contacted"
+  },
+  {
+    "name": "Tanya Brooks",
+    "business": "Radiance Med Spa",
+    "email": "tanya@radiancemedspa.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "salon_spa",
+    "status": "contacted"
+  },
+  {
+    "name": "Michelle Andrade",
+    "business": "Polished Nail & Skin Bar",
+    "email": "michelle@polishedli.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "salon_spa",
+    "status": "contacted"
+  },
+  {
+    "name": "Jessica Kim",
+    "business": "Bloom Wellness Spa",
+    "email": "jessica@bloomwellnessli.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "salon_spa",
+    "status": "contacted"
+  },
+  {
+    "name": "Richard Alvarez",
+    "business": "Alvarez Realty Group",
+    "email": "richard@alvarezrealtynyc.com",
+    "title": "Senior Agent",
+    "city": "New York",
+    "industry": "real_estate",
+    "status": "contacted"
+  },
+  {
+    "name": "Samantha Chen",
+    "business": "Skyline Properties NYC",
+    "email": "samantha@skylinepropsnyc.com",
+    "title": "Broker",
+    "city": "New York",
+    "industry": "real_estate",
+    "status": "contacted"
+  },
+  {
+    "name": "Michael Brennan",
+    "business": "Brennan & Associates Realty",
+    "email": "michael@brennanrealtynyc.com",
+    "title": "Managing Broker",
+    "city": "New York",
+    "industry": "real_estate",
+    "status": "contacted"
+  },
+  {
+    "name": "Keisha Williams",
+    "business": "Urban Nest Real Estate",
+    "email": "keisha@urbannestnyc.com",
+    "title": "Principal Agent",
+    "city": "New York",
+    "industry": "real_estate",
+    "status": "new"
+  },
+  {
+    "name": "David Petrov",
+    "business": "Petrov Luxury Homes",
+    "email": "david@petrovluxurynyc.com",
+    "title": "Lead Agent",
+    "city": "New York",
+    "industry": "real_estate",
+    "status": "new"
+  },
+  {
+    "name": "Nina Castellano",
+    "business": "Castellano Real Estate Advisory",
+    "email": "nina@castellanorealty.com",
+    "title": "Senior Advisor",
+    "city": "New York",
+    "industry": "real_estate",
+    "status": "new"
+  },
+  {
+    "name": "Jonathan Stein",
+    "business": "Stein, Harker & Bloom LLP",
+    "email": "jstein@steinharkerbloom.com",
+    "title": "Managing Partner",
+    "city": "New York",
+    "industry": "law_firm",
+    "status": "new"
+  },
+  {
+    "name": "Patricia Okonkwo",
+    "business": "Okonkwo & Partners PLLC",
+    "email": "pokonkwo@okonkwolaw.com",
+    "title": "Senior Partner",
+    "city": "New York",
+    "industry": "law_firm",
+    "status": "new"
+  },
+  {
+    "name": "Robert Gallagher",
+    "business": "Gallagher Hayes Law Group",
+    "email": "rgallagher@gallagherhayes.com",
+    "title": "Partner",
+    "city": "New York",
+    "industry": "law_firm",
+    "status": "new"
+  },
+  {
+    "name": "Maria Fontana",
+    "business": "Fontana Legal Associates",
+    "email": "mfontana@fontanalegal.com",
+    "title": "Founding Partner",
+    "city": "New York",
+    "industry": "law_firm",
+    "status": "new"
+  },
+  {
+    "name": "Alan Chowdhury",
+    "business": "Chowdhury & Lin Attorneys",
+    "email": "achowdhury@chowdhurylin.com",
+    "title": "Name Partner",
+    "city": "New York",
+    "industry": "law_firm",
+    "status": "new"
+  },
+  {
+    "name": "Elizabeth Moreau",
+    "business": "Moreau Strauss Law PLLC",
+    "email": "emoreau@moreaustrauss.com",
+    "title": "Managing Partner",
+    "city": "New York",
+    "industry": "law_firm",
+    "status": "new"
+  },
+  {
+    "name": "Jason Torres",
+    "business": "Iron Republic Fitness",
+    "email": "jason@ironrepublicnyc.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "gym_fitness",
+    "status": "new"
+  },
+  {
+    "name": "Megan Sullivan",
+    "business": "CorePower Studio",
+    "email": "megan@corepowerstudionyc.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "gym_fitness",
+    "status": "new"
+  },
+  {
+    "name": "Andre Baptiste",
+    "business": "BeastMode Boxing & Fitness",
+    "email": "andre@beastmodenyc.com",
+    "title": "Owner",
+    "city": "New York",
+    "industry": "gym_fitness",
+    "status": "new"
+  },
+  {
+    "name": "Rachel Goldman",
+    "business": "ZenFit Yoga & Pilates",
+    "email": "rachel@zenfitli.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "gym_fitness",
+    "status": "new"
+  },
+  {
+    "name": "Carlos Mendez",
+    "business": "Apex Performance Gym",
+    "email": "carlos@apexperformanceli.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "gym_fitness",
+    "status": "new"
+  },
+  {
+    "name": "Brittany Harper",
+    "business": "Elevate Fitness Collective",
+    "email": "brittany@elevatefitli.com",
+    "title": "Owner",
+    "city": "Long Island",
+    "industry": "gym_fitness",
+    "status": "new"
+  }
 ]
