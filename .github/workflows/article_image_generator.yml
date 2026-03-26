@@ -1,0 +1,45 @@
+name: Article Image Generator -- DALL-E 3 Editorial Photos
+on:
+  schedule:
+    - cron: '30 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no API calls or writes)'
+        required: false
+        default: 'false'
+
+jobs:
+  generate-article-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone site repo
+        run: |
+          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/Seanc11792/NY-Spotlight-Report-good.git site-repo
+
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+
+      - name: Generate article images via DALL-E 3
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          BLOG_DIR: site-repo/blog
+          IMG_DIR: site-repo/images/articles
+        run: |
+          FLAGS=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            FLAGS="--dry-run"
+          fi
+          python agents/article_image_generator.py $FLAGS
+
+      - name: Commit and push images + updated HTML
+        if: github.event.inputs.dry_run != 'true'
+        working-directory: site-repo
+        run: |
+          git config user.name "Article Image Bot"
+          git config user.email "media@nyspotlightreport.com"
+          git add images/articles/*.jpg blog/*.html
+          git diff --cached --quiet || git commit -m "media: generate DALL-E 3 editorial images for articles"
+          git push
