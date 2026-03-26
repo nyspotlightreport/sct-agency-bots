@@ -1,0 +1,43 @@
+name: Social Commander — Daily Content Generation
+
+on:
+  schedule:
+    # 7am ET (12pm UTC) — Daily content generation
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run mode (true/false)'
+        required: false
+        default: 'false'
+
+env:
+  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+
+jobs:
+  generate_content:
+    name: Generate Cross-Platform Content
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Social Commander
+        run: python -m agents.social_media.social_commander
+
+      - name: Upload content packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-content-${{ github.run_number }}
+          path: |
+            data/social/content_packages/
+            data/social/proflow_content/
+          retention-days: 30

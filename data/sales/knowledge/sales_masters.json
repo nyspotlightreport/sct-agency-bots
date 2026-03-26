@@ -1,0 +1,289 @@
+{
+  "masters": {
+    "joe_girard": {
+      "name": "Joe Girard",
+      "title": "Greatest Salesman in the World (Guinness Record)",
+      "core_principles": [
+        "The 250 Rule: Every person knows ~250 people. Treat every customer as a gateway to 250 referrals.",
+        "Monthly contact: Send a personal touch to every customer every month without fail.",
+        "Referrals after delight: Never ask for referrals until the customer is genuinely thrilled.",
+        "Like me, trust me, buy from me: People buy from people they like first.",
+        "Keep meticulous records of every interaction and personal detail."
+      ],
+      "tactics": {
+        "250_rule": {
+          "description": "Every lost customer costs you 250 potential future customers. Every delighted customer opens 250 doors.",
+          "application": "Treat every single prospect as if they represent a network of 250 people. Never burn a bridge."
+        },
+        "monthly_contact": {
+          "description": "Send a personalized card, note, or message to every customer every single month.",
+          "application": "Automate monthly value-add emails with industry insights, tips, or case studies."
+        },
+        "referral_after_delight": {
+          "description": "Only ask for referrals AFTER the customer has experienced genuine results and satisfaction.",
+          "application": "Build a 90-day post-sale nurture sequence. Ask for referrals only after confirmed ROI."
+        }
+      }
+    },
+    "ron_popeil": {
+      "name": "Ron Popeil",
+      "title": "King of Infomercials / Direct Response Pioneer",
+      "core_principles": [
+        "Problem-Solution-Demo: Show the pain, present the fix, demonstrate it live.",
+        "Price anchoring: Compare to something far more expensive first.",
+        "Value stacking: Keep adding bonuses until saying no feels irrational.",
+        "But wait, there's more: Layer on unexpected extras to push past resistance.",
+        "Urgency and scarcity: Limited time, limited quantity, act now."
+      ],
+      "tactics": {
+        "problem_solution_demo": {
+          "description": "Lead with a vivid, relatable problem. Present your product as the obvious solution. Then SHOW it working.",
+          "application": "Email structure: Pain point headline -> Solution intro -> Screenshot/video demo -> Results proof."
+        },
+        "price_anchor": {
+          "description": "Before revealing your price, compare to what the alternative costs (hiring staff, lost revenue, competitors).",
+          "application": "You could hire a full-time social media manager for $5,000/mo... or get ProFlow for a fraction of that."
+        },
+        "value_stack": {
+          "description": "List every single thing included, stacking perceived value far above the price.",
+          "application": "Include: AI chatbot ($2,000 value) + Social media automation ($1,500 value) + Review management ($800 value)... Total value: $8,000. Your price: $497/mo."
+        }
+      }
+    },
+    "erica_feidner": {
+      "name": "Erica Feidner",
+      "title": "The Piano Matchmaker / Steinway's Top Salesperson",
+      "core_principles": [
+        "Discovery-first: Never pitch until you deeply understand the customer's dreams and identity.",
+        "Identity selling: Connect the product to who they want to become, not just what they need.",
+        "Dream building: Paint a vivid picture of their life AFTER the purchase.",
+        "Emotional connection: The sale is made in the heart, justified by the head.",
+        "Patience and presence: Let the customer sell themselves through guided discovery."
+      ],
+      "tactics": {
+        "discovery_first": {
+          "description": "Ask deep questions before ever mentioning your product. Understand their vision, frustrations, and aspirations.",
+          "application": "Pre-outreach research: Check their website, reviews, social media. Reference specific details in your email."
+        },
+        "identity_selling": {
+          "description": "Position the product as part of their identity transformation. They are not buying software; they are becoming the business owner who dominates their market.",
+          "application": "You are not the type of owner who lets competitors steal your customers while you sleep. You are the one who fights back with technology."
+        },
+        "dream_building": {
+          "description": "Paint the after-picture so vividly they can feel it.",
+          "application": "Imagine checking your phone Monday morning and seeing 14 new 5-star reviews, 23 booked appointments, and your competitors wondering what happened."
+        }
+      }
+    },
+    "napoleon_barragan": {
+      "name": "Napoleon Barragan",
+      "title": "1-800-Mattress Founder / Speed-to-Close Master",
+      "core_principles": [
+        "Assumptive close: Act as if the sale is already happening.",
+        "Speed kills hesitation: Move fast. Momentum is your friend.",
+        "Yes ladder: Get small yeses that build to the big yes.",
+        "Remove friction: Make buying easier than not buying.",
+        "Follow up relentlessly: The fortune is in the follow-up."
+      ],
+      "tactics": {
+        "assumptive_close": {
+          "description": "Frame your language as if they have already decided. Use 'when' not 'if'. Use 'your system' not 'our product'.",
+          "application": "When your AI chatbot goes live next week... / Let me get your onboarding scheduled... / Your custom dashboard will show..."
+        },
+        "speed": {
+          "description": "Compress the timeline. Every day of delay is a day they cool off.",
+          "application": "Same-day response to inquiries. 24-hour onboarding. Live within 48 hours."
+        },
+        "yes_ladder": {
+          "description": "Start with questions they must say yes to, building momentum toward the close.",
+          "application": "You want more customers, right? -> You want to spend less time on busywork? -> You want to beat your competitors? -> Then let me show you how ProFlow does all three."
+        }
+      }
+    },
+    "sam_taggart": {
+      "name": "Sam Taggart",
+      "title": "D2D Expert / Door-to-Door Sales Training Pioneer",
+      "core_principles": [
+        "Pattern interrupt: Break their autopilot response with something unexpected.",
+        "Takeaway close: Remove the offer to create urgency and desire.",
+        "Curiosity opener: Lead with intrigue, not a pitch.",
+        "Posture and confidence: You are the prize, not the beggar.",
+        "Disqualification: Not everyone qualifies. Make them prove they deserve your solution."
+      ],
+      "tactics": {
+        "pattern_interrupt": {
+          "description": "Open with something so unexpected they cannot default to 'not interested'.",
+          "application": "Subject lines like: 'Your competitor just signed up' / 'I almost did not email you' / 'This is not a sales email (okay, it kind of is)'"
+        },
+        "takeaway_close": {
+          "description": "Act as if you might not be able to work with them. Scarcity of YOUR availability.",
+          "application": "Honestly, we only onboard 3 new clients per month in your area, and I have 2 spots left. I reached out because your business stood out."
+        },
+        "curiosity_opener": {
+          "description": "Lead with a question or statement that forces them to want to know more.",
+          "application": "What would change for your business if you had 40 new 5-star reviews by next month?"
+        }
+      }
+    }
+  },
+  "systems": {
+    "zig_ziglar": {
+      "name": "Zig Ziglar",
+      "title": "Master of the One-Call Close",
+      "framework": "one_call_close",
+      "stages": [
+        {
+          "stage": "rapport",
+          "description": "Build genuine connection. Find common ground. Be interested, not interesting.",
+          "duration": "First 20% of interaction",
+          "techniques": [
+            "Mirror their energy and communication style",
+            "Find a genuine compliment about their business",
+            "Reference something specific you noticed about them"
+          ]
+        },
+        {
+          "stage": "discovery",
+          "description": "Ask pain-finding questions. Let them tell you their problems.",
+          "duration": "Next 30% of interaction",
+          "techniques": [
+            "What is your biggest challenge with [area]?",
+            "How much time do you spend on [pain point] each week?",
+            "What have you tried before? What worked and what did not?",
+            "If you could wave a magic wand, what would your business look like?"
+          ]
+        },
+        {
+          "stage": "vision",
+          "description": "Paint the picture of life after the solution. Make them feel the transformation.",
+          "duration": "Next 30% of interaction",
+          "techniques": [
+            "Use their own words to describe the solution",
+            "Show specific ROI numbers relevant to their situation",
+            "Share a case study from a similar business",
+            "Let them imagine the after-state vividly"
+          ]
+        },
+        {
+          "stage": "close",
+          "description": "Assumptive transition to next steps. Not 'Would you like to...' but 'Let us get you started.'",
+          "duration": "Final 20% of interaction",
+          "techniques": [
+            "Assumptive language: 'When we set up your system...'",
+            "Alternative close: 'Would Tuesday or Thursday work better for onboarding?'",
+            "Summary close: Restate all value, then state price as obvious bargain",
+            "Silence after the ask: Let them process and respond"
+          ]
+        }
+      ]
+    },
+    "john_patterson": {
+      "name": "John Patterson",
+      "title": "NCR Founder / Creator of the Book of Arguments",
+      "framework": "book_of_arguments",
+      "description": "Pre-written, battle-tested responses to every possible objection. No salesperson should ever be caught without an answer.",
+      "objections": {
+        "too_expensive": {
+          "objection": "It is too expensive / I cannot afford it",
+          "responses": [
+            "I completely understand. Let me ask you this: how much is it costing you right now to NOT have this? If you are losing even 5 customers a month to competitors with better online presence, that is $2,000-$5,000 in lost revenue. ProFlow pays for itself in the first week.",
+            "Price is absolutely a fair concern. That is why we structured it so the ROI is measurable from month one. Our average client sees a 340% return within 90 days. Would it help if I showed you the math for your specific business?",
+            "I hear you. And honestly, if this did not generate more revenue than it costs, I would not be offering it. Can I share what happened when [similar business] said the same thing and then tried it for 30 days?"
+          ]
+        },
+        "need_to_think": {
+          "objection": "I need to think about it",
+          "responses": [
+            "Absolutely, and I would not want you to rush into anything. But help me understand - what specifically do you need to think about? Is it the price, the fit, or something else? I want to make sure I have given you everything you need to make a confident decision.",
+            "Of course. In my experience, 'I need to think about it' usually means I have not answered a question you have. What is the one thing holding you back? Let me address that right now.",
+            "I respect that. Here is what I would think about: every day without this system is another day your competitors are capturing customers you could have had. What if we started with a no-risk pilot so you can see results before committing?"
+          ]
+        },
+        "not_the_right_time": {
+          "objection": "Now is not the right time / Maybe later",
+          "responses": [
+            "I get it - timing matters. But here is the thing: your competitors are not waiting. The businesses that invest in automation now are the ones dominating their market 6 months from now. What would need to change for the timing to be right?",
+            "When IS the right time? Seriously - because the best time to plant a tree was 20 years ago, and the second best time is today. The longer you wait, the more ground you lose to competitors who are already using AI.",
+            "I understand completely. Just so you know, we are running a founder's rate right now that will not be available later. If timing is the only issue, we can lock in your rate today and start whenever you are ready."
+          ]
+        },
+        "need_to_talk_to_partner": {
+          "objection": "I need to talk to my partner / spouse / business partner",
+          "responses": [
+            "That makes total sense - big decisions should be made together. Would it help if I put together a one-page summary with the ROI projections so you can share it with them? Or better yet, can we schedule a quick 10-minute call with both of you?",
+            "I respect that. What do you think they will want to know? Let me give you the answers now so you can go in prepared and confident.",
+            "Absolutely. In my experience, partners usually have two questions: How much does it cost, and will it actually work? Here is a case study you can share that answers both."
+          ]
+        },
+        "already_have_solution": {
+          "objection": "We already have something for that / We use [competitor]",
+          "responses": [
+            "That is great that you are already investing in this area. I am curious - what is working well and what is not? Most of our clients switched FROM another solution because they needed [specific advantage ProFlow has].",
+            "Perfect - that tells me you already understand the value of this kind of tool. The question is: are you getting the results you expected? If your current solution had you fully satisfied, would you have taken this call?",
+            "Respect for being proactive. Here is what makes us different: [specific differentiator]. We are not asking you to replace what works. We are asking you to upgrade to what works better."
+          ]
+        }
+      }
+    },
+    "jordan_belfort": {
+      "name": "Jordan Belfort",
+      "title": "Straight Line Persuasion System",
+      "framework": "straight_line_system",
+      "description": "Keep the conversation on a straight line from open to close. When they go off track with objections, loop back to the line.",
+      "principles": [
+        "Control the conversation by asking questions, not answering them",
+        "Every objection is a request for more information, not a rejection",
+        "Loop back to value after every objection. Never leave an objection as the last thing said.",
+        "Tonality and certainty matter more than words. Sound absolutely certain.",
+        "The Three Tens: They must be a 10 on the product, a 10 on you, and a 10 on the company."
+      ],
+      "looping_technique": {
+        "description": "When a prospect objects, acknowledge it, reframe it, add new value, then ask a closing question again.",
+        "steps": [
+          "Acknowledge: 'I hear you, and that is a fair point.'",
+          "Deflect: 'Let me ask you this...' (redirect to value)",
+          "Reframe: Present the objection as actually a reason TO buy",
+          "Add new value: Introduce a benefit they have not heard yet",
+          "Re-close: Ask for the commitment again with new framing"
+        ],
+        "example": "I hear you on the price. Let me ask you this - if I could show you that this pays for itself within 30 days, would the price still be a concern? [Wait for answer] Great. Here is what happened with a restaurant just like yours in Brooklyn..."
+      }
+    }
+  },
+  "email_frameworks": {
+    "cold_outreach": {
+      "structure": [
+        "Subject: Pattern interrupt (Taggart) - unexpected, curiosity-driven",
+        "Line 1: Personalized observation about THEIR business (Feidner discovery)",
+        "Line 2-3: Pain point agitation (Popeil problem framing)",
+        "Line 4-5: Solution + proof (Popeil demo, Girard credibility)",
+        "Line 6-7: Dream building (Feidner identity + vision)",
+        "Line 8: Value stack with price anchor (Popeil)",
+        "Line 9: Assumptive CTA (Barragan) + takeaway (Taggart)",
+        "Line 10: P.S. with urgency and social proof"
+      ],
+      "subject_line_formulas": [
+        "{Business Name}, your competitors just upgraded",
+        "I almost did not email you, {First Name}",
+        "Quick question about {Business Name}",
+        "{First Name}, saw something about {Business Name} that caught my eye",
+        "Is {Business Name} leaving money on the table?",
+        "The {Industry} secret that {Competitor} does not want you to know"
+      ]
+    },
+    "followup": {
+      "day_3": "Gentle bump with new value piece (Girard monthly contact principle)",
+      "day_7": "Case study from their industry (Ziglar vision stage)",
+      "day_14": "Breakup email with pressure removal (Ziglar rapport preservation)",
+      "day_30": "Long game share of industry-specific win (Girard 250 Rule - stay top of mind)"
+    }
+  },
+  "meta": {
+    "version": "1.0.0",
+    "created": "2026-03-25",
+    "description": "Godmode Sales AI Knowledge Base - Encoding tactics from 7 legendary sales masters for automated outreach",
+    "masters_count": 7,
+    "total_tactics": 42,
+    "total_objection_responses": 15
+  }
+}

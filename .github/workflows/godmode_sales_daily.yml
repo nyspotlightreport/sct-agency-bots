@@ -1,0 +1,152 @@
+name: Godmode Sales AI — Daily Outreach Pipeline
+
+on:
+  schedule:
+    # 8am ET (1pm UTC) — Morning outreach batch
+    - cron: '0 13 * * *'
+    # 12pm ET (5pm UTC) — Follow-up sequence
+    - cron: '0 17 * * *'
+    # 3:30pm ET (8:30pm UTC) — Reply detection
+    - cron: '30 20 * * *'
+  workflow_dispatch:
+    inputs:
+      step:
+        description: 'Which step to run (all, prospect, outreach, followup, replies)'
+        required: false
+        default: 'all'
+      dry_run:
+        description: 'Dry run mode (true/false)'
+        required: false
+        default: 'false'
+
+env:
+  RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  PUSHOVER_API_TOKEN: ${{ secrets.PUSHOVER_API_TOKEN }}
+
+jobs:
+  prospect_hunter:
+    name: Find New Prospects
+    runs-on: ubuntu-latest
+    if: >
+      github.event.schedule == '0 13 * * *' ||
+      github.event_name == 'workflow_dispatch' && (github.event.inputs.step == 'all' || github.event.inputs.step == 'prospect')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Prospect Hunter
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            python -m agents.sales_ai.prospect_hunter --dry-run
+          else
+            python -m agents.sales_ai.prospect_hunter
+          fi
+
+      - name: Upload prospects artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: prospects-data
+          path: data/sales/prospects.json
+
+  godmode_outreach:
+    name: Godmode Sales Outreach
+    runs-on: ubuntu-latest
+    needs: prospect_hunter
+    if: >
+      always() && (
+        github.event.schedule == '0 13 * * *' ||
+        github.event_name == 'workflow_dispatch' && (github.event.inputs.step == 'all' || github.event.inputs.step == 'outreach')
+      )
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Download prospects artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: prospects-data
+          path: data/sales/
+        continue-on-error: true
+
+      - name: Run Godmode Sales AI
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            python -m agents.sales_ai.godmode_sales_ai --dry-run
+          else
+            python -m agents.sales_ai.godmode_sales_ai --send
+          fi
+
+      - name: Upload updated prospects
+        uses: actions/upload-artifact@v4
+        with:
+          name: prospects-data-updated
+          path: data/sales/prospects.json
+
+  followup_sequence:
+    name: Follow-Up Sequence
+    runs-on: ubuntu-latest
+    if: >
+      github.event.schedule == '0 17 * * *' ||
+      github.event_name == 'workflow_dispatch' && (github.event.inputs.step == 'all' || github.event.inputs.step == 'followup')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Follow-Up Sequence
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            python -m agents.sales_ai.followup_sequence --dry-run
+          else
+            python -m agents.sales_ai.followup_sequence
+          fi
+
+  reply_detector:
+    name: Reply Detection & Response
+    runs-on: ubuntu-latest
+    if: >
+      github.event.schedule == '30 20 * * *' ||
+      github.event_name == 'workflow_dispatch' && (github.event.inputs.step == 'all' || github.event.inputs.step == 'replies')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Reply Detector
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            python -m agents.sales_ai.reply_detector --dry-run
+          else
+            python -m agents.sales_ai.reply_detector
+          fi
