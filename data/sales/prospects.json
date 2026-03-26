@@ -148,5 +148,475 @@
     "industry": "gym_fitness",
     "website": "https://ymcanyc.org",
     "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Barbalu BKLYN",
+    "email": "Barbalubrooklyn@gmail.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "restaurant",
+    "website": "https://www.barbalu.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Cheeni NYC",
+    "email": "info@cheeni-nyc.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "restaurant",
+    "website": "https://cheeni-nyc.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Arden",
+    "email": "hello@ardenbk.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "restaurant",
+    "website": "https://www.ardenbk.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Aquarelle NYC",
+    "email": "info@aquarellenyc.com",
+    "title": "",
+    "city": "New York",
+    "industry": "restaurant",
+    "website": "https://aquarellenyc.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Arte Restaurant",
+    "email": "arterestaurant9@gmail.com",
+    "title": "",
+    "city": "New York",
+    "industry": "restaurant",
+    "website": "https://www.arterestaurant.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Sandro's Restaurant",
+    "email": "sandrosrestaurant@gmail.com",
+    "title": "",
+    "city": "New York",
+    "industry": "restaurant",
+    "website": "https://www.sandrosrestaurant.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Cafe Manhattan",
+    "email": "cafemtogo@gmail.com",
+    "title": "",
+    "city": "New York",
+    "industry": "restaurant",
+    "website": "https://cafemanhattan.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Sweet Afton",
+    "email": "info@sweetaftonbar.com",
+    "title": "",
+    "city": "Queens",
+    "industry": "restaurant",
+    "website": "https://www.sweetaftonbar.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Agenda Restaurant & Lounge",
+    "email": "info@agendaastoria.com",
+    "title": "",
+    "city": "Queens",
+    "industry": "restaurant",
+    "website": "https://www.agendaastoria.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Oliver's Astoria",
+    "email": "contact@oliversastoria.com",
+    "title": "",
+    "city": "Queens",
+    "industry": "restaurant",
+    "website": "https://www.oliversastoria.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Edge of Astoria",
+    "email": "info.edgeofastoria@gmail.com",
+    "title": "",
+    "city": "Queens",
+    "industry": "restaurant",
+    "website": "https://edgeofastoria.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Queen's Room",
+    "email": "Info@Queensroomnyc.com",
+    "title": "",
+    "city": "Queens",
+    "industry": "restaurant",
+    "website": "https://www.queensroomnyc.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "DOM Lounge",
+    "email": "domloungenyc@gmail.com",
+    "title": "",
+    "city": "New York",
+    "industry": "restaurant",
+    "website": "https://dom-lounge.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Theory Lounge & Bar",
+    "email": "info@theoryloungebar.com",
+    "title": "",
+    "city": "New York",
+    "industry": "restaurant",
+    "website": "https://www.theoryloungebar.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Iron Bar NYC",
+    "email": "info@ironbarnyc.com",
+    "title": "",
+    "city": "New York",
+    "industry": "restaurant",
+    "website": "https://www.ironbarnyc.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Brushd Boutique Salon",
+    "email": "hello@brushdboutiquesalon.com",
+    "title": "",
+    "city": "Long Island",
+    "industry": "salon_spa",
+    "website": "https://brushdboutiquesalon.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "RICHARD Salon",
+    "email": "info@richardsalon.com",
+    "title": "",
+    "city": "Smithtown",
+    "industry": "salon_spa",
+    "website": "https://richardsalon.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Anthony DeFranco Salon",
+    "email": "info@anthonydefranco.com",
+    "title": "",
+    "city": "Plainview",
+    "industry": "salon_spa",
+    "website": "https://www.anthonydefranco.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Hairsay Salon",
+    "email": "hairsay@optonline.net",
+    "title": "",
+    "city": "Garden City Park",
+    "industry": "salon_spa",
+    "website": "https://www.hairsay.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "PACFE Nails & Spa",
+    "email": "centereach@pacfenails.com",
+    "title": "",
+    "city": "Centereach",
+    "industry": "salon_spa",
+    "website": "https://pacfenails.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Benny's Barbershop",
+    "email": "hello@bennysbrooklynbarber.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "salon_spa",
+    "website": "https://bennysbrooklynbarber.com",
+    "status": "new"
+  },
+  {
+    "name": "Shannon King",
+    "business": "Hair & Co BKLYN",
+    "email": "hello@hairandcobklyn.com",
+    "title": "Owner",
+    "city": "Brooklyn",
+    "industry": "salon_spa",
+    "website": "https://hairandcobklyn.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Persons of Interest",
+    "email": "personsofinterestbklyn@gmail.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "salon_spa",
+    "website": "https://www.personsofinterestbklyn.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Hype Gym",
+    "email": "info@hypegym.com",
+    "title": "",
+    "city": "New York",
+    "industry": "gym_fitness",
+    "website": "https://www.hypegym.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Independent Training Spot",
+    "email": "info@independenttrainingspot.com",
+    "title": "",
+    "city": "New York",
+    "industry": "gym_fitness",
+    "website": "https://independenttrainingspot.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Nimble Fitness",
+    "email": "info@nimblefitness.com",
+    "title": "",
+    "city": "New York",
+    "industry": "gym_fitness",
+    "website": "https://nimblefitness.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Trooper Fitness",
+    "email": "info@trooperfitness.com",
+    "title": "",
+    "city": "New York",
+    "industry": "gym_fitness",
+    "website": "https://www.trooperfitness.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Mid-City Gym",
+    "email": "info@midcitygym.com",
+    "title": "",
+    "city": "New York",
+    "industry": "gym_fitness",
+    "website": "https://www.midcitygym.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "The Fit In",
+    "email": "info@thefitinbedstuy.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "gym_fitness",
+    "website": "https://thefitinwellness.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Prestige Pilates and Yoga",
+    "email": "prestigepilatesnyc@gmail.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "gym_fitness",
+    "website": "https://prestigepilatesnyc.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "YO BK Yoga",
+    "email": "info@yo-bk.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "gym_fitness",
+    "website": "http://www.yo-bk.com",
+    "status": "new"
+  },
+  {
+    "name": "Imke Ratschko",
+    "business": "Ratschko PLLC",
+    "email": "imke.ratschko@ratschko.com",
+    "title": "Attorney",
+    "city": "New York",
+    "industry": "law_firm",
+    "website": "https://www.newyorksmallbusinesslaw.com",
+    "status": "new"
+  },
+  {
+    "name": "Darren T. Moore",
+    "business": "Law Offices of Darren T. Moore",
+    "email": "info@injurylawatty.com",
+    "title": "Attorney",
+    "city": "New York",
+    "industry": "law_firm",
+    "website": "https://www.injurylawatty.com",
+    "status": "new"
+  },
+  {
+    "name": "Jay S. Knispel",
+    "business": "Law Offices of Jay S. Knispel",
+    "email": "info@jknylaw.com",
+    "title": "Attorney",
+    "city": "New York",
+    "industry": "law_firm",
+    "website": "https://jknylaw.com",
+    "status": "new"
+  },
+  {
+    "name": "Svetlana Prizant",
+    "business": "Prizant Law",
+    "email": "sprizant@prizant-law.com",
+    "title": "Managing Attorney",
+    "city": "New York",
+    "industry": "law_firm",
+    "website": "https://www.prizant-law.com",
+    "status": "new"
+  },
+  {
+    "name": "Roman Aminov",
+    "business": "Law Offices of Roman Aminov",
+    "email": "info@aminovlaw.com",
+    "title": "Attorney",
+    "city": "Brooklyn",
+    "industry": "law_firm",
+    "website": "https://www.aminovlaw.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Manhattan Realty Group",
+    "email": "info@mrgnyc.com",
+    "title": "",
+    "city": "New York",
+    "industry": "real_estate",
+    "website": "https://www.mrgnyc.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "BK Real Estate Advisors",
+    "email": "Hello@bkrea.com",
+    "title": "",
+    "city": "New York",
+    "industry": "real_estate",
+    "website": "https://www.bkrea.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "NAI Long Island",
+    "email": "lrosner@nailongisland.com",
+    "title": "",
+    "city": "Islandia",
+    "industry": "real_estate",
+    "website": "https://nailongisland.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Larsen Home Improvement",
+    "email": "office@larsenhi.com",
+    "title": "",
+    "city": "Hicksville",
+    "industry": "contractor",
+    "website": "https://larsenhi.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Double Check Builders",
+    "email": "info@doublecheckbuilders.com",
+    "title": "",
+    "city": "Long Island",
+    "industry": "contractor",
+    "website": "https://doublecheckbuilders.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Long Island Landscape Designs",
+    "email": "info@lildi.com",
+    "title": "",
+    "city": "Port Jefferson Station",
+    "industry": "contractor",
+    "website": "https://www.lilandscapedesigns.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "All Island Painting",
+    "email": "Jim@allislandpainting.com",
+    "title": "",
+    "city": "Farmingdale",
+    "industry": "contractor",
+    "website": "http://www.allislandpainting.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Mr. Does All",
+    "email": "info@mrdoesall.com",
+    "title": "",
+    "city": "Long Island",
+    "industry": "contractor",
+    "website": "https://mrdoesall.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Metco Remodeling",
+    "email": "info@metcoremodeling.com",
+    "title": "",
+    "city": "Long Island",
+    "industry": "contractor",
+    "website": "https://metcoremodeling.com",
+    "status": "new"
+  },
+  {
+    "name": "Dr. Joseph Baudille",
+    "business": "Dyker Heights Family Chiropractor",
+    "email": "drjbaudille@gmail.com",
+    "title": "Chiropractor",
+    "city": "Brooklyn",
+    "industry": "wellness",
+    "website": "https://www.dykerheightsfamilychiropractor.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Back To Health Chiropractic",
+    "email": "info@backtohealthbrooklyn.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "wellness",
+    "website": "https://www.backtohealthbrooklyn.com",
+    "status": "new"
   }
 ]
