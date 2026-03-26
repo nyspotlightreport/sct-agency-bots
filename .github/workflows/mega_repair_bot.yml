@@ -1,0 +1,74 @@
+name: Mega Repair Bot
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+    - cron: '0 20 * * *'
+
+  workflow_run:
+    workflows: ["deploy-site", "deploy-proflow"]
+    types: [completed]
+
+  workflow_dispatch:
+    inputs:
+      modules:
+        description: 'Modules (comma-separated: audit,patterns,repair,curiosity,financial)'
+        required: false
+        default: 'audit,patterns,repair,curiosity,financial'
+      dry_run:
+        description: 'Dry run (no repairs or notifications)'
+        required: false
+        default: 'false'
+        type: boolean
+      smoke_test:
+        description: 'Smoke test mode (audit + curiosity only)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  mega-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+      GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+      PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+      PUSHOVER_APP_TOKEN: ${{ secrets.PUSHOVER_APP_TOKEN }}
+      SITE_BASE_URL: 'https://nyspotlightreport.com'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install --upgrade pip && pip install requests supabase stripe
+
+      - name: Post-deploy smoke test
+        if: github.event_name == 'workflow_run' || (github.event_name == 'workflow_dispatch' && inputs.smoke_test == 'true')
+        run: python agents/mega_repair_bot.py --smoke-test
+
+      - name: Full scheduled run
+        if: github.event_name == 'schedule'
+        run: python agents/mega_repair_bot.py
+
+      - name: Manual run
+        if: github.event_name == 'workflow_dispatch' && inputs.smoke_test != 'true'
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ -n "${{ inputs.modules }}" ] && [ "${{ inputs.modules }}" != "audit,patterns,repair,curiosity,financial" ]; then
+            MODULES=$(echo "${{ inputs.modules }}" | tr ',' ' ')
+            ARGS="$ARGS --modules $MODULES"
+          fi
+          python agents/mega_repair_bot.py $ARGS
