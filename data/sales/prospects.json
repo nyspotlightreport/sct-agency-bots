@@ -58,9 +58,7 @@
     "status": "new",
     "source": "vibe_prospecting",
     "added": "2026-03-25"
-  }
-]
-[
+  },
   {"name":"Marco DeLuca","business":"Trattoria Marcello","email":"marco@trattoriamarcello.com","title":"Owner","city":"Manhattan, NY","industry":"restaurant","status":"new"},
   {"name":"Yuki Tanaka","business":"Omakase by Yuki","email":"yuki@omakasebyyuki.com","title":"Chef-Owner","city":"Brooklyn, NY","industry":"restaurant","status":"new"},
   {"name":"Priya Sharma","business":"Spice Route Kitchen","email":"priya@spiceroutekitchen.com","title":"Owner","city":"Queens, NY","industry":"restaurant","status":"new"},
