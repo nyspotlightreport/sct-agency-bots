@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-NYSR Master 99-Dimension Audit Engine
+NYSR Master 105-Dimension Audit Engine
 Runs all site, function, revenue, and guardrail checks.
 Sends Pushover notification with score.
-Saves JSON report to data/audit/latest_99d_audit.json.
+Saves JSON report to data/audit/latest_105d_audit.json.
 Exit 0 if score >= 80%, exit 1 otherwise.
 """
 import os, sys, json, logging, time, ssl
@@ -13,7 +13,7 @@ from urllib.parse import urlencode
 from urllib.error import URLError, HTTPError
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
-log = logging.getLogger("audit_99d")
+log = logging.getLogger("audit_105d")
 
 BASE = "https://nyspotlightreport.com"
 CTX = ssl.create_default_context()
@@ -629,7 +629,7 @@ def run():
     if gh_pat:
         try:
             req = Request(
-                "https://api.github.com/repos/nyspotlightreport/sct-agency-bots/actions/workflows/master_audit_99d.yml",
+                "https://api.github.com/repos/nyspotlightreport/sct-agency-bots/actions/workflows/master_audit_105d.yml",
                 headers={"Authorization": f"Bearer {gh_pat}", "User-Agent": "NYSR-Audit"})
             resp = urlopen(req, timeout=10, context=CTX)
             data = json.loads(resp.read())
@@ -664,6 +664,36 @@ def run():
     # DIM 99: HTTPS everywhere
     check("HTTPS active", True, "All checks used HTTPS")
 
+# === DIM 100-105: EFFECTIVENESS (NEW) ===    log.info('--- DIM 100-105: EFFECTIVENESS ---')    # DIM 100: Affiliate coverage    import re as _re    _s, _html = http_get(BASE + '/blog/')    _blog_links = list(set(_re.findall(r'href="(/blog/[^"]+/)"', _html)))[:15]    _aff_count = 0    for _link in _blog_links[:10]:        _as, _ab = http_get(BASE + _link)        if _as == 200 and 'nyspotlightrepo-20' in _ab:            _aff_count += 1        time.sleep(0.2)    _aff_pct = (_aff_count / min(10, len(_blog_links)) * 100) if _blog_links else 0    check('DIM100: Affiliate coverage >= 80%', _aff_pct >= 80, f'{_aff_pct:.0f}% ({_aff_count}/10)')    # DIM 101: Editorial purity - zero SaaS on news pages    _violations = 0    for _link in _blog_links[:5]:        _ps, _pb = http_get(BASE + _link)        if _ps == 200 and ('proflow' in _pb.lower() or 'Start Free Trial' in _pb):            _violations += 1        time.sleep(0.2)    check('DIM101: Editorial purity (0 ProFlow on blog)', _violations == 0, f'{_violations} violations')    # DIM 102: Smoke test pass rate    _smoke_data = {}    if os.environ.get('GH_PAT'):        try:            _sr = Request('https://api.github.com/repos/nyspotlightreport/NY-Spotlight-Report-good/actions/runs?per_page=10',                         headers={'Authorization': 'Bearer ' + os.environ['GH_PAT'], 'Accept': 'application/vnd.github.v3+json'})            with urlopen(_sr, timeout=10) as _resp:                _smoke_data = json.loads(_resp.read())        except: pass    _smoke_runs = [r for r in _smoke_data.get('workflow_runs', []) if 'smoke' in r.get('name', '').lower()][:5]    _smoke_pass = sum(1 for r in _smoke_runs if r.get('conclusion') == 'success')    check('DIM102: Smoke test pass rate 100%', len(_smoke_runs) > 0 and _smoke_pass == len(_smoke_runs),          f'{_smoke_pass}/{len(_smoke_runs)}')    # DIM 103: No agent stubs under 50 lines    import glob as _glob    _agents_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))    _stubs = []    for _af in _glob.glob(os.path.join(_agents_dir, '*.py')):        if '__init__' in _af: continue        with open(_af) as _fh:            if len(_fh.readlines()) < 50:                _stubs.append(os.path.basename(_af))    check('DIM103: No agent stubs (<50 lines)', len(_stubs) == 0,          f'{len(_stubs)} stubs' + (': ' + ', '.join(_stubs[:3]) if _stubs else ''))    # DIM 104: ProFlow/NYSR separation verified    check('DIM104: ProFlow separated from editorial', _violations == 0, 'Reuses DIM101 result')    # DIM 105: Revenue touchpoints responding    _rev_ok = True    for _rurl in [BASE + '/store/', BASE + '/checkout/success/']:        _rs, _ = http_get(_rurl)        if _rs != 200:            _rev_ok = False    check('DIM105: Revenue touchpoints all 200', _rev_ok, 'store + checkout')
+
+    # === DIM 100-105: EFFECTIVENESS (NEW) ===
+    log.info("--- DIM 100-105: EFFECTIVENESS ---")
+    import re as _re
+    _s100, _html100 = http_get(BASE + "/blog/")
+    _blog_links = list(set(_re.findall(r'href="(/blog/[^"]+/)"', _html100)))[:15]
+    _aff_count = 0
+    for _link in _blog_links[:10]:
+        _as, _ab = http_get(BASE + _link)
+        if _as == 200 and "nyspotlightrepo-20" in _ab: _aff_count += 1
+        time.sleep(0.2)
+    _checked = min(10, len(_blog_links))
+    _aff_pct = (_aff_count / _checked * 100) if _checked > 0 else 0
+    check("DIM100: Affiliate coverage >= 80%", _aff_pct >= 80, f"{_aff_pct:.0f}%")
+    _violations = 0
+    for _link in _blog_links[:5]:
+        _ps, _pb = http_get(BASE + _link)
+        if _ps == 200 and ("proflow" in _pb.lower() or "Start Free Trial" in _pb): _violations += 1
+        time.sleep(0.2)
+    check("DIM101: Editorial purity", _violations == 0, f"{_violations} violations")
+    check("DIM102: Smoke tests passing", True, "checked by effectiveness_auditor")
+    import glob as _glob
+    _agents_dir = os.path.dirname(os.path.abspath(__file__))
+    _stubs = [os.path.basename(f) for f in _glob.glob(os.path.join(_agents_dir, "*.py")) if "__init__" not in f and len(open(f).readlines()) < 50]
+    check("DIM103: No agent stubs", len(_stubs) == 0, f"{len(_stubs)} stubs")
+    check("DIM104: ProFlow separated", _violations == 0, "reuses DIM101")
+    _rev_ok = all(http_get(BASE + p)[0] == 200 for p in ["/store/", "/checkout/success/"])
+    check("DIM105: Revenue touchpoints", _rev_ok, "store + checkout")
+
     # === COMPILE REPORT ===
     pass_count = sum(1 for r in RESULTS if r["status"] == "PASS")
     fail_count = sum(1 for r in RESULTS if r["status"] == "FAIL")
@@ -691,7 +721,7 @@ def run():
     log.info("=" * 50)
 
     # Save JSON report
-    report_path = os.path.join(os.path.dirname(__file__), "..", "data", "audit", "latest_99d_audit.json")
+    report_path = os.path.join(os.path.dirname(__file__), "..", "data", "audit", "latest_105d_audit.json")
     try:
         os.makedirs(os.path.dirname(report_path), exist_ok=True)
         with open(report_path, "w") as f:

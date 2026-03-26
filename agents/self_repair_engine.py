@@ -102,6 +102,115 @@ def fix_python_syntax():
     else:
         log.info("All Python files compile clean")
 
+
+# === NEW CONTENT REPAIRS ===
+
+AFFILIATE_ASINS = {
+    "broadway": ("0879103043", "The Season: A Candid Look at Broadway"),
+    "nightlife": ("0743274865", "New York Night: The Mystique and Its History"),
+    "fashion": ("1250062101", "The Battle of Versailles"),
+    "art": ("0230620590", "The $12 Million Stuffed Shark"),
+    "lgbtq": ("1250295637", "Stonewall: The Definitive Story"),
+    "comedy": ("0316295064", "Live from New York"),
+    "music": ("0312429479", "But Beautiful: A Book About Jazz"),
+    "food": ("0060742763", "Setting the Table"),
+    "film": ("0684857081", "Easy Riders, Raging Bulls"),
+    "default": ("0394720245", "The Power Broker"),
+}
+
+def fix_missing_affiliates():
+    """Auto-inject affiliate links into articles missing them."""
+    site_dir = os.path.join(os.path.dirname(__file__), "..", "site", "blog")
+    if not os.path.isdir(site_dir):
+        return
+    tag = "nyspotlightrepo-20"
+    fixed = []
+    for d in os.listdir(site_dir):
+        index = os.path.join(site_dir, d, "index.html")
+        if not os.path.isfile(index):
+            continue
+        try:
+            with open(index, "r", encoding="utf-8") as f:
+                content = f.read()
+            if tag in content:
+                continue
+            # Determine topic from directory name
+            topic = "default"
+            for kw in AFFILIATE_ASINS:
+                if kw in d.lower():
+                    topic = kw
+                    break
+            asin, title = AFFILIATE_ASINS[topic]
+            block = (f'<div style="margin:20px 0;padding:15px;background:#f9f9f9;'
+                     f'border-left:3px solid #c9a84c"><strong>Recommended Reading:</strong> '
+                     f'<a href="https://www.amazon.com/dp/{asin}?tag={tag}" '
+                     f'target="_blank" rel="noopener">{title}</a></div>')
+            if "</article>" in content:
+                content = content.replace("</article>", block + "\n</article>", 1)
+            elif "</body>" in content:
+                content = content.replace("</body>", block + "\n</body>", 1)
+            else:
+                content += "\n" + block
+            with open(index, "w", encoding="utf-8") as f:
+                f.write(content)
+            fixed.append(d)
+        except Exception:
+            pass
+    if fixed:
+        FIXES.append(f"Auto-injected affiliate links into {len(fixed)} articles: {', '.join(fixed[:5])}")
+        log.info(f"FIXED: Added affiliates to {len(fixed)} articles")
+
+
+def fix_proflow_on_editorial():
+    """Auto-strip ProFlow sales content from editorial pages."""
+    site_dir = os.path.join(os.path.dirname(__file__), "..", "site", "blog")
+    if not os.path.isdir(site_dir):
+        return
+    proflow_patterns = [
+        (r'<a [^>]*href="[^"]*proflow[^"]*"[^>]*>[^<]*</a>', ''),
+        (r'<a [^>]*href="https?://myproflow\.org[^"]*"[^>]*>[^<]*</a>', ''),
+    ]
+    fixed = []
+    for d in os.listdir(site_dir):
+        index = os.path.join(site_dir, d, "index.html")
+        if not os.path.isfile(index):
+            continue
+        try:
+            with open(index, "r", encoding="utf-8") as f:
+                content = f.read()
+            original = content
+            for pattern, replacement in proflow_patterns:
+                content = re.sub(pattern, replacement, content, flags=re.IGNORECASE)
+            if content != original:
+                with open(index, "w", encoding="utf-8") as f:
+                    f.write(content)
+                fixed.append(d)
+        except Exception:
+            pass
+    if fixed:
+        FIXES.append(f"Stripped ProFlow from {len(fixed)} editorial pages: {', '.join(fixed[:5])}")
+        pushover("AUTO-REPAIR: ProFlow stripped", f"Removed ProFlow refs from {len(fixed)} pages")
+        log.info(f"FIXED: Stripped ProFlow from {len(fixed)} pages")
+
+
+def fix_stub_agents_alert():
+    """Alert Chairman about stub agents (do NOT auto-expand - too risky)."""
+    import glob as _glob
+    agents_dir = os.path.dirname(os.path.abspath(__file__))
+    stubs = []
+    for f in _glob.glob(os.path.join(agents_dir, "*.py")):
+        if "__init__" in f:
+            continue
+        with open(f) as fh:
+            lines = len(fh.readlines())
+        if lines < 50:
+            stubs.append(f"{os.path.basename(f)} ({lines} lines)")
+    if stubs:
+        stub_list = ", ".join(stubs[:5])
+        FIXES.append(f"STUB ALERT: {len(stubs)} agents under 50 lines: {stub_list}")
+        pushover("STUB AGENTS DETECTED", f"{len(stubs)} agents under 50 lines:\n{stub_list}", )
+        log.info(f"ALERT: {len(stubs)} stub agents: {stub_list}")
+
 def run():
     log.info("=" * 50)
     log.info("  NYSR SELF-REPAIR ENGINE")
@@ -128,6 +237,7 @@ def run():
         fix_zoho_email()
 
     fix_python_syntax()
+# Content repairs    fix_missing_affiliates()    fix_proflow_on_editorial()    fix_stub_agents_alert()
 
     # Report
     log.info("\n" + "=" * 50)
