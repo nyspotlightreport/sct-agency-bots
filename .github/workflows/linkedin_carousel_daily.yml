@@ -1,0 +1,23 @@
+name: LinkedIn Carousel Generator
+on:
+  schedule:
+    - cron: '30 10 * * *'
+  workflow_dispatch:
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install fpdf2 requests -q
+      - name: Clone live repo for article data
+        run: git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git ../NY-Spotlight-Report-good
+      - run: python3 agents/linkedin_carousel_generator.py
+      - name: Save carousels
+        run: |
+          git config user.name "LinkedIn Bot"
+          git config user.email "bot@nyspotlightreport.com"
+          git add data/linkedin/ || true
+          git diff --cached --quiet || (git commit -m "linkedin: generate carousels $(date +%Y-%m-%d)" && git push)
