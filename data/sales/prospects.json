@@ -1,272 +1,152 @@
 [
   {
-    "name": "Marco DiLorenzo",
-    "business": "Tavola Rossa Italian Kitchen",
-    "email": "marco@tavolarossa.com",
+    "name": "Jeff",
+    "business": "Bon Soir Caterers",
+    "email": "jeff@bonsoircaterers.com",
     "title": "Owner",
+    "city": "Brooklyn",
+    "industry": "restaurant",
+    "website": "https://www.bonsoircaterers.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Relish Catering + Hospitality",
+    "email": "info@relishcaterers.com",
+    "title": "",
     "city": "New York",
     "industry": "restaurant",
-    "status": "contacted"
+    "website": "https://relishcaterers.com",
+    "status": "new"
   },
   {
-    "name": "Angela Tsai",
-    "business": "Jade Blossom Dumpling House",
-    "email": "angela@jadeblossomnyc.com",
-    "title": "Owner",
+    "name": "",
+    "business": "Queen Restaurant",
+    "email": "info@queen.nyc",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "restaurant",
+    "website": "https://queen.nyc",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Little Egg Events",
+    "email": "little@eggrestaurant.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "restaurant",
+    "website": "https://eggrestaurant.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Marlow Events",
+    "email": "hello@marlowevents.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "restaurant",
+    "website": "https://marlowevents.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Night Kitchen",
+    "email": "info@nightkitchenbk.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "restaurant",
+    "website": "https://nightkitchenbk.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Simplicity At Your Service Catering",
+    "email": "hello@simplicityatyourservice.com",
+    "title": "",
     "city": "New York",
     "industry": "restaurant",
-    "status": "contacted"
+    "website": "https://simplicityatyourservice.com",
+    "status": "new"
   },
   {
-    "name": "Derek Okafor",
-    "business": "Flame & Smoke BBQ",
-    "email": "derek@flamesmokenyc.com",
+    "name": "Salvatore Vigilante",
+    "business": "Vigilante Plumbing Heating & AC",
+    "email": "CustomerService@VigilantePlumbing.com",
+    "title": "Owner",
+    "city": "Brooklyn",
+    "industry": "contractor",
+    "website": "https://www.bestbrooklynplumber.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "Expert Plumbing and Heating",
+    "email": "office@nycexpertplumbing.com",
+    "title": "",
+    "city": "Brooklyn",
+    "industry": "contractor",
+    "website": "https://nycexpertplumbing.com",
+    "status": "new"
+  },
+  {
+    "name": "Mitchell Markowitz",
+    "business": "Metropolitan Plumbing & Heating",
+    "email": "info@metropolitanplumbing.com",
     "title": "Owner",
     "city": "New York",
-    "industry": "restaurant",
-    "status": "contacted"
+    "industry": "contractor",
+    "website": "https://www.metropolitanplumbing.com",
+    "status": "new"
   },
   {
-    "name": "Sofia Reyes",
-    "business": "Casa Bonita Taqueria",
-    "email": "sofia@casabonitanyc.com",
-    "title": "Owner",
-    "city": "New York",
-    "industry": "restaurant",
-    "status": "contacted"
-  },
-  {
-    "name": "Daniel Kessler",
-    "business": "The Copper Table Bistro",
-    "email": "daniel@coppertablenyc.com",
-    "title": "Owner",
-    "city": "New York",
-    "industry": "restaurant",
-    "status": "contacted"
-  },
-  {
-    "name": "Priya Nair",
-    "business": "Saffron & Vine Modern Indian",
-    "email": "priya@saffronvinenyc.com",
-    "title": "Owner",
-    "city": "New York",
-    "industry": "restaurant",
-    "status": "contacted"
-  },
-  {
-    "name": "Lauren Vitale",
-    "business": "Glow Beauty Lounge",
-    "email": "lauren@glowbeautyli.com",
-    "title": "Owner",
+    "name": "Diane Cosentino",
+    "business": "Team Cosentino Real Estate",
+    "email": "diane@cosentinoco.com",
+    "title": "Licensed Broker/Owner",
     "city": "Long Island",
-    "industry": "salon_spa",
-    "status": "contacted"
-  },
-  {
-    "name": "Christina Park",
-    "business": "Serenity Day Spa",
-    "email": "christina@serenitydayspa.com",
-    "title": "Owner",
-    "city": "Long Island",
-    "industry": "salon_spa",
-    "status": "contacted"
-  },
-  {
-    "name": "Danielle Ferraro",
-    "business": "Luxe Hair Studio",
-    "email": "danielle@luxehairstudioli.com",
-    "title": "Owner",
-    "city": "Long Island",
-    "industry": "salon_spa",
-    "status": "contacted"
-  },
-  {
-    "name": "Tanya Brooks",
-    "business": "Radiance Med Spa",
-    "email": "tanya@radiancemedspa.com",
-    "title": "Owner",
-    "city": "Long Island",
-    "industry": "salon_spa",
-    "status": "contacted"
-  },
-  {
-    "name": "Michelle Andrade",
-    "business": "Polished Nail & Skin Bar",
-    "email": "michelle@polishedli.com",
-    "title": "Owner",
-    "city": "Long Island",
-    "industry": "salon_spa",
-    "status": "contacted"
-  },
-  {
-    "name": "Jessica Kim",
-    "business": "Bloom Wellness Spa",
-    "email": "jessica@bloomwellnessli.com",
-    "title": "Owner",
-    "city": "Long Island",
-    "industry": "salon_spa",
-    "status": "contacted"
-  },
-  {
-    "name": "Richard Alvarez",
-    "business": "Alvarez Realty Group",
-    "email": "richard@alvarezrealtynyc.com",
-    "title": "Senior Agent",
-    "city": "New York",
     "industry": "real_estate",
-    "status": "contacted"
-  },
-  {
-    "name": "Samantha Chen",
-    "business": "Skyline Properties NYC",
-    "email": "samantha@skylinepropsnyc.com",
-    "title": "Broker",
-    "city": "New York",
-    "industry": "real_estate",
-    "status": "contacted"
-  },
-  {
-    "name": "Michael Brennan",
-    "business": "Brennan & Associates Realty",
-    "email": "michael@brennanrealtynyc.com",
-    "title": "Managing Broker",
-    "city": "New York",
-    "industry": "real_estate",
-    "status": "contacted"
-  },
-  {
-    "name": "Keisha Williams",
-    "business": "Urban Nest Real Estate",
-    "email": "keisha@urbannestnyc.com",
-    "title": "Principal Agent",
-    "city": "New York",
-    "industry": "real_estate",
+    "website": "https://www.teamcosentino.com",
     "status": "new"
   },
   {
-    "name": "David Petrov",
-    "business": "Petrov Luxury Homes",
-    "email": "david@petrovluxurynyc.com",
-    "title": "Lead Agent",
-    "city": "New York",
-    "industry": "real_estate",
-    "status": "new"
-  },
-  {
-    "name": "Nina Castellano",
-    "business": "Castellano Real Estate Advisory",
-    "email": "nina@castellanorealty.com",
-    "title": "Senior Advisor",
-    "city": "New York",
-    "industry": "real_estate",
-    "status": "new"
-  },
-  {
-    "name": "Jonathan Stein",
-    "business": "Stein, Harker & Bloom LLP",
-    "email": "jstein@steinharkerbloom.com",
-    "title": "Managing Partner",
-    "city": "New York",
-    "industry": "law_firm",
-    "status": "new"
-  },
-  {
-    "name": "Patricia Okonkwo",
-    "business": "Okonkwo & Partners PLLC",
-    "email": "pokonkwo@okonkwolaw.com",
-    "title": "Senior Partner",
-    "city": "New York",
-    "industry": "law_firm",
-    "status": "new"
-  },
-  {
-    "name": "Robert Gallagher",
-    "business": "Gallagher Hayes Law Group",
-    "email": "rgallagher@gallagherhayes.com",
-    "title": "Partner",
-    "city": "New York",
-    "industry": "law_firm",
-    "status": "new"
-  },
-  {
-    "name": "Maria Fontana",
-    "business": "Fontana Legal Associates",
-    "email": "mfontana@fontanalegal.com",
-    "title": "Founding Partner",
-    "city": "New York",
-    "industry": "law_firm",
-    "status": "new"
-  },
-  {
-    "name": "Alan Chowdhury",
-    "business": "Chowdhury & Lin Attorneys",
-    "email": "achowdhury@chowdhurylin.com",
-    "title": "Name Partner",
-    "city": "New York",
-    "industry": "law_firm",
-    "status": "new"
-  },
-  {
-    "name": "Elizabeth Moreau",
-    "business": "Moreau Strauss Law PLLC",
-    "email": "emoreau@moreaustrauss.com",
-    "title": "Managing Partner",
-    "city": "New York",
-    "industry": "law_firm",
-    "status": "new"
-  },
-  {
-    "name": "Jason Torres",
-    "business": "Iron Republic Fitness",
-    "email": "jason@ironrepublicnyc.com",
-    "title": "Owner",
-    "city": "New York",
-    "industry": "gym_fitness",
-    "status": "new"
-  },
-  {
-    "name": "Megan Sullivan",
-    "business": "CorePower Studio",
-    "email": "megan@corepowerstudionyc.com",
-    "title": "Owner",
-    "city": "New York",
-    "industry": "gym_fitness",
-    "status": "new"
-  },
-  {
-    "name": "Andre Baptiste",
-    "business": "BeastMode Boxing & Fitness",
-    "email": "andre@beastmodenyc.com",
-    "title": "Owner",
-    "city": "New York",
-    "industry": "gym_fitness",
-    "status": "new"
-  },
-  {
-    "name": "Rachel Goldman",
-    "business": "ZenFit Yoga & Pilates",
-    "email": "rachel@zenfitli.com",
-    "title": "Owner",
+    "name": "Stefanie Cosentino",
+    "business": "Team Cosentino Real Estate",
+    "email": "stefaniec@cosentinoco.com",
+    "title": "Licensed Broker/Owner",
     "city": "Long Island",
-    "industry": "gym_fitness",
+    "industry": "real_estate",
+    "website": "https://www.teamcosentino.com",
     "status": "new"
   },
   {
-    "name": "Carlos Mendez",
-    "business": "Apex Performance Gym",
-    "email": "carlos@apexperformanceli.com",
-    "title": "Owner",
-    "city": "Long Island",
-    "industry": "gym_fitness",
+    "name": "",
+    "business": "Local Realty",
+    "email": "LongIsland@nylocalrealty.com",
+    "title": "",
+    "city": "Babylon",
+    "industry": "real_estate",
+    "website": "https://www.nylocalrealty.com",
     "status": "new"
   },
   {
-    "name": "Brittany Harper",
-    "business": "Elevate Fitness Collective",
-    "email": "brittany@elevatefitli.com",
-    "title": "Owner",
-    "city": "Long Island",
+    "name": "",
+    "business": "Strandz Hair Salon",
+    "email": "strandzhair@gmail.com",
+    "title": "",
+    "city": "Center Moriches",
+    "industry": "salon_spa",
+    "website": "https://strandzhair.com",
+    "status": "new"
+  },
+  {
+    "name": "",
+    "business": "YMCA Long Island City Personal Training",
+    "email": "krahill@ymcanyc.org",
+    "title": "",
+    "city": "Long Island City",
     "industry": "gym_fitness",
+    "website": "https://ymcanyc.org",
     "status": "new"
   }
 ]

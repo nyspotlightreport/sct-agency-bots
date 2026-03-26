@@ -55,21 +55,29 @@ def get_already_sent():
 
 def personalize_email(prospect):
     """Generate personalized email body"""
-    name = prospect.get("name", "there")
+    name = prospect.get("name", "").strip() or "there"
     company = prospect.get("business") or prospect.get("company", "your business")
-    industry = prospect.get("industry", "your industry")
+    industry = prospect.get("industry", "")
 
-    subject = f"{name}, automate {company}'s entire content pipeline"
-    body = f"""Hi {name},
+    # Subject line — use name if available, otherwise company
+    if name and name != "there":
+        subject = f"{name}, quick question about {company}"
+    else:
+        subject = f"Quick question about {company}'s online presence"
 
-I came across {company} and thought this might be relevant for your team.
+    # Greeting
+    greeting = f"Hi {name}," if name != "there" else f"Hi {company} team,"
 
-We built ProFlow AI — it automates blog publishing, social media, newsletters, and digital product sales. Our clients run 63+ bots 24/7 with zero daily management.
+    body = f"""{greeting}
 
-It starts at $97/mo and pays for itself in the first week:
+I came across {company} and noticed you could be getting a lot more out of your online presence — blog content, social media, email newsletters — without hiring anyone or spending hours on it.
+
+We built ProFlow AI to handle all of that automatically. It publishes SEO blog posts, schedules social media, sends newsletters, and runs 24/7 with zero daily management.
+
+Starts at $97/mo and most clients see ROI in the first week:
 {PROFLOW_URL}
 
-Worth a quick look? Happy to walk you through a live demo.
+Worth 5 minutes to take a look? I'm happy to walk you through a live demo.
 
 Best,
 S.C. Thomas
