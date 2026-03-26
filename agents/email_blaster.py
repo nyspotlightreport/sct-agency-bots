@@ -104,7 +104,8 @@ def send_email(to_email, subject, body):
             data=resend_data,
             headers={
                 "Authorization": f"Bearer {RESEND_KEY}",
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "User-Agent": "NYSR-EmailBlaster/1.0"
             }
         )
         resp = urlreq.urlopen(req, timeout=15)
