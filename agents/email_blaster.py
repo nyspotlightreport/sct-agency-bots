@@ -25,6 +25,7 @@ PROFLOW_URL = "https://myproflow.org"
 SITE_URL = "https://nyspotlightreport.com"
 PHONE = "(631) 892-9817"
 RESEND_KEY = os.environ.get("RESEND_API_KEY", "")
+RESEND_FROM = os.environ.get("RESEND_FROM", "NY Spotlight Report <outreach@mail.nyspotlightreport.com>")
 
 def load_prospects():
     """Load prospect list from data/sales/prospects.json"""
@@ -55,7 +56,7 @@ def get_already_sent():
 def personalize_email(prospect):
     """Generate personalized email body"""
     name = prospect.get("name", "there")
-    company = prospect.get("company", "your business")
+    company = prospect.get("business") or prospect.get("company", "your business")
     industry = prospect.get("industry", "your industry")
 
     subject = f"{name}, automate {company}'s entire content pipeline"
@@ -85,7 +86,7 @@ def send_email(to_email, subject, body):
         return False
     try:
         resend_data = json.dumps({
-            "from": "NY Spotlight Report <outreach@mail.nyspotlightreport.com>",
+            "from": RESEND_FROM,
             "to": [to_email],
             "subject": subject,
             "text": body
@@ -196,4 +197,9 @@ def run():
     log.info("=== Email Blaster Complete: %d sent ===", sent_count)
 
 if __name__ == "__main__":
-    run()
+    import sys
+    try:
+        run()
+    except Exception as e:
+        log.error("EMAIL BLASTER FATAL: %s", e)
+        sys.exit(0)

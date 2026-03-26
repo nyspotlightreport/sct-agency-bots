@@ -32,6 +32,13 @@ jobs:
       github.event.schedule == '0 13 * * *' ||
       github.event_name == 'workflow_dispatch' && (github.event.inputs.step == 'all' || github.event.inputs.step == 'prospect')
     steps:
+      - name: Pre-flight check
+        run: |
+          echo "Workflow: ${{ github.workflow }}"
+          [ -n "${{ secrets.SUPABASE_URL }}" ] && echo "SUPABASE: SET" || echo "SUPABASE: MISSING"
+          [ -n "${{ secrets.RESEND_API_KEY }}" ] && echo "RESEND: SET" || echo "RESEND: MISSING"
+          [ -n "${{ secrets.OPENAI_API_KEY }}" ] && echo "OPENAI: SET" || echo "OPENAI: MISSING"
+        continue-on-error: true
       - name: Checkout repository
         uses: actions/checkout@v4
 

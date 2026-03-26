@@ -11,6 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - name: Pre-flight check
+        run: |
+          echo "Workflow: ${{ github.workflow }}"
+          [ -n "${{ secrets.SUPABASE_URL }}" ] && echo "SUPABASE: SET" || echo "SUPABASE: MISSING"
+          [ -n "${{ secrets.RESEND_API_KEY }}" ] && echo "RESEND: SET" || echo "RESEND: MISSING"
+          [ -n "${{ secrets.OPENAI_API_KEY }}" ] && echo "OPENAI: SET" || echo "OPENAI: MISSING"
+        continue-on-error: true
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:

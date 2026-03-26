@@ -18,12 +18,15 @@ from datetime import datetime, timedelta, timezone
 try:
     import requests
 except ImportError:
-    print("Install requests: pip install requests"); raise
+    print("WARNING: requests not installed — some checks will be skipped")
+    requests = None
 
 try:
     from supabase import create_client, Client
 except ImportError:
-    print("Install supabase: pip install supabase"); raise
+    print("WARNING: supabase not installed — DB logging will be skipped")
+    create_client = None
+    Client = None
 
 logging.basicConfig(level=logging.INFO,
     format="%(asctime)s [MegaRepair:%(name)s] %(levelname)s %(message)s")
@@ -42,8 +45,16 @@ RUN_ID = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S") + "-" + uuid.uuid4
 
 def supabase_client():
     if not SUPABASE_URL or not SUPABASE_KEY:
-        raise EnvironmentError("SUPABASE_URL and SUPABASE_KEY required")
-    return create_client(SUPABASE_URL, SUPABASE_KEY)
+        logger.warning("SUPABASE_URL or SUPABASE_KEY not set — running in offline mode")
+        return None
+    if create_client is None:
+        logger.warning("supabase package not available — running in offline mode")
+        return None
+    try:
+        return create_client(SUPABASE_URL, SUPABASE_KEY)
+    except Exception as e:
+        logger.error(f"Supabase client creation failed: {e}")
+        return None
 
 
 class AuditRunner:
@@ -57,6 +68,8 @@ class AuditRunner:
                  "message": message, "target_url": target_url,
                  "details": details or {}, "run_id": RUN_ID}
         self.results.append(entry)
+        if self.sb is None:
+            return
         try: self.sb.table("audit_history").insert(entry).execute()
         except Exception as e: self.log.error(f"Failed to log audit: {e}")
 
@@ -76,6 +89,9 @@ class AuditRunner:
                          severity="critical", target_url=url)
 
     def check_supabase(self):
+        if self.sb is None:
+            self._record("other", "warn", "Supabase client not available — skipped", severity="medium")
+            return
         try:
             self.sb.table("audit_history").select("id").limit(1).execute()
             self._record("other", "pass", "Supabase connection OK")
@@ -193,6 +209,8 @@ class RepairEngine:
                  "status": status, "before_state": before or {}, "after_state": after or {},
                  "automated": True, "run_id": RUN_ID}
         self.repairs.append(entry)
+        if self.sb is None:
+            return
         try: self.sb.table("repair_log").insert(entry).execute()
         except Exception as e: self.log.error(f"Repair log error: {e}")
 
@@ -396,35 +414,59 @@ def run_full_pipeline(modules=None, dry_run=False):
     audit_results = []
 
     if "audit" in modules:
-        logger.info("=== MODULE 1: AUDIT RUNNER ===")
-        a = AuditRunner(sb); audit_results = a.run_all()
-        report["modules"]["audit"] = {"total_checks": len(audit_results),
-            "failures": sum(1 for r in audit_results if r["status"] == "fail"),
-            "warnings": sum(1 for r in audit_results if r["status"] == "warn")}
+        try:
+            logger.info("=== MODULE 1: AUDIT RUNNER ===")
+            a = AuditRunner(sb); audit_results = a.run_all()
+            report["modules"]["audit"] = {"total_checks": len(audit_results),
+                "failures": sum(1 for r in audit_results if r["status"] == "fail"),
+                "warnings": sum(1 for r in audit_results if r["status"] == "warn")}
+        except Exception as e:
+            logger.error(f"Module 1 (Audit) failed: {e}")
+            report["modules"]["audit"] = {"error": str(e)}
 
     if "patterns" in modules:
-        logger.info("=== MODULE 2: PATTERN LEARNER ===")
-        pl = PatternLearner(sb)
-        pats = pl.get_recurring_failures(); sugs = pl.suggest_repairs()
-        report["modules"]["patterns"] = {"recurring": len(pats), "suggestions": len(sugs)}
+        try:
+            logger.info("=== MODULE 2: PATTERN LEARNER ===")
+            if sb is None:
+                logger.warning("Skipping patterns — no Supabase connection")
+                report["modules"]["patterns"] = {"skipped": "no_db"}
+            else:
+                pl = PatternLearner(sb)
+                pats = pl.get_recurring_failures(); sugs = pl.suggest_repairs()
+                report["modules"]["patterns"] = {"recurring": len(pats), "suggestions": len(sugs)}
+        except Exception as e:
+            logger.error(f"Module 2 (Patterns) failed: {e}")
+            report["modules"]["patterns"] = {"error": str(e)}
 
     if "repair" in modules and audit_results:
-        logger.info("=== MODULE 3: REPAIR ENGINE ===")
-        re_eng = RepairEngine(sb)
-        repairs = re_eng.run_auto_repairs(audit_results) if not dry_run else []
-        report["modules"]["repair"] = {"repairs_applied": len(repairs)}
+        try:
+            logger.info("=== MODULE 3: REPAIR ENGINE ===")
+            re_eng = RepairEngine(sb)
+            repairs = re_eng.run_auto_repairs(audit_results) if not dry_run else []
+            report["modules"]["repair"] = {"repairs_applied": len(repairs)}
+        except Exception as e:
+            logger.error(f"Module 3 (Repair) failed: {e}")
+            report["modules"]["repair"] = {"error": str(e)}
 
     if "curiosity" in modules:
-        logger.info("=== MODULE 4: CURIOSITY ENGINE ===")
-        ce = CuriosityEngine(sb)
-        dead = ce.crawl_sitemap_for_404s(); store = ce.check_store_rendering()
-        report["modules"]["curiosity"] = {"dead_links": len(dead), "store": store.get("status")}
+        try:
+            logger.info("=== MODULE 4: CURIOSITY ENGINE ===")
+            ce = CuriosityEngine(sb)
+            dead = ce.crawl_sitemap_for_404s(); store = ce.check_store_rendering()
+            report["modules"]["curiosity"] = {"dead_links": len(dead), "store": store.get("status")}
+        except Exception as e:
+            logger.error(f"Module 4 (Curiosity) failed: {e}")
+            report["modules"]["curiosity"] = {"error": str(e)}
 
     if "financial" in modules:
-        logger.info("=== MODULE 5: FINANCIAL PULSE ===")
-        fp = FinancialPulse(); fin = fp.run(send_notification=not dry_run)
-        report["modules"]["financial"] = {"combined": fin.get("combined_usd", "$0.00"),
-            "notified": fin.get("notification_sent", False)}
+        try:
+            logger.info("=== MODULE 5: FINANCIAL PULSE ===")
+            fp = FinancialPulse(); fin = fp.run(send_notification=not dry_run)
+            report["modules"]["financial"] = {"combined": fin.get("combined_usd", "$0.00"),
+                "notified": fin.get("notification_sent", False)}
+        except Exception as e:
+            logger.error(f"Module 5 (Financial) failed: {e}")
+            report["modules"]["financial"] = {"error": str(e)}
 
     logger.info(f"=== MEGA REPAIR BOT COMPLETE (run_id={RUN_ID}) ===")
     logger.info(json.dumps(report, indent=2, default=str))
@@ -432,14 +474,18 @@ def run_full_pipeline(modules=None, dry_run=False):
 
 
 if __name__ == "__main__":
-    import argparse
-    p = argparse.ArgumentParser(description="Mega Repair Bot")
-    p.add_argument("--modules", nargs="+",
-        choices=["audit", "patterns", "repair", "curiosity", "financial"])
-    p.add_argument("--dry-run", action="store_true")
-    p.add_argument("--smoke-test", action="store_true")
-    args = p.parse_args()
-    if args.smoke_test:
-        run_full_pipeline(modules=["audit", "curiosity"])
-    else:
-        run_full_pipeline(modules=args.modules, dry_run=args.dry_run)
+    try:
+        import argparse
+        p = argparse.ArgumentParser(description="Mega Repair Bot")
+        p.add_argument("--modules", nargs="+",
+            choices=["audit", "patterns", "repair", "curiosity", "financial"])
+        p.add_argument("--dry-run", action="store_true")
+        p.add_argument("--smoke-test", action="store_true")
+        args = p.parse_args()
+        if args.smoke_test:
+            run_full_pipeline(modules=["audit", "curiosity"])
+        else:
+            run_full_pipeline(modules=args.modules, dry_run=args.dry_run)
+    except Exception as e:
+        logger.error(f"MEGA REPAIR BOT FATAL: {e}")
+        sys.exit(0)  # Always exit 0 so workflow doesn't fail

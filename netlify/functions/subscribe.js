@@ -26,7 +26,47 @@ exports.handler = async (event) => {
 
   const results = {};
 
-  // HubSpot CRM — add as contact
+  // 1. Supabase — write to sweepstakes_entries table
+  const SUPA_URL = process.env.SUPABASE_URL || "";
+  const SUPA_KEY = process.env.SUPABASE_KEY || process.env.SUPABASE_ANON_KEY || "";
+  if (SUPA_URL && SUPA_KEY) {
+    try {
+      const supaRes = await fetch(`${SUPA_URL}/rest/v1/sweepstakes_entries`, {
+        method: "POST",
+        headers: {
+          "apikey": SUPA_KEY,
+          "Authorization": `Bearer ${SUPA_KEY}`,
+          "Content-Type": "application/json",
+          "Prefer": "return=minimal",
+        },
+        body: JSON.stringify({
+          email,
+          full_name: name || null,
+          source: "website",
+          status: "pending",
+          confirmed: false,
+        }),
+        signal: AbortSignal.timeout(8000),
+      });
+
+      if (supaRes.status === 201 || supaRes.status === 200) {
+        results.supabase = "added";
+      } else if (supaRes.status === 409) {
+        results.supabase = "already_exists";
+      } else {
+        const supaBody = await supaRes.text();
+        console.warn(`Supabase error ${supaRes.status}: ${supaBody.substring(0, 200)}`);
+        results.supabase = `http_${supaRes.status}`;
+      }
+    } catch (e) {
+      console.error("Supabase insert failed:", e.message);
+      results.supabase = "error";
+    }
+  } else {
+    results.supabase = "no_key";
+  }
+
+  // 2. HubSpot CRM — add as contact
   const HS_KEY = process.env.HUBSPOT_API_KEY || "";
   if (HS_KEY) {
     try {
@@ -67,7 +107,8 @@ exports.handler = async (event) => {
   }
 
   console.log(JSON.stringify({
-    event: "subscribe", email, name, hubspot: results.hubspot,
+    event: "subscribe", email, name,
+    supabase: results.supabase, hubspot: results.hubspot,
     timestamp: new Date().toISOString(),
   }));
 

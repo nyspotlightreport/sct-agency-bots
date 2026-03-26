@@ -8,4 +8,11 @@ jobs:
   skip:
     runs-on: ubuntu-latest
     steps:
+      - name: Pre-flight check
+        run: |
+          echo "Workflow: ${{ github.workflow }}"
+          [ -n "${{ secrets.SUPABASE_URL }}" ] && echo "SUPABASE: SET" || echo "SUPABASE: MISSING"
+          [ -n "${{ secrets.RESEND_API_KEY }}" ] && echo "RESEND: SET" || echo "RESEND: MISSING"
+          [ -n "${{ secrets.OPENAI_API_KEY }}" ] && echo "OPENAI: SET" || echo "OPENAI: MISSING"
+        continue-on-error: true
       - run: echo "Using Netlify instead"
