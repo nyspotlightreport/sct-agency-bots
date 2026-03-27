@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T11:10:45.033064",
+  "timestamp": "2026-03-27T14:36:54.646239",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -170,17 +170,6 @@
     },
     {
       "source": "google_news",
-      "title": "Taiwanese entrepreneur shakes up satellite industry - Taipei Times",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE4tZUt4SU5XZXZkd1VoRzlVMDYzVWs4dW13aVZQc2gyeURjekxTZXUxaS1ESWpnaXpzUHY0bGQzOFUzd09OeGxfRGoxbXpzMkw2dy1xZzQycUx2U1hLZmd5dHFsbHgxM3RmbFkyNG9RM1g5LUNhMS1VdXJB?oc=5",
-      "outlet": "Taipei Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Meet Erin Thomas - CanvasRebel Magazine",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
       "outlet": "CanvasRebel Magazine",
@@ -225,6 +214,17 @@
     },
     {
       "source": "google_news",
+      "title": "Thomas J. Timmons Obituary November 2, 2024 - Smith Funeral Home | Florence, SC",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81TWtMdUpDNVA0dEV1dnEtNHRpY0JrUHJmbFZ5WTVpY2ljT0V4SG5Eckt5WHA3TUsxVHllSy1aeTVHUmNTZXktTXFlWlNWUWFKbFZlSC1qTmNzX0hCcVZ0dXNBcmI5X1F1RnNpNg?oc=5",
+      "outlet": "Smith Funeral Home | Florence, SC",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Why I Started My Business in Western South Carolina, and You Should, Too - Livability.com",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQYTVOcVV4NDFjTHo1azVsWjlPYkpFcV9oRXBfVVRtQUVKNVJNOWMwQ21tZXZER3F3LTNtSndvUkFBaHFPcHVWMDRKOE55ckZRWlZLNlRsTGFNQlF0ajZmbnd3b3V3ZXZWT0hRdkhDQU5lYVJUakRaeG51a19MdkNzdUJwZVZuN0hJLUNaU1dEOHJXNnVjQnZOX2VIakdQWDFMTlF4VEZqbHBaUmx5NHZkYWVqM0MxVno5WkNWRGx6MjM5QWV0QjJ3MmNiUGQ?oc=5",
       "outlet": "Livability.com",
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas J. Timmons Obituary November 2, 2024 - Smith Funeral Home | Florence, SC",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81TWtMdUpDNVA0dEV1dnEtNHRpY0JrUHJmbFZ5WTVpY2ljT0V4SG5Eckt5WHA3TUsxVHllSy1aeTVHUmNTZXktTXFlWlNWUWFKbFZlSC1qTmNzX0hCcVZ0dXNBcmI5X1F1RnNpNg?oc=5",
-      "outlet": "Smith Funeral Home | Florence, SC",
+      "title": "Thomas William McBride Obituary December 26, 2024 - Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tSEI1ZDFWS2hFWE1SWE11eWpCODFPUkViOUMwVENEVE9oOXlGdjhVcXFyaW53QkxuNXJ3Njl6dDh2cHFnX0V1ZENMZTB0djRHbVZBOWNsLUt2OTZQSm1n?oc=5",
+      "outlet": "Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
