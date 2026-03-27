@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T19:54:26.430765",
+  "timestamp": "2026-03-27T20:05:33.364673",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - algemeiner.com",
+      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
-      "outlet": "algemeiner.com",
+      "outlet": "Algemeiner.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "Encompass Health (EHC): Valuation Spotlight After New York Times Report and Investor Scrutiny - sahmcapital.com",
+      "title": "Encompass Health (EHC): Valuation Spotlight After New York Times Report and Investor Scrutiny - Sahm",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOc3lVX2VGVERPbHU3VkFLMlo1T3JEV2hKdUY2bjRzOXJrNEpZN3FxVUcxVWFGbGEtVE9faHMzOTlFQ19DYVdHVlg5akhGeGdrcTJIczRtWUlvREg2ZGQ1eUw3RTA4ZUpxMFBUcmRLRlBBeTc4ZDc1bG9EM0dldDl0dmtpbTlza29YaTJfaFBIUnNxa29xRHNIcVJ4QjlGT0ozSVdEOTNIcWwxV1pDLTNqNkFPZlVoVm83czJURW43TGYtRWp6LTlRc05kbV81bmRSVFBzZkhHTWJVZw?oc=5",
-      "outlet": "sahmcapital.com",
+      "outlet": "Sahm",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,8 +192,8 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "title": "Thomas Jay Kaiser Obituary August 16, 2023 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Ga3ZVMVN6RGlyQzNaaFdQbFdrUUZUcGdHeDdoWTRtdUh3Q3lkLTQtWlpSNHVRSU55NUJKbGtWVU45N0hwOHlrTHF0by1hTFEzNklzS3lWeDF6TU5xay1VS2lfcDljZnN2VUZidmxmenA?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -214,6 +214,17 @@
     },
     {
       "source": "google_news",
+      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
+      "outlet": "obits.robinsonfuneralhomes.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Lucas center receives $30,000 Terry Thomas Foundation grant - The Brunswick News",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOd3JOQkZyQjh2TkFJdno4WXBNbmt6MXpqR3BucGVvcGpKYUZubWJQd1h0Qkl0VV9udEN0RkZONVMzTmkwVXRYTV85QlczT1huaGtTWTdzSEdIODFWVDNxMHREX3FGVFBTWHBIN0tIU0xDVzBvMHRrS0dXYnA3ODVGUG1DbFEyVlV2VnRGczNfd3QtLTN0NjBic2xhbzVPMDdFNlYxbFpBU0xxNExONWFUdF9aN2U3WUFzaW9ZWG1QaTI3THF3YVJPb09uNmRURzVVREQteUxBOGdSbkRaSzdWZ3FGN3lJNWhI?oc=5",
       "outlet": "The Brunswick News",
@@ -225,20 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas J. Timmons Obituary November 2, 2024 - Smith Funeral Home | Florence, SC",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81TWtMdUpDNVA0dEV1dnEtNHRpY0JrUHJmbFZ5WTVpY2ljT0V4SG5Eckt5WHA3TUsxVHllSy1aeTVHUmNTZXktTXFlWlNWUWFKbFZlSC1qTmNzX0hCcVZ0dXNBcmI5X1F1RnNpNg?oc=5",
-      "outlet": "Smith Funeral Home | Florence, SC",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas William McBride Obituary December 26, 2024 - Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tSEI1ZDFWS2hFWE1SWE11eWpCODFPUkViOUMwVENEVE9oOXlGdjhVcXFyaW53QkxuNXJ3Njl6dDh2cHFnX0V1ZENMZTB0djRHbVZBOWNsLUt2OTZQSm1n?oc=5",
-      "outlet": "Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
+      "title": "Why I Started My Business in Western South Carolina, and You Should, Too - Livability.com",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQYTVOcVV4NDFjTHo1azVsWjlPYkpFcV9oRXBfVVRtQUVKNVJNOWMwQ21tZXZER3F3LTNtSndvUkFBaHFPcHVWMDRKOE55ckZRWlZLNlRsTGFNQlF0ajZmbnd3b3V3ZXZWT0hRdkhDQU5lYVJUakRaeG51a19MdkNzdUJwZVZuN0hJLUNaU1dEOHJXNnVjQnZOX2VIakdQWDFMTlF4VEZqbHBaUmx5NHZkYWVqM0MxVno5WkNWRGx6MjM5QWV0QjJ3MmNiUGQ?oc=5",
+      "outlet": "Livability.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
