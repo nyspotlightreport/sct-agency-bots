@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T15:11:11.165033",
+  "timestamp": "2026-03-27T17:40:22.681865",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -170,9 +170,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - CanvasRebel Magazine",
+      "title": "Meet Erin Thomas - canvasrebel.com",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "CanvasRebel Magazine",
+      "outlet": "canvasrebel.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas J. Timmons Obituary November 2, 2024 - Smith Funeral Home | Florence, SC",
+      "title": "Thomas J. Timmons Obituary November 2, 2024 - smithfuneralhomesc.com",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81TWtMdUpDNVA0dEV1dnEtNHRpY0JrUHJmbFZ5WTVpY2ljT0V4SG5Eckt5WHA3TUsxVHllSy1aeTVHUmNTZXktTXFlWlNWUWFKbFZlSC1qTmNzX0hCcVZ0dXNBcmI5X1F1RnNpNg?oc=5",
-      "outlet": "Smith Funeral Home | Florence, SC",
+      "outlet": "smithfuneralhomesc.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
