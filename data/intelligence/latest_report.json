@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T20:05:33.364673",
+  "timestamp": "2026-03-27T21:53:22.394661",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -27,9 +27,9 @@
   "analyses": [
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - nytimes.com",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
+      "outlet": "nytimes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -60,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - nytimes.com",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
-      "outlet": "The New York Times",
+      "outlet": "nytimes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,8 +192,8 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Jay Kaiser Obituary August 16, 2023 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Ga3ZVMVN6RGlyQzNaaFdQbFdrUUZUcGdHeDdoWTRtdUh3Q3lkLTQtWlpSNHVRSU55NUJKbGtWVU45N0hwOHlrTHF0by1hTFEzNklzS3lWeDF6TU5xay1VS2lfcDljZnN2VUZidmxmenA?oc=5",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
-      "outlet": "obits.robinsonfuneralhomes.com",
+      "title": "Tommie Innovators Spark Big Ideas at the Fowler Business Concept Challenge - Newsroom | University of St. Thomas",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ3RaYjJUZ2lPT1o0MUxLSC1YQmh5UUFwcnNpa1JxbFdUUWd6NG1oVWIzSUJBUHZiLTFBeHlmc3N5LUdWb2RqQWF0Y01pUVo4WkpQLVNsVFJIVnZ6T2o3ekdzcHdHQWc2YXRFTUhNYWpHNHNPaThwNW1xWHZSR2NxYUxKbGRVN1hJUUxDSUpEM3ZkbFB2Q2hDb1dncmt2czE1Vzhr?oc=5",
+      "outlet": "Newsroom | University of St. Thomas",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Why I Started My Business in Western South Carolina, and You Should, Too - Livability.com",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQYTVOcVV4NDFjTHo1azVsWjlPYkpFcV9oRXBfVVRtQUVKNVJNOWMwQ21tZXZER3F3LTNtSndvUkFBaHFPcHVWMDRKOE55ckZRWlZLNlRsTGFNQlF0ajZmbnd3b3V3ZXZWT0hRdkhDQU5lYVJUakRaeG51a19MdkNzdUJwZVZuN0hJLUNaU1dEOHJXNnVjQnZOX2VIakdQWDFMTlF4VEZqbHBaUmx5NHZkYWVqM0MxVno5WkNWRGx6MjM5QWV0QjJ3MmNiUGQ?oc=5",
-      "outlet": "Livability.com",
+      "title": "Thomas J. Timmons Obituary November 2, 2024 - Smith Funeral Home | Florence, SC",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81TWtMdUpDNVA0dEV1dnEtNHRpY0JrUHJmbFZ5WTVpY2ljT0V4SG5Eckt5WHA3TUsxVHllSy1aeTVHUmNTZXktTXFlWlNWUWFKbFZlSC1qTmNzX0hCcVZ0dXNBcmI5X1F1RnNpNg?oc=5",
+      "outlet": "Smith Funeral Home | Florence, SC",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
