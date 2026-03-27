@@ -60,15 +60,9 @@
     },
     "priority": "high"
   },
-  "created": "2026-03-25",
+  "created": "2026-03-27",
   "status": "staged",
-  "next_action_day": 3,
+  "next_action_day": 1,
   "next_action_date": "2026-03-27",
-  "completed_touches": [
-    {
-      "day": 1,
-      "result": "sent",
-      "date": "2026-03-25"
-    }
-  ]
+  "completed_touches": []
 }
