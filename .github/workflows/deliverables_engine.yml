@@ -11,7 +11,7 @@ env:
   MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
   ELEVENLABS_API_KEY:  ${{ secrets.ELEVENLABS_API_KEY }}
   GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
-  GH_PAT:              ${{ secrets.GH_PAT }}
+  GH_PAT:              ${{ secrets.GITHUB_TOKEN }}
   GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
   PUSHOVER_API_KEY:    ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY:   ${{ secrets.PUSHOVER_USER_KEY }}

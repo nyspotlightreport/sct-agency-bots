@@ -16,7 +16,7 @@ env:
   PUSHOVER_USER_KEY:    ${{ secrets.PUSHOVER_USER_KEY }}
   GMAIL_USER:           ${{ secrets.GMAIL_USER }}
   GMAIL_APP_PASS:       ${{ secrets.GMAIL_APP_PASS }}
-  GH_PAT:               ${{ secrets.GH_PAT }}
+  GH_PAT:               ${{ secrets.GITHUB_TOKEN }}
   BEEHIIV_API_KEY:      ${{ secrets.BEEHIIV_API_KEY }}
   BEEHIIV_PUB_ID:       ${{ secrets.BEEHIIV_PUB_ID }}
   CALENDLY_TOKEN:       ${{ secrets.CALENDLY_TOKEN }}

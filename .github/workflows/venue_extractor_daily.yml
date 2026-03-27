@@ -32,7 +32,7 @@ jobs:
         with:
           repository: scthomasnyc/NY-Spotlight-Report-good
           path: NY-Spotlight-Report-good
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
 
       - name: Set up Python

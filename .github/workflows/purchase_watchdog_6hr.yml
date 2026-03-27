@@ -12,7 +12,7 @@ env:
   GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
   SMTP_USER: ${{ secrets.SMTP_USER }}
   GMAIL_USER: ${{ secrets.GMAIL_USER }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_PAT: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   watchdog:
     name: End-to-End Purchase Journey Test

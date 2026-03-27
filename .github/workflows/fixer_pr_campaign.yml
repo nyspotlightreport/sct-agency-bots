@@ -29,7 +29,7 @@ env:
   AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
   GMAIL_USER: ${{ secrets.GMAIL_USER }}
   GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_PAT: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   CAMPAIGN_TYPE: ${{ github.event.inputs.campaign_type }}
   CAMPAIGN_SUBJECT: ${{ github.event.inputs.target }}

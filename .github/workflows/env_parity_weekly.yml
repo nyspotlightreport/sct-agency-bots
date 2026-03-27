@@ -4,7 +4,7 @@ on:
     - cron: '0 5 * * 0'
   workflow_dispatch:
 env:
-  GH_TOKEN: ${{ secrets.GH_PAT }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

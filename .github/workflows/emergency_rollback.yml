@@ -35,7 +35,7 @@ jobs:
             echo "tag=${{ inputs.backup_tag }}" >> $GITHUB_OUTPUT
           else
             echo "Finding latest backup tag..."
-            git clone --bare https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/sct-agency-bots.git /tmp/code-bare
+            git clone --bare https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/nyspotlightreport/sct-agency-bots.git /tmp/code-bare
             TAG=$(cd /tmp/code-bare && git tag -l "backup-*" | sort -r | head -1)
             echo "Latest: $TAG"
             echo "tag=$TAG" >> $GITHUB_OUTPUT
@@ -47,7 +47,7 @@ jobs:
           TAG="${{ steps.tag.outputs.tag }}"
           if [ -z "$TAG" ]; then echo "No backup tag found!"; exit 1; fi
 
-          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
           cd /tmp/live-repo
 
           # Check if this tag exists in live repo

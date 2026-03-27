@@ -13,7 +13,7 @@ env:
   GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
   SMTP_USER: ${{ secrets.SMTP_USER }}
   APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_PAT: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   run:
     name: Outreach Engine Daily

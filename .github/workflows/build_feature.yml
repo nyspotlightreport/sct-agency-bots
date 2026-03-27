@@ -11,7 +11,7 @@ on:
 
 env:
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-  GH_PAT:            ${{ secrets.GH_PAT }}
+  GH_PAT:            ${{ secrets.GITHUB_TOKEN }}
   GITHUB_REPOSITORY: "nyspotlightreport/sct-agency-bots"
   ARCHITECT_REQUIREMENT: ${{ github.event.inputs.feature_request }}
   ARCHITECT_TYPE:        ${{ github.event.inputs.output_type }}

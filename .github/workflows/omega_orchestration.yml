@@ -12,7 +12,7 @@ env:
   GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
   PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_PAT: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GMAIL_USER: ${{ secrets.GMAIL_USER }}
   GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}

@@ -33,7 +33,7 @@ jobs:
 
       - name: Clone and tag live repo backup
         run: |
-          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
           cd /tmp/live-repo
           DATE=$(date +%Y%m%d)
           TAG="backup-${DATE}"

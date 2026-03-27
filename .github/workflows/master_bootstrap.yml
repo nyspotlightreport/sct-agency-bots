@@ -17,7 +17,7 @@ env:
   APOLLO_API_KEY:         ${{ secrets.APOLLO_API_KEY }}
   GMAIL_USER:             ${{ secrets.GMAIL_USER }}
   GMAIL_APP_PASS:         ${{ secrets.GMAIL_APP_PASS }}
-  GH_PAT:                 ${{ secrets.GH_PAT }}
+  GH_PAT:                 ${{ secrets.GITHUB_TOKEN }}
   TICKET_TAILOR_API_KEY:  ${{ secrets.TICKET_TAILOR_API_KEY }}
   STRIPE_SECRET_KEY:      ${{ secrets.STRIPE_SECRET_KEY }}
   AHREFS_API_KEY:         ${{ secrets.AHREFS_API_KEY }}
@@ -118,7 +118,7 @@ jobs:
     steps:
       - name: Trigger all workflows
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 - << 'PYEOF'
           import os, json, urllib.request, time

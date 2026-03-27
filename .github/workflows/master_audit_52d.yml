@@ -28,7 +28,7 @@ jobs:
         env:
           PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
           PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
@@ -46,7 +46,7 @@ jobs:
       - name: Create issue on failure
         if: failure()
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           SCORE=$(python -c "import json; d=json.load(open('data/audit/latest_52d_audit.json')); print(d.get('score',0))" 2>/dev/null || echo "?")
           FAILS=$(python -c "import json; d=json.load(open('data/audit/latest_52d_audit.json')); print(', '.join(r['name'] for r in d.get('failures',[])))" 2>/dev/null || echo "unknown")

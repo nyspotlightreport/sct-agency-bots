@@ -28,7 +28,7 @@ env:
   HUBSPOT_API_KEY:      ${{ secrets.HUBSPOT_API_KEY }}
   APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
   STRIPE_SECRET_KEY:    ${{ secrets.STRIPE_SECRET_KEY }}
-  GH_PAT:               ${{ secrets.GH_PAT }}
+  GH_PAT:               ${{ secrets.GITHUB_TOKEN }}
   AHREFS_API_KEY:       ${{ secrets.AHREFS_API_KEY }}
 
 jobs:

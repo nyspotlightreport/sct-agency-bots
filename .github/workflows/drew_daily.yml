@@ -11,7 +11,7 @@ env:
   PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
   STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
   APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_PAT: ${{ secrets.GITHUB_TOKEN }}
   AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
 jobs:
   run-director:

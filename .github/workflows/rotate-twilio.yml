@@ -15,7 +15,7 @@ jobs:
         env:
           TWILIO_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
@@ -104,4 +104,4 @@ jobs:
             echo "No new token to set"
           fi
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

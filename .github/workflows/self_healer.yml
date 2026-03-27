@@ -9,7 +9,7 @@ env:
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
   STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
-  GH_TOKEN: ${{ secrets.GH_PAT }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   heal:
     name: Self-Healing Check

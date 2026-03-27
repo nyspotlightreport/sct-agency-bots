@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 env:
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_PAT: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   WORDPRESS_ACCESS_TOKEN: ${{ secrets.WORDPRESS_ACCESS_TOKEN }}
   WORDPRESS_SITE_ID: ${{ secrets.WORDPRESS_SITE_ID }}

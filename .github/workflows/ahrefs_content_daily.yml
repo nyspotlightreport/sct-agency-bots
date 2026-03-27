@@ -39,5 +39,5 @@ jobs:
           BEEHIIV_PUB_ID:         ${{ secrets.BEEHIIV_PUB_ID }}
           PUSHOVER_API_KEY:       ${{ secrets.PUSHOVER_API_KEY }}
           PUSHOVER_USER_KEY:      ${{ secrets.PUSHOVER_USER_KEY }}
-          GH_PAT:                 ${{ secrets.GH_PAT }}
+          GH_PAT:                 ${{ secrets.GITHUB_TOKEN }}
         run: python agents/content_intelligence_agent.py || echo "Content agent completed"

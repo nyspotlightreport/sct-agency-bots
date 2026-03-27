@@ -25,7 +25,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
           PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
           PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}

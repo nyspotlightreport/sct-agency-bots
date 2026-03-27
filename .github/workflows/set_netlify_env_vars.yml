@@ -34,7 +34,7 @@ jobs:
           HUBSPOT_API_KEY:           ${{ secrets.HUBSPOT_API_KEY }}
           PUSHOVER_API_KEY:          ${{ secrets.PUSHOVER_API_KEY }}
           PUSHOVER_USER_KEY:         ${{ secrets.PUSHOVER_USER_KEY }}
-          GH_PAT:                    ${{ secrets.GH_PAT }}
+          GH_PAT:                    ${{ secrets.GITHUB_TOKEN }}
           STRIPE_SECRET_KEY:         ${{ secrets.STRIPE_SECRET_KEY }}
           ANTHROPIC_API_KEY:         ${{ secrets.ANTHROPIC_API_KEY }}
         run: |

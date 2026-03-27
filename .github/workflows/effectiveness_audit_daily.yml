@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      GH_PAT: ${{ secrets.GH_PAT }}
+      GH_PAT: ${{ secrets.GITHUB_TOKEN }}
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
       PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}

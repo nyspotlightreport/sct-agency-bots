@@ -22,7 +22,7 @@ jobs:
 
       - name: Clone live repo
         run: |
-          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
 
       - name: Sync site files (ADDITIVE — never delete live-only files)
         run: |
@@ -80,7 +80,7 @@ jobs:
 
       - name: Commit and push
         env:
-          SYNC_TOKEN: ${{ secrets.GH_PAT }}
+          SYNC_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd /tmp/live-repo
           git config user.name "SCT Auto-Sync Bot"

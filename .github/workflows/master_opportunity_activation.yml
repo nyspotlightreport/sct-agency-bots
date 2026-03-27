@@ -19,7 +19,7 @@ env:
   APOLLO_API_KEY:       ${{ secrets.APOLLO_API_KEY }}
   AHREFS_API_KEY:       ${{ secrets.AHREFS_API_KEY }}
   GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
-  GH_PAT:               ${{ secrets.GH_PAT }}
+  GH_PAT:               ${{ secrets.GITHUB_TOKEN }}
   TWITTER_API_KEY:      ${{ secrets.TWITTER_API_KEY }}
   TWITTER_API_SECRET:   ${{ secrets.TWITTER_API_SECRET }}
   TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}

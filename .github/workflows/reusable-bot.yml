@@ -73,7 +73,7 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL: ${{ secrets.CHAIRMAN_EMAIL }}
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
           HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

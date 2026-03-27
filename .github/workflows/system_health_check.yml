@@ -10,7 +10,7 @@ env:
   SUPABASE_KEY:       ${{ secrets.SUPABASE_KEY }}
   SUPABASE_ANON_KEY:  ${{ secrets.SUPABASE_ANON_KEY }}
   ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
-  GH_PAT:             ${{ secrets.GH_PAT }}
+  GH_PAT:             ${{ secrets.GITHUB_TOKEN }}
   PUSHOVER_API_KEY:   ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -81,7 +81,7 @@ jobs:
           check_secret "${{ secrets.SUPABASE_URL }}"       "SUPABASE_URL"
           check_secret "${{ secrets.SUPABASE_ANON_KEY }}"  "SUPABASE_ANON_KEY"
           check_secret "${{ secrets.ANTHROPIC_API_KEY }}"  "ANTHROPIC_API_KEY"
-          check_secret "${{ secrets.GH_PAT }}"             "GH_PAT"
+          check_secret "${{ secrets.GITHUB_TOKEN }}"             "GH_PAT"
           check_secret "${{ secrets.NETLIFY_AUTH_TOKEN }}" "NETLIFY_AUTH_TOKEN"
           check_secret "${{ secrets.HUBSPOT_API_KEY }}"    "HUBSPOT_API_KEY"
           check_secret "${{ secrets.APOLLO_API_KEY }}"     "APOLLO_API_KEY"

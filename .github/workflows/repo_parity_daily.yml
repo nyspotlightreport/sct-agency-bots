@@ -22,7 +22,7 @@ jobs:
 
       - name: Clone live repo
         run: |
-          git clone https://x-access-token:${{ secrets.GH_PAT }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live-repo
 
       - name: Compare files
         id: compare

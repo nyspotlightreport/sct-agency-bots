@@ -12,7 +12,7 @@ env:
   PUSHOVER_USER_KEY:  ${{ secrets.PUSHOVER_USER_KEY }}
   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
   NETLIFY_SITE_ID:    "8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
-  GH_PAT:             ${{ secrets.GH_PAT }}
+  GH_PAT:             ${{ secrets.GITHUB_TOKEN }}
   GITHUB_REPOSITORY:  "nyspotlightreport/sct-agency-bots"
 
 jobs:

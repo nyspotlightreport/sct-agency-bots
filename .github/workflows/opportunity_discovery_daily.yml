@@ -9,7 +9,7 @@ env:
   SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
   PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_PAT: ${{ secrets.GITHUB_TOKEN }}
   APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
   STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
   AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
