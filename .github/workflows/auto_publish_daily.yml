@@ -1,15 +1,19 @@
 name: Auto-Publish Blog Post — Daily
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '0 10 * * *'→ Runs at 10:00
   workflow_dispatch:
 env:
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-  GH_PAT: ${{ secrets.GH_PAT }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
   PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
   SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
   SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   publish:
     name: Generate & Publish Blog Post
