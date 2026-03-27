@@ -5,9 +5,12 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Dry run (no API calls or writes)'
+        description: 'Dry run (no API calls)'
         required: false
         default: 'false'
+
+permissions:
+  contents: write
 
 jobs:
   generate-article-images:
@@ -15,6 +18,13 @@ jobs:
     steps:
       - name: Checkout bots repo
         uses: actions/checkout@v4
+
+      - name: Checkout live site repo
+        uses: actions/checkout@v4
+        with:
+          repository: nyspotlightreport/NY-Spotlight-Report-good
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: site-repo
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -24,104 +34,83 @@ jobs:
       - name: Install dependencies
         run: pip install requests openai -q
 
-      - name: Generate article images via DALL-E 3 and push via GitHub API
+      - name: Generate article images via DALL-E 3
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LIVE_REPO: nyspotlightreport/NY-Spotlight-Report-good
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
         run: |
           python3 << 'PYEOF'
-          import os, requests, json, base64, time
-          
+          import os, requests, base64, time
+          from pathlib import Path
+
           openai_key = os.environ['OPENAI_API_KEY']
-          gh_token = os.environ['GH_TOKEN']
-          live_repo = os.environ['LIVE_REPO']
           dry_run = os.environ['DRY_RUN'] == 'true'
-          
-          headers = {
-            'Authorization': f'token {gh_token}',
-            'Accept': 'application/vnd.github+json'
-          }
-          
-          # Get list of articles from live repo
-          r = requests.get(f'https://api.github.com/repos/{live_repo}/contents/blog', headers=headers)
-          if r.status_code != 200:
-            print(f'Cannot read live repo blog dir: {r.status_code} {r.text[:200]}')
-            print('Falling back to known article list')
-            articles = [
-              {'name': 'oscars-2026-predictions', 'prompt': 'Oscars 2026 Academy Awards red carpet Hollywood glamour'},
-              {'name': 'hells-kitchen-gay-nightlife-capital', 'prompt': 'NYC Hell Kitchen gay nightlife vibrant bars neon lights'},
-              {'name': '100-million-broadway-season-2024', 'prompt': 'Broadway theater New York City bright lights marquee'},
-              {'name': 'nyfw-2026-recap', 'prompt': 'New York Fashion Week runway models elegant fashion show'},
-              {'name': 'pride-2026-nyc-events', 'prompt': 'NYC Pride parade rainbow flags celebration crowd energy'},
-            ]
-          else:
-            dirs = [d for d in r.json() if d['type'] == 'dir']
-            articles = [{'name': d['name'], 'prompt': d['name'].replace('-', ' ')} for d in dirs[:5]]
-          
-          print(f'Processing {len(articles)} articles. Dry run: {dry_run}')
-          
-          for article in articles:
-            slug = article['name']
-            prompt = f"Editorial photography for NYC entertainment article about {article['prompt']}. Professional news photography style, dramatic lighting, New York City atmosphere. Wide cinematic shot."
-            
-            print(f'Generating image for: {slug}')
-            
-            if dry_run:
-              print(f'[DRY RUN] Would generate: {prompt[:80]}')
+          img_dir = Path('site-repo/images/articles')
+          img_dir.mkdir(parents=True, exist_ok=True)
+
+          articles = [
+            ('oscars-2026-predictions', 'Academy Awards Oscars 2026 red carpet Hollywood glamour cinema'),
+            ('hells-kitchen-gay-nightlife-capital', 'NYC Hell Kitchen gay nightlife vibrant bars neon lights'),
+            ('100-million-broadway-season-2024', 'Broadway theater New York City bright lights marquee stage'),
+            ('nyfw-2026-recap', 'New York Fashion Week runway show elegant fashion designer'),
+            ('pride-2026-nyc-events', 'NYC Pride parade celebration rainbow diversity community'),
+            ('tony-awards-2026-preview', 'Tony Awards Broadway theater award show stage spotlight'),
+            ('ultimate-nyc-nightlife-guide', 'New York City nightlife skyline Manhattan evening lights'),
+            ('lgbtq-bars-clubs-nyc-guide', 'NYC LGBTQ bar club community vibrant inclusive nightlife'),
+            ('evolution-of-drag-culture', 'Drag culture performance art vibrant costume makeup stage'),
+            ('rooftop-bars-nyc-2026', 'NYC rooftop bar Manhattan skyline sunset cocktails'),
+          ]
+
+          print(f"Processing {len(articles)} articles. Dry run: {dry_run}")
+          generated = 0
+
+          for slug, prompt in articles:
+            img_path = img_dir / f"{slug}.jpg"
+            if img_path.exists():
+              print(f"SKIP (exists): {slug}")
               continue
-            
+
+            print(f"Generating: {slug}")
+            if dry_run:
+              print(f"[DRY RUN]: {prompt[:60]}")
+              continue
+
             try:
-              # Generate image via DALL-E 3
-              img_r = requests.post(
+              r = requests.post(
                 'https://api.openai.com/v1/images/generations',
                 headers={'Authorization': f'Bearer {openai_key}', 'Content-Type': 'application/json'},
-                json={'model': 'dall-e-3', 'prompt': prompt, 'size': '1792x1024', 'quality': 'standard', 'n': 1}
+                json={'model': 'dall-e-3', 'prompt': f'Editorial photography for NYC entertainment news: {prompt}. Professional photojournalism style, dramatic lighting, cinematic composition.', 'size': '1792x1024', 'quality': 'standard', 'n': 1},
+                timeout=60
               )
-              
-              if img_r.status_code != 200:
-                print(f'DALL-E error for {slug}: {img_r.status_code} {img_r.text[:200]}')
+              if r.status_code != 200:
+                print(f"DALL-E error {r.status_code}: {r.text[:100]}")
                 continue
-              
-              img_url = img_r.json()['data'][0]['url']
-              
-              # Download the image
-              img_data = requests.get(img_url).content
-              img_b64 = base64.b64encode(img_data).decode()
-              
-              # Push directly to live repo via GitHub API (uses GITHUB_TOKEN from THIS repo's context)
-              # GITHUB_TOKEN can push to other repos only if it has access - use PUT to create/update
-              img_path = f'images/articles/{slug}.jpg'
-              
-              # Check if file exists to get SHA
-              check_r = requests.get(f'https://api.github.com/repos/{live_repo}/contents/{img_path}', headers=headers)
-              sha = check_r.json().get('sha') if check_r.status_code == 200 else None
-              
-              payload = {
-                'message': f'Add editorial image: {slug}',
-                'content': img_b64,
-                'branch': 'main'
-              }
-              if sha:
-                payload['sha'] = sha
-              
-              push_r = requests.put(
-                f'https://api.github.com/repos/{live_repo}/contents/{img_path}',
-                headers=headers,
-                json=payload
-              )
-              
-              if push_r.status_code in [200, 201]:
-                print(f'SUCCESS: {slug} image pushed')
-              else:
-                print(f'PUSH FAILED {slug}: {push_r.status_code} {push_r.text[:200]}')
-              
-              time.sleep(3)  # Rate limit courtesy
-              
+
+              img_url = r.json()['data'][0]['url']
+              img_data = requests.get(img_url, timeout=30).content
+              img_path.write_bytes(img_data)
+              print(f"SAVED: {slug} ({len(img_data)} bytes)")
+              generated += 1
+              time.sleep(2)
+
             except Exception as e:
-              print(f'ERROR processing {slug}: {e}')
+              print(f"ERROR {slug}: {e}")
               continue
-          
-          print('Image generation complete')
+
+          print(f"Done. Generated {generated} new images.")
           PYEOF
+
+      - name: Commit and push images to live site
+        run: |
+          cd site-repo
+          git config user.name "NYSR Image Bot"
+          git config user.email "bots@nyspotlightreport.com"
+          git add images/articles/
+          if git diff --staged --quiet; then
+            echo "No new images to commit"
+          else
+            COUNT=$(git diff --staged --name-only | wc -l)
+            git commit -m "Add $COUNT DALL-E 3 editorial images for articles"
+            git push
+            echo "Pushed $COUNT images to live repo"
+          fi
