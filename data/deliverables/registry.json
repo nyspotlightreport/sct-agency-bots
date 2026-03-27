@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-03-27_2",
+    "type": "BLOG_POST",
+    "title": "ProFlow AI vs Hiring: The Real Cost Comparison",
+    "created": "2026-03-27T08:09:59.591375",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-03-25_1",
     "type": "BLOG_POST",
     "title": "Cold Email Automation: 200 Personalized Emails Per Day with Apollo",
