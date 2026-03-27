@@ -1,4 +1,32 @@
-name: Auto-Publish Blog Post — Daily
+name: Auto-Publish Blog Post - Daily
 on:
   schedule:
-- cron: '0 10 * * *'
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+  PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+  SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+  SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    name: Generate and Publish Blog Post
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Pre-flight check
+        run: |
+          echo "Workflow: ${{ github.workflow }}"
+          [ -n "${{ secrets.SUPABASE_URL }}" ] && echo "SUPABASE_URL set" || echo "MISSING SUPABASE_URL"
+          [ -n "${{ secrets.ANTHROPIC_API_KEY }}" ] && echo "ANTHROPIC set" || echo "MISSING ANTHROPIC"
+        continue-on-error: true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python agents/auto_publisher.py
