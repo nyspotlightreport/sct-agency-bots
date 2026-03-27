@@ -1,7 +1,7 @@
 name: Auto-Publish Blog Post — Daily
 on:
   schedule:
-    - cron: '0 10 * * *'→ Runs at 10:00
+- cron: '0 10 * * *'
   workflow_dispatch:
 env:
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
