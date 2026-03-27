@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T18:38:37.658723",
+  "timestamp": "2026-03-27T19:54:26.430765",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -27,9 +27,9 @@
   "analyses": [
     {
       "source": "google_news",
-      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -38,9 +38,9 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
+      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "Encompass Health (EHC): Valuation Spotlight After New York Times Report and Investor Scrutiny - Sahm",
+      "title": "Encompass Health (EHC): Valuation Spotlight After New York Times Report and Investor Scrutiny - sahmcapital.com",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOc3lVX2VGVERPbHU3VkFLMlo1T3JEV2hKdUY2bjRzOXJrNEpZN3FxVUcxVWFGbGEtVE9faHMzOTlFQ19DYVdHVlg5akhGeGdrcTJIczRtWUlvREg2ZGQ1eUw3RTA4ZUpxMFBUcmRLRlBBeTc4ZDc1bG9EM0dldDl0dmtpbTlza29YaTJfaFBIUnNxa29xRHNIcVJ4QjlGT0ozSVdEOTNIcWwxV1pDLTNqNkFPZlVoVm83czJURW43TGYtRWp6LTlRc05kbV81bmRSVFBzZkhHTWJVZw?oc=5",
-      "outlet": "Sahm",
+      "outlet": "sahmcapital.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - canvasrebel.com",
+      "title": "Meet Erin Thomas - CanvasRebel Magazine",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "canvasrebel.com",
+      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Tommie Innovators Spark Big Ideas at the Fowler Business Concept Challenge - Newsroom | University of St. Thomas",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ3RaYjJUZ2lPT1o0MUxLSC1YQmh5UUFwcnNpa1JxbFdUUWd6NG1oVWIzSUJBUHZiLTFBeHlmc3N5LUdWb2RqQWF0Y01pUVo4WkpQLVNsVFJIVnZ6T2o3ekdzcHdHQWc2YXRFTUhNYWpHNHNPaThwNW1xWHZSR2NxYUxKbGRVN1hJUUxDSUpEM3ZkbFB2Q2hDb1dncmt2czE1Vzhr?oc=5",
-      "outlet": "Newsroom | University of St. Thomas",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Lucas center receives $30,000 Terry Thomas Foundation grant - The Brunswick News",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOd3JOQkZyQjh2TkFJdno4WXBNbmt6MXpqR3BucGVvcGpKYUZubWJQd1h0Qkl0VV9udEN0RkZONVMzTmkwVXRYTV85QlczT1huaGtTWTdzSEdIODFWVDNxMHREX3FGVFBTWHBIN0tIU0xDVzBvMHRrS0dXYnA3ODVGUG1DbFEyVlV2VnRGczNfd3QtLTN0NjBic2xhbzVPMDdFNlYxbFpBU0xxNExONWFUdF9aN2U3WUFzaW9ZWG1QaTI3THF3YVJPb09uNmRURzVVREQteUxBOGdSbkRaSzdWZ3FGN3lJNWhI?oc=5",
       "outlet": "The Brunswick News",
@@ -236,9 +225,20 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas J. Timmons Obituary November 2, 2024 - smithfuneralhomesc.com",
+      "title": "Thomas J. Timmons Obituary November 2, 2024 - Smith Funeral Home | Florence, SC",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81TWtMdUpDNVA0dEV1dnEtNHRpY0JrUHJmbFZ5WTVpY2ljT0V4SG5Eckt5WHA3TUsxVHllSy1aeTVHUmNTZXktTXFlWlNWUWFKbFZlSC1qTmNzX0hCcVZ0dXNBcmI5X1F1RnNpNg?oc=5",
-      "outlet": "smithfuneralhomesc.com",
+      "outlet": "Smith Funeral Home | Florence, SC",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas William McBride Obituary December 26, 2024 - Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tSEI1ZDFWS2hFWE1SWE11eWpCODFPUkViOUMwVENEVE9oOXlGdjhVcXFyaW53QkxuNXJ3Njl6dDh2cHFnX0V1ZENMZTB0djRHbVZBOWNsLUt2OTZQSm1n?oc=5",
+      "outlet": "Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
