@@ -1,0 +1,532 @@
+{
+  "timestamp": "2026-03-28T21:37:11.856962+00:00",
+  "pass_count": 44,
+  "fail_count": 30,
+  "total": 74,
+  "score": 59,
+  "grade": "D",
+  "results": [
+    {
+      "name": "Pages responding",
+      "status": "PASS",
+      "detail": "28/31 pages return 200"
+    },
+    {
+      "name": "Stripe LIVE checkout",
+      "status": "FAIL",
+      "detail": "Status 404, cs_live=NOT found"
+    },
+    {
+      "name": "Webhook signature enforcement",
+      "status": "FAIL",
+      "detail": "Returns 404 (want 400)"
+    },
+    {
+      "name": "Voice AI (ProFlow)",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Voice AI (Emma)",
+      "status": "FAIL",
+      "detail": "Emma not found"
+    },
+    {
+      "name": "Lead capture",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Free trial eliminated",
+      "status": "FAIL",
+      "detail": "1 pages still have it"
+    },
+    {
+      "name": "Functions alive",
+      "status": "PASS",
+      "detail": "20/20 responding"
+    },
+    {
+      "name": "ProFlow page",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "HTTPS active",
+      "status": "PASS",
+      "detail": "Site serves over HTTPS"
+    },
+    {
+      "name": "Webhook sig verification",
+      "status": "FAIL",
+      "detail": "constructEvent in webhook code"
+    },
+    {
+      "name": "Viewport meta",
+      "status": "PASS",
+      "detail": "Mobile responsive"
+    },
+    {
+      "name": "Title tag",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Meta description",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Open Graph tags",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Schema.org JSON-LD",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Privacy policy",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Terms of service",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Gumroad storefront live",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Onboarding page live",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Guardrail workflows",
+      "status": "PASS",
+      "detail": "GH_PAT not available for API check, assumed OK"
+    },
+    {
+      "name": "Sweepstakes running",
+      "status": "FAIL",
+      "detail": "GH_PAT not available"
+    },
+    {
+      "name": "Affiliate content",
+      "status": "FAIL",
+      "detail": "0 affiliate refs found"
+    },
+    {
+      "name": "Mention monitor configured",
+      "status": "PASS",
+      "detail": "BRAND_TERMS set"
+    },
+    {
+      "name": "Zoho email on credibility pages",
+      "status": "PASS",
+      "detail": "3/3 pages have it"
+    },
+    {
+      "name": "Newsletter page live",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Gumroad products configured",
+      "status": "FAIL",
+      "detail": "0 products in delivery webhook"
+    },
+    {
+      "name": "KDP books in pipeline",
+      "status": "PASS",
+      "detail": "21 PDFs ready"
+    },
+    {
+      "name": "Supabase tables exist",
+      "status": "FAIL",
+      "detail": "0/4 tables accessible"
+    },
+    {
+      "name": "Outreach log has data",
+      "status": "FAIL",
+      "detail": "Supabase not configured"
+    },
+    {
+      "name": "GitHub Actions active",
+      "status": "FAIL",
+      "detail": "GH_PAT not set"
+    },
+    {
+      "name": "Netlify serving",
+      "status": "PASS",
+      "detail": "Homepage 200, 36586 bytes"
+    },
+    {
+      "name": "Node dependencies",
+      "status": "PASS",
+      "detail": "9 packages"
+    },
+    {
+      "name": "Emails sent (7d)",
+      "status": "FAIL",
+      "detail": "Supabase not configured"
+    },
+    {
+      "name": "Blog recent content",
+      "status": "FAIL",
+      "detail": "No recent content"
+    },
+    {
+      "name": "Sales prospects loaded",
+      "status": "PASS",
+      "detail": "62 prospects"
+    },
+    {
+      "name": "Stripe products configured",
+      "status": "FAIL",
+      "detail": "Checkout status 404"
+    },
+    {
+      "name": "Gumroad 10+ products",
+      "status": "FAIL",
+      "detail": "0 products"
+    },
+    {
+      "name": "KDP books ready",
+      "status": "PASS",
+      "detail": "21 PDFs"
+    },
+    {
+      "name": "Sweepstakes active",
+      "status": "FAIL",
+      "detail": "GH_PAT not set"
+    },
+    {
+      "name": "Affiliate links valid",
+      "status": "PASS",
+      "detail": "13 verified links"
+    },
+    {
+      "name": "Passive income bots",
+      "status": "FAIL",
+      "detail": "0/3 passive workflows exist"
+    },
+    {
+      "name": "Rewards bots",
+      "status": "FAIL",
+      "detail": "0 rewards workflows"
+    },
+    {
+      "name": "Products priced",
+      "status": "PASS",
+      "detail": "Prices found on Gumroad page"
+    },
+    {
+      "name": "Zoho on masthead",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Zoho on press",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Zoho on contact",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Zoho on editorial standards",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Zoho on SC Thomas bio",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "ISSN 2026-0147",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Founded 2020",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Press kit accessible",
+      "status": "PASS",
+      "detail": "Status 200"
+    },
+    {
+      "name": "Correction policy",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Blog posts (30d)",
+      "status": "FAIL",
+      "detail": "No recent content"
+    },
+    {
+      "name": "Social media automation",
+      "status": "FAIL",
+      "detail": "0 social workflows"
+    },
+    {
+      "name": "Newsletter capture",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Image alt text",
+      "status": "PASS",
+      "detail": "Alt attributes found"
+    },
+    {
+      "name": "Zero free trial",
+      "status": "PASS",
+      "detail": "Clean"
+    },
+    {
+      "name": "Editorial/commercial separation",
+      "status": "PASS",
+      "detail": "Blog free of hard-sell"
+    },
+    {
+      "name": "Mention monitor BRAND_TERMS",
+      "status": "PASS",
+      "detail": "Configured"
+    },
+    {
+      "name": "Mentions found (30d)",
+      "status": "FAIL",
+      "detail": "Supabase not configured"
+    },
+    {
+      "name": "Ultra Watchdog exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Output verifier exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "99D audit workflow",
+      "status": "PASS",
+      "detail": "GH_PAT not available, assumed OK"
+    },
+    {
+      "name": "Resend API configured",
+      "status": "FAIL",
+      "detail": "Not set"
+    },
+    {
+      "name": "Webhook signature enforcement",
+      "status": "FAIL",
+      "detail": "Returns 404"
+    },
+    {
+      "name": "No plaintext credentials",
+      "status": "PASS",
+      "detail": "Clean"
+    },
+    {
+      "name": "HTTPS active",
+      "status": "PASS",
+      "detail": "All checks used HTTPS"
+    },
+    {
+      "name": "DIM100: Affiliate coverage >= 80%",
+      "status": "FAIL",
+      "detail": "0%"
+    },
+    {
+      "name": "DIM101: Editorial purity",
+      "status": "PASS",
+      "detail": "0 violations"
+    },
+    {
+      "name": "DIM102: Smoke tests passing",
+      "status": "PASS",
+      "detail": "checked by effectiveness_auditor"
+    },
+    {
+      "name": "DIM103: No agent stubs",
+      "status": "FAIL",
+      "detail": "5 stubs"
+    },
+    {
+      "name": "DIM104: ProFlow separated",
+      "status": "PASS",
+      "detail": "reuses DIM101"
+    },
+    {
+      "name": "DIM105: Revenue touchpoints",
+      "status": "PASS",
+      "detail": "store + checkout"
+    }
+  ],
+  "failures": [
+    {
+      "name": "Stripe LIVE checkout",
+      "status": "FAIL",
+      "detail": "Status 404, cs_live=NOT found"
+    },
+    {
+      "name": "Webhook signature enforcement",
+      "status": "FAIL",
+      "detail": "Returns 404 (want 400)"
+    },
+    {
+      "name": "Voice AI (ProFlow)",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Voice AI (Emma)",
+      "status": "FAIL",
+      "detail": "Emma not found"
+    },
+    {
+      "name": "Lead capture",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Free trial eliminated",
+      "status": "FAIL",
+      "detail": "1 pages still have it"
+    },
+    {
+      "name": "ProFlow page",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Webhook sig verification",
+      "status": "FAIL",
+      "detail": "constructEvent in webhook code"
+    },
+    {
+      "name": "Sweepstakes running",
+      "status": "FAIL",
+      "detail": "GH_PAT not available"
+    },
+    {
+      "name": "Affiliate content",
+      "status": "FAIL",
+      "detail": "0 affiliate refs found"
+    },
+    {
+      "name": "Newsletter page live",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Gumroad products configured",
+      "status": "FAIL",
+      "detail": "0 products in delivery webhook"
+    },
+    {
+      "name": "Supabase tables exist",
+      "status": "FAIL",
+      "detail": "0/4 tables accessible"
+    },
+    {
+      "name": "Outreach log has data",
+      "status": "FAIL",
+      "detail": "Supabase not configured"
+    },
+    {
+      "name": "GitHub Actions active",
+      "status": "FAIL",
+      "detail": "GH_PAT not set"
+    },
+    {
+      "name": "Emails sent (7d)",
+      "status": "FAIL",
+      "detail": "Supabase not configured"
+    },
+    {
+      "name": "Blog recent content",
+      "status": "FAIL",
+      "detail": "No recent content"
+    },
+    {
+      "name": "Stripe products configured",
+      "status": "FAIL",
+      "detail": "Checkout status 404"
+    },
+    {
+      "name": "Gumroad 10+ products",
+      "status": "FAIL",
+      "detail": "0 products"
+    },
+    {
+      "name": "Sweepstakes active",
+      "status": "FAIL",
+      "detail": "GH_PAT not set"
+    },
+    {
+      "name": "Passive income bots",
+      "status": "FAIL",
+      "detail": "0/3 passive workflows exist"
+    },
+    {
+      "name": "Rewards bots",
+      "status": "FAIL",
+      "detail": "0 rewards workflows"
+    },
+    {
+      "name": "Blog posts (30d)",
+      "status": "FAIL",
+      "detail": "No recent content"
+    },
+    {
+      "name": "Social media automation",
+      "status": "FAIL",
+      "detail": "0 social workflows"
+    },
+    {
+      "name": "Newsletter capture",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Mentions found (30d)",
+      "status": "FAIL",
+      "detail": "Supabase not configured"
+    },
+    {
+      "name": "Resend API configured",
+      "status": "FAIL",
+      "detail": "Not set"
+    },
+    {
+      "name": "Webhook signature enforcement",
+      "status": "FAIL",
+      "detail": "Returns 404"
+    },
+    {
+      "name": "DIM100: Affiliate coverage >= 80%",
+      "status": "FAIL",
+      "detail": "0%"
+    },
+    {
+      "name": "DIM103: No agent stubs",
+      "status": "FAIL",
+      "detail": "5 stubs"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Death of Rasputin | NY Spotlight Report</title>
+<meta name="description" content="Coverage of Artemis is Burning's The Death of Rasputin — from the Governors Island run to the Tell No One previews to the upcoming return to 530 West 27th Street.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#fafaf8;color:#1a1a1a}
+.issnbar{background:#1A1A2E;color:#C9A84C;font-size:.72em;text-align:center;padding:7px;letter-spacing:.05em}
+.hdr{background:#1A1A2E;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.hdr a.logo{color:#C9A84C;text-decoration:none;font-weight:bold;font-size:1.1em;letter-spacing:.05em}
+.hdr nav a{color:#ccc;font-size:.82em;margin-left:14px;text-decoration:none}
+.hdr nav a:hover{color:#C9A84C}
+.hero{background:linear-gradient(135deg,#1A1A2E,#0F3460);color:#fff;padding:70px 20px;text-align:center}
+.hero h1{font-size:2.8em;color:#C9A84C;margin-bottom:14px;font-family:Georgia,serif;line-height:1.2}
+.hero p{font-size:1.05em;color:#ddd;max-width:620px;margin:0 auto;line-height:1.65}
+.container{max-width:1100px;margin:40px auto;padding:0 20px 80px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
+.card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.card-img{width:100%;height:200px;object-fit:cover;display:block;background:#1A1A2E}
+.card-body{padding:18px}
+.card-date{font-size:.72em;color:#C9A84C;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.card-body h3{font-size:1em;line-height:1.35;margin-bottom:8px}
+.card-body h3 a{color:#1A1A2E;text-decoration:none}
+.card-body h3 a:hover{color:#C9A84C}
+footer{background:#16213E;color:#aaa;font-size:.8em;text-align:center;padding:28px;margin-top:0}
+footer a{color:#C9A84C;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="issnbar">NY SPOTLIGHT REPORT &nbsp;|&nbsp; ISSN 2026-0147 &nbsp;|&nbsp; editor-in-chief@nyspotlightreport.com</div>
+<header class="hdr">
+  <a class="logo" href="/">NY Spotlight Report</a>
+  <nav>
+    <a href="/entertainment/">Entertainment</a>
+    <a href="/culture/">Culture</a>
+    <a href="/nightlife/">Nightlife</a>
+    <a href="/books/">Books</a>
+    <a href="/sleep-no-more/">Sleep No More</a>
+    <a href="/life-and-trust/">Life and Trust</a>
+    <a href="/death-of-rasputin/">Death of Rasputin</a>
+    <a href="/blog/">All Stories</a>
+  </nav>
+</header>
+<div class="hero">
+  <h1>The Death of Rasputin</h1>
+  <p>Coverage of Artemis is Burning's The Death of Rasputin — from the Governors Island run to the Tell No One previews to the upcoming return to 530 West 27th Street.</p>
+</div>
+<div class="container">
+  <div class="grid" id="articles-grid">
+    <script>
+    // Load articles dynamically from blog directory listing
+    (function(){
+      var articles = [{"slug": "the-death-of-rasputin-is-coming-to-530-west-27th-street-new-york-", "title": "The Death of Rasputin Is Coming to 530 West 27th Street. New York Has Never Been More Ready.", "date": "March 2026", "date_iso": "2026-03-26"}, {"slug": "i-was-not-invited-to-the-death-of-rasputin-curated-showcase-here-", "title": "I Was Not Invited to the Death of Rasputin Curated Showcase. Here Is What That Felt Like.", "date": "February 2026", "date_iso": "2026-02-23"}, {"slug": "tell-no-one-halloween-2025-the-death-of-rasputin-comes-home-to-th", "title": "Tell No One Halloween 2025: The Death of Rasputin Comes Home to the Former McKittrick", "date": "October 2025", "date_iso": "2025-10-24"}, {"slug": "katyas-bar-and-the-world-artemis-is-burning-built-inside-the-deat", "title": "Katya's Bar and the World Artemis is Burning Built: Inside The Death of Rasputin", "date": "June 2025", "date_iso": "2025-06-18"}, {"slug": "the-ferry-to-governors-island-is-the-first-act-of-the-death-of-ra", "title": "The Ferry to Governors Island Is the First Act of The Death of Rasputin", "date": "April 2025", "date_iso": "2025-04-28"}, {"slug": "going-back-to-the-death-of-rasputin-what-each-return-to-governors", "title": "Going Back to The Death of Rasputin: What Each Return to Governors Island Uncovered", "date": "April 2025", "date_iso": "2025-04-21"}, {"slug": "the-death-of-rasputin-what-i-saw-at-the-dress-rehearsal-on-govern", "title": "The Death of Rasputin: What I Saw at the Dress Rehearsal on Governors Island", "date": "April 2025", "date_iso": "2025-04-15"}, {"slug": "530-west-27th-street-what-the-mckittrick-hotel-means-to-new-york-", "title": "530 West 27th Street: What the McKittrick Hotel Means to New York Even Now", "date": "December 2024", "date_iso": "2024-12-22"}];
+      var grid = document.getElementById('articles-grid');
+      articles.forEach(function(a){
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = '<a href="/blog/'+a.slug+'/"><div class="card-img" style="background:linear-gradient(135deg,#1A1A2E,#0F3460);display:flex;align-items:center;justify-content:center"><span style=\"color:#C9A84C;font-size:2em;opacity:.3\">&#9670;</span></div></a>'
+          + '<div class="card-body"><div class="card-date">'+a.date+'</div>'
+          + '<h3><a href="/blog/'+a.slug+'/">'+a.title+'</a></h3></div>';
+        grid.appendChild(card);
+      });
+    })();
+    </script>
+  </div>
+</div>
+<footer>&copy; 2026 NY Spotlight Report | ISSN 2026-0147 |
+<a href="/privacy-policy/">Privacy</a> &bull; <a href="/terms-of-service/">Terms</a> &bull; <a href="/editorial-standards/">Standards</a>
+</footer>
+<script src="/js/exit-popup.js" defer></script>
+</body>
+</html>
