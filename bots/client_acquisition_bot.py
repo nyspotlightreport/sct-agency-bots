@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 Client Acquisition Bot — NYSR Agency
@@ -14,8 +15,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 log = logging.getLogger("ClientAcquisitionBot")
 
 APOLLO_KEY = os.environ.get("APOLLO_API_KEY","")
-GMAIL_USER = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_USER = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
 HUBSPOT_KEY = os.environ.get("HUBSPOT_API_KEY","")
 
 TARGET_PERSONAS = [
@@ -118,9 +119,9 @@ def add_to_hubspot(lead):
 
 def send_sequence_email(to_email, first_name, company, industry, day):
     seq = EMAIL_SEQUENCES.get(f"day_{day}")
-    if not seq or not GMAIL_PASS: return False
+# AG-HARD-DISABLED-GMAIL-ZERO:     if not seq or not GMAIL_PASS: return False
     msg = MIMEMultipart()
-    msg["From"] = f"S.C. Thomas <{GMAIL_USER}>"
+# AG-HARD-DISABLED-GMAIL-ZERO:     msg["From"] = f"S.C. Thomas <{GMAIL_USER}>"
     msg["To"]   = to_email
     msg["Subject"] = seq["subject"]
     body = seq["body"].format(
@@ -130,8 +131,8 @@ def send_sequence_email(to_email, first_name, company, industry, day):
     )
     msg.attach(MIMEText(body, "plain"))
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login(GMAIL_USER, GMAIL_PASS)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as smtp:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             smtp.login(GMAIL_USER, GMAIL_PASS)
             smtp.send_message(msg)
         log.info(f"  ✅ Day-{day} email → {to_email}")
         return True

@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 Fulfillment Monitor Agent — Monitors and repairs the entire customer fulfillment pipeline.
@@ -9,12 +10,12 @@ Checks:
 4. voice-ai returns TwiML with ProFlow
 5. Onboarding page is live
 6. Gumroad delivery webhook is active
-7. Email SMTP connectivity (test Gmail SMTP login)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: 7. Email SMTP connectivity (test Gmail SMTP login)
 
 On failure: Pushover alert with specific failure details.
 Logs results to Supabase site_health_log.
 """
-import os, sys, json, logging, ssl, smtplib
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: import os, sys, json, logging, ssl, smtplib  # GMAIL_ZERO VIOLATION - DISABLED
 import urllib.request, urllib.parse, urllib.error
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [FULFILLMENT] %(message)s")
@@ -25,8 +26,9 @@ PUSHOVER_API = os.environ.get("PUSHOVER_API_KEY", "")
 PUSHOVER_USER = os.environ.get("PUSHOVER_USER_KEY", "")
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "") or os.environ.get("SUPABASE_ANON_KEY", "")
-GMAIL_USER = os.environ.get("GMAIL_USER", "nyspotlightreport@gmail.com")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: GMAIL_USER = os.environ.get("GMAIL_USER", "nyspotlightreport@gmail.com")  # GMAIL_ZERO VIOLATION - DISABLED
+# AG-REPLACEMENT: Use RESEND_API_KEY env var for all outbound email
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")  # GMAIL_ZERO VIOLATION - DISABLED
 
 
 def pushover(title, msg, priority=0):
@@ -157,8 +159,8 @@ def check_gumroad_webhook():
         return [f"gumroad-webhook unreachable: {e}"]
 
 
-def check_smtp():
-    """Test email relay endpoint (Netlify function proxies Gmail SMTP)."""
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: def check_smtp():  # GMAIL_ZERO VIOLATION - DISABLED
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: """Test email relay endpoint (Netlify function proxies Gmail SMTP)."""
     url = f"{SITE}/.netlify/functions/send-email"
     try:
         data = json.dumps({"to": "healthcheck@test.invalid", "subject": "healthcheck"}).encode()

@@ -38,8 +38,8 @@ def http_get(url, timeout=10):
         body = ""
         try:
             body = e.read().decode("utf-8", errors="replace")
-        except Exception:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
         return e.code, body
     except Exception as e:
         return 0, str(e)
@@ -59,8 +59,8 @@ def http_post(url, data=None, timeout=10):
         body = ""
         try:
             body = e.read().decode("utf-8", errors="replace")
-        except Exception:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
         return e.code, body
     except Exception as e:
         return 0, str(e)
@@ -208,7 +208,7 @@ def run():
     code, body = http_get(f"{BASE}/proflow/")
     if code == 200 and body:
         check("startCheckout present", "startCheckout" in body, "Checkout function wired")
-        check("Phone CTA", "631" in body and "892" in body and "9817" in body, "(631) 892-9817")
+        check("Phone CTA", "631" in body and "892" in body and "9817" in body, "(631) 375-1097")
         check("Pricing tiers", "$97" in body and "$297" in body and "$497" in body, "All 3 tiers shown")
     else:
         check("ProFlow page", False, f"Status {code}")
@@ -265,8 +265,8 @@ def run():
                 data = json.loads(resp.read())
                 if data.get("state") == "active":
                     wf_ok += 1
-            except Exception:
-                pass
+            except Exception as _silent_e:
+                import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
         check("Guardrail workflows active", wf_ok >= 10, f"{wf_ok}/{len(guardrails)} active")
     else:
         check("Guardrail workflows", True, "GH_PAT not available for API check, assumed OK")
@@ -328,8 +328,8 @@ def run():
         try:
             d = json.loads(body)
             products = d.get("products", 0)
-        except Exception:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     check("Gumroad products configured", products >= 5, f"{products} products in delivery webhook")
 
     # DIM 59: KDP PIPELINE

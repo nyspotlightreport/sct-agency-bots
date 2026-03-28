@@ -46,8 +46,8 @@ log = logging.getLogger()
 ANTHROPIC   = os.environ.get("ANTHROPIC_API_KEY","")
 APOLLO_KEY  = os.environ.get("APOLLO_API_KEY","")
 GH_TOKEN    = os.environ.get("GH_PAT","") or os.environ.get("GITHUB_TOKEN","")
-GMAIL_USER  = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER  = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS","")
 GH_H        = {"Authorization": f"token {GH_TOKEN}", "Accept": "application/vnd.github+json"}
 REPO        = "nyspotlightreport/sct-agency-bots"
 

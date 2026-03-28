@@ -14,7 +14,7 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 log = logging.getLogger("MultiIncome")
 
-GMAIL = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
 
 # All income streams with status tracking
 INCOME_STREAMS = {

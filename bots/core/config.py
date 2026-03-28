@@ -9,8 +9,8 @@ AGENCY_CORE_VERSION = "3.0.0"
 
 class Config:
     ANTHROPIC_API_KEY  = os.getenv("ANTHROPIC_API_KEY", "")
-    GMAIL_USER         = os.getenv("GMAIL_USER", "")
-    GMAIL_APP_PASS     = os.getenv("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     GMAIL_USER         = os.getenv("GMAIL_USER", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     GMAIL_APP_PASS     = os.getenv("GMAIL_APP_PASS", "")
     CHAIRMAN_EMAIL     = os.getenv("CHAIRMAN_EMAIL", "")
     AHREFS_API_KEY     = os.getenv("AHREFS_API_KEY", "")
     HUBSPOT_API_KEY    = os.getenv("HUBSPOT_API_KEY", "")

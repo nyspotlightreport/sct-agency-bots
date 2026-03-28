@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 """Alert system for sending notifications to the Chairman."""
 
 import smtplib
@@ -26,17 +27,17 @@ class AlertSystem:
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = f"[{severity}] {subject}"
-        msg["From"] = Config.GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         msg["From"] = Config.GMAIL_USER
         msg["To"] = Config.CHAIRMAN_EMAIL
         msg.attach(MIMEText(html, "html"))
 
-        if not Config.GMAIL_APP_PASS or not Config.GMAIL_USER:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         if not Config.GMAIL_APP_PASS or not Config.GMAIL_USER:
             return False
 
         try:
-            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-                s.login(Config.GMAIL_USER, Config.GMAIL_APP_PASS)
-                s.sendmail(Config.GMAIL_USER, Config.CHAIRMAN_EMAIL, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                 s.login(Config.GMAIL_USER, Config.GMAIL_APP_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                 s.sendmail(Config.GMAIL_USER, Config.CHAIRMAN_EMAIL, msg.as_string())
             return True
         except Exception as e:
             import logging

@@ -10,7 +10,7 @@ from playwright.sync_api import sync_playwright
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
 log = logging.getLogger("BingBot")
 
-MS_EMAIL = os.environ.get("MS_REWARDS_EMAIL", os.environ.get("GMAIL_USER",""))
+# AG-NUCLEAR-GMAIL-ZERO-20260328: MS_EMAIL = os.environ.get("MS_REWARDS_EMAIL", os.environ.get("GMAIL_USER",""))
 MS_PASS  = os.environ.get("MS_REWARDS_PASS", "")
 
 SEARCH_TERMS = [

@@ -1,0 +1,6 @@
+# NY Spotlight Report Netlify Redirects
+# API functions
+/api/*  /.netlify/functions/:splat  200
+
+# Force homepage to serve index.html
+/  /index.html  200!

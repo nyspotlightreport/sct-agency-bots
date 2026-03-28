@@ -3,8 +3,8 @@ import os, json, logging, imaplib, email as emaillib, urllib.request
 log = logging.getLogger("monitor")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
-GMAIL_USER  = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER  = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS","")
 SUPA_URL    = os.environ.get("SUPABASE_URL","")
 SUPA_KEY    = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
 PUSH_API    = os.environ.get("PUSHOVER_API_KEY","")
@@ -27,11 +27,11 @@ def pushover(title, msg, priority=0):
 
         pass
 def run():
-    if not GMAIL_PASS: log.warning("No GMAIL_APP_PASS"); return
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_PASS: log.warning("No GMAIL_APP_PASS"); return
     wins=[];approvals=[]
     try:
         imap = imaplib.IMAP4_SSL("imap.gmail.com")
-        imap.login(GMAIL_USER, GMAIL_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         imap.login(GMAIL_USER, GMAIL_PASS)
         imap.select("INBOX")
         for alias,label in [(AFF_EMAIL,"AFF"),(SWEEP_EMAIL,"SWEEP")]:
             _, msgs = imap.search(None, f'TO "{alias}" SINCE "15-Mar-2026"')

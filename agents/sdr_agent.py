@@ -2,6 +2,21 @@
 # SDR Agent - Sales Development Rep. Top of funnel: prospecting, qualifying, booking.
 import os, sys, json, logging
 from datetime import datetime
+
+# === MEMORY ENGINE (auto-wired) ===
+import sys as _sys
+_sys.path.insert(0, '/opt/nysr')
+try:
+    from agent_memory_engine import read_memory as _read_memory, write_memory as _write_memory
+    _agent_name = __file__.split('/')[-1].replace('.py','')
+    _prior_memory = _read_memory(_agent_name)
+except:
+    _read_memory = lambda x: {}
+    _write_memory = lambda x, y: None
+    _prior_memory = {}
+# === END MEMORY ENGINE ===
+
+
 sys.path.insert(0,".")
 try:
     from agents.claude_core import claude, claude_json

@@ -44,8 +44,8 @@ AHREFS_KEY   = os.environ.get("AHREFS_API_KEY","")
 PUSHOVER_KEY = os.environ.get("PUSHOVER_API_KEY","")
 PUSHOVER_USR = os.environ.get("PUSHOVER_USER_KEY","")
 GH_TOKEN     = os.environ.get("GH_PAT","") or os.environ.get("GITHUB_TOKEN","")
-GMAIL_USER   = os.environ.get("GMAIL_USER","")
-GMAIL_PASS   = os.environ.get("GMAIL_APP_PASS","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER   = os.environ.get("GMAIL_USER","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS   = os.environ.get("GMAIL_APP_PASS","")
 
 # ── MONITORING TARGETS ────────────────────────────────────────────
 WATCH_LIST = {

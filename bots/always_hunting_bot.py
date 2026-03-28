@@ -1,15 +1,17 @@
+# AG-GMAIL-ZERO ENFORCED: Gmail credentials removed. Use Resend API.
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 bots/always_hunting_bot.py — PRODUCTION FINAL
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SMTP architecture (zero new credentials needed):
-  SMTP server:  smtp.gmail.com:465 
-  Auth:         nyspotlightreport@gmail.com + GMAIL_APP_PASS (already live)
-  From header:  "Sean Thomas | NY Spotlight Report <nyspotlightreportny@gmail.com>"
-  Reply-To:     nyspotlightreportny@gmail.com
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: SMTP server:  [GMAIL-SMTP-REDACTED]:465
+# AG-NUCLEAR-GMAIL-ZERO-20260328:   Auth:         [GMAIL-REDACTED-USE-RESEND] + # GMAIL_APP_PASS_DISABLED (already live)
+  From header:  "Sean Thomas | NY Spotlight Report <[GMAIL-REDACTED-USE-RESEND]>"
+  Reply-To:     [GMAIL-REDACTED-USE-RESEND]
   
 Recipient sees: From → NY Spotlight Report
-Replies go to:  nyspotlightreportny@gmail.com (business inbox)
+Replies go to:  [GMAIL-REDACTED-USE-RESEND] (business inbox)
 
 Runs every 30 min. Finds 5 fresh ICP prospects via Apollo.
 Claude personalizes each email. Sends immediately. Logs to Supabase.
@@ -25,11 +27,11 @@ log = logging.getLogger("hunting")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
 # ── SMTP CONFIG — uses existing working credentials ───────
-SMTP_USER    = os.environ.get("SMTP_USER",     "nyspotlightreport@gmail.com")
-SMTP_PASS    = os.environ.get("GMAIL_APP_PASS", os.environ.get("BUSINESS_EMAIL_PASS",""))
-FROM_NAME    = os.environ.get("SMTP_FROM_NAME", "Sean Thomas | NY Spotlight Report")
-FROM_EMAIL   = os.environ.get("BUSINESS_EMAIL","nyspotlightreportny@gmail.com")  # display name
-REPLY_TO     = os.environ.get("REPLY_TO_EMAIL", "nyspotlightreportny@gmail.com")
+# SMTP_DISABLED_USER    = os.environ.get("# SMTP_DISABLED_USER",     "[GMAIL-REDACTED-USE-RESEND]")
+# SMTP_DISABLED_PASS    = os.environ.get("# GMAIL_APP_PASS_DISABLED", os.environ.get("BUSINESS_EMAIL_PASS",""))
+FROM_NAME    = os.environ.get("# SMTP_DISABLED_FROM_NAME", "Sean Thomas | NY Spotlight Report")
+FROM_EMAIL   = os.environ.get("BUSINESS_EMAIL","[GMAIL-REDACTED-USE-RESEND]")  # display name
+REPLY_TO     = os.environ.get("REPLY_TO_EMAIL", "[GMAIL-REDACTED-USE-RESEND]")
 
 # ── OTHER CREDENTIALS ─────────────────────────────────────
 APOLLO_KEY   = os.environ.get("APOLLO_API_KEY","")
@@ -104,7 +106,7 @@ def find_prospects(icp):
 def personalize(p):
     if not ANTHROPIC: return None
     link = LINKS.get(p.get("offer","starter"), LINKS["starter"])
-    prompt = f"""Cold email from Sean Thomas, founder of NY Spotlight Report (nyspotlightreportny@gmail.com).
+    prompt = f"""Cold email from Sean Thomas, founder of NY Spotlight Report ([GMAIL-REDACTED-USE-RESEND]).
 
 TO: {p.get('first_name','')} {p.get('last_name','')}, {p.get('title','')} at {p.get('company','')} ({p.get('employees',50)} employees)
 
@@ -138,13 +140,13 @@ NY Spotlight Report"""
 
 def send(to_email, subject, body):
     """
-    Send via nyspotlightreport@gmail.com SMTP (working credentials).
-    From header displays as nyspotlightreportny@gmail.com.
-    Reply-To set to nyspotlightreportny@gmail.com.
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: Send via [GMAIL-REDACTED-USE-RESEND] SMTP (working credentials).
+    From header displays as [GMAIL-REDACTED-USE-RESEND].
+    Reply-To set to [GMAIL-REDACTED-USE-RESEND].
     Recipient sees business email. Replies go to business inbox.
     """
-    if not SMTP_PASS:
-        log.error("GMAIL_APP_PASS not configured")
+    if not # SMTP_DISABLED_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         log.error("# GMAIL_APP_PASS_DISABLED not configured")
         return False
     try:
         msg = MIMEMultipart('alternative')
@@ -156,20 +158,20 @@ def send(to_email, subject, body):
         msg.attach(MIMEText(body, 'plain'))
         
         # Auth uses the working smtp account
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=15) as s:
-            s.login(SMTP_USER, SMTP_PASS)
-            s.sendmail(SMTP_USER, to_email, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.# SMTP_DISABLED_SSL('[GMAIL-SMTP-REDACTED]', 465, timeout=15) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.login(# SMTP_DISABLED_USER, # SMTP_DISABLED_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.sendmail(# SMTP_DISABLED_USER, to_email, msg.as_string())
         return True
     except Exception as e:
         log.error(f"SMTP: {e}"); return False
 
 def run():
     log.info(f"{'='*55}")
-    log.info(f"HUNTING BOT | SMTP: {SMTP_USER} | FROM: {FROM_EMAIL}")
+    log.info(f"HUNTING BOT | SMTP: {# SMTP_DISABLED_USER} | FROM: {FROM_EMAIL}")
     log.info(f"{'='*55}")
 
-    if not SMTP_PASS:
-        log.error("NO GMAIL_APP_PASS — emails cannot send. Check GitHub Secrets.")
+    if not # SMTP_DISABLED_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         log.error("NO # GMAIL_APP_PASS_DISABLED — emails cannot send. Check GitHub Secrets.")
         return {"error": "no_smtp_pass"}
 
     icp = random.choice(ICP)
@@ -233,6 +235,6 @@ def run():
             pass
     log.info(f"Done: sent={sent} skipped={skipped} failed={failed}")
     return {"sent":sent,"skipped":skipped,"failed":failed,
-            "smtp":SMTP_USER,"from":FROM_EMAIL}
+            "smtp":# SMTP_DISABLED_USER,"from":FROM_EMAIL}
 
 if __name__ == "__main__": run()

@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 Social Proof Engine — NYSR Agency
@@ -11,8 +12,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 log = logging.getLogger("SocialProofBot")
 
 STRIPE_KEY = os.environ.get("STRIPE_SECRET_KEY","")
-GMAIL_USER = os.environ.get("GMAIL_USER","")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER = os.environ.get("GMAIL_USER","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
 
 REVIEW_REQUEST_EMAIL = """Subject: Quick favor — 2 minutes to share your experience?
 
@@ -92,15 +93,15 @@ def request_reviews_from_active_clients():
         cust = cr.json()
         email = cust.get("email","")
         name  = cust.get("name","").split()[0] if cust.get("name") else "there"
-        if email and GMAIL_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         if email and GMAIL_PASS:
             msg = MIMEMultipart()
-            msg["From"] = f"S.C. Thomas <{GMAIL_USER}>"
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             msg["From"] = f"S.C. Thomas <{GMAIL_USER}>"
             msg["To"]   = email
             msg["Subject"] = "Quick favor — 2 minutes to share your experience?"
             msg.attach(MIMEText(REVIEW_REQUEST_EMAIL.format(name=name),"plain"))
             try:
-                with smtplib.SMTP_SSL("smtp.gmail.com",465) as smtp:
-                    smtp.login(GMAIL_USER,GMAIL_PASS)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]",465) as smtp:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                     smtp.login(GMAIL_USER,GMAIL_PASS)
                     smtp.send_message(msg)
                 log.info(f"✅ Review request → {email}")
             except Exception as e:

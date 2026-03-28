@@ -13,8 +13,8 @@ import urllib.request as urlreq
 log = logging.getLogger("email_blaster")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [EMAIL] %(message)s")
 
-GMAIL_USER = os.environ.get("GMAIL_USER", "")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER = os.environ.get("GMAIL_USER", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
 SUPA_URL = os.environ.get("SUPABASE_URL", "")
 SUPA_KEY = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
 PUSH_API = os.environ.get("PUSHOVER_API_KEY", "")
@@ -23,7 +23,7 @@ ANTHROPIC = os.environ.get("ANTHROPIC_API_KEY", "")
 
 PROFLOW_URL = "https://myproflow.org"
 SITE_URL = "https://nyspotlightreport.com"
-PHONE = "(631) 892-9817"
+PHONE = "(631) 375-1097"
 RESEND_KEY = os.environ.get("RESEND_API_KEY", "")
 RESEND_FROM = os.environ.get("RESEND_FROM", "NY Spotlight Report <outreach@mail.nyspotlightreport.com>")
 
@@ -172,8 +172,8 @@ def pushover(msg):
             "title": "Email Blaster", "message": msg
         }).encode()
         urlreq.urlopen(urlreq.Request("https://api.pushover.net/1/messages.json", data=data), timeout=10)
-    except:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
 import urllib.parse
 

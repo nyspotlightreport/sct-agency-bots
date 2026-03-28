@@ -50,8 +50,8 @@ def _push(title, msg, priority=0):
     }).encode()
     try:
         urllib.request.urlopen("https://api.pushover.net/1/messages.json", data, timeout=5)
-    except Exception:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
 
 def _site_check(path="/"):
@@ -200,8 +200,8 @@ def run():
                 f"{SUPABASE_URL}/rest/v1/agent_run_logs",
                 data=payload, method="POST", headers=headers)
             urllib.request.urlopen(req, timeout=10)
-        except Exception:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
     summary = f"Checks: {len(checks)} | Critical: {len(criticals)} | Warnings: {len(warnings)}"
     log.info(f"Dead-man's switch complete: {summary}")

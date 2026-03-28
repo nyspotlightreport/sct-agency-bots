@@ -36,8 +36,8 @@ jobs:
         run: python bots/agency_command_center.py --status
         env: &env
           ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:     ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS:     ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:     ${{ secrets.CHAIRMAN_EMAIL }}
           AHREFS_API_KEY:     ${{ secrets.AHREFS_API_KEY }}
           HUBSPOT_API_KEY:    ${{ secrets.HUBSPOT_API_KEY }}
@@ -66,8 +66,8 @@ jobs:
       - run: python bots/weekly_report_bot_v2.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_USER:        ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:        ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
           AHREFS_API_KEY:    ${{ secrets.AHREFS_API_KEY }}
           HUBSPOT_API_KEY:   ${{ secrets.HUBSPOT_API_KEY }}
@@ -98,8 +98,8 @@ jobs:
       - run: python bots/inbox_triage_bot.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_USER:        ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:        ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
 
   invoices:
@@ -117,8 +117,8 @@ jobs:
           restore-keys: invoice-state-
       - run: python bots/invoice_bot.py --remind
         env:
-          GMAIL_USER:    ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:    ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
           PAYPAL_ME_LINK: ${{ secrets.PAYPAL_ME_LINK }}
 """
 
@@ -146,8 +146,8 @@ jobs:
           restore-keys: uptime-state-
       - run: python bots/uptime_monitor_bot.py
         env:
-          GMAIL_USER:      ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:  ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:      ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS:  ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:  ${{ secrets.CHAIRMAN_EMAIL }}
           MONITORED_SITES: ${{ secrets.MONITORED_SITES }}
 """
@@ -176,8 +176,8 @@ jobs:
       - run: python bots/seo_rank_tracker_bot.py
         env:
           AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
-          GMAIL_USER:     ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:     ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL: ${{ secrets.CHAIRMAN_EMAIL }}
           TARGET_DOMAIN:  ${{ secrets.TARGET_DOMAIN }}
 """
@@ -207,8 +207,8 @@ jobs:
       - run: python bots/self_improvement_bot.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_USER:        ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:        ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
 """
 
@@ -272,8 +272,8 @@ jobs:
       - run: python bots/competitor_monitor_bot.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_USER:        ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:        ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
 """
 
@@ -283,8 +283,8 @@ REQUIRED SECRETS (GitHub → Settings → Secrets → Actions):
 
   Core:
   ANTHROPIC_API_KEY     Your Anthropic API key
-  GMAIL_USER            nyspotlightreport@gmail.com
-  GMAIL_APP_PASS        Gmail App Password (myaccount.google.com/apppasswords)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:   GMAIL_USER            nyspotlightreport@gmail.com
+# AG-NUCLEAR-GMAIL-ZERO-20260328:   GMAIL_APP_PASS        Gmail App Password (myaccount.google.com/apppasswords)
   CHAIRMAN_EMAIL        nyspotlightreport@gmail.com
 
   APIs:

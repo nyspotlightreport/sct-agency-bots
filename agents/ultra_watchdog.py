@@ -251,7 +251,7 @@ def check_workflow_health():
 
 def check_secrets():
     critical=["ANTHROPIC_API_KEY","STRIPE_SECRET_KEY","SUPABASE_URL","SUPABASE_KEY",
-        "PUSHOVER_API_KEY","PUSHOVER_USER_KEY","GH_PAT","GMAIL_APP_PASS"]
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         "PUSHOVER_API_KEY","PUSHOVER_USER_KEY","GH_PAT","GMAIL_APP_PASS"]
     missing=[s for s in critical if not os.environ.get(s,"")]
     if missing:return False,f"{len(missing)} missing: {', '.join(missing[:4])}","add to GitHub Secrets"
     return True,f"All {len(critical)} present",None

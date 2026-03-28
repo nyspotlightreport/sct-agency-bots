@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 Lead Generation as a Service — NYSR Agency
@@ -12,8 +13,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 log = logging.getLogger("LeadGenBot")
 
 APOLLO_KEY = os.environ.get("APOLLO_API_KEY","")
-GMAIL_USER = os.environ.get("GMAIL_USER","")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER = os.environ.get("GMAIL_USER","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
 BASE = "https://api.apollo.io/api/v1"
 
 SERVICE_TIERS = {
@@ -80,7 +81,7 @@ def deliver_leads_to_client(client_email, niche, count=250):
     log.info(f"Delivering {len(leads)} leads to {client_email} for niche: {niche}")
     # Email delivery
     msg = MIMEMultipart()
-    msg["From"] = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["From"] = GMAIL_USER
     msg["To"] = client_email
     msg["Subject"] = f"Your {date} Lead List — {count} Verified Contacts"
     msg.attach(MIMEText(f"""Hi,
@@ -97,10 +98,10 @@ Questions? Reply to this email.
     att = MIMEText(csv_data, "plain")
     att["Content-Disposition"] = f'attachment; filename="{niche}_{date}_leads.csv"'
     msg.attach(att)
-    if GMAIL_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if GMAIL_PASS:
         try:
-            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-                smtp.login(GMAIL_USER, GMAIL_PASS)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as smtp:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                 smtp.login(GMAIL_USER, GMAIL_PASS)
                 smtp.send_message(msg)
             log.info(f"✅ Leads delivered to {client_email}")
         except Exception as e:

@@ -33,8 +33,8 @@ jobs:
       - name: Run weekly report
         run: python bots/weekly_report_bot.py --now
         env:
-          GMAIL_USER:       ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:   ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:       ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS:   ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:   ${{ secrets.CHAIRMAN_EMAIL }}
           AHREFS_API_KEY:   ${{ secrets.AHREFS_API_KEY }}
           HUBSPOT_API_KEY:  ${{ secrets.HUBSPOT_API_KEY }}
@@ -71,8 +71,8 @@ jobs:
         run: python bots/competitor_monitor_bot.py
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_USER:        ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_USER:        ${{ secrets.GMAIL_USER }}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           GMAIL_APP_PASS:    ${{ secrets.GMAIL_APP_PASS }}
           CHAIRMAN_EMAIL:    ${{ secrets.CHAIRMAN_EMAIL }}
 """
 
@@ -176,8 +176,8 @@ Go to: GitHub Repo → Settings → Secrets and variables → Actions → New re
 
 Add these secrets:
   ANTHROPIC_API_KEY    = your Anthropic API key
-  GMAIL_USER           = nyspotlightreport@gmail.com
-  GMAIL_APP_PASS       = Gmail App Password (not regular password)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:   GMAIL_USER           = nyspotlightreport@gmail.com
+# AG-NUCLEAR-GMAIL-ZERO-20260328:   GMAIL_APP_PASS       = Gmail App Password (not regular password)
                          Get at: myaccount.google.com/apppasswords
   CHAIRMAN_EMAIL       = nyspotlightreport@gmail.com
   AHREFS_API_KEY       = Ahrefs API key (from ahrefs.com/api)

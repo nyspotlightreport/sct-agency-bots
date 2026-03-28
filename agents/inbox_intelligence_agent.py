@@ -14,8 +14,8 @@ import urllib.parse
 log = logging.getLogger("inbox_intel")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [INBOX] %(message)s")
 
-GMAIL_USER = os.environ.get("GMAIL_USER", "")
-GMAIL_APP_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER = os.environ.get("GMAIL_USER", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_APP_PASS = os.environ.get("GMAIL_APP_PASS", "")
 SUPA_URL = os.environ.get("SUPABASE_URL", "")
 SUPA_KEY = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
 PUSH_TOKEN = os.environ.get("PUSHOVER_API_KEY", "")
@@ -103,27 +103,27 @@ def get_body_preview(msg, max_chars=300):
             if part.get_content_type() == "text/plain":
                 try:
                     body = part.get_payload(decode=True).decode("utf-8", errors="replace")
-                except:
-                    pass
+                except Exception as _silent_e:
+                    import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
                 break
     else:
         try:
             body = msg.get_payload(decode=True).decode("utf-8", errors="replace")
-        except:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     return body[:max_chars].replace("\n", " ").strip()
 
 
 def check_inbox():
     """Connect to Gmail IMAP, read unseen emails, categorize, log, and alert"""
-    if not GMAIL_USER or not GMAIL_APP_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_USER or not GMAIL_APP_PASS:
         log.error("Gmail credentials not set")
         return
 
     log.info("Connecting to Gmail IMAP...")
     try:
         mail = imaplib.IMAP4_SSL("imap.gmail.com")
-        mail.login(GMAIL_USER, GMAIL_APP_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         mail.login(GMAIL_USER, GMAIL_APP_PASS)
         mail.select("INBOX")
     except Exception as e:
         log.error("IMAP connection failed: %s", e)

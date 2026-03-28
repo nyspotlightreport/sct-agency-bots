@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 agents/traffic_conversion_engine.py — CRO's Revenue Machine
@@ -43,8 +44,9 @@ import urllib.request as urlreq,urllib.parse
 
 ANTHROPIC=os.environ.get("ANTHROPIC_API_KEY","")
 GH_PAT=os.environ.get("GH_PAT","")
-GMAIL_USER=os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS=os.environ.get("GMAIL_APP_PASS","")
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: GMAIL_USER=os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")  # GMAIL_ZERO VIOLATION - DISABLED
+# AG-REPLACEMENT: Use RESEND_API_KEY env var for all outbound email
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: GMAIL_PASS=os.environ.get("GMAIL_APP_PASS","")  # GMAIL_ZERO VIOLATION - DISABLED
 PUSH_API=os.environ.get("PUSHOVER_API_KEY","")
 PUSH_USER=os.environ.get("PUSHOVER_USER_KEY","")
 
@@ -85,15 +87,15 @@ def push(t,m):
 
         pass
 def send_email(to,subject,html):
-    if not GMAIL_PASS:return False
-    import smtplib
+# AG-HARD-DISABLED:     if not GMAIL_PASS:return False
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953:     import smtplib  # GMAIL_ZERO VIOLATION - DISABLED
     from email.mime.text import MIMEText
     from email.mime.multipart import MIMEMultipart
     try:
         msg=MIMEMultipart("alternative")
-        msg["From"]=f"ProFlow <{GMAIL_USER}>";msg["To"]=to;msg["Subject"]=subject
+# AG-HARD-DISABLED:         msg["From"]=f"ProFlow <{GMAIL_USER}>";msg["To"]=to;msg["Subject"]=subject
         msg.attach(MIMEText(html,"html"))
-        with smtplib.SMTP("smtp.gmail.com",587) as s:s.starttls();s.login(GMAIL_USER,GMAIL_PASS);s.send_message(msg)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP("[GMAIL-SMTP-REDACTED]",587) as s:s.starttls();s.login(GMAIL_USER,GMAIL_PASS);s.send_message(msg)
         return True
     except:return False
 
@@ -134,7 +136,7 @@ RULES FOR CONVERSION CONTENT:
 CTAs to include naturally:
 - "See exactly what you'd get → nyspotlightreport.com/proflow/"
 - "Try it for 14 days — if we don't deliver, you don't pay → nyspotlightreport.com/activate/"
-- "Call our AI receptionist right now to see the tech in action: (631) 892-9817"
+- "Call our AI receptionist right now to see the tech in action: (631) 375-1097"
 
 Write 1,500 words. Full HTML page with nav, styled with Playfair Display + DM Sans fonts.
 Include the conversion engine snippet before </body>:
@@ -164,7 +166,7 @@ Generate:
 - 1 Facebook post (conversational, community-oriented)
 
 URL to include: nyspotlightreport.com/proflow/
-Phone to mention: (631) 892-9817 (for Voice AI demo)
+Phone to mention: (631) 375-1097 (for Voice AI demo)
 
 Return as JSON array with: platform, content, hashtags fields.""", 1200)
     return posts

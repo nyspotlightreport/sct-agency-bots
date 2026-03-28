@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 agents/customer_onboarding.py — NYSR Customer Onboarding Engine
@@ -15,7 +16,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [ONBOARDING] %(messa
 import urllib.request as urlreq, urllib.parse
 
 SMTP_USER = os.environ.get("SMTP_USER", "nyspotlightreport@gmail.com")
-SMTP_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-HARD-DISABLED-GMAIL-ZERO: SMTP_PASS = os.environ.get("GMAIL_APP_PASS", "")
 SUPA_URL = os.environ.get("SUPABASE_URL", "")
 SUPA_KEY = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
 PUSH_API = os.environ.get("PUSHOVER_API_KEY", "")
@@ -34,8 +35,8 @@ def send_email(to, subject, html):
         msg["From"] = f'"NY Spotlight Report" <{SMTP_USER}>'
         msg["To"] = to; msg["Subject"] = subject; msg["Reply-To"] = SMTP_USER
         msg.attach(MIMEText(html, "html"))
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=15) as s:
-            s.login(SMTP_USER, SMTP_PASS); s.sendmail(SMTP_USER, to, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465, timeout=15) as s:
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:             s.login(SMTP_USER, SMTP_PASS); s.sendmail(SMTP_USER, to, msg.as_string())
         return True
     except: return False
 

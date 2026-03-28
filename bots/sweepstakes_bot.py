@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 🎰 NYSR Sweepstakes Hunter Bot v2.0
@@ -15,8 +16,8 @@ from urllib.parse import urljoin
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 log = logging.getLogger("SweepBot")
 
-EMAIL       = os.environ.get("GMAIL_USER", "nyspotlightreport@gmail.com")
-EMAIL_PASS  = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: EMAIL       = os.environ.get("GMAIL_USER", "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: EMAIL_PASS  = os.environ.get("GMAIL_APP_PASS", "")
 NOTIFY      = os.environ.get("CHAIRMAN_EMAIL", EMAIL)
 NAME        = os.environ.get("ENTRY_NAME", "S.C. Thomas")
 ENTRY_EMAIL = os.environ.get("SWEEPS_EMAIL", EMAIL)
@@ -198,8 +199,8 @@ def run():
         msg['From'], msg['To'] = EMAIL, NOTIFY
         msg.attach(MIMEText(body, 'html'))
         try:
-            with smtplib.SMTP('smtp.gmail.com', 587) as s:
-                s.starttls(); s.login(EMAIL, EMAIL_PASS); s.send_message(msg)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP('[GMAIL-SMTP-REDACTED]', 587) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                 s.starttls(); s.login(EMAIL, EMAIL_PASS); s.send_message(msg)
             log.info("📧 Digest sent")
         except Exception as e:
             log.warning(f"Email failed: {e}")

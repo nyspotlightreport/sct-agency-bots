@@ -1,6 +1,7 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
-Email Blaster — 10 personalized cold emails/day via Gmail SMTP
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: Email Blaster — 10 personalized cold emails/day via Gmail SMTP
 Pulls prospects from Apollo API, runs 3-touch sequence over 7 days.
 Logs all sends to data/sales/outreach_log.json.
 """
@@ -17,8 +18,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 # ── Config ──────────────────────────────────────────────
-GMAIL_USER = os.environ.get("GMAIL_USER", "nyspotlightreport@gmail.com")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER = os.environ.get("GMAIL_USER", "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
 APOLLO_KEY = os.environ.get("APOLLO_API_KEY", "")
 DAILY_LIMIT = 10
 LOG_FILE = Path(__file__).parent.parent / "data" / "sales" / "outreach_log.json"
@@ -140,23 +141,23 @@ def fetch_prospects(count=10):
 
 
 def send_email(to_email, subject, body):
-    """Send a single email via Gmail SMTP."""
-    if not GMAIL_PASS:
-        print(f"  DRY RUN (no GMAIL_APP_PASS): {to_email} — {subject}")
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: """Send a single email via Gmail SMTP."""
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         print(f"  DRY RUN (no GMAIL_APP_PASS): {to_email} — {subject}")
         return True
 
     msg = MIMEMultipart("alternative")
-    msg["From"] = f"SC Thomas <{GMAIL_USER}>"
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["From"] = f"SC Thomas <{GMAIL_USER}>"
     msg["To"] = to_email
     msg["Subject"] = subject
-    msg["Reply-To"] = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["Reply-To"] = GMAIL_USER
     msg.attach(MIMEText(body, "plain"))
 
     try:
         context = ssl.create_default_context()
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-            server.login(GMAIL_USER, GMAIL_PASS)
-            server.sendmail(GMAIL_USER, to_email, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465, context=context) as server:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             server.login(GMAIL_USER, GMAIL_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             server.sendmail(GMAIL_USER, to_email, msg.as_string())
         print(f"  SENT: {to_email} — {subject}")
         return True
     except Exception as e:

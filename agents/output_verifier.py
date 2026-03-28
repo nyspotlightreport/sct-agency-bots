@@ -77,8 +77,8 @@ def pushover(title, msg):
         data = urlencode({"token": api_key, "user": user_key, "title": title, "message": msg[:1024]}).encode()
         req = Request("https://api.pushover.net/1/messages.json", data=data)
         urlopen(req, timeout=10, context=CTX)
-    except Exception:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
 def run():
     log.info("=" * 50)
@@ -195,8 +195,8 @@ def run():
         os.makedirs(os.path.dirname(report_path), exist_ok=True)
         with open(report_path, "w") as f:
             json.dump(report, f, indent=2)
-    except Exception:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
     log.info("\n" + "=" * 50)
     log.info(f"  PRODUCING: {producing}/{total}")

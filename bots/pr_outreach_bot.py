@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 PR & Media Relations Bot v2 — NYSR Agency
@@ -25,8 +26,8 @@ except Exception:  # noqa: bare-except
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [PR-Bot] %(message)s")
 log = logging.getLogger()
 
-GMAIL_USER = os.environ.get("GMAIL_USER", "")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER = os.environ.get("GMAIL_USER", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
 ANTHROPIC  = os.environ.get("ANTHROPIC_API_KEY", "")
 
 # ── TIER 1: PODCAST TARGETS (12M+ combined reach) ────────────────
@@ -139,19 +140,19 @@ def _static_pitch(target: dict, pitch_type: str) -> dict:
 
 def send_pitch(target: dict, pitch: dict) -> bool:
     """Send pitch via Gmail."""
-    if not GMAIL_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_PASS:
         log.info(f"[DRAFT] Would pitch: {target.get('name','')} | {pitch['subject'][:50]}")
         return False
     try:
         msg = MIMEMultipart()
-        msg["From"]    = f"SC Thomas <{GMAIL_USER}>"
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         msg["From"]    = f"SC Thomas <{GMAIL_USER}>"
         msg["To"]      = target["email"]
         msg["Subject"] = pitch["subject"]
-        msg["Reply-To"]= GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         msg["Reply-To"]= GMAIL_USER
         msg.attach(MIMEText(pitch["body"], "plain"))
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-            s.login(GMAIL_USER, GMAIL_PASS)
-            s.send_message(msg)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.login(GMAIL_USER, GMAIL_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.send_message(msg)
         log.info(f"✅ Sent: {target['name']} ({target['email']}) | {pitch['subject'][:50]}")
         return True
     except Exception as e:

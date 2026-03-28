@@ -155,18 +155,18 @@ jobs:
         run: |
           S="8ef722e1-4110-42af-8ddb-ff6c2ce1745e"
           sv() {{ [ -n "$2" ] && netlify env:set "$1" "$2" --site "$S" 2>&1|tail -1 && echo "SET $1" || echo "SKIP $1"; }}
-          sv STRIPE_SECRET_KEY "$V1"; sv GMAIL_APP_PASS "$V2"; sv SMTP_USER "$V3"
+# AG-GMAIL-ZERO-20260328:           sv STRIPE_SECRET_KEY "$V1"; sv GMAIL_APP_PASS "$V2"; sv SMTP_USER "$V3"
           sv SUPABASE_URL "$V4"; sv SUPABASE_KEY "$V5"
           sv PUSHOVER_API_KEY "$V6"; sv PUSHOVER_USER_KEY "$V7"; sv GH_PAT "$V8"
           sv HUBSPOT_API_KEY "$V9"; sv ANTHROPIC_API_KEY "$V10"; sv OPENAI_API_KEY "$V11"
-          sv GMAIL_USER "$V12"; sv TICKET_TAILOR_API_KEY "$V13"
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           sv GMAIL_USER "$V12"; sv TICKET_TAILOR_API_KEY "$V13"
           sv HUBSPOT_PORTAL_ID "$V14"; sv STRIPE_ACCOUNT_ID "$V15"
           echo "Redeploying..."
           netlify deploy --prod --dir site --site "$S" --message "Secret sync" 2>&1|tail -3
         env:
           NETLIFY_AUTH_TOKEN: {s}NETLIFY_AUTH_TOKEN{e}
           V1: {s}STRIPE_SECRET_KEY{e}
-          V2: {s}GMAIL_APP_PASS{e}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           V2: {s}GMAIL_APP_PASS{e}
           V3: {s}SMTP_USER{e}
           V4: {s}SUPABASE_URL{e}
           V5: {s}SUPABASE_KEY{e}
@@ -176,7 +176,7 @@ jobs:
           V9: {s}HUBSPOT_API_KEY{e}
           V10: {s}ANTHROPIC_API_KEY{e}
           V11: {s}OPENAI_API_KEY{e}
-          V12: {s}GMAIL_USER{e}
+# AG-NUCLEAR-GMAIL-ZERO-20260328:           V12: {s}GMAIL_USER{e}
           V13: {s}TICKET_TAILOR_API_KEY{e}
           V14: {s}HUBSPOT_PORTAL_ID{e}
           V15: {s}STRIPE_ACCOUNT_ID{e}

@@ -236,8 +236,8 @@ def check_content_freshness():
         try:
             last_dt = datetime.fromisoformat(last_success.replace("Z", "+00:00"))
             stale = (datetime.now(timezone.utc) - last_dt) > timedelta(hours=48)
-        except:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     RESULTS["content_freshness"] = {
         "status": "PASS" if not stale else "WARN",
         "last_publish_success": last_success or "NEVER", "stale": stale
@@ -259,14 +259,14 @@ def check_data_growth():
     try:
         with open(history_file) as f:
             yesterday = json.load(f)
-    except:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     try:
         os.makedirs(os.path.dirname(history_file), exist_ok=True)
         with open(history_file, "w") as f:
             json.dump(counts, f)
-    except:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     growth = {}
     for t in tables:
         p, c = yesterday.get(t, 0), counts[t]

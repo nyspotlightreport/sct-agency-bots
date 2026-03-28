@@ -12,7 +12,7 @@ log = logging.getLogger("KingSumoBot")
 KS_KEY      = os.environ.get("KINGSUMO_API_KEY", "")
 BEEHIIV_KEY = os.environ.get("BEEHIIV_API_KEY", "")
 BEEHIIV_PUB = os.environ.get("BEEHIIV_PUB_ID", "")
-GMAIL       = os.environ.get("GMAIL_USER", "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL       = os.environ.get("GMAIL_USER", "nyspotlightreport@gmail.com")
 
 CAMPAIGN = {
     "name": "WIN: Complete Digital Productivity Bundle ($89 value)",

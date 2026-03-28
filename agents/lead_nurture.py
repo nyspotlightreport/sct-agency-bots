@@ -16,15 +16,15 @@ import urllib.parse
 log = logging.getLogger("lead_nurture")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [NURTURE] %(message)s")
 
-GMAIL_USER = os.environ.get("GMAIL_USER", "")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER = os.environ.get("GMAIL_USER", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
 SUPA_URL = os.environ.get("SUPABASE_URL", "")
 SUPA_KEY = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
 PUSH_API = os.environ.get("PUSHOVER_API_KEY", "")
 PUSH_USER = os.environ.get("PUSHOVER_USER_KEY", "")
 
 SITE = "https://nyspotlightreport.com"
-PHONE = "(631) 892-9817"
+PHONE = "(631) 375-1097"
 
 EMAILS = {
     0: {
@@ -197,8 +197,8 @@ def pushover(msg):
             "title": "Lead Nurture", "message": msg
         }).encode()
         urlreq.urlopen(urlreq.Request("https://api.pushover.net/1/messages.json", data=data), timeout=10)
-    except:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
 def run():
     log.info("=== Lead Nurture Starting ===")

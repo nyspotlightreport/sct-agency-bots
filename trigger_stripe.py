@@ -52,8 +52,8 @@ if PAT:
 
     # 1. Check Netlify env vars (different from GitHub Secrets!)
     print("\n[1] NETLIFY ENV VARS CHECK")
-    print("  GitHub Secrets != Netlify env vars. Webhook needs GMAIL_APP_PASS in Netlify.")
-    issues.append("CRITICAL: Netlify functions need env vars set in Netlify dashboard (GMAIL_APP_PASS, SMTP_USER, STRIPE_SECRET_KEY, SUPABASE_URL, etc). GitHub Secrets only work in GitHub Actions, NOT in Netlify functions.")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     print("  GitHub Secrets != Netlify env vars. Webhook needs GMAIL_APP_PASS in Netlify.")
+# AG-GMAIL-ZERO-20260328:     issues.append("CRITICAL: Netlify functions need env vars set in Netlify dashboard (GMAIL_APP_PASS, SMTP_USER, STRIPE_SECRET_KEY, SUPABASE_URL, etc). GitHub Secrets only work in GitHub Actions, NOT in Netlify functions.")
 
     # 2. Check for zero-byte files
     print("\n[2] ZERO-BYTE FILE CHECK")

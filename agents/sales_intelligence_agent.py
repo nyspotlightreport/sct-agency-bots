@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 Sales Intelligence Agent — NYSR Agency
@@ -17,8 +18,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [SalesAgent] %(messa
 log = logging.getLogger()
 
 APOLLO_KEY  = os.environ.get("APOLLO_API_KEY","")
-GMAIL_USER  = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS","")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_USER  = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS","")
 HUBSPOT_KEY = os.environ.get("HUBSPOT_API_KEY","")
 STRIPE_KEY  = os.environ.get("STRIPE_SECRET_KEY","")
 
@@ -102,17 +103,17 @@ Return JSON with keys:
     )
 
 def send_email(to: str, subject: str, body: str, first_name: str) -> bool:
-    if not GMAIL_PASS: 
+# AG-HARD-DISABLED-GMAIL-ZERO:     if not GMAIL_PASS: 
         log.info(f"[DRAFT] → {to}: {subject}")
         return True
     msg = MIMEMultipart()
-    msg["From"] = f"S.C. Thomas <{GMAIL_USER}>"
+# AG-HARD-DISABLED-GMAIL-ZERO:     msg["From"] = f"S.C. Thomas <{GMAIL_USER}>"
     msg["To"]   = to
     msg["Subject"] = subject
     msg.attach(MIMEText(body, "plain"))
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login(GMAIL_USER, GMAIL_PASS)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as smtp:
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:             smtp.login(GMAIL_USER, GMAIL_PASS)
             smtp.send_message(msg)
         return True
     except Exception as e:

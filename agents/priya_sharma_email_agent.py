@@ -22,8 +22,8 @@ from datetime import datetime
 log = logging.getLogger("priya")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
-GMAIL_USER  = os.environ.get("GMAIL_USER",  "nyspotlightreport@gmail.com")
-GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER  = os.environ.get("GMAIL_USER",  "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS  = os.environ.get("GMAIL_APP_PASS", "")
 SUPA_URL    = os.environ.get("SUPABASE_URL", "")
 SUPA_KEY    = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
 PUSH_API    = os.environ.get("PUSHOVER_API_KEY", "")
@@ -102,8 +102,8 @@ def pushover(title, message, priority=0, sound="pushover"):
 def run():
     log.info("Priya Email Agent ΓÇö starting check")
     
-    if not GMAIL_PASS:
-        log.warning("GMAIL_APP_PASS not set")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         log.warning("GMAIL_APP_PASS not set")
         return {"error": "no_credentials"}
     
     processed = 0
@@ -113,7 +113,7 @@ def run():
 
     try:
         imap = imaplib.IMAP4_SSL("imap.gmail.com")
-        imap.login(GMAIL_USER, GMAIL_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         imap.login(GMAIL_USER, GMAIL_PASS)
         imap.select("INBOX")
         
         # Only look at UNSEEN emails from last 2 hours

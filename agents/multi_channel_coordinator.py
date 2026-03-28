@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 Multi-Channel Outreach Coordinator — NYSR
@@ -32,8 +33,9 @@ logging.basicConfig(level=logging.INFO,format="%(asctime)s [Coordinator] %(messa
 log=logging.getLogger()
 ANTHROPIC=os.environ.get("ANTHROPIC_API_KEY","")
 APOLLO_KEY=os.environ.get("APOLLO_API_KEY","")
-GMAIL_USER=os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS=os.environ.get("GMAIL_APP_PASS","")
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: GMAIL_USER=os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")  # GMAIL_ZERO VIOLATION - DISABLED
+# AG-REPLACEMENT: Use RESEND_API_KEY env var for all outbound email
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: GMAIL_PASS=os.environ.get("GMAIL_APP_PASS","")  # GMAIL_ZERO VIOLATION - DISABLED
 GH_TOKEN=os.environ.get("GH_PAT","") or os.environ.get("GITHUB_TOKEN","")
 GH_H={"Authorization":f"token {GH_TOKEN}","Accept":"application/vnd.github+json"}
 REPO="nyspotlightreport/sct-agency-bots"
@@ -150,21 +152,21 @@ def execute_due_touches()->list:
 def _execute_touch(touch:dict,prospect:dict)->str:
     """Execute a single touch (send email, note LinkedIn action, etc.)."""
     channel=touch.get("channel","email")
-    if channel=="email" and GMAIL_PASS:
-        import smtplib
+# AG-HARD-DISABLED-GMAIL-ZERO:     if channel=="email" and GMAIL_PASS:
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953:         import smtplib  # GMAIL_ZERO VIOLATION - DISABLED
         from email.mime.text import MIMEText
         from email.mime.multipart import MIMEMultipart
         to_email=prospect.get("email","")
         if not to_email: return "no_email"
         try:
             msg=MIMEMultipart("alternative")
-            msg["From"]=f"S.C. Thomas <{GMAIL_USER}>"
+# AG-HARD-DISABLED-GMAIL-ZERO:             msg["From"]=f"S.C. Thomas <{GMAIL_USER}>"
             msg["To"]=to_email
             msg["Subject"]=touch.get("subject","Following up")
             msg.attach(MIMEText(touch.get("body",""),"plain"))
-            with smtplib.SMTP_SSL("smtp.gmail.com",465) as s:
-                s.login(GMAIL_USER,GMAIL_PASS)
-                s.send_message(msg)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]",465) as s:
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:                 s.login(GMAIL_USER,GMAIL_PASS)
+# AG-HARD-DISABLED-GMAIL-ZERO:                 s.send_message(msg)
             log.info(f"  📧 Sent to {to_email}: {touch.get('subject','')[:40]}")
             return "sent"
         except Exception as e:

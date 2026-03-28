@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 bots/self_improvement_bot.py
@@ -16,9 +17,9 @@ from pathlib import Path
 
 # ── ENV ──────────────────────────────────────────────────────
 ANTHROPIC_KEY  = os.environ.get("ANTHROPIC_API_KEY", "")
-GMAIL_USER     = os.environ.get("GMAIL_USER", "")
-GMAIL_PASS     = os.environ.get("GMAIL_APP_PASS", "")
-CHAIRMAN_EMAIL = os.environ.get("CHAIRMAN_EMAIL", GMAIL_USER)
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER     = os.environ.get("GMAIL_USER", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS     = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: CHAIRMAN_EMAIL = os.environ.get("CHAIRMAN_EMAIL", GMAIL_USER)
 SUPA_URL       = os.environ.get("SUPABASE_URL", "")
 SUPA_KEY       = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
 PUSH_API       = os.environ.get("PUSHOVER_API_KEY", "")
@@ -219,13 +220,13 @@ def send_email_report(html_body):
     from email.mime.multipart import MIMEMultipart
     from email.mime.text import MIMEText
     
-    if not GMAIL_USER or not GMAIL_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_USER or not GMAIL_PASS:
         log.warning("Gmail not configured — skipping email report")
         return False
     
     try:
         msg = MIMEMultipart('alternative')
-        msg['From']    = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         msg['From']    = GMAIL_USER
         msg['To']      = CHAIRMAN_EMAIL
         msg['Subject'] = f"[INFO] 🧠 Self-Improvement Report — {datetime.now().strftime('%b %d, %Y')}"
         
@@ -235,9 +236,9 @@ def send_email_report(html_body):
         
         msg.attach(MIMEText(full_html, 'html'))
         
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=15) as server:
-            server.login(GMAIL_USER, GMAIL_PASS)
-            server.sendmail(GMAIL_USER, CHAIRMAN_EMAIL, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL('[GMAIL-SMTP-REDACTED]', 465, timeout=15) as server:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             server.login(GMAIL_USER, GMAIL_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             server.sendmail(GMAIL_USER, CHAIRMAN_EMAIL, msg.as_string())
         
         log.info(f"Report emailed to {CHAIRMAN_EMAIL}")
         return True

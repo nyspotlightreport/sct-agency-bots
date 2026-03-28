@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 agents/system_resilience.py — NYSR Platform Independence Layer
@@ -97,14 +98,14 @@ def generate_secrets_manifest():
     """Create a manifest of all required secrets (names only, not values)."""
     manifest={
         "critical":["ANTHROPIC_API_KEY","STRIPE_SECRET_KEY","SUPABASE_URL","SUPABASE_KEY",
-            "PUSHOVER_API_KEY","PUSHOVER_USER_KEY","GH_PAT","GMAIL_APP_PASS","SMTP_USER"],
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: "PUSHOVER_API_KEY","PUSHOVER_USER_KEY","GH_PAT","GMAIL_APP_PASS","SMTP_USER"],
         "revenue":["STRIPE_SECRET_KEY","GUMROAD_ACCESS_TOKEN","SHOPIFY_ACCESS_TOKEN"],
         "content":["WORDPRESS_ACCESS_TOKEN","PUBLER_API_KEY","BEEHIIV_API_KEY","MEDIUM_INTEGRATION_TOKEN"],
         "social":["TWITTER_API_KEY","TWITTER_API_SECRET","TWITTER_ACCESS_TOKEN",
             "LINKEDIN_CLIENT_ID","PINTEREST_ACCESS_TOKEN","TIKTOK_CLIENT_KEY"],
         "infrastructure":["NETLIFY_AUTH_TOKEN","NETLIFY_SITE_ID","GH_PAT"],
         "monitoring":["AHREFS_API_KEY","NEWSAPI_KEY","ALPHA_VANTAGE_API_KEY"],
-        "email":["GMAIL_APP_PASS","SMTP_USER","GMAIL_USER","BUSINESS_EMAIL"],
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: "email":["GMAIL_APP_PASS","SMTP_USER","GMAIL_USER","BUSINESS_EMAIL"],
         "auth_independent_of_email":["GH_PAT","STRIPE_SECRET_KEY","SUPABASE_URL",
             "SUPABASE_KEY","ANTHROPIC_API_KEY","PUSHOVER_API_KEY","NETLIFY_AUTH_TOKEN"],
     }
@@ -127,8 +128,8 @@ def generate_recovery_plan():
                     "Anthropic (API key)","Pushover (API key)","Netlify (auth token)",
                     "All GitHub Actions workflows","All agent code","All data in Supabase"],
                 "what_breaks":["SMTP email sending","Gmail-dependent password resets"],
-                "fix_steps":["1. Create new Gmail or use any SMTP provider (SendGrid/Mailgun/SES)",
-                    "2. Update GMAIL_APP_PASS and SMTP_USER in GitHub Secrets",
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: "fix_steps":["1. Create new Gmail or use any SMTP provider (SendGrid/Mailgun/SES)",
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: "2. Update GMAIL_APP_PASS and SMTP_USER in GitHub Secrets",
                     "3. Run 'Sync ALL Secrets to Netlify' workflow",
                     "4. Purchase flow restored in 5 minutes"]
             },
@@ -199,7 +200,7 @@ def generate_recovery_plan():
 def audit_dependencies():
     deps=[]
     # Check if email is the single point of failure for anything
-    email_dependent=["GMAIL_APP_PASS","SMTP_USER","GMAIL_USER"]
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: email_dependent=["GMAIL_APP_PASS","SMTP_USER","GMAIL_USER"]
     non_email_auth=["GH_PAT","STRIPE_SECRET_KEY","SUPABASE_URL","ANTHROPIC_API_KEY","PUSHOVER_API_KEY","NETLIFY_AUTH_TOKEN"]
     email_risk=sum(1 for k in email_dependent if os.environ.get(k,""))
     non_email=sum(1 for k in non_email_auth if os.environ.get(k,""))

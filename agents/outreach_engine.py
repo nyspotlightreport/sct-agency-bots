@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 agents/outreach_engine.py — NYSR Automated Outreach Engine
@@ -5,7 +6,7 @@ Sloane Pierce + Jeff Banks working together.
 Pulls leads from Supabase/Apollo → generates personalized emails → sends via SMTP → logs to CRM.
 Runs daily. The department that turns $0 into $97+.
 """
-import os, sys, json, logging, time, smtplib, base64
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: import os, sys, json, logging, time, smtplib, base64  # GMAIL_ZERO VIOLATION - DISABLED
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
@@ -14,9 +15,24 @@ log = logging.getLogger("outreach")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [OUTREACH] %(message)s")
 import urllib.request as urlreq, urllib.parse
 
+# === MEMORY ENGINE (auto-wired) ===
+import sys as _sys
+_sys.path.insert(0, '/opt/nysr')
+try:
+    from agent_memory_engine import read_memory as _read_memory, write_memory as _write_memory
+    _agent_name = __file__.split('/')[-1].replace('.py','')
+    _prior_memory = _read_memory(_agent_name)
+except:
+    _read_memory = lambda x: {}
+    _write_memory = lambda x, y: None
+    _prior_memory = {}
+# === END MEMORY ENGINE ===
+
+
+
 ANTHROPIC = os.environ.get("ANTHROPIC_API_KEY", "")
-SMTP_USER = os.environ.get("SMTP_USER", "nyspotlightreport@gmail.com")
-SMTP_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: SMTP_USER = os.environ.get("SMTP_USER", "nyspotlightreport@gmail.com")  # GMAIL_ZERO VIOLATION - DISABLED
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: SMTP_PASS = os.environ.get("GMAIL_APP_PASS", "")  # GMAIL_ZERO VIOLATION - DISABLED
 SUPA_URL = os.environ.get("SUPABASE_URL", "")
 SUPA_KEY = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY", "")
 PUSH_API = os.environ.get("PUSHOVER_API_KEY", "")
@@ -48,7 +64,17 @@ def supa(method, table, data=None, query=""):
     except: return None
 
 def send_email(to, subject, body_html):
-    if not SMTP_PASS: log.warning("No GMAIL_APP_PASS — cannot send"); return False
+    # AG-GMAIL-ZERO: Gmail SMTP disabled. Reroute to Resend.
+    import os,urllib.request,json as _j
+    _key=os.getenv("RESEND_API_KEY","")
+    if not _key: print("[AG] No RESEND_API_KEY - email blocked"); return False
+    try:
+        _b=_j.dumps({"from":"editor-in-chief@nyspotlightreport.com","to":[to],"subject":subject,"html":body_html}).encode()
+        _r=urllib.request.Request("https://api.resend.com/emails",data=_b,headers={"Authorization":"Bearer "+_key,"Content-Type":"application/json"},method="POST")
+        urllib.request.urlopen(_r,timeout=15); return True
+    except Exception as _e: print("[RESEND]",_e); return False
+    # AG: Original SMTP code disabled below - return above prevents execution
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953:     if not SMTP_PASS: log.warning("No GMAIL_APP_PASS — cannot send"); return False  # GMAIL_ZERO VIOLATION - DISABLED
     try:
         msg = MIMEMultipart("alternative")
         msg["From"] = f"Sean Thomas <{SMTP_USER}>"
@@ -56,9 +82,9 @@ def send_email(to, subject, body_html):
         msg["Subject"] = subject
         msg["Reply-To"] = SMTP_USER
         msg.attach(MIMEText(body_html, "html"))
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=15) as s:
-            s.login(SMTP_USER, SMTP_PASS)
-            s.sendmail(SMTP_USER, to, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465, timeout=15) as s:
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:             s.login(SMTP_USER, SMTP_PASS)
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:             s.sendmail(SMTP_USER, to, msg.as_string())
         log.info(f"  SENT to {to}: {subject}")
         return True
     except Exception as e:

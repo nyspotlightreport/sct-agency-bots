@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 WEEKLY REPORT BOT — S.C. Thomas Internal Agency
@@ -16,8 +17,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # ─── CONFIG (set as environment variables) ───────────────────────────────────
-GMAIL_USER       = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
-GMAIL_APP_PASS   = os.getenv("GMAIL_APP_PASS", "")        # Gmail App Password
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER       = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_APP_PASS   = os.getenv("GMAIL_APP_PASS", "")        # Gmail App Password
 CHAIRMAN_EMAIL   = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 AHREFS_API_KEY   = os.getenv("AHREFS_API_KEY", "")
 HUBSPOT_API_KEY  = os.getenv("HUBSPOT_API_KEY", "")
@@ -160,19 +161,19 @@ def send_report():
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"⚡ Weekly Report — {datetime.now().strftime('%b %d, %Y')}"
-    msg["From"]    = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["From"]    = GMAIL_USER
     msg["To"]      = CHAIRMAN_EMAIL
     msg.attach(MIMEText(html, "html"))
 
-    if not GMAIL_APP_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_APP_PASS:
         print("[weekly-report-bot] No Gmail password set. Printing report instead:")
         print(html)
         return
 
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-            server.login(GMAIL_USER, GMAIL_APP_PASS)
-            server.sendmail(GMAIL_USER, CHAIRMAN_EMAIL, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as server:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             server.login(GMAIL_USER, GMAIL_APP_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             server.sendmail(GMAIL_USER, CHAIRMAN_EMAIL, msg.as_string())
         print(f"[weekly-report-bot] Report sent to {CHAIRMAN_EMAIL}")
     except Exception as e:
         print(f"[weekly-report-bot] Send failed: {e}")

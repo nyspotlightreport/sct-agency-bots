@@ -22,8 +22,8 @@ def get_github_secrets():
                                 capture_output=True, text=True, timeout=30)
         if result.returncode == 0:
             return {s["name"] for s in json.loads(result.stdout)}
-    except:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     return set()
 
 def scan_workflows():
@@ -41,8 +41,8 @@ def scan_workflows():
                 content = f.read()
             matches = re.findall(r'\$\{\{\s*secrets\.(\w+)\s*\}\}', content)
             refs.update(matches)
-        except:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     return refs
 
 def scan_agents():
@@ -59,8 +59,8 @@ def scan_agents():
             matches = re.findall(r'os\.environ(?:\.get)?\s*\[\s*["\'](\w+)["\']\s*\]', content)
             matches += re.findall(r'os\.environ\.get\s*\(\s*["\'](\w+)["\']', content)
             refs.update(matches)
-        except:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     return refs
 
 def pushover(msg):
@@ -72,8 +72,8 @@ def pushover(msg):
             "title": "Env Parity Check", "message": msg
         }).encode()
         urlreq.urlopen(urlreq.Request("https://api.pushover.net/1/messages.json", data=data), timeout=10)
-    except:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
 def log_to_supabase(missing, extra_info=""):
     if not SUPA_URL:
@@ -93,8 +93,8 @@ def log_to_supabase(missing, extra_info=""):
             }
         )
         urlreq.urlopen(req, timeout=10)
-    except:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
 def run():
     log.info("=== Env Parity Check ===")

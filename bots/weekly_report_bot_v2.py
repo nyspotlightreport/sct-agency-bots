@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 WEEKLY REPORT BOT v2 — S.C. Thomas Internal Agency
@@ -19,7 +20,7 @@ class WeeklyReportBot(BaseBot):
     VERSION = "2.0.0"
 
     def __init__(self):
-        super().__init__("weekly-report", required_config=["GMAIL_APP_PASS"])
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         super().__init__("weekly-report", required_config=["GMAIL_APP_PASS"])
 
     @with_retry(max_retries=3, delay=2.0)
     def pull_ahrefs(self) -> dict:
@@ -88,15 +89,15 @@ class WeeklyReportBot(BaseBot):
     def send_email(self, html: str):
         msg = MIMEMultipart("alternative")
         msg["Subject"] = f"⚡ Weekly Report — {datetime.now().strftime('%b %d, %Y')}"
-        msg["From"]    = Config.GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         msg["From"]    = Config.GMAIL_USER
         msg["To"]      = Config.CHAIRMAN_EMAIL
         msg.attach(MIMEText(html, "html"))
-        if not Config.GMAIL_APP_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         if not Config.GMAIL_APP_PASS:
             self.logger.info("No Gmail password — report built but not sent")
             return
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-            s.login(Config.GMAIL_USER, Config.GMAIL_APP_PASS)
-            s.sendmail(Config.GMAIL_USER, Config.CHAIRMAN_EMAIL, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.login(Config.GMAIL_USER, Config.GMAIL_APP_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.sendmail(Config.GMAIL_USER, Config.CHAIRMAN_EMAIL, msg.as_string())
         self.logger.info(f"Report sent to {Config.CHAIRMAN_EMAIL}")
 
     def execute(self) -> dict:

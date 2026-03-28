@@ -80,8 +80,8 @@ class EventsScraperBot:
                     "url": event.get("url",""),
                     "source": "nyc_gov"
                 })
-        except Exception:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
         return events
 
     def fetch_eventbrite_events(self):

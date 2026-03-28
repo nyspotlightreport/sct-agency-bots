@@ -15,8 +15,8 @@ from email.mime.multipart import MIMEMultipart
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 log = logging.getLogger("SalesRepSystem")
 
-GMAIL_USER = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
 STRIPE_KEY = os.environ.get("STRIPE_SECRET_KEY","")
 
 # Commission structure

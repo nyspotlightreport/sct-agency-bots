@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 agents/jeff_banks_cro.py
@@ -32,7 +33,7 @@ Architecture:
 - Daily Chairman briefing with letter grade
 - Full system override authority when revenue is at risk
 """
-import os, json, logging, urllib.request, urllib.parse, smtplib, time
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: import os, json, logging, urllib.request, urllib.parse, smtplib, time  # GMAIL_ZERO VIOLATION - DISABLED
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
@@ -44,8 +45,8 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [JEFF] %(message)s")
 ANTHROPIC   = os.environ.get("ANTHROPIC_API_KEY","")
 SUPA_URL    = os.environ.get("SUPABASE_URL","")
 SUPA_KEY    = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
-SMTP_USER   = os.environ.get("SMTP_USER","nyspotlightreport@gmail.com")
-SMTP_PASS   = os.environ.get("GMAIL_APP_PASS","")
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: SMTP_USER   = os.environ.get("SMTP_USER","nyspotlightreport@gmail.com")  # GMAIL_ZERO VIOLATION - DISABLED
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953: SMTP_PASS   = os.environ.get("GMAIL_APP_PASS","")  # GMAIL_ZERO VIOLATION - DISABLED
 PUSH_API    = os.environ.get("PUSHOVER_API_KEY","")
 PUSH_USER   = os.environ.get("PUSHOVER_USER_KEY","")
 AHREFS_KEY  = os.environ.get("AHREFS_API_KEY","")
@@ -316,9 +317,9 @@ def send_briefing_to_chairman(briefing_text, grade):
         msg["Subject"] = f"[{grade}] Jeff Banks CRO Briefing ΓÇö {datetime.utcnow().strftime('%b %d, %Y')}"
         msg["Reply-To"]= BUSINESS_EMAIL
         msg.attach(MIMEText(briefing_text, "plain"))
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=15) as s:
-            s.login(SMTP_USER, SMTP_PASS)
-            s.sendmail(SMTP_USER, CHAIRMAN_EMAIL, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465, timeout=15) as s:
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:             s.login(SMTP_USER, SMTP_PASS)
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:             s.sendmail(SMTP_USER, CHAIRMAN_EMAIL, msg.as_string())
         log.info("Briefing sent to Chairman")
         return True
     except Exception as e:
@@ -393,9 +394,9 @@ def jeff_close_deal_NOW():
                 msg["Subject"] = f"[Jeff Banks Close Attempt] {subject}"
                 msg["Reply-To"]= BUSINESS_EMAIL
                 msg.attach(MIMEText(body,"plain"))
-                with smtplib.SMTP_SSL("smtp.gmail.com",465,timeout=15) as s:
-                    s.login(SMTP_USER, SMTP_PASS)
-                    s.sendmail(SMTP_USER, p["email"], msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]",465,timeout=15) as s:
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:                     s.login(SMTP_USER, SMTP_PASS)
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:                     s.sendmail(SMTP_USER, p["email"], msg.as_string())
                 log.info(f"Close email sent: {p['email']}")
                 closed += 1
             except Exception as e:

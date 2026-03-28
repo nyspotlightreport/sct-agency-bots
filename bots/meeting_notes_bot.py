@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 MEETING NOTES PROCESSOR BOT — S.C. Thomas Internal Agency
@@ -21,8 +22,8 @@ from email.mime.text import MIMEText
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-GMAIL_USER        = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
-GMAIL_APP_PASS    = os.getenv("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER        = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_APP_PASS    = os.getenv("GMAIL_APP_PASS", "")
 CHAIRMAN_EMAIL    = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 HUBSPOT_API_KEY   = os.getenv("HUBSPOT_API_KEY", "")
 OUTPUT_DIR        = Path("meeting_notes")
@@ -172,20 +173,20 @@ def send_summary_email(data, original_notes):
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"📋 Meeting Summary — {title} — {date_str}"
-    msg["From"]    = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["From"]    = GMAIL_USER
     msg["To"]      = CHAIRMAN_EMAIL
     msg.attach(MIMEText(html, "html"))
 
-    if not GMAIL_APP_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_APP_PASS:
         print("[meeting-bot] No email creds — summary:")
         print(f"  Actions: {len(data.get('action_items',[]))}")
         for a in data.get("action_items", []): print(f"    [{a.get('priority')}] {a['task']} → {a.get('owner')} by {a.get('deadline')}")
         return
 
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-            s.login(GMAIL_USER, GMAIL_APP_PASS)
-            s.sendmail(GMAIL_USER, CHAIRMAN_EMAIL, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.login(GMAIL_USER, GMAIL_APP_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.sendmail(GMAIL_USER, CHAIRMAN_EMAIL, msg.as_string())
         print(f"[meeting-bot] Summary sent to {CHAIRMAN_EMAIL}")
     except Exception as e:
         print(f"[meeting-bot] Email failed: {e}")

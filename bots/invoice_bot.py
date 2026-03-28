@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 INVOICE GENERATOR + PAYMENT REMINDER BOT — S.C. Thomas Internal Agency
@@ -19,8 +20,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
-GMAIL_USER      = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
-GMAIL_APP_PASS  = os.getenv("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER      = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_APP_PASS  = os.getenv("GMAIL_APP_PASS", "")
 CHAIRMAN_EMAIL  = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 PAYPAL_ME_LINK  = os.getenv("PAYPAL_ME_LINK", "https://paypal.me/yourhandle")  # Update this
 INVOICE_DIR     = Path("invoices")
@@ -143,7 +144,7 @@ def build_invoice_html(inv):
 def send_invoice_email(inv, html):
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"Invoice {inv['number']} — ${inv['amount']:,.2f} — Due {datetime.fromisoformat(inv['due_date']).strftime('%b %d, %Y')}"
-    msg["From"]    = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["From"]    = GMAIL_USER
     msg["To"]      = inv["client_email"]
     msg.attach(MIMEText(html, "html"))
     _send(inv["client_email"], msg)
@@ -152,17 +153,17 @@ def notify_chairman_created(inv):
     body = f"Invoice {inv['number']} created for {inv['client_name']} — ${inv['amount']:,.2f} — Due {datetime.fromisoformat(inv['due_date']).strftime('%b %d, %Y')}"
     msg = MIMEMultipart()
     msg["Subject"] = f"✅ Invoice Created: {inv['number']}"
-    msg["From"]    = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["From"]    = GMAIL_USER
     msg["To"]      = CHAIRMAN_EMAIL
     msg.attach(MIMEText(body))
     _send(CHAIRMAN_EMAIL, msg)
 
 def _send(to, msg):
-    if not GMAIL_APP_PASS: print(f"[invoice-bot] No email creds — would send to {to}"); return
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_APP_PASS: print(f"[invoice-bot] No email creds — would send to {to}"); return
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-            s.login(GMAIL_USER, GMAIL_APP_PASS)
-            s.sendmail(GMAIL_USER, to, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.login(GMAIL_USER, GMAIL_APP_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.sendmail(GMAIL_USER, to, msg.as_string())
     except Exception as e:
         print(f"[invoice-bot] Email failed: {e}")
 
@@ -216,7 +217,7 @@ Sean
 
     msg = MIMEMultipart()
     msg["Subject"] = subject
-    msg["From"]    = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["From"]    = GMAIL_USER
     msg["To"]      = inv["client_email"]
     msg.attach(MIMEText(body))
     _send(inv["client_email"], msg)

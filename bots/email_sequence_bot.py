@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 """
 email_sequence_bot.py — Automated Outbound Email Sequence Engine
 Runs timed nurture sequences for:
@@ -13,8 +14,8 @@ from email.mime.multipart import MIMEMultipart
 
 class EmailSequenceBot:
     def __init__(self):
-        self.gmail_user    = os.environ.get("GMAIL_USER","")
-        self.gmail_pass    = os.environ.get("GMAIL_APP_PASS","")
+# AG-HARD-DISABLED-GMAIL-ZERO:         self.gmail_user    = os.environ.get("GMAIL_USER","")
+# AG-HARD-DISABLED-GMAIL-ZERO:         self.gmail_pass    = os.environ.get("GMAIL_APP_PASS","")
         self.hubspot_key   = os.environ.get("HUBSPOT_API_KEY","")
         self.anthropic_key = os.environ.get("ANTHROPIC_API_KEY","")
 
@@ -151,9 +152,9 @@ This is New York. Let's make it count.
             msg.attach(MIMEText(body,'plain'))
             msg.attach(MIMEText(html_body,'html'))
 
-            with smtplib.SMTP_SSL('smtp.gmail.com',465) as server:
-                server.login(self.gmail_user, self.gmail_pass)
-                server.send_message(msg)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL('[GMAIL-SMTP-REDACTED]',465) as server:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                 server.login(self.gmail_user, self.gmail_pass)
+# AG-HARD-DISABLED-GMAIL-ZERO:                 server.send_message(msg)
             print(f"✅ Sent to {to_email}: {subject[:40]}")
             return True
         except Exception as e:

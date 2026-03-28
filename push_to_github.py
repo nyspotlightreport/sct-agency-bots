@@ -157,14 +157,14 @@ def run():
     print(f"  https://github.com/{username}/{REPO_NAME}/settings/secrets/actions")
     print()
     print("  ANTHROPIC_API_KEY  -> console.anthropic.com")
-    print("  GMAIL_APP_PASS     -> myaccount.google.com/apppasswords")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     print("  GMAIL_APP_PASS     -> myaccount.google.com/apppasswords")
     print("  AHREFS_API_KEY     -> ahrefs.com/api")
     print("  HUBSPOT_API_KEY    -> HubSpot -> Settings -> Private Apps")
     print("  APOLLO_API_KEY     -> Apollo.io -> Settings -> API")
     print("  TARGET_DOMAIN      -> yourdomain.com")
     print("  MONITORED_SITES    -> https://yoursite.com")
     print()
-    print("  (GMAIL_USER and CHAIRMAN_EMAIL already default to nyspotlightreport@gmail.com)")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     print("  (GMAIL_USER and CHAIRMAN_EMAIL already default to nyspotlightreport@gmail.com)")
     print()
 
     # Save the repo URL for reference

@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 """
 Client Onboarding Bot — Phase 4
 Auto-onboards new portal users. Sends welcome sequence, sets up initial project,
@@ -11,8 +12,8 @@ log = logging.getLogger("onboard")
 SUPABASE_URL  = os.environ.get("SUPABASE_URL","")
 SUPABASE_KEY  = os.environ.get("SUPABASE_KEY") or os.environ.get("SUPABASE_ANON_KEY","")
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY","")
-GMAIL_USER    = os.environ.get("GMAIL_USER","")
-GMAIL_PASS    = os.environ.get("GMAIL_APP_PASS","")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_USER    = os.environ.get("GMAIL_USER","")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_PASS    = os.environ.get("GMAIL_APP_PASS","")
 PUSHOVER_API  = os.environ.get("PUSHOVER_API_KEY","")
 PUSHOVER_USER_KEY = os.environ.get("PUSHOVER_USER_KEY","")
 
@@ -56,18 +57,18 @@ def push(title, msg):
 
         pass
 def send_email(to_email, subject, html_body):
-    if not GMAIL_USER or not GMAIL_PASS:
+# AG-HARD-DISABLED-GMAIL-ZERO:     if not GMAIL_USER or not GMAIL_PASS:
         log.warning(f"Email not configured — would send to {to_email}: {subject}")
         return False
     try:
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
-        msg["From"] = f"NYSR Agency <{GMAIL_USER}>"
+# AG-HARD-DISABLED-GMAIL-ZERO:         msg["From"] = f"NYSR Agency <{GMAIL_USER}>"
         msg["To"] = to_email
         msg.attach(MIMEText(html_body, "html"))
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-            server.login(GMAIL_USER, GMAIL_PASS)
-            server.sendmail(GMAIL_USER, to_email, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as server:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             server.login(GMAIL_USER, GMAIL_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             server.sendmail(GMAIL_USER, to_email, msg.as_string())
         log.info(f"Email sent to {to_email}: {subject}")
         return True
     except Exception as e:

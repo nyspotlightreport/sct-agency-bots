@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 bots/affiliate_direct_apply_bot.py
@@ -209,9 +210,9 @@ def generate_application_email(program):
     """
     import smtplib
     from email.mime.text import MIMEText
-    GMAIL_USER = os.environ.get("SMTP_USER", "nyspotlightreport@gmail.com")
-    GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
-    if not GMAIL_PASS: return False
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: GMAIL_USER = os.environ.get("SMTP_USER", "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     GMAIL_PASS = os.environ.get("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_PASS: return False
     
     # Most programs have affiliate@company.com
     domain = program['apply_url'].split('/')[2].replace('www.','').replace('app.','')
@@ -251,13 +252,13 @@ NY Spotlight Report
     
     try:
         msg = MIMEText(body, 'plain')
-        msg['From'] = f"Sean Thomas | NY Spotlight Report <{GMAIL_USER}>"
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         msg['From'] = f"Sean Thomas | NY Spotlight Report <{GMAIL_USER}>"
         msg['To'] = to_email
         msg['Subject'] = subject
         msg['Reply-To'] = EMAIL
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=15) as s:
-            s.login(GMAIL_USER, GMAIL_PASS)
-            s.sendmail(GMAIL_USER, to_email, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL('[GMAIL-SMTP-REDACTED]', 465, timeout=15) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.login(GMAIL_USER, GMAIL_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.sendmail(GMAIL_USER, to_email, msg.as_string())
         log.info(f"  ✅ Application email sent to {to_email}")
         return True
     except Exception as e:

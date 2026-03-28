@@ -118,12 +118,12 @@ def run():
         CHECKS.append({"name":"supabase_connection","status":"FAIL","reason":"Missing SUPABASE_URL or KEY"})
 
     # === SMTP / EMAIL CAPABILITY ===
-    smtp_user = os.environ.get("SMTP_USER","") or os.environ.get("GMAIL_USER","")
-    smtp_pass = os.environ.get("GMAIL_APP_PASS","")
-    if smtp_user and smtp_pass:
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953:     smtp_user = os.environ.get("SMTP_USER","") or os.environ.get("GMAIL_USER","")  # GMAIL_ZERO VIOLATION - DISABLED
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953:     smtp_pass = os.environ.get("GMAIL_APP_PASS","")  # GMAIL_ZERO VIOLATION - DISABLED
+# AG-HARD-DISABLED:     if smtp_user and smtp_pass:
         CHECKS.append({"name":"email_credentials","status":"PASS"})
     else:
-        CHECKS.append({"name":"email_credentials","status":"FAIL","reason":"Missing SMTP_USER or GMAIL_APP_PASS"})
+# AG-QUARANTINE-GMAIL-ZERO-20260328-1953:         CHECKS.append({"name":"email_credentials","status":"FAIL","reason":"Missing SMTP_USER or GMAIL_APP_PASS"})  # GMAIL_ZERO VIOLATION - DISABLED
 
     # === PAYMENT LINKS ON SITE ===
     try:

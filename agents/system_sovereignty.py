@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 agents/system_sovereignty.py — NYSR Platform Sovereignty Layer
@@ -58,7 +59,7 @@ def create_local_vault():
             "email_dependent": {
                 "description": "These ONLY need email for SMTP sending. Login uses API keys, not email.",
                 "services": {
-                    "Gmail SMTP": {"auth": "GMAIL_APP_PASS", "impact_if_lost": "Welcome emails stop",
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: "Gmail SMTP": {"auth": "GMAIL_APP_PASS", "impact_if_lost": "Welcome emails stop",
                         "alternatives": ["SendGrid (free 100/day)","Mailgun (free 5k/mo)","Amazon SES ($0.10/1k)"],
                         "recovery": "Create new Gmail OR switch to SendGrid API key"},
                 }
@@ -79,7 +80,7 @@ def create_local_vault():
                 "switch_steps": ["Already have Gumroad account","Create products","Update payment links on site"]},
             "gmail.com": {"alternatives": ["sendgrid.com","mailgun.com","ses.amazonaws.com"],
                 "switch_time": "15 min","data_portable": True,
-                "switch_steps": ["Sign up for SendGrid","Get API key","Update SMTP_USER and GMAIL_APP_PASS"]},
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                 "switch_steps": ["Sign up for SendGrid","Get API key","Update SMTP_USER and GMAIL_APP_PASS"]},
         },
         "local_assets": {
             "full_repo": "C:\\Users\\S\\sct-agency-bots",

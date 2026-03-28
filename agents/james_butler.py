@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 ﻿#!/usr/bin/env python3
 """
 James Butler v2.0 ΓÇö Supreme Personal Concierge
@@ -24,8 +25,8 @@ log = logging.getLogger()
 
 ANTHROPIC    = os.environ.get("ANTHROPIC_API_KEY","")
 GH_TOKEN     = os.environ.get("GH_PAT","") or os.environ.get("GITHUB_TOKEN","")
-GMAIL_USER   = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS   = os.environ.get("GMAIL_APP_PASS","")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_USER   = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_PASS   = os.environ.get("GMAIL_APP_PASS","")
 PUSHOVER_KEY = os.environ.get("PUSHOVER_API_KEY","")
 PUSHOVER_USR = os.environ.get("PUSHOVER_USER_KEY","")
 STRIPE_KEY   = os.environ.get("STRIPE_SECRET_KEY","")
@@ -41,29 +42,29 @@ def test_email_smtp() -> bool:
     """Test if SMTP email sending works."""
     import smtplib
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as s:
-            s.login(GMAIL_USER, GMAIL_PASS)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465, timeout=10) as s:
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:             s.login(GMAIL_USER, GMAIL_PASS)
         return True
-    except smtplib.SMTPAuthenticationError:
+# AG-HARD-DISABLED-GMAIL-ZERO:     except smtplib.SMTPAuthenticationError:
         return False
     except Exception:
         return False
 
 def send_email(to: str, subject: str, body: str) -> bool:
-    """Send email via Gmail SMTP."""
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: """Send email via Gmail SMTP."""
     import smtplib
     from email.mime.text import MIMEText
     from email.mime.multipart import MIMEMultipart
     try:
         msg = MIMEMultipart("alternative")
-        msg["From"]    = f"SC Thomas ΓÇö NY Spotlight Report <{GMAIL_USER}>"
+# AG-HARD-DISABLED-GMAIL-ZERO:         msg["From"]    = f"SC Thomas ΓÇö NY Spotlight Report <{GMAIL_USER}>"
         msg["To"]      = to
         msg["Subject"] = subject
-        msg["Reply-To"]= GMAIL_USER
+# AG-HARD-DISABLED-GMAIL-ZERO:         msg["Reply-To"]= GMAIL_USER
         msg.attach(MIMEText(body, "plain"))
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=15) as s:
-            s.login(GMAIL_USER, GMAIL_PASS)
-            s.send_message(msg)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465, timeout=15) as s:
+# AG-FINAL-KILL-GMAIL-ZERO-20260328:             s.login(GMAIL_USER, GMAIL_PASS)
+# AG-HARD-DISABLED-GMAIL-ZERO:             s.send_message(msg)
         log.info(f"Γ£à Email sent to {to}")
         return True
     except Exception as e:
@@ -126,7 +127,7 @@ def morning_brief() -> str:
             "3. Generate App Password ΓåÆ name it 'NYSR'",
             "4. Copy the 16-char password",
             "5. Go to: github.com/nyspotlightreport/sct-agency-bots/settings/secrets/actions",
-            "6. Update GMAIL_APP_PASS with the new password",
+# AG-HARD-DISABLED-GMAIL-ZERO:             "6. Update GMAIL_APP_PASS with the new password",
             "Email automation will restore immediately.",
         ]
     

@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 """Shared email utility — replaces duplicated SMTP code across 25+ bots."""
 
 import smtplib
@@ -15,13 +16,13 @@ class EmailSender:
 
     def __init__(self, from_name: str = "NYSR Bot"):
         self.from_name = from_name
-        self.user = Config.GMAIL_USER
-        self.password = Config.GMAIL_APP_PASS
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         self.user = Config.GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         self.password = Config.GMAIL_APP_PASS
 
     def send(self, to: str, subject: str, body_html: str, reply_to: str = None) -> bool:
         """Send an HTML email. Returns True on success, raises AlertError on failure."""
         if not self.user or not self.password:
-            logger.warning("Email not configured (GMAIL_USER or GMAIL_APP_PASS missing)")
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             logger.warning("Email not configured (GMAIL_USER or GMAIL_APP_PASS missing)")
             return False
 
         msg = MIMEMultipart("alternative")
@@ -33,9 +34,9 @@ class EmailSender:
         msg.attach(MIMEText(body_html, "html"))
 
         try:
-            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-                server.login(self.user, self.password)
-                server.sendmail(self.user, to, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as server:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                 server.login(self.user, self.password)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:                 server.sendmail(self.user, to, msg.as_string())
             logger.info(f"Email sent to {to}: {subject}")
             return True
         except Exception as e:

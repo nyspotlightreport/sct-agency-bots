@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 UPTIME + SITE HEALTH MONITOR BOT — S.C. Thomas Internal Agency
@@ -19,8 +20,8 @@ from email.mime.multipart import MIMEMultipart
 from urllib.parse import urljoin, urlparse
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
-GMAIL_USER     = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
-GMAIL_APP_PASS = os.getenv("GMAIL_APP_PASS", "")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER     = os.getenv("GMAIL_USER", "nyspotlightreport@gmail.com")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_APP_PASS = os.getenv("GMAIL_APP_PASS", "")
 CHAIRMAN_EMAIL = os.getenv("CHAIRMAN_EMAIL", "nyspotlightreport@gmail.com")
 STATE_FILE     = Path("uptime_state.json")
 TIMEOUT        = 10  # seconds
@@ -137,17 +138,17 @@ def send_alert(url, alerts):
     msg = MIMEMultipart("alternative")
     most_severe = "CRITICAL" if any(a["severity"] == "CRITICAL" for a in alerts) else "WARNING"
     msg["Subject"] = f"🚨 {most_severe}: {url}"
-    msg["From"]    = GMAIL_USER
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     msg["From"]    = GMAIL_USER
     msg["To"]      = CHAIRMAN_EMAIL
     msg.attach(MIMEText(html, "html"))
 
-    if not GMAIL_APP_PASS:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:     if not GMAIL_APP_PASS:
         print(f"[uptime-bot] ALERT for {url}: {[a['message'] for a in alerts]}")
         return
     try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-            s.login(GMAIL_USER, GMAIL_APP_PASS)
-            s.sendmail(GMAIL_USER, CHAIRMAN_EMAIL, msg.as_string())
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.login(GMAIL_USER, GMAIL_APP_PASS)
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.sendmail(GMAIL_USER, CHAIRMAN_EMAIL, msg.as_string())
         print(f"[uptime-bot] Alert sent for {url}")
     except Exception as e:
         print(f"[uptime-bot] Alert email failed: {e}")

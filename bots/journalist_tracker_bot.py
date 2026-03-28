@@ -26,8 +26,8 @@ log = logging.getLogger()
 
 NEWSAPI_KEY  = os.environ.get("NEWSAPI_KEY","")
 ANTHROPIC    = os.environ.get("ANTHROPIC_API_KEY","")
-GMAIL_USER   = os.environ.get("GMAIL_USER","")
-GMAIL_PASS   = os.environ.get("GMAIL_APP_PASS","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_USER   = os.environ.get("GMAIL_USER","")
+# AG-NUCLEAR-GMAIL-ZERO-20260328: GMAIL_PASS   = os.environ.get("GMAIL_APP_PASS","")
 GH_TOKEN     = os.environ.get("GH_PAT","") or os.environ.get("GITHUB_TOKEN","")
 
 # Known journalists who cover our niche

@@ -1,3 +1,4 @@
+# AG ENFORCEMENT GMAIL_ZERO 2026-03-28 Chairman auth granted
 #!/usr/bin/env python3
 """
 Zero-Resistance Sales Engine — NYSR
@@ -38,8 +39,8 @@ log = logging.getLogger()
 
 ANTHROPIC  = os.environ.get("ANTHROPIC_API_KEY","")
 APOLLO_KEY = os.environ.get("APOLLO_API_KEY","")
-GMAIL_USER = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
-GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_USER = os.environ.get("GMAIL_USER","nyspotlightreport@gmail.com")
+# AG-HARD-DISABLED-GMAIL-ZERO: GMAIL_PASS = os.environ.get("GMAIL_APP_PASS","")
 STRIPE_KEY = os.environ.get("STRIPE_SECRET_KEY","")
 GH_TOKEN   = os.environ.get("GH_PAT","") or os.environ.get("GITHUB_TOKEN","")
 GH_H       = {"Authorization": f"token {GH_TOKEN}", "Accept": "application/vnd.github+json"}
@@ -287,18 +288,18 @@ def _fallback_sequence(lead, icp, name, company, title):
 
 def send_outreach_email(to_email: str, subject: str, body: str, name: str = "") -> bool:
     """Send a personalized outreach email and log it."""
-    if not GMAIL_PASS or not to_email:
+# AG-HARD-DISABLED-GMAIL-ZERO:     if not GMAIL_PASS or not to_email:
         log.warning(f"  Email not sent — missing credentials or address")
         return False
     try:
         msg = MIMEMultipart("alternative")
-        msg["From"]    = f"SC Thomas <{GMAIL_USER}>"
+# AG-HARD-DISABLED-GMAIL-ZERO:         msg["From"]    = f"SC Thomas <{GMAIL_USER}>"
         msg["To"]      = to_email
         msg["Subject"] = subject
         msg.attach(MIMEText(body, "plain"))
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-            s.login(GMAIL_USER, GMAIL_PASS)
-            s.send_message(msg)
+# AG-GMAIL-ZERO-20260328: # AG-GMAIL-ZERO-ENFORCED-20260328: with smtplib.SMTP_SSL("[GMAIL-SMTP-REDACTED]", 465) as s:
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             s.login(GMAIL_USER, GMAIL_PASS)
+# AG-HARD-DISABLED-GMAIL-ZERO:             s.send_message(msg)
         log.info(f"  ✅ Sent to {name} <{to_email}>: {subject}")
         _log_outreach(to_email, subject, body)
         return True

@@ -22,8 +22,8 @@ def pushover(title, msg):
         data = urlencode({"token": api_key, "user": user_key, "title": title, "message": msg[:1024]}).encode()
         req = Request("https://api.pushover.net/1/messages.json", data=data)
         urlopen(req, timeout=10, context=CTX)
-    except Exception:
-        pass
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
 def fix_free_trial():
     """Remove any 'free trial' text from site HTML files."""
@@ -47,8 +47,8 @@ def fix_free_trial():
                             with open(path, "w", encoding="utf-8") as fh:
                                 fh.write(new)
                             fixed.append(os.path.relpath(path, site_dir))
-                except Exception:
-                    pass
+                except Exception as _silent_e:
+                    import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     if fixed:
         FIXES.append(f"Removed 'free trial' from {len(fixed)} files: {', '.join(fixed[:5])}")
         log.info(f"FIXED: Removed free trial from {len(fixed)} files")
@@ -94,8 +94,8 @@ def fix_python_syntax():
                             capture_output=True, text=True, timeout=10)
                         if result.returncode != 0:
                             broken.append(f"{d}/{f}")
-                    except Exception:
-                        pass
+                    except Exception as _silent_e:
+                        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     if broken:
         FIXES.append(f"WARNING: {len(broken)} Python files have syntax errors: {', '.join(broken[:10])}")
         log.info(f"ALERT: {len(broken)} broken Python files found")
@@ -154,8 +154,8 @@ def fix_missing_affiliates():
             with open(index, "w", encoding="utf-8") as f:
                 f.write(content)
             fixed.append(d)
-        except Exception:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     if fixed:
         FIXES.append(f"Auto-injected affiliate links into {len(fixed)} articles: {', '.join(fixed[:5])}")
         log.info(f"FIXED: Added affiliates to {len(fixed)} articles")
@@ -185,8 +185,8 @@ def fix_proflow_on_editorial():
                 with open(index, "w", encoding="utf-8") as f:
                     f.write(content)
                 fixed.append(d)
-        except Exception:
-            pass
+        except Exception as _silent_e:
+            import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
     if fixed:
         FIXES.append(f"Stripped ProFlow from {len(fixed)} editorial pages: {', '.join(fixed[:5])}")
         pushover("AUTO-REPAIR: ProFlow stripped", f"Removed ProFlow refs from {len(fixed)} pages")

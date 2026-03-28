@@ -86,8 +86,8 @@ def log_mention_to_supabase(source_url, mention_text, brand_term):
     )
     try:
         urllib.request.urlopen(req, timeout=10)
-    except Exception:
-        pass  # non-fatal — don't break the bot if logging fails
+    except Exception as _silent_e:
+        import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)  # non-fatal — don't break the bot if logging fails
 
 
 class MentionMonitorBot(BaseBot):

@@ -1015,8 +1015,8 @@ class OmegaAgent:
                     self._rsi_agent._metrics = self._metrics
                     self._rsi_agent._broadcast_results()
                     self._rsi_agent._update_genome_performance()
-                except Exception:
-                    pass
+                except Exception as _silent_e:
+                    import logging; logging.getLogger(__name__).error("Error in %s: %s", __file__, _silent_e)
 
         except Exception as e:
             import traceback

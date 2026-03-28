@@ -36,7 +36,7 @@ BOT_REGISTRY = [
         "name":        "Weekly KPI Report",
         "schedule":    "monday_08:00",
         "priority":    "HIGH",
-        "required_config": ["GMAIL_APP_PASS"],
+# AG-NUCLEAR-GMAIL-ZERO-20260328:         "required_config": ["GMAIL_APP_PASS"],
         "description": "Pulls all KPIs and emails Chairman weekly summary",
         "enabled":     True,
     },
@@ -322,7 +322,7 @@ class HealthMonitor:
         # Check config/API keys
         key_checks = {
             "ANTHROPIC_API_KEY": bool(Config.ANTHROPIC_API_KEY),
-            "GMAIL_APP_PASS":    bool(Config.GMAIL_APP_PASS),
+# AG-NUCLEAR-GMAIL-ZERO-20260328:             "GMAIL_APP_PASS":    bool(Config.GMAIL_APP_PASS),
             "AHREFS_API_KEY":    bool(Config.AHREFS_API_KEY),
             "HUBSPOT_API_KEY":   bool(Config.HUBSPOT_API_KEY),
             "APOLLO_API_KEY":    bool(Config.APOLLO_API_KEY),
