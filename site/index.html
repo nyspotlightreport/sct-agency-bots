@@ -433,6 +433,19 @@ img{max-width:100%;height:auto;display:block}
 }</script>
 </head>
 <body>
+<!-- WELCOME BACK POPUP — session-only -->
+<div id="nysr-welcome-popup" style="display:flex;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:99999;align-items:center;justify-content:center;padding:20px;font-family:Arial,sans-serif;">
+  <div style="background:#1A1A2E;border:1px solid #C9A84C;border-radius:10px;max-width:520px;width:100%;padding:36px 36px 28px;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.6);">
+    <button onclick="document.getElementById('nysr-welcome-popup').style.display='none';sessionStorage.setItem('nysr-popup','1');" style="position:absolute;top:14px;right:16px;background:transparent;border:none;color:#C9A84C;font-size:1.6em;cursor:pointer;line-height:1;padding:4px 8px;" aria-label="Close">&times;</button>
+    <div style="color:#C9A84C;font-size:.7em;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px;font-weight:700;">NY Spotlight Report &bull; ISSN 2026-0147</div>
+    <h2 style="color:#fff;font-size:1.3em;line-height:1.35;margin-bottom:16px;font-family:Georgia,serif;">Welcome Back to the New Face of NY Spotlight Report!</h2>
+    <p style="color:#ccc;font-size:.93em;line-height:1.7;margin-bottom:16px;">All former technical issues are resolved and we are fully back up and running with the same journalism and reporting as always &mdash; just with a new beat for the gods!</p>
+    <p style="color:#ccc;font-size:.93em;line-height:1.7;margin-bottom:28px;">Thank you for your patience, and our deepest gratitude to all the many subscribers who reached out while we went through prolonged technical difficulties.</p>
+    <button onclick="document.getElementById('nysr-welcome-popup').style.display='none';sessionStorage.setItem('nysr-popup','1');" style="background:#C9A84C;color:#1A1A2E;border:none;padding:12px 28px;border-radius:6px;font-weight:700;font-size:.88em;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;width:100%;">Take Me to the Stories &rarr;</button>
+  </div>
+</div>
+<script>(function(){if(sessionStorage.getItem('nysr-popup')){document.getElementById('nysr-welcome-popup').style.display='none';}})();</script>
+
 <!-- NYSR WELCOME BACK POPUP -->
 <div id="nysr-wb" style="display:flex;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:99999;align-items:center;justify-content:center;padding:20px;font-family:Arial,sans-serif;">
   <div style="background:#1A1A2E;border:1px solid #C9A84C;border-radius:10px;max-width:540px;width:100%;padding:38px 38px 30px;position:relative;box-shadow:0 8px 48px rgba(0,0,0,.7);">
@@ -468,7 +481,7 @@ img{max-width:100%;height:auto;display:block}
     <a href="/fashion/">Fashion</a>
     <a href="/culture/">Culture</a>
     <a href="/nightlife/">Nightlife</a>
-    <a href="/lgbtq/">LGBTQIA+</a> <a href="/advertise/">Advertise</a>
+    <a href="/lgbtq/" style="">LGBTQIA+</a><a href="/books/" style="color:#ccc;font-family:Arial,sans-serif;font-size:.82em;margin-left:14px;text-decoration:none">Books</a> <a href="/advertise/">Advertise</a>
   </nav>
 </header>
 
@@ -543,7 +556,7 @@ img{max-width:100%;height:auto;display:block}
 <section class="section">
   <div class="section-header">
     <h2>LGBTQIA+</h2>
-    <a href="/lgbtq/">View All &rarr;</a>
+    <a href="/lgbtq/" style="">View All &rarr;</a><a href="/books/" style="color:#ccc;font-family:Arial,sans-serif;font-size:.82em;margin-left:14px;text-decoration:none">Books</a>
   </div>
   <div class="article-grid">
     <div class="article-card">
@@ -702,7 +715,7 @@ img{max-width:100%;height:auto;display:block}
       <a href="/fashion/">Fashion</a>
       <a href="/culture/">Culture</a>
       <a href="/nightlife/">Nightlife</a>
-      <a href="/lgbtq/">LGBTQIA+</a> <a href="/advertise/">Advertise</a>
+      <a href="/lgbtq/" style="">LGBTQIA+</a><a href="/books/" style="color:#ccc;font-family:Arial,sans-serif;font-size:.82em;margin-left:14px;text-decoration:none">Books</a> <a href="/advertise/">Advertise</a>
       <a href="/blog/">All Articles</a>
     </div>
     <div>
