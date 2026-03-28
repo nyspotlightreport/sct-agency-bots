@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T05:16:52.356963",
+  "timestamp": "2026-03-28T05:25:32.119187",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 161,
   "brand_mention_count": 33,
   "analyses": [
     {
@@ -170,28 +170,6 @@
     },
     {
       "source": "google_news",
-      "title": "Frank Edward Taylor Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSlpvbHhNVHJMOE41eFUySUlkRVhEOHdmVy1xeGUxN1pWNzdvTUR5N0dqNUNXOXlwQmlVMGJqS3MzYnY2M2dKd01Hd05ha3pIZUtDUDdWTTRhX2FnRkFHeW9xdDZOV0duUHVoYUZYc3NCLVpBczlrQjl1UFRsTjAwZA?oc=5",
-      "outlet": "Legacy",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Greenville to unveil Honor Tower on Nov. 11: Final piece of Unity Park development - Greenville Online",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYVA0SlFXZ1o1eUpjSTcyeG9RTnh5ZW9heGIzS0wzTERneGNvcG5tV2t4Q0IwMWtIZEg1WjBaUGp6blZUZFRDeXQ5ZldhbFdGZW42Vi1mOU5uY25SNHM5SjZBNGU2UmVWYXBFcWZxdXZyMG9sYUV2cjdabmk2TVZibmZUTnZ1YU5wMXdoSnBjZ1p5a1lOUm5zZGY2dUh1WTF1dGZJcS1adDVyUWlEWTBwTWRSblpKZFZpLWk2MklNd2NpOXJrZk1Pdjd6Zw?oc=5",
-      "outlet": "Greenville Online",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -214,31 +192,53 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia, SC - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
       "outlet": "Post and Courier",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Empowering Entrepreneurs: ACRE\u2019s Role In Growing South Carolina\u2019s Agribusiness - Where The Food Comes From",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPOTA4SnVGNzdZaEp6TXlZRnZjZ3RIMENaakhnVlZmRG9LekxMTjJjbFBJOC1lbHM1cjBNeTU4cXlxM1lTU0kzSjFfR1NXQnNJaF9RbTZ6ZFpmNjBCX2pzekQwbzgyaE8zUnJlNnc1dlZZUTlJbVE1UlZfc293RUswdmhoaW5DX1dIdk5yYTZpRWozbVU5elUtZFB1X081WFpMMlJreVViSTBOR0Y0Tk1n?oc=5",
+      "outlet": "Where The Food Comes From",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Why I Started My Business in Western South Carolina, and You Should, Too - Livability.com",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQYTVOcVV4NDFjTHo1azVsWjlPYkpFcV9oRXBfVVRtQUVKNVJNOWMwQ21tZXZER3F3LTNtSndvUkFBaHFPcHVWMDRKOE55ckZRWlZLNlRsTGFNQlF0ajZmbnd3b3V3ZXZWT0hRdkhDQU5lYVJUakRaeG51a19MdkNzdUJwZVZuN0hJLUNaU1dEOHJXNnVjQnZOX2VIakdQWDFMTlF4VEZqbHBaUmx5NHZkYWVqM0MxVno5WkNWRGx6MjM5QWV0QjJ3MmNiUGQ?oc=5",
+      "outlet": "Livability.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Ten years after Final Four appearance, former LSU star and entrepreneur Tyrus Thomas is living an \u201cexcellent moment\u201d in life - lsureveille.com",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNTFptUkVBeTVHbm9EeFE2OFVWVDlOUHdOdjhlT1pNakJXZ1ZNcldEYWZUMG53dV9mVkVqYW9iWm1lQjg3WkMzb1VTNXNvMTB3Smp4M3pxZUc1R1ozT096QTNrU1puOUNWNmNjVExiNEc0ZW5rVTZDLWVYOVU5cDF3dHlkWXhtVHk5bHBuZVQ4RG1qamplZUpYbFI1eHllTzF3eTR2a3lGZEVlRFZYZ0RrMlQ3RFUxbDR2SUFjLWY1a3U4SjlUMHVZdGxJSXRIMW1iSmQwbmVURE8tcDg0aUFhOWwtZF9WNFpZNk9SeGxB?oc=5",
+      "outlet": "lsureveille.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Onward and Upward - Columbia Metropolitan Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5NeXFUQ0cxWlU1WjY0Q2pLVXdGcmo0ekdqeVV3TnY0VEdLTTY4a0FVWkc0V0lJa2o1ZG9XTnBzQ1FGZWI5bzZ1WUZqREUwSXZMWE4tUGNidWtDUHdXMkd5NUxR?oc=5",
+      "outlet": "Columbia Metropolitan Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
