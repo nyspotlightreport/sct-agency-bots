@@ -263,5 +263,6 @@ window.addEventListener('scroll',()=>{const d=document.documentElement;const p=(
 <script>
 (function(){fetch("/.netlify/functions/track",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({event:"pageview",page:location.pathname,ref:document.referrer,ts:Date.now()})}).catch(function(){});})();
 </script>
+<script src="/js/exit-popup.js" defer></script>
 </body>
 </html>
