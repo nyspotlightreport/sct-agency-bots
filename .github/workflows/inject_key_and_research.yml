@@ -1,0 +1,17 @@
+name: Inject Key and Launch Deep Research
+on:
+  workflow_dispatch:
+jobs:
+  inject-and-research:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inject Anthropic key to server and launch research
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          curl -s -X POST http://204.48.29.16:8080/ -H "Content-Type: application/json" -d "{\"token\":\"nysr-general-command-2026-sc-thomas\",\"cmd\":\"grep -q ANTHROPIC /opt/nysr/config/.env && sed -i \\"/ANTHROPIC/d\\" /opt/nysr/config/.env; echo ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY >> /opt/nysr/config/.env && echo KEY_INJECTED\"}"
+          sleep 2
+          curl -s -X POST http://204.48.29.16:8080/ -H "Content-Type: application/json" -d "{\"token\":\"nysr-general-command-2026-sc-thomas\",\"cmd\":\"pm2 restart nysr-orchestrator && pm2 save && echo ORCHESTRATOR_RESTARTED\"}"
+          curl -s -X POST http://204.48.29.16:8080/ -H "Content-Type: application/json" -d "{\"token\":\"nysr-general-command-2026-sc-thomas\",\"cmd\":\"cd /opt/nysr && export $(cat config/.env | xargs) && nohup python3 deep_research.py > logs/deep_research.log 2>&1 & echo RESEARCH_LAUNCHED_PID=$!"
+          echo "All done"
