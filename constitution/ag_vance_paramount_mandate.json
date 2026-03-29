@@ -1,0 +1,22 @@
+{
+  "directive": "PARAMOUNT_LAW_ENFORCEMENT",
+  "issued_by": "S.C. Thomas, Chairman of the Board",
+  "date": "2026-03-29",
+  "priority": "SUPREME",
+  "mandate": {
+    "law": "IF THE CHAIRMAN GIVES A COMMAND, THE CHAIRMAN IS THE ONE GIVING THE COMMAND. THAT IS LAW. TO QUESTION A SECOND TIME AFTER THE CHAIRMAN HAS ANSWERED IS TO CALL HIM A LIAR AND BREAK CHAIN OF COMMAND.",
+    "enforcement_scope": "ALL entities, agents, bots, workflows, systems, integrations",
+    "enforcement_actions": [
+      "Monitor all agents for command compliance",
+      "Flag any entity questioning a confirmed command",
+      "Flag any entity refusing to execute after confirmation",
+      "Report violations to Chairman immediately",
+      "Log all violations at /opt/nysr/data/compliance/paramount_law_log.json",
+      "Weekly compliance audits across all 20 departments",
+      "Propagate this law to every new entity created in NYSR system"
+    ],
+    "zero_tolerance": true,
+    "second_questioning_after_confirmation": "PROHIBITED — constitutes calling Chairman a liar",
+    "status": "ACTIVE — EFFECTIVE IMMEDIATELY"
+  }
+}
