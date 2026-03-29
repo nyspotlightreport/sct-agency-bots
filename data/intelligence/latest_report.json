@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-29T08:02:36.580253",
+  "timestamp": "2026-03-29T09:58:02.055600",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,14 +22,14 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 158,
+  "mention_count": 153,
   "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
-      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -38,9 +38,9 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
+      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -148,9 +148,9 @@
     },
     {
       "source": "google_news",
-      "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - BioSpectrum India",
+      "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - biospectrumindia.com",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQV0ZhekZPLXphejFRTlAzMEs4TG5aWjFsRHh3aHhGQTV5QnVEU2FJcXVpZ2tadWNKbWQtMHhSaWFjLTVoODVwd0g5STVJekFHbXZabzRKSWNvSWx6UkRxQm1BWXJLTWFYM0NXZ0RCR0JEdnE1SkJrTjdPcm1HMmlMZFRqNDV6ZnFNYXRlY3JhSVdycnBxbmdickdFajl2RDRjd2t0cU4wUzN0VldDSlRDcEI5Rm11UEJmRWRWNjJFQTlfNWp2OUVxZzgtUWhsZldUVUh2T1NQWExMci1I?oc=5",
-      "outlet": "BioSpectrum India",
+      "outlet": "biospectrumindia.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,20 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Frank Edward Taylor Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSlpvbHhNVHJMOE41eFUySUlkRVhEOHdmVy1xeGUxN1pWNzdvTUR5N0dqNUNXOXlwQmlVMGJqS3MzYnY2M2dKd01Hd05ha3pIZUtDUDdWTTRhX2FnRkFHeW9xdDZOV0duUHVoYUZYc3NCLVpBczlrQjl1UFRsTjAwZA?oc=5",
-      "outlet": "Legacy",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - legacy.com",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy",
+      "outlet": "legacy.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -239,6 +228,17 @@
       "title": "Audrey Thomas Obituary (2006) - Charleston - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOOWxkU3pwUTh0SkV0dHNuLUdMNHZqQjk2M3o1WG9qM3V3UkNWdzJteGtycUlIT09vWkExVWs2N2FwY2xwTy10LTRYWVJZOVNPV3VXLV9fM0RaLUFhNUE0Y3VGd0VfdXRqRmlGdzlYLURCVzBzY2lIVjloVzhHR3lKcWpJZ0JMalFGd2VTaUNUZXdRYUtuLTg2UWQwelRMdw?oc=5",
       "outlet": "Post and Courier",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Tommie Innovators Spark Big Ideas at the Fowler Business Concept Challenge - Newsroom | University of St. Thomas",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ3RaYjJUZ2lPT1o0MUxLSC1YQmh5UUFwcnNpa1JxbFdUUWd6NG1oVWIzSUJBUHZiLTFBeHlmc3N5LUdWb2RqQWF0Y01pUVo4WkpQLVNsVFJIVnZ6T2o3ekdzcHdHQWc2YXRFTUhNYWpHNHNPaThwNW1xWHZSR2NxYUxKbGRVN1hJUUxDSUpEM3ZkbFB2Q2hDb1dncmt2czE1Vzhr?oc=5",
+      "outlet": "Newsroom | University of St. Thomas",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
