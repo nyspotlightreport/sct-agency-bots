@@ -1,0 +1,63 @@
+name: Infra Command
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Command to run (netlify-deploy, netlify-clear-cache, do-restart-emma, do-pm2-status)'
+        required: true
+        type: string
+      target:
+        description: 'Target repo or service (optional)'
+        required: false
+        type: string
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Netlify Deploy
+        if: inputs.command == 'netlify-deploy'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          curl -s -X POST "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/builds" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Content-Type: application/json"
+          echo "Netlify deploy triggered"
+
+      - name: Netlify Clear Cache
+        if: inputs.command == 'netlify-clear-cache'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          curl -s -X POST "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/builds" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"clear_cache":true}'
+          echo "Netlify cache cleared"
+
+      - name: DO Restart Emma
+        if: inputs.command == 'do-restart-emma'
+        env:
+          NYSR_COMMAND_TOKEN: ${{ secrets.NYSR_COMMAND_TOKEN }}
+          DO_SERVER: ${{ secrets.DO_SERVER_IP }}
+        run: |
+          curl -s -X POST "http://$DO_SERVER:8080/" \
+            -H "Authorization: Bearer $NYSR_COMMAND_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"command":"pm2 restart emma-voice-agent"}'
+          echo "Emma restart triggered"
+
+      - name: DO PM2 Status
+        if: inputs.command == 'do-pm2-status'
+        env:
+          NYSR_COMMAND_TOKEN: ${{ secrets.NYSR_COMMAND_TOKEN }}
+          DO_SERVER: ${{ secrets.DO_SERVER_IP }}
+        run: |
+          curl -s -X POST "http://$DO_SERVER:8080/" \
+            -H "Authorization: Bearer $NYSR_COMMAND_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"command":"pm2 list"}'
+          echo "PM2 status checked"

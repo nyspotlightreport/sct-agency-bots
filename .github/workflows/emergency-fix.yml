@@ -15,6 +15,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+
       - name: Fix GH_PAT Migration
         run: |
           find .github/workflows/ -name "*.yml" -exec sed -i 's/secrets\.GH_PAT/secrets.GITHUB_TOKEN/g' {} \;
@@ -23,53 +24,31 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "NYSR Fix"
           git add .github/workflows/
-          git diff --staged --quiet || git commit -m "fix-complete-pat-migration"
+          git diff --staged --quiet || git commit -m "fix: complete PAT migration"
           git push origin main
-      - name: Fix OPENAI Key
+
+      - name: Set OPENAI Key in Repos
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          echo "${{ secrets.OPENAI_API_KEY }}" | gh secret set OPENAI_API_KEY --repo nyspotlightreport/sct-agency-bots
-          echo "${{ secrets.OPENAI_API_KEY }}" | gh secret set OPENAI_API_KEY --repo nyspotlightreport/NY-Spotlight-Report-good
-          echo "OPENAI set in both repos"
-      - name: Fix Netlify Cache
+          echo "$OPENAI_API_KEY" | gh secret set OPENAI_API_KEY --repo nyspotlightreport/sct-agency-bots
+          echo "$OPENAI_API_KEY" | gh secret set OPENAI_API_KEY --repo nyspotlightreport/NY-Spotlight-Report-good
+          echo "OPENAI key set in both repos via secret"
+
+      - name: Clear Netlify Cache
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          curl -s -X POST "https://api.netlify.com/api/v1/sites/${{ secrets.NETLIFY_SITE_ID }}/builds" \
-            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
+          curl -s -X POST "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/builds" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
             -H "Content-Type: application/json" \
             -d '{"clear_cache":true}'
           echo "Netlify cache cleared"
+
       - name: Fix Sweepstakes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/nyspotlightreport/NY-Spotlight-Report-good.git /tmp/live
-          cd /tmp/live
-          mkdir -p netlify/functions
-          cat > netlify/functions/sweepstakes-subscribe.js << 'JSEOF'
-          exports.handler = async (event) => {
-            const headers = {'Access-Control-Allow-Origin':'*','Content-Type':'application/json'};
-            if (event.httpMethod === 'OPTIONS') return {statusCode:200,headers,body:''};
-            if (event.httpMethod !== 'POST') return {statusCode:405,headers,body:JSON.stringify({success:false})};
-            let email;
-            try { email = JSON.parse(event.body||'{}').email; } catch(e) { return {statusCode:400,headers,body:JSON.stringify({success:false,error:'Invalid body'})}; }
-            if (!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return {statusCode:400,headers,body:JSON.stringify({success:false,error:'Valid email required'})};
-            const U=process.env.SUPABASE_URL,K=process.env.SUPABASE_ANON_KEY;
-            if (!U||!K) { console.error('Missing Supabase vars'); return {statusCode:500,headers,body:JSON.stringify({success:false,error:'Config error'})}; }
-            try {
-              const r=await fetch(`${U}/rest/v1/sweepstakes_entries`,{method:'POST',headers:{'Content-Type':'application/json','apikey':K,'Authorization':`Bearer ${K}`,'Prefer':'return=minimal'},body:JSON.stringify({email:email.toLowerCase().trim(),created_at:new Date().toISOString(),source:'nyspotlightreport.com'})});
-              if (!r.ok) { const e=await r.text(); console.error('DB error:',r.status,e); return {statusCode:500,headers,body:JSON.stringify({success:false,error:'DB error'})}; }
-              return {statusCode:200,headers,body:JSON.stringify({success:true,message:"You're entered!"})};
-            } catch(e) { console.error(e); return {statusCode:500,headers,body:JSON.stringify({success:false,error:'Server error'})}; }
-          };
-          JSEOF
-          curl -s -X PATCH "https://api.netlify.com/api/v1/sites/${{ secrets.NETLIFY_SITE_ID }}" \
-            -H "Authorization: Bearer ${{ secrets.NETLIFY_AUTH_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d '{"build_settings":{"env":{"SUPABASE_URL":"${{ secrets.SUPABASE_URL }}","SUPABASE_ANON_KEY":"${{ secrets.SUPABASE_ANON_KEY }}"}}}'
-          git config user.email "actions@github.com"
-          git config user.name "NYSR Fix"
-          git add -A
-          git diff --staged --quiet || git commit -m "fix-sweepstakes-supabase-env"
-          git push origin main
-          echo "DONE"
+          echo "Sweepstakes pipeline fix — see separate workflow"

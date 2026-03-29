@@ -1,34 +1,52 @@
 name: Fix Self
 on:
-push:
-paths: [’.github/workflows/fix-self.yml’]
-workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/fix-self.yml'
+  workflow_dispatch:
 jobs:
-fix:
-runs-on: ubuntu-latest
-permissions:
-contents: write
-steps:
-- uses: actions/checkout@v4
-with:
-token: ${{ secrets.GITHUB_TOKEN }}
-fetch-depth: 0
-- name: Patch GH_PAT to GITHUB_TOKEN
-run: |
-find .github/workflows/ -name “*.yml” -exec sed -i ‘s/secrets.GH_PAT/secrets.GITHUB_TOKEN/g’ {} ;
-COUNT=$(grep -rl “secrets.GH_PAT” .github/workflows/ | wc -l)
-echo “Remaining GH_PAT refs: $COUNT”
-git config user.email “actions@github.com”
-git config user.name “NYSR Fix”
-git add .github/workflows/
-git diff –staged –quiet || git commit -m “fix-all-pat-references-complete”
-git push origin main
-echo “DONE”
-- name: Clear Netlify Cache
-run: |
-curl -s -X POST “https://api.netlify.com/api/v1/sites/8ef722e1-4110-42af-8ddb-ff6c2ce1745e/builds” -H “Authorization: Bearer nfp_8zEXuGXcf3xzEKZT6tA5nVVnKDUXnjBL40a4” -H “Content-Type: application/json” -d ‘{“clear_cache”:true}’
-echo “Netlify cache cleared”
-- name: Set Supabase Env in Netlify
-run: |
-curl -s -X PATCH “https://api.netlify.com/api/v1/sites/8ef722e1-4110-42af-8ddb-ff6c2ce1745e” -H “Authorization: Bearer nfp_8zEXuGXcf3xzEKZT6tA5nVVnKDUXnjBL40a4” -H “Content-Type: application/json” -d ‘{“build_settings”:{“env”:{“SUPABASE_URL”:“https://sazuogglxukumnvhvkms.supabase.co”,“SUPABASE_ANON_KEY”:“eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNhenVvZ2dseHVrdW1udmh2a21zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDIzMzE3OTMsImV4cCI6MjA1NzkwNzc5M30.EtNRNKJAouH1JQEgCwrFsANtHmFMVU0IqBXkp-MRqmg”}}}’
-echo “Supabase vars set”
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Patch GH_PAT to GITHUB_TOKEN
+        run: |
+          find .github/workflows/ -name "*.yml" -exec sed -i 's/secrets\.GH_PAT/secrets.GITHUB_TOKEN/g' {} \;
+          COUNT=$(grep -rl "secrets\.GH_PAT" .github/workflows/ | wc -l)
+          echo "Remaining GH_PAT refs: $COUNT"
+          git config user.email "actions@github.com"
+          git config user.name "NYSR Fix"
+          git add .github/workflows/
+          git diff --staged --quiet || git commit -m "fix: all PAT references replaced"
+          git push origin main
+          echo "DONE"
+
+      - name: Clear Netlify Cache
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          curl -s -X POST "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/builds" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"clear_cache":true}'
+          echo "Netlify cache cleared"
+
+      - name: Set Supabase Env in Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          curl -s -X PATCH "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"build_settings\":{\"env\":{\"SUPABASE_URL\":\"$SUPABASE_URL\",\"SUPABASE_ANON_KEY\":\"$SUPABASE_ANON_KEY\"}}}"
+          echo "Supabase vars set via secrets"
