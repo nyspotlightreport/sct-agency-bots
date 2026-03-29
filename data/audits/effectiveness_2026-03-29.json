@@ -1,0 +1,113 @@
+{
+  "affiliate_coverage": {
+    "status": "PASS",
+    "coverage_pct": 100.0,
+    "checked": 20,
+    "with_affiliate": 20,
+    "missing_sample": []
+  },
+  "editorial_purity": {
+    "status": "PASS",
+    "checked": 10,
+    "violations": 0,
+    "details": []
+  },
+  "smoke_tests": {
+    "status": "PASS",
+    "passed": 8,
+    "total": 8
+  },
+  "agent_stubs": {
+    "status": "WARN",
+    "total_agents": 157,
+    "stubs": 5,
+    "stub_list": [
+      {
+        "file": "frontend_developer_agent.py",
+        "lines": 45
+      },
+      {
+        "file": "performance_optimizer_agent.py",
+        "lines": 43
+      },
+      {
+        "file": "security_auditor_agent.py",
+        "lines": 48
+      },
+      {
+        "file": "tech_lead_agent.py",
+        "lines": 40
+      },
+      {
+        "file": "account_manager_agent.py",
+        "lines": 48
+      }
+    ]
+  },
+  "workflow_success": {
+    "status": "WARN",
+    "success_rate": 79.6,
+    "passed": 39,
+    "total": 49,
+    "failures": [
+      "\ud83c\udfb0 Sweepstakes Hunter (Hourly)",
+      "GitHub Monitor",
+      "System Watchdog - End-to-End Health",
+      "Hayden Cross QC Daily",
+      "Uptime Monitor",
+      "Fulfillment Monitor (Every 2 Hours)",
+      "Drew Sinclair Analytics Daily"
+    ]
+  },
+  "revenue_touchpoints": {
+    "status": "FAIL",
+    "checks": {
+      "homepage": {
+        "status": 200,
+        "ok": true
+      },
+      "store": {
+        "status": 200,
+        "ok": true
+      },
+      "checkout_success": {
+        "status": 200,
+        "ok": true
+      },
+      "subscribe_api": {
+        "status": 0,
+        "ok": false
+      }
+    },
+    "down": [
+      "subscribe_api (0)"
+    ]
+  },
+  "content_freshness": {
+    "status": "PASS",
+    "last_publish_success": "2026-03-29T11:04:31Z",
+    "stale": false
+  },
+  "data_growth": {
+    "status": "WARN",
+    "current_counts": {
+      "contacts": 0,
+      "outreach_log": 45,
+      "brand_mentions": 0,
+      "subscribers": -1
+    },
+    "growth_24h": {
+      "contacts": 0,
+      "outreach_log": 10,
+      "brand_mentions": 0,
+      "subscribers": "unknown"
+    }
+  },
+  "_summary": {
+    "timestamp": "2026-03-29T14:02:39.668099+00:00",
+    "score": 50,
+    "passed": 4,
+    "total": 8,
+    "alerts": 4
+  }
+}
