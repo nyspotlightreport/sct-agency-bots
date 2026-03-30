@@ -1,5 +1,5 @@
 # NYSR Agency System — Documentation
-*Auto-generated 2026-03-23 by Doc Generator Bot*
+*Auto-generated 2026-03-30 by Doc Generator Bot*
 
 ## System Overview
 - **Agents:** Intelligent orchestrators with memory and decision-making
@@ -8,6 +8,13 @@
 
 ---
 
+---
+
+# `agents/__init__.py`
+
+## __init__
+
+*Documentation pending.*
 ---
 
 # `agents/account_executive_agent.py`
@@ -31,9 +38,23 @@
 *Documentation pending.*
 ---
 
+# `agents/agent_memory.py`
+
+## agent_memory
+
+*Documentation pending.*
+---
+
 # `agents/ahrefs_module.py`
 
 ## ahrefs_module
+
+*Documentation pending.*
+---
+
+# `agents/ahrefs_serp_tracker.py`
+
+## ahrefs_serp_tracker
 
 *Documentation pending.*
 ---
@@ -73,9 +94,23 @@
 *Documentation pending.*
 ---
 
+# `agents/article_image_generator.py`
+
+## article_image_generator
+
+*Documentation pending.*
+---
+
 # `agents/auto_debugger_agent.py`
 
 ## auto_debugger_agent
+
+*Documentation pending.*
+---
+
+# `agents/auto_publisher.py`
+
+## auto_publisher
 
 *Documentation pending.*
 ---
@@ -118,6 +153,13 @@
 # `agents/casey_lin_it.py`
 
 ## casey_lin_it
+
+*Documentation pending.*
+---
+
+# `agents/chairman_briefing.py`
+
+## chairman_briefing
 
 *Documentation pending.*
 ---
@@ -167,6 +209,13 @@
 # `agents/cold_outreach_agent.py`
 
 ## cold_outreach_agent
+
+*Documentation pending.*
+---
+
+# `agents/commission_tracker.py`
+
+## commission_tracker
 
 *Documentation pending.*
 ---
@@ -241,9 +290,23 @@
 *Documentation pending.*
 ---
 
+# `agents/deadman_switch.py`
+
+## deadman_switch
+
+*Documentation pending.*
+---
+
 # `agents/deal_desk_agent.py`
 
 ## deal_desk_agent
+
+*Documentation pending.*
+---
+
+# `agents/deliverability_monitor.py`
+
+## deliverability_monitor
 
 *Documentation pending.*
 ---
@@ -283,6 +346,13 @@
 *Documentation pending.*
 ---
 
+# `agents/directors_omega_intelligence.py`
+
+## directors_omega_intelligence
+
+*Documentation pending.*
+---
+
 # `agents/directors_super_intelligence.py`
 
 ## directors_super_intelligence
@@ -293,6 +363,13 @@
 # `agents/drew_sinclair_analytics.py`
 
 ## drew_sinclair_analytics
+
+*Documentation pending.*
+---
+
+# `agents/effectiveness_auditor.py`
+
+## effectiveness_auditor
 
 *Documentation pending.*
 ---
@@ -318,6 +395,13 @@
 *Documentation pending.*
 ---
 
+# `agents/email_blaster.py`
+
+## email_blaster
+
+*Documentation pending.*
+---
+
 # `agents/engagement_agent.py`
 
 ## engagement_agent
@@ -332,6 +416,13 @@
 *Documentation pending.*
 ---
 
+# `agents/env_parity_checker.py`
+
+## env_parity_checker
+
+*Documentation pending.*
+---
+
 # `agents/frontend_developer_agent.py`
 
 ## frontend_developer_agent
@@ -339,9 +430,23 @@
 *Documentation pending.*
 ---
 
+# `agents/fulfillment_monitor.py`
+
+## fulfillment_monitor
+
+*Documentation pending.*
+---
+
 # `agents/fullstack_builder_agent.py`
 
 ## fullstack_builder_agent
+
+*Documentation pending.*
+---
+
+# `agents/generate_kdp_covers.py`
+
+## generate_kdp_covers
 
 *Documentation pending.*
 ---
@@ -367,6 +472,13 @@
 *Documentation pending.*
 ---
 
+# `agents/gumroad_followup.py`
+
+## gumroad_followup
+
+*Documentation pending.*
+---
+
 # `agents/hayden_cross_qc.py`
 
 ## hayden_cross_qc
@@ -384,6 +496,13 @@
 # `agents/inbox_intelligence_agent.py`
 
 ## inbox_intelligence_agent
+
+*Documentation pending.*
+---
+
+# `agents/inject_affiliate_links.py`
+
+## inject_affiliate_links
 
 *Documentation pending.*
 ---
@@ -416,6 +535,20 @@
 *Documentation pending.*
 ---
 
+# `agents/lead_nurture.py`
+
+## lead_nurture
+
+*Documentation pending.*
+---
+
+# `agents/linkedin_carousel_generator.py`
+
+## linkedin_carousel_generator
+
+*Documentation pending.*
+---
+
 # `agents/market_intelligence_scout.py`
 
 ## market_intelligence_scout
@@ -444,9 +577,30 @@
 *Documentation pending.*
 ---
 
+# `agents/master_audit_52d.py`
+
+## master_audit_52d
+
+*Documentation pending.*
+---
+
+# `agents/master_audit_99d.py`
+
+## master_audit_99d
+
+*Documentation pending.*
+---
+
 # `agents/master_sales_agent.py`
 
 ## master_sales_agent
+
+*Documentation pending.*
+---
+
+# `agents/mega_repair_bot.py`
+
+## mega_repair_bot
 
 *Documentation pending.*
 ---
@@ -507,9 +661,37 @@
 *Documentation pending.*
 ---
 
+# `agents/omega_capabilities.py`
+
+## omega_capabilities
+
+*Documentation pending.*
+---
+
+# `agents/omega_content_intelligence.py`
+
+## omega_content_intelligence
+
+*Documentation pending.*
+---
+
+# `agents/omega_revenue_engine.py`
+
+## omega_revenue_engine
+
+*Documentation pending.*
+---
+
 # `agents/opportunity_discovery.py`
 
 ## opportunity_discovery
+
+*Documentation pending.*
+---
+
+# `agents/output_verifier.py`
+
+## output_verifier
 
 *Documentation pending.*
 ---
@@ -538,6 +720,13 @@
 # `agents/performance_optimizer_agent.py`
 
 ## performance_optimizer_agent
+
+*Documentation pending.*
+---
+
+# `agents/pr_firm_outreach.py`
+
+## pr_firm_outreach
 
 *Documentation pending.*
 ---
@@ -745,6 +934,20 @@
 *Documentation pending.*
 ---
 
+# `agents/self_healer.py`
+
+## self_healer
+
+*Documentation pending.*
+---
+
+# `agents/self_repair_engine.py`
+
+## self_repair_engine
+
+*Documentation pending.*
+---
+
 # `agents/seo_audit_agent.py`
 
 ## seo_audit_agent
@@ -769,6 +972,13 @@
 # `agents/strategic_roi_optimizer.py`
 
 ## strategic_roi_optimizer
+
+*Documentation pending.*
+---
+
+# `agents/substack_partnership_bot.py`
+
+## substack_partnership_bot
 
 *Documentation pending.*
 ---
@@ -843,6 +1053,13 @@
 *Documentation pending.*
 ---
 
+# `agents/traffic_conversion_engine.py`
+
+## traffic_conversion_engine
+
+*Documentation pending.*
+---
+
 # `agents/trend_intelligence_agent.py`
 
 ## trend_intelligence_agent
@@ -853,6 +1070,13 @@
 # `agents/ultra_watchdog.py`
 
 ## ultra_watchdog
+
+*Documentation pending.*
+---
+
+# `agents/venue_extractor.py`
+
+## venue_extractor
 
 *Documentation pending.*
 ---
@@ -874,6 +1098,13 @@
 # `agents/wiki_agent.py`
 
 ## wiki_agent
+
+*Documentation pending.*
+---
+
+# `agents/youtube_shorts_factory.py`
+
+## youtube_shorts_factory
 
 *Documentation pending.*
 ---
