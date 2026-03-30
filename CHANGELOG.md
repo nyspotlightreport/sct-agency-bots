@@ -1,114 +1,117 @@
-# Changelog — Week of Mar 16 — Mar 23, 2026
+# Changelog — Week of Mar 23 — Mar 30, 2026
 
 
 ## ✨ New Features
 
-- `41d664d` feat: weekly SEO report (nyspotlightreport)
-- `331729f` feat: weekly SEO report (nyspotlightreport)
-- `99f758f` feat: webinar video live (nyspotlightreport)
-- `2d80502` feat: security scanner + code quality gate + opportunity discovery agents with daily workflows (nyspotlightreport)
-- `dcc10bc` feat supercore parallelism framework (nyspotlightreport)
-- `f13a8c7` feat: master_opportunity_activation — Jeff+Reese+15Directors+Apollo+Twitter+Affiliate all in parallel. Daily 9am ET + on-demand. (nyspotlightreport)
-- `980dce2` feat(ALL DIRECTORS): 15 department directors upgraded to Fully Developed Artificial Real-time Reasoning Agentic Multimodal Super-intelligences. Full opportunity scan + individual activation APIs. (nyspotlightreport)
-- `817508e` feat(REESE DIRECTOR): Reese Morgan — Director of Engineering. Full-stack Agentic Super-intelligence. Audits workflows, publishes products, detects failures, generates engineering intelligence. (nyspotlightreport)
-- `4aaf52a` feat(JEFF BANKS): CRO workflow — 5x daily intel + briefing + deal close. Jeff has full system authority. (nyspotlightreport)
-- `178cbf5` feat(JEFF BANKS): Chief Results Officer — Fully developed Agentic Super-intelligence. Real-time cashflow, valuation, brand monitoring, deal closure. Authority over all departments. Reports to Chairman only. (nyspotlightreport)
-- `5aebd49` feat: email_monitor_bot — checks +affiliates and +sweep aliases 4x daily (nyspotlightreport)
-- `85182e5` feat: email_monitor — 4x daily affiliate + sweep inbox check (nyspotlightreport)
-- `d1d3650` feat: affiliate_engine workflow — 23 programs daily noon ET (nyspotlightreport)
-- `16591a4` feat(REESE P0): affiliate_engine.py — 23 programs, zero browser, zero captcha, direct HTTP email applications. Fully autonomous. No Sean involvement ever. (nyspotlightreport)
-- `d88d3f5` feat(REESE): affiliate_applications workflow — runs daily 11am ET, 15 programs, direct HTTP + email applications (nyspotlightreport)
-- `8437105` feat(REESE): affiliate_direct_apply_bot — 15 programs, direct HTTP + email applications, no Playwright needed. GoHighLevel 40%, ConvertKit 30%, HubSpot $1k/sale. (nyspotlightreport)
-- `14d5fc3` feat(GENIUS): daily genius self-improvement workflow — Edison experimental loop for prompt evolution (nyspotlightreport)
-- `9909b99` feat(GENIUS): inject Munger-Musk thinking into always_hunting_bot — genius_email() replaces basic personalize() (nyspotlightreport)
-- `7417a48` feat(GENIUS): Munger-Musk-Da Vinci thinking engine — programs curiosity + critical thinking into every agent. 12 thinkers encoded as system prompt, mental model rack, inversion checks, revenue lens. Import into any bot. (nyspotlightreport)
+- `f5f1fab` feat: weekly SEO report (github-actions[bot])
+- `94c2d46` feat: weekly SEO report (github-actions[bot])
+- `8ae795d` feat: webinar video live (github-actions[bot])
+- `d73e33b` feat: add 127 articles books sleep-no-more rasputin [content-engine] (NYSR Content Engine)
+- `caa5291` feat: PR campaign for S.C. Thomas (github-actions[bot])
+- `102115b` feat: weekly SEO report (github-actions[bot])
+- `b1f8219` feat: webinar video live (github-actions[bot])
 
 ## 🐛 Bug Fixes
 
-- `a522fb6` fix(guardian): auto-add missing dep 'nodemailer' to package.json (nyspotlightreport)
-- `8aa9ef4` fix(guardian): auto-add missing dep 'nodemailer' to package.json (nyspotlightreport)
-- `51c1dad` fix(guardian): auto-add missing dep 'nodemailer' to package.json (nyspotlightreport)
-- `a88605b` fix(guardian): auto-add missing dep 'nodemailer' to package.json (nyspotlightreport)
-- `60c8074` fix(guardian): auto-add missing dep 'nodemailer' to package.json (nyspotlightreport)
-- `9edd4ee` fix(guardian): auto-add missing dep 'nodemailer' to package.json (nyspotlightreport)
-- `80679f1` FIX: login credentials for Chairman + agency plan auto-detect (nyspotlightreport)
-- `6614b43` fix: all remaining email redirects (nyspotlightreport)
-- `a9b928c` fix: remaining email redirects + package.json trailing comma (nyspotlightreport)
-- `0cb90e9` fix: restore ALL agents + supercore + 12 wired directors (nyspotlightreport)
-- `f8bccd8` fix(REESE): sweepstakes workflow — 4x daily, installs chromium, uses business email nyspotlightreportny@gmail.com (nyspotlightreport)
-- `61e04c8` fix: email_action_bots reduced to once daily 7am — was running 6x/day and contributing to inbox spam (nyspotlightreport)
-- `116ec5c` fix(CRITICAL): Priya reduced from */15 (96x/day) to every 6hrs — was spamming inbox with individual forwards (nyspotlightreport)
-- `135f7bb` fix(CRITICAL): Priya rebuilt — no individual email forwards (was causing inbox spam). Deduplication via message_id_hash. Pushover only. Max 1 batch notification per run. (nyspotlightreport)
-- `4bdba0a` fix(REESE): remove [HUNT] spam prefix from logging format (nyspotlightreport)
-- `bad1963` fix(REESE): remove [REVENUE] from log format causing spam subjects. Add msteib@artsy.net to bounce list. (nyspotlightreport)
-- `ee85949` fix(REESE+JAMES): correct jbankoff email voxmedia→vox.com. Add BOUNCED_EMAILS list + MX validation pre-send. 550 bounce never retried. (nyspotlightreport)
-- `486c200` fix(REESE): cron */30 → 0,30 — GitHub throttles */30 causing "No jobs were run". Explicit minutes are reliable. (nyspotlightreport)
+- `72e9a2f` fix(guardian): auto-add missing dep 'jsonwebtoken' to package.json (github-actions[bot])
+- `a582b63` fix(guardian): auto-add missing dep 'jsonwebtoken' to package.json (github-actions[bot])
+- `7a7cbe1` fix(guardian): auto-add missing dep 'jsonwebtoken' to package.json (github-actions[bot])
+- `d6f780d` fix(guardian): auto-add missing dep 'jsonwebtoken' to package.json (github-actions[bot])
+- `96e0d55` fix(guardian): auto-add missing dep 'jsonwebtoken' to package.json (github-actions[bot])
+- `d418923` fix(guardian): auto-add missing dep 'jsonwebtoken' to package.json (github-actions[bot])
+
+## 🔒 Security
+
+- `d83d52a` security: remove hardcoded secrets, add infra-command workflow (S.C. Thomas)
+- `bb8a040` security: remove hardcoded secrets from emergency-fix.yml (nyspotlightreport)
 
 ## 🔧 Maintenance
 
-- `a9431c1` chore: update sitemap (0 URLs) (nyspotlightreport)
-- `e35765f` chore: update sitemap (0 URLs) (nyspotlightreport)
+- `825dbf1` chore: update sitemap (0 URLs) (github-actions[bot])
+- `91c32cc` chore: update processed Gumroad sales 2026-03-29-2306 (SCT Agency Bot)
+- `bed42bd` chore: update processed Gumroad sales 2026-03-29-2105 (SCT Agency Bot)
+- `241b508` chore: update processed Gumroad sales 2026-03-29-1952 (SCT Agency Bot)
+- `2bab842` chore: update processed Gumroad sales 2026-03-29-1706 (SCT Agency Bot)
+- `40b0c69` chore: update processed Gumroad sales 2026-03-29-1404 (SCT Agency Bot)
+- `6c5d55e` chore: update sitemap (13 URLs) (github-actions[bot])
+- `713407f` chore: update processed Gumroad sales 2026-03-29-1104 (SCT Agency Bot)
+- `4ec8741` chore: update sitemap (0 URLs) (github-actions[bot])
+- `cbd16a6` chore: update sitemap (0 URLs) (github-actions[bot])
 
 ## Other Changes
 
-- `3f45b3c` post:
-- `a85c7ae` post: Beehiiv vs Substack vs ConvertKit: Real Numbers Af
-- `cbd2275` seo: add faq schema for agency
-- `990fca4` seo: add faq schema for proflow
-- `a7db4e6` seo: add org+website schema
-- `32397a2` Publish article: social-media-tools-2026
-- `ce74c9a` seo: add faq schema for agency
-- `49e48b1` seo: add faq schema for proflow
-- `d83797c` seo: add org+website schema
-- `63c3824` post:
-- `1a66242` omega: daily synthesis 2026-03-23
-- `7719803` learning: full analysis 2026-03-23
-- `ff8720b` learning: system memory 2026-03-23
-- `78cc2b9` seo: add faq schema for agency
-- `9b1dbd8` seo: add faq schema for proflow
-- `2201593` seo: add org+website schema
-- `927a2b9` 🎨 New Redbubble designs 2026-03-23
-- `ce47639` 🎰 Sweeps digest 2026-03-23-0547
-- `5d16e1f` A-GRADE PUSH: master activation workflow + client acquisition commander (10 channels) + all departments armed
-- `ea21d20` HONEST DASHBOARD: real numbers for Chairman, demo-marked data for customers
-- `eb1ae3d` DASHBOARD v3: commercial-grade portal with 8 panels + remember me + no double login + proper auth flow
-- `abd8250` LOGIN + DASHBOARD: professional login page at /login/ + Log In nav link on homepage + commercial dashboard v3
-- `0c5b03b` CRITICAL FIX: netlify.toml enables function deployment + Fixer page wired to real Claude AI + Twilio webhook URL corrected
-- `dd32bbc` SYNERGY ENGINE: 10 cross-department integrations — Sales+Voice, Marketing+Media, Content+Podcast+Video, Outreach+VoiceFollowup, Onboarding+WelcomeCall, SEO+VideoSEO, Social+PlatformVideo, LeadGen+InboundQualify, Newsletter+AudioDigest, Receptionist+CRM
-- `30e4995` MEDIA DEPT: Director Marcus Kane + video agent + audio agent + ad factory + voice cloning + multilingual + Runway/Kling/Luma + DALL-E 3 + URL-to-ad pipeline + Twilio secrets live + phone +16318929817
-- `17b912b` VOICE AI DEPT: full orchestrator + 10 specialized agents + voice cloning + Twilio telephony + real-time Netlify endpoint + 29 languages + multi-provider fallback
-- `2a5e313` MEDIA DEPT: real voice synthesis showcase + animated video engine + live call simulation + voice production backend + AI call agent backend
-- `8892427` PROOF v2: video samples + AI voice + design gallery + email marketing + full marketing suite showcase
-- `9bf0d0b` PROOF: visual portfolio + content samples + savings calculator + before-after + dashboard preview + testimonials
-- `cb15cb8` PLATFORM: ProFlow SaaS product - customer portal + PWA manifest + social engine + platform architecture + 1-click finish script
-- `5f23903` Merge branch 'main' of https://github.com/nyspotlightreport/sct-agency-bots
-- `629df3c` SITE REDESIGN: editorial luxury agency look - no more AI template - Instrument Serif + Outfit fonts - light theme - professional pricing
-- `16c4184` watchdog: auto-fix invalid package.json
-- `1bf8b5a` ALL HANDS: outreach engine + customer onboarding + synergy router + 3 workflows + KDP books + full A-rating push
-- `41d3569` command-center: system identity + desktop launcher + plug-and-play config
-- `3de0a93` sovereignty: ultra watchdog v4 full self-healing + platform independence layer + local vault + backup system
-- `77d8b18` ultra: watchdog v3 17-check + resilience layer + platform independence + self-healing
-- `6904538` ultra: watchdog v2 30min auto-repair + 24-page KDP planner + cascade alerts to all agents
-- `1c02d06` deploy: watchdog + netlify-sync-all-15-secrets + zero-byte-fixes
-- `94f369a` Merge branch 'main' of https://github.com/nyspotlightreport/sct-agency-bots
-- `63d136d` nuclear: replace ALL seanb041992 references across entire codebase
-- `97b56e6` 🎰 Sweeps digest 2026-03-22-2356
-- `00cc180` CRITICAL: sync ALL secrets to Netlify + purchase watchdog every 6hrs + integrity fixes
-- `85e2298` CRITICAL: fix purchase fulfillment - add welcome email, onboarding, proper customer delivery
-- `5fc599c` wire: 12 directors supercore parallelism
-- `f9e0213` implement: 12 workflows + package.json fix + email redirect + all gaps closed
-- `0141fad` Merge branch 'main' of https://github.com/nyspotlightreport/sct-agency-bots
-- `709a103` upgrade_supercore_wire_all_17_directors_parallelism_fanout_rank
-- `ed916b8` 🎰 Sweeps digest 2026-03-22-2151
-- `36f0af1` 🎰 Sweeps digest 2026-03-22-2056
-- `1dce304` brain: knowledge base updated 2026-03-22
-- `163123a` sales: daily stats 2026-03-22
-- `484657f` sales: prospect cache updated 0 leads
-- `938d9ab` marketing: weekly plan 2026-03-22
-- `dd87afc` learning: system memory 2026-03-22
-- `bccece9` 🎰 Sweeps digest 2026-03-22-1905
-- `89133b8` learning: system memory 2026-03-22
-- `b931a89` 🎰 Sweeps digest 2026-03-22-1754
-- `877c492` 🎰 Sweeps digest 2026-03-22-1659
-- `1b7598b` 🎰 Sweeps digest 2026-03-22-1551
-- `41f43ca` learning: system memory 2026-03-22
+- `713afe9` post:
+- `539b4f7` intel: journalist tracker — 0 pitch windows
+- `ff36a78` seo: add faq schema for agency
+- `276ee85` seo: add org+website schema
+- `0d08afe` post:
+- `b863fc4` Publish article: best-website-builders-2026
+- `f4daf08` seo: add faq schema for agency
+- `5370ca4` deliverables: 4-week content calendar
+- `6d63c5d` Publish article: best-website-builders-2026
+- `55dce1a` omega: daily synthesis 2026-03-30
+- `145e024` cameron: content plan 2026-03-30
+- `2300b2c` alert: counter-content staged — orange
+- `74310a9` intel: daily reputation report — score 50
+- `dc68fc2` seo: add faq schema for agency
+- `44f79b5` seo: add org+website schema
+- `2a8e3d6` learning: full analysis 2026-03-30
+- `d0cc2ad` learning: system memory 2026-03-30
+- `7bed1b3` intel: threat feed — 0 signals
+- `47ad861` alert: counter-content staged — orange
+- `98386a3` intel: daily reputation report — score 50
+- `8708e41` sales: learning cycle 2026-03-30
+- `3dbf9fd` sales: learning cycle 2026-03-30
+- `5becb7b` constitution: codify Paramount Law — Chairman command is law, AG Vance enforcement mandate
+- `f041d35` learning: system memory 2026-03-29
+- `44c2314` intel: threat feed — 0 signals
+- `14d8d11` alert: counter-content staged — orange
+- `d3583d0` intel: daily reputation report — score 50
+- `156f730` brain: knowledge base updated 2026-03-29
+- `d9be430` content: generate suite for 'client acquisition'
+- `fd4c34a` marketing: weekly plan 2026-03-29
+- `3dae1bb` intel: threat feed — 0 signals
+- `bf9f350` alert: counter-content staged — orange
+- `5897eca` intel: daily reputation report — score 50
+- `1edd2c5` learning: system memory 2026-03-29
+- `36023bb` closer: 0 replies processed
+- `79d3808` brain: knowledge base updated 2026-03-29
+- `5badf91` marketing: daily report 2026-03-29
+- `5574554` intel: threat feed — 0 signals
+- `ec5428e` alert: counter-content staged — orange
+- `a9d4b45` intel: daily reputation report — score 50
+- `3ab215a` alert: counter-content staged — orange
+- `7ba75a0` intel: journalist tracker — 0 pitch windows
+- `0021e9d` intel: daily reputation report — score 50
+- `5327418` audit: effectiveness 2026-03-29
+- `5267d64` blake: finance 2026-03-29
+- `f60f871` seo: add faq schema for agency
+- `9d8b3cc` seo: add org+website schema
+- `384566e` Publish article: email-marketing-guide-2026
+- `1f2b413` intel: threat feed — 0 signals
+- `edc7449` alert: counter-content staged — orange
+- `6cd1a9c` intel: daily reputation report — score 50
+- `28117d5` content: generate suite for 'client acquisition'
+- `2bef677` brain: knowledge base updated 2026-03-29
+- `8fe26a9` content: generate suite for 'client acquisition'
+- `a724e45` marketing: weekly plan 2026-03-29
+- `ea4750a` intel: journalist tracker — 0 pitch windows
+- `b0ab951` seo: add faq schema for agency
+- `4390cb5` post:
+- `4e28eb2` Publish article: email-marketing-guide-2026
+- `5337cc3` content: generate suite for 'client acquisition'
+- `006a46a` omega: daily synthesis 2026-03-29
+- `f7436e7` deliverable: BLOG_POST registered (score: 7.8)
+- `4ec4ec4` post: The Passive Income Stack That Earns While You Slee
+- `ca107ab` deliverables: 4-week content calendar
+- `fe08b69` cameron: content plan 2026-03-29
+- `ba89eac` post:
+- `b9b6027` seo: add org+website schema
+- `8bcfb6e` Publish article: email-marketing-guide-2026
+- `89e8b87` alert: counter-content staged — orange
+- `fb9f3ff` intel: daily reputation report — score 50
+- `4601373` learning: full analysis 2026-03-29
+- `a7e8f4f` learning: system memory 2026-03-29
+- `67ac2fa` intel: threat feed — 0 signals
+- `b5e878a` alert: counter-content staged — orange
+- `1b8db56` intel: daily reputation report — score 50
