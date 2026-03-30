@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-30T06:28:11.120143",
+  "timestamp": "2026-03-30T10:43:35.389041",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 155,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
+      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - algemeiner.com",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
-      "outlet": "Algemeiner.com",
+      "outlet": "algemeiner.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -170,9 +170,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
+      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - biz.chosun.com",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "Chosunbiz",
+      "outlet": "biz.chosun.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - CanvasRebel Magazine",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "CanvasRebel Magazine",
+      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
+      "outlet": "obits.robinsonfuneralhomes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Audrey Thomas Obituary (2006) - Charleston - obits.postandcourier.com",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOOWxkU3pwUTh0SkV0dHNuLUdMNHZqQjk2M3o1WG9qM3V3UkNWdzJteGtycUlIT09vWkExVWs2N2FwY2xwTy10LTRYWVJZOVNPV3VXLV9fM0RaLUFhNUE0Y3VGd0VfdXRqRmlGdzlYLURCVzBzY2lIVjloVzhHR3lKcWpJZ0JMalFGd2VTaUNUZXdRYUtuLTg2UWQwelRMdw?oc=5",
-      "outlet": "obits.postandcourier.com",
+      "title": "Meet Erin Thomas - CanvasRebel Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
+      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
