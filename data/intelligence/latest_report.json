@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T05:59:24.604586",
+  "timestamp": "2026-03-31T09:45:25.336568",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 161,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -170,9 +170,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - biz.chosun.com",
+      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "biz.chosun.com",
+      "outlet": "Chosunbiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Kerala youth turns social entrepreneur in London, makes sightseeing affordable for visitors - Mathrubhumi English",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPQzJQTnZZX1RYbnhlSHVoWXU0cE5taFVoRUNXdW5iNV80UTZzanNBdGxXRkdVQUpQYU9tN0k2Q0IxRmhQWnpOWU40X1RzTE9iX3M4MEE0Z1lCandYT01Bb000b0FqQ1phWDBoVm50R1J0NlFvNUg5bTRSVmFRemw2Vm9VdldmQ1hfTU1BSG5Bdm1fV2FvcUtBMHNIU3VFcTdPRElIRDQ0c2V6M2xkUnNMenVYVjZzUms1dndSMEJEaGpEWTNRS3F6Z2wyYmxFYldZSjVoNDlaa1UxT3fSAeABQVVfeXFMTURXYU4xVWVVaGMyV25fVWdPdXNkbGNUWUk1M0QtakdUeXFCN3JoRXo3VTlqcWJLSjUySENhRTFfZnpmbzBsaGtERjNiMWo4azlIaVZIZXZGeExSXzRBSmlwbUhBOXMtY2MwNFBRU181WTV2VzY5Vmd1UDVndE5lZDdJaS1KT25FTkhaMDFLaDJYTWpKUEtVcjV4eWNiLVpIbDkzZl9sbzRrRGk5YUtxdWxtWVNKR3VqUzhpcjQ0bVU1TW16OXRTOUZhR2hyQ19FNFoyejgtZHNYUkEtb3lNbk0?oc=5",
-      "outlet": "Mathrubhumi English",
+      "title": "Tommie Innovators Spark Big Ideas at the Fowler Business Concept Challenge - Newsroom | University of St. Thomas",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ3RaYjJUZ2lPT1o0MUxLSC1YQmh5UUFwcnNpa1JxbFdUUWd6NG1oVWIzSUJBUHZiLTFBeHlmc3N5LUdWb2RqQWF0Y01pUVo4WkpQLVNsVFJIVnZ6T2o3ekdzcHdHQWc2YXRFTUhNYWpHNHNPaThwNW1xWHZSR2NxYUxKbGRVN1hJUUxDSUpEM3ZkbFB2Q2hDb1dncmt2czE1Vzhr?oc=5",
+      "outlet": "Newsroom | University of St. Thomas",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
