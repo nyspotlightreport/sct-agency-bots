@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-03-26T12:07:10.525926+00:00",
-  "pass_count": 23,
-  "fail_count": 7,
+  "timestamp": "2026-03-31T12:06:47.677887+00:00",
+  "pass_count": 25,
+  "fail_count": 5,
   "total": 30,
-  "score": 77,
-  "grade": "B",
+  "score": 83,
+  "grade": "B+",
   "results": [
     {
       "name": "Pages responding",
@@ -54,7 +54,7 @@
     {
       "name": "Phone CTA",
       "status": "FAIL",
-      "detail": "(631) 892-9817"
+      "detail": "(631) 375-1097"
     },
     {
       "name": "Pricing tiers",
@@ -118,13 +118,13 @@
     },
     {
       "name": "Guardrail workflows active",
-      "status": "FAIL",
-      "detail": "0/12 active"
+      "status": "PASS",
+      "detail": "12/12 active"
     },
     {
       "name": "Sweepstakes running",
-      "status": "FAIL",
-      "detail": "API error"
+      "status": "PASS",
+      "detail": "Last run: 2026-03-31T11:37:38Z"
     },
     {
       "name": "Affiliate content",
@@ -171,17 +171,7 @@
     {
       "name": "Phone CTA",
       "status": "FAIL",
-      "detail": "(631) 892-9817"
-    },
-    {
-      "name": "Guardrail workflows active",
-      "status": "FAIL",
-      "detail": "0/12 active"
-    },
-    {
-      "name": "Sweepstakes running",
-      "status": "FAIL",
-      "detail": "API error"
+      "detail": "(631) 375-1097"
     },
     {
       "name": "Affiliate content",
