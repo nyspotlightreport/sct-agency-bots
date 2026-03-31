@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-03-31_5",
+    "type": "BLOG_POST",
+    "title": "How to Build a Content Marketing System for Under $200/Month",
+    "created": "2026-03-31T09:46:05.985341",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-03-30_4",
     "type": "BLOG_POST",
     "title": "Newsletter Monetization: From 0 to $1,000/Month Revenue",
