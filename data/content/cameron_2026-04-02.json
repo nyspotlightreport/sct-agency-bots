@@ -1,0 +1,18 @@
+{
+  "audit": {
+    "blog_posts": 198,
+    "site_pages": 128,
+    "video_scripts": 14,
+    "kdp_books_ready": 22,
+    "kdp_published": 0,
+    "platforms": [
+      "WordPress",
+      "Twitter",
+      "LinkedIn",
+      "Pinterest",
+      "YouTube",
+      "Medium"
+    ]
+  },
+  "calendar": "API needed"
+}
