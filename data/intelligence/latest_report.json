@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T14:30:59.680389",
+  "timestamp": "2026-04-03T17:56:43.866999",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -60,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - nypost.com",
+      "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - New York Post",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPb1BMbUZaNlVmbjZYamZnVm9EVF8ydFQtcVdCNFdVV0xyenY5ZEdONm5wem51RnhWTkdoZGx3aXVNVi1YS0l3bTB4NWdlcnRYYk93aU9ybUJqVVh3RW5QM1A1T2JjQVdCOFI3d2ZRZnN2X25hWGthMEVpdEpDVlFWbzMzcW9tQkxMTlE0dEluUV85aWhwRjF0X0dsNnd2U3U3Unc4NG51MFA3ZlZFcUlwTTB0Q3NFZ3pkWlNNY0FqaTc3QkJwZjZxRXlzSnhhT18wNWpvVXdB?oc=5",
-      "outlet": "nypost.com",
+      "outlet": "New York Post",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -148,17 +148,6 @@
     },
     {
       "source": "google_news",
-      "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - BioSpectrum India",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQV0ZhekZPLXphejFRTlAzMEs4TG5aWjFsRHh3aHhGQTV5QnVEU2FJcXVpZ2tadWNKbWQtMHhSaWFjLTVoODVwd0g5STVJekFHbXZabzRKSWNvSWx6UkRxQm1BWXJLTWFYM0NXZ0RCR0JEdnE1SkJrTjdPcm1HMmlMZFRqNDV6ZnFNYXRlY3JhSVdycnBxbmdickdFajl2RDRjd2t0cU4wUzN0VldDSlRDcEI5Rm11UEJmRWRWNjJFQTlfNWp2OUVxZzgtUWhsZldUVUh2T1NQWExMci1I?oc=5",
-      "outlet": "BioSpectrum India",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Google expands budget AI plans as AI Plus counters ChatGPT Go - \ub514\uc9c0\ud138\ud22c\ub370\uc774",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUFBjckZ0WjIwRkl1NVdZYTV2Wlo0eDJVem9hOXFkeFFHVW90YVJtdDh0czkwWUQ4UEpVR1FEdXFOUmdhcFViQllfdW5wQ3dQZG54alNlMFRDSVFfM0xEdUx1c0xlRUhNYWRxa29SdmRlVTFLaG5GdHZ0V2VyT0lrZFRPUkNiY2xkWFFxVFl6b2dtWlhKZ2x0MHdTMTViOGJMM1NVZGx6dEpZRTg?oc=5",
       "outlet": "\ub514\uc9c0\ud138\ud22c\ub370\uc774",
@@ -177,6 +166,17 @@
       "sentiment": "neutral",
       "threat_score": 0,
       "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Chemical Guys PM2000 Pro Pressure Washer: Updated for 2025 - Pro Tool Reviews",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPMEp6SzBzUFUtUk1lTm5MMkxpaGMtdnFGUmZWb2pkemJqYzlpX1pQYmQzZTdQWGNUdU5FMDM3QjJoclA0WEE2SWNHR0xBU0tkbTBkWU5iQVRubG9va2JyR1pMTF8xblFnb2NVTGlKUnFHb25nbGtNR2NFMktqOUpyTjBB?oc=5",
+      "outlet": "Pro Tool Reviews",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 0,
       "action": "monitor"
     },
     {
