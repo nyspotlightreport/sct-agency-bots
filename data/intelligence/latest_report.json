@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T20:04:50.773357",
+  "timestamp": "2026-04-03T21:52:02.813410",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 154,
-  "brand_mention_count": 35,
+  "mention_count": 155,
+  "brand_mention_count": 36,
   "analyses": [
     {
       "source": "google_news",
@@ -93,9 +93,9 @@
     },
     {
       "source": "google_news",
-      "title": "Gateway Program\u2019s long-term economic benefits estimated - njspotlightnews.org",
+      "title": "Gateway Program\u2019s long-term economic benefits estimated - NJ Spotlight News",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZkdkVkFUNmF0Rk9tcVVCUms4NjhQUl91enQ5MERuNWxGNk9BNHZXWnVZb2czTXg2LUZkeUoyYTFaa1hPM0hORmhhRkpRUGdpVjRkX05yUzlCNFRlR1p0NkJqb2FYSmJVWW1zdEtTOTBETU11aGRTOWtVNGNBWnpNWWREQ3ZOdVhtM013RjFRV0xpZ1BWQTNZZmROV2Z3RmxHTHVKVkF3XzAtZW9FY0xJYzhfWkNZQ1Zha293R0pXT3huc1NObE1xSDYxZFFzaUsxTndzaEV3?oc=5",
-      "outlet": "njspotlightnews.org",
+      "outlet": "NJ Spotlight News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -148,9 +148,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands budget AI plans as AI Plus counters ChatGPT Go - \ub514\uc9c0\ud138\ud22c\ub370\uc774",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUFBjckZ0WjIwRkl1NVdZYTV2Wlo0eDJVem9hOXFkeFFHVW90YVJtdDh0czkwWUQ4UEpVR1FEdXFOUmdhcFViQllfdW5wQ3dQZG54alNlMFRDSVFfM0xEdUx1c0xlRUhNYWRxa29SdmRlVTFLaG5GdHZ0V2VyT0lrZFRPUkNiY2xkWFFxVFl6b2dtWlhKZ2x0MHdTMTViOGJMM1NVZGx6dEpZRTg?oc=5",
-      "outlet": "\ub514\uc9c0\ud138\ud22c\ub370\uc774",
+      "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - BioSpectrum India",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQV0ZhekZPLXphejFRTlAzMEs4TG5aWjFsRHh3aHhGQTV5QnVEU2FJcXVpZ2tadWNKbWQtMHhSaWFjLTVoODVwd0g5STVJekFHbXZabzRKSWNvSWx6UkRxQm1BWXJLTWFYM0NXZ0RCR0JEdnE1SkJrTjdPcm1HMmlMZFRqNDV6ZnFNYXRlY3JhSVdycnBxbmdickdFajl2RDRjd2t0cU4wUzN0VldDSlRDcEI5Rm11UEJmRWRWNjJFQTlfNWp2OUVxZzgtUWhsZldUVUh2T1NQWExMci1I?oc=5",
+      "outlet": "BioSpectrum India",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - legacy.com",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy",
+      "outlet": "legacy.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet the 50 Most Influential in South Carolina honorees - scbiz.com",
+      "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
-      "outlet": "scbiz.com",
+      "outlet": "SCBiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
