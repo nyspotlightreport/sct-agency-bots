@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-05T05:57:29.786893",
+  "timestamp": "2026-04-05T10:01:36.395551",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -192,17 +192,6 @@
     },
     {
       "source": "google_news",
-      "title": "Frank Edward Taylor Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSlpvbHhNVHJMOE41eFUySUlkRVhEOHdmVy1xeGUxN1pWNzdvTUR5N0dqNUNXOXlwQmlVMGJqS3MzYnY2M2dKd01Hd05ha3pIZUtDUDdWTTRhX2FnRkFHeW9xdDZOV0duUHVoYUZYc3NCLVpBczlrQjl1UFRsTjAwZA?oc=5",
-      "outlet": "Legacy",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
       "outlet": "SCBiz",
@@ -236,9 +225,20 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - cremationsocietyofsc.com",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "cremationsocietyofsc.com",
+      "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Meet Erin Thomas - CanvasRebel Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
+      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
