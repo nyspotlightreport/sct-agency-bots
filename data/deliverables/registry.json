@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-04-06_11",
+    "type": "BLOG_POST",
+    "title": "ProFlow AI vs Hiring: The Real Cost Comparison",
+    "created": "2026-04-06T09:55:44.409869",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-04-05_10",
     "type": "BLOG_POST",
     "title": "GitHub Actions as a Free Automation Platform: Complete Guide",
