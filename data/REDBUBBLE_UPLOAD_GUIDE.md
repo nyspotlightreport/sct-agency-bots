@@ -12,8 +12,9 @@
 
 ## Designs Ready to Upload:
 
+- nyc-skyline-minimal.png → Nyc Skyline Minimal
 
 ## Expected Earnings
-- 0 designs × average $3/month = $0/month
+- 1 designs × average $3/month = $3/month
 - Best performers can earn $20-50/month each
 - All designs earn royalties in perpetuity
