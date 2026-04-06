@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-06T06:21:00.639031",
+  "timestamp": "2026-04-06T10:41:16.055500",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 155,
+  "mention_count": 156,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - New York Post",
+      "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - nypost.com",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPb1BMbUZaNlVmbjZYamZnVm9EVF8ydFQtcVdCNFdVV0xyenY5ZEdONm5wem51RnhWTkdoZGx3aXVNVi1YS0l3bTB4NWdlcnRYYk93aU9ybUJqVVh3RW5QM1A1T2JjQVdCOFI3d2ZRZnN2X25hWGthMEVpdEpDVlFWbzMzcW9tQkxMTlE0dEluUV85aWhwRjF0X0dsNnd2U3U3Unc4NG51MFA3ZlZFcUlwTTB0Q3NFZ3pkWlNNY0FqaTc3QkJwZjZxRXlzSnhhT18wNWpvVXdB?oc=5",
-      "outlet": "New York Post",
+      "outlet": "nypost.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Chemical Guys PM2000 Pro Pressure Washer: Updated for 2025 - protoolreviews.com",
+      "title": "Chemical Guys PM2000 Pro Pressure Washer: Updated for 2025 - Pro Tool Reviews",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPMEp6SzBzUFUtUk1lTm5MMkxpaGMtdnFGUmZWb2pkemJqYzlpX1pQYmQzZTdQWGNUdU5FMDM3QjJoclA0WEE2SWNHR0xBU0tkbTBkWU5iQVRubG9va2JyR1pMTF8xblFnb2NVTGlKUnFHb25nbGtNR2NFMktqOUpyTjBB?oc=5",
-      "outlet": "protoolreviews.com",
+      "outlet": "Pro Tool Reviews",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy",
+      "outlet": "Legacy obituary",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
