@@ -1,0 +1,123 @@
+{
+  "affiliate_coverage": {
+    "status": "FAIL",
+    "coverage_pct": 0.0,
+    "checked": 20,
+    "with_affiliate": 0,
+    "missing_sample": [
+      "/blog/lgbtq-film-festivals-2026/",
+      "/blog/tony-awards-2022-recap/",
+      "/blog/new-williamsburg-nightlife-2021/",
+      "/blog/literary-nyc-comeback-2021/",
+      "/blog/long-island-craft-breweries-2024/"
+    ]
+  },
+  "editorial_purity": {
+    "status": "PASS",
+    "checked": 10,
+    "violations": 0,
+    "details": []
+  },
+  "smoke_tests": {
+    "status": "PASS",
+    "passed": 1,
+    "total": 1
+  },
+  "agent_stubs": {
+    "status": "WARN",
+    "total_agents": 157,
+    "stubs": 5,
+    "stub_list": [
+      {
+        "file": "frontend_developer_agent.py",
+        "lines": 45
+      },
+      {
+        "file": "performance_optimizer_agent.py",
+        "lines": 43
+      },
+      {
+        "file": "security_auditor_agent.py",
+        "lines": 48
+      },
+      {
+        "file": "tech_lead_agent.py",
+        "lines": 40
+      },
+      {
+        "file": "account_manager_agent.py",
+        "lines": 48
+      }
+    ]
+  },
+  "workflow_success": {
+    "status": "WARN",
+    "success_rate": 71.4,
+    "passed": 35,
+    "total": 49,
+    "failures": [
+      "\ud83c\udfb0 Sweepstakes Hunter (Hourly)",
+      "GitHub Monitor",
+      "Self-Healing Agent \u2014 Every 30 Minutes",
+      "Hayden Cross QC Daily",
+      "Uptime Monitor",
+      "Site Health Monitor",
+      "System Watchdog - End-to-End Health",
+      "Master 52-Dimension Audit",
+      "Master 99-Dimension Audit",
+      "Drew Sinclair Analytics Daily"
+    ]
+  },
+  "revenue_touchpoints": {
+    "status": "FAIL",
+    "checks": {
+      "homepage": {
+        "status": 200,
+        "ok": true
+      },
+      "store": {
+        "status": 200,
+        "ok": true
+      },
+      "checkout_success": {
+        "status": 0,
+        "ok": false
+      },
+      "subscribe_api": {
+        "status": 0,
+        "ok": false
+      }
+    },
+    "down": [
+      "checkout_success (0)",
+      "subscribe_api (0)"
+    ]
+  },
+  "content_freshness": {
+    "status": "PASS",
+    "last_publish_success": "2026-04-07T12:09:01Z",
+    "stale": false
+  },
+  "data_growth": {
+    "status": "WARN",
+    "current_counts": {
+      "contacts": 0,
+      "outreach_log": 97,
+      "brand_mentions": -1,
+      "subscribers": -1
+    },
+    "growth_24h": {
+      "contacts": 0,
+      "outreach_log": 2,
+      "brand_mentions": "unknown",
+      "subscribers": "unknown"
+    }
+  },
+  "_summary": {
+    "timestamp": "2026-04-07T16:01:10.289786+00:00",
+    "score": 38,
+    "passed": 3,
+    "total": 8,
+    "alerts": 5
+  }
+}
