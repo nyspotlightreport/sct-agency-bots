@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-07T21:31:43.797226",
+  "timestamp": "2026-04-07T22:03:03.042385",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 188,
+  "mention_count": 154,
   "brand_mention_count": 35,
   "analyses": [
     {
@@ -137,9 +137,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google's $8 AI Plus Plan Goes Global, Takes Aim at OpenAI - techbuzz.ai",
+      "title": "Google's $8 AI Plus Plan Goes Global, Takes Aim at OpenAI - The Tech Buzz",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMVBld2tCdHU4Ti1nUmV6NGRFU3Nzbmh6bXFFVUVNcklUOElWbDVOdWpQTFczZHVoWjdsdzZoVTlVc0FHSmhrNnZndVNMREhJZXJ6MmxCNGs1LTh0V0hxNWc0Qk8zeV85NTRuNzlQQVJHNWVwMlBGZDVCcTZ6ZjBfTmdsY0VzYkJieEJpT04tbjdaZw?oc=5",
-      "outlet": "techbuzz.ai",
+      "outlet": "The Tech Buzz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - freepressjournal.in",
+      "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - Free Press Journal",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYV9USVlTc3lvUVFVbEN0dy1KdDN5MlFWdXhNN0FxZ0JCbWw2TVZsdFR1bGV5SUFPNUpDRlI5TE1IUEg4YzVZZ2RxblNOZkNPWU9SU1VuTWpPRUVSTDMtdVI5ZWZTTk9MMHVMYmd6dXpSdXlQbW82NElYMHYwbUcyNzF4MlZCOEtHVWxnSmx1eFBHWUYxX3FyV0RSUW5aa0tEZzRnUW51cnZ6UWJG0gGyAUFVX3lxTE1kVXBoVjNmbUoxWXJxRnZoSVNfZUZ6TkxpNVhwdHFUUFprYkJxbkRDNDVMenJzbXlLbm5zWmFXU3IzQVRVdWg0dnBDVUk1Z2I1ZHpOS3BNYkFzQUZabllVN2xaVERjZDZIc2xUb3NSU1d6QktzOURnRE1OeEhSNTFGQzgzcHUtOE9FRGk3Q0N3MmhJMGhVdzJZby1IcDNvd0NpWDRLdl9nVndxN0U3clExZlE?oc=5",
-      "outlet": "freepressjournal.in",
+      "outlet": "Free Press Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - legacy.com",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy",
+      "outlet": "legacy.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
