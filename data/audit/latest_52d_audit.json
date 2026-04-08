@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-04-07T12:08:00.489435+00:00",
-  "pass_count": 15,
-  "fail_count": 15,
+  "timestamp": "2026-04-08T12:08:03.199959+00:00",
+  "pass_count": 16,
+  "fail_count": 14,
   "total": 30,
-  "score": 50,
+  "score": 53,
   "grade": "D",
   "results": [
     {
@@ -123,8 +123,8 @@
     },
     {
       "name": "Sweepstakes running",
-      "status": "FAIL",
-      "detail": "Last run failed or no runs"
+      "status": "PASS",
+      "detail": "Last run: 2026-04-08T12:01:02Z"
     },
     {
       "name": "Affiliate content",
@@ -207,11 +207,6 @@
       "name": "Onboarding page live",
       "status": "FAIL",
       "detail": "Status 404"
-    },
-    {
-      "name": "Sweepstakes running",
-      "status": "FAIL",
-      "detail": "Last run failed or no runs"
     },
     {
       "name": "Affiliate content",
