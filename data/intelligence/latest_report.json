@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-08T21:30:44.664702",
+  "timestamp": "2026-04-08T22:09:20.005617",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -181,20 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - freepressjournal.in",
+      "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - Free Press Journal",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYV9USVlTc3lvUVFVbEN0dy1KdDN5MlFWdXhNN0FxZ0JCbWw2TVZsdFR1bGV5SUFPNUpDRlI5TE1IUEg4YzVZZ2RxblNOZkNPWU9SU1VuTWpPRUVSTDMtdVI5ZWZTTk9MMHVMYmd6dXpSdXlQbW82NElYMHYwbUcyNzF4MlZCOEtHVWxnSmx1eFBHWUYxX3FyV0RSUW5aa0tEZzRnUW51cnZ6UWJG0gGyAUFVX3lxTE1kVXBoVjNmbUoxWXJxRnZoSVNfZUZ6TkxpNVhwdHFUUFprYkJxbkRDNDVMenJzbXlLbm5zWmFXU3IzQVRVdWg0dnBDVUk1Z2I1ZHpOS3BNYkFzQUZabllVN2xaVERjZDZIc2xUb3NSU1d6QktzOURnRE1OeEhSNTFGQzgzcHUtOE9FRGk3Q0N3MmhJMGhVdzJZby1IcDNvd0NpWDRLdl9nVndxN0U3clExZlE?oc=5",
-      "outlet": "freepressjournal.in",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Gladden Obituary (1961 - 2025) - Charleston - obits.postandcourier.com",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPY0xfci1GOVNKNWVreUVOOWlmQjNqcE0wRFJnT2lvbGluRV9Md2xqMmlNTFdhV1lSZzZ5U050WTJIRlY5V3Y4VFFQZnBwcU5PZ0pyZGRHMlAwRkVIS0FKY2llYjY3aFhSSGlBTTNic2xEVVg2T2c4WlNXRGlSOFk4R3d4MVQweVkxbVoxS3NVQW50RVdNRWtIYmFPMEFsZG8?oc=5",
-      "outlet": "obits.postandcourier.com",
+      "outlet": "Free Press Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -217,6 +206,17 @@
       "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
+      "outlet": "obits.robinsonfuneralhomes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
