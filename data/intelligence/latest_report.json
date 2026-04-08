@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-08T16:22:19.152255",
+  "timestamp": "2026-04-08T21:30:44.664702",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -23,7 +23,7 @@
   },
   "opportunities": [],
   "mention_count": 154,
-  "brand_mention_count": 34,
+  "brand_mention_count": 35,
   "analyses": [
     {
       "source": "google_news",
@@ -41,17 +41,6 @@
       "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
       "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York Times opinion column spotlights Alabama schools for post-pandemic gains; Ivey says 'nothing accidental about it' - Yellowhammer News",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQc05wekRhYXUxSFVFeGxEZjVFZmlYMnk0dlRxZ0FlZ3lwWXFYTWVubWoydmxRSWtOVU1NQm85cDgwZGY5bXBlVkk5Um01ZUhWcEpVNERGYTBFMHZuV0J2cndCbW1zeXc5NllYQnNtbzhzcF9MTmNCNWFWd2p4QWZJRnlBTmNrV2dINnVYSks2NmdvNFdVWEJFRV9jbjd5eVFXZjQ0NHlIaURMXzctWjJleGU0LW1BLWNCM3QxclgyNFdEY201RC1UTDdmUDZGakRaYWQzT2pSZW9jXzBIY3JIbERR?oc=5",
-      "outlet": "Yellowhammer News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -137,6 +126,17 @@
     },
     {
       "source": "google_news",
+      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
+      "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Google's $8 AI Plus Plan Goes Global, Takes Aim at OpenAI - The Tech Buzz",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMVBld2tCdHU4Ti1nUmV6NGRFU3Nzbmh6bXFFVUVNcklUOElWbDVOdWpQTFczZHVoWjdsdzZoVTlVc0FHSmhrNnZndVNMREhJZXJ6MmxCNGs1LTh0V0hxNWc0Qk8zeV85NTRuNzlQQVJHNWVwMlBGZDVCcTZ6ZjBfTmdsY0VzYkJieEJpT04tbjdaZw?oc=5",
       "outlet": "The Tech Buzz",
@@ -170,9 +170,31 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - biz.chosun.com",
+      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "biz.chosun.com",
+      "outlet": "Chosunbiz",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - freepressjournal.in",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYV9USVlTc3lvUVFVbEN0dy1KdDN5MlFWdXhNN0FxZ0JCbWw2TVZsdFR1bGV5SUFPNUpDRlI5TE1IUEg4YzVZZ2RxblNOZkNPWU9SU1VuTWpPRUVSTDMtdVI5ZWZTTk9MMHVMYmd6dXpSdXlQbW82NElYMHYwbUcyNzF4MlZCOEtHVWxnSmx1eFBHWUYxX3FyV0RSUW5aa0tEZzRnUW51cnZ6UWJG0gGyAUFVX3lxTE1kVXBoVjNmbUoxWXJxRnZoSVNfZUZ6TkxpNVhwdHFUUFprYkJxbkRDNDVMenJzbXlLbm5zWmFXU3IzQVRVdWg0dnBDVUk1Z2I1ZHpOS3BNYkFzQUZabllVN2xaVERjZDZIc2xUb3NSU1d6QktzOURnRE1OeEhSNTFGQzgzcHUtOE9FRGk3Q0N3MmhJMGhVdzJZby1IcDNvd0NpWDRLdl9nVndxN0U3clExZlE?oc=5",
+      "outlet": "freepressjournal.in",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Gladden Obituary (1961 - 2025) - Charleston - obits.postandcourier.com",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPY0xfci1GOVNKNWVreUVOOWlmQjNqcE0wRFJnT2lvbGluRV9Md2xqMmlNTFdhV1lSZzZ5U050WTJIRlY5V3Y4VFFQZnBwcU5PZ0pyZGRHMlAwRkVIS0FKY2llYjY3aFhSSGlBTTNic2xEVVg2T2c4WlNXRGlSOFk4R3d4MVQweVkxbVoxS3NVQW50RVdNRWtIYmFPMEFsZG8?oc=5",
+      "outlet": "obits.postandcourier.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,31 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
-      "outlet": "obits.robinsonfuneralhomes.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - agriculture.sc.gov",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "South Carolina Department of Agriculture (.gov)",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Indian student launches Thomas Tours to boost graduate morale in London - Daily Pioneer",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdkczb0h3ejRTckd4cG1xY29vQ1ExVFlQZUpVSEhkbnMzNER5SUxTLWRSdDRDZ2VfbDNJcE1VM0pVQ3g1Z2ItNWItemFmT2dEbEF3NkdwbFlGVjJQYXAzYzFPbUxwalhyclFZWXFja1EtYzdBcDVlYi1DZ0RtN0FoVTNLTnhPY0d1SmMtOFJKRmJoS05DYzhRaW4wVzRhZnA5N2Zj?oc=5",
-      "outlet": "Daily Pioneer",
+      "outlet": "agriculture.sc.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
