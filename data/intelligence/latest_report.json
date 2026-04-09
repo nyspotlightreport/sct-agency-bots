@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-09T16:50:56.078644",
+  "timestamp": "2026-04-09T21:35:36.370622",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 154,
+  "mention_count": 153,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -41,6 +41,17 @@
       "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
       "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,17 +137,6 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Google's $8 AI Plus Plan Goes Global, Takes Aim at OpenAI - The Tech Buzz",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMVBld2tCdHU4Ti1nUmV6NGRFU3Nzbmh6bXFFVUVNcklUOElWbDVOdWpQTFczZHVoWjdsdzZoVTlVc0FHSmhrNnZndVNMREhJZXJ6MmxCNGs1LTh0V0hxNWc0Qk8zeV85NTRuNzlQQVJHNWVwMlBGZDVCcTZ6ZjBfTmdsY0VzYkJieEJpT04tbjdaZw?oc=5",
       "outlet": "The Tech Buzz",
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Gladden Obituary (1961 - 2025) - Charleston - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPY0xfci1GOVNKNWVreUVOOWlmQjNqcE0wRFJnT2lvbGluRV9Md2xqMmlNTFdhV1lSZzZ5U050WTJIRlY5V3Y4VFFQZnBwcU5PZ0pyZGRHMlAwRkVIS0FKY2llYjY3aFhSSGlBTTNic2xEVVg2T2c4WlNXRGlSOFk4R3d4MVQweVkxbVoxS3NVQW50RVdNRWtIYmFPMEFsZG8?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
+      "outlet": "Stuhr Funeral Home",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
-      "outlet": "Stuhr Funeral Home",
+      "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
+      "outlet": "SCBiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
