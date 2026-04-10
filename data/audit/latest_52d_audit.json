@@ -1,64 +1,64 @@
 {
-  "timestamp": "2026-04-08T12:08:03.199959+00:00",
-  "pass_count": 16,
-  "fail_count": 14,
+  "timestamp": "2026-04-10T23:53:59.228829+00:00",
+  "pass_count": 26,
+  "fail_count": 4,
   "total": 30,
-  "score": 53,
-  "grade": "D",
+  "score": 87,
+  "grade": "B+",
   "results": [
     {
       "name": "Pages responding",
-      "status": "FAIL",
-      "detail": "9/31 pages return 200"
+      "status": "PASS",
+      "detail": "30/31 pages return 200"
     },
     {
       "name": "Stripe LIVE checkout",
-      "status": "FAIL",
-      "detail": "Status 404, cs_live=NOT found"
+      "status": "PASS",
+      "detail": "Status 200, cs_live=found"
     },
     {
       "name": "Webhook signature enforcement",
-      "status": "FAIL",
-      "detail": "Returns 404 (want 400)"
+      "status": "PASS",
+      "detail": "Returns 400 (want 400)"
     },
     {
       "name": "Voice AI (ProFlow)",
-      "status": "FAIL",
-      "detail": "Status 404"
+      "status": "PASS",
+      "detail": "Status 200"
     },
     {
       "name": "Voice AI (Emma)",
-      "status": "FAIL",
-      "detail": "Emma not found"
+      "status": "PASS",
+      "detail": "Emma persona active"
     },
     {
       "name": "Lead capture",
-      "status": "FAIL",
-      "detail": "Status 404"
+      "status": "PASS",
+      "detail": "Status 200"
     },
     {
       "name": "Free trial eliminated",
-      "status": "PASS",
-      "detail": "0 pages still have it"
+      "status": "FAIL",
+      "detail": "2 pages still have it"
     },
     {
       "name": "Functions alive",
       "status": "PASS",
-      "detail": "20/20 responding"
+      "detail": "19/20 responding"
     },
     {
       "name": "startCheckout present",
-      "status": "FAIL",
+      "status": "PASS",
       "detail": "Checkout function wired"
     },
     {
       "name": "Phone CTA",
-      "status": "PASS",
+      "status": "FAIL",
       "detail": "(631) 375-1097"
     },
     {
       "name": "Pricing tiers",
-      "status": "FAIL",
+      "status": "PASS",
       "detail": "All 3 tiers shown"
     },
     {
@@ -108,13 +108,13 @@
     },
     {
       "name": "Gumroad storefront live",
-      "status": "FAIL",
-      "detail": "Status 404"
+      "status": "PASS",
+      "detail": "Status 200"
     },
     {
       "name": "Onboarding page live",
-      "status": "FAIL",
-      "detail": "Status 404"
+      "status": "PASS",
+      "detail": "Status 200"
     },
     {
       "name": "Guardrail workflows active",
@@ -124,7 +124,7 @@
     {
       "name": "Sweepstakes running",
       "status": "PASS",
-      "detail": "Last run: 2026-04-08T12:01:02Z"
+      "detail": "Last run: 2026-04-10T22:59:37Z"
     },
     {
       "name": "Affiliate content",
@@ -138,13 +138,13 @@
     },
     {
       "name": "Zoho email on credibility pages",
-      "status": "FAIL",
-      "detail": "0/3 pages have it"
+      "status": "PASS",
+      "detail": "3/3 pages have it"
     },
     {
       "name": "Newsletter page live",
-      "status": "FAIL",
-      "detail": "Status 404"
+      "status": "PASS",
+      "detail": "Status 200"
     },
     {
       "name": "Gumroad products configured",
@@ -159,69 +159,19 @@
   ],
   "failures": [
     {
-      "name": "Pages responding",
+      "name": "Free trial eliminated",
       "status": "FAIL",
-      "detail": "9/31 pages return 200"
+      "detail": "2 pages still have it"
     },
     {
-      "name": "Stripe LIVE checkout",
+      "name": "Phone CTA",
       "status": "FAIL",
-      "detail": "Status 404, cs_live=NOT found"
-    },
-    {
-      "name": "Webhook signature enforcement",
-      "status": "FAIL",
-      "detail": "Returns 404 (want 400)"
-    },
-    {
-      "name": "Voice AI (ProFlow)",
-      "status": "FAIL",
-      "detail": "Status 404"
-    },
-    {
-      "name": "Voice AI (Emma)",
-      "status": "FAIL",
-      "detail": "Emma not found"
-    },
-    {
-      "name": "Lead capture",
-      "status": "FAIL",
-      "detail": "Status 404"
-    },
-    {
-      "name": "startCheckout present",
-      "status": "FAIL",
-      "detail": "Checkout function wired"
-    },
-    {
-      "name": "Pricing tiers",
-      "status": "FAIL",
-      "detail": "All 3 tiers shown"
-    },
-    {
-      "name": "Gumroad storefront live",
-      "status": "FAIL",
-      "detail": "Status 404"
-    },
-    {
-      "name": "Onboarding page live",
-      "status": "FAIL",
-      "detail": "Status 404"
+      "detail": "(631) 375-1097"
     },
     {
       "name": "Affiliate content",
       "status": "FAIL",
       "detail": "0 affiliate refs found"
-    },
-    {
-      "name": "Zoho email on credibility pages",
-      "status": "FAIL",
-      "detail": "0/3 pages have it"
-    },
-    {
-      "name": "Newsletter page live",
-      "status": "FAIL",
-      "detail": "Status 404"
     },
     {
       "name": "Gumroad products configured",
