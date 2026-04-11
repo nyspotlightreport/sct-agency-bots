@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-11T10:02:39.247253",
+  "timestamp": "2026-04-11T14:06:52.411938",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
-  "brand_mention_count": 34,
+  "mention_count": 181,
+  "brand_mention_count": 36,
   "analyses": [
     {
       "source": "google_news",
