@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-11T23:05:24.851673+00:00",
-  "pass_count": 21,
-  "fail_count": 9,
-  "total": 30,
-  "score": 70,
-  "grade": "B",
+  "timestamp": "2026-04-12T11:48:43.762592+00:00",
+  "pass_count": 16,
+  "fail_count": 12,
+  "total": 28,
+  "score": 57,
+  "grade": "D",
   "results": [
     {
       "name": "Pages responding",
-      "status": "PASS",
-      "detail": "30/31 pages return 200"
+      "status": "FAIL",
+      "detail": "14/31 pages return 200"
     },
     {
       "name": "Stripe LIVE checkout",
@@ -38,8 +38,8 @@
     },
     {
       "name": "Free trial eliminated",
-      "status": "FAIL",
-      "detail": "2 pages still have it"
+      "status": "PASS",
+      "detail": "0 pages still have it"
     },
     {
       "name": "Functions alive",
@@ -47,19 +47,9 @@
       "detail": "20/20 responding"
     },
     {
-      "name": "startCheckout present",
-      "status": "PASS",
-      "detail": "Checkout function wired"
-    },
-    {
-      "name": "Phone CTA",
+      "name": "ProFlow page",
       "status": "FAIL",
-      "detail": "(631) 375-1097"
-    },
-    {
-      "name": "Pricing tiers",
-      "status": "PASS",
-      "detail": "All 3 tiers shown"
+      "detail": "Status 404"
     },
     {
       "name": "HTTPS active",
@@ -68,7 +58,7 @@
     },
     {
       "name": "Webhook sig verification",
-      "status": "PASS",
+      "status": "FAIL",
       "detail": "constructEvent in webhook code"
     },
     {
@@ -108,13 +98,13 @@
     },
     {
       "name": "Gumroad storefront live",
-      "status": "PASS",
-      "detail": "Status 200"
+      "status": "FAIL",
+      "detail": "Status 404"
     },
     {
       "name": "Onboarding page live",
-      "status": "PASS",
-      "detail": "Status 200"
+      "status": "FAIL",
+      "detail": "Status 404"
     },
     {
       "name": "Guardrail workflows active",
@@ -124,7 +114,7 @@
     {
       "name": "Sweepstakes running",
       "status": "PASS",
-      "detail": "Last run: 2026-04-11T21:59:57Z"
+      "detail": "Last run: 2026-04-12T11:05:28Z"
     },
     {
       "name": "Affiliate content",
@@ -159,6 +149,11 @@
   ],
   "failures": [
     {
+      "name": "Pages responding",
+      "status": "FAIL",
+      "detail": "14/31 pages return 200"
+    },
+    {
       "name": "Stripe LIVE checkout",
       "status": "FAIL",
       "detail": "Status 404, cs_live=NOT found"
@@ -184,14 +179,24 @@
       "detail": "Status 404"
     },
     {
-      "name": "Free trial eliminated",
+      "name": "ProFlow page",
       "status": "FAIL",
-      "detail": "2 pages still have it"
+      "detail": "Status 404"
     },
     {
-      "name": "Phone CTA",
+      "name": "Webhook sig verification",
       "status": "FAIL",
-      "detail": "(631) 375-1097"
+      "detail": "constructEvent in webhook code"
+    },
+    {
+      "name": "Gumroad storefront live",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Onboarding page live",
+      "status": "FAIL",
+      "detail": "Status 404"
     },
     {
       "name": "Affiliate content",
