@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-13T16:42:12.980114",
+  "timestamp": "2026-04-13T21:36:07.753444",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 167,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -93,9 +93,9 @@
     },
     {
       "source": "google_news",
-      "title": "Gateway Program\u2019s long-term economic benefits estimated - NJ Spotlight News",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZkdkVkFUNmF0Rk9tcVVCUms4NjhQUl91enQ5MERuNWxGNk9BNHZXWnVZb2czTXg2LUZkeUoyYTFaa1hPM0hORmhhRkpRUGdpVjRkX05yUzlCNFRlR1p0NkJqb2FYSmJVWW1zdEtTOTBETU11aGRTOWtVNGNBWnpNWWREQ3ZOdVhtM013RjFRV0xpZ1BWQTNZZmROV2Z3RmxHTHVKVkF3XzAtZW9FY0xJYzhfWkNZQ1Zha293R0pXT3huc1NObE1xSDYxZFFzaUsxTndzaEV3?oc=5",
-      "outlet": "NJ Spotlight News",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,9 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "Newark\u2019s Air Traffic Control Staffing Crisis Is Dire. It\u2019s Also Not Unique. - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQc1AtVDVVMlhQdWRZVmtJc0F4alE3TkJiZWVKWUx2SUNmTmxUQmJmWU13bG10VzNhLXcwWFkwVVNqSzduZ016TzJnVmEzZnRMOWN3eXRFY0dRVnFjRlZxTkphUWNyOS1rdU1MLWp2ZEhkWDFWQ3Z2NWUzTm4ydXdzdDR0S1VVNERBbmstZm00bkp2Uzhi?oc=5",
-      "outlet": "The New York Times",
+      "title": "Spotlight: New York City\u2019s Rental Housing Market - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMU5GZ0dDS2ZiclR3bklSUDNmZWtVa2xuRm41YWpZRWdKeTJXYmVlaUdWcFRGS2J6enRDZGFGSTNjVGFLaTZ6c2NnQWNtMjdSaDRtMkRoYXk1M2dBak5LS2d6a3ZRb1hpZDdVbEJILVkwSHJxckhsNXFGLUI3VmFXdnF1U05aVFlNNTVB?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
-      "outlet": "obits.robinsonfuneralhomes.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -236,9 +225,20 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
+      "title": "South Carolina entrepreneur featured during Black History month - WCNC",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
+      "outlet": "WCNC",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Daniels Obituary (1940 - 2022) - Charleston, SC - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZXhveTBLMG11YnVqN1FpYVdqQ1piQXF2UDNSVTI3ejRnbDZJdDYwSXdiOGtXaVUxUFlCelQxZWZ3UUhOY1ZrOGY2MTBwTUJTZlRBVl9VVGdsTWVoT0VNSXdIZEVsTllsYUF3eVVSTHVFVkN4ZzdLQWFFVkhwS0lZdzFzYU5LYS1EX05FOG1veDZOZU43akt0V3ZkLWM2cms?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
