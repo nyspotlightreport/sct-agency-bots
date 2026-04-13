@@ -12,9 +12,10 @@
 
 ## Designs Ready to Upload:
 
+- brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
 - nyc-skyline-minimal.png → Nyc Skyline Minimal
 
 ## Expected Earnings
-- 1 designs × average $3/month = $3/month
+- 2 designs × average $3/month = $6/month
 - Best performers can earn $20-50/month each
 - All designs earn royalties in perpetuity
