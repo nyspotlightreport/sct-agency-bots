@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-04-14_18",
+    "type": "BLOG_POST",
+    "title": "Cold Email Automation: 200 Personalized Emails Per Day with Apollo",
+    "created": "2026-04-14T10:44:03.108183",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-04-13_17",
     "type": "BLOG_POST",
     "title": "How to Make $500/Month Passive Income from Bandwidth Sharing in 2026",
