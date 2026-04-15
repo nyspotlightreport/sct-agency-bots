@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-15T19:57:10.008434",
+  "timestamp": "2026-04-15T21:39:29.103431",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
-  "brand_mention_count": 35,
+  "mention_count": 151,
+  "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
@@ -181,17 +181,6 @@
     },
     {
       "source": "google_news",
-      "title": "Insta 360 Link 2 Insta360 Flow 2 Pro/Flow 2 Spotlight Insta360 Accessories - portalcantagalo.com.br",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNejNHZWxRWWFIUHlFZGRnTUM3RnlpNlNIcGY3TlExOFZNS0ViYk9BZkVYYVo3V0ZVZzFZVE4tU2RhSHBBS3JwdGtwT005VkJ4UERrVWpUNWh3bjh0bmJmR01mUFVsa1pNZ1JYajBtZGUtWHF1SWJIek1OQ25haWZlWWgzTEpDX0pP?oc=5",
-      "outlet": "portalcantagalo.com.br",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy obituary",
@@ -239,6 +228,17 @@
       "title": "South Carolina entrepreneur featured during Black History month - WCNC",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
       "outlet": "WCNC",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Meet Erin Thomas - CanvasRebel Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
+      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
