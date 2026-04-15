@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-14T22:33:47.117737",
+  "timestamp": "2026-04-15T06:23:01.292063",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 152,
   "brand_mention_count": 35,
   "analyses": [
     {
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "South Carolina Department of Agriculture (.gov)",
+      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
+      "outlet": "obits.robinsonfuneralhomes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "South Carolina entrepreneur featured during Black History month - WCNC",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
-      "outlet": "WCNC",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
