@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-15T22:29:31.094111",
+  "timestamp": "2026-04-16T06:24:11.954084",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,13 +22,13 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 151,
   "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
-      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
+      "title": "What Is Going on with NYC Jobs? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -52,6 +52,28 @@
       "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
       "outlet": "Paulick Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -85,28 +107,6 @@
       "title": "This Report Was Not AI-Generated - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
       "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Mamdani\u2019s Win Has Put Buses in the Spotlight. Should They Be Free? - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE80N3V6S3dqanUtU0w3ZnNsNkd2YW9rblpBNl9FQnVibmdzakFZSGtOSXdvSlVQUXktZFZyemkyTjZJV05Kb25wQ2NYTlBFdGFTZXVvYVRJS0VVOTRpRUJlb1B5OGVhYzBHREtkRjRMMlhfYURpcE1XOG1wX0NTZVk?oc=5",
-      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - CanvasRebel Magazine",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "CanvasRebel Magazine",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
