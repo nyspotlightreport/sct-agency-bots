@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-16T16:58:15.561525",
+  "timestamp": "2026-04-16T21:30:06.530569",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 151,
-  "brand_mention_count": 34,
+  "mention_count": 152,
+  "brand_mention_count": 33,
   "analyses": [
     {
       "source": "google_news",
@@ -148,17 +148,6 @@
     },
     {
       "source": "google_news",
-      "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - BioSpectrum India",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQV0ZhekZPLXphejFRTlAzMEs4TG5aWjFsRHh3aHhGQTV5QnVEU2FJcXVpZ2tadWNKbWQtMHhSaWFjLTVoODVwd0g5STVJekFHbXZabzRKSWNvSWx6UkRxQm1BWXJLTWFYM0NXZ0RCR0JEdnE1SkJrTjdPcm1HMmlMZFRqNDV6ZnFNYXRlY3JhSVdycnBxbmdickdFajl2RDRjd2t0cU4wUzN0VldDSlRDcEI5Rm11UEJmRWRWNjJFQTlfNWp2OUVxZzgtUWhsZldUVUh2T1NQWExMci1I?oc=5",
-      "outlet": "BioSpectrum India",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Google expands budget AI plans as AI Plus counters ChatGPT Go - \ub514\uc9c0\ud138\ud22c\ub370\uc774",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUFBjckZ0WjIwRkl1NVdZYTV2Wlo0eDJVem9hOXFkeFFHVW90YVJtdDh0czkwWUQ4UEpVR1FEdXFOUmdhcFViQllfdW5wQ3dQZG54alNlMFRDSVFfM0xEdUx1c0xlRUhNYWRxa29SdmRlVTFLaG5GdHZ0V2VyT0lrZFRPUkNiY2xkWFFxVFl6b2dtWlhKZ2x0MHdTMTViOGJMM1NVZGx6dEpZRTg?oc=5",
       "outlet": "\ub514\uc9c0\ud138\ud22c\ub370\uc774",
@@ -239,6 +228,17 @@
       "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Meet Erin Thomas - CanvasRebel Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
+      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
