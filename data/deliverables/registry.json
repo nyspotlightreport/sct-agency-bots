@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-04-19_22",
+    "type": "BLOG_POST",
+    "title": "Newsletter Monetization: From 0 to $1,000/Month Revenue",
+    "created": "2026-04-19T07:19:40.254314",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-04-18_21",
     "type": "BLOG_POST",
     "title": "The Passive Income Stack That Earns While You Sleep",
