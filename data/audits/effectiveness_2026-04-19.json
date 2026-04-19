@@ -1,0 +1,123 @@
+{
+  "affiliate_coverage": {
+    "status": "FAIL",
+    "coverage_pct": 0.0,
+    "checked": 20,
+    "with_affiliate": 0,
+    "missing_sample": [
+      "/blog/gallery-weekend-art-parties/",
+      "/blog/broadway-goes-dark-2020/",
+      "/blog/life-and-trust-and-the-lineage-it-carries-after-sleep-no-more-wha/",
+      "/blog/reading-order-getting-into-maggie-stiefvaters-universe/",
+      "/blog/the-reddit-thread-that-broke-a-thousand-hearts-life-and-trusts-su/"
+    ]
+  },
+  "editorial_purity": {
+    "status": "PASS",
+    "checked": 10,
+    "violations": 0,
+    "details": []
+  },
+  "smoke_tests": {
+    "status": "WARN",
+    "passed": 0,
+    "total": 0
+  },
+  "agent_stubs": {
+    "status": "WARN",
+    "total_agents": 157,
+    "stubs": 5,
+    "stub_list": [
+      {
+        "file": "performance_optimizer_agent.py",
+        "lines": 43
+      },
+      {
+        "file": "security_auditor_agent.py",
+        "lines": 48
+      },
+      {
+        "file": "account_manager_agent.py",
+        "lines": 48
+      },
+      {
+        "file": "tech_lead_agent.py",
+        "lines": 40
+      },
+      {
+        "file": "frontend_developer_agent.py",
+        "lines": 45
+      }
+    ]
+  },
+  "workflow_success": {
+    "status": "FAIL",
+    "success_rate": 67.3,
+    "passed": 33,
+    "total": 49,
+    "failures": [
+      "Uptime Monitor",
+      "Site Health Monitor",
+      "GitHub Monitor",
+      "Self-Healing Agent \u2014 Every 30 Minutes",
+      "System Watchdog - End-to-End Health",
+      "\ud83c\udfb0 Sweepstakes Hunter (Hourly)",
+      "Uptime Monitor",
+      "Hayden Cross QC Daily",
+      "Site Health Monitor",
+      "GitHub Monitor"
+    ]
+  },
+  "revenue_touchpoints": {
+    "status": "FAIL",
+    "checks": {
+      "homepage": {
+        "status": 200,
+        "ok": true
+      },
+      "store": {
+        "status": 200,
+        "ok": true
+      },
+      "checkout_success": {
+        "status": 0,
+        "ok": false
+      },
+      "subscribe_api": {
+        "status": 0,
+        "ok": false
+      }
+    },
+    "down": [
+      "checkout_success (0)",
+      "subscribe_api (0)"
+    ]
+  },
+  "content_freshness": {
+    "status": "PASS",
+    "last_publish_success": "2026-04-19T10:38:40Z",
+    "stale": false
+  },
+  "data_growth": {
+    "status": "WARN",
+    "current_counts": {
+      "contacts": -1,
+      "outreach_log": 97,
+      "brand_mentions": -1,
+      "subscribers": -1
+    },
+    "growth_24h": {
+      "contacts": "unknown",
+      "outreach_log": 0,
+      "brand_mentions": "unknown",
+      "subscribers": "unknown"
+    }
+  },
+  "_summary": {
+    "timestamp": "2026-04-19T12:03:43.345077+00:00",
+    "score": 25,
+    "passed": 2,
+    "total": 8,
+    "alerts": 4
+  }
+}
