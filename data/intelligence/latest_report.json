@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-20T17:08:12.027979",
+  "timestamp": "2026-04-20T19:58:37.311535",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - CanvasRebel Magazine",
+      "title": "Meet Erin Thomas - canvasrebel.com",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "CanvasRebel Magazine",
+      "outlet": "canvasrebel.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
