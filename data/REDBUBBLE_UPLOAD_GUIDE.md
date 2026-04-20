@@ -12,10 +12,12 @@
 
 ## Designs Ready to Upload:
 
+- nyc-map-typography.png → Nyc Map Typography
 - brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
+- times-square-neon.png → Times Square Neon
 - nyc-skyline-minimal.png → Nyc Skyline Minimal
 
 ## Expected Earnings
-- 2 designs × average $3/month = $6/month
+- 4 designs × average $3/month = $12/month
 - Best performers can earn $20-50/month each
 - All designs earn royalties in perpetuity
