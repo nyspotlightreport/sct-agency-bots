@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-22T13:47:52.319259",
+  "timestamp": "2026-04-22T17:05:25.237652",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 154,
-  "brand_mention_count": 34,
+  "mention_count": 153,
+  "brand_mention_count": 33,
   "analyses": [
     {
       "source": "google_news",
@@ -60,42 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
       "outlet": "Algemeiner.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Stallion Spotlight Presented By New York Thoroughbred Breeders Inc.: Newgrange 'Truly Checks All The Boxes' Ahead Of Debut Season - Paulick Report",
-      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxONnQtUm1CcVFId3RPX1FESFdoaUN3UGtyeUwwSjJ2SHhIcGVYRGVsX1lRV3I5VE13NldULVc3UndETW03SzhKd1h4NDlZclp0d3BFN2VId3Z6SUF1dVN0RHFWR3N3WjU2M2haTWFUb2VaWmhrVFZoSWhqeFVQSHUwWFJfNXpFRU16OFlEX0hHVGRYRUREQ21HUUJTNTNGUUluekxPZm9qWmJPOUR5ZjZFLWx2XzllSnFCTTd0eUtld1VfTi1EWFlfWldfNmtCdEZkUTVsMW5DdmJ3ZnJ0NzMzMnVtVUhiRnlzMWdRS25veG0zRkNYT2RWQUVaOHgzcVpOQ0NKc0dORWZ3bUk?oc=5",
-      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -115,9 +82,42 @@
     },
     {
       "source": "google_news",
+      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
+      "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "This Report Was Not AI-Generated - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
       "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Mamdani\u2019s Win Has Put Buses in the Spotlight. Should They Be Free? - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE80N3V6S3dqanUtU0w3ZnNsNkd2YW9rblpBNl9FQnVibmdzakFZSGtOSXdvSlVQUXktZFZyemkyTjZJV05Kb25wQ2NYTlBFdGFTZXVvYVRJS0VVOTRpRUJlb1B5OGVhYzBHREtkRjRMMlhfYURpcE1XOG1wX0NTZVk?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -148,17 +148,6 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands budget AI plans as AI Plus counters ChatGPT Go - \ub514\uc9c0\ud138\ud22c\ub370\uc774",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUFBjckZ0WjIwRkl1NVdZYTV2Wlo0eDJVem9hOXFkeFFHVW90YVJtdDh0czkwWUQ4UEpVR1FEdXFOUmdhcFViQllfdW5wQ3dQZG54alNlMFRDSVFfM0xEdUx1c0xlRUhNYWRxa29SdmRlVTFLaG5GdHZ0V2VyT0lrZFRPUkNiY2xkWFFxVFl6b2dtWlhKZ2x0MHdTMTViOGJMM1NVZGx6dEpZRTg?oc=5",
-      "outlet": "\ub514\uc9c0\ud138\ud22c\ub370\uc774",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
       "outlet": "Chosunbiz",
@@ -181,17 +170,6 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
       "outlet": "SCBiz",
@@ -203,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "South Carolina Department of Agriculture (.gov)",
+      "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
+      "outlet": "Stuhr Funeral Home",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +192,31 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
-      "outlet": "Stuhr Funeral Home",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
+      "outlet": "obits.robinsonfuneralhomes.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
