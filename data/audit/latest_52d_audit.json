@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-04-21T11:00:43.954861+00:00",
-  "pass_count": 26,
-  "fail_count": 4,
+  "timestamp": "2026-04-22T10:59:20.216346+00:00",
+  "pass_count": 21,
+  "fail_count": 9,
   "total": 30,
-  "score": 87,
-  "grade": "B+",
+  "score": 70,
+  "grade": "B",
   "results": [
     {
       "name": "Pages responding",
@@ -13,28 +13,28 @@
     },
     {
       "name": "Stripe LIVE checkout",
-      "status": "PASS",
-      "detail": "Status 200, cs_live=found"
+      "status": "FAIL",
+      "detail": "Status 404, cs_live=NOT found"
     },
     {
       "name": "Webhook signature enforcement",
-      "status": "PASS",
-      "detail": "Returns 400 (want 400)"
+      "status": "FAIL",
+      "detail": "Returns 404 (want 400)"
     },
     {
       "name": "Voice AI (ProFlow)",
-      "status": "PASS",
-      "detail": "Status 200"
+      "status": "FAIL",
+      "detail": "Status 404"
     },
     {
       "name": "Voice AI (Emma)",
-      "status": "PASS",
-      "detail": "Emma persona active"
+      "status": "FAIL",
+      "detail": "Emma not found"
     },
     {
       "name": "Lead capture",
-      "status": "PASS",
-      "detail": "Status 200"
+      "status": "FAIL",
+      "detail": "Status 404"
     },
     {
       "name": "Free trial eliminated",
@@ -44,7 +44,7 @@
     {
       "name": "Functions alive",
       "status": "PASS",
-      "detail": "19/20 responding"
+      "detail": "20/20 responding"
     },
     {
       "name": "startCheckout present",
@@ -124,7 +124,7 @@
     {
       "name": "Sweepstakes running",
       "status": "PASS",
-      "detail": "Last run: 2026-04-21T10:15:43Z"
+      "detail": "Last run: 2026-04-22T10:15:36Z"
     },
     {
       "name": "Affiliate content",
@@ -158,6 +158,31 @@
     }
   ],
   "failures": [
+    {
+      "name": "Stripe LIVE checkout",
+      "status": "FAIL",
+      "detail": "Status 404, cs_live=NOT found"
+    },
+    {
+      "name": "Webhook signature enforcement",
+      "status": "FAIL",
+      "detail": "Returns 404 (want 400)"
+    },
+    {
+      "name": "Voice AI (ProFlow)",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
+    {
+      "name": "Voice AI (Emma)",
+      "status": "FAIL",
+      "detail": "Emma not found"
+    },
+    {
+      "name": "Lead capture",
+      "status": "FAIL",
+      "detail": "Status 404"
+    },
     {
       "name": "Free trial eliminated",
       "status": "FAIL",
