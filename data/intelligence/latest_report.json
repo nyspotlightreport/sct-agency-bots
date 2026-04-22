@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-22T08:28:29.981383",
+  "timestamp": "2026-04-22T09:24:08.486271",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 163,
-  "brand_mention_count": 33,
+  "mention_count": 154,
+  "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
@@ -115,6 +115,17 @@
     },
     {
       "source": "google_news",
+      "title": "Stallion Spotlight Presented By New York Thoroughbred Breeders Inc.: Newgrange 'Truly Checks All The Boxes' Ahead Of Debut Season - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxONnQtUm1CcVFId3RPX1FESFdoaUN3UGtyeUwwSjJ2SHhIcGVYRGVsX1lRV3I5VE13NldULVc3UndETW03SzhKd1h4NDlZclp0d3BFN2VId3Z6SUF1dVN0RHFWR3N3WjU2M2haTWFUb2VaWmhrVFZoSWhqeFVQSHUwWFJfNXpFRU16OFlEX0hHVGRYRUREQ21HUUJTNTNGUUluekxPZm9qWmJPOUR5ZjZFLWx2XzllSnFCTTd0eUtld1VfTi1EWFlfWldfNmtCdEZkUTVsMW5DdmJ3ZnJ0NzMzMnVtVUhiRnlzMWdRS25veG0zRkNYT2RWQUVaOHgzcVpOQ0NKc0dORWZ3bUk?oc=5",
+      "outlet": "Paulick Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Mamdani\u2019s Win Has Put Buses in the Spotlight. Should They Be Free? - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE80N3V6S3dqanUtU0w3ZnNsNkd2YW9rblpBNl9FQnVibmdzakFZSGtOSXdvSlVQUXktZFZyemkyTjZJV05Kb25wQ2NYTlBFdGFTZXVvYVRJS0VVOTRpRUJlb1B5OGVhYzBHREtkRjRMMlhfYURpcE1XOG1wX0NTZVk?oc=5",
       "outlet": "The New York Times",
@@ -126,9 +137,9 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Google's $8 AI Plus Plan Goes Global, Takes Aim at OpenAI - The Tech Buzz",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMVBld2tCdHU4Ti1nUmV6NGRFU3Nzbmh6bXFFVUVNcklUOElWbDVOdWpQTFczZHVoWjdsdzZoVTlVc0FHSmhrNnZndVNMREhJZXJ6MmxCNGs1LTh0V0hxNWc0Qk8zeV85NTRuNzlQQVJHNWVwMlBGZDVCcTZ6ZjBfTmdsY0VzYkJieEJpT04tbjdaZw?oc=5",
+      "outlet": "The Tech Buzz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -137,9 +148,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google's $8 AI Plus Plan Goes Global, Takes Aim at OpenAI - The Tech Buzz",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMVBld2tCdHU4Ti1nUmV6NGRFU3Nzbmh6bXFFVUVNcklUOElWbDVOdWpQTFczZHVoWjdsdzZoVTlVc0FHSmhrNnZndVNMREhJZXJ6MmxCNGs1LTh0V0hxNWc0Qk8zeV85NTRuNzlQQVJHNWVwMlBGZDVCcTZ6ZjBfTmdsY0VzYkJieEJpT04tbjdaZw?oc=5",
-      "outlet": "The Tech Buzz",
+      "title": "Google expands budget AI plans as AI Plus counters ChatGPT Go - \ub514\uc9c0\ud138\ud22c\ub370\uc774",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQUFBjckZ0WjIwRkl1NVdZYTV2Wlo0eDJVem9hOXFkeFFHVW90YVJtdDh0czkwWUQ4UEpVR1FEdXFOUmdhcFViQllfdW5wQ3dQZG54alNlMFRDSVFfM0xEdUx1c0xlRUhNYWRxa29SdmRlVTFLaG5GdHZ0V2VyT0lrZFRPUkNiY2xkWFFxVFl6b2dtWlhKZ2x0MHdTMTViOGJMM1NVZGx6dEpZRTg?oc=5",
+      "outlet": "\ub514\uc9c0\ud138\ud22c\ub370\uc774",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -228,17 +239,6 @@
       "title": "South Carolina entrepreneur featured during Black History month - WCNC",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
       "outlet": "WCNC",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
