@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-04-22_25",
+    "type": "BLOG_POST",
+    "title": "Beehiiv vs Substack vs ConvertKit: Real Numbers After 6 Months",
+    "created": "2026-04-22T07:47:14.077112",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-04-21_24",
     "type": "BLOG_POST",
     "title": "63 AI Bots That Run a Business: Architecture Deep Dive",
