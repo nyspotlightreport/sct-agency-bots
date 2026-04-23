@@ -1,0 +1,30 @@
+{
+  "financials": {
+    "date": "2026-04-23",
+    "revenue": {
+      "stripe_mtd": 49.99,
+      "gumroad_mtd": 0,
+      "total_mtd": 49.99
+    },
+    "expenses": {
+      "apollo_pro": 99,
+      "elevenlabs": 22,
+      "total_monthly": 121
+    },
+    "assets": {
+      "stripe_payment_links": 7,
+      "gumroad_products": 10,
+      "kdp_books": 15,
+      "redbubble_designs": 20,
+      "site_pages": 126,
+      "blog_posts": 7
+    },
+    "pipeline": {
+      "hubspot_deals": 5,
+      "pipeline_value": 2985
+    },
+    "burn_rate_daily": 4.03,
+    "runway_days": "infinite (no debt)"
+  },
+  "analysis": "API needed"
+}
