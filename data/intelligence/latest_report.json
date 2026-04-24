@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-24T19:47:46.389389",
+  "timestamp": "2026-04-24T20:54:33.103569",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -93,6 +93,17 @@
     },
     {
       "source": "google_news",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "This Report Was Not AI-Generated - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
       "outlet": "NYC.gov",
@@ -106,17 +117,6 @@
       "source": "google_news",
       "title": "Mamdani\u2019s Win Has Put Buses in the Spotlight. Should They Be Free? - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE80N3V6S3dqanUtU0w3ZnNsNkd2YW9rblpBNl9FQnVibmdzakFZSGtOSXdvSlVQUXktZFZyemkyTjZJV05Kb25wQ2NYTlBFdGFTZXVvYVRJS0VVOTRpRUJlb1B5OGVhYzBHREtkRjRMMlhfYURpcE1XOG1wX0NTZVk?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Newark\u2019s Air Traffic Control Staffing Crisis Is Dire. It\u2019s Also Not Unique. - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQc1AtVDVVMlhQdWRZVmtJc0F4alE3TkJiZWVKWUx2SUNmTmxUQmJmWU13bG10VzNhLXcwWFkwVVNqSzduZ016TzJnVmEzZnRMOWN3eXRFY0dRVnFjRlZxTkphUWNyOS1rdU1MLWp2ZEhkWDFWQ3Z2NWUzTm4ydXdzdDR0S1VVNERBbmstZm00bkp2Uzhi?oc=5",
       "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
