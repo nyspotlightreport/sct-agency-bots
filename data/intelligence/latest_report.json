@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-24T20:54:33.103569",
+  "timestamp": "2026-04-25T02:40:03.970843",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 152,
   "brand_mention_count": 33,
   "analyses": [
     {
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
+      "title": "Thomas Mollick Scholarship for Entrepreneurs Launches National Initiative to Support Visionary Undergraduate Students - WFXG",
+      "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPTlVuMUtVZjU1STVhTGVSTGg3VWx0QUdkSlB6MGw1MDk1VE5MemhQbmVFaXZzWWJyUkhGZS1BeGc1bG42YjlOa0dWeEJCdk5xTkhMdXUxMEVldkp0Rk5LV1RGSENXMV9OWTZqaWFFY1RMaE1Wcmo1ZmxEOUxvcUthZExmdXhNT29GZC1xc18xUkNNQ2NDdzBXZ2lieWtMRzRRYW16dURRbVMxZnhNd2JKek02dzhjcFQtclFFcVN6MW9XSmJ4dU51STg2TFE1OWJXNG5aU1B6eUlmVWtFOWtpVGdKME5jMVc3eWl6ckFuTktESllhcmdWY1hkS2hxekFGSGdQU0JoQUV1ZGQySXNQNGpOR0tGeXRCbXlRZDk4d242WXBrakRyeHJtQkVYb3lqM1UwLWlGQXBXTDRYQ3RpUQ?oc=5",
+      "outlet": "WFXG",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Donald \"Tom\" Thomas Cassels Obituary May 7, 2025 - obits.robinsonfuneralhomes.com",
-      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9scXRoRmo3Z05rcHdSMzhhTjhTdW1sQTJZUHB5eDNmdGt1Tk5wRVhYelJsSkpYb2FVenlGUXFINnZRc19lemVVZzFLWGR3dUhrUjlwTHJySEQwU081TkI4Y3VYdw?oc=5",
-      "outlet": "obits.robinsonfuneralhomes.com",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "outlet": "Legacy obituary",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "South Carolina entrepreneur featured during Black History month - WCNC",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
-      "outlet": "WCNC",
+      "title": "Meet Erin Thomas - canvasrebel.com",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
+      "outlet": "canvasrebel.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - canvasrebel.com",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "canvasrebel.com",
+      "title": "South Carolina entrepreneur featured during Black History month - WCNC",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
+      "outlet": "WCNC",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
