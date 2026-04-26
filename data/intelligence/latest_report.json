@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-26T12:56:28.880180",
+  "timestamp": "2026-04-26T13:13:32.142896",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
-  "brand_mention_count": 33,
+  "mention_count": 152,
+  "brand_mention_count": 32,
   "analyses": [
     {
       "source": "google_news",
@@ -82,9 +82,9 @@
     },
     {
       "source": "google_news",
-      "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - New York Post",
+      "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - nypost.com",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPb1BMbUZaNlVmbjZYamZnVm9EVF8ydFQtcVdCNFdVV0xyenY5ZEdONm5wem51RnhWTkdoZGx3aXVNVi1YS0l3bTB4NWdlcnRYYk93aU9ybUJqVVh3RW5QM1A1T2JjQVdCOFI3d2ZRZnN2X25hWGthMEVpdEpDVlFWbzMzcW9tQkxMTlE0dEluUV85aWhwRjF0X0dsNnd2U3U3Unc4NG51MFA3ZlZFcUlwTTB0Q3NFZ3pkWlNNY0FqaTc3QkJwZjZxRXlzSnhhT18wNWpvVXdB?oc=5",
-      "outlet": "New York Post",
+      "outlet": "nypost.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,42 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - Free Press Journal",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYV9USVlTc3lvUVFVbEN0dy1KdDN5MlFWdXhNN0FxZ0JCbWw2TVZsdFR1bGV5SUFPNUpDRlI5TE1IUEg4YzVZZ2RxblNOZkNPWU9SU1VuTWpPRUVSTDMtdVI5ZWZTTk9MMHVMYmd6dXpSdXlQbW82NElYMHYwbUcyNzF4MlZCOEtHVWxnSmx1eFBHWUYxX3FyV0RSUW5aa0tEZzRnUW51cnZ6UWJG0gGyAUFVX3lxTE1kVXBoVjNmbUoxWXJxRnZoSVNfZUZ6TkxpNVhwdHFUUFprYkJxbkRDNDVMenJzbXlLbm5zWmFXU3IzQVRVdWg0dnBDVUk1Z2I1ZHpOS3BNYkFzQUZabllVN2xaVERjZDZIc2xUb3NSU1d6QktzOURnRE1OeEhSNTFGQzgzcHUtOE9FRGk3Q0N3MmhJMGhVdzJZby1IcDNvd0NpWDRLdl9nVndxN0U3clExZlE?oc=5",
-      "outlet": "Free Press Journal",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
       "outlet": "SCBiz",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,8 +181,30 @@
     },
     {
       "source": "google_news",
-      "title": "South Carolina entrepreneur featured during Black History month - WCNC",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "South Carolina entrepreneur featured in national Black History calendar - WCNC",
+      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNeVFCczlPYWlab1hFcGRVNmlDM0ljRDJkdV9tMmtYdkJhMnM1T2IzNmVFREwtQnhucVk2SzdDUmNNVHY4MnhiNi1iOEdyMEI2UFVFOHRnalphZnpUVUMyclRGNnRDMEVkT3dYOTlzOTY1YU9Ra29WOHJfZ1VyS2MyZTFLNEd3YUVPelVDdHJPMm8xQmI2LXZDT1JUblg1cXZCcUIzX2xnWDdKRzhqSVB0Z05yQlhBcjAtd0pjZDBzQkIzbUlMbGp3bXRFY2NRc3B1Z2lCWktqMmFVN1VpTTNWaHg3dUpobGdwNHdjUEo2dTU4d3VMUUpCbVFIQQ?oc=5",
       "outlet": "WCNC",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -239,6 +228,17 @@
       "title": "Thomas Jay Kaiser Obituary August 16, 2023 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Ga3ZVMVN6RGlyQzNaaFdQbFdrUUZUcGdHeDdoWTRtdUh3Q3lkLTQtWlpSNHVRSU55NUJKbGtWVU45N0hwOHlrTHF0by1hTFEzNklzS3lWeDF6TU5xay1VS2lfcDljZnN2VUZidmxmenA?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Daniels Obituary (1940 - 2022) - Charleston, SC - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZXhveTBLMG11YnVqN1FpYVdqQ1piQXF2UDNSVTI3ejRnbDZJdDYwSXdiOGtXaVUxUFlCelQxZWZ3UUhOY1ZrOGY2MTBwTUJTZlRBVl9VVGdsTWVoT0VNSXdIZEVsTllsYUF3eVVSTHVFVkN4ZzdLQWFFVkhwS0lZdzFzYU5LYS1EX05FOG1veDZOZU43akt0V3ZkLWM2cms?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
