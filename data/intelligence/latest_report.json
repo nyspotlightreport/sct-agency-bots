@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-26T06:08:58.483908",
+  "timestamp": "2026-04-26T07:16:58.546702",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 157,
   "brand_mention_count": 33,
   "analyses": [
     {
@@ -214,8 +214,8 @@
     },
     {
       "source": "google_news",
-      "title": "South Carolina entrepreneur featured during Black History month - WCNC",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
+      "title": "South Carolina entrepreneur featured in national Black History calendar - WCNC",
+      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNeVFCczlPYWlab1hFcGRVNmlDM0ljRDJkdV9tMmtYdkJhMnM1T2IzNmVFREwtQnhucVk2SzdDUmNNVHY4MnhiNi1iOEdyMEI2UFVFOHRnalphZnpUVUMyclRGNnRDMEVkT3dYOTlzOTY1YU9Ra29WOHJfZ1VyS2MyZTFLNEd3YUVPelVDdHJPMm8xQmI2LXZDT1JUblg1cXZCcUIzX2xnWDdKRzhqSVB0Z05yQlhBcjAtd0pjZDBzQkIzbUlMbGp3bXRFY2NRc3B1Z2lCWktqMmFVN1VpTTNWaHg3dUpobGdwNHdjUEo2dTU4d3VMUUpCbVFIQQ?oc=5",
       "outlet": "WCNC",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Daniels Obituary (1940 - 2022) - Charleston, SC - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZXhveTBLMG11YnVqN1FpYVdqQ1piQXF2UDNSVTI3ejRnbDZJdDYwSXdiOGtXaVUxUFlCelQxZWZ3UUhOY1ZrOGY2MTBwTUJTZlRBVl9VVGdsTWVoT0VNSXdIZEVsTllsYUF3eVVSTHVFVkN4ZzdLQWFFVkhwS0lZdzFzYU5LYS1EX05FOG1veDZOZU43akt0V3ZkLWM2cms?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas Jay Kaiser Obituary August 16, 2023 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Ga3ZVMVN6RGlyQzNaaFdQbFdrUUZUcGdHeDdoWTRtdUh3Q3lkLTQtWlpSNHVRSU55NUJKbGtWVU45N0hwOHlrTHF0by1hTFEzNklzS3lWeDF6TU5xay1VS2lfcDljZnN2VUZidmxmenA?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
