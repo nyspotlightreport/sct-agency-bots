@@ -14,10 +14,12 @@
 
 - nyc-map-typography.png → Nyc Map Typography
 - brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
+- hustle-daily-minimal.png → Hustle Daily Minimal
+- create-your-path.png → Create Your Path
 - times-square-neon.png → Times Square Neon
 - nyc-skyline-minimal.png → Nyc Skyline Minimal
 
 ## Expected Earnings
-- 4 designs × average $3/month = $12/month
+- 6 designs × average $3/month = $18/month
 - Best performers can earn $20-50/month each
 - All designs earn royalties in perpetuity
