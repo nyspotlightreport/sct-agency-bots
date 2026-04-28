@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-28T09:16:24.275360",
+  "timestamp": "2026-04-28T10:17:11.291208",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -23,7 +23,7 @@
   },
   "opportunities": [],
   "mention_count": 150,
-  "brand_mention_count": 31,
+  "brand_mention_count": 32,
   "analyses": [
     {
       "source": "google_news",
@@ -148,6 +148,17 @@
     },
     {
       "source": "google_news",
+      "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - NUS - National University of Singapore",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZnVFd3l1YVFQMGdmb3BrWVRuQzhOZjFwRklPVnI0RTRPY1NrUFJSUkJMaE0wUTkzcnJ3UU9jN2hWczhoMXpBckJqU2syZFZ2eUhKbG5zWEpnOExOQlp2bGlHbmVsVy1kM1YtUlNLLXFfRFlnSXByT3Z3anhWejlTNFhPV1hNaXVGV3Q0TGVnbHpoWHJSRlBVNTdVVzV4eWF4a2JlcnhB?oc=5",
+      "outlet": "NUS - National University of Singapore",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
       "outlet": "Stuhr Funeral Home",
@@ -228,17 +239,6 @@
       "title": "Tommie Innovators Spark Big Ideas at the Fowler Business Concept Challenge - Newsroom | University of St. Thomas",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ3RaYjJUZ2lPT1o0MUxLSC1YQmh5UUFwcnNpa1JxbFdUUWd6NG1oVWIzSUJBUHZiLTFBeHlmc3N5LUdWb2RqQWF0Y01pUVo4WkpQLVNsVFJIVnZ6T2o3ekdzcHdHQWc2YXRFTUhNYWpHNHNPaThwNW1xWHZSR2NxYUxKbGRVN1hJUUxDSUpEM3ZkbFB2Q2hDb1dncmt2czE1Vzhr?oc=5",
       "outlet": "Newsroom | University of St. Thomas",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Columbia entrepreneur behind SWIFF store wants to create lifestyle brand for South Carolina - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOOWhXNlJaLWlXNUR5LXdkdWNreU85eWRxaFpwWGlReVpSQVFaeHB0UVdBT1Jhc2JoRDVJcU9McEpoN3kxdzctWFZabkZaZTd0WEE5OUdRclhOZnlfdFlQaWQ1QlY0d1BVbFQ5ZWl4MWNkMlZNNmU1em9kLUM4MFo3OVVrR0JPdFlRcGFuckVFSXRKZDBYS3h6T2F2UW5OZjRtWG9sN3FxRGplS1VSSVlEN19QdGxmaGlPWS1oSTFlTGpwenczYmo1U2pPN1RJRS10VGVzMVZkTXNlN09ZVk44Z2diS0oyWmpCSWcyN2pzVGllbjJfSzFySThlcE1mMzFnUkpoZEJveDdmU2I5RXgzejZBUVpSb2c?oc=5",
-      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
