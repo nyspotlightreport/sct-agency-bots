@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-28T03:28:57.672861",
+  "timestamp": "2026-04-28T06:33:09.963839",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -23,7 +23,7 @@
   },
   "opportunities": [],
   "mention_count": 151,
-  "brand_mention_count": 33,
+  "brand_mention_count": 32,
   "analyses": [
     {
       "source": "google_news",
@@ -148,17 +148,6 @@
     },
     {
       "source": "google_news",
-      "title": "Steeda Debuts New Ford Bronco ProFlow Intercooler - Ford Authority",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQTNGQlRoRnpBYnhyelZGc0dXU2JjZ1ZnMFpITEwtMGhFRXk2Z3QzNFp6V081YmEteFBWcXRucjVIQVZqZ3hvUWVKTTZzNlJubUJTUk5TME5NMHdRUTVraW4tc0tuNGk2Nk1NaG9PNk9ZWDFILTQxaEk4WUp2ZTh1MkNfOHpmNXd0R2dGbQ?oc=5",
-      "outlet": "Ford Authority",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - NUS - National University of Singapore",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZnVFd3l1YVFQMGdmb3BrWVRuQzhOZjFwRklPVnI0RTRPY1NrUFJSUkJMaE0wUTkzcnJ3UU9jN2hWczhoMXpBckJqU2syZFZ2eUhKbG5zWEpnOExOQlp2bGlHbmVsVy1kM1YtUlNLLXFfRFlnSXByT3Z3anhWejlTNFhPV1hNaXVGV3Q0TGVnbHpoWHJSRlBVNTdVVzV4eWF4a2JlcnhB?oc=5",
       "outlet": "NUS - National University of Singapore",
@@ -239,6 +228,17 @@
       "title": "Thomas Jay Kaiser Obituary August 16, 2023 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Ga3ZVMVN6RGlyQzNaaFdQbFdrUUZUcGdHeDdoWTRtdUh3Q3lkLTQtWlpSNHVRSU55NUJKbGtWVU45N0hwOHlrTHF0by1hTFEzNklzS3lWeDF6TU5xay1VS2lfcDljZnN2VUZidmxmenA?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Tommie Innovators Spark Big Ideas at the Fowler Business Concept Challenge - Newsroom | University of St. Thomas",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPZ3RaYjJUZ2lPT1o0MUxLSC1YQmh5UUFwcnNpa1JxbFdUUWd6NG1oVWIzSUJBUHZiLTFBeHlmc3N5LUdWb2RqQWF0Y01pUVo4WkpQLVNsVFJIVnZ6T2o3ekdzcHdHQWc2YXRFTUhNYWpHNHNPaThwNW1xWHZSR2NxYUxKbGRVN1hJUUxDSUpEM3ZkbFB2Q2hDb1dncmt2czE1Vzhr?oc=5",
+      "outlet": "Newsroom | University of St. Thomas",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
