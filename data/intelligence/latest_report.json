@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-29T20:09:13.888611",
+  "timestamp": "2026-04-29T21:09:52.411338",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 199,
+  "mention_count": 153,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -63,6 +63,17 @@
       "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
       "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,17 +137,6 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
       "outlet": "Chosunbiz",
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Mollick Scholarship for Entrepreneurs Launches National Initiative to Support Visionary Undergraduate Students - WFXG",
-      "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPTlVuMUtVZjU1STVhTGVSTGg3VWx0QUdkSlB6MGw1MDk1VE5MemhQbmVFaXZzWWJyUkhGZS1BeGc1bG42YjlOa0dWeEJCdk5xTkhMdXUxMEVldkp0Rk5LV1RGSENXMV9OWTZqaWFFY1RMaE1Wcmo1ZmxEOUxvcUthZExmdXhNT29GZC1xc18xUkNNQ2NDdzBXZ2lieWtMRzRRYW16dURRbVMxZnhNd2JKek02dzhjcFQtclFFcVN6MW9XSmJ4dU51STg2TFE1OWJXNG5aU1B6eUlmVWtFOWtpVGdKME5jMVc3eWl6ckFuTktESllhcmdWY1hkS2hxekFGSGdQU0JoQUV1ZGQySXNQNGpOR0tGeXRCbXlRZDk4d242WXBrakRyeHJtQkVYb3lqM1UwLWlGQXBXTDRYQ3RpUQ?oc=5",
-      "outlet": "WFXG",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy | Obituary",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "outlet": "Legacy | Obituary",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy | Obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy | Obituary",
+      "title": "Indian student launches Thomas Tours to boost graduate morale in London - Daily Pioneer",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdkczb0h3ejRTckd4cG1xY29vQ1ExVFlQZUpVSEhkbnMzNER5SUxTLWRSdDRDZ2VfbDNJcE1VM0pVQ3g1Z2ItNWItemFmT2dEbEF3NkdwbFlGVjJQYXAzYzFPbUxwalhyclFZWXFja1EtYzdBcDVlYi1DZ0RtN0FoVTNLTnhPY0d1SmMtOFJKRmJoS05DYzhRaW4wVzRhZnA5N2Zj?oc=5",
+      "outlet": "Daily Pioneer",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
