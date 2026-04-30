@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-30T08:04:13.915010",
+  "timestamp": "2026-04-30T09:08:52.725465",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 162,
+  "mention_count": 153,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - canvasrebel.com",
+      "title": "Meet Erin Thomas - CanvasRebel Magazine",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "canvasrebel.com",
+      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
