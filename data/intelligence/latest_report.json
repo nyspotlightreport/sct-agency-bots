@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-30T03:27:55.109753",
+  "timestamp": "2026-04-30T06:29:53.700443",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -71,6 +71,17 @@
     },
     {
       "source": "google_news",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
       "outlet": "Algemeiner.com",
@@ -117,17 +128,6 @@
       "source": "google_news",
       "title": "Spotlight: New York City\u2019s Rental Housing Market - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMU5GZ0dDS2ZiclR3bklSUDNmZWtVa2xuRm41YWpZRWdKeTJXYmVlaUdWcFRGS2J6enRDZGFGSTNjVGFLaTZ6c2NnQWNtMjdSaDRtMkRoYXk1M2dBak5LS2d6a3ZRb1hpZDdVbEJILVkwSHJxckhsNXFGLUI3VmFXdnF1U05aVFlNNTVB?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
