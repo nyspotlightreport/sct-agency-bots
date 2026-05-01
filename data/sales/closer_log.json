@@ -1,5 +1,10 @@
 [
   {
+    "date": "2026-05-01",
+    "replies_processed": 0,
+    "results": []
+  },
+  {
     "date": "2026-04-30",
     "replies_processed": 0,
     "results": []
@@ -141,11 +146,6 @@
   },
   {
     "date": "2026-04-01",
-    "replies_processed": 0,
-    "results": []
-  },
-  {
-    "date": "2026-03-31",
     "replies_processed": 0,
     "results": []
   }
