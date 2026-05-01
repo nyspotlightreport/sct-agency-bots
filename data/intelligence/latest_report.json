@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-01T06:39:51.638379",
+  "timestamp": "2026-05-01T08:02:02.632872",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 155,
-  "brand_mention_count": 35,
+  "mention_count": 163,
+  "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
@@ -170,17 +170,6 @@
     },
     {
       "source": "google_news",
-      "title": "SingPost chairman-designate Low Teck Seng turns down appointment - The Straits Times",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNajBDSlVMUGE2bkhsUTFCMDlkZWZkeE5VSjVSWG1kcEU2TVVzbG5saGdhZ0dydHVZSzdWeVAxZzVINzVOeFhFaVVWN0JDT01sNE1wMEVBbzRfVUVRTWxpOWNVbGRsZGNMSHVGczBxaXNybWNRNVU5SVFtZFdKd2pJRVhZa1ZZXzZmMTBCQ0FjaHVkWUtDeGg5RVpic2VQSGYxOVhMWmo1MTR0QTZUVHlpMzExdWF4cEV3Rl9JZ0hjMFZLVlE?oc=5",
-      "outlet": "The Straits Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - Free Press Journal",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYV9USVlTc3lvUVFVbEN0dy1KdDN5MlFWdXhNN0FxZ0JCbWw2TVZsdFR1bGV5SUFPNUpDRlI5TE1IUEg4YzVZZ2RxblNOZkNPWU9SU1VuTWpPRUVSTDMtdVI5ZWZTTk9MMHVMYmd6dXpSdXlQbW82NElYMHYwbUcyNzF4MlZCOEtHVWxnSmx1eFBHWUYxX3FyV0RSUW5aa0tEZzRnUW51cnZ6UWJG0gGyAUFVX3lxTE1kVXBoVjNmbUoxWXJxRnZoSVNfZUZ6TkxpNVhwdHFUUFprYkJxbkRDNDVMenJzbXlLbm5zWmFXU3IzQVRVdWg0dnBDVUk1Z2I1ZHpOS3BNYkFzQUZabllVN2xaVERjZDZIc2xUb3NSU1d6QktzOURnRE1OeEhSNTFGQzgzcHUtOE9FRGk3Q0N3MmhJMGhVdzJZby1IcDNvd0NpWDRLdl9nVndxN0U3clExZlE?oc=5",
       "outlet": "Free Press Journal",
@@ -239,6 +228,17 @@
       "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
       "outlet": "Stuhr Funeral Home",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
