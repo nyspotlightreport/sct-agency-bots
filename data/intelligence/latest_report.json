@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-30T21:05:03.620695",
+  "timestamp": "2026-05-01T03:38:17.940600",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
-  "brand_mention_count": 34,
+  "mention_count": 155,
+  "brand_mention_count": 35,
   "analyses": [
     {
       "source": "google_news",
@@ -115,9 +115,9 @@
     },
     {
       "source": "google_news",
-      "title": "Mamdani\u2019s Win Has Put Buses in the Spotlight. Should They Be Free? - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE80N3V6S3dqanUtU0w3ZnNsNkd2YW9rblpBNl9FQnVibmdzakFZSGtOSXdvSlVQUXktZFZyemkyTjZJV05Kb25wQ2NYTlBFdGFTZXVvYVRJS0VVOTRpRUJlb1B5OGVhYzBHREtkRjRMMlhfYURpcE1XOG1wX0NTZVk?oc=5",
-      "outlet": "The New York Times",
+      "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,8 +126,8 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
+      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -170,9 +170,20 @@
     },
     {
       "source": "google_news",
-      "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - freepressjournal.in",
+      "title": "SingPost chairman-designate Low Teck Seng turns down appointment - The Straits Times",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNajBDSlVMUGE2bkhsUTFCMDlkZWZkeE5VSjVSWG1kcEU2TVVzbG5saGdhZ0dydHVZSzdWeVAxZzVINzVOeFhFaVVWN0JDT01sNE1wMEVBbzRfVUVRTWxpOWNVbGRsZGNMSHVGczBxaXNybWNRNVU5SVFtZFdKd2pJRVhZa1ZZXzZmMTBCQ0FjaHVkWUtDeGg5RVpic2VQSGYxOVhMWmo1MTR0QTZUVHlpMzExdWF4cEV3Rl9JZ0hjMFZLVlE?oc=5",
+      "outlet": "The Straits Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Google Launches AI Plus plan In India With Expanded Gemini 3 Pro Access - Free Press Journal",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQYV9USVlTc3lvUVFVbEN0dy1KdDN5MlFWdXhNN0FxZ0JCbWw2TVZsdFR1bGV5SUFPNUpDRlI5TE1IUEg4YzVZZ2RxblNOZkNPWU9SU1VuTWpPRUVSTDMtdVI5ZWZTTk9MMHVMYmd6dXpSdXlQbW82NElYMHYwbUcyNzF4MlZCOEtHVWxnSmx1eFBHWUYxX3FyV0RSUW5aa0tEZzRnUW51cnZ6UWJG0gGyAUFVX3lxTE1kVXBoVjNmbUoxWXJxRnZoSVNfZUZ6TkxpNVhwdHFUUFprYkJxbkRDNDVMenJzbXlLbm5zWmFXU3IzQVRVdWg0dnBDVUk1Z2I1ZHpOS3BNYkFzQUZabllVN2xaVERjZDZIc2xUb3NSU1d6QktzOURnRE1OeEhSNTFGQzgzcHUtOE9FRGk3Q0N3MmhJMGhVdzJZby1IcDNvd0NpWDRLdl9nVndxN0U3clExZlE?oc=5",
-      "outlet": "freepressjournal.in",
+      "outlet": "Free Press Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -228,17 +239,6 @@
       "title": "South Carolina entrepreneur featured during Black History month - WCNC",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
       "outlet": "WCNC",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Jay Kaiser Obituary August 16, 2023 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Ga3ZVMVN6RGlyQzNaaFdQbFdrUUZUcGdHeDdoWTRtdUh3Q3lkLTQtWlpSNHVRSU55NUJKbGtWVU45N0hwOHlrTHF0by1hTFEzNklzS3lWeDF6TU5xay1VS2lfcDljZnN2VUZidmxmenA?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
