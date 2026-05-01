@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-01T03:38:17.940600",
+  "timestamp": "2026-05-01T06:39:51.638379",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -60,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
-      "outlet": "Algemeiner.com",
+      "title": "Silicon Valley water CEO gets $500K golden handshake just days before sex attack report released - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeklDOWVyaVNCWTZ2c2JVakpyNnUzN05rZVUwWnJLcG4xWld3Q0FEWHQzeUZFWmZTR3laUjMxR1VaT2I4WXZkQ1ZuVWVUN0QyQnJ1NGlBOGRJN1czbjgwSlh2cldCM3hIU2RMa0Qwbi0zbFV3UEZxbF9tWnhiNE9aRkFVOEdpM3hqLTdOV2g2aGhmOXhta0NzbTFxUVFzaDE2a2dTNHlTbFl3dUI1Qk1teQ?oc=5",
+      "outlet": "New York Post",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - New York Post",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPb1BMbUZaNlVmbjZYamZnVm9EVF8ydFQtcVdCNFdVV0xyenY5ZEdONm5wem51RnhWTkdoZGx3aXVNVi1YS0l3bTB4NWdlcnRYYk93aU9ybUJqVVh3RW5QM1A1T2JjQVdCOFI3d2ZRZnN2X25hWGthMEVpdEpDVlFWbzMzcW9tQkxMTlE0dEluUV85aWhwRjF0X0dsNnd2U3U3Unc4NG51MFA3ZlZFcUlwTTB0Q3NFZ3pkWlNNY0FqaTc3QkJwZjZxRXlzSnhhT18wNWpvVXdB?oc=5",
-      "outlet": "New York Post",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -93,9 +93,9 @@
     },
     {
       "source": "google_news",
-      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
-      "outlet": "The New York Times",
+      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
+      "outlet": "Algemeiner.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,6 +203,17 @@
     },
     {
       "source": "google_news",
+      "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
+      "outlet": "SCBiz",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -228,17 +239,6 @@
       "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
       "outlet": "Stuhr Funeral Home",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "South Carolina entrepreneur featured during Black History month - WCNC",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZE1wR0FtcU1rWmNqMjl0dU1wNElLbldPbFJRVXZ6TXRuTmpMS0tHS0I2Ylh2LVgtTHFKZGxVNnVQRWdpSV9ITFp2RE9Cd1BvMVVOOG80Wl9NV1phbEhRUUdlUHlTX190cVNsY1pkVXRhNjBnTE45eFAzXzVRYWR5Zl9xN0p3Z0syNENnRWV3Mkdfc2FZb1Jma0Z1bnlDN2VnTjhYNnNXcUNpSnc0RWdVQWxlUGs0WG5mTUZRekZ2LTBSV2ZLMzc4?oc=5",
-      "outlet": "WCNC",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
