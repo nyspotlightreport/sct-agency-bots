@@ -7,6 +7,13 @@
     "actions_taken": []
   },
   {
+    "date": "2026-05-02",
+    "health_score": 70,
+    "critical_issues_count": 0,
+    "insights": [],
+    "actions_taken": []
+  },
+  {
     "date": "2026-05-01",
     "health_score": 70,
     "critical_issues_count": 0,
@@ -603,13 +610,6 @@
   },
   {
     "date": "2026-04-03",
-    "health_score": 70,
-    "critical_issues_count": 0,
-    "insights": [],
-    "actions_taken": []
-  },
-  {
-    "date": "2026-04-02",
     "health_score": 70,
     "critical_issues_count": 0,
     "insights": [],
