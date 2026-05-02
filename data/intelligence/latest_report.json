@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-02T13:18:51.249086",
+  "timestamp": "2026-05-02T16:53:27.430554",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 155,
+  "mention_count": 154,
   "brand_mention_count": 35,
   "analyses": [
     {
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Mollick Scholarship for Entrepreneurs Launches National Initiative to Support Visionary Undergraduate Students - WFXG",
-      "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPTlVuMUtVZjU1STVhTGVSTGg3VWx0QUdkSlB6MGw1MDk1VE5MemhQbmVFaXZzWWJyUkhGZS1BeGc1bG42YjlOa0dWeEJCdk5xTkhMdXUxMEVldkp0Rk5LV1RGSENXMV9OWTZqaWFFY1RMaE1Wcmo1ZmxEOUxvcUthZExmdXhNT29GZC1xc18xUkNNQ2NDdzBXZ2lieWtMRzRRYW16dURRbVMxZnhNd2JKek02dzhjcFQtclFFcVN6MW9XSmJ4dU51STg2TFE1OWJXNG5aU1B6eUlmVWtFOWtpVGdKME5jMVc3eWl6ckFuTktESllhcmdWY1hkS2hxekFGSGdQU0JoQUV1ZGQySXNQNGpOR0tGeXRCbXlRZDk4d242WXBrakRyeHJtQkVYb3lqM1UwLWlGQXBXTDRYQ3RpUQ?oc=5",
-      "outlet": "WFXG",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy obituary",
@@ -236,9 +225,20 @@
     },
     {
       "source": "google_news",
-      "title": "Greenville to unveil Honor Tower on Nov. 11: Final piece of Unity Park development - Greenville Online",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYVA0SlFXZ1o1eUpjSTcyeG9RTnh5ZW9heGIzS0wzTERneGNvcG5tV2t4Q0IwMWtIZEg1WjBaUGp6blZUZFRDeXQ5ZldhbFdGZW42Vi1mOU5uY25SNHM5SjZBNGU2UmVWYXBFcWZxdXZyMG9sYUV2cjdabmk2TVZibmZUTnZ1YU5wMXdoSnBjZ1p5a1lOUm5zZGY2dUh1WTF1dGZJcS1adDVyUWlEWTBwTWRSblpKZFZpLWk2MklNd2NpOXJrZk1Pdjd6Zw?oc=5",
-      "outlet": "Greenville Online",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Meet Erin Thomas - CanvasRebel Magazine",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
+      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
