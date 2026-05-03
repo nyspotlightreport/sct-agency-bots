@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-03T09:24:45.237406",
+  "timestamp": "2026-05-03T12:59:02.116006",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 156,
+  "mention_count": 166,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -115,9 +115,9 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Mamdani\u2019s Win Has Put Buses in the Spotlight. Should They Be Free? - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE80N3V6S3dqanUtU0w3ZnNsNkd2YW9rblpBNl9FQnVibmdzakFZSGtOSXdvSlVQUXktZFZyemkyTjZJV05Kb25wQ2NYTlBFdGFTZXVvYVRJS0VVOTRpRUJlb1B5OGVhYzBHREtkRjRMMlhfYURpcE1XOG1wX0NTZVk?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,8 +126,8 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
+      "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -214,6 +214,17 @@
     },
     {
       "source": "google_news",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
       "outlet": "Stuhr Funeral Home",
@@ -225,20 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Gladden Obituary (1961 - 2025) - Charleston, SC - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPY0xfci1GOVNKNWVreUVOOWlmQjNqcE0wRFJnT2lvbGluRV9Md2xqMmlNTFdhV1lSZzZ5U050WTJIRlY5V3Y4VFFQZnBwcU5PZ0pyZGRHMlAwRkVIS0FKY2llYjY3aFhSSGlBTTNic2xEVVg2T2c4WlNXRGlSOFk4R3d4MVQweVkxbVoxS3NVQW50RVdNRWtIYmFPMEFsZG8?oc=5",
-      "outlet": "Post and Courier",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
