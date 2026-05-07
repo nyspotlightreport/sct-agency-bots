@@ -1,22 +1,5 @@
 {
   "date": "2026-05-07",
   "pitchable": [],
-  "haro": [
-    {
-      "pattern": "AI content tools",
-      "article": "GLG Advances New Era of Expert Research with Reimagined Client Experience",
-      "outlet": "PRNewswire",
-      "url": "https://www.prnewswire.com/news-releases/glg-advances-new-era-of-expert-research-with-reimagined-client-experience-302762797.html",
-      "published": "2026-05-05T14:24:00Z",
-      "pitch_window": "24-48h"
-    },
-    {
-      "pattern": "content automation",
-      "article": "GLG Advances New Era of Expert Research with Reimagined Client Experience",
-      "outlet": "PRNewswire",
-      "url": "https://www.prnewswire.com/news-releases/glg-advances-new-era-of-expert-research-with-reimagined-client-experience-302762797.html",
-      "published": "2026-05-05T14:24:00Z",
-      "pitch_window": "24-48h"
-    }
-  ]
+  "haro": []
 }
