@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-05-07_39",
+    "type": "BLOG_POST",
+    "title": "How to Automate Your Entire Social Media for $70/Month",
+    "created": "2026-05-07T08:33:32.939123",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-05-05_38",
     "type": "BLOG_POST",
     "title": "GitHub Actions as a Free Automation Platform: Complete Guide",
