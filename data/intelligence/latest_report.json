@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-09T07:43:31.456362",
+  "timestamp": "2026-05-09T09:22:15.993080",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 163,
+  "mention_count": 151,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -115,8 +115,8 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Rental Housing Market - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMU5GZ0dDS2ZiclR3bklSUDNmZWtVa2xuRm41YWpZRWdKeTJXYmVlaUdWcFRGS2J6enRDZGFGSTNjVGFLaTZ6c2NnQWNtMjdSaDRtMkRoYXk1M2dBak5LS2d6a3ZRb1hpZDdVbEJILVkwSHJxckhsNXFGLUI3VmFXdnF1U05aVFlNNTVB?oc=5",
+      "title": "This Report Was Not AI-Generated - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -126,8 +126,8 @@
     },
     {
       "source": "google_news",
-      "title": "This Report Was Not AI-Generated - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
+      "title": "Spotlight: New York City\u2019s Rental Housing Market - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMU5GZ0dDS2ZiclR3bklSUDNmZWtVa2xuRm41YWpZRWdKeTJXYmVlaUdWcFRGS2J6enRDZGFGSTNjVGFLaTZ6c2NnQWNtMjdSaDRtMkRoYXk1M2dBak5LS2d6a3ZRb1hpZDdVbEJILVkwSHJxckhsNXFGLUI3VmFXdnF1U05aVFlNNTVB?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
