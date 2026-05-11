@@ -17,11 +17,12 @@
 - brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
 - hustle-daily-minimal.png → Hustle Daily Minimal
 - create-your-path.png → Create Your Path
+- leo-constellation.png → Leo Constellation
 - times-square-neon.png → Times Square Neon
 - no-days-off.png → No Days Off
 - nyc-skyline-minimal.png → Nyc Skyline Minimal
 
 ## Expected Earnings
-- 8 designs × average $3/month = $24/month
+- 9 designs × average $3/month = $27/month
 - Best performers can earn $20-50/month each
 - All designs earn royalties in perpetuity
