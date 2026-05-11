@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-11T03:44:05.426676",
+  "timestamp": "2026-05-11T07:44:44.430857",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 153,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
-      "outlet": "Stuhr Funeral Home",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
