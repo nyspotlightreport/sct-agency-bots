@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-13T14:41:07.149971",
+  "timestamp": "2026-05-13T18:06:08.434454",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -104,8 +104,8 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
+      "title": "This Report Was Not AI-Generated - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -115,8 +115,8 @@
     },
     {
       "source": "google_news",
-      "title": "This Report Was Not AI-Generated - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
+      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -214,6 +214,17 @@
     },
     {
       "source": "google_news",
+      "title": "Julia Berolzheimer's Charming Charleston Home Is Filled With Stylish Details - Southern Living",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWUhSamdWYmFZX1JVMHRmcUZSQ2tlVWUtaWVQVnNJWUh0OTByUHRWemZTY0RSdkk2TG85T0NiVnhDdlNRUUJTdzRmeldWanNIUEtBNHN6TXRhM0N1eE40VzZZUzBUS2RTNmM3RE5KM28wV0lkZmlFUGlqWGhsNk1kLQ?oc=5",
+      "outlet": "Southern Living",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -228,17 +239,6 @@
       "title": "South Carolina entrepreneur featured in national Black History calendar - WCNC",
       "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNeVFCczlPYWlab1hFcGRVNmlDM0ljRDJkdV9tMmtYdkJhMnM1T2IzNmVFREwtQnhucVk2SzdDUmNNVHY4MnhiNi1iOEdyMEI2UFVFOHRnalphZnpUVUMyclRGNnRDMEVkT3dYOTlzOTY1YU9Ra29WOHJfZ1VyS2MyZTFLNEd3YUVPelVDdHJPMm8xQmI2LXZDT1JUblg1cXZCcUIzX2xnWDdKRzhqSVB0Z05yQlhBcjAtd0pjZDBzQkIzbUlMbGp3bXRFY2NRc3B1Z2lCWktqMmFVN1VpTTNWaHg3dUpobGdwNHdjUEo2dTU4d3VMUUpCbVFIQQ?oc=5",
       "outlet": "WCNC",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
