@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-05-14",
+    "health_score": 70,
+    "critical_issues_count": 0,
+    "insights": [],
+    "actions_taken": []
+  },
+  {
     "date": "2026-05-13",
     "health_score": 70,
     "critical_issues_count": 0,
@@ -610,13 +617,6 @@
   },
   {
     "date": "2026-04-15",
-    "health_score": 70,
-    "critical_issues_count": 0,
-    "insights": [],
-    "actions_taken": []
-  },
-  {
-    "date": "2026-04-14",
     "health_score": 70,
     "critical_issues_count": 0,
     "insights": [],
