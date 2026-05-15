@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-15T09:42:36.538099",
+  "timestamp": "2026-05-15T10:26:47.677396",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 152,
   "brand_mention_count": 32,
   "analyses": [
     {
@@ -30,6 +30,17 @@
       "title": "What Is Going on with NYC Jobs? - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
       "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -49,9 +60,20 @@
     },
     {
       "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
+      "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
       "outlet": "Paulick Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -82,9 +104,9 @@
     },
     {
       "source": "google_news",
-      "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - New York Post",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPb1BMbUZaNlVmbjZYamZnVm9EVF8ydFQtcVdCNFdVV0xyenY5ZEdONm5wem51RnhWTkdoZGx3aXVNVi1YS0l3bTB4NWdlcnRYYk93aU9ybUJqVVh3RW5QM1A1T2JjQVdCOFI3d2ZRZnN2X25hWGthMEVpdEpDVlFWbzMzcW9tQkxMTlE0dEluUV85aWhwRjF0X0dsNnd2U3U3Unc4NG51MFA3ZlZFcUlwTTB0Q3NFZ3pkWlNNY0FqaTc3QkJwZjZxRXlzSnhhT18wNWpvVXdB?oc=5",
-      "outlet": "New York Post",
+      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -93,20 +115,9 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
-      "outlet": "Paulick Report",
+      "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -118,17 +129,6 @@
       "title": "This Report Was Not AI-Generated - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
       "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Mamdani\u2019s Win Has Put Buses in the Spotlight. Should They Be Free? - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE80N3V6S3dqanUtU0w3ZnNsNkd2YW9rblpBNl9FQnVibmdzakFZSGtOSXdvSlVQUXktZFZyemkyTjZJV05Kb25wQ2NYTlBFdGFTZXVvYVRJS0VVOTRpRUJlb1B5OGVhYzBHREtkRjRMMlhfYURpcE1XOG1wX0NTZVk?oc=5",
-      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -151,6 +151,28 @@
       "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - NUS - National University of Singapore",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZnVFd3l1YVFQMGdmb3BrWVRuQzhOZjFwRklPVnI0RTRPY1NrUFJSUkJMaE0wUTkzcnJ3UU9jN2hWczhoMXpBckJqU2syZFZ2eUhKbG5zWEpnOExOQlp2bGlHbmVsVy1kM1YtUlNLLXFfRFlnSXByT3Z3anhWejlTNFhPV1hNaXVGV3Q0TGVnbHpoWHJSRlBVNTdVVzV4eWF4a2JlcnhB?oc=5",
       "outlet": "NUS - National University of Singapore",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "SingPost chairman-designate Low Teck Seng turns down appointment - The Straits Times",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNajBDSlVMUGE2bkhsUTFCMDlkZWZkeE5VSjVSWG1kcEU2TVVzbG5saGdhZ0dydHVZSzdWeVAxZzVINzVOeFhFaVVWN0JDT01sNE1wMEVBbzRfVUVRTWxpOWNVbGRsZGNMSHVGczBxaXNybWNRNVU5SVFtZFdKd2pJRVhZa1ZZXzZmMTBCQ0FjaHVkWUtDeGg5RVpic2VQSGYxOVhMWmo1MTR0QTZUVHlpMzExdWF4cEV3Rl9JZ0hjMFZLVlE?oc=5",
+      "outlet": "The Straits Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Fashion entrepreneur Thomas Cohen, formerly of Bonton and Merci, aims to create a SACEM for generative AI - FashionNetwork USA",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRWNxemY1Y3FoRlBDN1RUcE05QzV1UjFYVDEtRVUzUF84c1hueWFDdjZjS09pNTQ1YXFYUDRvRXRTaTZrQ0JmUW1haTIwS2cyUG1xMEN5Q0ZFbWhjQ3NZUngtbnN2MFlqazlnQzdaOVVUaWROamg4UjlBdnVfbGVGWW81VUJxMXVOemhyeWdsalEwNjVSZ3owWVpsRjZRSUNvYUNKT01zb2tVb2ZpQWlVU25vMHJDX1VhSGdiRFdQVGtZbnFBOWFlMnR3NkhVdmZRdXM1OEEzQmQ4RHpCalV5djBtVVdtdw?oc=5",
+      "outlet": "FashionNetwork USA",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Julia Berolzheimer's Charming Charleston Home Is Filled With Stylish Details - Southern Living",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWUhSamdWYmFZX1JVMHRmcUZSQ2tlVWUtaWVQVnNJWUh0OTByUHRWemZTY0RSdkk2TG85T0NiVnhDdlNRUUJTdzRmeldWanNIUEtBNHN6TXRhM0N1eE40VzZZUzBUS2RTNmM3RE5KM28wV0lkZmlFUGlqWGhsNk1kLQ?oc=5",
-      "outlet": "Southern Living",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -228,17 +239,6 @@
       "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Meet Erin Thomas - CanvasRebel Magazine",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "CanvasRebel Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
