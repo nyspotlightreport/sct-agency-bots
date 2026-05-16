@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-16T13:11:49.344506",
+  "timestamp": "2026-05-16T13:27:44.631627",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 176,
+  "mention_count": 151,
   "brand_mention_count": 32,
   "analyses": [
     {
@@ -192,6 +192,17 @@
     },
     {
       "source": "google_news",
+      "title": "Julia Berolzheimer's Charming Charleston Home Is Filled With Stylish Details - Southern Living",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWUhSamdWYmFZX1JVMHRmcUZSQ2tlVWUtaWVQVnNJWUh0OTByUHRWemZTY0RSdkk2TG85T0NiVnhDdlNRUUJTdzRmeldWanNIUEtBNHN6TXRhM0N1eE40VzZZUzBUS2RTNmM3RE5KM28wV0lkZmlFUGlqWGhsNk1kLQ?oc=5",
+      "outlet": "Southern Living",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -228,17 +239,6 @@
       "title": "Meet Erin Thomas - CanvasRebel Magazine",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
       "outlet": "CanvasRebel Magazine",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Daniels Obituary (1940 - 2022) - Charleston, SC - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZXhveTBLMG11YnVqN1FpYVdqQ1piQXF2UDNSVTI3ejRnbDZJdDYwSXdiOGtXaVUxUFlCelQxZWZ3UUhOY1ZrOGY2MTBwTUJTZlRBVl9VVGdsTWVoT0VNSXdIZEVsTllsYUF3eVVSTHVFVkN4ZzdLQWFFVkhwS0lZdzFzYU5LYS1EX05FOG1veDZOZU43akt0V3ZkLWM2cms?oc=5",
-      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
