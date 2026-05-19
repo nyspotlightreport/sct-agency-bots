@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-19T20:27:50.067677",
+  "timestamp": "2026-05-19T21:23:00.721475",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 151,
-  "brand_mention_count": 31,
+  "mention_count": 152,
+  "brand_mention_count": 32,
   "analyses": [
     {
       "source": "google_news",
@@ -159,17 +159,6 @@
     },
     {
       "source": "google_news",
-      "title": "Fashion entrepreneur Thomas Cohen, formerly of Bonton and Merci, aims to create a SACEM for generative AI - FashionNetwork USA",
-      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRWNxemY1Y3FoRlBDN1RUcE05QzV1UjFYVDEtRVUzUF84c1hueWFDdjZjS09pNTQ1YXFYUDRvRXRTaTZrQ0JmUW1haTIwS2cyUG1xMEN5Q0ZFbWhjQ3NZUngtbnN2MFlqazlnQzdaOVVUaWROamg4UjlBdnVfbGVGWW81VUJxMXVOemhyeWdsalEwNjVSZ3owWVpsRjZRSUNvYUNKT01zb2tVb2ZpQWlVU25vMHJDX1VhSGdiRFdQVGtZbnFBOWFlMnR3NkhVdmZRdXM1OEEzQmQ4RHpCalV5djBtVVdtdw?oc=5",
-      "outlet": "FashionNetwork USA",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy obituary",
@@ -239,6 +228,17 @@
       "title": "Meet Erin Thomas - CanvasRebel Magazine",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
       "outlet": "CanvasRebel Magazine",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Obituary information for Thomas Chalmer Wright - Bliley's Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5GTG9NYjROal8xMnhuVlQ4OGJveVNBR09jbjQwdWVFU3BBV19QRW9ITFlDLTN3TTMzcTlNSGNlbDNYOGJUQ0dVRG82OEd3VU13b1FjUkthbWlIalZDb0ljY0JwRkdHVGVRdmwxc0U5ZEtIOUstNGJ0Yml3?oc=5",
+      "outlet": "Bliley's Funeral Home",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
