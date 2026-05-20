@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-20T08:53:30.219152",
+  "timestamp": "2026-05-20T10:22:40.631571",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 162,
-  "brand_mention_count": 32,
+  "mention_count": 154,
+  "brand_mention_count": 33,
   "analyses": [
     {
       "source": "google_news",
@@ -170,6 +170,17 @@
     },
     {
       "source": "google_news",
+      "title": "Thomas Mollick Scholarship for Entrepreneurs Opens Annual Application Cycle for Aspiring Business Leaders - EIN News",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNVDVCeHFzMlljaEVfQnA1cGJmR09oNlB2YnB3TEdVZGl1cGlGNmV0b1ZXd21oYldQSzFCR0tqai1uNkdGOS0tUE1aeDB2ZVJ1VjNUdHpHT1FkeUduNUVLM2o2Qk5sQmZoTG9kN3MwMzE0M0Nrb3NhZHQ4anFIZ00zd1d3aFN0OWtEd2U3SU5lS1NrZGJKM1M3MmVwdkZPVUF5TmgzSThDLTljOXhUMXhrNE1ocEl3elZ6MUtwU2hZeHZqQml3WHdNWmFEM3dmVVJOWFJGUEhpUGd0bWNkVGk2RdIB5gFBVV95cUxPUl9uWm9GcHA4R3A5NWEwQUotMnFqXzlKTU1NNGtHLXV5QU9JSFZfaWVUZVRLenhYc2lYbE84UHhVMTh2d3NKM0dNa1JlYlZTNFRXdHBjQXh6cTFGQ0ZnblF0ZVhOTUJITjhXY3BvMnh6NXJueVJYTnRNa1pxdVdMQjVwRjR3emVBT0Q4QTY5Ty00QU0xSDl5dmZPREZ5VzJrdDN0MnNrX1ROU1M4aXNyVExQbDRzZ1U1VWRlc3oybnlXUEJ4V0VlX3pGbEkzb3N1eHB0endJMktIaWtiVzdIQWRyMkY3QQ?oc=5",
+      "outlet": "EIN News",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Fashion entrepreneur Thomas Cohen, formerly of Bonton and Merci, aims to create a SACEM for generative AI - FashionNetwork USA",
       "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQRWNxemY1Y3FoRlBDN1RUcE05QzV1UjFYVDEtRVUzUF84c1hueWFDdjZjS09pNTQ1YXFYUDRvRXRTaTZrQ0JmUW1haTIwS2cyUG1xMEN5Q0ZFbWhjQ3NZUngtbnN2MFlqazlnQzdaOVVUaWROamg4UjlBdnVfbGVGWW81VUJxMXVOemhyeWdsalEwNjVSZ3owWVpsRjZRSUNvYUNKT01zb2tVb2ZpQWlVU25vMHJDX1VhSGdiRFdQVGtZbnFBOWFlMnR3NkhVdmZRdXM1OEEzQmQ4RHpCalV5djBtVVdtdw?oc=5",
       "outlet": "FashionNetwork USA",
@@ -184,6 +195,17 @@
       "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Julia Berolzheimer's Charming Charleston Home Is Filled With Stylish Details - Southern Living",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWUhSamdWYmFZX1JVMHRmcUZSQ2tlVWUtaWVQVnNJWUh0OTByUHRWemZTY0RSdkk2TG85T0NiVnhDdlNRUUJTdzRmeldWanNIUEtBNHN6TXRhM0N1eE40VzZZUzBUS2RTNmM3RE5KM28wV0lkZmlFUGlqWGhsNk1kLQ?oc=5",
+      "outlet": "Southern Living",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,31 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet Erin Thomas - CanvasRebel Magazine",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5MdzZZbUFMbjJHOU1rcWF0U1RKR3VWbnhtM0xjajFLcHFUWkJlRGVhTktuWl9LNmZfX0Y5bE13SHV3eVdxZ3lZYzZNN3l3aHFuSXRVa3dn?oc=5",
-      "outlet": "CanvasRebel Magazine",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
-      "outlet": "Stuhr Funeral Home",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Daniels Obituary (1940 - 2022) - Charleston, SC - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOZXhveTBLMG11YnVqN1FpYVdqQ1piQXF2UDNSVTI3ejRnbDZJdDYwSXdiOGtXaVUxUFlCelQxZWZ3UUhOY1ZrOGY2MTBwTUJTZlRBVl9VVGdsTWVoT0VNSXdIZEVsTllsYUF3eVVSTHVFVkN4ZzdLQWFFVkhwS0lZdzFzYU5LYS1EX05FOG1veDZOZU43akt0V3ZkLWM2cms?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
