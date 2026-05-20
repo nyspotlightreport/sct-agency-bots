@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-20T12:16:53.028985+00:00",
+  "timestamp": "2026-05-20T23:07:50.696027+00:00",
   "pass_count": 21,
   "fail_count": 9,
   "total": 30,
@@ -124,7 +124,7 @@
     {
       "name": "Sweepstakes running",
       "status": "PASS",
-      "detail": "Last run: 2026-05-20T11:45:04Z"
+      "detail": "Last run: 2026-05-20T22:21:21Z"
     },
     {
       "name": "Affiliate content",
