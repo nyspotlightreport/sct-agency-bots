@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-29T15:40:27.142320",
+  "timestamp": "2026-05-29T18:36:04.305714",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 147,
+  "mention_count": 148,
   "brand_mention_count": 32,
   "analyses": [
     {
@@ -30,6 +30,17 @@
       "title": "What Is Going on with NYC Jobs? - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
       "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,17 +137,6 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: CUNY and the New York City Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONUxSMnU5c25rQTg2RnRJdkZuOG1BT2VNclJBd29VRFFuSnpCb1NPZFZzS1Z4WjNTQmJFVHQzc0NkYXJ3Wmh2RGZ0cFQ3NVk3d3VnMHQzQkNzR19KRTNBU1RTZzdSdjNwUDNlTS1hSlQ2TFo3aFc5cnV0b2J4cEd2S2VpQmZCaTFW?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - BioSpectrum India",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQWp1Xy14cDFsQmZXbkxVbzM1Q1loU1ZZUDIwc0hZQ1pubUZ1ZGM0RF80WlJSLW5wdGVnRUFxNFJ1eC1Td2tiV0MxWklqTXpHVjJfaDlWbmk2VnhJTHR1UDVzWHZlZVZZaHF6V0kyZWQ4NFJGYm9SVXFwQVVTY0dBTDByU2hpYU9vSFA4cWUyR2kxejBqcWhYMFh5b2JBcDFrY0pwU3g4azFXenN0WjNFcG9fclBYc0NuSC1lMEZHZVZDOGZOR0JNeDkwY2V3TFFrWERPVTUydGhSQ2VJ?oc=5",
       "outlet": "BioSpectrum India",
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Joseph \"Tommy\" Gladden Obituary June 9, 2025 - Stuhr Funeral Home",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
-      "outlet": "Stuhr Funeral Home",
+      "title": "Julia Berolzheimer's Charming Charleston Home Is Filled With Stylish Details - Southern Living",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWUhSamdWYmFZX1JVMHRmcUZSQ2tlVWUtaWVQVnNJWUh0OTByUHRWemZTY0RSdkk2TG85T0NiVnhDdlNRUUJTdzRmeldWanNIUEtBNHN6TXRhM0N1eE40VzZZUzBUS2RTNmM3RE5KM28wV0lkZmlFUGlqWGhsNk1kLQ?oc=5",
+      "outlet": "Southern Living",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
