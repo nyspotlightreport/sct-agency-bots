@@ -1,5 +1,62 @@
 {
-  "date": "2026-05-30",
+  "date": "2026-05-31",
   "pitchable": [],
-  "haro": []
+  "haro": [
+    {
+      "pattern": "AI content tools",
+      "article": "Show HN: Simple news aggregator with source bias meters",
+      "outlet": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29T18:21:24Z",
+      "pitch_window": "24-48h"
+    },
+    {
+      "pattern": "content automation",
+      "article": "Show HN: Simple news aggregator with source bias meters",
+      "outlet": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29T18:21:24Z",
+      "pitch_window": "24-48h"
+    },
+    {
+      "pattern": "passive income",
+      "article": "Show HN: Simple news aggregator with source bias meters",
+      "outlet": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29T18:21:24Z",
+      "pitch_window": "24-48h"
+    },
+    {
+      "pattern": "AI entrepreneur",
+      "article": "Show HN: Simple news aggregator with source bias meters",
+      "outlet": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29T18:21:24Z",
+      "pitch_window": "24-48h"
+    },
+    {
+      "pattern": "content marketing automation",
+      "article": "Show HN: Simple news aggregator with source bias meters",
+      "outlet": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29T18:21:24Z",
+      "pitch_window": "24-48h"
+    },
+    {
+      "pattern": "replace content team",
+      "article": "Show HN: Simple news aggregator with source bias meters",
+      "outlet": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29T18:21:24Z",
+      "pitch_window": "24-48h"
+    },
+    {
+      "pattern": "AI writing tools",
+      "article": "Show HN: Simple news aggregator with source bias meters",
+      "outlet": "Unbiasthenews.com",
+      "url": "https://unbiasthenews.com",
+      "published": "2026-05-29T18:21:24Z",
+      "pitch_window": "24-48h"
+    }
+  ]
 }
