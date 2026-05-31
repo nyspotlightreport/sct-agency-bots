@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-31T17:09:22.658017",
+  "timestamp": "2026-05-31T21:02:34.341675",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 149,
+  "mention_count": 148,
   "brand_mention_count": 32,
   "analyses": [
     {
@@ -41,6 +41,17 @@
       "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
       "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Women Entrepreneurs: Spotlight on New York City Street Vendors - Immigration Research Initiative",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ZYzNnYmUzZDk1bUxGaHNFMkVWam5EeUhlbTV5YlowS0xMaW1xSTlMTUUwTUpyX0Z1dnhNT245YkNjVWhNVnpHckM2aTlFQXl6ZVdxWjVkVFg?oc=5",
+      "outlet": "Immigration Research Initiative",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -117,17 +128,6 @@
       "source": "google_news",
       "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Spotlight: CUNY and the New York City Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONUxSMnU5c25rQTg2RnRJdkZuOG1BT2VNclJBd29VRFFuSnpCb1NPZFZzS1Z4WjNTQmJFVHQzc0NkYXJ3Wmh2RGZ0cFQ3NVk3d3VnMHQzQkNzR19KRTNBU1RTZzdSdjNwUDNlTS1hSlQ2TFo3aFc5cnV0b2J4cEd2S2VpQmZCaTFW?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
