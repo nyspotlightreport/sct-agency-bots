@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T11:52:07.755062",
+  "timestamp": "2026-06-03T12:45:11.834858",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -27,6 +27,17 @@
   "analyses": [
     {
       "source": "google_news",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPVUw4WklLNkRNX2VnX29tVnNpVk9IV05VWF9RdnFua1N0M191Q19fRkdmTHRvQkNLV2NkU0RvWmJjQmdVZk9FN0d6bTlXWkFkRGJJbEFTZXYwWjdnUV9fMzFta194OWlrU3dTZnJXaHg0LXN5V0VwNERhMlluZDI1RFlTRktPZWF5U0M0M1IzWVNNUXVoZDRhMzVvcjBGTDRYSUFWV3duRkhOLUVLU2dYaNIBtgFBVV95cUxOX290eFJGeW9tM0hzNDk2VVJUR2NvbFJxSWEtU3A5MG00MnBZalRsbmhFd1JPZEZpa3k1RFl6TWNoVFV1QlhDeVFXQTlQVXI4OHNTR0RqXzVnREdodlZtZnl2T1l4SXhUME9LMS1QblY3RFRWekJINUEwcWxGZFdhQ0xXR1hwMkU5eGdqX1pzb0l6dHV1OXZjM3U1YllDWnRlRThZSW1hN2F3Z25rNVZUTU82Ti1pQQ?oc=5",
+      "outlet": "Spotlight Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "What Is Going on with NYC Jobs? - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
       "outlet": "NYC.gov",
@@ -49,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
+      "outlet": "Algemeiner.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -60,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight on Speech Codes 2025 | The Foundation for Individual Rights and Expression - FIRE | Foundation for Individual Rights and Expression",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5RWWM3RkxXUXF4aGNiU0tmMWRUVVhWMVRxMWhESnJYOVgwcmFLWk5iS1g4dzNlWi1HVGw2UjJMVk5ERkpfaGExT29KOUFuNTRVSktKUUppbHBQQUkzZ0FvMmJsN0hVZnpWbkl5Tm1Xdm0?oc=5",
-      "outlet": "FIRE | Foundation for Individual Rights and Expression",
+      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -104,17 +115,6 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
       "outlet": "NYC.gov",
@@ -126,8 +126,8 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: CUNY and the New York City Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxONUxSMnU5c25rQTg2RnRJdkZuOG1BT2VNclJBd29VRFFuSnpCb1NPZFZzS1Z4WjNTQmJFVHQzc0NkYXJ3Wmh2RGZ0cFQ3NVk3d3VnMHQzQkNzR19KRTNBU1RTZzdSdjNwUDNlTS1hSlQ2TFo3aFc5cnV0b2J4cEd2S2VpQmZCaTFW?oc=5",
+      "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
