@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T21:45:19.493378",
+  "timestamp": "2026-06-03T22:30:26.183766",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 195,
+  "mention_count": 152,
   "brand_mention_count": 33,
   "analyses": [
     {
@@ -41,6 +41,17 @@
       "title": "What Is Going on with NYC Jobs? - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
       "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -117,17 +128,6 @@
       "source": "google_news",
       "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
