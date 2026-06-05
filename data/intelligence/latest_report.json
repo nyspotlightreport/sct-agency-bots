@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-05T08:14:41.765479",
+  "timestamp": "2026-06-05T09:30:37.945314",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 150,
+  "mention_count": 163,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Flow Foundation launches $5m entrepreneurship programme in St Thomas - Jamaica Observer",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPblYxa01hd2ZJQ2lHNVRudjVCR2VRZlZwaDZMblZqRUNHUWVpb2tCYUd6VVl3Rm5ZMzJHcUpwXy1FRm03TE45WlJGc19jLTczZ2VPOThod3hYdVB5WTliOW9tTHFrWnVlZWREY0NXTDF1WlFWWHBEZkdaX1lQVUtTMU9JaEEwOWVZdnZ4YlYwdGJuUVdFVjJrbEl4SlJNRldvX0haVzF4aE1fX21s?oc=5",
-      "outlet": "Jamaica Observer",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -239,6 +228,17 @@
       "title": "Thomas Jay Kaiser Obituary August 16, 2023 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Ga3ZVMVN6RGlyQzNaaFdQbFdrUUZUcGdHeDdoWTRtdUh3Q3lkLTQtWlpSNHVRSU55NUJKbGtWVU45N0hwOHlrTHF0by1hTFEzNklzS3lWeDF6TU5xay1VS2lfcDljZnN2VUZidmxmenA?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
+      "outlet": "The Augusta Press",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
