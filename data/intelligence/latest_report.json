@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T17:18:21.083400",
+  "timestamp": "2026-06-06T21:08:15.570982",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,13 +22,13 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 142,
+  "mention_count": 152,
   "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
       "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPVUw4WklLNkRNX2VnX29tVnNpVk9IV05VWF9RdnFua1N0M191Q19fRkdmTHRvQkNLV2NkU0RvWmJjQmdVZk9FN0d6bTlXWkFkRGJJbEFTZXYwWjdnUV9fMzFta194OWlrU3dTZnJXaHg0LXN5V0VwNERhMlluZDI1RFlTRktPZWF5U0M0M1IzWVNNUXVoZDRhMzVvcjBGTDRYSUFWV3duRkhOLUVLU2dYaNIBtgFBVV95cUxOX290eFJGeW9tM0hzNDk2VVJUR2NvbFJxSWEtU3A5MG00MnBZalRsbmhFd1JPZEZpa3k1RFl6TWNoVFV1QlhDeVFXQTlQVXI4OHNTR0RqXzVnREdodlZtZnl2T1l4SXhUME9LMS1QblY3RFRWekJINUEwcWxGZFdhQ0xXR1hwMkU5eGdqX1pzb0l6dHV1OXZjM3U1YllDWnRlRThZSW1hN2F3Z25rNVZUTU82Ti1pQQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
       "outlet": "Spotlight Report",
       "category": "brand_primary",
       "sentiment": "neutral",
