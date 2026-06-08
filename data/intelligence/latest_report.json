@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-08T11:52:22.790143",
+  "timestamp": "2026-06-08T12:35:36.205611",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 151,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Flow Foundation launches $5m entrepreneurship programme in St Thomas - Jamaica Observer",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPblYxa01hd2ZJQ2lHNVRudjVCR2VRZlZwaDZMblZqRUNHUWVpb2tCYUd6VVl3Rm5ZMzJHcUpwXy1FRm03TE45WlJGc19jLTczZ2VPOThod3hYdVB5WTliOW9tTHFrWnVlZWREY0NXTDF1WlFWWHBEZkdaX1lQVUtTMU9JaEEwOWVZdnZ4YlYwdGJuUVdFVjJrbEl4SlJNRldvX0haVzF4aE1fX21s?oc=5",
-      "outlet": "Jamaica Observer",
+      "title": "Greenville to unveil Honor Tower on Nov. 11: Final piece of Unity Park development - Greenville Online",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYVA0SlFXZ1o1eUpjSTcyeG9RTnh5ZW9heGIzS0wzTERneGNvcG5tV2t4Q0IwMWtIZEg1WjBaUGp6blZUZFRDeXQ5ZldhbFdGZW42Vi1mOU5uY25SNHM5SjZBNGU2UmVWYXBFcWZxdXZyMG9sYUV2cjdabmk2TVZibmZUTnZ1YU5wMXdoSnBjZ1p5a1lOUm5zZGY2dUh1WTF1dGZJcS1adDVyUWlEWTBwTWRSblpKZFZpLWk2MklNd2NpOXJrZk1Pdjd6Zw?oc=5",
+      "outlet": "Greenville Online",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
+      "title": "Thomas Gladden Obituary (1961 - 2025) - Charleston, SC - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPY0xfci1GOVNKNWVreUVOOWlmQjNqcE0wRFJnT2lvbGluRV9Md2xqMmlNTFdhV1lSZzZ5U050WTJIRlY5V3Y4VFFQZnBwcU5PZ0pyZGRHMlAwRkVIS0FKY2llYjY3aFhSSGlBTTNic2xEVVg2T2c4WlNXRGlSOFk4R3d4MVQweVkxbVoxS3NVQW50RVdNRWtIYmFPMEFsZG8?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
-      "outlet": "The Augusta Press",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
