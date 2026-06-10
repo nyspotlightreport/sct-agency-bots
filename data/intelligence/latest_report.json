@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-10T03:56:56.939846",
+  "timestamp": "2026-06-10T08:12:47.041746",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 154,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -181,6 +181,17 @@
     },
     {
       "source": "google_news",
+      "title": "Thomas named Young Entrepreneur of the Year - paxtonmedia.com",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOWW1qMFdWbnZEWHdscF9qdV9zNDZOWXU4N2hWOEpRdlNlUmMzVzlRbk94VTZDbW1ZOFNXU0p4eXBITFZPNXRaSTQ3bllRQnNzenlUMVd0eXAxVW5tWGcwTXdqQ2lrN3cxY28wdmZudlVwVlprODQzUl9NUnQzSTBrZmpzNW9KdHdsR0p3X1ZRQTBFalQtZ2FvN2hBckpiY1pvcW5oRW93ZEhtdlNZRmxUbGdYVzBtcS1CWUU5YnRmY3BGRUpraVZISzFGYlg2dWZURnhHc0hDTENVeWozMGc?oc=5",
+      "outlet": "paxtonmedia.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Thomas Mollick Scholarship for Entrepreneurs Opens Annual Application Cycle for Aspiring Business Leaders - EIN News",
       "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNVDVCeHFzMlljaEVfQnA1cGJmR09oNlB2YnB3TEdVZGl1cGlGNmV0b1ZXd21oYldQSzFCR0tqai1uNkdGOS0tUE1aeDB2ZVJ1VjNUdHpHT1FkeUduNUVLM2o2Qk5sQmZoTG9kN3MwMzE0M0Nrb3NhZHQ4anFIZ00zd1d3aFN0OWtEd2U3SU5lS1NrZGJKM1M3MmVwdkZPVUF5TmgzSThDLTljOXhUMXhrNE1ocEl3elZ6MUtwU2hZeHZqQml3WHdNWmFEM3dmVVJOWFJGUEhpUGd0bWNkVGk2RdIB5gFBVV95cUxPUl9uWm9GcHA4R3A5NWEwQUotMnFqXzlKTU1NNGtHLXV5QU9JSFZfaWVUZVRLenhYc2lYbE84UHhVMTh2d3NKM0dNa1JlYlZTNFRXdHBjQXh6cTFGQ0ZnblF0ZVhOTUJITjhXY3BvMnh6NXJueVJYTnRNa1pxdVdMQjVwRjR3emVBT0Q4QTY5Ty00QU0xSDl5dmZPREZ5VzJrdDN0MnNrX1ROU1M4aXNyVExQbDRzZ1U1VWRlc3oybnlXUEJ4V0VlX3pGbEkzb3N1eHB0endJMktIaWtiVzdIQWRyMkY3QQ?oc=5",
       "outlet": "EIN News",
@@ -195,17 +206,6 @@
       "title": "Thomas Riedel Acquires ARRI: Broadcast Technology Entrepreneur Takes Over Cinema's Most Iconic Brand - CineD",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZ2ZFMGk1WlY3d0NJSFBXWnpSQjI2S29SS2dZVFNYRkNxMEkwZGJmalNFcHpid0l6dHF5RGxYWFhCQ2tldWIzRlE0RnJSOU1ydy1yMnRuS3MzN0cxTTBjZ3RqNFRocnlvTUdKQk9KWFp0WTVmeUtIQ1hCb1VZVkk1czJpR2IxTkhTbHdyLV9lNVYwbUtpYXhqQ2xCOVNFZl9aRFRsWktWZ3ZJQUo1YWcwTEdlampwQWlDVHdRUVVB?oc=5",
       "outlet": "CineD",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy | Obituary Search",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy | Obituary Search",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
+      "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
+      "outlet": "SCBiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
