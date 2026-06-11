@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-11T18:48:46.263931",
+  "timestamp": "2026-06-11T21:15:51.078345",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "James Lewis Boyett Obituary (2024) - Greenville, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMU9xRVJiTnhSYjJwbDBodmR3ZDFhQTc4eTFyUklsR0VEd19XaE9vQXg4R3FSN1RJM0RvZW1LMS1vbUZXdTBwMGVsQzZLZmtnbGs0a1lJWVQ0ZzB6VU9UcWNMcGtqbE9aWWQzTlRTQ2RKUEJxcW9YUm5yWThWZ2g2N0xEcUF1NnZodkRpLWRR?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas Mollick Scholarship for Entrepreneurs Opens Annual Application Cycle for Aspiring Business Leaders - EIN News",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNVDVCeHFzMlljaEVfQnA1cGJmR09oNlB2YnB3TEdVZGl1cGlGNmV0b1ZXd21oYldQSzFCR0tqai1uNkdGOS0tUE1aeDB2ZVJ1VjNUdHpHT1FkeUduNUVLM2o2Qk5sQmZoTG9kN3MwMzE0M0Nrb3NhZHQ4anFIZ00zd1d3aFN0OWtEd2U3SU5lS1NrZGJKM1M3MmVwdkZPVUF5TmgzSThDLTljOXhUMXhrNE1ocEl3elZ6MUtwU2hZeHZqQml3WHdNWmFEM3dmVVJOWFJGUEhpUGd0bWNkVGk2RdIB5gFBVV95cUxPUl9uWm9GcHA4R3A5NWEwQUotMnFqXzlKTU1NNGtHLXV5QU9JSFZfaWVUZVRLenhYc2lYbE84UHhVMTh2d3NKM0dNa1JlYlZTNFRXdHBjQXh6cTFGQ0ZnblF0ZVhOTUJITjhXY3BvMnh6NXJueVJYTnRNa1pxdVdMQjVwRjR3emVBT0Q4QTY5Ty00QU0xSDl5dmZPREZ5VzJrdDN0MnNrX1ROU1M4aXNyVExQbDRzZ1U1VWRlc3oybnlXUEJ4V0VlX3pGbEkzb3N1eHB0endJMktIaWtiVzdIQWRyMkY3QQ?oc=5",
+      "outlet": "EIN News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,20 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Noel Lamar Lomax Obituary (2026) - Greenville, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1hLTRmTlJiZmJyRzNfRkpLZkdQRGhUVFdBVjhzQ0J5QVhkWGRRb3ZGeWptM2ZvX3dJZzRZanlNMk1hamVuTGx5bzZMVlRncF9XZkV0bkFHdTBza28wdmxHUUFxQ2dJdU5fdUZzbTh2LXFTc3VsTFd3X2F0MldzZw?oc=5",
-      "outlet": "Legacy obituary",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy | Obituary Search",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
+      "outlet": "Legacy | Obituary Search",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -239,6 +228,17 @@
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
