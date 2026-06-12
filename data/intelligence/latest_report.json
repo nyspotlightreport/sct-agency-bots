@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-12T04:12:44.237433",
+  "timestamp": "2026-06-12T09:56:44.707829",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 155,
+  "mention_count": 167,
   "brand_mention_count": 35,
   "analyses": [
     {
@@ -30,6 +30,17 @@
       "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
       "outlet": "Spotlight Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
+      "outlet": "New York Post",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,17 +137,6 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
       "outlet": "The Independent Singapore News",
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "James Lewis Boyett Obituary (2024) - Greenville, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMU9xRVJiTnhSYjJwbDBodmR3ZDFhQTc4eTFyUklsR0VEd19XaE9vQXg4R3FSN1RJM0RvZW1LMS1vbUZXdTBwMGVsQzZLZmtnbGs0a1lJWVQ0ZzB6VU9UcWNMcGtqbE9aWWQzTlRTQ2RKUEJxcW9YUm5yWThWZ2g2N0xEcUF1NnZodkRpLWRR?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas Mollick Scholarship for Entrepreneurs Opens Annual Application Cycle for Aspiring Business Leaders - EIN News",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNVDVCeHFzMlljaEVfQnA1cGJmR09oNlB2YnB3TEdVZGl1cGlGNmV0b1ZXd21oYldQSzFCR0tqai1uNkdGOS0tUE1aeDB2ZVJ1VjNUdHpHT1FkeUduNUVLM2o2Qk5sQmZoTG9kN3MwMzE0M0Nrb3NhZHQ4anFIZ00zd1d3aFN0OWtEd2U3SU5lS1NrZGJKM1M3MmVwdkZPVUF5TmgzSThDLTljOXhUMXhrNE1ocEl3elZ6MUtwU2hZeHZqQml3WHdNWmFEM3dmVVJOWFJGUEhpUGd0bWNkVGk2RdIB5gFBVV95cUxPUl9uWm9GcHA4R3A5NWEwQUotMnFqXzlKTU1NNGtHLXV5QU9JSFZfaWVUZVRLenhYc2lYbE84UHhVMTh2d3NKM0dNa1JlYlZTNFRXdHBjQXh6cTFGQ0ZnblF0ZVhOTUJITjhXY3BvMnh6NXJueVJYTnRNa1pxdVdMQjVwRjR3emVBT0Q4QTY5Ty00QU0xSDl5dmZPREZ5VzJrdDN0MnNrX1ROU1M4aXNyVExQbDRzZ1U1VWRlc3oybnlXUEJ4V0VlX3pGbEkzb3N1eHB0endJMktIaWtiVzdIQWRyMkY3QQ?oc=5",
+      "outlet": "EIN News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,8 +203,8 @@
     },
     {
       "source": "google_news",
-      "title": "Noel Lamar Lomax Obituary (2026) - Greenville, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy | Obituary Search",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1hLTRmTlJiZmJyRzNfRkpLZkdQRGhUVFdBVjhzQ0J5QVhkWGRRb3ZGeWptM2ZvX3dJZzRZanlNMk1hamVuTGx5bzZMVlRncF9XZkV0bkFHdTBza28wdmxHUUFxQ2dJdU5fdUZzbTh2LXFTc3VsTFd3X2F0MldzZw?oc=5",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy | Obituary Search",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy | Obituary Search",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
-      "outlet": "SCBiz",
+      "title": "Flow Foundation launches $5m entrepreneurship programme in St Thomas - Jamaica Observer",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPblYxa01hd2ZJQ2lHNVRudjVCR2VRZlZwaDZMblZqRUNHUWVpb2tCYUd6VVl3Rm5ZMzJHcUpwXy1FRm03TE45WlJGc19jLTczZ2VPOThod3hYdVB5WTliOW9tTHFrWnVlZWREY0NXTDF1WlFWWHBEZkdaX1lQVUtTMU9JaEEwOWVZdnZ4YlYwdGJuUVdFVjJrbEl4SlJNRldvX0haVzF4aE1fX21s?oc=5",
+      "outlet": "Jamaica Observer",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy | Obituary Search",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy | Obituary Search",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
