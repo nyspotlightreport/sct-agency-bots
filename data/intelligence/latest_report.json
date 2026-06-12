@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-12T15:20:42.090160",
+  "timestamp": "2026-06-12T18:09:36.367795",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -104,6 +104,17 @@
     },
     {
       "source": "google_news",
+      "title": "Trump World's Self-Enrichment - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WaUxmX1lPMHVGNDdpcUZMRGFWMXZRajJlb1Frcy0tdk9fYWNNTGRnaXFTRXNTOG9CanRpek82cThLNkVyWll2dmw3Um5TUmI4VzFmbGxQeDBWMnBJZmFNUXFDT0FiSzR4UVNRcDItQQ?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Boston Globe backs 'Spotlight' star editor Brendan McCarthy who was accused of berating reporters: report - New York Post",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPb1BMbUZaNlVmbjZYamZnVm9EVF8ydFQtcVdCNFdVV0xyenY5ZEdONm5wem51RnhWTkdoZGx3aXVNVi1YS0l3bTB4NWdlcnRYYk93aU9ybUJqVVh3RW5QM1A1T2JjQVdCOFI3d2ZRZnN2X25hWGthMEVpdEpDVlFWbzMzcW9tQkxMTlE0dEluUV85aWhwRjF0X0dsNnd2U3U3Unc4NG51MFA3ZlZFcUlwTTB0Q3NFZ3pkWlNNY0FqaTc3QkJwZjZxRXlzSnhhT18wNWpvVXdB?oc=5",
       "outlet": "New York Post",
@@ -117,17 +128,6 @@
       "source": "google_news",
       "title": "This Report Was Not AI-Generated - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1EUTdOYjRFZVZ2OE0tM2dyaExEZVB5RjNQVXUxMnN1MUZDSzIzRFJySHJjb3ltamNsZnJkU1BObVl5Y0g0SUdCVTlZVGtwNlMwb2VqbHJfcnR3VGZheEdSd0dfYzktdnBOc0dVVlBWZnRjTS0yLW5vNQ?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
       "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Noel Lamar Lomax Obituary (2026) - Greenville, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1hLTRmTlJiZmJyRzNfRkpLZkdQRGhUVFdBVjhzQ0J5QVhkWGRRb3ZGeWptM2ZvX3dJZzRZanlNMk1hamVuTGx5bzZMVlRncF9XZkV0bkFHdTBza28wdmxHUUFxQ2dJdU5fdUZzbTh2LXFTc3VsTFd3X2F0MldzZw?oc=5",
-      "outlet": "Legacy obituary",
+      "title": "Thomas Mollick Scholarship for Entrepreneurs Opens Annual Application Cycle for Aspiring Business Leaders - EIN News",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNVDVCeHFzMlljaEVfQnA1cGJmR09oNlB2YnB3TEdVZGl1cGlGNmV0b1ZXd21oYldQSzFCR0tqai1uNkdGOS0tUE1aeDB2ZVJ1VjNUdHpHT1FkeUduNUVLM2o2Qk5sQmZoTG9kN3MwMzE0M0Nrb3NhZHQ4anFIZ00zd1d3aFN0OWtEd2U3SU5lS1NrZGJKM1M3MmVwdkZPVUF5TmgzSThDLTljOXhUMXhrNE1ocEl3elZ6MUtwU2hZeHZqQml3WHdNWmFEM3dmVVJOWFJGUEhpUGd0bWNkVGk2RdIB5gFBVV95cUxPUl9uWm9GcHA4R3A5NWEwQUotMnFqXzlKTU1NNGtHLXV5QU9JSFZfaWVUZVRLenhYc2lYbE84UHhVMTh2d3NKM0dNa1JlYlZTNFRXdHBjQXh6cTFGQ0ZnblF0ZVhOTUJITjhXY3BvMnh6NXJueVJYTnRNa1pxdVdMQjVwRjR3emVBT0Q4QTY5Ty00QU0xSDl5dmZPREZ5VzJrdDN0MnNrX1ROU1M4aXNyVExQbDRzZ1U1VWRlc3oybnlXUEJ4V0VlX3pGbEkzb3N1eHB0endJMktIaWtiVzdIQWRyMkY3QQ?oc=5",
+      "outlet": "EIN News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy | Obituary Search",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
+      "outlet": "Legacy | Obituary Search",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Flow Foundation launches $5m entrepreneurship programme in St Thomas - Jamaica Observer",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPblYxa01hd2ZJQ2lHNVRudjVCR2VRZlZwaDZMblZqRUNHUWVpb2tCYUd6VVl3Rm5ZMzJHcUpwXy1FRm03TE45WlJGc19jLTczZ2VPOThod3hYdVB5WTliOW9tTHFrWnVlZWREY0NXTDF1WlFWWHBEZkdaX1lQVUtTMU9JaEEwOWVZdnZ4YlYwdGJuUVdFVjJrbEl4SlJNRldvX0haVzF4aE1fX21s?oc=5",
-      "outlet": "Jamaica Observer",
+      "title": "Greenville to unveil Honor Tower on Nov. 11: Final piece of Unity Park development - Greenville Online",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYVA0SlFXZ1o1eUpjSTcyeG9RTnh5ZW9heGIzS0wzTERneGNvcG5tV2t4Q0IwMWtIZEg1WjBaUGp6blZUZFRDeXQ5ZldhbFdGZW42Vi1mOU5uY25SNHM5SjZBNGU2UmVWYXBFcWZxdXZyMG9sYUV2cjdabmk2TVZibmZUTnZ1YU5wMXdoSnBjZ1p5a1lOUm5zZGY2dUh1WTF1dGZJcS1adDVyUWlEWTBwTWRSblpKZFZpLWk2MklNd2NpOXJrZk1Pdjd6Zw?oc=5",
+      "outlet": "Greenville Online",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
-      "outlet": "SCBiz",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
