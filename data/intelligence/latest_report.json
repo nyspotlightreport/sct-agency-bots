@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T04:18:45.264771",
+  "timestamp": "2026-06-14T09:18:32.441653",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 155,
+  "mention_count": 162,
   "brand_mention_count": 35,
   "analyses": [
     {
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
+      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -60,9 +60,20 @@
     },
     {
       "source": "google_news",
-      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
-      "outlet": "Algemeiner.com",
+      "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
+      "outlet": "Paulick Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,9 +137,9 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Creative Economy - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQMlhKak5scmxWS1liMl8ta0xmVGVPaVVXa2tCel83MmdnMzZCdlVtQ2hUXzRfaTVKTTlYR25mNTE0bFI4LUZMQTZoRXktMDFrdU50N2hwMFpLQk5oMzkwSUM2X05XbUI5enp2dTg5QzNlV0stU0JrbWdnNktGTG94UVdiZWI?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - BioSpectrum India",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQWp1Xy14cDFsQmZXbkxVbzM1Q1loU1ZZUDIwc0hZQ1pubUZ1ZGM0RF80WlJSLW5wdGVnRUFxNFJ1eC1Td2tiV0MxWklqTXpHVjJfaDlWbmk2VnhJTHR1UDVzWHZlZVZZaHF6V0kyZWQ4NFJGYm9SVXFwQVVTY0dBTDByU2hpYU9vSFA4cWUyR2kxejBqcWhYMFh5b2JBcDFrY0pwU3g4azFXenN0WjNFcG9fclBYc0NuSC1lMEZHZVZDOGZOR0JNeDkwY2V3TFFrWERPVTUydGhSQ2VJ?oc=5",
+      "outlet": "BioSpectrum India",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -140,17 +151,6 @@
       "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
       "outlet": "The Independent Singapore News",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - BioSpectrum India",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQWp1Xy14cDFsQmZXbkxVbzM1Q1loU1ZZUDIwc0hZQ1pubUZ1ZGM0RF80WlJSLW5wdGVnRUFxNFJ1eC1Td2tiV0MxWklqTXpHVjJfaDlWbmk2VnhJTHR1UDVzWHZlZVZZaHF6V0kyZWQ4NFJGYm9SVXFwQVVTY0dBTDByU2hpYU9vSFA4cWUyR2kxejBqcWhYMFh5b2JBcDFrY0pwU3g4azFXenN0WjNFcG9fclBYc0NuSC1lMEZHZVZDOGZOR0JNeDkwY2V3TFFrWERPVTUydGhSQ2VJ?oc=5",
-      "outlet": "BioSpectrum India",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Flow Foundation launches $5m entrepreneurship programme in St Thomas - Jamaica Observer",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPblYxa01hd2ZJQ2lHNVRudjVCR2VRZlZwaDZMblZqRUNHUWVpb2tCYUd6VVl3Rm5ZMzJHcUpwXy1FRm03TE45WlJGc19jLTczZ2VPOThod3hYdVB5WTliOW9tTHFrWnVlZWREY0NXTDF1WlFWWHBEZkdaX1lQVUtTMU9JaEEwOWVZdnZ4YlYwdGJuUVdFVjJrbEl4SlJNRldvX0haVzF4aE1fX21s?oc=5",
-      "outlet": "Jamaica Observer",
+      "title": "Greenville to unveil Honor Tower on Nov. 11: Final piece of Unity Park development - Greenville Online",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYVA0SlFXZ1o1eUpjSTcyeG9RTnh5ZW9heGIzS0wzTERneGNvcG5tV2t4Q0IwMWtIZEg1WjBaUGp6blZUZFRDeXQ5ZldhbFdGZW42Vi1mOU5uY25SNHM5SjZBNGU2UmVWYXBFcWZxdXZyMG9sYUV2cjdabmk2TVZibmZUTnZ1YU5wMXdoSnBjZ1p5a1lOUm5zZGY2dUh1WTF1dGZJcS1adDVyUWlEWTBwTWRSblpKZFZpLWk2MklNd2NpOXJrZk1Pdjd6Zw?oc=5",
+      "outlet": "Greenville Online",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
