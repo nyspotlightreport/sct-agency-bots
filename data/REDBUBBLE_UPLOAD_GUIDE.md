@@ -12,19 +12,19 @@
 
 ## Designs Ready to Upload:
 
-- morning-routine-wins.png → Morning Routine Wins
+- scorpio-dark-art.png → Scorpio Dark Art
 - nyc-skyline-minimal.png → Nyc Skyline Minimal
+- brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
+- nyc-map-typography.png → Nyc Map Typography
 - no-days-off.png → No Days Off
+- hustle-daily-minimal.png → Hustle Daily Minimal
 - times-square-neon.png → Times Square Neon
+- coffee-first-sarcastic.png → Coffee First Sarcastic
+- aquarius-mystical.png → Aquarius Mystical
+- moon-phases-minimal.png → Moon Phases Minimal
+- morning-routine-wins.png → Morning Routine Wins
 - create-your-path.png → Create Your Path
 - leo-constellation.png → Leo Constellation
-- brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
-- hustle-daily-minimal.png → Hustle Daily Minimal
-- moon-phases-minimal.png → Moon Phases Minimal
-- aquarius-mystical.png → Aquarius Mystical
-- scorpio-dark-art.png → Scorpio Dark Art
-- coffee-first-sarcastic.png → Coffee First Sarcastic
-- nyc-map-typography.png → Nyc Map Typography
 
 ## Expected Earnings
 - 13 designs × average $3/month = $39/month
