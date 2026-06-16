@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-06-16_79",
+    "type": "BLOG_POST",
+    "title": "How to Automate Your Entire Social Media for $70/Month",
+    "created": "2026-06-16T11:09:42.355706",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-06-15_78",
     "type": "BLOG_POST",
     "title": "ProFlow AI vs Hiring: The Real Cost Comparison",
