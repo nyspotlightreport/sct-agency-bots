@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-06-17T10:25:27.967535",
+  "timestamp": "2026-06-17T11:43:09.381476",
   "reputation": {
     "score": 50,
     "trend": "stable",
     "threat_level": "orange",
-    "total_mentions": 25,
+    "total_mentions": 30,
     "positive_pct": 0,
     "negative_pct": 0,
     "max_threat_score": 0,
-    "explanation": "25 mentions \u2014 0% positive, 0% negative, max threat 0/10"
+    "explanation": "30 mentions \u2014 0% positive, 0% negative, max threat 0/10"
   },
   "crisis_prediction": {
     "probability": 40,
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 156,
-  "brand_mention_count": 25,
+  "mention_count": 154,
+  "brand_mention_count": 35,
   "analyses": [
     {
       "source": "google_news",
