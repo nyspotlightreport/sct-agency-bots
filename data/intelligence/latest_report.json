@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-06-18T15:30:25.801913",
+  "timestamp": "2026-06-18T18:27:49.804325",
   "reputation": {
     "score": 50,
     "trend": "stable",
     "threat_level": "orange",
-    "total_mentions": 25,
+    "total_mentions": 30,
     "positive_pct": 0,
     "negative_pct": 0,
     "max_threat_score": 0,
-    "explanation": "25 mentions \u2014 0% positive, 0% negative, max threat 0/10"
+    "explanation": "30 mentions \u2014 0% positive, 0% negative, max threat 0/10"
   },
   "crisis_prediction": {
     "probability": 40,
@@ -22,9 +22,119 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 140,
-  "brand_mention_count": 25,
+  "mention_count": 150,
+  "brand_mention_count": 35,
   "analyses": [
+    {
+      "source": "google_news",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
+      "outlet": "Spotlight Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
+      "outlet": "New York Post",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "What Is Going on with NYC Jobs? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
+      "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
+      "outlet": "Paulick Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Trump World's Self-Enrichment - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WaUxmX1lPMHVGNDdpcUZMRGFWMXZRajJlb1Frcy0tdk9fYWNNTGRnaXFTRXNTOG9CanRpek82cThLNkVyWll2dmw3Um5TUmI4VzFmbGxQeDBWMnBJZmFNUXFDT0FiSzR4UVNRcDItQQ?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Silicon Valley water CEO gets $500K golden handshake just days before sex attack report released - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeklDOWVyaVNCWTZ2c2JVakpyNnUzN05rZVUwWnJLcG4xWld3Q0FEWHQzeUZFWmZTR3laUjMxR1VaT2I4WXZkQ1ZuVWVUN0QyQnJ1NGlBOGRJN1czbjgwSlh2cldCM3hIU2RMa0Qwbi0zbFV3UEZxbF9tWnhiNE9aRkFVOEdpM3hqLTdOV2g2aGhmOXhta0NzbTFxUVFzaDE2a2dTNHlTbFl3dUI1Qk1teQ?oc=5",
+      "outlet": "New York Post",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
+      "outlet": "robinhood.org",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
+      "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Spotlight: New York City\u2019s Rental Housing Market - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMU5GZ0dDS2ZiclR3bklSUDNmZWtVa2xuRm41YWpZRWdKeTJXYmVlaUdWcFRGS2J6enRDZGFGSTNjVGFLaTZ6c2NnQWNtMjdSaDRtMkRoYXk1M2dBak5LS2d6a3ZRb1hpZDdVbEJILVkwSHJxckhsNXFGLUI3VmFXdnF1U05aVFlNNTVB?oc=5",
+      "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
     {
       "source": "google_news",
       "title": "Govt supports Prante Solutions for commercialisation of renal diagnostics platform Proflow-U - BioSpectrum India",
@@ -130,116 +240,6 @@
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
       "outlet": "The Augusta Press",
       "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas \"Bobby\" Readen Obituary March 3, 2025 - obits.jhenrystuhr.com",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBweTQyLWMxQTdXWDFlOHZfTXA5THhycjM5cHgzRDlUUllMNEstWnZ4OHJ3TDdKS2I2bTRRMkNiOVFSMXFwV2wxTWhNdzUyampWRXJGLTZn?oc=5",
-      "outlet": "obits.jhenrystuhr.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Columbia entrepreneur behind SWIFF store wants to create lifestyle brand for South Carolina - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOOWhXNlJaLWlXNUR5LXdkdWNreU85eWRxaFpwWGlReVpSQVFaeHB0UVdBT1Jhc2JoRDVJcU9McEpoN3kxdzctWFZabkZaZTd0WEE5OUdRclhOZnlfdFlQaWQ1QlY0d1BVbFQ5ZWl4MWNkMlZNNmU1em9kLUM4MFo3OVVrR0JPdFlRcGFuckVFSXRKZDBYS3h6T2F2UW5OZjRtWG9sN3FxRGplS1VSSVlEN19QdGxmaGlPWS1oSTFlTGpwenczYmo1U2pPN1RJRS10VGVzMVZkTXNlN09ZVk44Z2diS0oyWmpCSWcyN2pzVGllbjJfSzFySThlcE1mMzFnUkpoZEJveDdmU2I5RXgzejZBUVpSb2c?oc=5",
-      "outlet": "Post and Courier",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas William McBride Obituary December 26, 2024 - Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tSEI1ZDFWS2hFWE1SWE11eWpCODFPUkViOUMwVENEVE9oOXlGdjhVcXFyaW53QkxuNXJ3Njl6dDh2cHFnX0V1ZENMZTB0djRHbVZBOWNsLUt2OTZQSm1n?oc=5",
-      "outlet": "Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Prioreschi Obituary - Columbia, SC - Dignity Memorial",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbVRuT0YteDR4X1E4dmRQWWQ0S0x1UUtDd3FJd3JkSEdIQUpoQk9mVkl5ZjVlUWJZU1VnWUE2N3U0cDktRlo0NkR1SzlfWFp4WnM5anlHMGU1cFV1WVQzRUpsaU9qejZPUTk3aW1TakwtbFpPRnNMdE15aFhtWHZBSUZQWnA2b0o3?oc=5",
-      "outlet": "Dignity Memorial",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Edward Trammell Obituary March 9, 2023 - The J. M. Dunbar Funeral Home &amp; Crematory",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9DSUlvYVZpcG5oazZGSHZtY29od1ZBN3NLaDdyRUV0QUFCUUdXdDNWQ3BFSFJCYVJ2Ui1ZQjBvaUNmbXllQndfNl9EWG8zZW1hWnhMc0Q0MDBFeGNQV2drbA?oc=5",
-      "outlet": "The J. M. Dunbar Funeral Home &amp; Crematory",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Supreme Court Needs Congress to Help on AI, Clarence Thomas Says - Bloomberg Law News",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNSEVPbGI2aFo4X3dLdzFsSzdNZmMzeHJOekxqcDkwQng3TVBYVEpUUktTN0VzNUZSaTZKUXdGS2sxQnozVHVQRG5aQmlOeVdyNlI0SW9MVUhneWV1ck1YM19XLXVaRVUxdndDd0dBd3hvNUNta1RuOXMtaFhScU9kNW1McG83R3BuN0hkZjVTaFFsMEtpLUNGT01uS2RTREU?oc=5",
-      "outlet": "Bloomberg Law News",
-      "category": "brand_secondary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "The Real Dangers of AI - Catholic Culture",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBiZTlVZjJwckZ6N1plY3ZyaEhwZEZ6MlhzbzI1VmM1VF9PVEJiZHlQMll2NF9ZbS1RUGd6VHBIQUpLV1d3OW1TU0pNSlNLRTRUQ3Y0bUxhLV90N3ZrU21COUo1dVo4aFIwcmtj?oc=5",
-      "outlet": "Catholic Culture",
-      "category": "brand_secondary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Businesses Want Employees With AI Skills. Are K-12 CTE Programs Keeping Up? - Education Week",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVFJFblNPWDJQN0pPSkdqT0VqaERmVUJKcG56M05jcTBuQlN5WjRQOUE5UWhfNUswSlI3TWtIVlQ1YWsxOEJlWXBYUGJjYWVFdk10bk9aNi1DXzUyeVc0V0FSZ01LN1ZhOTdUeHFTckpjaV85S1NRdXBRMUtFYUhtc3BpQkJyaGIzbHJjb0ZFQjhuTDZOUkUtVFpyYjNJdFIxd2ZQSHc4dUswV3pPcTdOaHktS24yRmx6TDNNemZoVQ?oc=5",
-      "outlet": "Education Week",
-      "category": "brand_secondary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Cornell summit showcases AI innovation in agriculture - Cornell Chronicle",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMWROdkJ5TjJlYjQtTmx3SnR3MTRQSkZOX1BIMmJweDBtbWJBZzJtOEstQkdQbzE4S25OSnZ5RGhmQjhySTZ6M05SVnFzbG52bHZvUFpCeGVQeS1rSUNheGJPYkFqU1Y3QnZnRDBCR0lVTEVsOG5CWXZqV2NMVjR0VS0wVlJTVXlSVTZtZGVwNVB4T3VmbkE?oc=5",
-      "outlet": "Cornell Chronicle",
-      "category": "brand_secondary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "GeneDx Appoints Visionary AI and Precision Medicine Leader Dr. Thomas Fuchs to Board of Directors - Business Wire",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPTmpHekdxU0FTTS03OGxrS3RQZ2Jya082ZkJBeEVUbS0zUG1FY2lZTFhld3JJcGJqbVgwUVZyNWpmRHlqdnpzQ2g1NDQ1blNiVGRMdWNTdURqT0lldFo5U20yd0NiLUNxZFhsUS1rX1pFRVlNSzdMenZnaE9XWjJtRHBnYzV3TzFQMTdrTEl0Y280R09MbnY3MkpGLUt0NGdrQURlRk8tOFZQVlowNFU3V2s2M1l3YW9nLXFoR1p3WTVxSE50aVY1RlB1QVZMVXk3eFZKdGV6bGFMNFdlNWk1eTN3b1Q0bldjVUE?oc=5",
-      "outlet": "Business Wire",
-      "category": "brand_secondary",
       "sentiment": "neutral",
       "threat_score": 0,
       "opportunity_score": 2,
