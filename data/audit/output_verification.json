@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-17T15:16:09.767103+00:00",
+  "timestamp": "2026-06-18T14:58:11.928676+00:00",
   "producing": 4,
   "zero_output": 6,
   "total": 10,
@@ -17,12 +17,12 @@
     {
       "name": "Auto-Publisher",
       "status": "ZERO_OUTPUT",
-      "detail": "Could not fetch /blog/"
+      "detail": "No March 2026 content on /blog/"
     },
     {
       "name": "Sweepstakes Bot",
       "status": "PRODUCING",
-      "detail": "Last success: 2026-06-17"
+      "detail": "Last success: 2026-06-18"
     },
     {
       "name": "Mention Monitor",
@@ -32,7 +32,7 @@
     {
       "name": "Chairman Briefing",
       "status": "PRODUCING",
-      "detail": "Last success: 2026-06-17"
+      "detail": "Last success: 2026-06-18"
     },
     {
       "name": "Health Monitor",
