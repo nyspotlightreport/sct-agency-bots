@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T12:09:20.194573",
+  "timestamp": "2026-06-19T18:02:17.554727",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 149,
+  "mention_count": 139,
   "brand_mention_count": 35,
   "analyses": [
     {
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "Trump World's Self-Enrichment - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WaUxmX1lPMHVGNDdpcUZMRGFWMXZRajJlb1Frcy0tdk9fYWNNTGRnaXFTRXNTOG9CanRpek82cThLNkVyWll2dmw3Um5TUmI4VzFmbGxQeDBWMnBJZmFNUXFDT0FiSzR4UVNRcDItQQ?oc=5",
-      "outlet": "The New York Times",
+      "title": "Silicon Valley water CEO gets $500K golden handshake just days before sex attack report released - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeklDOWVyaVNCWTZ2c2JVakpyNnUzN05rZVUwWnJLcG4xWld3Q0FEWHQzeUZFWmZTR3laUjMxR1VaT2I4WXZkQ1ZuVWVUN0QyQnJ1NGlBOGRJN1czbjgwSlh2cldCM3hIU2RMa0Qwbi0zbFV3UEZxbF9tWnhiNE9aRkFVOEdpM3hqLTdOV2g2aGhmOXhta0NzbTFxUVFzaDE2a2dTNHlTbFl3dUI1Qk1teQ?oc=5",
+      "outlet": "New York Post",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -93,9 +93,9 @@
     },
     {
       "source": "google_news",
-      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -104,9 +104,9 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
+      "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,17 +203,6 @@
     },
     {
       "source": "google_news",
-      "title": "Greenville to unveil Honor Tower on Nov. 11: Final piece of Unity Park development - Greenville Online",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYVA0SlFXZ1o1eUpjSTcyeG9RTnh5ZW9heGIzS0wzTERneGNvcG5tV2t4Q0IwMWtIZEg1WjBaUGp6blZUZFRDeXQ5ZldhbFdGZW42Vi1mOU5uY25SNHM5SjZBNGU2UmVWYXBFcWZxdXZyMG9sYUV2cjdabmk2TVZibmZUTnZ1YU5wMXdoSnBjZ1p5a1lOUm5zZGY2dUh1WTF1dGZJcS1adDVyUWlEWTBwTWRSblpKZFZpLWk2MklNd2NpOXJrZk1Pdjd6Zw?oc=5",
-      "outlet": "Greenville Online",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -239,6 +228,17 @@
       "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
       "outlet": "The Augusta Press",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas \"Bobby\" Readen Obituary March 3, 2025 - obits.jhenrystuhr.com",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBweTQyLWMxQTdXWDFlOHZfTXA5THhycjM5cHgzRDlUUllMNEstWnZ4OHJ3TDdKS2I2bTRRMkNiOVFSMXFwV2wxTWhNdzUyampWRXJGLTZn?oc=5",
+      "outlet": "obits.jhenrystuhr.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
