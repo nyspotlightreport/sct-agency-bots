@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T17:29:01.183715",
+  "timestamp": "2026-06-20T21:20:50.463635",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - The Robesonian, Lumberton, N.C.",
+      "title": "Thomas earns regional Entrepreneur of the Year award - robesonian.com",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQeU1NUXc1anU3dTVlWW5XTFNKb3lDVHlrV1JvRi1xMXRKejJhR3Y4c1pmaGFzR1oyVFY5ck8xMUVyVUdxWFlzRy1LbjJnc0EtOHNyMk5yWkxSclhHTmN3VUxXc3JNWXJKckctSGl3WGQ0TndtMU82Y2V3YnlQNDhJRGRneWNoSTNRbXhKaUNmZEhhTDZpRVE?oc=5",
-      "outlet": "The Robesonian, Lumberton, N.C.",
+      "outlet": "robesonian.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
