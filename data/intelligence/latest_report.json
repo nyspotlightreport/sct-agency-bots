@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-21T04:25:41.266468",
+  "timestamp": "2026-06-21T09:35:16.682881",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 148,
+  "mention_count": 150,
   "brand_mention_count": 33,
   "analyses": [
     {
@@ -236,7 +236,7 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Bobby\" Readen Obituary March 3, 2025 - obits.jhenrystuhr.com",
+      "title": "Thomas \"Bobby\" Readen Obituary Mar 3, 2025 - obits.jhenrystuhr.com",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBweTQyLWMxQTdXWDFlOHZfTXA5THhycjM5cHgzRDlUUllMNEstWnZ4OHJ3TDdKS2I2bTRRMkNiOVFSMXFwV2wxTWhNdzUyampWRXJGLTZn?oc=5",
       "outlet": "obits.jhenrystuhr.com",
       "category": "brand_primary",
