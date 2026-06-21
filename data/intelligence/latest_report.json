@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T21:20:50.463635",
+  "timestamp": "2026-06-21T04:25:41.266468",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 149,
-  "brand_mention_count": 35,
+  "mention_count": 148,
+  "brand_mention_count": 33,
   "analyses": [
     {
       "source": "google_news",
@@ -82,9 +82,9 @@
     },
     {
       "source": "google_news",
-      "title": "Silicon Valley water CEO gets $500K golden handshake just days before sex attack report released - New York Post",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeklDOWVyaVNCWTZ2c2JVakpyNnUzN05rZVUwWnJLcG4xWld3Q0FEWHQzeUZFWmZTR3laUjMxR1VaT2I4WXZkQ1ZuVWVUN0QyQnJ1NGlBOGRJN1czbjgwSlh2cldCM3hIU2RMa0Qwbi0zbFV3UEZxbF9tWnhiNE9aRkFVOEdpM3hqLTdOV2g2aGhmOXhta0NzbTFxUVFzaDE2a2dTNHlTbFl3dUI1Qk1teQ?oc=5",
-      "outlet": "New York Post",
+      "title": "Poverty Tracker Spotlight Report: Food Budget Shortfalls in NYC - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFBKaWZtcnVuSGRTSnZoNkFmOGlKNnRWdjlRZnNrRF9tRU9pWDJYQzFGaUV4cHhmc0Y5LTdlUlI0SlFNTEdOOUY3YU5SSDlWbDZBN0VTSWI4V0l3UXhCRUJMU3gyWUZHcnJKQjlFd3BWeUgzaDRoSTV0N1BIaG5Ja05Yai10Z2h6ZTNB?oc=5",
+      "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -93,9 +93,20 @@
     },
     {
       "source": "google_news",
-      "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
-      "outlet": "robinhood.org",
+      "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
+      "outlet": "Paulick Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Silicon Valley water CEO gets $500K golden handshake just days before sex attack report released - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeklDOWVyaVNCWTZ2c2JVakpyNnUzN05rZVUwWnJLcG4xWld3Q0FEWHQzeUZFWmZTR3laUjMxR1VaT2I4WXZkQ1ZuVWVUN0QyQnJ1NGlBOGRJN1czbjgwSlh2cldCM3hIU2RMa0Qwbi0zbFV3UEZxbF9tWnhiNE9aRkFVOEdpM3hqLTdOV2g2aGhmOXhta0NzbTFxUVFzaDE2a2dTNHlTbFl3dUI1Qk1teQ?oc=5",
+      "outlet": "New York Post",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -115,20 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Rental Housing Market - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMU5GZ0dDS2ZiclR3bklSUDNmZWtVa2xuRm41YWpZRWdKeTJXYmVlaUdWcFRGS2J6enRDZGFGSTNjVGFLaTZ6c2NnQWNtMjdSaDRtMkRoYXk1M2dBak5LS2d6a3ZRb1hpZDdVbEJILVkwSHJxckhsNXFGLUI3VmFXdnF1U05aVFlNNTVB?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
+      "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,28 +159,6 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "Chosunbiz",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Chemical Guys ProFlow PM2000 electric pressure washer review - The Gadgeteer",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONVd5aE00dWhHWHVrVUdxbEJfb014TU96WWpvWHFQaEZ0LWd1dmNJVVpJNjg2dlpWTU1vTWxSR1NYV2JZSkM1RW14Y0VxLW1jOS1kT3otMFQ5UlJmMzJpdHZHWElsUlZNbXozRTJwS2VlOW51WEdRS1puOURmd1Y2VkNDY1RoZkNoTjRxS1NyVERxTk5UMHptVDVKZWtZUmM?oc=5",
-      "outlet": "The Gadgeteer",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 0,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - NUS - National University of Singapore",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZnVFd3l1YVFQMGdmb3BrWVRuQzhOZjFwRklPVnI0RTRPY1NrUFJSUkJMaE0wUTkzcnJ3UU9jN2hWczhoMXpBckJqU2syZFZ2eUhKbG5zWEpnOExOQlp2bGlHbmVsVy1kM1YtUlNLLXFfRFlnSXByT3Z3anhWejlTNFhPV1hNaXVGV3Q0TGVnbHpoWHJSRlBVNTdVVzV4eWF4a2JlcnhB?oc=5",
       "outlet": "NUS - National University of Singapore",
@@ -192,9 +170,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - robesonian.com",
+      "title": "Thomas earns regional Entrepreneur of the Year award - The Robesonian, Lumberton, N.C.",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQeU1NUXc1anU3dTVlWW5XTFNKb3lDVHlrV1JvRi1xMXRKejJhR3Y4c1pmaGFzR1oyVFY5ck8xMUVyVUdxWFlzRy1LbjJnc0EtOHNyMk5yWkxSclhHTmN3VUxXc3JNWXJKckctSGl3WGQ0TndtMU82Y2V3YnlQNDhJRGRneWNoSTNRbXhKaUNmZEhhTDZpRVE?oc=5",
-      "outlet": "robesonian.com",
+      "outlet": "The Robesonian, Lumberton, N.C.",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -239,6 +217,28 @@
       "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
+      "outlet": "The Augusta Press",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas \"Bobby\" Readen Obituary March 3, 2025 - obits.jhenrystuhr.com",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBweTQyLWMxQTdXWDFlOHZfTXA5THhycjM5cHgzRDlUUllMNEstWnZ4OHJ3TDdKS2I2bTRRMkNiOVFSMXFwV2wxTWhNdzUyampWRXJGLTZn?oc=5",
+      "outlet": "obits.jhenrystuhr.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
