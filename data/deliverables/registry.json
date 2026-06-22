@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-06-22_85",
+    "type": "BLOG_POST",
+    "title": "How to Make $500/Month Passive Income from Bandwidth Sharing in 2026",
+    "created": "2026-06-22T11:53:14.368162",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-06-21_84",
     "type": "BLOG_POST",
     "title": "Beehiiv vs Substack vs ConvertKit: Real Numbers After 6 Months",
