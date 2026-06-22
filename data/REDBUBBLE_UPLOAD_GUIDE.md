@@ -17,16 +17,23 @@
 - brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
 - nyc-map-typography.png → Nyc Map Typography
 - no-days-off.png → No Days Off
+- monday-vibes-off.png → Monday Vibes Off
 - hustle-daily-minimal.png → Hustle Daily Minimal
 - times-square-neon.png → Times Square Neon
 - coffee-first-sarcastic.png → Coffee First Sarcastic
+- cactus-desert-vibes.png → Cactus Desert Vibes
+- introvert-recharge.png → Introvert Recharge
+- gradient-waves-abstract.png → Gradient Waves Abstract
 - aquarius-mystical.png → Aquarius Mystical
 - moon-phases-minimal.png → Moon Phases Minimal
 - morning-routine-wins.png → Morning Routine Wins
 - create-your-path.png → Create Your Path
+- cat-space-astronaut.png → Cat Space Astronaut
+- golden-retriever-minimal.png → Golden Retriever Minimal
 - leo-constellation.png → Leo Constellation
+- geometric-mountains.png → Geometric Mountains
 
 ## Expected Earnings
-- 13 designs × average $3/month = $39/month
+- 20 designs × average $3/month = $60/month
 - Best performers can earn $20-50/month each
 - All designs earn royalties in perpetuity
