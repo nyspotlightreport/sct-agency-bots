@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-23T10:32:24.686959",
+  "timestamp": "2026-06-23T11:21:00.829532",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 147,
+  "mention_count": 148,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Columbia entrepreneur behind SWIFF store wants to create lifestyle brand for South Carolina - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOOWhXNlJaLWlXNUR5LXdkdWNreU85eWRxaFpwWGlReVpSQVFaeHB0UVdBT1Jhc2JoRDVJcU9McEpoN3kxdzctWFZabkZaZTd0WEE5OUdRclhOZnlfdFlQaWQ1QlY0d1BVbFQ5ZWl4MWNkMlZNNmU1em9kLUM4MFo3OVVrR0JPdFlRcGFuckVFSXRKZDBYS3h6T2F2UW5OZjRtWG9sN3FxRGplS1VSSVlEN19QdGxmaGlPWS1oSTFlTGpwenczYmo1U2pPN1RJRS10VGVzMVZkTXNlN09ZVk44Z2diS0oyWmpCSWcyN2pzVGllbjJfSzFySThlcE1mMzFnUkpoZEJveDdmU2I5RXgzejZBUVpSb2c?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas \"Bobby\" Readen Obituary Mar 3, 2025 - obits.jhenrystuhr.com",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBweTQyLWMxQTdXWDFlOHZfTXA5THhycjM5cHgzRDlUUllMNEstWnZ4OHJ3TDdKS2I2bTRRMkNiOVFSMXFwV2wxTWhNdzUyampWRXJGLTZn?oc=5",
+      "outlet": "obits.jhenrystuhr.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
