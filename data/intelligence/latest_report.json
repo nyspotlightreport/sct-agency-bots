@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-23T20:58:55.203255",
+  "timestamp": "2026-06-23T21:45:27.103382",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
       "outlet": "The Augusta Press",
@@ -239,6 +228,17 @@
       "title": "Columbia entrepreneur behind SWIFF store wants to create lifestyle brand for South Carolina - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOOWhXNlJaLWlXNUR5LXdkdWNreU85eWRxaFpwWGlReVpSQVFaeHB0UVdBT1Jhc2JoRDVJcU9McEpoN3kxdzctWFZabkZaZTd0WEE5OUdRclhOZnlfdFlQaWQ1QlY0d1BVbFQ5ZWl4MWNkMlZNNmU1em9kLUM4MFo3OVVrR0JPdFlRcGFuckVFSXRKZDBYS3h6T2F2UW5OZjRtWG9sN3FxRGplS1VSSVlEN19QdGxmaGlPWS1oSTFlTGpwenczYmo1U2pPN1RJRS10VGVzMVZkTXNlN09ZVk44Z2diS0oyWmpCSWcyN2pzVGllbjJfSzFySThlcE1mMzFnUkpoZEJveDdmU2I5RXgzejZBUVpSb2c?oc=5",
       "outlet": "Post and Courier",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Empowering Entrepreneurs: ACRE\u2019s Role In Growing South Carolina\u2019s Agribusiness - Where The Food Comes From",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPOTA4SnVGNzdZaEp6TXlZRnZjZ3RIMENaakhnVlZmRG9LekxMTjJjbFBJOC1lbHM1cjBNeTU4cXlxM1lTU0kzSjFfR1NXQnNJaF9RbTZ6ZFpmNjBCX2pzekQwbzgyaE8zUnJlNnc1dlZZUTlJbVE1UlZfc293RUswdmhoaW5DX1dIdk5yYTZpRWozbVU5elUtZFB1X081WFpMMlJreVViSTBOR0Y0Tk1n?oc=5",
+      "outlet": "Where The Food Comes From",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
