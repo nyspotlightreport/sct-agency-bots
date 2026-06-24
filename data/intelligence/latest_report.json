@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T08:52:51.760085",
+  "timestamp": "2026-06-24T10:17:36.801311",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 164,
+  "mention_count": 149,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -93,6 +93,17 @@
     },
     {
       "source": "google_news",
+      "title": "Silicon Valley water CEO gets $500K golden handshake just days before sex attack report released - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeklDOWVyaVNCWTZ2c2JVakpyNnUzN05rZVUwWnJLcG4xWld3Q0FEWHQzeUZFWmZTR3laUjMxR1VaT2I4WXZkQ1ZuVWVUN0QyQnJ1NGlBOGRJN1czbjgwSlh2cldCM3hIU2RMa0Qwbi0zbFV3UEZxbF9tWnhiNE9aRkFVOEdpM3hqLTdOV2g2aGhmOXhta0NzbTFxUVFzaDE2a2dTNHlTbFl3dUI1Qk1teQ?oc=5",
+      "outlet": "New York Post",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
       "outlet": "The New York Times",
@@ -118,17 +129,6 @@
       "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
       "outlet": "robinhood.org",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Rental Housing Market - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMU5GZ0dDS2ZiclR3bklSUDNmZWtVa2xuRm41YWpZRWdKeTJXYmVlaUdWcFRGS2J6enRDZGFGSTNjVGFLaTZ6c2NnQWNtMjdSaDRtMkRoYXk1M2dBak5LS2d6a3ZRb1hpZDdVbEJILVkwSHJxckhsNXFGLUI3VmFXdnF1U05aVFlNNTVB?oc=5",
-      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,6 +214,17 @@
     },
     {
       "source": "google_news",
+      "title": "Greenville to unveil Honor Tower on Nov. 11: Final piece of Unity Park development - Greenville Online",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYVA0SlFXZ1o1eUpjSTcyeG9RTnh5ZW9heGIzS0wzTERneGNvcG5tV2t4Q0IwMWtIZEg1WjBaUGp6blZUZFRDeXQ5ZldhbFdGZW42Vi1mOU5uY25SNHM5SjZBNGU2UmVWYXBFcWZxdXZyMG9sYUV2cjdabmk2TVZibmZUTnZ1YU5wMXdoSnBjZ1p5a1lOUm5zZGY2dUh1WTF1dGZJcS1adDVyUWlEWTBwTWRSblpKZFZpLWk2MklNd2NpOXJrZk1Pdjd6Zw?oc=5",
+      "outlet": "Greenville Online",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
@@ -228,17 +239,6 @@
       "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
       "outlet": "The Augusta Press",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Columbia entrepreneur behind SWIFF store wants to create lifestyle brand for South Carolina - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOOWhXNlJaLWlXNUR5LXdkdWNreU85eWRxaFpwWGlReVpSQVFaeHB0UVdBT1Jhc2JoRDVJcU9McEpoN3kxdzctWFZabkZaZTd0WEE5OUdRclhOZnlfdFlQaWQ1QlY0d1BVbFQ5ZWl4MWNkMlZNNmU1em9kLUM4MFo3OVVrR0JPdFlRcGFuckVFSXRKZDBYS3h6T2F2UW5OZjRtWG9sN3FxRGplS1VSSVlEN19QdGxmaGlPWS1oSTFlTGpwenczYmo1U2pPN1RJRS10VGVzMVZkTXNlN09ZVk44Z2diS0oyWmpCSWcyN2pzVGllbjJfSzFySThlcE1mMzFnUkpoZEJveDdmU2I5RXgzejZBUVpSb2c?oc=5",
-      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
