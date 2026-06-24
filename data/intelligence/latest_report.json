@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T10:52:39.932757",
+  "timestamp": "2026-06-24T14:35:34.086601",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 145,
+  "mention_count": 146,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -93,17 +93,6 @@
     },
     {
       "source": "google_news",
-      "title": "Silicon Valley water CEO gets $500K golden handshake just days before sex attack report released - New York Post",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeklDOWVyaVNCWTZ2c2JVakpyNnUzN05rZVUwWnJLcG4xWld3Q0FEWHQzeUZFWmZTR3laUjMxR1VaT2I4WXZkQ1ZuVWVUN0QyQnJ1NGlBOGRJN1czbjgwSlh2cldCM3hIU2RMa0Qwbi0zbFV3UEZxbF9tWnhiNE9aRkFVOEdpM3hqLTdOV2g2aGhmOXhta0NzbTFxUVFzaDE2a2dTNHlTbFl3dUI1Qk1teQ?oc=5",
-      "outlet": "New York Post",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
       "outlet": "The New York Times",
@@ -129,6 +118,17 @@
       "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
       "outlet": "robinhood.org",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Spotlight: New York City\u2019s Office Market - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2M5czFEVDdYLUlaalVuTnVmVW43ZmhzWUR2eG05d1lNMnVDbWZWU1I3Y3lZbmRpUXlTazNYcW9vNk5OdHFaeFJvQ1V2dlg2d2ZIY0hadVdVQnFUaVBUNlNQLWhGTXJKZE1Wd0ZyTmlVUlZTOVljZzNiRnV4NFQ2bw?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
