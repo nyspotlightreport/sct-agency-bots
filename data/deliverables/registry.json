@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-06-24_87",
+    "type": "BLOG_POST",
+    "title": "GitHub Actions as a Free Automation Platform: Complete Guide",
+    "created": "2026-06-24T09:28:37.670365",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-06-23_86",
     "type": "BLOG_POST",
     "title": "Cold Email Automation: 200 Personalized Emails Per Day with Apollo",
