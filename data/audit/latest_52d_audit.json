@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T12:14:46.048172+00:00",
+  "timestamp": "2026-06-24T23:00:40.810224+00:00",
   "pass_count": 17,
   "fail_count": 13,
   "total": 30,
@@ -9,7 +9,7 @@
     {
       "name": "Pages responding",
       "status": "PASS",
-      "detail": "31/31 pages return 200"
+      "detail": "28/31 pages return 200"
     },
     {
       "name": "Stripe LIVE checkout",
@@ -124,7 +124,7 @@
     {
       "name": "Sweepstakes running",
       "status": "PASS",
-      "detail": "Last run: 2026-06-24T11:40:57Z"
+      "detail": "Last run: 2026-06-24T22:11:12Z"
     },
     {
       "name": "Affiliate content",
