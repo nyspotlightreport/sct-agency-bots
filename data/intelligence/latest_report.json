@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-29T20:48:51.392337",
+  "timestamp": "2026-06-29T21:28:32.278949",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -203,17 +203,6 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - Summerville - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "Post and Courier",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Thomas earns regional Entrepreneur of the Year award - The Robesonian, Lumberton, N.C.",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQeU1NUXc1anU3dTVlWW5XTFNKb3lDVHlrV1JvRi1xMXRKejJhR3Y4c1pmaGFzR1oyVFY5ck8xMUVyVUdxWFlzRy1LbjJnc0EtOHNyMk5yWkxSclhHTmN3VUxXc3JNWXJKckctSGl3WGQ0TndtMU82Y2V3YnlQNDhJRGRneWNoSTNRbXhKaUNmZEhhTDZpRVE?oc=5",
       "outlet": "The Robesonian, Lumberton, N.C.",
@@ -228,6 +217,17 @@
       "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
+      "outlet": "SCBiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
