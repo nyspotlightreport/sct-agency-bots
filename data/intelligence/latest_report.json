@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-30T08:56:09.735383",
+  "timestamp": "2026-06-30T10:29:07.815249",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 163,
+  "mention_count": 153,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - Summerville - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas earns regional Entrepreneur of the Year award - The Robesonian, Lumberton, N.C.",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQeU1NUXc1anU3dTVlWW5XTFNKb3lDVHlrV1JvRi1xMXRKejJhR3Y4c1pmaGFzR1oyVFY5ck8xMUVyVUdxWFlzRy1LbjJnc0EtOHNyMk5yWkxSclhHTmN3VUxXc3JNWXJKckctSGl3WGQ0TndtMU82Y2V3YnlQNDhJRGRneWNoSTNRbXhKaUNmZEhhTDZpRVE?oc=5",
+      "outlet": "The Robesonian, Lumberton, N.C.",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQeU1NUXc1anU3dTVlWW5XTFNKb3lDVHlrV1JvRi1xMXRKejJhR3Y4c1pmaGFzR1oyVFY5ck8xMUVyVUdxWFlzRy1LbjJnc0EtOHNyMk5yWkxSclhHTmN3VUxXc3JNWXJKckctSGl3WGQ0TndtMU82Y2V3YnlQNDhJRGRneWNoSTNRbXhKaUNmZEhhTDZpRVE?oc=5",
-      "outlet": "Robesonian",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "outlet": "Legacy obituary",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "South Carolina Department of Agriculture (.gov)",
+      "title": "Thomas Atwood Sr. Obituary | Sanders-Thompson Mortuary, LLC | Clinton, SC - Tribute Archive",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE83VlE2MEJDMVdFdHhEemVUVWxtS3A0X2hkc3NNV0FhMXBBX2Z0a0hWRXBiZlVuVnBlMlctd2o1eFRlbnp3eVdHRkJuSnJiR1VlUXFmdlpqN213YnhaS1U1TlhTRTJmUzkwTk5lZUtoM0xsN09mdDZJ?oc=5",
+      "outlet": "Tribute Archive",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
