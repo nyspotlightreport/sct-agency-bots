@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T11:27:25.528816",
+  "timestamp": "2026-07-01T14:42:16.638505",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -126,8 +126,8 @@
     },
     {
       "source": "google_news",
-      "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
+      "title": "Poverty Tracker: Spotlight on Transportation in New York City - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQcHVUUk5LVk5VNmowZlN1ZENzbmpqVmppZlowZFJEVG1MenZFU25hS094OEdVOGpKOWpiTWk2Wk1PM1oxdFQzZGtxSDJ5dnh1YnNOSC1TbHF4RXZMME1mT09yWnhjM0dIT2NmOWYtVjZJeFRPZ25hXy1jYkdoX0xXbXBueXJUUDg?oc=5",
       "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - The Robesonian, Lumberton, N.C.",
+      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQeU1NUXc1anU3dTVlWW5XTFNKb3lDVHlrV1JvRi1xMXRKejJhR3Y4c1pmaGFzR1oyVFY5ck8xMUVyVUdxWFlzRy1LbjJnc0EtOHNyMk5yWkxSclhHTmN3VUxXc3JNWXJKckctSGl3WGQ0TndtMU82Y2V3YnlQNDhJRGRneWNoSTNRbXhKaUNmZEhhTDZpRVE?oc=5",
-      "outlet": "The Robesonian, Lumberton, N.C.",
+      "outlet": "Robesonian",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
