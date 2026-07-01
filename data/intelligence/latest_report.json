@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T14:42:16.638505",
+  "timestamp": "2026-07-01T17:59:54.552052",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 149,
+  "mention_count": 150,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -82,6 +82,17 @@
     },
     {
       "source": "google_news",
+      "title": "Greenland\u2019s Biggest Band Is Thrust Into an Uneasy Spotlight - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5YVWlxeE5DOUtlVWpwUmVIY1NKcHNVNXBHRUxsN3RlZ1dXZU1IZ2ZvRHVxYUxhcWU1d1RFSkVGblVnT0VUNlF5TnhkaGh3RDJPN2o4TXA3RXBWRGxPdzJ5em1JQzBOcF96bTROdmg5NEplZFBVY3EyZmpfaHE?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
       "outlet": "Paulick Report",
@@ -104,17 +115,6 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "NYC\u2019s Office Market: Doom Loop or Boom Loop? - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWWFmbFpzZGlCQkNUUVZBQXNKWjB0M3FDODBXMkhMaDJ3OTByeUNERlVXSnNiRVg3QTgxN2E3U21TU3JqNWE5REtoVGpIUmlyNGVINFdxUVpZNUpDTFZ1VDVMMm1hbk03UkJDcDg3WnFLZE04bDFESVpqQjNmV0EzcTdJbDY?oc=5",
       "outlet": "NYC.gov",
@@ -126,9 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "Poverty Tracker: Spotlight on Transportation in New York City - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQcHVUUk5LVk5VNmowZlN1ZENzbmpqVmppZlowZFJEVG1MenZFU25hS094OEdVOGpKOWpiTWk2Wk1PM1oxdFQzZGtxSDJ5dnh1YnNOSC1TbHF4RXZMME1mT09yWnhjM0dIT2NmOWYtVjZJeFRPZ25hXy1jYkdoX0xXbXBueXJUUDg?oc=5",
-      "outlet": "robinhood.org",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Atwood Sr. Obituary | Sanders-Thompson Mortuary, LLC | Clinton, SC - Tribute Archive",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE83VlE2MEJDMVdFdHhEemVUVWxtS3A0X2hkc3NNV0FhMXBBX2Z0a0hWRXBiZlVuVnBlMlctd2o1eFRlbnp3eVdHRkJuSnJiR1VlUXFmdlpqN213YnhaS1U1TlhTRTJmUzkwTk5lZUtoM0xsN09mdDZJ?oc=5",
-      "outlet": "Tribute Archive",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
