@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-05T21:03:40.465949",
+  "timestamp": "2026-07-06T03:44:51.074058",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 154,
+  "mention_count": 152,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
+      "title": "Thomas Atwood Sr. Obituary | Sanders-Thompson Mortuary, LLC | Clinton, SC - Tribute Archive",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE83VlE2MEJDMVdFdHhEemVUVWxtS3A0X2hkc3NNV0FhMXBBX2Z0a0hWRXBiZlVuVnBlMlctd2o1eFRlbnp3eVdHRkJuSnJiR1VlUXFmdlpqN213YnhaS1U1TlhTRTJmUzkwTk5lZUtoM0xsN09mdDZJ?oc=5",
+      "outlet": "Tribute Archive",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
