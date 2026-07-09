@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-09T03:29:55.292260",
+  "timestamp": "2026-07-09T07:46:09.799927",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 150,
-  "brand_mention_count": 37,
+  "mention_count": 148,
+  "brand_mention_count": 36,
   "analyses": [
     {
       "source": "google_news",
@@ -159,17 +159,6 @@
     },
     {
       "source": "google_news",
-      "title": "Google Launches AI Plus Subscription In India - Let's Data Science",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVVIya1dSTHpWVExIZ2RMc01QN09MZ21ZSnFqRm0tMmVSMmxvcU5TZUJrckdVYklDNGUxZEp6eUZ2aGlWNjJPZktlbTlSY0NwY29vUzVwSHJhYzNjcHg0aExFa2tLLWt6Q25sMFIwbkhITUM2RzFZcVd1ZXVRVE5vQ2ozMHRwaWFaczF0ZVVTMl8?oc=5",
-      "outlet": "Let's Data Science",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
       "outlet": "Chosunbiz",
@@ -239,6 +228,17 @@
       "title": "Thomas Atwood Sr. Obituary | Sanders-Thompson Mortuary, LLC | Clinton, SC - Tribute Archive",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE83VlE2MEJDMVdFdHhEemVUVWxtS3A0X2hkc3NNV0FhMXBBX2Z0a0hWRXBiZlVuVnBlMlctd2o1eFRlbnp3eVdHRkJuSnJiR1VlUXFmdlpqN213YnhaS1U1TlhTRTJmUzkwTk5lZUtoM0xsN09mdDZJ?oc=5",
       "outlet": "Tribute Archive",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
