@@ -1,0 +1,116 @@
+{
+  "affiliate_coverage": {
+    "status": "FAIL",
+    "coverage_pct": 0,
+    "checked": 0,
+    "with_affiliate": 0,
+    "missing_sample": []
+  },
+  "editorial_purity": {
+    "status": "PASS",
+    "checked": 0,
+    "violations": 0,
+    "details": []
+  },
+  "smoke_tests": {
+    "status": "WARN",
+    "passed": 0,
+    "total": 0
+  },
+  "agent_stubs": {
+    "status": "WARN",
+    "total_agents": 157,
+    "stubs": 5,
+    "stub_list": [
+      {
+        "file": "security_auditor_agent.py",
+        "lines": 48
+      },
+      {
+        "file": "performance_optimizer_agent.py",
+        "lines": 43
+      },
+      {
+        "file": "account_manager_agent.py",
+        "lines": 48
+      },
+      {
+        "file": "frontend_developer_agent.py",
+        "lines": 45
+      },
+      {
+        "file": "tech_lead_agent.py",
+        "lines": 40
+      }
+    ]
+  },
+  "workflow_success": {
+    "status": "FAIL",
+    "success_rate": 65.3,
+    "passed": 32,
+    "total": 49,
+    "failures": [
+      "Site Health Monitor",
+      "Self-Healing Agent \u2014 Every 30 Minutes",
+      "System Watchdog - End-to-End Health",
+      "Uptime Monitor",
+      "Hayden Cross QC Daily",
+      "Dead-Man's Switch Monitor",
+      "\ud83d\udc8e Revenue Engine II \u2014 Remaining Revenue Bots",
+      "\ud83d\udee1\ufe0f Guardian \u2014 Self-Healing (Every 30min)",
+      "Phase 3 \u2014 Shopify Storefront Daily",
+      "Master 52-Dimension Audit"
+    ]
+  },
+  "revenue_touchpoints": {
+    "status": "FAIL",
+    "checks": {
+      "homepage": {
+        "status": 200,
+        "ok": true
+      },
+      "store": {
+        "status": 200,
+        "ok": true
+      },
+      "checkout_success": {
+        "status": 200,
+        "ok": true
+      },
+      "subscribe_api": {
+        "status": 200,
+        "ok": false
+      }
+    },
+    "down": [
+      "subscribe_api (200)"
+    ]
+  },
+  "content_freshness": {
+    "status": "PASS",
+    "last_publish_success": "2026-07-09T12:30:44Z",
+    "stale": false
+  },
+  "data_growth": {
+    "status": "WARN",
+    "current_counts": {
+      "contacts": 0,
+      "outreach_log": 97,
+      "brand_mentions": -1,
+      "subscribers": -1
+    },
+    "growth_24h": {
+      "contacts": 0,
+      "outreach_log": 0,
+      "brand_mentions": "unknown",
+      "subscribers": "unknown"
+    }
+  },
+  "_summary": {
+    "timestamp": "2026-07-09T14:16:19.916365+00:00",
+    "score": 25,
+    "passed": 2,
+    "total": 8,
+    "alerts": 5
+  }
+}
