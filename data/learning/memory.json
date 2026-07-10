@@ -7,6 +7,13 @@
     "actions_taken": []
   },
   {
+    "date": "2026-07-10",
+    "health_score": 70,
+    "critical_issues_count": 0,
+    "insights": [],
+    "actions_taken": []
+  },
+  {
     "date": "2026-07-09",
     "health_score": 70,
     "critical_issues_count": 0,
@@ -610,13 +617,6 @@
   },
   {
     "date": "2026-06-11",
-    "health_score": 70,
-    "critical_issues_count": 0,
-    "insights": [],
-    "actions_taken": []
-  },
-  {
-    "date": "2026-06-10",
     "health_score": 70,
     "critical_issues_count": 0,
     "insights": [],
