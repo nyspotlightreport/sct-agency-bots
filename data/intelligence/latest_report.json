@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-11T20:52:44.027781",
+  "timestamp": "2026-07-12T02:57:11.247924",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 151,
+  "mention_count": 141,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet the 50 Most Influential in South Carolina honorees - SCBiz",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWG5zT25iSThVcGc0cHZTSzBONE5HaUFjaXVFVk1MdmU5TDZmSDZBSXJneFoyNFdsTkN0NTJCMlE2b0ZsMEFnTjdEcjEzb3hyMDNoVFQyeU0tcDVzaUowWlg0M3F4a20xNEpuSmJhQjBnV0xGWFlDLXZyWkJxT01ldjU0VDU4MDZIbURNR2Rn?oc=5",
-      "outlet": "SCBiz",
+      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - The Philadelphia Tribune",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
+      "outlet": "The Philadelphia Tribune",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,20 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Noel Lamar Lomax Obituary (2026) - Greenville, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1hLTRmTlJiZmJyRzNfRkpLZkdQRGhUVFdBVjhzQ0J5QVhkWGRRb3ZGeWptM2ZvX3dJZzRZanlNMk1hamVuTGx5bzZMVlRncF9XZkV0bkFHdTBza28wdmxHUUFxQ2dJdU5fdUZzbTh2LXFTc3VsTFd3X2F0MldzZw?oc=5",
-      "outlet": "Legacy obituary",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Julia Berolzheimer's Charming Charleston Home Is Filled With Stylish Details - Southern Living",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNWUhSamdWYmFZX1JVMHRmcUZSQ2tlVWUtaWVQVnNJWUh0OTByUHRWemZTY0RSdkk2TG85T0NiVnhDdlNRUUJTdzRmeldWanNIUEtBNHN6TXRhM0N1eE40VzZZUzBUS2RTNmM3RE5KM28wV0lkZmlFUGlqWGhsNk1kLQ?oc=5",
-      "outlet": "Southern Living",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -239,6 +228,17 @@
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Greenville to unveil Honor Tower on Nov. 11: Final piece of Unity Park development - Greenville Online",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYVA0SlFXZ1o1eUpjSTcyeG9RTnh5ZW9heGIzS0wzTERneGNvcG5tV2t4Q0IwMWtIZEg1WjBaUGp6blZUZFRDeXQ5ZldhbFdGZW42Vi1mOU5uY25SNHM5SjZBNGU2UmVWYXBFcWZxdXZyMG9sYUV2cjdabmk2TVZibmZUTnZ1YU5wMXdoSnBjZ1p5a1lOUm5zZGY2dUh1WTF1dGZJcS1adDVyUWlEWTBwTWRSblpKZFZpLWk2MklNd2NpOXJrZk1Pdjd6Zw?oc=5",
+      "outlet": "Greenville Online",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
