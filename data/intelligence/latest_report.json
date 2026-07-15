@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T20:04:31.899945",
+  "timestamp": "2026-07-15T21:03:33.812148",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
-  "brand_mention_count": 35,
+  "mention_count": 153,
+  "brand_mention_count": 36,
   "analyses": [
     {
       "source": "google_news",
@@ -181,9 +181,31 @@
     },
     {
       "source": "google_news",
+      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - Forbes",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNU83YjJPMWlZYnN6YU1ZaFZBa2E3REIzTC1PMDRBcWhCXzE2TWZxSDBqZTA2MnVLMXlKalJ2Z2pxNjQzWVFiTXdua0ZVclR0MW1Ra3E2UHBFY3dhaW9EUGF4N0M4Nm9sU0dvR2xsclNCMkN0U1l2YTdSX2xiWkNVQXgwc20zQzh4dWdDYWJ2UFVBTU5mVzNwMkVTeGhLeDV0QXVoRXhaYWxUS2FSR095dll2MEc?oc=5",
+      "outlet": "Forbes",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - NUS - National University of Singapore",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZnVFd3l1YVFQMGdmb3BrWVRuQzhOZjFwRklPVnI0RTRPY1NrUFJSUkJMaE0wUTkzcnJ3UU9jN2hWczhoMXpBckJqU2syZFZ2eUhKbG5zWEpnOExOQlp2bGlHbmVsVy1kM1YtUlNLLXFfRFlnSXByT3Z3anhWejlTNFhPV1hNaXVGV3Q0TGVnbHpoWHJSRlBVNTdVVzV4eWF4a2JlcnhB?oc=5",
       "outlet": "NUS - National University of Singapore",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Luther Thomas Clowney Obituary Jul 11, 2026 - Callaham-Hicks Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1xTTF5Qnl0emVPMnh1cF9qT2Z1QkNTdDd4dWRCTTdhRkR0QzBpQlJNNTJYTW1fUkFyV3U3Vm5md0Z2Sm1ZOVc5N216MFpZaWdNYS02U2Z4YkFpZ1lpSTZ2cUp6Wm4zLVdMZFExUw?oc=5",
+      "outlet": "Callaham-Hicks Funeral Home",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -217,28 +239,6 @@
       "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
       "outlet": "The Augusta Press",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Obituary information for Thomas Chalmer Wright - Bliley's Funeral Homes",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5GTG9NYjROal8xMnhuVlQ4OGJveVNBR09jbjQwdWVFU3BBV19QRW9ITFlDLTN3TTMzcTlNSGNlbDNYOGJUQ0dVRG82OEd3VU13b1FjUkthbWlIalZDb0ljY0JwRkdHVGVRdmwxc0U5ZEtIOUstNGJ0Yml3?oc=5",
-      "outlet": "Bliley's Funeral Homes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
