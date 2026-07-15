@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T09:06:31.314285",
+  "timestamp": "2026-07-15T10:05:11.689069",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 152,
   "brand_mention_count": 35,
   "analyses": [
     {
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Rhodes - Greenville Business Magazine",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9CYnh5bUFjVW0yRkF6TzRnSloyQlg4RHJEMDZZOVEzaFUyRGxwaXZBTTBnREtOYVhJT0gxdkdYY09KUlJ5YXBxeG5HaGdmZ25GQnU3SWpNUWNYMUtaUmVCVXZOVmxNX1pqd0c5ajdueXdVNGc?oc=5",
-      "outlet": "Greenville Business Magazine",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -239,6 +228,17 @@
       "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
       "outlet": "The Augusta Press",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
