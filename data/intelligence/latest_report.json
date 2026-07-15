@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T02:36:52.144525",
+  "timestamp": "2026-07-15T06:17:49.378721",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 152,
   "brand_mention_count": 35,
   "analyses": [
     {
@@ -192,6 +192,17 @@
     },
     {
       "source": "google_news",
+      "title": "Luther Thomas Clowney Obituary Jul 11, 2026 - Callaham-Hicks Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1xTTF5Qnl0emVPMnh1cF9qT2Z1QkNTdDd4dWRCTTdhRkR0QzBpQlJNNTJYTW1fUkFyV3U3Vm5md0Z2Sm1ZOVc5N216MFpZaWdNYS02U2Z4YkFpZ1lpSTZ2cUp6Wm4zLVdMZFExUw?oc=5",
+      "outlet": "Callaham-Hicks Funeral Home",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
       "outlet": "Post and Courier",
@@ -203,20 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Growing the next generations of entrepreneurs - WGME",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNdjVqVy1oUTZfSC1jdjVTQ21DX3Rza0FGLWdQVElEUWU0R08xV05iV0RCTE5hYk94ejI1SmIzY2I2OUFBdE1fVHlJYjRYZFU2V0g1cUlZd1dwQXRpdjJrMktkUktTcW1paGJ4ZWhmd0NWTmhMMXhrT0RFMno4SGtCa0xCRQ?oc=5",
-      "outlet": "WGME",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia, SC - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas Rhodes - Greenville Business Magazine",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9CYnh5bUFjVW0yRkF6TzRnSloyQlg4RHJEMDZZOVEzaFUyRGxwaXZBTTBnREtOYVhJT0gxdkdYY09KUlJ5YXBxeG5HaGdmZ25GQnU3SWpNUWNYMUtaUmVCVXZOVmxNX1pqd0c5ajdueXdVNGc?oc=5",
+      "outlet": "Greenville Business Magazine",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
