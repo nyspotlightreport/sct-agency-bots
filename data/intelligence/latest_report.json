@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-18T13:02:33.609049",
+  "timestamp": "2026-07-18T13:20:32.385716",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,22 +22,9 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 178,
-  "brand_mention_count": 37,
+  "mention_count": 153,
+  "brand_mention_count": 36,
   "analyses": [
-    {
-      "source": "news",
-      "outlet": "Awful Announcing",
-      "title": "TV and streaming viewing picks for July 17, 2026: How to watch The 154th Open",
-      "body": "All Times Eastern Australian Rules Football AFL Men\u2019s \u2014 Round 19 Port Adelaide Power vs. Fremantle Dockers \u2014 FS2/Fox One, 11 p.m. North Melbourne Kangaroos vs. Melbourne Demons \u2014 FS2/Fox One, 2 a.m. (Saturday) Collingwood Magpies vs. Carlton Blues \u2014 Fox Socce\u2026",
-      "url": "https://awfulannouncing.com/viewing-picks/july-17-2026-watch-the-154th-open.html",
-      "published": "2026-07-17T11:00:26Z",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
     {
       "source": "google_news",
       "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
@@ -241,6 +228,17 @@
       "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
       "outlet": "Robesonian",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
