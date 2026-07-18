@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-18T07:27:16.430515",
+  "timestamp": "2026-07-18T09:28:08.426172",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 153,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Berkley Highlights CSM Collective\u2019s Vision for Entrepreneurial Growth and Stronger Digital Brand Presence - lincolnjournal.com",
-      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxQN2JZdDM0MlMzOW14NU0tM3JFUWtUYVZROGNZejM2SGEyeExZVmg5WjY0Y2NhVjdZNS00YVJDSWpCNF9tSkh5dnJxRERWaHlUdlpPTlgzWFRQNmViNlJSX255dlRZTDBHWTlJdHR1S1RVdHBpR3lJNVpCUWJITzFicGl1ZS12LW51ZjJmY1pmb1gtc0JyNHFwR0VfYzFkaGIwR2JpZUpMRUZPV2J0WDI4STZNakFIaGEwdDhKUXRhMWNlMHF5M3NRTHVGdHUyTU1hMFpmLWpadGVNNXpVZFdqRVBKRE9GSW9xRlA4eFhXT3lXaEdfODFQdGNiN0pJOUxlVjBBb3I5Y3lzZlI2THNqa3IwUkI0U21Sd0FvNDB3ZFMxUDJFWUtXOG1jWTgtVHR2NDFfWjlscDU5azhLYXJ5RERTTEExb1k?oc=5",
-      "outlet": "lincolnjournal.com",
+      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - The Philadelphia Tribune",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
+      "outlet": "The Philadelphia Tribune",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - The Philadelphia Tribune",
-      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
-      "outlet": "The Philadelphia Tribune",
+      "title": "Thomas Berkley Highlights CSM Collective\u2019s Vision for Entrepreneurial Growth and Stronger Digital Brand Presence - lincolnjournal.com",
+      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxQN2JZdDM0MlMzOW14NU0tM3JFUWtUYVZROGNZejM2SGEyeExZVmg5WjY0Y2NhVjdZNS00YVJDSWpCNF9tSkh5dnJxRERWaHlUdlpPTlgzWFRQNmViNlJSX255dlRZTDBHWTlJdHR1S1RVdHBpR3lJNVpCUWJITzFicGl1ZS12LW51ZjJmY1pmb1gtc0JyNHFwR0VfYzFkaGIwR2JpZUpMRUZPV2J0WDI4STZNakFIaGEwdDhKUXRhMWNlMHF5M3NRTHVGdHUyTU1hMFpmLWpadGVNNXpVZFdqRVBKRE9GSW9xRlA4eFhXT3lXaEdfODFQdGNiN0pJOUxlVjBBb3I5Y3lzZlI2THNqa3IwUkI0U21Sd0FvNDB3ZFMxUDJFWUtXOG1jWTgtVHR2NDFfWjlscDU5azhLYXJ5RERTTEExb1k?oc=5",
+      "outlet": "lincolnjournal.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
