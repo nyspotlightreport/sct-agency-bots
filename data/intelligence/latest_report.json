@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-18T20:53:14.352012",
+  "timestamp": "2026-07-19T02:53:58.424489",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 152,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Berkley Highlights CSM Collective\u2019s Vision for Entrepreneurial Growth and Stronger Digital Brand Presence - lincolnjournal.com",
-      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxQN2JZdDM0MlMzOW14NU0tM3JFUWtUYVZROGNZejM2SGEyeExZVmg5WjY0Y2NhVjdZNS00YVJDSWpCNF9tSkh5dnJxRERWaHlUdlpPTlgzWFRQNmViNlJSX255dlRZTDBHWTlJdHR1S1RVdHBpR3lJNVpCUWJITzFicGl1ZS12LW51ZjJmY1pmb1gtc0JyNHFwR0VfYzFkaGIwR2JpZUpMRUZPV2J0WDI4STZNakFIaGEwdDhKUXRhMWNlMHF5M3NRTHVGdHUyTU1hMFpmLWpadGVNNXpVZFdqRVBKRE9GSW9xRlA4eFhXT3lXaEdfODFQdGNiN0pJOUxlVjBBb3I5Y3lzZlI2THNqa3IwUkI0U21Sd0FvNDB3ZFMxUDJFWUtXOG1jWTgtVHR2NDFfWjlscDU5azhLYXJ5RERTTEExb1k?oc=5",
-      "outlet": "lincolnjournal.com",
+      "title": "Luther Thomas Clowney Obituary Jul 11, 2026 - Callaham-Hicks Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1xTTF5Qnl0emVPMnh1cF9qT2Z1QkNTdDd4dWRCTTdhRkR0QzBpQlJNNTJYTW1fUkFyV3U3Vm5md0Z2Sm1ZOVc5N216MFpZaWdNYS02U2Z4YkFpZ1lpSTZ2cUp6Wm4zLVdMZFExUw?oc=5",
+      "outlet": "Callaham-Hicks Funeral Home",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
