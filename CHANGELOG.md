@@ -1,111 +1,111 @@
-# Changelog — Week of Jul 06 — Jul 13, 2026
+# Changelog — Week of Jul 13 — Jul 20, 2026
 
 
 ## ✨ New Features
 
-- `956821f` feat: weekly SEO report (github-actions[bot])
-- `5494bd5` feat: weekly SEO report (github-actions[bot])
-- `64299c5` feat: webinar video live (github-actions[bot])
-- `318ca48` feat: PR campaign for S.C. Thomas (github-actions[bot])
+- `aa970f4` feat: weekly SEO report (github-actions[bot])
+- `5a4a568` feat: weekly SEO report (github-actions[bot])
+- `342c8bd` feat: webinar video live (github-actions[bot])
+- `3309ab7` feat: PR campaign for S.C. Thomas (github-actions[bot])
+- `2c7126f` feat: weekly SEO report (github-actions[bot])
 
 ## 🔧 Maintenance
 
-- `9ba88fd` chore: update sitemap (0 URLs) (github-actions[bot])
-- `09eb78d` chore: update sitemap (0 URLs) (github-actions[bot])
-- `571017f` chore: update processed Gumroad sales 2026-07-13-0653 (SCT Agency Bot)
-- `a169a0b` chore: update processed Gumroad sales 2026-07-13-0253 (SCT Agency Bot)
-- `27a8f8c` chore: update processed Gumroad sales 2026-07-12-2250 (SCT Agency Bot)
-- `6717a7e` chore: update processed Gumroad sales 2026-07-12-2052 (SCT Agency Bot)
-- `466be42` chore: update processed Gumroad sales 2026-07-12-1907 (SCT Agency Bot)
-- `147df71` chore: update processed Gumroad sales 2026-07-12-1659 (SCT Agency Bot)
-- `67307bb` chore: update processed Gumroad sales 2026-07-12-1457 (SCT Agency Bot)
-- `b99f3a9` chore: update processed Gumroad sales 2026-07-12-1321 (SCT Agency Bot)
-- `b5e5b82` chore: update sitemap (0 URLs) (github-actions[bot])
-- `d834aa6` chore: update processed Gumroad sales 2026-07-12-1110 (SCT Agency Bot)
-- `f36641a` chore: update sitemap (0 URLs) (github-actions[bot])
-- `0fb82d5` chore: update processed Gumroad sales 2026-07-12-0951 (SCT Agency Bot)
-- `05fee55` chore: update sitemap (0 URLs) (github-actions[bot])
+- `7eba5a3` chore: update sitemap (0 URLs) (github-actions[bot])
+- `d28c393` chore: update sitemap (0 URLs) (github-actions[bot])
+- `45ba305` chore: update processed Gumroad sales 2026-07-20-0647 (SCT Agency Bot)
+- `83a725d` chore: update processed Gumroad sales 2026-07-20-0318 (SCT Agency Bot)
+- `92f384c` chore: update processed Gumroad sales 2026-07-19-2253 (SCT Agency Bot)
+- `443636b` chore: update processed Gumroad sales 2026-07-19-2051 (SCT Agency Bot)
+- `7034596` chore: update processed Gumroad sales 2026-07-19-1907 (SCT Agency Bot)
+- `a79d265` chore: update processed Gumroad sales 2026-07-19-1658 (SCT Agency Bot)
+- `e954103` chore: update processed Gumroad sales 2026-07-19-1456 (SCT Agency Bot)
+- `36a2d1c` chore: update processed Gumroad sales 2026-07-19-1319 (SCT Agency Bot)
+- `23e8a55` chore: update sitemap (0 URLs) (github-actions[bot])
+- `520a740` chore: update processed Gumroad sales 2026-07-19-1108 (SCT Agency Bot)
+- `fd30a05` chore: update sitemap (0 URLs) (github-actions[bot])
+- `a982222` chore: update processed Gumroad sales 2026-07-19-0952 (SCT Agency Bot)
+- `c7af102` chore: update sitemap (0 URLs) (github-actions[bot])
 
 ## Other Changes
 
-- `09dd69e` post:
-- `cae4fec` content: generate suite for 'Payhip'
-- `1e21688` post: Cold Email Automation: 200 Personalized Emails Per
-- `eaa438e` seo: add org+website schema
-- `72223fc` deliverables: 4-week content calendar
-- `68510a9` cameron: content plan 2026-07-13
-- `c4fe2b9` seo: add faq schema for agency
-- `fe9cb65` seo: add org+website schema
-- `f5370b2` intel: journalist tracker — 0 pitch windows
-- `b2f5c2b` post:
-- `e80c497` Publish article: best-website-builders-2026
-- `f45d3b4` omega: daily synthesis 2026-07-13
-- `4c75f71` learning: full analysis 2026-07-13
-- `58d290b` learning: system memory 2026-07-13
-- `24905f2` alert: counter-content staged — orange
-- `4d9198a` intel: daily reputation report — score 50
-- `f2b6703` seo: add faq schema for agency
-- `8d36c34` seo: add org+website schema
-- `62c57a0` intel: threat feed — 0 signals
-- `eb03a86` alert: counter-content staged — orange
-- `0235961` intel: daily reputation report — score 50
-- `c401845` sales: learning cycle 2026-07-13
-- `019a4aa` sales: learning cycle 2026-07-13
-- `05c7e38` intel: threat feed — 0 signals
-- `6383798` alert: counter-content staged — orange
-- `bc68084` intel: daily reputation report — score 50
-- `f66c32a` sales: learning cycle 2026-07-13
-- `82d65b5` sales: learning cycle 2026-07-13
-- `f3da31f` audit: 52d report 2026-07-12_2240
-- `d78316e` learning: system memory 2026-07-12
-- `3c16ba9` intel: threat feed — 0 signals
-- `0170848` alert: counter-content staged — orange
-- `5a05854` intel: daily reputation report — score 50
-- `0bc5f75` brain: knowledge base updated 2026-07-12
-- `da176b1` content: generate suite for 'client acquisition'
-- `0f6a7e5` marketing: weekly plan 2026-07-12
-- `f9158bc` intel: threat feed — 0 signals
-- `cc859f0` alert: counter-content staged — orange
-- `f23e4bb` intel: daily reputation report — score 50
-- `75ceaba` learning: system memory 2026-07-12
-- `3d1f021` closer: 0 replies processed
-- `8d865fc` brain: knowledge base updated 2026-07-12
-- `3c9042b` marketing: daily report 2026-07-12
-- `6bbe70d` intel: threat feed — 0 signals
-- `812df10` alert: counter-content staged — orange
-- `0043dd7` intel: daily reputation report — score 50
-- `de0e0fc` verify: output check 2026-07-12
-- `9d8b09a` alert: counter-content staged — orange
-- `d56dc90` intel: daily reputation report — score 50
-- `4c00ae4` intel: journalist tracker — 0 pitch windows
-- `fe422d4` post:
-- `b82631a` audit: effectiveness 2026-07-12
-- `7d3d72e` blake: finance 2026-07-12
-- `97c62ff` audit: 52d report 2026-07-12_1106
-- `f216b36` self-repair: auto-fix 2026-07-12_1103
-- `e50db2d` seo: add faq schema for agency
-- `0f49e7c` seo: add org+website schema
-- `4898d5f` Publish article: email-marketing-guide-2026
-- `b19d5f4` intel: threat feed — 0 signals
-- `5e8421c` alert: counter-content staged — orange
-- `e19f510` intel: daily reputation report — score 50
-- `d18da8a` content: generate suite for 'client acquisition'
-- `2745a88` 💹 Income report 2026-07-12
-- `9f01029` Add video scripts 2026-07-12
-- `c7a3e00` brain: knowledge base updated 2026-07-12
-- `de8ff5b` content: generate suite for 'client acquisition'
-- `52d83ee` marketing: weekly plan 2026-07-12
-- `698495c` post:
-- `b23d01b` content: generate suite for 'client acquisition'
-- `eb7cfed` deliverable: BLOG_POST registered (score: 7.8)
-- `930f752` post: How to Make $500/Month Passive Income from Bandwid
-- `06dd324` seo: add faq schema for agency
-- `1ce177d` seo: add org+website schema
-- `def6f50` deliverables: 4-week content calendar
-- `aa1606e` cameron: content plan 2026-07-12
-- `96d91a2` learning: full analysis 2026-07-12
-- `5a65402` learning: system memory 2026-07-12
-- `8262c6b` intel: journalist tracker — 0 pitch windows
-- `8303f95` seo: add faq schema for agency
-- `f7b98c0` post:
-- `b79dc65` Publish article: email-marketing-guide-2026
+- `391f47a` post:
+- `6ef03c5` content: generate suite for 'Etsy digital'
+- `0d2154a` deliverable: BLOG_POST registered (score: 7.8)
+- `23d076b` post: 63 AI Bots That Run a Business: Architecture Deep
+- `d8738d7` seo: add faq schema for agency
+- `a34e373` seo: add org+website schema
+- `c3cf1c6` deliverables: 4-week content calendar
+- `89d943c` Publish article: best-productivity-tools-2026
+- `0fc3d80` cameron: content plan 2026-07-20
+- `3eb3968` learning: full analysis 2026-07-20
+- `2cd039a` learning: system memory 2026-07-20
+- `21d98a7` intel: journalist tracker — 0 pitch windows
+- `e021c1a` seo: add faq schema for agency
+- `4b02478` post:
+- `b366cc6` Publish article: best-productivity-tools-2026
+- `a0fc6e2` omega: daily synthesis 2026-07-20
+- `c07b399` alert: counter-content staged — orange
+- `b6a7a57` intel: daily reputation report — score 50
+- `894f66f` seo: add faq schema for agency
+- `e01fe6a` seo: add org+website schema
+- `45b8add` 🎨 New Redbubble designs 2026-07-20
+- `515c76d` intel: threat feed — 0 signals
+- `8c3131a` alert: counter-content staged — orange
+- `edc4807` intel: daily reputation report — score 50
+- `ddfb6bc` sales: learning cycle 2026-07-20
+- `626db88` sales: learning cycle 2026-07-20
+- `534e842` intel: threat feed — 0 signals
+- `cae52e9` alert: counter-content staged — orange
+- `62dbb6f` intel: daily reputation report — score 50
+- `45be728` sales: learning cycle 2026-07-20
+- `cbef7fe` sales: learning cycle 2026-07-20
+- `fcb5922` audit: 52d report 2026-07-19_2244
+- `2b6eb98` learning: system memory 2026-07-19
+- `d540f96` intel: threat feed — 0 signals
+- `c048acc` alert: counter-content staged — orange
+- `a2af046` intel: daily reputation report — score 50
+- `adf96a9` brain: knowledge base updated 2026-07-19
+- `ea31a23` content: generate suite for 'solopreneur systems'
+- `fe6784c` marketing: weekly plan 2026-07-19
+- `c64320e` intel: threat feed — 0 signals
+- `dd4745c` alert: counter-content staged — orange
+- `d47414a` intel: daily reputation report — score 50
+- `8a1632f` learning: system memory 2026-07-19
+- `ef24185` closer: 0 replies processed
+- `53faf59` brain: knowledge base updated 2026-07-19
+- `53d9b79` marketing: daily report 2026-07-19
+- `d0f3ff6` intel: threat feed — 0 signals
+- `9c703d3` alert: counter-content staged — orange
+- `1531494` intel: daily reputation report — score 50
+- `5c8e784` verify: output check 2026-07-19
+- `8873650` post:
+- `ae596bf` audit: effectiveness 2026-07-19
+- `1d52b1c` blake: finance 2026-07-19
+- `6a4c836` audit: 52d report 2026-07-19_1106
+- `cf17bcd` self-repair: auto-fix 2026-07-19_1103
+- `3cc9010` seo: add faq schema for agency
+- `e31aac5` seo: add org+website schema
+- `65bed42` Publish article: how-to-make-money-blogging-2026
+- `2aa5cc1` intel: threat feed — 0 signals
+- `db7c466` alert: counter-content staged — orange
+- `1f957ab` intel: daily reputation report — score 50
+- `11665d7` content: generate suite for 'solopreneur systems'
+- `79e4585` 💹 Income report 2026-07-19
+- `4fd2c0e` Add video scripts 2026-07-19
+- `4099806` brain: knowledge base updated 2026-07-19
+- `eff99b5` content: generate suite for 'solopreneur systems'
+- `0c321d3` marketing: weekly plan 2026-07-19
+- `2ce5a7f` post:
+- `60b6734` content: generate suite for 'solopreneur systems'
+- `19e555f` deliverable: BLOG_POST registered (score: 7.8)
+- `cd88357` post: How to Build a Content Marketing System for Under
+- `078759f` seo: add faq schema for agency
+- `c8d9c0b` seo: add org+website schema
+- `81c647e` deliverables: 4-week content calendar
+- `e0f0699` cameron: content plan 2026-07-19
+- `7f81f1f` learning: full analysis 2026-07-19
+- `f917a65` learning: system memory 2026-07-19
+- `5e2bacb` intel: journalist tracker — 0 pitch windows
+- `72bd860` seo: add faq schema for agency
+- `10d4a4a` seo: add org+website schema
