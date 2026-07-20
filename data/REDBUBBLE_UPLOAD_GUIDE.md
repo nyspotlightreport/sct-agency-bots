@@ -12,26 +12,26 @@
 
 ## Designs Ready to Upload:
 
-- scorpio-dark-art.png → Scorpio Dark Art
-- nyc-skyline-minimal.png → Nyc Skyline Minimal
-- brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
-- nyc-map-typography.png → Nyc Map Typography
+- aquarius-mystical.png → Aquarius Mystical
+- times-square-neon.png → Times Square Neon
 - no-days-off.png → No Days Off
 - monday-vibes-off.png → Monday Vibes Off
+- golden-retriever-minimal.png → Golden Retriever Minimal
+- scorpio-dark-art.png → Scorpio Dark Art
+- geometric-mountains.png → Geometric Mountains
+- leo-constellation.png → Leo Constellation
 - hustle-daily-minimal.png → Hustle Daily Minimal
-- times-square-neon.png → Times Square Neon
+- brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
 - coffee-first-sarcastic.png → Coffee First Sarcastic
-- cactus-desert-vibes.png → Cactus Desert Vibes
-- introvert-recharge.png → Introvert Recharge
 - gradient-waves-abstract.png → Gradient Waves Abstract
-- aquarius-mystical.png → Aquarius Mystical
+- cactus-desert-vibes.png → Cactus Desert Vibes
 - moon-phases-minimal.png → Moon Phases Minimal
 - morning-routine-wins.png → Morning Routine Wins
+- introvert-recharge.png → Introvert Recharge
 - create-your-path.png → Create Your Path
 - cat-space-astronaut.png → Cat Space Astronaut
-- golden-retriever-minimal.png → Golden Retriever Minimal
-- leo-constellation.png → Leo Constellation
-- geometric-mountains.png → Geometric Mountains
+- nyc-skyline-minimal.png → Nyc Skyline Minimal
+- nyc-map-typography.png → Nyc Map Typography
 
 ## Expected Earnings
 - 20 designs × average $3/month = $60/month
