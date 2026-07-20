@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-07-20_111",
+    "type": "BLOG_POST",
+    "title": "63 AI Bots That Run a Business: Architecture Deep Dive",
+    "created": "2026-07-20T08:56:42.445188",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-07-19_110",
     "type": "BLOG_POST",
     "title": "How to Build a Content Marketing System for Under $200/Month",
