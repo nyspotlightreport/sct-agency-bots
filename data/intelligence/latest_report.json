@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-20T06:49:54.352391",
+  "timestamp": "2026-07-20T08:40:06.284082",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,9 +22,22 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
-  "brand_mention_count": 36,
+  "mention_count": 157,
+  "brand_mention_count": 37,
   "analyses": [
+    {
+      "source": "news",
+      "outlet": "Freerepublic.com",
+      "title": "Dead Body Found at House Owned by Squad Member Ayanna Pressley's Husband",
+      "body": "There\u2019s not a whole lot of information yet, but a corpse was found Saturday at a Boston-area property owned by Conan Harris, husband to Squad Member Rep. Ayanna Pressley (MA-7). The couple does not live in the house but rents it out to tenants.Here\u2019s what we \u2026",
+      "url": "https://freerepublic.com/focus/f-news/4388523/posts",
+      "published": "2026-07-19T02:48:00Z",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
     {
       "source": "google_news",
       "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
@@ -228,17 +241,6 @@
       "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
       "outlet": "Post and Courier",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
