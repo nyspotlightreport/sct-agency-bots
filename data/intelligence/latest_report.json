@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-22T02:48:43.676854",
+  "timestamp": "2026-07-22T06:31:12.388028",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 151,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -203,17 +203,6 @@
     },
     {
       "source": "google_news",
-      "title": "Best-Selling Author Todd Thomas Launches Starving for Innovation, A Bold New Book Challenging Organizations to Rethink How Innovation Really Happens - Mid Florida Newspapers",
-      "url": "https://news.google.com/rss/articles/CBMirgJBVV95cUxOdHdoQ0tjamIwTUxVNGczMW9HWFR6ZEFraFI5T0Q4WTJ3RUE2elpnQmpLMFpXM0ZBZkNXamllSTVVOFpJWXdmcHFQcXMzRDViaXdPcjZxOTliLTVHT2xraDU2S3BLd0NnX1NxemlUUWhiblZfNkkzWXc3NjVQNllzcWtJYjF0OXdHWFluS0ZvSVhZTmJBNE5iZVRrM2hqUlBOV2NXbElxMGVFRjhoUGE4SU9PTDRIM2FncmprcV9VN2NuRlJkaGtETlU0LVR2NXV5U1Z5T3BfZUhpWWRRZHY0eE1sVHR3VmNhLVhoTDR4VVFtZWhtUmhJZGNnQWlISGY5U182ZExpeEozaGgtc3lqaXlLRlNlVkhVVVo4UmhvQmFaaEEzV29WZ0xqem1zUQ?oc=5",
-      "outlet": "Mid Florida Newspapers",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - The Philadelphia Tribune",
       "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
       "outlet": "The Philadelphia Tribune",
@@ -239,6 +228,17 @@
       "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
       "outlet": "Robesonian",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
