@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-21T21:12:55.157079",
+  "timestamp": "2026-07-22T02:48:43.676854",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 146,
+  "mention_count": 152,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Luther Thomas Clowney Obituary Jul 11, 2026 - Callaham-Hicks Funeral Home",
+      "title": "Luther Thomas Clowney Obituary Jul 11, 2026 - Callaham-Hicks &amp; Leeside Funeral Home",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1xTTF5Qnl0emVPMnh1cF9qT2Z1QkNTdDd4dWRCTTdhRkR0QzBpQlJNNTJYTW1fUkFyV3U3Vm5md0Z2Sm1ZOVc5N216MFpZaWdNYS02U2Z4YkFpZ1lpSTZ2cUp6Wm4zLVdMZFExUw?oc=5",
-      "outlet": "Callaham-Hicks Funeral Home",
+      "outlet": "Callaham-Hicks &amp; Leeside Funeral Home",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
