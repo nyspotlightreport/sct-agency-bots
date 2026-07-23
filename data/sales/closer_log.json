@@ -1,5 +1,10 @@
 [
   {
+    "date": "2026-07-23",
+    "replies_processed": 0,
+    "results": []
+  },
+  {
     "date": "2026-07-22",
     "replies_processed": 0,
     "results": []
@@ -141,11 +146,6 @@
   },
   {
     "date": "2026-06-24",
-    "replies_processed": 0,
-    "results": []
-  },
-  {
-    "date": "2026-06-23",
     "replies_processed": 0,
     "results": []
   }
