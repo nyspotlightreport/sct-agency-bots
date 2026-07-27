@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-27T17:45:13.426522",
+  "timestamp": "2026-07-27T20:17:51.484423",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -27,9 +27,9 @@
   "analyses": [
     {
       "source": "google_news",
-      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - CBS News",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMERaeGM5dmFWTHltWXRJaVQyaVRRMHh3M0ptLXdqQ19mT1JNS1J2TC1ialVNY2tqTW40dm5ISDl0Z3psdk52SUpJN1RoenZvTEtUOXc1c3BjOF9QdGhDQk9tRHZheEVBTUNRVmQxUjhWUVNOdHQ3ajJkS3JCZ3VTUEY5TUxLcVVfdTliWUpTMA?oc=5",
-      "outlet": "CBS News",
+      "title": "Poverty Tracker Spotlight Report: Food Budget Shortfalls in NYC - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFBKaWZtcnVuSGRTSnZoNkFmOGlKNnRWdjlRZnNrRF9tRU9pWDJYQzFGaUV4cHhmc0Y5LTdlUlI0SlFNTEdOOUY3YU5SSDlWbDZBN0VTSWI4V0l3UXhCRUJMU3gyWUZHcnJKQjlFd3BWeUgzaDRoSTV0N1BIaG5Ja05Yai10Z2h6ZTNB?oc=5",
+      "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -38,9 +38,9 @@
     },
     {
       "source": "google_news",
-      "title": "Poverty Tracker Spotlight Report: Food Budget Shortfalls in NYC - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFBKaWZtcnVuSGRTSnZoNkFmOGlKNnRWdjlRZnNrRF9tRU9pWDJYQzFGaUV4cHhmc0Y5LTdlUlI0SlFNTEdOOUY3YU5SSDlWbDZBN0VTSWI4V0l3UXhCRUJMU3gyWUZHcnJKQjlFd3BWeUgzaDRoSTV0N1BIaG5Ja05Yai10Z2h6ZTNB?oc=5",
-      "outlet": "robinhood.org",
+      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - CBS News",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMERaeGM5dmFWTHltWXRJaVQyaVRRMHh3M0ptLXdqQ19mT1JNS1J2TC1ialVNY2tqTW40dm5ISDl0Z3psdk52SUpJN1RoenZvTEtUOXc1c3BjOF9QdGhDQk9tRHZheEVBTUNRVmQxUjhWUVNOdHQ3ajJkS3JCZ3VTUEY5TUxLcVVfdTliWUpTMA?oc=5",
+      "outlet": "CBS News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
