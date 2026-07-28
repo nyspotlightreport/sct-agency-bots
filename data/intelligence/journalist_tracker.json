@@ -1,5 +1,14 @@
 {
-  "date": "2026-07-27",
+  "date": "2026-07-28",
   "pitchable": [],
-  "haro": []
+  "haro": [
+    {
+      "pattern": "AI writing tools",
+      "article": "Best Password Manager of 2026: Expert Recommendations for Your Credential Security.",
+      "outlet": "TechRadar",
+      "url": "https://www.techradar.com/pro/security/best-password-manager-of-2026-expert-recommendations-for-your-credential-security",
+      "published": "2026-07-26T21:12:06Z",
+      "pitch_window": "24-48h"
+    }
+  ]
 }
