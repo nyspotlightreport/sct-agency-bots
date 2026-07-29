@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-29T08:19:35.091603",
+  "timestamp": "2026-07-29T09:34:20.446149",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 166,
-  "brand_mention_count": 36,
+  "mention_count": 169,
+  "brand_mention_count": 37,
   "analyses": [
     {
       "source": "google_news",
@@ -203,6 +203,17 @@
     },
     {
       "source": "google_news",
+      "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - House Digest",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRmVpX2hWSXhsX1hqd1RGUHZiVmJlQ0tJZkpnV3Q2aVhidm15RnU4bEg3ci1iX3dzV2Z6b2NRUEMteVdDdUltLXQzRGlYU2lIUUNJdkhDRWlJeU5uaHhzZ1hoaUdxTXFqaUlDYVhTcXB0b3BzbGZEVjBhY284ZHExZTh5Z01Ta0pmUnc?oc=5",
+      "outlet": "House Digest",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
       "outlet": "Robesonian",
@@ -228,17 +239,6 @@
       "title": "Frank Edward Taylor Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSlpvbHhNVHJMOE41eFUySUlkRVhEOHdmVy1xeGUxN1pWNzdvTUR5N0dqNUNXOXlwQmlVMGJqS3MzYnY2M2dKd01Hd05ha3pIZUtDUDdWTTRhX2FnRkFHeW9xdDZOV0duUHVoYUZYc3NCLVpBczlrQjl1UFRsTjAwZA?oc=5",
       "outlet": "Legacy obituary",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
-      "outlet": "The Augusta Press",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
