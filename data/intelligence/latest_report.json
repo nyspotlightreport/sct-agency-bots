@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-29T10:41:37.528585",
+  "timestamp": "2026-07-29T14:14:17.867067",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,14 +22,14 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 154,
-  "brand_mention_count": 37,
+  "mention_count": 153,
+  "brand_mention_count": 36,
   "analyses": [
     {
       "source": "google_news",
-      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - CBS News",
+      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - cbsnews.com",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMERaeGM5dmFWTHltWXRJaVQyaVRRMHh3M0ptLXdqQ19mT1JNS1J2TC1ialVNY2tqTW40dm5ISDl0Z3psdk52SUpJN1RoenZvTEtUOXc1c3BjOF9QdGhDQk9tRHZheEVBTUNRVmQxUjhWUVNOdHQ3ajJkS3JCZ3VTUEY5TUxLcVVfdTliWUpTMA?oc=5",
-      "outlet": "CBS News",
+      "outlet": "cbsnews.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - Forbes",
+      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - forbes.com",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNU83YjJPMWlZYnN6YU1ZaFZBa2E3REIzTC1PMDRBcWhCXzE2TWZxSDBqZTA2MnVLMXlKalJ2Z2pxNjQzWVFiTXdua0ZVclR0MW1Ra3E2UHBFY3dhaW9EUGF4N0M4Nm9sU0dvR2xsclNCMkN0U1l2YTdSX2xiWkNVQXgwc20zQzh4dWdDYWJ2UFVBTU5mVzNwMkVTeGhLeDV0QXVoRXhaYWxUS2FSR095dll2MEc?oc=5",
-      "outlet": "Forbes",
+      "outlet": "forbes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -195,17 +195,6 @@
       "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - NUS - National University of Singapore",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZnVFd3l1YVFQMGdmb3BrWVRuQzhOZjFwRklPVnI0RTRPY1NrUFJSUkJMaE0wUTkzcnJ3UU9jN2hWczhoMXpBckJqU2syZFZ2eUhKbG5zWEpnOExOQlp2bGlHbmVsVy1kM1YtUlNLLXFfRFlnSXByT3Z3anhWejlTNFhPV1hNaXVGV3Q0TGVnbHpoWHJSRlBVNTdVVzV4eWF4a2JlcnhB?oc=5",
       "outlet": "NUS - National University of Singapore",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - House Digest",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRmVpX2hWSXhsX1hqd1RGUHZiVmJlQ0tJZkpnV3Q2aVhidm15RnU4bEg3ci1iX3dzV2Z6b2NRUEMteVdDdUltLXQzRGlYU2lIUUNJdkhDRWlJeU5uaHhzZ1hoaUdxTXFqaUlDYVhTcXB0b3BzbGZEVjBhY284ZHExZTh5Z01Ta0pmUnc?oc=5",
-      "outlet": "House Digest",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +225,20 @@
     },
     {
       "source": "google_news",
-      "title": "Frank Edward Taylor Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy obituary",
+      "title": "Frank Edward Taylor Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - legacy.com",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSlpvbHhNVHJMOE41eFUySUlkRVhEOHdmVy1xeGUxN1pWNzdvTUR5N0dqNUNXOXlwQmlVMGJqS3MzYnY2M2dKd01Hd05ha3pIZUtDUDdWTTRhX2FnRkFHeW9xdDZOV0duUHVoYUZYc3NCLVpBczlrQjl1UFRsTjAwZA?oc=5",
-      "outlet": "Legacy obituary",
+      "outlet": "legacy.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
+      "outlet": "The Augusta Press",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
