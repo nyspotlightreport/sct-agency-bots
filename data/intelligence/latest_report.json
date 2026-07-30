@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-30T17:37:14.819383",
+  "timestamp": "2026-07-30T20:12:35.987789",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,9 +22,22 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
-  "brand_mention_count": 37,
+  "mention_count": 195,
+  "brand_mention_count": 38,
   "analyses": [
+    {
+      "source": "news",
+      "outlet": "Awful Announcing",
+      "title": "TV and streaming viewing picks for July 29, 2026: How to watch MLS All-Star Game",
+      "body": "All Times Eastern Australian Rules Football AFL Men\u2019s \u2014 Round 21 Collingwood Magpies vs. Geelong Cats \u2014 Fox Soccer Plus, 5:30 a.m. Basketball The Basketball Tournament Semifinal Alumni Championship, Memorial Coliseum, University of Kentucky, Lexington, KY JHX\u2026",
+      "url": "https://awfulannouncing.com/viewing-picks/july-29-2026-watch-mls-all-star-game.html",
+      "published": "2026-07-29T11:00:33Z",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
     {
       "source": "google_news",
       "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
@@ -60,9 +73,9 @@
     },
     {
       "source": "google_news",
-      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - CBS News",
+      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - cbsnews.com",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMERaeGM5dmFWTHltWXRJaVQyaVRRMHh3M0ptLXdqQ19mT1JNS1J2TC1ialVNY2tqTW40dm5ISDl0Z3psdk52SUpJN1RoenZvTEtUOXc1c3BjOF9QdGhDQk9tRHZheEVBTUNRVmQxUjhWUVNOdHQ3ajJkS3JCZ3VTUEY5TUxLcVVfdTliWUpTMA?oc=5",
-      "outlet": "CBS News",
+      "outlet": "cbsnews.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -93,9 +106,9 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - nytimes.com",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
+      "outlet": "nytimes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -137,9 +150,9 @@
     },
     {
       "source": "google_news",
-      "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - dragillustrated.com",
+      "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - Drag Illustrated",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOSk1tVlVOcDZrVThkQXdZZ1pZNnE4YkQ5dHcycFRkcFZ5TDZGVUxGN2JlcDNOV0JzLWtpNkp2VzNuVGdsN0FXRTJYOUhsd1EzeDFuQ3N1VE0yRmEtR2ZyNzVYOFNJeThlMzFXVWxzWjNhWmF0RWR3ams3WUJCTkJSbHhXSUlUZmxUY0IzVE5mSWhFMDAwUkdYR1BkZEZHX1JfRk1RdkxZUGlveFhxWUVid0YyYTJOTnBZaGZDVU1md21lRVpsVDVvYi1qUEcySXVWRjN1Wkw0Wm8tS0lndWc3ekZwSjZQeEg3?oc=5",
-      "outlet": "dragillustrated.com",
+      "outlet": "Drag Illustrated",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,9 +172,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
+      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - biz.chosun.com",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "Chosunbiz",
+      "outlet": "biz.chosun.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,9 +194,9 @@
     },
     {
       "source": "google_news",
-      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - Forbes",
+      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - forbes.com",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNU83YjJPMWlZYnN6YU1ZaFZBa2E3REIzTC1PMDRBcWhCXzE2TWZxSDBqZTA2MnVLMXlKalJ2Z2pxNjQzWVFiTXdua0ZVclR0MW1Ra3E2UHBFY3dhaW9EUGF4N0M4Nm9sU0dvR2xsclNCMkN0U1l2YTdSX2xiWkNVQXgwc20zQzh4dWdDYWJ2UFVBTU5mVzNwMkVTeGhLeDV0QXVoRXhaYWxUS2FSR095dll2MEc?oc=5",
-      "outlet": "Forbes",
+      "outlet": "forbes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,20 +238,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - robesonian.com",
+      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
-      "outlet": "robesonian.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "Post and Courier",
+      "outlet": "Robesonian",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
