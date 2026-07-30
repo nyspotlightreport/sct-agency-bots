@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-30T14:06:22.721483",
+  "timestamp": "2026-07-30T17:37:14.819383",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -27,9 +27,9 @@
   "analyses": [
     {
       "source": "google_news",
-      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - cbsnews.com",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMERaeGM5dmFWTHltWXRJaVQyaVRRMHh3M0ptLXdqQ19mT1JNS1J2TC1ialVNY2tqTW40dm5ISDl0Z3psdk52SUpJN1RoenZvTEtUOXc1c3BjOF9QdGhDQk9tRHZheEVBTUNRVmQxUjhWUVNOdHQ3ajJkS3JCZ3VTUEY5TUxLcVVfdTliWUpTMA?oc=5",
-      "outlet": "cbsnews.com",
+      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
+      "outlet": "Akron Beacon Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -38,8 +38,8 @@
     },
     {
       "source": "google_news",
-      "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
+      "title": "Poverty Tracker Spotlight Report: Food Budget Shortfalls in NYC - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFBKaWZtcnVuSGRTSnZoNkFmOGlKNnRWdjlRZnNrRF9tRU9pWDJYQzFGaUV4cHhmc0Y5LTdlUlI0SlFNTEdOOUY3YU5SSDlWbDZBN0VTSWI4V0l3UXhCRUJMU3gyWUZHcnJKQjlFd3BWeUgzaDRoSTV0N1BIaG5Ja05Yai10Z2h6ZTNB?oc=5",
       "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -60,9 +60,42 @@
     },
     {
       "source": "google_news",
+      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - CBS News",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMERaeGM5dmFWTHltWXRJaVQyaVRRMHh3M0ptLXdqQ19mT1JNS1J2TC1ialVNY2tqTW40dm5ISDl0Z3psdk52SUpJN1RoenZvTEtUOXc1c3BjOF9QdGhDQk9tRHZheEVBTUNRVmQxUjhWUVNOdHQ3ajJkS3JCZ3VTUEY5TUxLcVVfdTliWUpTMA?oc=5",
+      "outlet": "CBS News",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
+      "outlet": "robinhood.org",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - Paulick Report",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVFBnWG5JQndQQjZCd09PR1dTSFhMS2Nsb0xGZW1vTndDSjBRaUNCMFpXVG5obUt5V0g2cHdnNWV6Z0hTdlRMUzg2WEo5TzY1cnBnOWJMUnV6MkxXUmU3elZGWFpjTlNISVB2TVJjS3pISjFWQ244QmVMRERndm5fZkJkcHg1dmNGb09JRDVFX1VBVDQ0Q1U5SWJCajF1MmhMdmx0bktTVXhBaHdZSk1LT2pLV0Vxa1pobTNSRFAxb0pHYmc2M3c0WnYxU0ZqR3lZQUxqX2hpRkpKcmxBWm9v?oc=5",
       "outlet": "Paulick Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -93,9 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
-      "outlet": "Paulick Report",
+      "title": "NYC\u2019s Economy: Overview and Prospects - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8yVGgtNWhGWXEwV2h1RGsta1NxSU1WeXctdVZLZWs5eHBuc284MF9sT2tod3NSaEd4TW1lY3ZIYU9ZMWt5TWVHQXEtTVNoYkN5ZUNjb0tSb013VjhzQXhrLTZRT3AzUVBvSHlfdDJxckw?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -104,42 +137,9 @@
     },
     {
       "source": "google_news",
-      "title": "Poverty Tracker Spotlight Report: Food Budget Shortfalls in NYC - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFBKaWZtcnVuSGRTSnZoNkFmOGlKNnRWdjlRZnNrRF9tRU9pWDJYQzFGaUV4cHhmc0Y5LTdlUlI0SlFNTEdOOUY3YU5SSDlWbDZBN0VTSWI4V0l3UXhCRUJMU3gyWUZHcnJKQjlFd3BWeUgzaDRoSTV0N1BIaG5Ja05Yai10Z2h6ZTNB?oc=5",
-      "outlet": "robinhood.org",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: The World Is Illmatic\u2019s After Head-Turning Score - Paulick Report",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNZmt5UmllS3VQc0E3Uk14RmtzUnNPLU9keTJsNnZYYWZodEVHS3ZqMXV4Mm9FTjlmN1FvcWRsb1FiR2lmZWxZd1pZTDZreVBMSGFzREtKNXloeGZ2bllmQ1V0UEd2YVc4MDJTUmZnU1RYODhLZUMxQUFIM3g0bVpBM0hxUW1KNXpEa3R2dkczeDFUVWxxdlVld3ZCd29wQTctN2RzcHJVZExQR0EySWxDOC1Xay1jd0FyNWlGbHN4Mk51aHNwTS16SUtuRGliSEtlZWF1aGRNb2NCSXU0?oc=5",
-      "outlet": "Paulick Report",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - Drag Illustrated",
+      "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - dragillustrated.com",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOSk1tVlVOcDZrVThkQXdZZ1pZNnE4YkQ5dHcycFRkcFZ5TDZGVUxGN2JlcDNOV0JzLWtpNkp2VzNuVGdsN0FXRTJYOUhsd1EzeDFuQ3N1VE0yRmEtR2ZyNzVYOFNJeThlMzFXVWxzWjNhWmF0RWR3ams3WUJCTkJSbHhXSUlUZmxUY0IzVE5mSWhFMDAwUkdYR1BkZEZHX1JfRk1RdkxZUGlveFhxWUVid0YyYTJOTnBZaGZDVU1md21lRVpsVDVvYi1qUEcySXVWRjN1Wkw0Wm8tS0lndWc3ekZwSjZQeEg3?oc=5",
-      "outlet": "Drag Illustrated",
+      "outlet": "dragillustrated.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
+      "title": "Thomas earns regional Entrepreneur of the Year award - robesonian.com",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
-      "outlet": "Robesonian",
+      "outlet": "robesonian.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
