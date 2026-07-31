@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-31T14:12:15.839513",
+  "timestamp": "2026-07-31T17:40:39.828642",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 153,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -49,17 +49,6 @@
     },
     {
       "source": "google_news",
-      "title": "ICE Shootings Put Spotlight on Lack of Body Cameras - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBndGlLUDk4dzBsMHQ1OXVHZ2RRbmpQck1zMmM5NTFwME5XTmtvQUNlcjhpTXNmWDY5OGk0Tl9XREtiY2RvT2RZeG9Kd1EyanozMmhMRzVMZFpNT1lfQS02ZVgxUHdKOF9aUkZEdVNhRnlNX05MZmYw?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
       "outlet": "robinhood.org",
@@ -71,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "spotlightreport.net",
+      "outlet": "Spotlight Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -137,6 +126,17 @@
     },
     {
       "source": "google_news",
+      "title": "Poverty Tracker Spotlight Report: Food Budget Shortfalls in NYC - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFBKaWZtcnVuSGRTSnZoNkFmOGlKNnRWdjlRZnNrRF9tRU9pWDJYQzFGaUV4cHhmc0Y5LTdlUlI0SlFNTEdOOUY3YU5SSDlWbDZBN0VTSWI4V0l3UXhCRUJMU3gyWUZHcnJKQjlFd3BWeUgzaDRoSTV0N1BIaG5Ja05Yai10Z2h6ZTNB?oc=5",
+      "outlet": "robinhood.org",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - Drag Illustrated",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOSk1tVlVOcDZrVThkQXdZZ1pZNnE4YkQ5dHcycFRkcFZ5TDZGVUxGN2JlcDNOV0JzLWtpNkp2VzNuVGdsN0FXRTJYOUhsd1EzeDFuQ3N1VE0yRmEtR2ZyNzVYOFNJeThlMzFXVWxzWjNhWmF0RWR3ams3WUJCTkJSbHhXSUlUZmxUY0IzVE5mSWhFMDAwUkdYR1BkZEZHX1JfRk1RdkxZUGlveFhxWUVid0YyYTJOTnBZaGZDVU1md21lRVpsVDVvYi1qUEcySXVWRjN1Wkw0Wm8tS0lndWc3ekZwSjZQeEg3?oc=5",
       "outlet": "Drag Illustrated",
@@ -170,9 +170,9 @@
     },
     {
       "source": "google_news",
-      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - theindependent.sg",
+      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
-      "outlet": "theindependent.sg",
+      "outlet": "The Independent Singapore News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - House Digest",
+      "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - housedigest.com",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRmVpX2hWSXhsX1hqd1RGUHZiVmJlQ0tJZkpnV3Q2aVhidm15RnU4bEg3ci1iX3dzV2Z6b2NRUEMteVdDdUltLXQzRGlYU2lIUUNJdkhDRWlJeU5uaHhzZ1hoaUdxTXFqaUlDYVhTcXB0b3BzbGZEVjBhY284ZHExZTh5Z01Ta0pmUnc?oc=5",
-      "outlet": "House Digest",
+      "outlet": "housedigest.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
