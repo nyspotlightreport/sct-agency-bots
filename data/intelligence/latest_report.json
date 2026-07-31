@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-31T06:46:49.998727",
+  "timestamp": "2026-07-31T08:33:49.439802",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,14 +22,14 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 163,
   "brand_mention_count": 37,
   "analyses": [
     {
       "source": "google_news",
-      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - beaconjournal.com",
+      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
-      "outlet": "beaconjournal.com",
+      "outlet": "Akron Beacon Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -60,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - CBS News",
+      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - cbsnews.com",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMERaeGM5dmFWTHltWXRJaVQyaVRRMHh3M0ptLXdqQ19mT1JNS1J2TC1ialVNY2tqTW40dm5ISDl0Z3psdk52SUpJN1RoenZvTEtUOXc1c3BjOF9QdGhDQk9tRHZheEVBTUNRVmQxUjhWUVNOdHQ3ajJkS3JCZ3VTUEY5TUxLcVVfdTliWUpTMA?oc=5",
-      "outlet": "CBS News",
+      "outlet": "cbsnews.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -71,20 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "ICE Shootings Put Spotlight on Lack of Body Cameras - nytimes.com",
+      "title": "ICE Shootings Put Spotlight on Lack of Body Cameras - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBndGlLUDk4dzBsMHQ1OXVHZ2RRbmpQck1zMmM5NTFwME5XTmtvQUNlcjhpTXNmWDY5OGk0Tl9XREtiY2RvT2RZeG9Kd1EyanozMmhMRzVMZFpNT1lfQS02ZVgxUHdKOF9aUkZEdVNhRnlNX05MZmYw?oc=5",
-      "outlet": "nytimes.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - Paulick Report",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVFBnWG5JQndQQjZCd09PR1dTSFhMS2Nsb0xGZW1vTndDSjBRaUNCMFpXVG5obUt5V0g2cHdnNWV6Z0hTdlRMUzg2WEo5TzY1cnBnOWJMUnV6MkxXUmU3elZGWFpjTlNISVB2TVJjS3pISjFWQ244QmVMRERndm5fZkJkcHg1dmNGb09JRDVFX1VBVDQ0Q1U5SWJCajF1MmhMdmx0bktTVXhBaHdZSk1LT2pLV0Vxa1pobTNSRFAxb0pHYmc2M3c0WnYxU0ZqR3lZQUxqX2hpRkpKcmxBWm9v?oc=5",
-      "outlet": "Paulick Report",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -96,6 +85,17 @@
       "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
       "outlet": "robinhood.org",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVFBnWG5JQndQQjZCd09PR1dTSFhMS2Nsb0xGZW1vTndDSjBRaUNCMFpXVG5obUt5V0g2cHdnNWV6Z0hTdlRMUzg2WEo5TzY1cnBnOWJMUnV6MkxXUmU3elZGWFpjTlNISVB2TVJjS3pISjFWQ244QmVMRERndm5fZkJkcHg1dmNGb09JRDVFX1VBVDQ0Q1U5SWJCajF1MmhMdmx0bktTVXhBaHdZSk1LT2pLV0Vxa1pobTNSRFAxb0pHYmc2M3c0WnYxU0ZqR3lZQUxqX2hpRkpKcmxBWm9v?oc=5",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,9 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - biz.chosun.com",
+      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "biz.chosun.com",
+      "outlet": "Chosunbiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -170,9 +170,9 @@
     },
     {
       "source": "google_news",
-      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - theindependent.sg",
+      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
-      "outlet": "theindependent.sg",
+      "outlet": "The Independent Singapore News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - housedigest.com",
+      "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - House Digest",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRmVpX2hWSXhsX1hqd1RGUHZiVmJlQ0tJZkpnV3Q2aVhidm15RnU4bEg3ci1iX3dzV2Z6b2NRUEMteVdDdUltLXQzRGlYU2lIUUNJdkhDRWlJeU5uaHhzZ1hoaUdxTXFqaUlDYVhTcXB0b3BzbGZEVjBhY284ZHExZTh5Z01Ta0pmUnc?oc=5",
-      "outlet": "housedigest.com",
+      "outlet": "House Digest",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
