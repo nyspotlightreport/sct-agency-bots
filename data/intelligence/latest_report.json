@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-01T13:24:30.244528",
+  "timestamp": "2026-08-01T17:04:12.969556",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "SRMC intern develops passion for entrepreneurship - theaugustapress.com",
+      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
-      "outlet": "theaugustapress.com",
+      "outlet": "The Augusta Press",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
