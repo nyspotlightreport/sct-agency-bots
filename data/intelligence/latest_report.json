@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-02T08:05:05.518031",
+  "timestamp": "2026-08-02T09:59:24.249911",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 162,
+  "mention_count": 153,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -137,9 +137,9 @@
     },
     {
       "source": "google_news",
-      "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - Drag Illustrated",
+      "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - dragillustrated.com",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOSk1tVlVOcDZrVThkQXdZZ1pZNnE4YkQ5dHcycFRkcFZ5TDZGVUxGN2JlcDNOV0JzLWtpNkp2VzNuVGdsN0FXRTJYOUhsd1EzeDFuQ3N1VE0yRmEtR2ZyNzVYOFNJeThlMzFXVWxzWjNhWmF0RWR3ams3WUJCTkJSbHhXSUlUZmxUY0IzVE5mSWhFMDAwUkdYR1BkZEZHX1JfRk1RdkxZUGlveFhxWUVid0YyYTJOTnBZaGZDVU1md21lRVpsVDVvYi1qUEcySXVWRjN1Wkw0Wm8tS0lndWc3ekZwSjZQeEg3?oc=5",
-      "outlet": "Drag Illustrated",
+      "outlet": "dragillustrated.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy | Obituary Search",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYllxSTlmX1FVMFM5bEFLNnBLMkV6ZlFtM3FWSnZmVkN0bHFQUnVibnkxdlhWNVhaUEpaTS1TOWtUTWVULXkta29qNWVCa0hzVjdBNXVaOTltdlZudmhodmNfX1V6NV9oRnFHS1lJamRMYzVXU0N4Z2ZXMGxsTXNDM2NNMVg?oc=5",
-      "outlet": "Legacy | Obituary Search",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
       "outlet": "Robesonian",
@@ -239,6 +228,17 @@
       "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - obits.postandcourier.com",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
       "outlet": "obits.postandcourier.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy | Obituary Search",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYllxSTlmX1FVMFM5bEFLNnBLMkV6ZlFtM3FWSnZmVkN0bHFQUnVibnkxdlhWNVhaUEpaTS1TOWtUTWVULXkta29qNWVCa0hzVjdBNXVaOTltdlZudmhodmNfX1V6NV9oRnFHS1lJamRMYzVXU0N4Z2ZXMGxsTXNDM2NNMVg?oc=5",
+      "outlet": "Legacy | Obituary Search",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
