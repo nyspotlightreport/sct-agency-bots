@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-02T06:35:28.523384",
+  "timestamp": "2026-08-02T08:05:05.518031",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 162,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - legacy.com",
+      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy | Obituary Search",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYllxSTlmX1FVMFM5bEFLNnBLMkV6ZlFtM3FWSnZmVkN0bHFQUnVibnkxdlhWNVhaUEpaTS1TOWtUTWVULXkta29qNWVCa0hzVjdBNXVaOTltdlZudmhodmNfX1V6NV9oRnFHS1lJamRMYzVXU0N4Z2ZXMGxsTXNDM2NNMVg?oc=5",
-      "outlet": "legacy.com",
+      "outlet": "Legacy | Obituary Search",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
