@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-02T13:25:40.327680",
+  "timestamp": "2026-08-02T17:02:26.697391",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -93,9 +93,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - paulickreport.com",
+      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - Paulick Report",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVFBnWG5JQndQQjZCd09PR1dTSFhMS2Nsb0xGZW1vTndDSjBRaUNCMFpXVG5obUt5V0g2cHdnNWV6Z0hTdlRMUzg2WEo5TzY1cnBnOWJMUnV6MkxXUmU3elZGWFpjTlNISVB2TVJjS3pISjFWQ244QmVMRERndm5fZkJkcHg1dmNGb09JRDVFX1VBVDQ0Q1U5SWJCajF1MmhMdmx0bktTVXhBaHdZSk1LT2pLV0Vxa1pobTNSRFAxb0pHYmc2M3c0WnYxU0ZqR3lZQUxqX2hpRkpKcmxBWm9v?oc=5",
-      "outlet": "paulickreport.com",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -104,9 +104,9 @@
     },
     {
       "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - nytimes.com",
+      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "nytimes.com",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - obits.postandcourier.com",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "Post and Courier",
+      "outlet": "obits.postandcourier.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy obituary",
+      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - legacy.com",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYllxSTlmX1FVMFM5bEFLNnBLMkV6ZlFtM3FWSnZmVkN0bHFQUnVibnkxdlhWNVhaUEpaTS1TOWtUTWVULXkta29qNWVCa0hzVjdBNXVaOTltdlZudmhodmNfX1V6NV9oRnFHS1lJamRMYzVXU0N4Z2ZXMGxsTXNDM2NNMVg?oc=5",
-      "outlet": "Legacy obituary",
+      "outlet": "legacy.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
