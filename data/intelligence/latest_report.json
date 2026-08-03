@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T07:29:19.616089",
+  "timestamp": "2026-08-03T09:20:54.597757",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 158,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "Spotlight Report",
+      "outlet": "spotlightreport.net",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy obituary",
+      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - legacy.com",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYllxSTlmX1FVMFM5bEFLNnBLMkV6ZlFtM3FWSnZmVkN0bHFQUnVibnkxdlhWNVhaUEpaTS1TOWtUTWVULXkta29qNWVCa0hzVjdBNXVaOTltdlZudmhodmNfX1V6NV9oRnFHS1lJamRMYzVXU0N4Z2ZXMGxsTXNDM2NNMVg?oc=5",
-      "outlet": "Legacy obituary",
+      "outlet": "legacy.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
