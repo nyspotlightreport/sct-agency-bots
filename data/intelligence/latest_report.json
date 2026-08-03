@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T09:20:54.597757",
+  "timestamp": "2026-08-03T10:36:19.197638",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 158,
+  "mention_count": 154,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "spotlightreport.net",
+      "outlet": "Spotlight Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,9 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - biz.chosun.com",
+      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "biz.chosun.com",
+      "outlet": "Chosunbiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - legacy.com",
+      "title": "Brandon Donald Johnson Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOYllxSTlmX1FVMFM5bEFLNnBLMkV6ZlFtM3FWSnZmVkN0bHFQUnVibnkxdlhWNVhaUEpaTS1TOWtUTWVULXkta29qNWVCa0hzVjdBNXVaOTltdlZudmhodmNfX1V6NV9oRnFHS1lJamRMYzVXU0N4Z2ZXMGxsTXNDM2NNMVg?oc=5",
-      "outlet": "legacy.com",
+      "outlet": "Legacy obituary",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
