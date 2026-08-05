@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-05T06:30:37.146566",
+  "timestamp": "2026-08-05T08:16:37.613029",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 156,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -38,9 +38,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - beaconjournal.com",
+      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
-      "outlet": "beaconjournal.com",
+      "outlet": "Akron Beacon Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -115,9 +115,9 @@
     },
     {
       "source": "google_news",
-      "title": "Top U.S. Markets for Investment in 2025: Manhattan, N.Y., &amp; Washington, D.C. Share Spotlight - commercialcafe.com",
+      "title": "Top U.S. Markets for Investment in 2025: Manhattan, N.Y., &amp; Washington, D.C. Share Spotlight - CommercialCafe",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9mZm1RbDRROU1ta3NMZW1XWWJtOUdiRVBpZEN5SWJOSnJVRmJaLS1wdGQ2TE8wZnp2T1A2TnJ5WVVNZzNpYm9XVk9EZ0JxLW0yckNDS3pFVTBZaktiU1FZSUdSZHlIZEExckJnYVBFb0F1OEhicTRvR1pmWQ?oc=5",
-      "outlet": "commercialcafe.com",
+      "outlet": "CommercialCafe",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - House Digest",
+      "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - housedigest.com",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRmVpX2hWSXhsX1hqd1RGUHZiVmJlQ0tJZkpnV3Q2aVhidm15RnU4bEg3ci1iX3dzV2Z6b2NRUEMteVdDdUltLXQzRGlYU2lIUUNJdkhDRWlJeU5uaHhzZ1hoaUdxTXFqaUlDYVhTcXB0b3BzbGZEVjBhY284ZHExZTh5Z01Ta0pmUnc?oc=5",
-      "outlet": "House Digest",
+      "outlet": "housedigest.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
