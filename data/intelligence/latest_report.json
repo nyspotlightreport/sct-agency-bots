@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-05T09:32:01.832762",
+  "timestamp": "2026-08-05T10:38:22.560932",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -60,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - cbsnews.com",
+      "title": "Woman's death after injection at Bronx lifestyle center puts spotlight on NYS probe of unlawful medical spas - CBS News",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMERaeGM5dmFWTHltWXRJaVQyaVRRMHh3M0ptLXdqQ19mT1JNS1J2TC1ialVNY2tqTW40dm5ISDl0Z3psdk52SUpJN1RoenZvTEtUOXc1c3BjOF9QdGhDQk9tRHZheEVBTUNRVmQxUjhWUVNOdHQ3ajJkS3JCZ3VTUEY5TUxLcVVfdTliWUpTMA?oc=5",
-      "outlet": "cbsnews.com",
+      "outlet": "CBS News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,9 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
+      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - biz.chosun.com",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "Chosunbiz",
+      "outlet": "biz.chosun.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
