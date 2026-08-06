@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-06T02:42:46.193898",
+  "timestamp": "2026-08-06T06:33:04.772056",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 152,
   "brand_mention_count": 37,
   "analyses": [
     {
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - forbes.com",
+      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - Forbes",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNU83YjJPMWlZYnN6YU1ZaFZBa2E3REIzTC1PMDRBcWhCXzE2TWZxSDBqZTA2MnVLMXlKalJ2Z2pxNjQzWVFiTXdua0ZVclR0MW1Ra3E2UHBFY3dhaW9EUGF4N0M4Nm9sU0dvR2xsclNCMkN0U1l2YTdSX2xiWkNVQXgwc20zQzh4dWdDYWJ2UFVBTU5mVzNwMkVTeGhLeDV0QXVoRXhaYWxUS2FSR095dll2MEc?oc=5",
-      "outlet": "forbes.com",
+      "outlet": "Forbes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
