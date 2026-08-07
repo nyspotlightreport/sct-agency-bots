@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-07T19:47:58.962582",
+  "timestamp": "2026-08-07T20:43:25.668003",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 152,
+  "mention_count": 151,
   "brand_mention_count": 36,
   "analyses": [
     {
@@ -82,9 +82,9 @@
     },
     {
       "source": "google_news",
-      "title": "Top U.S. Markets for Investment in 2025: Manhattan, N.Y., &amp; Washington, D.C. Share Spotlight - CommercialCafe",
+      "title": "Top U.S. Markets for Investment in 2025: Manhattan, N.Y., &amp; Washington, D.C. Share Spotlight - commercialcafe.com",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9mZm1RbDRROU1ta3NMZW1XWWJtOUdiRVBpZEN5SWJOSnJVRmJaLS1wdGQ2TE8wZnp2T1A2TnJ5WVVNZzNpYm9XVk9EZ0JxLW0yckNDS3pFVTBZaktiU1FZSUdSZHlIZEExckJnYVBFb0F1OEhicTRvR1pmWQ?oc=5",
-      "outlet": "CommercialCafe",
+      "outlet": "commercialcafe.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "SRMC intern develops passion for entrepreneurship - theaugustapress.com",
+      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
-      "outlet": "theaugustapress.com",
+      "outlet": "The Augusta Press",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
