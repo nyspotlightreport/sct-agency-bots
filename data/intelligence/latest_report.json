@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-08T08:43:33.341577",
+  "timestamp": "2026-08-08T12:36:10.619769",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -25,6 +25,19 @@
   "mention_count": 150,
   "brand_mention_count": 36,
   "analyses": [
+    {
+      "source": "news",
+      "outlet": "Page Six",
+      "title": "Perez Hilton\u2019s first words from hospital bed after \u2018suicide attempt\u2019 revealed: report",
+      "body": "Hilton has been in a Miami hospital since Tuesday evening.",
+      "url": "https://pagesix.com/2026/08/06/celebrity-news/perez-hiltons-first-words-from-hospital-bed-report/",
+      "published": "2026-08-07T02:09:55Z",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
     {
       "source": "google_news",
       "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
@@ -60,9 +73,9 @@
     },
     {
       "source": "google_news",
-      "title": "What Is Going on with NYC Jobs? - NYC.gov",
+      "title": "What Is Going on with NYC Jobs? - comptroller.nyc.gov",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
-      "outlet": "NYC.gov",
+      "outlet": "comptroller.nyc.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,9 +139,9 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
+      "title": "Spotlight: New York City\u2019s Tech Sector - comptroller.nyc.gov",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
-      "outlet": "NYC.gov",
+      "outlet": "comptroller.nyc.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,17 +194,6 @@
     },
     {
       "source": "google_news",
-      "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - NUS - National University of Singapore",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZnVFd3l1YVFQMGdmb3BrWVRuQzhOZjFwRklPVnI0RTRPY1NrUFJSUkJMaE0wUTkzcnJ3UU9jN2hWczhoMXpBckJqU2syZFZ2eUhKbG5zWEpnOExOQlp2bGlHbmVsVy1kM1YtUlNLLXFfRFlnSXByT3Z3anhWejlTNFhPV1hNaXVGV3Q0TGVnbHpoWHJSRlBVNTdVVzV4eWF4a2JlcnhB?oc=5",
-      "outlet": "NUS - National University of Singapore",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Are PROFLO Toilets A Good Budget-Friendly Option? Here's What Our Expert Says - House Digest",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRmVpX2hWSXhsX1hqd1RGUHZiVmJlQ0tJZkpnV3Q2aVhidm15RnU4bEg3ci1iX3dzV2Z6b2NRUEMteVdDdUltLXQzRGlYU2lIUUNJdkhDRWlJeU5uaHhzZ1hoaUdxTXFqaUlDYVhTcXB0b3BzbGZEVjBhY284ZHExZTh5Z01Ta0pmUnc?oc=5",
       "outlet": "House Digest",
@@ -236,9 +238,9 @@
     },
     {
       "source": "google_news",
-      "title": "SRMC intern develops passion for entrepreneurship - theaugustapress.com",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
-      "outlet": "theaugustapress.com",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
