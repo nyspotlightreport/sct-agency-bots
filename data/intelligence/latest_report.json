@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-08T04:59:38.810109",
+  "timestamp": "2026-08-08T06:34:04.716604",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,9 +22,22 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 151,
-  "brand_mention_count": 36,
+  "mention_count": 154,
+  "brand_mention_count": 37,
   "analyses": [
+    {
+      "source": "news",
+      "outlet": "Page Six",
+      "title": "Perez Hilton\u2019s first words from hospital bed after \u2018suicide attempt\u2019 revealed: report",
+      "body": "Hilton has been in a Miami hospital since Tuesday evening.",
+      "url": "https://pagesix.com/2026/08/06/celebrity-news/perez-hiltons-first-words-from-hospital-bed-report/",
+      "published": "2026-08-07T02:09:55Z",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
     {
       "source": "google_news",
       "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
@@ -159,9 +172,9 @@
     },
     {
       "source": "google_news",
-      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
+      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - theindependent.sg",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
-      "outlet": "The Independent Singapore News",
+      "outlet": "theindependent.sg",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,20 +238,9 @@
     },
     {
       "source": "google_news",
-      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - phillytrib.com",
+      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - The Philadelphia Tribune",
       "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
-      "outlet": "phillytrib.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
-      "outlet": "The Augusta Press",
+      "outlet": "The Philadelphia Tribune",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
