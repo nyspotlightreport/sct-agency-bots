@@ -1,6 +1,22 @@
 {
-  "date": "2026-08-09",
-  "viral_opportunities": [],
+  "date": "2026-08-10",
+  "viral_opportunities": [
+    {
+      "topic": "content marketing automation 2026",
+      "count": 312,
+      "urgency": "HIGH"
+    },
+    {
+      "topic": "AI replaces content team",
+      "count": 67,
+      "urgency": "HIGH"
+    },
+    {
+      "topic": "GitHub Actions automation business",
+      "count": 48,
+      "urgency": "HIGH"
+    }
+  ],
   "funnel_fixes": [
     {
       "stage": "visitor_to_lead",
