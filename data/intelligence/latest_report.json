@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-11T16:59:04.883576",
+  "timestamp": "2026-08-11T20:47:41.890744",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -82,9 +82,9 @@
     },
     {
       "source": "google_news",
-      "title": "Top U.S. Markets for Investment in 2025: Manhattan, N.Y., &amp; Washington, D.C. Share Spotlight - commercialcafe.com",
+      "title": "Top U.S. Markets for Investment in 2025: Manhattan, N.Y., &amp; Washington, D.C. Share Spotlight - CommercialCafe",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9mZm1RbDRROU1ta3NMZW1XWWJtOUdiRVBpZEN5SWJOSnJVRmJaLS1wdGQ2TE8wZnp2T1A2TnJ5WVVNZzNpYm9XVk9EZ0JxLW0yckNDS3pFVTBZaktiU1FZSUdSZHlIZEExckJnYVBFb0F1OEhicTRvR1pmWQ?oc=5",
-      "outlet": "commercialcafe.com",
+      "outlet": "CommercialCafe",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - robesonian.com",
+      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
-      "outlet": "robesonian.com",
+      "outlet": "Robesonian",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "SRMC intern develops passion for entrepreneurship - The Augusta Press",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNeXJQTGJYdTBveGtMcTFOM2pQR2dSOVpXdUJPM1BvWV8zellaTFpGVXc1aVBxeHlIMkY4aHdfaDgyNVkyNnZJZkhwTUpmWEFBclhWZ0FjN2xfem5iOXNVVnk4dXo5dmRKWnV5dVFqNjFrRXJUZGlFOUR0SHFGYXdjWGxrMEY?oc=5",
-      "outlet": "The Augusta Press",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
@@ -239,6 +228,17 @@
       "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Edward Skirving Obituary May 15, 2024 - Funeral Home in Jacksonville, NC",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9Nai1MSVJ6VmUwYzlBSmtvN1BTd2lITC10X0NtbklLc2FRaWk0Y2NyOVdXVjFfOUlVVVQwVERwWmVPYkVVbnNDLXV3blpRZmlqS19mNGNnRnpzRlNvSGpR?oc=5",
+      "outlet": "Funeral Home in Jacksonville, NC",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
