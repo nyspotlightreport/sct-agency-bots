@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-13T07:12:32.310367",
+  "timestamp": "2026-08-13T08:14:53.317961",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 156,
+  "mention_count": 148,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -104,9 +104,9 @@
     },
     {
       "source": "google_news",
-      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - Algemeiner.com",
+      "title": "Mamdani\u2019s BDS Support Under Spotlight as New Report Shows Israeli Firms Boosted NYC Economy by $12.4B Last Year - algemeiner.com",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc2JEbmpKQlJyMzJUbEs3UVQtdTQ3S3hNeF9DYXN4d0wwMHdNcTFucEU3ckg0NDh5VHFhSmVTSjByZFpBYnVZLTVUOVlPUUFLdzZiTTFLZHdVaFZoaS1yZ2dLQjQ0TXZBanJCSVpkUE5qaEs2QU11ZjJvWV9qZ1RuX1JWbWZELVlraGJZdWVwaS1IOURwcHcxVzVaZEJrTVA5RGE2YWFablU1aXRMZjIzUjJqZy1kOGFKdERybER5ejBhRU44U3E5aFM0bW5WTXlPdFY2cV9UWnQ2UQ?oc=5",
-      "outlet": "Algemeiner.com",
+      "outlet": "algemeiner.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
