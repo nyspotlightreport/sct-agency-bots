@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-14T07:08:49.052407",
+  "timestamp": "2026-08-14T08:09:24.329403",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 158,
+  "mention_count": 150,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "Spotlight Report",
+      "outlet": "spotlightreport.net",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Obituary information for Thomas Chalmer Wright - blileys.com",
+      "title": "Obituary information for Thomas Chalmer Wright - Bliley's Funeral Homes",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5GTG9NYjROal8xMnhuVlQ4OGJveVNBR09jbjQwdWVFU3BBV19QRW9ITFlDLTN3TTMzcTlNSGNlbDNYOGJUQ0dVRG82OEd3VU13b1FjUkthbWlIalZDb0ljY0JwRkdHVGVRdmwxc0U5ZEtIOUstNGJ0Yml3?oc=5",
-      "outlet": "blileys.com",
+      "outlet": "Bliley's Funeral Homes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
