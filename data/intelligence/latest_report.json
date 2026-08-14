@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-14T09:10:09.092771",
+  "timestamp": "2026-08-14T13:10:33.001511",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "Spotlight Report",
+      "outlet": "spotlightreport.net",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - paulickreport.com",
+      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - Paulick Report",
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVFBnWG5JQndQQjZCd09PR1dTSFhMS2Nsb0xGZW1vTndDSjBRaUNCMFpXVG5obUt5V0g2cHdnNWV6Z0hTdlRMUzg2WEo5TzY1cnBnOWJMUnV6MkxXUmU3elZGWFpjTlNISVB2TVJjS3pISjFWQ244QmVMRERndm5fZkJkcHg1dmNGb09JRDVFX1VBVDQ0Q1U5SWJCajF1MmhMdmx0bktTVXhBaHdZSk1LT2pLV0Vxa1pobTNSRFAxb0pHYmc2M3c0WnYxU0ZqR3lZQUxqX2hpRkpKcmxBWm9v?oc=5",
-      "outlet": "paulickreport.com",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,9 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - paulickreport.com",
+      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
-      "outlet": "paulickreport.com",
+      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - agriculture.sc.gov",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "agriculture.sc.gov",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
