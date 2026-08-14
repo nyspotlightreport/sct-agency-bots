@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-13T20:45:56.523741",
+  "timestamp": "2026-08-14T02:05:01.814647",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 147,
+  "mention_count": 139,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -159,9 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - theindependent.sg",
+      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
-      "outlet": "theindependent.sg",
+      "outlet": "The Independent Singapore News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - obits.postandcourier.com",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "obits.postandcourier.com",
+      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - phillytrib.com",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
+      "outlet": "phillytrib.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - phillytrib.com",
-      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
-      "outlet": "phillytrib.com",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
