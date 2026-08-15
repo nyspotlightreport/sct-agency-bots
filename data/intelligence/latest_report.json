@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-15T06:20:23.044125",
+  "timestamp": "2026-08-15T08:32:05.827519",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -159,9 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - forbes.com",
+      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - Forbes",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNU83YjJPMWlZYnN6YU1ZaFZBa2E3REIzTC1PMDRBcWhCXzE2TWZxSDBqZTA2MnVLMXlKalJ2Z2pxNjQzWVFiTXdua0ZVclR0MW1Ra3E2UHBFY3dhaW9EUGF4N0M4Nm9sU0dvR2xsclNCMkN0U1l2YTdSX2xiWkNVQXgwc20zQzh4dWdDYWJ2UFVBTU5mVzNwMkVTeGhLeDV0QXVoRXhaYWxUS2FSR095dll2MEc?oc=5",
-      "outlet": "forbes.com",
+      "outlet": "Forbes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - obits.postandcourier.com",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "Post and Courier",
+      "outlet": "obits.postandcourier.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
