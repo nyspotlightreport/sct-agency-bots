@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-15T08:32:05.827519",
+  "timestamp": "2026-08-15T12:26:32.702638",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 147,
+  "mention_count": 168,
   "brand_mention_count": 33,
   "analyses": [
     {
@@ -148,9 +148,9 @@
     },
     {
       "source": "google_news",
-      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
+      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - theindependent.sg",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
-      "outlet": "The Independent Singapore News",
+      "outlet": "theindependent.sg",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -181,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - obits.postandcourier.com",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "obits.postandcourier.com",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - phillytrib.com",
+      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - The Philadelphia Tribune",
       "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
-      "outlet": "phillytrib.com",
+      "outlet": "The Philadelphia Tribune",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - cremationsocietyofsc.com",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
+      "outlet": "cremationsocietyofsc.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
