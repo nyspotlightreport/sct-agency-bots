@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-16T04:38:27.425470",
+  "timestamp": "2026-08-16T06:22:29.116295",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "What Is Going on with NYC Jobs? - comptroller.nyc.gov",
+      "title": "What Is Going on with NYC Jobs? - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
-      "outlet": "comptroller.nyc.gov",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,9 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Tech Sector - comptroller.nyc.gov",
+      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
-      "outlet": "comptroller.nyc.gov",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,9 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - Forbes",
+      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - forbes.com",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNU83YjJPMWlZYnN6YU1ZaFZBa2E3REIzTC1PMDRBcWhCXzE2TWZxSDBqZTA2MnVLMXlKalJ2Z2pxNjQzWVFiTXdua0ZVclR0MW1Ra3E2UHBFY3dhaW9EUGF4N0M4Nm9sU0dvR2xsclNCMkN0U1l2YTdSX2xiWkNVQXgwc20zQzh4dWdDYWJ2UFVBTU5mVzNwMkVTeGhLeDV0QXVoRXhaYWxUS2FSR095dll2MEc?oc=5",
-      "outlet": "Forbes",
+      "outlet": "forbes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - phillytrib.com",
+      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - The Philadelphia Tribune",
       "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
-      "outlet": "phillytrib.com",
+      "outlet": "The Philadelphia Tribune",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
