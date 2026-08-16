@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-16T12:28:05.988726",
+  "timestamp": "2026-08-16T12:42:35.718346",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 157,
+  "mention_count": 148,
   "brand_mention_count": 33,
   "analyses": [
     {
@@ -93,9 +93,9 @@
     },
     {
       "source": "google_news",
-      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - nypost.com",
+      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
       "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
-      "outlet": "nypost.com",
+      "outlet": "New York Post",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
