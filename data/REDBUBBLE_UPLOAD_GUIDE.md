@@ -12,26 +12,26 @@
 
 ## Designs Ready to Upload:
 
+- golden-retriever-minimal.png → Golden Retriever Minimal
 - monday-vibes-off.png → Monday Vibes Off
-- brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
 - nyc-map-typography.png → Nyc Map Typography
-- nyc-skyline-minimal.png → Nyc Skyline Minimal
-- cactus-desert-vibes.png → Cactus Desert Vibes
+- introvert-recharge.png → Introvert Recharge
 - create-your-path.png → Create Your Path
+- cactus-desert-vibes.png → Cactus Desert Vibes
+- cat-space-astronaut.png → Cat Space Astronaut
+- hustle-daily-minimal.png → Hustle Daily Minimal
+- moon-phases-minimal.png → Moon Phases Minimal
+- brooklyn-bridge-sunset.png → Brooklyn Bridge Sunset
+- aquarius-mystical.png → Aquarius Mystical
+- nyc-skyline-minimal.png → Nyc Skyline Minimal
+- geometric-mountains.png → Geometric Mountains
+- leo-constellation.png → Leo Constellation
+- coffee-first-sarcastic.png → Coffee First Sarcastic
+- no-days-off.png → No Days Off
+- morning-routine-wins.png → Morning Routine Wins
+- times-square-neon.png → Times Square Neon
 - gradient-waves-abstract.png → Gradient Waves Abstract
 - scorpio-dark-art.png → Scorpio Dark Art
-- leo-constellation.png → Leo Constellation
-- hustle-daily-minimal.png → Hustle Daily Minimal
-- geometric-mountains.png → Geometric Mountains
-- no-days-off.png → No Days Off
-- aquarius-mystical.png → Aquarius Mystical
-- times-square-neon.png → Times Square Neon
-- introvert-recharge.png → Introvert Recharge
-- golden-retriever-minimal.png → Golden Retriever Minimal
-- morning-routine-wins.png → Morning Routine Wins
-- coffee-first-sarcastic.png → Coffee First Sarcastic
-- moon-phases-minimal.png → Moon Phases Minimal
-- cat-space-astronaut.png → Cat Space Astronaut
 
 ## Expected Earnings
 - 20 designs × average $3/month = $60/month
