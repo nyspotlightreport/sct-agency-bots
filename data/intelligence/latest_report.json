@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T01:19:11.241315",
+  "timestamp": "2026-08-18T04:37:29.816793",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - beaconjournal.com",
+      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
-      "outlet": "beaconjournal.com",
+      "outlet": "Akron Beacon Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -93,9 +93,9 @@
     },
     {
       "source": "google_news",
-      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
+      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - nypost.com",
       "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
-      "outlet": "New York Post",
+      "outlet": "nypost.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -170,9 +170,9 @@
     },
     {
       "source": "google_news",
-      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - Forbes",
+      "title": "Roth IRA Conversion 2012: Roth Calculator for Prof. Low Income - forbes.com",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNU83YjJPMWlZYnN6YU1ZaFZBa2E3REIzTC1PMDRBcWhCXzE2TWZxSDBqZTA2MnVLMXlKalJ2Z2pxNjQzWVFiTXdua0ZVclR0MW1Ra3E2UHBFY3dhaW9EUGF4N0M4Nm9sU0dvR2xsclNCMkN0U1l2YTdSX2xiWkNVQXgwc20zQzh4dWdDYWJ2UFVBTU5mVzNwMkVTeGhLeDV0QXVoRXhaYWxUS2FSR095dll2MEc?oc=5",
-      "outlet": "Forbes",
+      "outlet": "forbes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - obits.postandcourier.com",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "obits.postandcourier.com",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
