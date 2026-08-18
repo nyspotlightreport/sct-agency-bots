@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T16:34:09.699047",
+  "timestamp": "2026-08-18T20:26:51.330433",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -192,9 +192,9 @@
     },
     {
       "source": "google_news",
-      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - phillytrib.com",
+      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - The Philadelphia Tribune",
       "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
-      "outlet": "phillytrib.com",
+      "outlet": "The Philadelphia Tribune",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Charleston Post &amp; Courier - obits.postandcourier.com",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Charleston Post &amp; Courier - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "obits.postandcourier.com",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Meet the Scholars - Invent at Seattle Children's Postdoctoral Program - Seattle Children\u2019s Hospital",
+      "title": "Meet the Scholars - Invent at Seattle Children's Postdoctoral Program - seattlechildrens.org",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUmJMVTI3blVqZGEtRFhNS29ubGlTOTdhallRa3pkT1VpOUhncFV6djgwd3lnX1k5S0FjSlgzd1VVdlVZSW0wTjRvVjRJOVhJS285NmswcTJTTjQySDlweEhjWGRwWEh0WktuSTRUQ09oV2U2djFhNjl5UEFUSmM5MFlacTBZVWtRbEtjempRR2hRZl9NQ0NmeEtET1FtcW1XRV9SMUJDMXdCRDBVNzBlamJHeXd6Ml93aWxPOEhR?oc=5",
-      "outlet": "Seattle Children\u2019s Hospital",
+      "outlet": "seattlechildrens.org",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
