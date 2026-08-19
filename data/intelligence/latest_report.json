@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-19T06:25:51.612561",
+  "timestamp": "2026-08-19T07:32:48.981880",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,20 +22,9 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 153,
+  "mention_count": 149,
   "brand_mention_count": 34,
   "analyses": [
-    {
-      "source": "google_news",
-      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMk1vYnQzYVc0LVBRMkhleFJpSXBCZmowc3oweThYNy0wdUpqbnlPVW0xcUJRSFY5MHdxa2tJZmVSei1INWZNaldzRzFVZGtpd19oTmhycVdjaVVIaGtvbWlYMXkxRm5aQXA5cVB2UUFBenh6UEotU1BRX0RTRkRTRW13Y3pFLTFHOW9odXN1ZjZJczkyTXBSb1I1Qm41ZEU?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
     {
       "source": "google_news",
       "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
@@ -137,6 +126,17 @@
     },
     {
       "source": "google_news",
+      "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
+      "outlet": "robinhood.org",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - Drag Illustrated",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOSk1tVlVOcDZrVThkQXdZZ1pZNnE4YkQ5dHcycFRkcFZ5TDZGVUxGN2JlcDNOV0JzLWtpNkp2VzNuVGdsN0FXRTJYOUhsd1EzeDFuQ3N1VE0yRmEtR2ZyNzVYOFNJeThlMzFXVWxzWjNhWmF0RWR3ams3WUJCTkJSbHhXSUlUZmxUY0IzVE5mSWhFMDAwUkdYR1BkZEZHX1JfRk1RdkxZUGlveFhxWUVid0YyYTJOTnBZaGZDVU1md21lRVpsVDVvYi1qUEcySXVWRjN1Wkw0Wm8tS0lndWc3ekZwSjZQeEg3?oc=5",
       "outlet": "Drag Illustrated",
@@ -159,9 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - theindependent.sg",
+      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
       "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
-      "outlet": "theindependent.sg",
+      "outlet": "The Independent Singapore News",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
