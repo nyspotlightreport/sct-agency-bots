@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-20T16:37:31.572425",
+  "timestamp": "2026-08-20T19:26:00.221027",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -25,6 +25,17 @@
   "mention_count": 149,
   "brand_mention_count": 34,
   "analyses": [
+    {
+      "source": "google_news",
+      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
     {
       "source": "google_news",
       "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
@@ -96,17 +107,6 @@
       "title": "Poverty Tracker Spotlight Report: Food Budget Shortfalls in NYC - robinhood.org",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFBKaWZtcnVuSGRTSnZoNkFmOGlKNnRWdjlRZnNrRF9tRU9pWDJYQzFGaUV4cHhmc0Y5LTdlUlI0SlFNTEdOOUY3YU5SSDlWbDZBN0VTSWI4V0l3UXhCRUJMU3gyWUZHcnJKQjlFd3BWeUgzaDRoSTV0N1BIaG5Ja05Yai10Z2h6ZTNB?oc=5",
       "outlet": "robinhood.org",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Eager for Center Stage, Patel Casts Aside Caution in Statements as F.B.I. Leader - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFB6dUk0YVU3VUlWT2cwa25VQzVFOEEyRXRVbnZkZHlTckF2UUZtbGp2N2V3WVYwZmVfS0J1SUhfNlB6eUN1TEd2OGNIOGlFaDlETE82Rm5Wdm0zTFJyaVRrcW04dnRoQVF1MHRiaEtiZXk4SUNN?oc=5",
-      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
