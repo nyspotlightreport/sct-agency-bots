@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-20T07:35:31.867978",
+  "timestamp": "2026-08-20T08:41:10.455308",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 150,
+  "mention_count": 149,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -203,9 +203,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Charleston Post &amp; Courier - Post and Courier",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Charleston Post &amp; Courier - obits.postandcourier.com",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "Post and Courier",
+      "outlet": "obits.postandcourier.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
