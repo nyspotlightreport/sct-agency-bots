@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-22T01:19:11.997681",
+  "timestamp": "2026-08-22T04:35:11.535273",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -38,8 +38,8 @@
     },
     {
       "source": "google_news",
-      "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
+      "title": "Poverty Tracker Spotlight Report: Food Budget Shortfalls in NYC - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbFBKaWZtcnVuSGRTSnZoNkFmOGlKNnRWdjlRZnNrRF9tRU9pWDJYQzFGaUV4cHhmc0Y5LTdlUlI0SlFNTEdOOUY3YU5SSDlWbDZBN0VTSWI4V0l3UXhCRUJMU3gyWUZHcnJKQjlFd3BWeUgzaDRoSTV0N1BIaG5Ja05Yai10Z2h6ZTNB?oc=5",
       "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -49,20 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
-      "outlet": "Akron Beacon Journal",
+      "title": "What Is Going on with NYC Jobs? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -82,8 +71,19 @@
     },
     {
       "source": "google_news",
-      "title": "Poverty Tracker Spotlight on: Rent Stabilization in NYC - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVU5YSE50X244S0lwanBjTlJRRU5kRTRsOUlhNFoxdWNib0tYYXJFWjh4TFpvWmg2MzVIQXNSa2x5Q1VhajdwTlg3NDIwVVhhR1l1ZnFubHp1TnJDcG5ROVAyU3pSNTh4eXk1Yk5KY3R0Q2JMOHREQ0pDQWw2WktUZzFYSlI?oc=5",
+      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
       "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -104,6 +104,17 @@
     },
     {
       "source": "google_news",
+      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
+      "outlet": "Akron Beacon Journal",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
       "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
       "outlet": "New York Post",
@@ -115,20 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "What Is Going on with NYC Jobs? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
+      "title": "NYC\u2019s Economy: Overview and Prospects - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8yVGgtNWhGWXEwV2h1RGsta1NxSU1WeXctdVZLZWs5eHBuc284MF9sT2tod3NSaEd4TW1lY3ZIYU9ZMWt5TWVHQXEtTVNoYkN5ZUNjb0tSb013VjhzQXhrLTZRT3AzUVBvSHlfdDJxckw?oc=5",
       "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
-      "outlet": "Paulick Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
