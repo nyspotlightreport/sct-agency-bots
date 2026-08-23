@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-23T12:43:00.104675",
+  "timestamp": "2026-08-23T16:28:09.423051",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -27,9 +27,9 @@
   "analyses": [
     {
       "source": "google_news",
-      "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
-      "outlet": "robinhood.org",
+      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMk1vYnQzYVc0LVBRMkhleFJpSXBCZmowc3oweThYNy0wdUpqbnlPVW0xcUJRSFY5MHdxa2tJZmVSei1INWZNaldzRzFVZGtpd19oTmhycVdjaVVIaGtvbWlYMXkxRm5aQXA5cVB2UUFBenh6UEotU1BRX0RTRkRTRW13Y3pFLTFHOW9odXN1ZjZJczkyTXBSb1I1Qm41ZEU?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -38,9 +38,9 @@
     },
     {
       "source": "google_news",
-      "title": "ICE Shootings Put Spotlight on Lack of Body Cameras - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBndGlLUDk4dzBsMHQ1OXVHZ2RRbmpQck1zMmM5NTFwME5XTmtvQUNlcjhpTXNmWDY5OGk0Tl9XREtiY2RvT2RZeG9Kd1EyanozMmhMRzVMZFpNT1lfQS02ZVgxUHdKOF9aUkZEdVNhRnlNX05MZmYw?oc=5",
-      "outlet": "The New York Times",
+      "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
+      "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -104,8 +104,8 @@
     },
     {
       "source": "google_news",
-      "title": "A Russian Spy, Suddenly Cast Into the Spotlight, Flees Japan - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1TeEhManRESDZPWlRkaEJVNHNWNllGNnhwRy1BbmlnSnpucllDejV3MFhZMEIxb3NlR081eUt5alIwZ3VUYlNSemJ1ck1ibXdQa2MzTHlNUlhhMmhQM0VBSlFoY2hkV2V5ZXQ0SXNrS3pSUjhmS2VlcDJVcUhwd1E?oc=5",
+      "title": "ICE Shootings Put Spotlight on Lack of Body Cameras - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBndGlLUDk4dzBsMHQ1OXVHZ2RRbmpQck1zMmM5NTFwME5XTmtvQUNlcjhpTXNmWDY5OGk0Tl9XREtiY2RvT2RZeG9Kd1EyanozMmhMRzVMZFpNT1lfQS02ZVgxUHdKOF9aUkZEdVNhRnlNX05MZmYw?oc=5",
       "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -225,9 +225,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Atwood Sr. Obituary | Sanders-Thompson Mortuary, LLC | Clinton, SC - Tribute Archive",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE83VlE2MEJDMVdFdHhEemVUVWxtS3A0X2hkc3NNV0FhMXBBX2Z0a0hWRXBiZlVuVnBlMlctd2o1eFRlbnp3eVdHRkJuSnJiR1VlUXFmdlpqN213YnhaS1U1TlhTRTJmUzkwTk5lZUtoM0xsN09mdDZJ?oc=5",
-      "outlet": "Tribute Archive",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "South Carolina Department of Agriculture (.gov)",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
