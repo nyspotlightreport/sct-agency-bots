@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-22T20:25:16.044061",
+  "timestamp": "2026-08-23T01:26:30.732652",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 149,
+  "mention_count": 148,
   "brand_mention_count": 34,
   "analyses": [
     {
@@ -60,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "Spotlight Report",
+      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
+      "outlet": "Akron Beacon Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
-      "outlet": "Akron Beacon Journal",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
+      "outlet": "Spotlight Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,6 +214,17 @@
     },
     {
       "source": "google_news",
+      "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
+      "outlet": "Post and Courier",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Frank Edward Taylor Obituary (2026) - Simpsonville, SC - Thomas McAfee Funeral Homes - Southeast Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSlpvbHhNVHJMOE41eFUySUlkRVhEOHdmVy1xeGUxN1pWNzdvTUR5N0dqNUNXOXlwQmlVMGJqS3MzYnY2M2dKd01Hd05ha3pIZUtDUDdWTTRhX2FnRkFHeW9xdDZOV0duUHVoYUZYc3NCLVpBczlrQjl1UFRsTjAwZA?oc=5",
       "outlet": "Legacy obituary",
@@ -228,17 +239,6 @@
       "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
       "outlet": "South Carolina Department of Agriculture (.gov)",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
-      "outlet": "Cremation Society of SC - Westville Funerals",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
