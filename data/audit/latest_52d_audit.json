@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-08-23T22:14:50.530971+00:00",
-  "pass_count": 17,
-  "fail_count": 13,
+  "timestamp": "2026-08-24T10:30:37.652373+00:00",
+  "pass_count": 16,
+  "fail_count": 14,
   "total": 30,
-  "score": 57,
+  "score": 53,
   "grade": "D",
   "results": [
     {
       "name": "Pages responding",
       "status": "PASS",
-      "detail": "31/31 pages return 200"
+      "detail": "26/31 pages return 200"
     },
     {
       "name": "Stripe LIVE checkout",
@@ -44,7 +44,7 @@
     {
       "name": "Functions alive",
       "status": "PASS",
-      "detail": "20/20 responding"
+      "detail": "18/20 responding"
     },
     {
       "name": "startCheckout present",
@@ -124,7 +124,7 @@
     {
       "name": "Sweepstakes running",
       "status": "PASS",
-      "detail": "Last run: 2026-08-23T21:14:54Z"
+      "detail": "Last run: 2026-08-24T09:39:24Z"
     },
     {
       "name": "Affiliate content",
@@ -143,8 +143,8 @@
     },
     {
       "name": "Newsletter page live",
-      "status": "PASS",
-      "detail": "Status 200"
+      "status": "FAIL",
+      "detail": "Status 0"
     },
     {
       "name": "Gumroad products configured",
@@ -217,6 +217,11 @@
       "name": "Zoho email on credibility pages",
       "status": "FAIL",
       "detail": "0/3 pages have it"
+    },
+    {
+      "name": "Newsletter page live",
+      "status": "FAIL",
+      "detail": "Status 0"
     },
     {
       "name": "Gumroad products configured",
