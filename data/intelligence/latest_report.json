@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T04:41:45.879812",
+  "timestamp": "2026-08-25T06:28:05.327440",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,7 +22,7 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 148,
+  "mention_count": 156,
   "brand_mention_count": 33,
   "analyses": [
     {
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Obituary information for Thomas Chalmer Wright - Bliley's Funeral Home",
+      "title": "Obituary information for Thomas Chalmer Wright - Bliley's Funeral Homes",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5GTG9NYjROal8xMnhuVlQ4OGJveVNBR09jbjQwdWVFU3BBV19QRW9ITFlDLTN3TTMzcTlNSGNlbDNYOGJUQ0dVRG82OEd3VU13b1FjUkthbWlIalZDb0ljY0JwRkdHVGVRdmwxc0U5ZEtIOUstNGJ0Yml3?oc=5",
-      "outlet": "Bliley's Funeral Home",
+      "outlet": "Bliley's Funeral Homes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
