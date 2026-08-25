@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T12:50:48.691863",
+  "timestamp": "2026-08-25T16:40:25.757273",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -27,8 +27,8 @@
   "analyses": [
     {
       "source": "google_news",
-      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
+      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMk1vYnQzYVc0LVBRMkhleFJpSXBCZmowc3oweThYNy0wdUpqbnlPVW0xcUJRSFY5MHdxa2tJZmVSei1INWZNaldzRzFVZGtpd19oTmhycVdjaVVIaGtvbWlYMXkxRm5aQXA5cVB2UUFBenh6UEotU1BRX0RTRkRTRW13Y3pFLTFHOW9odXN1ZjZJczkyTXBSb1I1Qm41ZEU?oc=5",
       "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -41,17 +41,6 @@
       "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
       "outlet": "robinhood.org",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMk1vYnQzYVc0LVBRMkhleFJpSXBCZmowc3oweThYNy0wdUpqbnlPVW0xcUJRSFY5MHdxa2tJZmVSei1INWZNaldzRzFVZGtpd19oTmhycVdjaVVIaGtvbWlYMXkxRm5aQXA5cVB2UUFBenh6UEotU1BRX0RTRkRTRW13Y3pFLTFHOW9odXN1ZjZJczkyTXBSb1I1Qm41ZEU?oc=5",
-      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -115,6 +104,17 @@
     },
     {
       "source": "google_news",
+      "title": "A Russian Spy, Suddenly Cast Into the Spotlight, Flees Japan - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1TeEhManRESDZPWlRkaEJVNHNWNllGNnhwRy1BbmlnSnpucllDejV3MFhZMEIxb3NlR081eUt5alIwZ3VUYlNSemJ1ck1ibXdQa2MzTHlNUlhhMmhQM0VBSlFoY2hkV2V5ZXQ0SXNrS3pSUjhmS2VlcDJVcUhwd1E?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
       "outlet": "Paulick Report",
@@ -126,9 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "A Russian Spy, Suddenly Cast Into the Spotlight, Flees Japan - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1TeEhManRESDZPWlRkaEJVNHNWNllGNnhwRy1BbmlnSnpucllDejV3MFhZMEIxb3NlR081eUt5alIwZ3VUYlNSemJ1ck1ibXdQa2MzTHlNUlhhMmhQM0VBSlFoY2hkV2V5ZXQ0SXNrS3pSUjhmS2VlcDJVcUhwd1E?oc=5",
-      "outlet": "The New York Times",
+      "title": "What Is Going on with NYC Jobs? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
