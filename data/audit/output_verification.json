@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T12:38:22.529558+00:00",
+  "timestamp": "2026-08-26T12:41:45.528177+00:00",
   "producing": 4,
   "zero_output": 6,
   "total": 10,
@@ -32,7 +32,7 @@
     {
       "name": "Chairman Briefing",
       "status": "PRODUCING",
-      "detail": "Last success: 2026-08-25"
+      "detail": "Last success: 2026-08-26"
     },
     {
       "name": "Health Monitor",
