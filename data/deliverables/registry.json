@@ -1,5 +1,20 @@
 [
   {
+    "id": "blog_post_2026-08-26_148",
+    "type": "BLOG_POST",
+    "title": "The Passive Income Stack That Earns While You Sleep",
+    "created": "2026-08-26T06:46:43.785394",
+    "quality_score": 7.8,
+    "grade": "B",
+    "approved": true,
+    "platforms": [
+      "nyspotlightreport.com",
+      "medium",
+      "linkedin_article"
+    ],
+    "status": "approved"
+  },
+  {
     "id": "blog_post_2026-08-25_147",
     "type": "BLOG_POST",
     "title": "How to Automate Your Entire Social Media for $70/Month",
