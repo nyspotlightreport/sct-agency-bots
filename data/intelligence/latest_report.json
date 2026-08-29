@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-29T11:57:45.302802",
+  "timestamp": "2026-08-29T13:40:53.432175",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,22 +22,9 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 160,
-  "brand_mention_count": 36,
+  "mention_count": 151,
+  "brand_mention_count": 35,
   "analyses": [
-    {
-      "source": "news",
-      "outlet": "Awful Announcing",
-      "title": "TV and streaming viewing picks for August 28, 2026: How to watch NFL Preseason Week 3",
-      "body": "All Times Eastern Australian Rules Football AFL Men\u2019s \u2014 Wildcard Finals Wildcard Final One, Melbourne Cricket Ground, Melbourne, Victoria, Australia Melbourne Demons vs. Carlton Blues \u2014 FS2/Fox One, 5:30 a.m. (Saturday) AFL Women\u2019s \u2014 Round 3 North Melbourne K\u2026",
-      "url": "https://awfulannouncing.com/viewing-picks/august-28-2026-watch-nfl-preseason-week-3.html",
-      "published": "2026-08-28T11:00:27Z",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
     {
       "source": "google_news",
       "title": "Multifamily distress reports put New York in the spotlight - Multifamily Dive",
@@ -238,9 +225,20 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
-      "outlet": "Post and Courier",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Obituary information for Thomas Chalmer Wright - Bliley's Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5GTG9NYjROal8xMnhuVlQ4OGJveVNBR09jbjQwdWVFU3BBV19QRW9ITFlDLTN3TTMzcTlNSGNlbDNYOGJUQ0dVRG82OEd3VU13b1FjUkthbWlIalZDb0ljY0JwRkdHVGVRdmwxc0U5ZEtIOUstNGJ0Yml3?oc=5",
+      "outlet": "Bliley's Funeral Home",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
