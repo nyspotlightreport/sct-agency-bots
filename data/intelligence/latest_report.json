@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-28T21:48:31.277661",
+  "timestamp": "2026-08-29T01:58:36.136034",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -60,6 +60,17 @@
     },
     {
       "source": "google_news",
+      "title": "49ers uncertainty for Titans joint practice heightens amid massive injury report - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZUhWaTZURnhta2lCc0ZGWUxId3VHU2hwdDRqNWQtb0JGaGw5emRjN2V2WjdMa1NyT05qTTk1UlJPSEk0RGE0WEs1S3B1TlliTWF1elJBQjdEZWgwREIybDY5SGhEM3ltVnBpMVhFb0hkQzhhYjgzVlBIVzMzMDNFYU9qR0swWVVrbHdGR2N2bzQ5bUU3OXRtc2tWSnNiMXpqQ3c?oc=5",
+      "outlet": "New York Post",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
       "outlet": "Spotlight Report",
@@ -104,17 +115,6 @@
     },
     {
       "source": "google_news",
-      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
-      "outlet": "New York Post",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "New York-Bred Maiden Spotlight: Probability And The Cure For Seconditis - Paulick Report",
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdlVsSGtsaWNmc3V6VGFUVHYxcGNKcDdxcXRaQVhnN3JnczF5MjFfWDFpUHhrbGxiLWZrbzJxU25TSE5MZVYyazZldDFRRDBDbVJyRnV3TE1NQ05PdWFUQ1BJS1F6czhmMk5naFVFSnZZSHB4aDNTMmhFNnZaYmNYcnRMQjdVbDh4RGdER2ZvQ0lDb2htWHFxN3ZrNGM0bjNLVWk4YzZGY0gwOFVFc0c4TUpmWUN2eFBnQkJvc1Vrc0JUQ1ZBNkRlMExFVWZkOWxwNnc?oc=5",
       "outlet": "Paulick Report",
@@ -126,9 +126,9 @@
     },
     {
       "source": "google_news",
-      "title": "What Is Going on with NYC Jobs? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
-      "outlet": "NYC.gov",
+      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
+      "outlet": "New York Post",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,17 +214,6 @@
     },
     {
       "source": "google_news",
-      "title": "Luther Thomas Clowney Obituary Jul 11, 2026 - Callaham-Hicks Funeral Home",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1xTTF5Qnl0emVPMnh1cF9qT2Z1QkNTdDd4dWRCTTdhRkR0QzBpQlJNNTJYTW1fUkFyV3U3Vm5md0Z2Sm1ZOVc5N216MFpZaWdNYS02U2Z4YkFpZ1lpSTZ2cUp6Wm4zLVdMZFExUw?oc=5",
-      "outlet": "Callaham-Hicks Funeral Home",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Charleston Post &amp; Courier - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
       "outlet": "Post and Courier",
@@ -236,9 +225,20 @@
     },
     {
       "source": "google_news",
-      "title": "John Thomas Sadowski Jr Obituary May 11, 2026 - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1WWFktZlNsVGgzQV8wbnkyREdldERRVTBobm9rdUdSR3BldHFnQTYweFhxbnVpTkNOb3UxSHhIN0dpUGtJZm45RWpjTVF1d01LWWlZSHdwc3FrQQ?oc=5",
-      "outlet": "Legacy obituary",
+      "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
+      "outlet": "Cremation Society of SC - Westville Funerals",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Obituary information for Thomas Chalmer Wright - Bliley's Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5GTG9NYjROal8xMnhuVlQ4OGJveVNBR09jbjQwdWVFU3BBV19QRW9ITFlDLTN3TTMzcTlNSGNlbDNYOGJUQ0dVRG82OEd3VU13b1FjUkthbWlIalZDb0ljY0JwRkdHVGVRdmwxc0U5ZEtIOUstNGJ0Yml3?oc=5",
+      "outlet": "Bliley's Funeral Home",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
