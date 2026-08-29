@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-29T16:05:15.052370",
+  "timestamp": "2026-08-29T19:17:29.706088",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -30,17 +30,6 @@
       "title": "Multifamily distress reports put New York in the spotlight - Multifamily Dive",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOaDRLR095NVZ1dkhZTm55bFJvU0hnT0tpR0taaVIzYVBodUV5N1hRTjFEd3FsMHpxWHloaTJiQXF5TGdvY1BWZ1FhOUEzdUN5b0hFTDl0VXlsNU04LXBkcUt3MGRaYzdxZjI1c3FfczA0UUlobS1nVnAzMHA3XzBMdmZyTGhIV21LcWw3VTlNSQ?oc=5",
       "outlet": "Multifamily Dive",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMk1vYnQzYVc0LVBRMkhleFJpSXBCZmowc3oweThYNy0wdUpqbnlPVW0xcUJRSFY5MHdxa2tJZmVSei1INWZNaldzRzFVZGtpd19oTmhycVdjaVVIaGtvbWlYMXkxRm5aQXA5cVB2UUFBenh6UEotU1BRX0RTRkRTRW13Y3pFLTFHOW9odXN1ZjZJczkyTXBSb1I1Qm41ZEU?oc=5",
-      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -129,6 +118,17 @@
       "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
       "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
       "outlet": "New York Post",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "What Is Going on with NYC Jobs? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
