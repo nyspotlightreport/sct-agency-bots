@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-29T06:07:54.167344",
+  "timestamp": "2026-08-29T11:57:45.302802",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,9 +22,22 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 151,
-  "brand_mention_count": 35,
+  "mention_count": 160,
+  "brand_mention_count": 36,
   "analyses": [
+    {
+      "source": "news",
+      "outlet": "Awful Announcing",
+      "title": "TV and streaming viewing picks for August 28, 2026: How to watch NFL Preseason Week 3",
+      "body": "All Times Eastern Australian Rules Football AFL Men\u2019s \u2014 Wildcard Finals Wildcard Final One, Melbourne Cricket Ground, Melbourne, Victoria, Australia Melbourne Demons vs. Carlton Blues \u2014 FS2/Fox One, 5:30 a.m. (Saturday) AFL Women\u2019s \u2014 Round 3 North Melbourne K\u2026",
+      "url": "https://awfulannouncing.com/viewing-picks/august-28-2026-watch-nfl-preseason-week-3.html",
+      "published": "2026-08-28T11:00:27Z",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
     {
       "source": "google_news",
       "title": "Multifamily distress reports put New York in the spotlight - Multifamily Dive",
@@ -214,7 +227,7 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Charleston Post &amp; Courier - Post and Courier",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
       "outlet": "Post and Courier",
       "category": "brand_primary",
@@ -228,17 +241,6 @@
       "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
       "outlet": "Post and Courier",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Atwood Sr. Obituary | Sanders-Thompson Mortuary, LLC | Clinton, SC - Tribute Archive",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE83VlE2MEJDMVdFdHhEemVUVWxtS3A0X2hkc3NNV0FhMXBBX2Z0a0hWRXBiZlVuVnBlMlctd2o1eFRlbnp3eVdHRkJuSnJiR1VlUXFmdlpqN213YnhaS1U1TlhTRTJmUzkwTk5lZUtoM0xsN09mdDZJ?oc=5",
-      "outlet": "Tribute Archive",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
