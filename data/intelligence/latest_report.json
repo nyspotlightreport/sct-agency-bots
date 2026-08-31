@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-31T15:57:42.302934",
+  "timestamp": "2026-08-31T21:23:12.943278",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 151,
-  "brand_mention_count": 35,
+  "mention_count": 150,
+  "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
@@ -38,8 +38,8 @@
     },
     {
       "source": "google_news",
-      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
+      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMk1vYnQzYVc0LVBRMkhleFJpSXBCZmowc3oweThYNy0wdUpqbnlPVW0xcUJRSFY5MHdxa2tJZmVSei1INWZNaldzRzFVZGtpd19oTmhycVdjaVVIaGtvbWlYMXkxRm5aQXA5cVB2UUFBenh6UEotU1BRX0RTRkRTRW13Y3pFLTFHOW9odXN1ZjZJczkyTXBSb1I1Qm41ZEU?oc=5",
       "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -63,6 +63,17 @@
       "title": "49ers uncertainty for Titans joint practice heightens amid massive injury report - New York Post",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZUhWaTZURnhta2lCc0ZGWUxId3VHU2hwdDRqNWQtb0JGaGw5emRjN2V2WjdMa1NyT05qTTk1UlJPSEk0RGE0WEs1S3B1TlliTWF1elJBQjdEZWgwREIybDY5SGhEM3ltVnBpMVhFb0hkQzhhYjgzVlBIVzMzMDNFYU9qR0swWVVrbHdGR2N2bzQ5bUU3OXRtc2tWSnNiMXpqQ3c?oc=5",
       "outlet": "New York Post",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -126,17 +137,6 @@
     },
     {
       "source": "google_news",
-      "title": "Joe Biden crashes Jill\u2019s book talk, steals spotlight to ask whom she loves the most in incredibly cringey moment - New York Post",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUWRCQXZOM3ZnU2R2My1yOVFOSEtPdFZ1VDk2MExsTWVGR3FtbTNERlRxOUdrNk9NVzdnSHpmcTMwc2w0ejBnOXpMQ1UzVVlLTzE0a2ZVLUFyQWs4R1RWSkV0QnN2cGsweGJkSlNlb21pRVJROW5BSEZFQ0JucTNaWTZpU200cEZRT0dHbWtMcnNNNHdvQ1Q2bkdwbWIybE5SRk5leVloNm1Eb1FxRmdVanlUZEpzRzhXcEhfdXRGdVNiNHVNTjhCbW8yVFVTNE1ZUUFxXzR0YlpWV1BFSTFNdFpn?oc=5",
-      "outlet": "New York Post",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "What if AI sits on the board of directors? | Associate Professor Angie Low - Nanyang Technological University - NTU Singapore",
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQV2h2RnJ6SmY3Q2hwMGdPWTFyU25sSGktaHlmdTZQN09QS0U2SGs1U052THpIRmN3cjNfczJPQThJcGh4ZjJqUWp6Z2Ntc1BKM3ZTN1NVZDFUeGVEVWM1YlZiMTBSS0oyTExPeEZicVgtZnhKZ09sWjVTUXJxUG1QOVhNazFYZ01GbFpLVXpRV1M4MzcxWGdlV2xqYmsxNDZTZVlGQTRCZEd0bjZQeWNVdUxhT3BqbTB0Vlk0c1NSOWtvTWNoa1dJSWczajBqZHZMZ2c?oc=5",
       "outlet": "Nanyang Technological University - NTU Singapore",
@@ -151,17 +151,6 @@
       "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - Drag Illustrated",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOSk1tVlVOcDZrVThkQXdZZ1pZNnE4YkQ5dHcycFRkcFZ5TDZGVUxGN2JlcDNOV0JzLWtpNkp2VzNuVGdsN0FXRTJYOUhsd1EzeDFuQ3N1VE0yRmEtR2ZyNzVYOFNJeThlMzFXVWxzWjNhWmF0RWR3ams3WUJCTkJSbHhXSUlUZmxUY0IzVE5mSWhFMDAwUkdYR1BkZEZHX1JfRk1RdkxZUGlveFhxWUVid0YyYTJOTnBZaGZDVU1md21lRVpsVDVvYi1qUEcySXVWRjN1Wkw0Wm8tS0lndWc3ekZwSjZQeEg3?oc=5",
       "outlet": "Drag Illustrated",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
-      "outlet": "Chosunbiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -239,6 +228,17 @@
       "title": "Thomas Joseph \"Tommy\" Gladden Obituary Jun 9, 2025 - obits.jhenrystuhr.com",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
       "outlet": "obits.jhenrystuhr.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas William McBride Obituary Dec 26, 2024 - Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tSEI1ZDFWS2hFWE1SWE11eWpCODFPUkViOUMwVENEVE9oOXlGdjhVcXFyaW53QkxuNXJ3Njl6dDh2cHFnX0V1ZENMZTB0djRHbVZBOWNsLUt2OTZQSm1n?oc=5",
+      "outlet": "Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
