@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-31T21:23:12.943278",
+  "timestamp": "2026-08-31T23:05:35.460270",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -38,9 +38,9 @@
     },
     {
       "source": "google_news",
-      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - The New York Times",
+      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - nytimes.com",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMk1vYnQzYVc0LVBRMkhleFJpSXBCZmowc3oweThYNy0wdUpqbnlPVW0xcUJRSFY5MHdxa2tJZmVSei1INWZNaldzRzFVZGtpd19oTmhycVdjaVVIaGtvbWlYMXkxRm5aQXA5cVB2UUFBenh6UEotU1BRX0RTRkRTRW13Y3pFLTFHOW9odXN1ZjZJczkyTXBSb1I1Qm41ZEU?oc=5",
-      "outlet": "The New York Times",
+      "outlet": "nytimes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
+      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - nytimes.com",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
-      "outlet": "The New York Times",
+      "outlet": "nytimes.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -214,31 +214,31 @@
     },
     {
       "source": "google_news",
+      "title": "Roger G. Chandler Obituary (2025) - Greenville, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNWHYxZEZCRjZzUHFJTlZuQ3JOQVhsQklLSUtqMnBoSE5TVlhEUWRfV1I5bnF1bk11bEhqUTh2alB4ZW9rV0pUeEhPeWxDRmkyN2tCaDdTSkdNT1FQRU1jd1hpRllJSWdTMFBFVUFQTWVlOTdnME05bzZGdWZnaElDdnFFYw?oc=5",
+      "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
+      "outlet": "Post and Courier",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Thomas Armstrong Harley Obituary March 30, 2025 - Cremation Society of SC - Westville Funerals",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VdG5peDRCN1ZELXBBbHduaVRVUHpvSFpJa3ZEbkxtLTdKR2xDb0hWaWQzbWthZk1HZlFWS2tSU3hpNzU0WFprdU53V0lNc29wM3ZMeFVLT1B2UVJkdGUyVWlnbUZDbzBQbWo2NDh3?oc=5",
       "outlet": "Cremation Society of SC - Westville Funerals",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Joseph \"Tommy\" Gladden Obituary Jun 9, 2025 - obits.jhenrystuhr.com",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
-      "outlet": "obits.jhenrystuhr.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas William McBride Obituary Dec 26, 2024 - Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tSEI1ZDFWS2hFWE1SWE11eWpCODFPUkViOUMwVENEVE9oOXlGdjhVcXFyaW53QkxuNXJ3Njl6dDh2cHFnX0V1ZENMZTB0djRHbVZBOWNsLUt2OTZQSm1n?oc=5",
-      "outlet": "Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
