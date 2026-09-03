@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-03T19:16:51.976524",
+  "timestamp": "2026-09-03T22:23:38.370793",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 146,
-  "brand_mention_count": 35,
+  "mention_count": 145,
+  "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
@@ -38,8 +38,8 @@
     },
     {
       "source": "google_news",
-      "title": "Poverty Tracker Spotlight on: Rent Stabilization in NYC - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVU5YSE50X244S0lwanBjTlJRRU5kRTRsOUlhNFoxdWNib0tYYXJFWjh4TFpvWmg2MzVIQXNSa2x5Q1VhajdwTlg3NDIwVVhhR1l1ZnFubHp1TnJDcG5ROVAyU3pSNTh4eXk1Yk5KY3R0Q2JMOHREQ0pDQWw2WktUZzFYSlI?oc=5",
+      "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
       "outlet": "robinhood.org",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -49,9 +49,20 @@
     },
     {
       "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "Spotlight Report",
+      "outlet": "spotlightreport.net",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "49ers uncertainty for Titans joint practice heightens amid massive injury report - New York Post",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPZUhWaTZURnhta2lCc0ZGWUxId3VHU2hwdDRqNWQtb0JGaGw5emRjN2V2WjdMa1NyT05qTTk1UlJPSEk0RGE0WEs1S3B1TlliTWF1elJBQjdEZWgwREIybDY5SGhEM3ltVnBpMVhFb0hkQzhhYjgzVlBIVzMzMDNFYU9qR0swWVVrbHdGR2N2bzQ5bUU3OXRtc2tWSnNiMXpqQ3c?oc=5",
+      "outlet": "New York Post",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -93,6 +104,17 @@
     },
     {
       "source": "google_news",
+      "title": "Poverty Tracker Spotlight on: Rent Stabilization in NYC - robinhood.org",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVU5YSE50X244S0lwanBjTlJRRU5kRTRsOUlhNFoxdWNib0tYYXJFWjh4TFpvWmg2MzVIQXNSa2x5Q1VhajdwTlg3NDIwVVhhR1l1ZnFubHp1TnJDcG5ROVAyU3pSNTh4eXk1Yk5KY3R0Q2JMOHREQ0pDQWw2WktUZzFYSlI?oc=5",
+      "outlet": "robinhood.org",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "What Is Going on with NYC Jobs? - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
       "outlet": "NYC.gov",
@@ -107,28 +129,6 @@
       "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
       "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
-      "outlet": "robinhood.org",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
-      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,9 +159,9 @@
     },
     {
       "source": "google_news",
-      "title": "Chemical Guys ProFlow PM2000 Pro Pressure Washer Review - autoguide.com",
+      "title": "Chemical Guys ProFlow PM2000 Pro Pressure Washer Review - Autoguide.com",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYmdRd3pHdG51ZVdXRkpNbnFpb252ekNBaGxfbWp1VV92SHI1RWtlWElxNlNMUXNoWVY2MkdmSTdXSHdwdUp3bmJzTUlyX1MzdDRkQ0tWQ1k0RW80VGE0TEN2NWthT1RMS3dSLTlDUnZUUlc4WEZIWXVtMHFmSlpmRVRXLVlGR1ctbGlmeXRNaXhNMHNnbzV6N0d3NFpUVDc1MUlUMGdxVnphRmM?oc=5",
-      "outlet": "autoguide.com",
+      "outlet": "Autoguide.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -170,20 +170,9 @@
     },
     {
       "source": "google_news",
-      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
-      "outlet": "The Independent Singapore News",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - NUS - National University of Singapore",
+      "title": "Professor Low Teck Seng appointed Chairman of the Singapore Maritime Institute - news.nus.edu.sg",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZnVFd3l1YVFQMGdmb3BrWVRuQzhOZjFwRklPVnI0RTRPY1NrUFJSUkJMaE0wUTkzcnJ3UU9jN2hWczhoMXpBckJqU2syZFZ2eUhKbG5zWEpnOExOQlp2bGlHbmVsVy1kM1YtUlNLLXFfRFlnSXByT3Z3anhWejlTNFhPV1hNaXVGV3Q0TGVnbHpoWHJSRlBVNTdVVzV4eWF4a2JlcnhB?oc=5",
-      "outlet": "NUS - National University of Singapore",
+      "outlet": "news.nus.edu.sg",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -195,17 +184,6 @@
       "title": "Obituary | Mary Joe Thomas of Lane, South Carolina - Henryhand Funeral Home",
       "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE00eWg1X0dEVEdqZ3RkSjdCN3BtblBlYndEcUk4Z3RoSW11TW5zWVBpQzcyXzJ2cXRHMktMcVdlcDlGTVBzVmE5SXJ3NEZTUjVqVVhSbTlNcWpmcnh1Q0hMbWdzREpzTlhvQkstZC1B?oc=5",
       "outlet": "Henryhand Funeral Home",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
-      "outlet": "Robesonian",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +214,31 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "title": "Ewell R. Proctor - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPVGgwMHg3YldKenZDZm5SVGxhel8yZ2p5NjYzTjlWTUlwd3JuWS1YZnlobU80RHhDd0tRVzRkRG81cTJSeGVINFI1Y0xmYU5mTndfVFVlRWRYdDlGSWI4WFNnSndwVUpINW9mRTUxc3FqRWVwUUFJbEc0S0tnN21maG4zOXI?oc=5",
       "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Joseph \"Tommy\" Gladden Obituary Jun 9, 2025 - obits.jhenrystuhr.com",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
+      "outlet": "obits.jhenrystuhr.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
