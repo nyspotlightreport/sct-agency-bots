@@ -1,140 +1,29 @@
 {
-  "timestamp": "2026-09-03T11:53:16.091925",
+  "timestamp": "2026-09-03T15:59:41.442617",
   "reputation": {
     "score": 50,
     "trend": "stable",
     "threat_level": "orange",
-    "total_mentions": 30,
+    "total_mentions": 13,
     "positive_pct": 0,
     "negative_pct": 0,
     "max_threat_score": 0,
-    "explanation": "30 mentions \u2014 0% positive, 0% negative, max threat 0/10"
+    "explanation": "13 mentions \u2014 0% positive, 0% negative, max threat 0/10"
   },
   "crisis_prediction": {
-    "probability": 40,
-    "signals_detected": 2,
+    "probability": 20,
+    "signals_detected": 1,
     "signals": [
-      "HIGH VOLUME: Unusual mention spike detected",
       "COORDINATION PATTERN: Multiple mentions from same source cluster"
     ],
-    "prediction": "elevated risk",
-    "time_to_crisis": "7-14 days without intervention",
-    "recommended_action": "Begin narrative reinforcement"
+    "prediction": "monitor",
+    "time_to_crisis": "14-30 days if signals persist",
+    "recommended_action": "Increase monitoring frequency"
   },
   "opportunities": [],
-  "mention_count": 145,
-  "brand_mention_count": 34,
+  "mention_count": 53,
+  "brand_mention_count": 13,
   "analyses": [
-    {
-      "source": "google_news",
-      "title": "The Lakers sale and a federal probe put Mark Walter in a spotlight he never sought - The Athletic - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMk1vYnQzYVc0LVBRMkhleFJpSXBCZmowc3oweThYNy0wdUpqbnlPVW0xcUJRSFY5MHdxa2tJZmVSei1INWZNaldzRzFVZGtpd19oTmhycVdjaVVIaGtvbWlYMXkxRm5aQXA5cVB2UUFBenh6UEotU1BRX0RTRkRTRW13Y3pFLTFHOW9odXN1ZjZJczkyTXBSb1I1Qm41ZEU?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Poverty Tracker Spotlight on: Rent Stabilization in NYC - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVU5YSE50X244S0lwanBjTlJRRU5kRTRsOUlhNFoxdWNib0tYYXJFWjh4TFpvWmg2MzVIQXNSa2x5Q1VhajdwTlg3NDIwVVhhR1l1ZnFubHp1TnJDcG5ROVAyU3pSNTh4eXk1Yk5KY3R0Q2JMOHREQ0pDQWw2WktUZzFYSlI?oc=5",
-      "outlet": "robinhood.org",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "spotlightreport.net",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - Paulick Report",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVFBnWG5JQndQQjZCd09PR1dTSFhMS2Nsb0xGZW1vTndDSjBRaUNCMFpXVG5obUt5V0g2cHdnNWV6Z0hTdlRMUzg2WEo5TzY1cnBnOWJMUnV6MkxXUmU3elZGWFpjTlNISVB2TVJjS3pISjFWQ244QmVMRERndm5fZkJkcHg1dmNGb09JRDVFX1VBVDQ0Q1U5SWJCajF1MmhMdmx0bktTVXhBaHdZSk1LT2pLV0Vxa1pobTNSRFAxb0pHYmc2M3c0WnYxU0ZqR3lZQUxqX2hpRkpKcmxBWm9v?oc=5",
-      "outlet": "Paulick Report",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
-      "outlet": "Akron Beacon Journal",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "What Is Going on with NYC Jobs? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Spotlight: New York City\u2019s Tech Sector - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5FM21nZ0pJWFRhZmN4M2g0ekk1SmZjaG44UmlHWnJfWmZ5X2Ewa1BCS2c4a2wzSXZzMVlaTUE2YlRwcm0wLXVHelcyUXp0VlZRb0RSTG1la0pRRmhRLWhVZ0VtQ1h5cFVlblJxdmFSemctMDVGNEdRdEU2UUVyQQ?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
-      "outlet": "robinhood.org",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "NYC\u2019s Economy: Overview and Prospects - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8yVGgtNWhGWXEwV2h1RGsta1NxSU1WeXctdVZLZWs5eHBuc284MF9sT2tod3NSaEd4TW1lY3ZIYU9ZMWt5TWVHQXEtTVNoYkN5ZUNjb0tSb013VjhzQXhrLTZRT3AzUVBvSHlfdDJxckw?oc=5",
-      "outlet": "NYC.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
     {
       "source": "google_news",
       "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - Drag Illustrated",
@@ -148,24 +37,13 @@
     },
     {
       "source": "google_news",
-      "title": "Chemical Guys ProFlow PM2000 Pro Pressure Washer Review - autoguide.com",
+      "title": "Chemical Guys ProFlow PM2000 Pro Pressure Washer Review - Autoguide.com",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYmdRd3pHdG51ZVdXRkpNbnFpb252ekNBaGxfbWp1VV92SHI1RWtlWElxNlNMUXNoWVY2MkdmSTdXSHdwdUp3bmJzTUlyX1MzdDRkQ0tWQ1k0RW80VGE0TEN2NWthT1RMS3dSLTlDUnZUUlc4WEZIWXVtMHFmSlpmRVRXLVlGR1ctbGlmeXRNaXhNMHNnbzV6N0d3NFpUVDc1MUlUMGdxVnphRmM?oc=5",
-      "outlet": "autoguide.com",
+      "outlet": "Autoguide.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
       "opportunity_score": 0,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Singaporean economist cautions AI may increase inequality, as Anthropic calls for global AI pause - The Independent Singapore News",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTDNUVUczWW1MQm1fNnFDcGtIVklkMFFLTi1pRVJQRXZlZkZ4MFBibGRGLS01OUtnck1XbEV3ZHVoU1Frdmx4YmVyZjhuVFI4QVhTVENiM0xBMmFjUE1JbXFHLVlQM0R1OUQ3UmJtUEZ4c1IxRXFfZFVXTlRwcUlWbVJYRVNYVVdaRTlXVUZIT2RmQVhkMFN4cW1xaUJlUFpuVllHS2hUOGE0MkpWZ2xrM1RsNk9OR2RyNUJhX2FZRUw?oc=5",
-      "outlet": "The Independent Singapore News",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
       "action": "monitor"
     },
     {
@@ -181,9 +59,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
-      "outlet": "Robesonian",
+      "title": "Philly entrepreneur walks 3,000 miles across country to fund school for youth - phillytrib.com",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxONXB6WTNheWUyN2l5UmVxVVFqb1V5RjFLaXpaS3ZhSTFfM19PZ0J0ZDNlX0tUTjRYd3NXUjk1RkRnLUl1bVVsaVFLVkdraENqcnVqakZhc1JpcHR4dHpQMjhnbzJIcWh0b2l4d1lVYVM5RWRqTkVWMFVybjFHZGdrRDBUQVRnZG9PNDNDQ2FCWFNUSjJwVW4zRFhXVEJrN1Qza1ByOTA5OV9oOVNIejNKN1luN2p5d19HX3o5WTBBZFpLaklTVGxLNHFsdHVNSHh6VHU0RTFCMmhuWnI2T3lUcjc4cXJqS3RfSXFOWTZ4cEtOQldDZXl2aERYNHpValk?oc=5",
+      "outlet": "phillytrib.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -194,28 +72,6 @@
       "source": "google_news",
       "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
-      "outlet": "Post and Courier",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia, SC - Post and Courier",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
       "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
@@ -236,9 +92,75 @@
     },
     {
       "source": "google_news",
+      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
+      "outlet": "Legacy obituary",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Edward Skirving Obituary May 15, 2024 - Funeral Home in Jacksonville, NC",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9Nai1MSVJ6VmUwYzlBSmtvN1BTd2lITC10X0NtbklLc2FRaWk0Y2NyOVdXVjFfOUlVVVQwVERwWmVPYkVVbnNDLXV3blpRZmlqS19mNGNnRnpzRlNvSGpR?oc=5",
+      "outlet": "Funeral Home in Jacksonville, NC",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
       "title": "Thomas Billy Daniels Obituary Apr 9, 2022 - obits.jhenrystuhr.com",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1SdGVvVDkwQVc5OWlfOWVrWlhIWU9CeW4zN3F0SVVtUmpDbXNoaUF6dVJkSlBWUUdTUmM0cjMwVl9ZT1pqSjJra0RxSFFpSVhrbzFrTVE3aw?oc=5",
       "outlet": "obits.jhenrystuhr.com",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Obituary | Mary Joe Thomas of Lane, South Carolina - Henryhand Funeral Home",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE00eWg1X0dEVEdqZ3RkSjdCN3BtblBlYndEcUk4Z3RoSW11TW5zWVBpQzcyXzJ2cXRHMktMcVdlcDlGTVBzVmE5SXJ3NEZTUjVqVVhSbTlNcWpmcnh1Q0hMbWdzREpzTlhvQkstZC1B?oc=5",
+      "outlet": "Henryhand Funeral Home",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Prioreschi Obituary - Columbia, SC - Dignity Memorial",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbVRuT0YteDR4X1E4dmRQWWQ0S0x1UUtDd3FJd3JkSEdIQUpoQk9mVkl5ZjVlUWJZU1VnWUE2N3U0cDktRlo0NkR1SzlfWFp4WnM5anlHMGU1cFV1WVQzRUpsaU9qejZPUTk3aW1TakwtbFpPRnNMdE15aFhtWHZBSUZQWnA2b0o3?oc=5",
+      "outlet": "Dignity Memorial",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Edward Trammell Obituary Mar 9, 2023 - The J. M. Dunbar Funeral Home &amp; Crematory",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9DSUlvYVZpcG5oazZGSHZtY29od1ZBN3NLaDdyRUV0QUFCUUdXdDNWQ3BFSFJCYVJ2Ui1ZQjBvaUNmbXllQndfNl9EWG8zZW1hWnhMc0Q0MDBFeGNQV2drbA?oc=5",
+      "outlet": "The J. M. Dunbar Funeral Home &amp; Crematory",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Meet Raquel Richardson Thomas of Dream Catchers Corp. - Voyage ATL",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPdGdyQWE0LS1qWDlwTE01RHNVLWt5TC1FYjg0ZFp4dzl3cTlNUXdJVU1WbFcyNFJrX2JrM09RRDVLdzE5NnBYTHFrcVVnbUVXM0xZVndmdkYwSXpjZU1pRUFTcVpFMXFaNy03YzVycExxdGVOUTN0SmVBM0Z2LVlHSE5PclR6LXhlaTY1QTBxLW4zdU5HVWRtNWJB?oc=5",
+      "outlet": "Voyage ATL",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
