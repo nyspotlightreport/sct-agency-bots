@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-03T10:22:27.024201",
+  "timestamp": "2026-09-03T11:53:16.091925",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 157,
-  "brand_mention_count": 33,
+  "mention_count": 145,
+  "brand_mention_count": 34,
   "analyses": [
     {
       "source": "google_news",
@@ -38,53 +38,42 @@
     },
     {
       "source": "google_news",
-      "title": "Rent-stabilized housing keeps 140,000 New Yorkers out of poverty each year - robinhood.org",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQZDRFTVVQbmRLRk9WbkZ4WUZhZWN2TlQxbjhPRG1oZ3hJZXFMQW90V2w5NVd5bm8zWXFZYzdrSUl2RTNELTQ5OElJYXF2dTZnSkZfVlNUNTY2TDhLSUd3dDJCRVAzUXcxZmtKNjhHOHRGb2UwbklmSWVpbkNkYU5mYWxzYmFPQQ?oc=5",
-      "outlet": "robinhood.org",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "Spotlight Report",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - paulickreport.com",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVFBnWG5JQndQQjZCd09PR1dTSFhMS2Nsb0xGZW1vTndDSjBRaUNCMFpXVG5obUt5V0g2cHdnNWV6Z0hTdlRMUzg2WEo5TzY1cnBnOWJMUnV6MkxXUmU3elZGWFpjTlNISVB2TVJjS3pISjFWQ244QmVMRERndm5fZkJkcHg1dmNGb09JRDVFX1VBVDQ0Q1U5SWJCajF1MmhMdmx0bktTVXhBaHdZSk1LT2pLV0Vxa1pobTNSRFAxb0pHYmc2M3c0WnYxU0ZqR3lZQUxqX2hpRkpKcmxBWm9v?oc=5",
-      "outlet": "paulickreport.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - beaconjournal.com",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
-      "outlet": "beaconjournal.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Poverty Tracker Spotlight on: Rent Stabilization in NYC - robinhood.org",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVU5YSE50X244S0lwanBjTlJRRU5kRTRsOUlhNFoxdWNib0tYYXJFWjh4TFpvWmg2MzVIQXNSa2x5Q1VhajdwTlg3NDIwVVhhR1l1ZnFubHp1TnJDcG5ROVAyU3pSNTh4eXk1Yk5KY3R0Q2JMOHREQ0pDQWw2WktUZzFYSlI?oc=5",
       "outlet": "robinhood.org",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
+      "outlet": "spotlightreport.net",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York-Bred Maiden Spotlight: Prime Aurora\u2019s Accidental Path To A Historic Debut - Paulick Report",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVFBnWG5JQndQQjZCd09PR1dTSFhMS2Nsb0xGZW1vTndDSjBRaUNCMFpXVG5obUt5V0g2cHdnNWV6Z0hTdlRMUzg2WEo5TzY1cnBnOWJMUnV6MkxXUmU3elZGWFpjTlNISVB2TVJjS3pISjFWQ244QmVMRERndm5fZkJkcHg1dmNGb09JRDVFX1VBVDQ0Q1U5SWJCajF1MmhMdmx0bktTVXhBaHdZSk1LT2pLV0Vxa1pobTNSRFAxb0pHYmc2M3c0WnYxU0ZqR3lZQUxqX2hpRkpKcmxBWm9v?oc=5",
+      "outlet": "Paulick Report",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "New York Times puts U.S. Rep Max Miller allegations back in spotlight - Akron Beacon Journal",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPbTJ5ZnFKeHNBRnJzOTZXU2ZCZEtvT3pjX0RWU0tlcWI0aTBsMXQ1cnpVajVOcFFoZnhsaDhOT3VTU3RFN0xId3hhUWtibmJjbk40TXAzQ0czODhZZWliX240aDFWNy1ubWdkdEZVMFUtVGFoWWllOUlCQXRGOWZvdmllSmdKYlV1dHlrSEs5Q3RLNlZQR0xGMWYzTVJRbWNfdTRockt5SkhFOWtXSEs4eWF5SWdRVXRocWJ4U0w4amRDb05FUTYzVmpSa01lUC1iWFVaTkExMjRRbm8?oc=5",
+      "outlet": "Akron Beacon Journal",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -115,17 +104,6 @@
     },
     {
       "source": "google_news",
-      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
-      "outlet": "The New York Times",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Robin Hood Ramps Up Emergency Food Grantmaking - robinhood.org",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNRGVwMmM3MjJFMkhXdnNwQTdBWU5CQjRsOXZsS0NaTjVzRTh3eVRrWHNzdzRVRnRNTDJsRElHQ1otS0ZhMU9JSGN6LWFUc1JIbzFpWWZ2aFR6V1cwaHdGa3JOR1IzY0prei1DMkxCMV9nNjBtN0ZlOTVMalpNTDNILUxITWJJbm5OMjRHX1diWnRwemdQRWZ2S0pXbG93VUNnamc1Z0Y0VzltTGxaS21pUU5B?oc=5",
       "outlet": "robinhood.org",
@@ -137,9 +115,42 @@
     },
     {
       "source": "google_news",
-      "title": "Chemical Guys ProFlow PM2000 Pro Pressure Washer Review - Autoguide.com",
+      "title": "Democrats Aim to Spotlight Republican Efforts to Rewrite the Jan. 6 Capitol Riot - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQSExhM0J5eVFjdi01dDg3eDB0SUFqRmVsUW93REFidmtaOVpZaGUyb3JfTUNUbGg1ZDJEYno1Z3hyb29hUEltT29yNUM5RlRnMHRxYUw1T1I5b2pJTWNLY29VMGY4MDMxM1BoQzRfRDJEWDBiaEhXTmVJZUN2VFItZQ?oc=5",
+      "outlet": "The New York Times",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "NYC\u2019s Economy: Overview and Prospects - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8yVGgtNWhGWXEwV2h1RGsta1NxSU1WeXctdVZLZWs5eHBuc284MF9sT2tod3NSaEd4TW1lY3ZIYU9ZMWt5TWVHQXEtTVNoYkN5ZUNjb0tSb013VjhzQXhrLTZRT3AzUVBvSHlfdDJxckw?oc=5",
+      "outlet": "NYC.gov",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Menholt Takes Points Lead With JBS Equipment NHRA Pro Mod Series Win in Chicago at Race Powered by ProFlow Pumping Solutions - Drag Illustrated",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOSk1tVlVOcDZrVThkQXdZZ1pZNnE4YkQ5dHcycFRkcFZ5TDZGVUxGN2JlcDNOV0JzLWtpNkp2VzNuVGdsN0FXRTJYOUhsd1EzeDFuQ3N1VE0yRmEtR2ZyNzVYOFNJeThlMzFXVWxzWjNhWmF0RWR3ams3WUJCTkJSbHhXSUlUZmxUY0IzVE5mSWhFMDAwUkdYR1BkZEZHX1JfRk1RdkxZUGlveFhxWUVid0YyYTJOTnBZaGZDVU1md21lRVpsVDVvYi1qUEcySXVWRjN1Wkw0Wm8tS0lndWc3ekZwSjZQeEg3?oc=5",
+      "outlet": "Drag Illustrated",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Chemical Guys ProFlow PM2000 Pro Pressure Washer Review - autoguide.com",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOYmdRd3pHdG51ZVdXRkpNbnFpb252ekNBaGxfbWp1VV92SHI1RWtlWElxNlNMUXNoWVY2MkdmSTdXSHdwdUp3bmJzTUlyX1MzdDRkQ0tWQ1k0RW80VGE0TEN2NWthT1RMS3dSLTlDUnZUUlc4WEZIWXVtMHFmSlpmRVRXLVlGR1ctbGlmeXRNaXhNMHNnbzV6N0d3NFpUVDc1MUlUMGdxVnphRmM?oc=5",
-      "outlet": "Autoguide.com",
+      "outlet": "autoguide.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -170,9 +181,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - robesonian.com",
+      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
-      "outlet": "robesonian.com",
+      "outlet": "Robesonian",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,17 +203,6 @@
     },
     {
       "source": "google_news",
-      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - agriculture.sc.gov",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
-      "outlet": "agriculture.sc.gov",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
       "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
       "outlet": "Legacy obituary",
@@ -214,9 +214,9 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas William McBride Obituary Dec 26, 2024 - Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tSEI1ZDFWS2hFWE1SWE11eWpCODFPUkViOUMwVENEVE9oOXlGdjhVcXFyaW53QkxuNXJ3Njl6dDh2cHFnX0V1ZENMZTB0djRHbVZBOWNsLUt2OTZQSm1n?oc=5",
-      "outlet": "Paquelet and Paquelet &amp; Arnold-Lynch Funeral Homes",
+      "title": "Thomas Troy Fickling Obituary (1960 - 2026) - Columbia, SC - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOXFMck5HRUMxejFpLXBlOURGdy1DMXEwUEFEZWdLUXhZVVVWcVBkalBQQ2N1Z2EyTXhpVnhfWFdJUzRucWJwbUM5NlExOGFMWldJUUlpcjlXODU1cGYwQjUwaDhHelJhMzZ5TjNlMTVlZ2J4enF5YTdjWE0yNFBxWDhLZlJDOUdrdnB4UkhEUExxSW1XRlNxYktOWlF6Zw?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,20 +225,20 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas Joseph \"Tommy\" Gladden Obituary Jun 9, 2025 - obits.jhenrystuhr.com",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5IVWxhWGVWV3JnUFZocXowVVFwcGZYNkd1NlB3UThzOVZMQ3NNNi1sYzExRnE4R3Rlcno4LXhqVDFxVkNuclhKd2VHNG9ub0RWcXNNcVhaSQ?oc=5",
+      "title": "ACRE Awards $150K in Funding to 9 Agribusiness Entrepreneurs - South Carolina Department of Agriculture (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQc0swVTQ5X0tkSkxKaC1tSWpSaUhuZmp6VEo3OUZMU0FXZHplNHRaUmYwUnVtb182M0l6aDJOVGFfR05NSW9KUllPMTUtMlk5RnJuUVdTT21GWDVOZEk0blYwM2tVMFFnUmhGdHBRQUtPXzVCZ1YxTHJxZC1mSFk2YzY3aDFHMm5CcE5YdXVaN3Y?oc=5",
+      "outlet": "South Carolina Department of Agriculture (.gov)",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas Billy Daniels Obituary Apr 9, 2022 - obits.jhenrystuhr.com",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1SdGVvVDkwQVc5OWlfOWVrWlhIWU9CeW4zN3F0SVVtUmpDbXNoaUF6dVJkSlBWUUdTUmM0cjMwVl9ZT1pqSjJra0RxSFFpSVhrbzFrTVE3aw?oc=5",
       "outlet": "obits.jhenrystuhr.com",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Thomas Prioreschi Obituary - Columbia, SC - Dignity Memorial",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbVRuT0YteDR4X1E4dmRQWWQ0S0x1UUtDd3FJd3JkSEdIQUpoQk9mVkl5ZjVlUWJZU1VnWUE2N3U0cDktRlo0NkR1SzlfWFp4WnM5anlHMGU1cFV1WVQzRUpsaU9qejZPUTk3aW1TakwtbFpPRnNMdE15aFhtWHZBSUZQWnA2b0o3?oc=5",
-      "outlet": "Dignity Memorial",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
