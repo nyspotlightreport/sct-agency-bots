@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-04T22:13:11.498143",
+  "timestamp": "2026-09-05T03:28:30.013465",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,14 +22,14 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 148,
+  "mention_count": 147,
   "brand_mention_count": 35,
   "analyses": [
     {
       "source": "google_news",
-      "title": "Multifamily distress reports put New York in the spotlight - Multifamily Dive",
+      "title": "Multifamily distress reports put New York in the spotlight - multifamilydive.com",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOaDRLR095NVZ1dkhZTm55bFJvU0hnT0tpR0taaVIzYVBodUV5N1hRTjFEd3FsMHpxWHloaTJiQXF5TGdvY1BWZ1FhOUEzdUN5b0hFTDl0VXlsNU04LXBkcUt3MGRaYzdxZjI1c3FfczA0UUlobS1nVnAzMHA3XzBMdmZyTGhIV21LcWw3VTlNSQ?oc=5",
-      "outlet": "Multifamily Dive",
+      "outlet": "multifamilydive.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -192,9 +192,20 @@
     },
     {
       "source": "google_news",
-      "title": "Thomas earns regional Entrepreneur of the Year award - robesonian.com",
+      "title": "Thomas Rhodes - Greenville Business Magazine",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9CYnh5bUFjVW0yRkF6TzRnSloyQlg4RHJEMDZZOVEzaFUyRGxwaXZBTTBnREtOYVhJT0gxdkdYY09KUlJ5YXBxeG5HaGdmZ25GQnU3SWpNUWNYMUtaUmVCVXZOVmxNX1pqd0c5ajdueXdVNGc?oc=5",
+      "outlet": "Greenville Business Magazine",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Thomas earns regional Entrepreneur of the Year award - Robesonian",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObGZLRjVvTUNMeU1POGF4Yk1YUEZjVzRtQmZWdFF2WS1oYmJCOTlFWWttZUhOVHBuZENGcDY4LTdTQm55TTltOTRpZlFpWDZHYUg1RDdmT3doMzBUOW4zaDRMNmNlRmJxQ3lXNG03NG1ROWVFa2prVFRtS1NHZGpuWHR3RmJTbFQzYWR1NUMxaFQ0aG0yR0E?oc=5",
-      "outlet": "robesonian.com",
+      "outlet": "Robesonian",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,20 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Elton Robert Gay Obituary (2026) - Taylors, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBwVjBUODRuRGNuS2JCOHJmU1RZQ3VlY21pOGowNVhDdzZnMXpaOFE1WUVGaklWalYtNTRma3hpTERRYU9zOVozMlkxNktqUlpSRjMwX1BXT2M3R2E1dWdTeDNjVnhZOXhvNVBvZ09OZlZ4aVpHbzNPSEhSc2E?oc=5",
-      "outlet": "Legacy obituary",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "3 Durham entrepreneurs recognized as among the best in the Southeast - CBS17.com",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNN1ZkM0YwbjdOSFg4NGNodTJmRGtaeTRhczRMZG1BOUlOd2I2cXVFYWRvNUFJSWtWa3ZVemx3QVk2cllWS1BkenVwMU5sVkYza00zQldNZVRjNGpsaWlmVkdTY1VFWVRmQzNCakUwbE1FZExPNnRpYmRURVZaVHRwa1pKYnc3QUVueDlYY0U5cXpFNFdNcm1OYzV6bVlFYVZzQVRDQTVsdlg1Q3pSTFkzd1g0SkJhVngySC1TVXpGeUpJYWxK0gHKAUFVX3lxTFA3cm9ZQWZ5LXFDbDQ4eTR0Tm1UdC1zdEdITGM0UExHaVh2eG1jd1hlamR6ZGVWMlBNcHUwR3hoQkw1NElSNUR3TTBrU1V1Y2piZTdwS05QdnVwRzh6N2E2UzBRcEs1WUpvRk10MGhQc0ozX0QwdkljQWExQkNheHNkYnpFUnNpNWkwRVcwZVdiSlVaU0NqeVRLY2V6cnVTMzgyRzBxaUNVcWJYcE5femJxYVE5ZWk3bkZpdXR4cVhNOGFHWndBNHhzS1E?oc=5",
-      "outlet": "CBS17.com",
+      "title": "Northern Arizona University names the T. Paul Thomas Center for Nonprofit Entrepreneurship - Arizona Daily Sun",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdENXVmtnTi0xX3d1SEI3QWpvUF92RVBUT0xfU1hJakRxdnR4ZWV2ZnJyLWV5b2h2TXlBa1VRZWM3UlRCc2dvTVpFZExFbXNUMkQtbFVxWDFVdjAwWnFocDVtdDJEU0JwbUlIS3JLZVRaeHd5RGdPeTdpTlZxaUJLU2RYQmU1cWFXODJUQklQLTgtWFNxMDFDOWxsSXF4SnN3VEJ6SVV5RmJuNkJFbHlJY1BlSmFnSnhfZ20xMm90YThhVmZMbDg2Tlc3Q0ZBbjV4a1hDMkZwVGZPYm8yVUNZcXMxUkxoWG9RQ01UWlljSFJLeHRNMFZoM2tpYUc2LVFLMi1R?oc=5",
+      "outlet": "Arizona Daily Sun",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
