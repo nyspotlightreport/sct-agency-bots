@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-06T08:28:09.338986",
+  "timestamp": "2026-09-06T15:06:25.997507",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -22,8 +22,8 @@
     "recommended_action": "Begin narrative reinforcement"
   },
   "opportunities": [],
-  "mention_count": 149,
-  "brand_mention_count": 35,
+  "mention_count": 150,
+  "brand_mention_count": 36,
   "analyses": [
     {
       "source": "google_news",
@@ -71,9 +71,9 @@
     },
     {
       "source": "google_news",
-      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - spotlightreport.net",
+      "title": "New York Soft-rock Outfit INFINITY SONG Announce 2026 Tour - Spotlight Report",
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQWmt1RFBBemVBb1V4OUJ0Und2b1dmcVlRTlFndGY5MVlJR0VraXE4dkswbmNqUkJ0NUxpdUtyaUhmUzFaZ1NGeXYxZHdjdzgtSUlVSW96c3hpVnpGTm1VVWV1amtTdDFRV1JRbko0cG5md1FyMld3VUk1UXZ1Y1k3OFE5NTEtblk2OEtNWUZBQ2dOek4yMWhj0gGcAUFVX3lxTE5LLS1NemdxdGJyN3V6b29UZ2dfWkV2OHJocXZhQzhhQkhYS0ZkelNULTJQWkFRR2FoZ1JpQWZTRUR0NGFTZnU2OWJkcWphS3p6dGN0SmtscUdYRUttU1c5Rjdac1ZpV3FFSWJCV0NuYTRjYUZuTGo5aDVCQV9YWGdxZVNRUDlGZGdCUGc3S2k3QXZjbmtTa18tcVdkZw?oc=5",
-      "outlet": "spotlightreport.net",
+      "outlet": "Spotlight Report",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -159,9 +159,20 @@
     },
     {
       "source": "google_news",
-      "title": "What if AI sits on the board of directors? | Associate Professor Angie Low - ntu.edu.sg",
+      "title": "What if AI sits on the board of directors? | Associate Professor Angie Low - Nanyang Technological University - NTU Singapore",
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQV2h2RnJ6SmY3Q2hwMGdPWTFyU25sSGktaHlmdTZQN09QS0U2SGs1U052THpIRmN3cjNfczJPQThJcGh4ZjJqUWp6Z2Ntc1BKM3ZTN1NVZDFUeGVEVWM1YlZiMTBSS0oyTExPeEZicVgtZnhKZ09sWjVTUXJxUG1QOVhNazFYZ01GbFpLVXpRV1M4MzcxWGdlV2xqYmsxNDZTZVlGQTRCZEd0bjZQeWNVdUxhT3BqbTB0Vlk0c1NSOWtvTWNoa1dJSWczajBqZHZMZ2c?oc=5",
-      "outlet": "ntu.edu.sg",
+      "outlet": "Nanyang Technological University - NTU Singapore",
+      "category": "brand_primary",
+      "sentiment": "neutral",
+      "threat_score": 0,
+      "opportunity_score": 2,
+      "action": "monitor"
+    },
+    {
+      "source": "google_news",
+      "title": "Google expands low-cost AI plan in South Korea, challenges ChatGPT pricing - CHOSUNBIZ - Chosunbiz",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1DbTR6aHpGbnNUTE5xelNsTkdaYmhoWjRXbGFEc0ttTUlfbFhCVDRqU1pScVhQamlrZVpycTlVQjluUWFoZGEwZWR2VEcxVG45d0FrMjYybTd6Y215UFBfbXc3dUJaVmF0NmNfbnJEanNSLVc5SnMtT3NB0gGOAUFVX3lxTE1aYmd2dHpRTnhLdUtWNDlFRWRZNFU0SURNNDZ4WG5mTkZNV0hteGtPdUxReVNtdmw4emk0V0VxcWxBdVlqZjR6blhOS2hfdTl1amlqWjRfZkRXSmVhZGdtalZmanhJSHQwM293dlVWSkNPTU5sSjdfZmFscGllSkVJUmZhcW5SWFc5dUpRZkE?oc=5",
+      "outlet": "Chosunbiz",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -225,20 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Northern Arizona University names the T. Paul Thomas Center for Nonprofit Entrepreneurship - Arizona Daily Sun",
+      "title": "Northern Arizona University names the T. Paul Thomas Center for Nonprofit Entrepreneurship - azdailysun.com",
       "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdENXVmtnTi0xX3d1SEI3QWpvUF92RVBUT0xfU1hJakRxdnR4ZWV2ZnJyLWV5b2h2TXlBa1VRZWM3UlRCc2dvTVpFZExFbXNUMkQtbFVxWDFVdjAwWnFocDVtdDJEU0JwbUlIS3JLZVRaeHd5RGdPeTdpTlZxaUJLU2RYQmU1cWFXODJUQklQLTgtWFNxMDFDOWxsSXF4SnN3VEJ6SVV5RmJuNkJFbHlJY1BlSmFnSnhfZ20xMm90YThhVmZMbDg2Tlc3Q0ZBbjV4a1hDMkZwVGZPYm8yVUNZcXMxUkxoWG9RQ01UWlljSFJLeHRNMFZoM2tpYUc2LVFLMi1R?oc=5",
-      "outlet": "Arizona Daily Sun",
-      "category": "brand_primary",
-      "sentiment": "neutral",
-      "threat_score": 0,
-      "opportunity_score": 2,
-      "action": "monitor"
-    },
-    {
-      "source": "google_news",
-      "title": "Roger G. Chandler Obituary (2025) - Greenville, SC - Thomas McAfee Funeral Homes - Downtown Chapel - Legacy obituary",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNWHYxZEZCRjZzUHFJTlZuQ3JOQVhsQklLSUtqMnBoSE5TVlhEUWRfV1I5bnF1bk11bEhqUTh2alB4ZW9rV0pUeEhPeWxDRmkyN2tCaDdTSkdNT1FQRU1jd1hpRllJSWdTMFBFVUFQTWVlOTdnME05bzZGdWZnaElDdnFFYw?oc=5",
-      "outlet": "Legacy obituary",
+      "outlet": "azdailysun.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
