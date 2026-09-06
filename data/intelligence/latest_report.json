@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-06T15:06:25.997507",
+  "timestamp": "2026-09-06T18:06:39.618050",
   "reputation": {
     "score": 50,
     "trend": "stable",
@@ -27,9 +27,9 @@
   "analyses": [
     {
       "source": "google_news",
-      "title": "Multifamily distress reports put New York in the spotlight - Multifamily Dive",
+      "title": "Multifamily distress reports put New York in the spotlight - multifamilydive.com",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOaDRLR095NVZ1dkhZTm55bFJvU0hnT0tpR0taaVIzYVBodUV5N1hRTjFEd3FsMHpxWHloaTJiQXF5TGdvY1BWZ1FhOUEzdUN5b0hFTDl0VXlsNU04LXBkcUt3MGRaYzdxZjI1c3FfczA0UUlobS1nVnAzMHA3XzBMdmZyTGhIV21LcWw3VTlNSQ?oc=5",
-      "outlet": "Multifamily Dive",
+      "outlet": "multifamilydive.com",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -49,9 +49,9 @@
     },
     {
       "source": "google_news",
-      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
-      "outlet": "The New York Times",
+      "title": "What Is Going on with NYC Jobs? - NYC.gov",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
+      "outlet": "NYC.gov",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -60,9 +60,9 @@
     },
     {
       "source": "google_news",
-      "title": "What Is Going on with NYC Jobs? - NYC.gov",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ic3d6b25lSGN2WEUyZVNGd09uWVpkaEkxWUJLT2JVUHZaTDVvRGViQ3paSXhSRjJHUk1xWlRKdXFVdVZIYTljamxLUjQ2ZFN1XzRyVEVSUWRYZEtRUVVLQmJra3R1dFFUTlVqbng1Qk1RSVdwZkE?oc=5",
-      "outlet": "NYC.gov",
+      "title": "MacKenzie Scott Steps Back Into Spotlight With New Book - The New York Times",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBqRV9Sdll2WkFVal9nMWJKaHFXREs4SUdtZTRXaHJDdk9OWVgtWDN3V1JFdTcwYXgzWHlCYVo1cENZZ0g2Uy1xX2dCeTB4TGM4Q2xBckZJYjA0a0doY1E2dzVBS05oV1dhRWhBSE5TTjJ3VUNrNTBCSzVIYjFXdw?oc=5",
+      "outlet": "The New York Times",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
@@ -236,9 +236,9 @@
     },
     {
       "source": "google_news",
-      "title": "Northern Arizona University names the T. Paul Thomas Center for Nonprofit Entrepreneurship - azdailysun.com",
-      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNdENXVmtnTi0xX3d1SEI3QWpvUF92RVBUT0xfU1hJakRxdnR4ZWV2ZnJyLWV5b2h2TXlBa1VRZWM3UlRCc2dvTVpFZExFbXNUMkQtbFVxWDFVdjAwWnFocDVtdDJEU0JwbUlIS3JLZVRaeHd5RGdPeTdpTlZxaUJLU2RYQmU1cWFXODJUQklQLTgtWFNxMDFDOWxsSXF4SnN3VEJ6SVV5RmJuNkJFbHlJY1BlSmFnSnhfZ20xMm90YThhVmZMbDg2Tlc3Q0ZBbjV4a1hDMkZwVGZPYm8yVUNZcXMxUkxoWG9RQ01UWlljSFJLeHRNMFZoM2tpYUc2LVFLMi1R?oc=5",
-      "outlet": "azdailysun.com",
+      "title": "Thomas \"Mickey\" Senn Obituary (1948 - 2026) - San Francisco, CA - Post and Courier",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaTVOVVAzUmc3S1VnV01EQ0VSVlBMNDM5bGw2NjhmWUxHM2ptVFYwcmttWEo1TlVKNVNvb0FyZ3VEX282cm1JVXJZOGJ1cWhaano0WV8yQm1NbWMwNTh5R3FOX0RvVXNuTTVWY3VrMWRBR1lnUVduVnV0Rk9TeEhUc2dtSlZtSV9qQnhlMGZYeEhmVGlpV3NNWmFlRQ?oc=5",
+      "outlet": "Post and Courier",
       "category": "brand_primary",
       "sentiment": "neutral",
       "threat_score": 0,
